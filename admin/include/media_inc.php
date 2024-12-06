@@ -239,7 +239,7 @@ function check_media_type($folder, $file)
     $mtype  = mime_content_type($folder . $file);
 
     if (in_array($mtype, $mtypes)) {
-        return (true);
+        return ($mtype);
     }
     return (false);
 }
