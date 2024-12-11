@@ -1,12 +1,13 @@
 <?php
 session_start();
-
+$url = urldecode($_SERVER['QUERY_STRING']);
+//echo('QS ' . $url); exit;
 // skip test for logo and favicon
-if (in_array($_GET['media_filename'], array('media/logo.png', 'media/logo.jpg', 'media/favicon.ico'))) { 
-    print_mediafile(__DIR__ . '/' . $_GET['media_filename']) ; 
+if (in_array($url, array('media/logo.png', 'media/logo.jpg', 'media/favicon.ico'))) { 
+    print_mediafile(__DIR__ . '/' . $url) ; 
     }
 // session expired / no filename
-if (!$_SESSION['tree_id'] || empty($_GET['media_filename'])) { print_mediafile(__DIR__ . '/images/missing-image.jpg'); }
+if (!$_SESSION['tree_id'] || empty($url)) { print_mediafile(__DIR__ . '/images/missing-image.jpg'); }
 
 include_once(__DIR__ . "/include/db_login.php"); //Inloggen database.
 include_once(__DIR__ . '/include/show_tree_text.php');
@@ -24,7 +25,7 @@ $groupDb = $groupsql->fetch(PDO::FETCH_OBJ);
 
 // free access to admin
 if (isset($_SESSION['group_id_admin']) && $groupDb->group_admin === 'j') {
-    print_mediafile(__DIR__ . '/' . $_GET['media_filename']);  
+    print_mediafile(__DIR__ . '/' . $url);  
 }
 
 // no access to media files
@@ -36,7 +37,7 @@ $datasql = $dbh->query("SELECT * FROM humo_trees WHERE tree_prefix='" . $tree_pr
 $dataDb = $datasql->fetch(PDO::FETCH_OBJ);
 $tree_pict_path = $dataDb->tree_pict_path;
 if (substr($tree_pict_path, 0, 1) === '|') { $tree_pict_path = 'media/'; }
-$picture_dbname = str_replace( $tree_pict_path, '', $_GET['media_filename'] ); //delete pic-path for db lookup
+$picture_dbname = str_replace( $tree_pict_path, '', $url ); //delete pic-path for db lookup
 $picture_dbname = preg_replace( '/thumb_(.+\.\w{3})\.jpg/', '$1', $picture_dbname ); //delete thumb extensions for lookup (new style)
 $picture_dbname = str_replace('thumb_', '', $picture_dbname ); //delete thumb extension for lookup (old style)
 $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' "
@@ -48,7 +49,7 @@ $media_qry = $dbh->query($qry);
 while ($media_qryDb = $media_qry->fetch(PDO::FETCH_OBJ)) {    
 
     if (    $media_qryDb ) {   // pic in db
-        $media_filename = __DIR__ . '/' . $_GET['media_filename'];
+        $media_filename = __DIR__ . '/' . $url;
         // person
         if ($media_qryDb && $media_qryDb->event_connect_kind === 'person') {
             $person_cls = new person_cls;
@@ -83,7 +84,7 @@ function print_mediafile ($filename) {
     $content_type_header = mime_content_type($filename);
     $filesize = filesize($filename);
     header('Content-Type: ' . $content_type_header);
-    header('Content-Disposition: inline; filename="' . $_GET['media_filename'] . '"');
+    header('Content-Disposition: inline; filename="' . $url . '"');
     header('Cache-Control: private, max-age=3600');
     header('Content-Length: '. filesize($filename));
     header('Pragma:');
