@@ -1,7 +1,6 @@
 <?php
 session_start();
 $url = urldecode($_SERVER['QUERY_STRING']);
-//echo('QS ' . $url); exit;
 // skip test for logo and favicon
 if (in_array($url, array('media/logo.png', 'media/logo.jpg', 'media/favicon.ico'))) { 
     print_mediafile(__DIR__ . '/' . $url) ; 
@@ -17,18 +16,22 @@ include_once(__DIR__ . "/include/person_cls.php");
 $tree_prefix   = $_SESSION['tree_prefix'];
 $tree_id       = $_SESSION['tree_id'];
 $user_group_id = $_SESSION['user_group_id'];
+$user_id       = $_SESSION['user_id'];
 
 $db_functions = new db_functions($dbh);
 $db_functions->set_tree_id($tree_id);
 $groupsql = $dbh->query("SELECT * FROM humo_groups WHERE group_id='" . $user_group_id . "'");
 $groupDb = $groupsql->fetch(PDO::FETCH_OBJ);
+$usersql = $dbh->query("SELECT * FROM humo_users WHERE user_id='" . $user_id . "'");
+$userDb = $usersql->fetch(PDO::FETCH_OBJ);
 
-// free access to admin
-if (isset($_SESSION['group_id_admin']) && $groupDb->group_admin === 'j') {
+// free access to admin or editor of current tree
+if ( ( isset($_SESSION['group_id_admin']) && $groupDb->group_admin === 'j' )  
+    || $groupDb->group_edit_trees == $tree_id
+    || $userDb->user_edit_trees == $tree_id ) {
     print_mediafile(__DIR__ . '/' . $url);  
 }
-
-// no access to media files
+// access to media files bloced
 if ($groupDb->group_pictures == 'n')  { 
     print_mediafile(__DIR__ . '/images/missing-image.jpg'); 
 }
