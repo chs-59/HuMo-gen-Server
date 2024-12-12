@@ -1,7 +1,7 @@
 # Url_rewrite option
 RewriteEngine On
 
-RewriteRule ^(.*?/?)(media/.+) media.php?media_filename=$2 [B,QSA,L]
+RewriteRule ^(.*?/?)(media/.+) media.php?$2 [B,QSA,L]
 # Enable media security for a direcory other than media/:
 # Place .htaccess file in that dir, paste and adjust these lines:
 # RewriteEngine On
