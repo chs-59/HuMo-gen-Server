@@ -570,7 +570,7 @@ $menu_top = getActiveTopMenu($page);
                         //	AND $dbh->query("SELECT * FROM humo_settings WHERE setting_variable ='geo_trees'
                         //		AND setting_value LIKE '%@".$tree_id.";%' ")->rowCount() > 0)
                         if (
-                            $user["group_birthday_list"] == 'j' || $user["group_showstatistics"] == 'j' || $user["group_relcalc"] == 'j' || $user["group_googlemaps"] == 'j' || $user["group_contact"] == 'j' && $dataDb->tree_owner && $dataDb->tree_email || $user["group_latestchanges"] == 'j'
+                            $user["group_birthday_list"] == 'j' || $user["group_showstatistics"] == 'j' || $user["group_relcalc"] == 'j' || $user["group_googlemaps"] == 'j' || $user["group_contact"] == 'j' && isset($dataDb->tree_owner) && isset($dataDb->tree_email) || $user["group_latestchanges"] == 'j'
                         ) {
                     ?>
 
@@ -799,12 +799,27 @@ $menu_top = getActiveTopMenu($page);
 
             <!-- Show HuMo-genealogy footer -->
             <?php if (isset($mainindex)) { ?>
-                <?= $mainindex->show_footer(); ?>
+                <br>
+                <div class="humo_version">
+                    <!-- Show owner of family tree -->
+                    <?= $mainindex->owner(); ?>
+
+                    <!-- Show HuMo-genealogy link -->
+                    <?php printf(__('This website is created using %s, a freeware genealogical  program'), '<a href="https://humo-gen.com">HuMo-genealogy</a>'); ?>.<br>
+
+                    <!-- Show European cookie information -->
+                    <?php
+                    $url = $humo_option["url_rewrite"] == "j" ? $uri_path . 'cookies' : 'index.php?page=cookies';
+                    if (!$bot_visit) {
+                        printf(__('European law: %s cookie information'), '<a href="' . $url . '">HuMo-genealogy');
+                        echo '</a>';
+                    }
+                    ?>
+                </div>
             <?php } ?>
 
             <!--  Links in footer -->
-            <div id="footer">
-                <br>
+            <div id="footer"><br>
                 <a href="<?= $menu_path_help; ?>"><?= __('Help'); ?></a>
 
                 <?php if (!$bot_visit) { ?>

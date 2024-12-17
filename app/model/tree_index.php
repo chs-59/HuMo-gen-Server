@@ -5,14 +5,6 @@ include_once(__DIR__ . "/../../include/show_tree_date.php");
 
 class Mainindex_cls
 {
-
-    /*
-    public function __construct()
-    {
-        $this->var = $var;
-    }
-    */
-
     public function show_tree_index()
     {
         global $dbh, $tree_id, $tree_prefix_quoted, $dataDb, $selected_language, $treetext_name, $dirmark2, $bot_visit, $humo_option, $db_functions;
@@ -267,13 +259,6 @@ class Mainindex_cls
                 } elseif (isset($_SESSION['tree_prefix']) && $_SESSION['tree_prefix'] == $dataDb->tree_prefix) {
                     $tree_name = '<span class="tree_link">' . $treetext_name . '</span>';
                 } else {
-                    // *** url_rewrite ***
-                    //if ($humo_option["url_rewrite"] == "j") {
-                    //    $path_tmp = $uri_path . 'tree_index/' . $dataDb->tree_id;
-                    //} else {
-                    //    //$path_tmp = 'tree_index.php?tree_id=' . $dataDb->tree_id;
-                    //    $path_tmp = 'index.php?page=tree_index&amp;tree_id=' . $dataDb->tree_id;
-                    //}
                     $path_tmp = $link_cls->get_link($uri_path, 'tree_index', $dataDb->tree_id);
                     $tree_name = '<span class="tree_link"><a href="' . $path_tmp . '">' . $treetext_name . '</a></span>';
                 }
@@ -332,7 +317,6 @@ class Mainindex_cls
             $maxnames = $rows * $maxcols;
         }
 
-        //$table2_width="500";
         $text = '';
 
         if (!function_exists('tablerow')) {
@@ -652,26 +636,58 @@ class Mainindex_cls
     // *** Random photo ***
     public function random_photo()
     {
-        global $dataDb, $tree_id, $dbh, $db_functions;
+        global $dataDb, $tree_id, $dbh, $db_functions, $humo_option;
+        // adding static table for displayed photos storage
+        static $temp_pic_names_table = [];
         $text = '';
 
         $tree_pict_path = $dataDb->tree_pict_path;
         if (substr($tree_pict_path, 0, 1) === '|') {
             $tree_pict_path = 'media/';
         }
-
         // *** Loop through pictures and find first available picture without privacy filter ***
+        // i added also family kind photos
         $qry = "SELECT * FROM humo_events
-            WHERE event_tree_id='" . $tree_id . "' AND event_kind='picture' AND event_connect_kind='person' AND event_connect_id NOT LIKE ''
+            WHERE event_tree_id='" . $tree_id . "' AND event_kind='picture' AND (event_connect_kind='person' OR event_connect_kind='family')  AND event_connect_id NOT LIKE ''
             ORDER BY RAND()";
         $picqry = $dbh->query($qry);
+        // We will go unique-random aproach than only randomness
+        // 'ORDER BY RAND' is pseudorandom. It's still not random - now im implementing uniqueness
+        // first we count number of rows with this query
+        // $rowCount = $picqry->rowCount();
+        // then we skip some rows if sum of rows is enough to skip - thats why we count
+        // $skipCount = random_int(0, $rowCount - 5);
+        // for ($i = 0; $i < $skipCount; $i++) {
+        //     if (!$picqry->fetch(PDO::FETCH_OBJ)) {
+        //         return null;
+        //     }
+        // }
+
         while ($picqryDb = $picqry->fetch(PDO::FETCH_OBJ)) {
-            $picname = str_replace(" ", "_", $picqryDb->event_event);
-            $check_file = strtolower(substr($picname, -3, 3));
-            if (($check_file === 'png' || $check_file === 'gif' || $check_file === 'jpg') && file_exists($tree_pict_path . $picname)) {
+            // TODO check code. Doesn't show pictures including a space. Nov 2024: disabled this code.
+            #    $picname = str_replace(" ", "_", $picqryDb->event_event);
+            $picname = $picqryDb->event_event;
+            // adding new var to store kind of connection - will be useful to use diifferent aproach for person photos and family photos
+            $pic_conn_kind = $picqryDb->event_connect_kind;
+            // this code was taking extension from name and was not working with 4 letter extensions: $check_file = strtolower(substr($picname, -3, 3));
+            // im now using dedicated function to determine extension - it get 3letter extensions and 4 letter for jpeg which i'm adding too below
+            $check_file = pathinfo($picname, PATHINFO_EXTENSION);
+
+            // im adding jpeg also and adding uniqueness 
+            if (($check_file === 'png' || $check_file === 'gif' || $check_file === 'jpg' || $check_file === 'jpeg') && file_exists($tree_pict_path . $picname) && !in_array($picname, $temp_pic_names_table)) {
+
                 @$personmnDb = $db_functions->get_person($picqryDb->event_connect_id);
+                // echo '<pre>';
+                // echo $pic_conn_kind . '<br>';
+                // echo $picname . '<br>';
+                // i see that $man_cls also gets information about family privacy so no need to change this code
                 $man_cls = new person_cls($personmnDb);
-                $man_privacy = $man_cls->privacy;
+                // var_dump($man_cls->privacy);
+                // echo '</pre>';
+                // echo 'privacy:';
+                // var_dump($man_privacy);
+                // echo '<br>';
+
                 if ($man_cls->privacy == '') {
                     $date_place = '';
 
@@ -679,32 +695,85 @@ class Mainindex_cls
                         $date_place = date_place($picqryDb->event_date, $picqryDb->event_place) . '<br>';
                     }
 
+                    // u can delete this variables if there are some global variables for protocol and omain combined
+                    // Get the protocol (HTTP or HTTPS)
                     $text .= '<div style="text-align: center;">';
 
                     // *** Show picture using GLightbox ***
-                    //$text .= '<a href="' . $tree_pict_path . $picname . '" class="glightbox" data-glightbox="description: ' . $date_place . str_replace("&", "&amp;", $picqryDb->event_text) . '"><img src="' . $tree_pict_path . $picname .
-                    //    '" width="200" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></a><br>';
                     $text .= '<a href="' . $tree_pict_path . $picname . '" class="glightbox" data-glightbox="description: ' . $date_place . str_replace("&", "&amp;", $picqryDb->event_text) . '"><img src="' . $tree_pict_path . $picname .
-                        '" width="90%" style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></a><br>';
-
+                        '" width="90%" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></a><br>';
                     // *** Person url example (optional: "main_person=I23"): http://localhost/humo-genealogy/family/2/F10?main_person=I23/ ***
-                    $url = $man_cls->person_url2($personmnDb->pers_tree_id, $personmnDb->pers_famc, $personmnDb->pers_fams, $personmnDb->pers_gedcomnumber);
 
-                    //$text.='<a href="'.$url.'">'.$picqryDb->event_text.'</a></div><br>';
-                    $text .= '<a href="' . $url . '">' . $date_place . $picqryDb->event_text . '</a></div>';
+                    // TODO: this is almost same code as code in photoalbum.php.
+                    $name = $man_cls->person_name($personmnDb);
+                    $privacy = $man_cls->set_privacy($personmnDb);
+                    // if photo is from family there will be different link and text as a first line
+                    if ($pic_conn_kind == 'person') {
+                        if (!$privacy && $name["standard_name"]) {
+                            // $text .= '<a href="' . $url . '">' . $name["standard_name"] . '</a></div>';
+                            $link_text = $name["standard_name"];
+                        } else {
+                            $link_text = __('Go to person&apos;s page');
+                        }
+                        $url = $man_cls->person_url2($personmnDb->pers_tree_id, $personmnDb->pers_famc, $personmnDb->pers_fams, $personmnDb->pers_gedcomnumber);
+                    } elseif ($pic_conn_kind == 'family') {
 
+
+
+
+                        // if there are global variables for protocol and domain You can change it. If there is another method to build link to family u can change
+                        // $url = 'index.php?page=family&tree_id=' . $picqryDb->event_tree_id . '&id=' . $picqryDb->event_connect_id;
+                        //integrate it to language. When family picture is displayed and no privacy filter man's and woman's names are displayed
+                        if (!$privacy) {
+                            $qry2 = "SELECT * FROM humo_families
+                        WHERE fam_gedcomnumber='" . $picqryDb->event_connect_id . "'";
+                            $picqry2 = $dbh->query($qry2);
+                            $picqryDb2 = $picqry2->fetch(PDO::FETCH_OBJ);
+                            $man_name_id = $picqryDb2->fam_man;
+                            $woman_name_id = $picqryDb2->fam_woman;
+                            @$personmnDb2 = $db_functions->get_person($man_name_id);
+                            @$personmnDb3 = $db_functions->get_person($woman_name_id);
+                            // TODO use function to show names.
+                            $man_name_and_surname = ($personmnDb2->pers_firstname) . ' ' . ($personmnDb2->pers_lastname);
+                            $woman_name_and_surname = ($personmnDb3->pers_firstname) . ' ' . ($personmnDb3->pers_lastname);
+
+                            $link_text = $man_name_and_surname . ' - ' . $woman_name_and_surname . ' family';
+                        } else {
+                            $link_text = __('Go to person&apos;s page');
+                        }
+
+                        // $link_text = 'Go to family&apos;s page';
+
+
+
+                        if ($humo_option["url_rewrite"] == "j") {
+                            $url = 'family/' . $picqryDb->event_tree_id . '/' . $picqryDb->event_connect_id;
+                        } else {
+                            $url = 'index.php?page=family&tree_id=' . $picqryDb->event_tree_id . '&id=' . $picqryDb->event_connect_id;
+                        }
+
+                        // TODO use function to build link:
+                        //$vars['pers_family'] = $pers_family;
+                        //$link = $link_cls->get_link('../', 'family', $tree_id, true, $vars);
+                        //$link .= "main_person=" . $person->pers_gedcomnumber;
+
+                        //TODO: retrieve family father and mother names and put them into text as in persons code (two versions for privacy)
+                        //$link_text = __('Go to family&apos;s page');
+
+                    }
+
+                    $text .= '<a href="' . $url . '">' . $link_text . '</a>';
+                    if ($picqryDb->event_text !== '' or $date_place !== '') {
+                        // this code shortens event text below photos to 50 chars and adds '...' if its above 50 chars. Photos with long texts added looks bad...
+                        $shortEventText = (mb_strlen($picqryDb->event_text, "UTF-8") > 50) ? mb_substr($picqryDb->event_text, 0, 50, "UTF-8") . '...' : $picqryDb->event_text;
+                        $text .= '<br>' . $date_place . $shortEventText;
+                    }
+                    $text .= '</div>';
+                    // add displayed photo to table for checking uniqueness
+                    $temp_pic_names_table[] = $picname;
                     // *** Show first available picture without privacy restrictions ***
                     break;
                 }
-
-                // *** TEST privacy filter ***
-                //else{
-                //	$picname = str_replace(" ","_",$picqryDb->event_event);
-                //	$text.='<img src="'.$tree_pict_path.$picname.'" width="200"
-                //		style="border-radius: 15px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">';
-                //	$text.=$picqryDb->event_id.' tree_id:'.$picqryDb->event_tree_id.' ';
-                //	$text.=$man_cls->privacy.'PRIVACY<br>';
-                //}
             }
         }
         return $text;
@@ -847,8 +916,7 @@ class Mainindex_cls
             }
         }
 
-        $person = "SELECT pers_patronym FROM humo_persons
-            WHERE pers_tree_id='" . $tree_id . "' AND pers_patronym LIKE '_%' AND pers_lastname ='' LIMIT 0,1";
+        $person = "SELECT pers_patronym FROM humo_persons WHERE pers_tree_id='" . $tree_id . "' AND pers_patronym LIKE '_%' AND pers_lastname ='' LIMIT 0,1";
         @$personDb = $dbh->query($person);
         if ($personDb->rowCount() > 0) {
             $path_tmp = $link_cls->get_link($uri_path, 'list', $tree_id, true);
@@ -997,79 +1065,101 @@ class Mainindex_cls
         return $text . '</div>';
     }
 
-    public function show_footer(): void
-    {
-        global $bot_visit, $humo_option, $uri_path;
-
-        echo '<br><div class="humo_version">';
-        // *** Show owner of family tree ***
-        echo $this->owner();
-
-        // *** Show HuMo-genealogy link ***
-        //printf(__('This database is made by %s, a freeware genealogical  program'), '<a href="https://humo-gen.com">HuMo-genealogy</a>');
-        printf(__('This website is created using %s, a freeware genealogical  program'), '<a href="https://humo-gen.com">HuMo-genealogy</a>');
-        echo '.<br>';
-
-        // *** Show European cookie information ***
-        $url = $humo_option["url_rewrite"] == "j" ? $uri_path . 'cookies' : 'index.php?page=cookies';
-        if (!$bot_visit) {
-            printf(__('European law: %s cookie information'), '<a href="' . $url . '">HuMo-genealogy');
-        }
-        echo '</a>';
-        echo '</div>';
-    }
-
     // *** Show slideshow ***
     public function show_slideshow(): void
     {
         global $humo_option;
+?>
 
-        // *** Used inline CSS, so it will be possible to use other CSS style (can be used for future slideshow options) ***
-        echo '<style>
+        <!-- Used inline CSS, so it will be possible to use other CSS style (can be used for future slideshow options) -->
+        <style>
             /* CSS3 slider for mainmenu */
             /* @import url(http://fonts.googleapis.com/css?family=Istok+Web); */
             @keyframes slidy {
-                0% { left: 0%; }
-                20% { left: 0%; }
-                25% { left: -100%; }
-                45% { left: -100%; }
-                50% { left: -200%; }
-                70% { left: -200%; }
-                75% { left: -300%; }
-                95% { left: -300%; }
-                100% { left: -400%; }
+                0% {
+                    left: 0%;
+                }
+
+                20% {
+                    left: 0%;
+                }
+
+                25% {
+                    left: -100%;
+                }
+
+                45% {
+                    left: -100%;
+                }
+
+                50% {
+                    left: -200%;
+                }
+
+                70% {
+                    left: -200%;
+                }
+
+                75% {
+                    left: -300%;
+                }
+
+                95% {
+                    left: -300%;
+                }
+
+                100% {
+                    left: -400%;
+                }
             }
+
             /* body, figure { */
             figure {
                 margin: 0;
                 /*	font-family: Istok Web, sans-serif; */
                 font-weight: 100;
-                
+
                 /* height:250px; */
             }
+
             div#captioned-gallery {
-                width: 100%; overflow: hidden; 
+                width: 100%;
+                overflow: hidden;
                 margin-top: -17px;
             }
-            figure.slider { 
-                position: relative; width: 500%; 
-                font-size: 0; animation: 30s slidy infinite; 
+
+            figure.slider {
+                position: relative;
+                width: 500%;
+                font-size: 0;
+                animation: 30s slidy infinite;
             }
-            figure.slider figure { 
-                width: 20%; height: auto;
-                display: inline-block;  position: inherit; 
+
+            figure.slider figure {
+                width: 20%;
+                height: auto;
+                display: inline-block;
+                position: inherit;
             }
-            figure.slider img { width: 100%; height: auto; }
+
+            figure.slider img {
+                width: 100%;
+                height: auto;
+            }
+
             figure.slider figure figcaption {
-                position: absolute; bottom: 10px;
-                background: rgba(0,0,0,0.4);
-                color: #fff; width: 100%;
-                font-size: 1.2rem; padding: .6rem;
-                text-shadow: 2px 2px 4px #000000; 
+                position: absolute;
+                bottom: 10px;
+                background: rgba(0, 0, 0, 0.4);
+                color: #fff;
+                width: 100%;
+                font-size: 1.2rem;
+                padding: .6rem;
+                text-shadow: 2px 2px 4px #000000;
             }
+
             /* end of CSS3 slider */
-        </style>';
-?>
+        </style>
 
         <div id="captioned-gallery">
             <figure class="slider">

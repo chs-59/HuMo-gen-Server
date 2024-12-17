@@ -4,15 +4,6 @@ include_once(__DIR__ . "/../include/select_tree.php");
 
 class TreesController
 {
-    /*
-    private $editor_cls;
-
-    public function __construct()
-    {
-        $this->editor_cls = new editor_cls;
-    }
-    */
-
     public function detail($dbh, $tree_id, $db_functions, $selected_language)
     {
         $treesModel = new TreesModel($dbh);
@@ -28,10 +19,13 @@ class TreesController
         if ($trees['menu_tab'] == 'tree_main') {
             include_once(__DIR__ . "/../../include/show_tree_date.php");
             include_once(__DIR__ . "/../../views/partial/select_language.php");
-
             include(__DIR__ . '/../../languages/' . $trees['language2'] . '/language_data.php');
 
-            //require_once __DIR__ . "/../models/tree_admin.php";
+            require_once __DIR__ . "/../models/tree_admin.php";
+            $tree_adminModel = new TreeAdminModel($dbh);
+            $trees['count_trees'] = $tree_adminModel->count_trees($dbh);
+            $trees['collation'] = $tree_adminModel->get_collation($dbh);
+
             $trees['language_path'] = 'index.php?page=tree&amp;tree_id=' . $trees['tree_id'] . '&amp;';
         } elseif ($trees['menu_tab'] == 'tree_gedcom') {
             include_once(__DIR__ . "/../include/gedcom_asciihtml.php");
@@ -57,7 +51,19 @@ class TreesController
                 $trees['gedcom_directory'] = $gedcomModel->get_gedcom_directory();
             }
         } elseif ($trees['menu_tab'] == 'tree_data') {
+            $trees['tree_pict_path'] = $treesModel->get_tree_pict_path($dbh, $tree_id);
+
+            // *** Check for default path ***
+            if (substr($trees['tree_pict_path'], 0, 1) === '|') {
+                $trees['tree_pict_path'] = substr($trees['tree_pict_path'], 1);
+                $trees['default_path'] = true;
+            } else {
+                $trees['default_path'] = false;
+            }
+
             //require_once __DIR__ . "/../models/tree_data.php";
+            //$tree_dataModel = new TreeDataModel($dbh);
+            //$trees['count_trees'] = $tree_dataModel->count_trees($dbh);
         } elseif ($trees['menu_tab'] == 'tree_text') {
             require_once __DIR__ . "/../models/tree_text.php";
             $tree_textModel = new TreeTextModel($dbh);

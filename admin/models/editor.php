@@ -622,8 +622,6 @@ class EditorModel
                 WHERE pers_tree_id='" . $this->tree_id . "' AND pers_gedcomnumber='" . safe_text_db($this->pers_gedcomnumber) . "'";
             $this->dbh->query($sql);
 
-
-
             // *** Save birth declaration ***
             if ($_POST['birth_decl_date'] || $_POST['birth_decl_place'] || $_POST['birth_decl_text']) {
                 if ($_POST['birth_decl_id'] && is_numeric($_POST['birth_decl_id'])) {
@@ -633,7 +631,6 @@ class EditorModel
                         event_text='" . safe_text_db($_POST['birth_decl_text']) . "',
                         event_changed_user_id='" . $this->userid . "'
                         WHERE event_id='" . $_POST['birth_decl_id'] . "'";
-                    //echo $sql;
                     $this->dbh->query($sql);
                 } else {
                     $sql = "INSERT INTO humo_events SET
@@ -664,7 +661,6 @@ class EditorModel
                         event_text='" . safe_text_db($_POST['death_decl_text']) . "',
                         event_changed_user_id='" . $this->userid . "'
                         WHERE event_id='" . $_POST['death_decl_id'] . "'";
-                    //echo $sql;
                     $this->dbh->query($sql);
                 } else {
                     $sql = "INSERT INTO humo_events SET
@@ -686,8 +682,7 @@ class EditorModel
                 }
             }
 
-
-            // extra UPDATE queries if jewish dates is enabled
+            // *** Extra UPDATE queries if jewish dates is enabled ***
             if ($this->humo_option['admin_hebnight'] == "y") {
                 $per_bir_heb = "";
                 $per_bur_heb = "";
@@ -880,7 +875,47 @@ class EditorModel
                 pers_new_user_id='" . $this->userid . "'";
             $this->dbh->query($sql);
 
-            // only needed for jewish settings
+            // *** Save birth declaration ***
+            if ($_POST['birth_decl_date'] || $_POST['birth_decl_place'] || $_POST['birth_decl_text']) {
+                $sql = "INSERT INTO humo_events SET
+                    event_tree_id='" . $this->tree_id . "',
+                    event_gedcomnr='',
+                    event_order='1',
+                    event_connect_kind='person',
+                    event_connect_id='" . $new_gedcomnumber . "',
+                    event_kind='birth_declaration',
+                    event_event='',
+                    event_event_extra='',
+                    event_gedcom='EVEN',
+                    event_date='" . safe_text_db($_POST['birth_decl_date']) . "',
+                    event_place='" . safe_text_db($_POST['birth_decl_place']) . "',
+                    event_text='" . safe_text_db($_POST['birth_decl_text']) . "',
+                    event_quality='',
+                    event_new_user_id='" . $this->userid . "'";
+                $this->dbh->query($sql);
+            }
+
+            // *** Save death declaration ***
+            if ($_POST['death_decl_date'] || $_POST['death_decl_place'] || $_POST['death_decl_text']) {
+                $sql = "INSERT INTO humo_events SET
+                    event_tree_id='" . $this->tree_id . "',
+                    event_gedcomnr='',
+                    event_order='1',
+                    event_connect_kind='person',
+                    event_connect_id='" . $new_gedcomnumber . "',
+                    event_kind='death_declaration',
+                    event_event='',
+                    event_event_extra='',
+                    event_gedcom='EVEN',
+                    event_date='" . safe_text_db($_POST['death_decl_date']) . "',
+                    event_place='" . safe_text_db($_POST['death_decl_place']) . "',
+                    event_text='" . safe_text_db($_POST['death_decl_text']) . "',
+                    event_quality='',
+                    event_new_user_id='" . $this->userid . "'";
+                $this->dbh->query($sql);
+            }
+
+            // *** Only needed for jewish settings ***
             if ($this->humo_option['admin_hebnight'] == "y" && isset($_POST["pers_birth_date_hebnight"])) {
                 $sql = "UPDATE humo_persons SET
                     pers_birth_date_hebnight='" . safe_text_db($_POST["pers_birth_date_hebnight"]) . "',

@@ -170,10 +170,12 @@ if ($hourglass === false) {
                                 if ($data["dna"] != "ydna") {
                                     $selected = "";
                                 }
-                                echo '<option value="' . $path . 'main_person=' .
-                                    $data["main_person"] . '&amp;direction=' . $data["direction"] . '&amp;dnachart=' . "ydna" . '&amp;chosensize=' .
-                                    $data["size"] . '&amp;chosengen=' . $data["chosengen"] . '" ' . $selected . '>' . __('Y-DNA Carriers only') . '</option>';
+                            ?>
+                                <option value="<?= $path; ?>main_person=<?= $data["main_person"]; ?>&amp;direction=<?= $data["direction"]; ?>&amp;dnachart=ydna&amp;chosensize=<?= $data["size"]; ?>&amp;chosengen=<?= $data["chosengen"]; ?>" <?= $selected; ?>>
+                                    <?= __('Y-DNA Carriers only'); ?>
+                                </option>
 
+                            <?php
                                 $selected = "";
                                 if ($data["dna"] == "ydnamark") {
                                     $selected = "selected";
@@ -192,6 +194,7 @@ if ($hourglass === false) {
                                 echo '<option value="' . $path . 'main_person=' .
                                     $data["main_person"] . '&amp;direction=' . $data["direction"] . '&amp;dnachart=' . "mtdna" . '&amp;chosensize=' .
                                     $data["size"] . '&amp;chosengen=' . $data["chosengen"] . '" ' . $selected . '>' . __('mtDNA Carriers only') . '</option>';
+
                                 if ($data["base_person_sexe"]  == "F") {
                                     $selected = "selected";
                                     if ($data["dna"] != "mtdnamark") {
@@ -249,12 +252,16 @@ if ($hourglass === false) {
             </div>
         </div>
 
+        <!-- TODO check div. It's too wide (is set in doublescroll script). Doublescroll isn't in use anymore. -->
+        <style type="text/css">
+            #doublescroll {
+                position: relative;
+                width: auto;
+                height: <?= $the_height; ?>px;
+                z-index: 10;
+            }
+        </style>
     <?php
-    // TODO check div. It's too wide (is set in doublescroll script). Doublescroll doesn't work.
-    echo '<style type="text/css">';
-    //echo '#doublescroll { position:relative; width:auto; height:' . $the_height . 'px; overflow: auto; overflow-y: hidden;z-index:10; }';
-    echo '#doublescroll { position:relative; width:auto; height:' . $the_height . 'px; z-index:10; }';
-    echo '</style>';
     echo '<div id="doublescroll" class="wrapper" style="direction:' . $rtlmarker . ';">';
 
     // Test bootstrap container
@@ -321,12 +328,7 @@ for ($w = 0; $w < count($genarray); $w++) {
                             // *** Only show 1st picture ***
                             if (isset($picture_qry[0])) {
                                 $pictureDb = $picture_qry[0];
-                                $picture = show_picture($tree_pict_path, $pictureDb->event_event, 60, 65);
-                                //$replacement_text.='<img src="'.$tree_pict_path.$picture['thumb'].$picture['picture'].'" style="float:left; margin:5px;" alt="'.$pictureDb->event_text.'" height="65px">';
-                                //$replacement_text.='<img src="'.$tree_pict_path.$picture['thumb'].$picture['picture'].'" style="float:left; margin:5px;" alt="'.$pictureDb->event_text.'" width="'.$picture['width'].'"';
-                                $replacement_text .= '<img src="' . $picture['path'] . $picture['thumb'] . $picture['picture'] . '" style="float:left; margin:5px;" alt="' . $pictureDb->event_text . '" width="' . $picture['width'] . '"';
-                                //if (isset($picture['height'])) $replacement_text.=' height="'.$picture['height'].'"';
-                                $replacement_text .= '>';
+                                $replacement_text .= print_thumbnail($tree_pict_path, $pictureDb->event_event, 60, 65, 'float:left; margin:5px;');
                             }
                         }
 

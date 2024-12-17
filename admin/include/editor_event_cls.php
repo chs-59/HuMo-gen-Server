@@ -111,6 +111,9 @@ class editor_event_cls
         global $editor_cls, $path_prefix, $tree_pict_path, $humo_option, $field_popup;
         global $db_functions;
 
+        include_once(__DIR__ . "/../include/media_inc.php");
+        global $pcat_dirs;
+
         $text = '';
 
         if ($event_kind == 'picture' || $event_kind == 'marriage_picture') {
@@ -180,18 +183,6 @@ class editor_event_cls
 
         if ($event_kind == 'person') {
             // *** Filter several events, allready shown in seperate lines in editor ***
-            /*
-            $qry = "SELECT * FROM humo_events
-                WHERE event_tree_id='" . $tree_id . "'
-                AND event_connect_kind='person'
-                AND event_connect_id='" . $event_connect_id . "'
-                AND event_kind NOT IN ('name','NPFX','NSFX','nobility','title','lordship','birth_declaration','baptism_witness',
-                'death_declaration','burial_witness','profession','religion','picture',
-                'birth_decl_witness', 'death_decl_witness')
-                " . $hebtext . "
-                ORDER BY event_kind, event_order";
-            */
-
             $qry = "SELECT * FROM humo_events
                 WHERE event_tree_id='" . $tree_id . "'
                 AND event_connect_kind='person'
@@ -224,21 +215,11 @@ class editor_event_cls
             $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='CHR' AND event_connect_id='" . $event_connect_id . "' AND event_kind='ASSO' ORDER BY event_order";
         } elseif ($event_connect_kind == 'birth_declaration') {
             $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='birth_declaration' AND event_connect_id='" . $event_connect_id . "' AND event_kind='ASSO' ORDER BY event_order";
-            //} elseif ($event_kind == 'baptism_witness') {
-            // TODO: remove this query
-            //$qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='person' AND event_connect_id='" . $event_connect_id . "' AND event_kind='baptism_witness' ORDER BY event_order";
-            //} elseif ($event_connect_kind == 'death_declaration') {
-            //    $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='death_declaration' AND event_connect_id='" . $event_connect_id . "' AND event_kind='witness' ORDER BY event_order";
-
         } elseif ($event_kind == 'ASSO' && $event_connect_kind == 'BURI') {
             // ADDED oct. 2024
             $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='BURI' AND event_connect_id='" . $event_connect_id . "' AND event_kind='ASSO' ORDER BY event_order";
         } elseif ($event_connect_kind == 'death_declaration') {
             $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='death_declaration' AND event_connect_id='" . $event_connect_id . "' AND event_kind='ASSO' ORDER BY event_order";
-            //} elseif ($event_kind == 'burial_witness') {
-            // TODO: remove this query
-            //$qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='person' AND event_connect_id='" . $event_connect_id . "' AND event_kind='burial_witness' ORDER BY event_order";
-
         } elseif ($event_kind == 'profession') {
             $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='person' AND event_connect_id='" . $event_connect_id . "' AND event_kind='profession' ORDER BY event_order";
         } elseif ($event_kind == 'religion') {
@@ -256,28 +237,14 @@ class editor_event_cls
                 WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='person' AND event_connect_id='" . $event_connect_id . "' AND
                 event_kind='picture' " . $searchpic . " ORDER BY event_order";
         } elseif ($event_kind == 'family') {
-            /*
-            $qry = "SELECT * FROM humo_events 
-                WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='family' AND event_connect_id='" . $event_connect_id . "'
-                AND event_kind!='marriage_witness'
-                AND event_kind!='marriage_witness_rel'
-                AND event_kind!='picture'
-                ORDER BY event_kind, event_order";
-            */
             $qry = "SELECT * FROM humo_events 
                 WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='family' AND event_connect_id='" . $event_connect_id . "'
                 AND event_kind!='ASSO'
                 AND event_kind!='picture'
                 ORDER BY event_kind, event_order";
-
-            //} elseif ($event_kind == 'marriage_witness') {
-            //    $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='family' AND event_connect_id='" . $event_connect_id . "' AND event_kind='marriage_witness' ORDER BY event_kind, event_order";
         } elseif ($event_connect_kind == 'MARR' && $event_kind == 'ASSO') {
             // TODO: remove this query
             $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='MARR' AND event_connect_id='" . $event_connect_id . "' AND event_kind='ASSO' ORDER BY event_kind, event_order";
-
-            //} elseif ($event_kind == 'marriage_witness_rel') {
-            //    $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='family' AND event_connect_id='" . $event_connect_id . "' AND event_kind='marriage_witness_rel' ORDER BY event_kind, event_order";
         } elseif ($event_connect_kind == 'MARR_REL' && $event_kind == 'ASSO') {
             // TODO: remove this query
             $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' AND event_connect_kind='MARR_REL' AND event_connect_id='" . $event_connect_id . "' AND event_kind='ASSO' ORDER BY event_kind, event_order";
@@ -931,12 +898,6 @@ class editor_event_cls
                         }
 
                         // *** Witness and declaration persons ***
-                        //if (
-                        //    $data_listDb->event_kind == 'baptism_witness' || $data_listDb->event_kind == 'birth_decl_witness' || $data_listDb->event_kind == 'death_decl_witness' || $data_listDb->event_kind == 'burial_witness' || $data_listDb->event_kind == 'marriage_witness' || $data_listDb->event_kind == 'marriage_witness_rel'
-                        //) {
-                        //if (
-                        //    $data_listDb->event_kind == 'baptism_witness' || $data_listDb->event_connect_kind == 'birth_declaration' || $data_listDb->event_connect_kind == 'death_declaration' || $data_listDb->event_kind == 'burial_witness' || $data_listDb->event_kind == 'marriage_witness' || $data_listDb->event_kind == 'marriage_witness_rel'
-                        //) {
                         if (
                             $data_listDb->event_kind == 'ASSO' || $data_listDb->event_connect_kind == 'birth_declaration' || $data_listDb->event_connect_kind == 'death_declaration'
                         ) {
@@ -1057,109 +1018,8 @@ class editor_event_cls
                         <?php } elseif ($data_listDb->event_kind == 'picture') { ?>
                             <div>
                                 <?php
-                                $tree_pict_path3 = $tree_pict_path;  // we change it only if category subfolders exist
-                                $temp = $dbh->query("SHOW TABLES LIKE 'humo_photocat'");
-                                if ($temp->rowCount()) {  // there is a category table 
-                                    $catgr = $dbh->query("SELECT photocat_prefix FROM humo_photocat WHERE photocat_prefix != 'none' GROUP BY photocat_prefix");
-                                    if ($catgr->rowCount()) {
-                                        while ($catDb = $catgr->fetch(PDO::FETCH_OBJ)) {
-                                            if (substr($data_listDb->event_event, 0, 3) == $catDb->photocat_prefix && is_dir($path_prefix . $tree_pict_path3 . substr($data_listDb->event_event, 0, 2))) {   // there is a subfolder of this prefix
-                                                $tree_pict_path3 = $tree_pict_path3 . substr($data_listDb->event_event, 0, 2) . '/';  // look in that subfolder
-                                            }
-                                        }
-                                    }
-                                }
+                                echo  print_thumbnail($path_prefix . $tree_pict_path, $data_listDb->event_event, 0, 120, '', '', true, 'target="_blank"' );
 
-                                $extensions_check = substr($path_prefix . $tree_pict_path3 . $data_listDb->event_event, -3, 3);
-                                if (strtolower($extensions_check) === "pdf") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '"><img src="../images/pdf.jpeg"></a>';
-                                } elseif (strtolower($extensions_check) === "doc" || strtolower(substr($path_prefix . $tree_pict_path3 . $data_listDb->event_event, -4, 4)) === "docx") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '"><img src="../images/msdoc.gif"></a>';
-                                }
-                                // *** Show AVI Video file ***
-                                elseif ($extensions_check === "avi") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank"><img src="../images/video-file.png"></a>';
-                                }
-                                // *** Show WMV Video file ***
-                                elseif ($extensions_check === "wmv") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank"><img src="../images/video-file.png"></a>';
-                                }
-                                // *** Show MPG Video file ***
-                                elseif (strtolower($extensions_check) === "mpg") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank"><img src="../images/video-file.png"></a>';
-                                }
-                                // *** Show MP4 Video file ***
-                                elseif (strtolower($extensions_check) === "mp4") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank"><img src="../images/video-file.png"></a>';
-                                }
-                                // *** Show MOV Video file ***
-                                elseif (strtolower($extensions_check) === "mov") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank"><img src="../images/video-file.png"></a>';
-                                }
-                                // *** Show WMA Audio file ***
-                                elseif (strtolower($extensions_check) === "wma") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank"><img src="../images/audio.gif"></a>';
-                                }
-                                // *** Show WAV Audio file ***
-                                elseif (strtolower($extensions_check) === "wav") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank"><img src="../images/audio.gif"></a>';
-                                }
-                                // *** Show MP3 Audio file ***
-                                elseif (strtolower($extensions_check) === "mp3") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank"><img src="../images/audio.gif"></a>';
-                                }
-                                // *** Show MID Audio file ***
-                                elseif (strtolower($extensions_check) === "mid") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank"><img src="../images/audio.gif"></a>';
-                                }
-                                // *** Show RAM Audio file ***
-                                elseif (strtolower($extensions_check) === "ram") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank"><img src="../images/audio.gif"></a>';
-                                }
-                                // *** Show RA Audio file ***
-                                elseif (strtolower($extensions_check) === ".ra") {
-                                    echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank"><img src="../images/audio.gif"></a>';
-                                } else {
-                                    $show_image = '';
-
-                                    // *** No subdirectory: show picture/ thumbnail ***
-                                    $thumb_prefix = '';
-                                    if (file_exists($path_prefix . $tree_pict_path3 . 'thumb_' . $data_listDb->event_event)) {
-                                        $thumb_prefix = 'thumb_';
-                                    }
-                                    $picture = $path_prefix . $tree_pict_path3 . $thumb_prefix . $data_listDb->event_event;
-                                    //$tree_pic_path3 is missing for family picture
-                                    //    echo $path_prefix .'-'. $tree_pict_path3.'-'.$data_listDb->event_event;
-                                    // *** Check if picture is in subdirectory ***
-                                    // Example: subdir1_test/xy/2022_02_12 Scheveningen.jpg
-                                    if ($thumb_prefix === '') {
-                                        $dirname = dirname($data_listDb->event_event); // subdir1_test/xy/2022_02_12
-                                        $basename = basename($data_listDb->event_event); // 2022_02_12 Scheveningen.jpg
-                                        if (file_exists($path_prefix . $tree_pict_path3 . $dirname . '/thumb_' . $basename)) {
-                                            $thumb_prefix = 'thumb_';
-                                        }
-                                        $picture = $path_prefix . $tree_pict_path3 . $dirname . '/' . $thumb_prefix . $basename;
-                                    }
-
-                                    if ($data_listDb->event_event && file_exists($picture)) {
-                                        // *** Get size of original picture ***
-                                        list($width, $height) = getimagesize($picture);
-                                        $size = ' style="width:100px"';
-                                        if ($height > $width) {
-                                            $size = ' style="height:80px"';
-                                        }
-                                        //$show_image= '<img src="'.$path_prefix.$tree_pict_path3.$thumb_prefix.$data_listDb->event_event.'"'.$size.'>';
-                                        $show_image = '<img src="' . $picture . '"' . $size . '>';
-                                    } else {
-                                        $show_image = '<img src="../images/thumb_missing-image.jpg" style="width:100px">';
-                                    }
-                                    //Check line above. If thumb if missing, missing picture is shown...
-
-                                    if (!$data_listDb->event_event) {
-                                        $show_image = '<img src="../images/thumb_missing-image.jpg" style="width:100px">';
-                                    }
-                                    echo $show_image;
-                                }
                                 ?>
                             </div>
 
@@ -1563,8 +1423,6 @@ class editor_event_cls
 
                         <!-- Date and place by event -->
                         <?php
-                        //if ($event_kind != 'baptism_witness' && $event_kind != 'burial_witness' && $event_kind != 'marriage_witness' && $event_kind != 'marriage_witness_rel') { 
-                        //$witness_array = array("birth_decl_witness", "baptism_witness", "death_decl_witness", "burial_witness", "marriage_witness", "marriage_witness_rel");
                         $witness_array = array("ASSO", "witness");
                         if (!in_array($event_kind, $witness_array)) {
                         ?>
@@ -1587,8 +1445,6 @@ class editor_event_cls
                         }
                         ?>
                         <?php
-                        //if ($event_kind != 'baptism_witness' && $event_kind != 'burial_witness' && $event_kind != 'marriage_witness' && $event_kind != 'marriage_witness_rel') {
-                        //$witness_array = array("birth_decl_witness", "baptism_witness", "death_decl_witness", "burial_witness", "marriage_witness", "marriage_witness_rel");
                         $witness_array = array("ASSO", "witness");
                         if (!in_array($event_kind, $witness_array)) {
                         ?>
@@ -1609,18 +1465,19 @@ class editor_event_cls
                         if ($data_listDb->event_text && preg_match('/\R/', $data_listDb->event_text)) {
                             $field_text_selected = $field_text_medium;
                         }
+                        ?>
 
-                        //$witness_array = array("birth_decl_witness", "baptism_witness", "death_decl_witness", "burial_witness", "marriage_witness", "marriage_witness_rel");
+                        <div class="row mb-2">
+                            <label for="event_date" class="col-md-3 col-form-label"><?= __('Text'); ?></label>
+                            <div class="col-md-7">
+                                <textarea rows="1" name="event_text[<?= $data_listDb->event_id; ?>]" <?= $field_text_selected; ?> class="form-control form-control-sm"><?= $editor_cls->text_show($data_listDb->event_text); ?></textarea>
+                            </div>
+                        </div>
+
+                        <?php
                         $witness_array = array("ASSO", "witness");
                         if (!in_array($event_kind, $witness_array)) {
                         ?>
-                            <div class="row mb-2">
-                                <label for="event_date" class="col-md-3 col-form-label"><?= __('Text'); ?></label>
-                                <div class="col-md-7">
-                                    <textarea rows="1" name="event_text[<?= $data_listDb->event_id; ?>]" <?= $field_text_selected; ?> class="form-control form-control-sm"><?= $editor_cls->text_show($data_listDb->event_text); ?></textarea>
-                                </div>
-                            </div>
-
                             <!-- Source by event -->
                             <div class="row mb-2">
                                 <label for="source_event" class="col-md-3 col-form-label"><?= __('Source'); ?></label>
@@ -1725,15 +1582,43 @@ class editor_event_cls
             }
         }
 
-        if ($event_kind == 'picture' || $event_kind == 'marriage_picture') {
+        if ($event_kind == 'picture' || $event_kind == 'marriage_picture' || $event_kind == 'source_picture') {
+            // get subfolders of media dir 
+            $subfolders = glob( $path_prefix . $tree_pict_path . '[^.]*' , GLOB_ONLYDIR);
+            $ignore = array('cms', 'slideshow', 'thumbs');
             // *** Upload image ***
             ?>
             <tr class="table_header_large">
                 <td></td>
-                <td colspan="2">
+                <td colspan="1">
                     <?= __('Upload new image'); ?>
                     <input type="file" name="photo_upload">
-                    <input type="submit" name="<?php echo ($event_kind == 'picture') ? 'person_add_media' : 'relation_add_media'; ?>" title="submit" value="<?= __('Upload'); ?>" class="btn btn-sm btn-outline-primary">
+                    <input type="submit" name="<?php 
+                    if ($event_kind == 'picture') { echo 'person_add_media'; }
+                    elseif ($event_kind == 'marriage_picture') { echo 'relation_add_media'; }
+                    else { echo 'source_add_media'; }
+                    ?>" title="submit" value="<?= __('Upload'); ?>" class="btn btn-sm btn-outline-primary">
+                </td>
+                <td colspan="1">
+                   <select size="1" name="select_media_folder" class="form-select form-select-sm">
+                        <!-- For new source in new database... -->
+                        <option value=""><?= __('Main media folder'); ?></option>
+                        <?php
+                            $optcat = '';
+                            $optdir = '';
+                            foreach ($subfolders as $folder) {
+                                $bfolder = pathinfo($folder, PATHINFO_BASENAME);
+                                if (in_array($bfolder, $ignore)) {
+                                    // do nothing
+                                } elseif (array_key_exists( $bfolder .  '_', $pcat_dirs)) {
+                                    $optcat .='<option value="' . $bfolder . '">' . __('Category') .': ' . $pcat_dirs[$bfolder . '_']. '</option>';
+                                } else { 
+                                    $optdir .= '<option value="' . $bfolder . '">' . __('Directory') .': ' . $bfolder . '</option>';
+                                }
+                            }
+                            echo $optcat . $optdir;
+                        ?>
+                    </select>
                 </td>
             </tr>
         <?php

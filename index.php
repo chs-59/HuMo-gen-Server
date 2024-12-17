@@ -235,13 +235,19 @@ if (isset($matchedRoute['page'])) {
     if (isset($matchedRoute['select_tree_id'])) {
         $select_tree_id = $matchedRoute['select_tree_id'];
     }
+
     // *** Used for list_names ***
     if (isset($matchedRoute['last_name']) && is_string($matchedRoute['last_name'])) {
         $last_name = $matchedRoute['last_name'];
     }
-    // *** Used for source ***
-    // TODO improve processing of these variables 
-    if (isset($matchedRoute['id'])) {
+
+    // Old link from http://www.stamboomzoeker.nl to updated website using new links.
+    // http://127.0.0.1/humo-genealogy/gezin.php?database=humo2_&id=F59&hoofdpersoon=I151
+    if ($humo_option["url_rewrite"] == 'j' && isset($_GET["database"]) && isset($_GET["id"])) {
+        // Skip routing. Just use $_GET["id"] from link.
+    } elseif (isset($matchedRoute['id'])) {
+        // *** Used for source ***
+        // TODO improve processing of these variables 
         $id = $matchedRoute['id']; // for source
         $_GET["id"] = $matchedRoute['id']; // for family page, and other pages? TODO improve processing of these variables.
     }
@@ -517,7 +523,7 @@ if ($page == 'address') {
 } elseif ($page == 'photoalbum') {
     require __DIR__ . '/app/controller/photoalbumController.php';
     $controllerObj = new PhotoalbumController();
-    $photoalbum = $controllerObj->detail($dbh);
+    $photoalbum = $controllerObj->detail($dbh, $tree_id, $db_functions);
 } elseif ($page == 'register') {
     require __DIR__ . '/app/controller/registerController.php';
     $controllerObj = new RegisterController($db_functions);
