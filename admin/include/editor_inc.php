@@ -240,7 +240,6 @@ if (isset($_POST['marriage_event_add'])) {
 if (isset($_FILES['photo_upload']) && $_FILES['photo_upload']['name']) {
 
     include_once(__DIR__ . "/../include/media_inc.php");
-    global $pcat_dirs;
     
     // *** get path of pictures folder 
     $datasql = $dbh->query("SELECT * FROM humo_trees WHERE tree_prefix='" . $tree_prefix . "'");
@@ -253,9 +252,7 @@ if (isset($_FILES['photo_upload']) && $_FILES['photo_upload']['name']) {
     
     $safepath = '';
     $selected_subdir = preg_replace("/[\/\\\\]/", '',  $_POST['select_media_folder']); // remove all / and \ 
-    if (array_key_exists(substr($_FILES['photo_upload']['name'], 0, 3), $pcat_dirs)) { // old suffix style categories
-        $dir .= substr($_FILES['photo_upload']['name'], 0, 2) . '/';
-    } elseif (!empty($selected_subdir) &&                                              // new user selected dirs/cats
+    if (!empty($selected_subdir) &&                                              // new user selected dirs/cats
               is_dir($dir . $selected_subdir) ) {
         $dir .= $selected_subdir . '/';
         $safepath = $selected_subdir . '/';

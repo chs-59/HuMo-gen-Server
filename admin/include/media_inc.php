@@ -110,10 +110,14 @@ function resize_picture_IM($folder, $file, $maxheight = 1080, $maxwidth = 1920)
     return ($success);
 }
 //search for a thumbnail or mime type placeholder and returns the image tag
-function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $attrib = '')
+function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $attrib = '', $link2hires=false, $link_attrib='', $html_before='')
 {
-    global $pcat_dirs, $humo_option;
+    global $pcat_dirs, $humo_option, $dbh;
 
+    if (!$file || !$folder) {
+        return '<img src="../images/thumb_missing-image.jpg" style="width:auto; height:120px;" title="' . $folder . $file . ' missing path/filename">';
+    }
+    
     $img_style = ' style="';
     if ($maxw > 0 && $maxh > 0) {
         $img_style .= 'width:auto; height:auto; max-width:' . $maxw . 'px; max-height:' . $maxh . 'px; ' . $css . '" ' . $attrib;
@@ -124,24 +128,37 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
     } else {
         $img_style .= 'width:auto; height:120px; ' . $css . '" ' . $attrib;
     }
-
-    if (!$file || !$folder) {
-        return '<img src="../images/thumb_missing-image.jpg" style="width:auto; height:120px;" title="' . $folder . $file . ' missing path/filename">';
+    // this is a repair kit for inconsistent suffix code.
+    // should be removed after a while in later versions (2024-12-17)
+    // looking for media files in suffix folder and add suffix folder to Db
+    if (!file_exists($folder . $file)) {
+        if (array_key_exists(substr($file, 0, 3), $pcat_dirs)
+            && file_exists($folder . substr($file, 0, 2) . '/' . $file) ) {
+            $sql = "UPDATE humo_events SET
+            event_event='" . safe_text_db(substr($file, 0, 2) . '/' . $file) . "' WHERE event_event='" . safe_text_db($file) . "'";
+            $result = $dbh->query($sql);
+            //echo 'DB update: ' . $result;
+            $file = substr($file, 0, 2) . '/' . $file;
+        }
     }
-
-    $thumb_url =  thumbnail_exists($folder, $file);
-    if (!empty($thumb_url)) {
-        return '<img src="' . $thumb_url . '"' . $img_style . '>';
-    } // found thumbnail
-
-    // no thumbnail found, create a new one
-    // first check if/where org_file exist
-    if (array_key_exists(substr($file, 0, 3), $pcat_dirs)) {
-        $folder .= substr($file, 0, 2) . '/';
-    } // photobook categories
+    // END repair kit
+    
     if (!file_exists($folder . $file)) {
         return '<img src="../images/thumb_missing-image.jpg" style="width:auto; height:120px;" title="' . $folder . $file . ' not found">';
     }
+    $link = '';
+    $link_close = '';
+    if ($link2hires) {
+        $link = '<a href="' . $folder . $file . '" ' . $link_attrib . '>' . $html_before;
+        $link_close = '</a>';
+    }
+    
+    $thumb_url =  thumbnail_exists($folder, $file);
+    if (!empty($thumb_url)) {
+        return $link . '<img src="' . $thumb_url . '"' . $img_style . '>' . $link_close;
+    } // found thumbnail
+
+    // no thumbnail found, create a new one
     // check for mime type and no_thumb file
     if (
         check_media_type($folder, $file) &&
@@ -150,7 +167,7 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
         // script will possibily die here and hidden no_thumb file becomes persistent
         // so this code might be skiped afterwords
         if ($humo_option["thumbnail_auto_create"] == 'y' && create_thumbnail($folder, $file)) {
-            return '<img src="' . $folder . 'thumb_' . $file . '.jpg' . '"' . $img_style . '>';
+            return $link . '<img src="' . $folder . 'thumb_' . $file . '.jpg' . '"' . $img_style . '>' . $link_close;
         }
     }
 
@@ -185,19 +202,19 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
         case 'ra':
             return '<img src="../images/audio.gif" alt="RA">';
         case 'jpg':
-            return '<img src="' . $folder . $file . '"' . $img_style . '>';
+            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
         case 'jpeg':
-            return '<img src="' . $folder . $file . '"' . $img_style . '>';
+            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
         case 'png':
-            return '<img src="' . $folder . $file . '"' . $img_style . '>';
+            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
         case 'gif':
-            return '<img src="' . $folder . $file . '"' . $img_style . '>';
+            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
         case 'tif':
-            return '<img src="' . $folder . $file . '"' . $img_style . '>';
+            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
         case 'tiff':
-            return '<img src="' . $folder . $file . '"' . $img_style . '>';
+            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
         case 'bmp':
-            return '<img src="' . $folder . $file . '"' . $img_style . '>';
+            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
     }
     return '<img src="../images/thumb_missing-image.jpg"' . $img_style . '>';
 }

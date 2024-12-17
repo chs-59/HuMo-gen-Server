@@ -8,7 +8,6 @@ function show_media($event_connect_kind, $event_connect_id)
     global $data, $page;
 
     include_once(__DIR__ . "/../admin/include/media_inc.php");
-    //$pcat_dirs = get_pcat_dirs();
     global $pcat_dirs;
 
     $templ_person = array(); // local version
@@ -116,7 +115,7 @@ function show_media($event_connect_kind, $event_connect_id)
                 $event_event = strtolower($event_event);
             }
             // *** Show photo using the lightbox effect ***
-            if (in_array(strtolower(pathinfo($event_event, PATHINFO_EXTENSION)), array('jpg', 'png', 'gif', 'bmp', 'tif'))) {
+            if (in_array(strtolower(pathinfo($event_event, PATHINFO_EXTENSION)), array('jpg', 'jpeg', 'png', 'gif', 'bmp', 'tif'))) {
 
                 $line_pos = 0;
                 if ($media_event_text[$i]) {
@@ -130,7 +129,7 @@ function show_media($event_connect_kind, $event_connect_id)
                 // *** April 2021: using GLightbox ***
                 // *** lightbox can't handle brackets etc so encode it. ("urlencode" doesn't work since it changes spaces to +, so we use rawurlencode)
                 // *** But: reverse change of / character (if sub folders are used) ***
-                $picture = '<a href="' . $temp_path . str_ireplace("%2F", "/", rawurlencode($event_event)) . '" class="glightbox3" data-gallery="gallery' . $event_connect_id . '" data-glightbox="description: .custom-desc' . $media_event_id[$i] . '">';
+/*                $picture = '<a href="' . $temp_path . str_ireplace("%2F", "/", rawurlencode($event_event)) . '" class="glightbox3" data-gallery="gallery' . $event_connect_id . '" data-glightbox="description: .custom-desc' . $media_event_id[$i] . '">';
 
                 // *** Need a class for multiple lines and HTML code in a text ***
                 $picture .= '<div class="glightbox-desc custom-desc' . $media_event_id[$i] . '">';
@@ -141,6 +140,13 @@ function show_media($event_connect_kind, $event_connect_id)
 
                 $picture .= print_thumbnail($tree_pict_path, $event_event); // in media_inc.php. using default hight 120px
                 $picture .= '</a>';
+*/
+                $tmp_picinfo = '';
+                if ($date_place) { $tmp_picinfo .= $date_place . '<br>'; }
+                $tmp_picinfo .= $title_txt . '</div>';                
+                $link_attrib = 'class="glightbox3" data-gallery="gallery' . $event_connect_id . '" data-glightbox="description: .custom-desc' . $media_event_id[$i] . '"';
+                $html_before = '<div class="glightbox-desc custom-desc' . $media_event_id[$i] . '">' . $tmp_picinfo;
+                $picture = print_thumbnail($tree_pict_path, $event_event, 0, 120, '', '', true, $link_attrib, $html_before); 
 
                 $thumb_url = thumbnail_exists($temp_path, $event_event); //in media_inc.php: returns url of thumb or empty string
                 if (!empty($thumb_url)) {
@@ -152,7 +158,8 @@ function show_media($event_connect_kind, $event_connect_id)
                 $templ_person["pic_path" . $i] = trim($templ_person["pic_path" . $i]);
             } else {
                 // other media formats not to be displayed with lightbox
-                $picture = '<a href="' . $temp_path . $event_event . '" target="_blank">' . print_thumbnail($temp_path, $event_event) . '</a>';
+                $picture = print_thumbnail($tree_pict_path, $event_event, 0, 120, '', '', true, 'target="_blank"');
+//                $picture = '<a href="' . $temp_path . $event_event . '" target="_blank">' . print_thumbnail($temp_path, $event_event) . '</a>';
             }
 
 

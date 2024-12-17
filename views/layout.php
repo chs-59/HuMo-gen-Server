@@ -570,7 +570,7 @@ $menu_top = getActiveTopMenu($page);
                         //	AND $dbh->query("SELECT * FROM humo_settings WHERE setting_variable ='geo_trees'
                         //		AND setting_value LIKE '%@".$tree_id.";%' ")->rowCount() > 0)
                         if (
-                            $user["group_birthday_list"] == 'j' || $user["group_showstatistics"] == 'j' || $user["group_relcalc"] == 'j' || $user["group_googlemaps"] == 'j' || $user["group_contact"] == 'j' && $dataDb->tree_owner && $dataDb->tree_email || $user["group_latestchanges"] == 'j'
+                            $user["group_birthday_list"] == 'j' || $user["group_showstatistics"] == 'j' || $user["group_relcalc"] == 'j' || $user["group_googlemaps"] == 'j' || $user["group_contact"] == 'j' && isset($dataDb->tree_owner) && isset($dataDb->tree_email) || $user["group_latestchanges"] == 'j'
                         ) {
                     ?>
 

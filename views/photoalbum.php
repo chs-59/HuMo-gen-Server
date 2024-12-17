@@ -80,7 +80,6 @@ function show_media_files($pref)
     global $dataDb, $dbh, $photoalbum, $uri_path, $tree_id, $db_functions, $humo_option, $link_cls;
 
     include_once(__DIR__ . "/../admin/include/media_inc.php");
-    global $pcat_dirs;
 
     $tree_pict_path = $dataDb->tree_pict_path;
     if (substr($tree_pict_path, 0, 1) === '|') {
@@ -274,26 +273,24 @@ function show_media_files($pref)
                         }
                     }
                 }
-                $tmp_dir = $dir;
-                $picture = print_thumbnail($dir, $filename, 175, 120);
-                if (array_key_exists(substr($filename, 0, 3), $pcat_dirs)) {
-                    $tmp_dir .= substr($filename, 0, 2) . '/';
-                }
-                if (in_array(strtolower(pathinfo($filename, PATHINFO_EXTENSION)), array('jpg', 'png', 'gif', 'bmp', 'tif'))) {
-        ?>
+                
+                
+                if (in_array(strtolower(pathinfo($filename, PATHINFO_EXTENSION)), array('jpg', 'jpeg', 'png', 'gif', 'bmp', 'tif'))) {
+                    $link_attrib = 'class="glightbox3" data-gallery="gallery1" data-glightbox="description: .custom-desc' . $picture_nr .'"';
+                    $html_before = '<div class="glightbox-desc custom-desc' . $picture_nr . '">' . $picture_text2 . '</div>';
+                    $picture = print_thumbnail($dir, $filename, 175, 120, '', '', true, $link_attrib, $html_before); 
+                    ?>
 
                     <div class="photobook">
                         <!-- Show photo using the lightbox: GLightbox effect -->
-                        <a href="<?= $tmp_dir . $filename; ?>" class="glightbox3" data-gallery="gallery1" data-glightbox="description: .custom-desc<?= $picture_nr; ?>">
-                            <!-- Need a class for multiple lines and HTML code in a text -->
-                            <div class="glightbox-desc custom-desc<?= $picture_nr; ?>"><?= $picture_text2; ?></div>
-                            <?= $picture; ?>
-                        </a>
+                        <?= $picture; ?>
                         <div class="photobooktext"><?= $picture_text; ?></div>
                     </div>
-                <?php } else { ?>
+                <?php } else { 
+                    $picture = print_thumbnail($dir, $filename, 175, 120, '', '', true, 'target="_blank"'); 
+                    ?>
                     <div class="photobook">
-                        <a href="<?= $tmp_dir . $filename; ?>" target="_blank"><?= $picture; ?></a>
+                        <?= $picture; ?>
                         <div class="photobooktext"><?= $picture_text; ?></div>
                     </div>
         <?php

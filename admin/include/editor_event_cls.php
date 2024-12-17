@@ -1018,20 +1018,7 @@ class editor_event_cls
                         <?php } elseif ($data_listDb->event_kind == 'picture') { ?>
                             <div>
                                 <?php
-                                $tree_pict_path3 = $tree_pict_path;  // we change it only if category subfolders exist
-                                $temp = $dbh->query("SHOW TABLES LIKE 'humo_photocat'");
-                                if ($temp->rowCount()) {  // there is a category table 
-                                    $catgr = $dbh->query("SELECT photocat_prefix FROM humo_photocat WHERE photocat_prefix != 'none' GROUP BY photocat_prefix");
-                                    if ($catgr->rowCount()) {
-                                        while ($catDb = $catgr->fetch(PDO::FETCH_OBJ)) {
-                                            if (substr($data_listDb->event_event, 0, 3) == $catDb->photocat_prefix && is_dir($path_prefix . $tree_pict_path3 . substr($data_listDb->event_event, 0, 2))) {   // there is a subfolder of this prefix
-                                                $tree_pict_path3 = $tree_pict_path3 . substr($data_listDb->event_event, 0, 2) . '/';  // look in that subfolder
-                                            }
-                                        }
-                                    }
-                                }
-                                echo '<a href="' . $path_prefix . $tree_pict_path3 . $data_listDb->event_event . '" target="_blank">' .
-                                    print_thumbnail($path_prefix . $tree_pict_path3, $data_listDb->event_event) . '</a>';
+                                echo  print_thumbnail($path_prefix . $tree_pict_path, $data_listDb->event_event, 0, 120, '', '', true, 'target="_blank"' );
 
                                 ?>
                             </div>
