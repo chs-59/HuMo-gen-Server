@@ -67,53 +67,62 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                                 <input type="text" name="tree_pict_path" value="<?= $thumbs['own_pict_path']; ?>" size="40" placeholder="../pictures/" class="form-control form-control-sm">
                             </label>
                         </div>
-
-                        <?php printf(__('Example of picture path:<br>
-www.myhomepage.nl/humo-gen/ => folder for %s files.<br>
-www.myhomepage.nl/pictures/ => folder for pictures.<br>
-Use a relative path, exactly as shown here: <b>../pictures/</b>'), 'HuMo-genealogy'); ?><br><br>
-
-                        <input type="submit" name="change_tree_data" value="<?= __('Change'); ?>" class="btn btn-sm btn-success"><br>
-                    </form>
                 </div>
             </div>
 
-            <?php
-            // *** Show subdirectories ***
-            function get_media_files($first, $prefx, $path)
-            {
-                $ignore = array('cms', 'slideshow', 'thumbs', '.', '..');
-                $dh = opendir($prefx . $path);
-                while (false !== ($filename = readdir($dh))) {
-                    if (!in_array($filename, $ignore) && is_dir($prefx . $path . $filename)) {
-                        if ($first == false) {
-                            echo ' ' . __('Subdirectories:');
-                            $first = true;
-                        }
-                        echo '<br>' . $path . $filename . '/';
-                        get_media_files($first, $prefx, $path . $filename . '/');
-                    }
-                }
-                closedir($dh);
-            }
-            ?>
 
             <div class="row mb-2">
                 <div class="col-md-4"><?= __('Status of picture path'); ?></div>
 
                 <div class="col-md-7">
-                    <?php if ($thumbs['tree_pict_path'] != '' && file_exists($prefx . $thumbs['tree_pict_path'])) { ?>
-                        <span class="bg-success-subtle"><?= __('Picture path exists.'); ?></span>
-
-                    <?php
-                        // *** Show subdirectories ***
-                        $first = false;
-                        get_media_files($first, $prefx, $thumbs['tree_pict_path']);
-                    } else {
-                        echo '<span class="bg-warning-subtle"><b>' . __('Picture path doesn\'t exist!') . '</b></span>';
-                    }
-                    ?>
+                        <?php 
+                        $rewrite_status = test_rewrite();
+                        echo '<input type="hidden" name="server_rewrite_status" value="' . $rewrite_status . '">';
+                        $display_rewrite = '';
+                        
+                        echo ('Server rewrite engine: ') . '<span class=';
+                        if ($rewrite_status == 'on') { echo '"bg-success-subtle">' . __('On'); }
+                        elseif ($rewrite_status == 'off') { echo '"bg-warning-subtle">' . __('Off'); }
+                        else { echo '"bg-warning-subtle">' . __('Unknown'); }
+                        echo '</span><br><br>';
+                        // this code only for display, calculation is done in 
+                        // function save_picture_path_rewrite in admin/models/thumbs.php
+                        echo ('DocumentRoot = <br>' . $_SERVER['DOCUMENT_ROOT'] . '</br></br>');
+                        if ( file_exists($prefx . $thumbs['tree_pict_path']) ) { 
+                            echo (__('Media directory') . ' =<br>' . realpath($prefx . $thumbs['tree_pict_path']) . '/</br>');
+                            if ( preg_match('/^media\//', $thumbs['tree_pict_path'])
+                                    && $rewrite_status == 'on' )  {
+                                    echo '<span class="bg-success-subtle">' . __('Safe. Path protected by rewrite engine.') . '</span></br>';
+                                    $display_rewrite = __('No');
+                            } elseif (str_contains( realpath($prefx . $thumbs['tree_pict_path']), $_SERVER['DOCUMENT_ROOT'] )  ) {
+                                echo '<span class="bg-danger-subtle">' . __('Unsafe. Path inside DocRoot.') . '</span></br>';
+                                $display_rewrite = __('No');
+                            } else {
+                                echo '<span class="bg-success-subtle">' . __('Safe. Path outside DocRoot.') . '</span></br>';
+                                $display_rewrite = ($rewrite_status == 'on' ? __('Yes - Use server rewrite') : __('Use HuMo rewrite'));
+                            }
+                        } else {
+                            echo '<span class="bg-warning-subtle"><b>' . __('Picture path doesn\'t exist!') . '</b></span>';
+                            $display_rewrite = __('No');
+                        }
+                    ?><br><br>
                 </div>
+            </div>
+
+
+            <div class="row mb-2">
+                <div class="col-md-4"><?= __('Rewrite media path'); ?></div>
+                            
+                        <div class="col-md-7">
+                            <?= $display_rewrite; ?>
+                            <br>
+                        </div>
+                <div class="col-md-4">&nbsp;</div>
+                        <div class="col-md-7">
+                            <input type="submit" name="change_tree_data" value="<?= __('Change'); ?>" class="btn btn-sm btn-success"><br>
+                        </DIV>
+                    </form>
+
             </div>
 
             <!-- Create thumbnails -->

@@ -758,6 +758,7 @@ if (isset($_POST['install_tables2'])) {
             tree_email varchar(100) CHARACTER SET utf8,
             tree_owner varchar(100) CHARACTER SET utf8,
             tree_pict_path varchar (100) CHARACTER SET utf8,
+            tree_pict_path_rewrite varchar (100) CHARACTER SET utf8,
             tree_privacy varchar (100) CHARACTER SET utf8,
             tree_gedcom varchar (100),
             tree_gedcom_program varchar (100),
