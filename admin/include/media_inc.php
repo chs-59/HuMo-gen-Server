@@ -112,7 +112,7 @@ function resize_picture_IM($folder, $file, $maxheight = 1080, $maxwidth = 1920)
 //search for a thumbnail or mime type placeholder and returns the image tag
 function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $attrib = '', $link2hires=false, $link_attrib='', $html_before='')
 {
-    global $pcat_dirs, $humo_option, $dbh;
+    global $pcat_dirs, $humo_option, $dbh, $tree_id;
 
     if (!$file || !$folder) {
         return '<img src="../images/thumb_missing-image.jpg" style="width:auto; height:120px;" title="' . $folder . $file . ' missing path/filename">';
@@ -146,16 +146,26 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
     if (!file_exists($folder . $file)) {
         return '<img src="../images/thumb_missing-image.jpg" style="width:auto; height:120px;" title="' . $folder . $file . ' not found">';
     }
+    $rwfolder = $folder; // rwfolder will be changed due to rewrite mode
+    $data2sql = $dbh->query("SELECT tree_pict_path_rewrite FROM humo_trees WHERE tree_id=" . $tree_id);
+    $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
+    if ($data2Db->tree_pict_path_rewrite == 'i'){
+        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media.php?';}
+        else { $rwfolder = 'media.php?';}
+    } elseif ($data2Db->tree_pict_path_rewrite == 's') {
+        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media/';}
+        else { $rwfolder = 'media/';}       
+    }
+echo 'folder: ' . $rwfolder;
     $link = '';
     $link_close = '';
     if ($link2hires) {
-        $link = '<a href="' . $folder . $file . '" ' . $link_attrib . '>' . $html_before;
+        $link = '<a href="' . $rwfolder . $file . '" ' . $link_attrib . '>' . $html_before;
         $link_close = '</a>';
     }
-    
-    $thumb_url =  thumbnail_exists($folder, $file);
+    $thumb_url =  thumbnail_exists($folder, $file); // array! folder, file
     if (!empty($thumb_url)) {
-        return $link . '<img src="' . $thumb_url . '"' . $img_style . '>' . $link_close;
+        return $link . '<img src="' . $rwfolder . $thumb_url[1] . '"' . $img_style . '>' . $link_close;
     } // found thumbnail
 
     // no thumbnail found, create a new one
@@ -167,7 +177,8 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
         // script will possibily die here and hidden no_thumb file becomes persistent
         // so this code might be skiped afterwords
         if ($humo_option["thumbnail_auto_create"] == 'y' && create_thumbnail($folder, $file)) {
-            return $link . '<img src="' . $folder . 'thumb_' . $file . '.jpg' . '"' . $img_style . '>' . $link_close;
+                $newthumb_url =  thumbnail_exists($folder, $file); // test for dir in filename
+                return $link . '<img src="' . $rwfolder . $newthumb_url[1] . '"' . $img_style . '>' . $link_close;
         }
     }
 
@@ -202,19 +213,19 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
         case 'ra':
             return '<img src="../images/audio.gif" alt="RA">';
         case 'jpg':
-            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
+            return $link . '<img src="' . $rwfolder . $file . '"' . $img_style . '>' . $link_close;
         case 'jpeg':
-            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
+            return $link . '<img src="' . $rwfolder . $file . '"' . $img_style . '>' . $link_close;
         case 'png':
-            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
+            return $link . '<img src="' . $rwfolder . $file . '"' . $img_style . '>' . $link_close;
         case 'gif':
-            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
+            return $link . '<img src="' . $rwfolder . $file . '"' . $img_style . '>' . $link_close;
         case 'tif':
-            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
+            return $link . '<img src="' . $rwfolder . $file . '"' . $img_style . '>' . $link_close;
         case 'tiff':
-            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
+            return $link . '<img src="' . $rwfolder . $file . '"' . $img_style . '>' . $link_close;
         case 'bmp':
-            return $link . '<img src="' . $folder . $file . '"' . $img_style . '>' . $link_close;
+            return $link . '<img src="' . $rwfolder . $file . '"' . $img_style . '>' . $link_close;
     }
     return '<img src="../images/thumb_missing-image.jpg"' . $img_style . '>';
 }
@@ -261,7 +272,7 @@ function check_media_type($folder, $file)
     return (false);
 }
 
-function thumbnail_exists($folder, $file)
+function thumbnail_exists($folder, $file) // returns [folder, filename] or ''
 {
     global $pcat_dirs;
     $pparts = pathinfo($file);
@@ -269,18 +280,18 @@ function thumbnail_exists($folder, $file)
         return '';
     }
     if (file_exists($folder . 'thumb_' . $file . '.jpg')) {
-        return ($folder . 'thumb_' . $file . '.jpg');
+        return [ $folder, 'thumb_' . $file . '.jpg'];
     }
     if (file_exists($folder . 'thumb_' . $file)) {
-        return ($folder . 'thumb_' . $file);
+        return [$folder, 'thumb_' . $file];
     } // old naming
     if (file_exists($folder . $pparts['dirname'] . '/thumb_' . $pparts['basename'] . '.jpg')) {
-        return ($folder . $pparts['dirname'] . '/thumb_' . $pparts['basename'] . '.jpg');
+        return [$folder, $pparts['dirname'] . '/thumb_' . $pparts['basename'] . '.jpg'];
     }
     if (file_exists($folder . $pparts['dirname'] . '/thumb_' . $pparts['basename'])) {
-        return ($folder . $pparts['dirname'] . '/thumb_' . $pparts['basename']);
+        return [$folder, $pparts['dirname'] . '/thumb_' . $pparts['basename'] ];
     } // old naming
-    if (array_key_exists(substr($file, 0, 3), $pcat_dirs)) {
+/*    if (array_key_exists(substr($file, 0, 3), $pcat_dirs)) {
         $folder .= substr($file, 0, 2) . '/';
     } // check for cat folder
     if (file_exists($folder . 'thumb_' . $file . '.jpg')) {
@@ -289,6 +300,7 @@ function thumbnail_exists($folder, $file)
     if (file_exists($folder . 'thumb_' . $file)) {
         return ($folder . 'thumb_' . $file);
     }  // old naming
+*/
     return '';
 }
 // GD library - returns true if a thumbnail has been created
@@ -467,4 +479,24 @@ function get_GDmime () {
              'video/mpeg'      => '-',
              'video/mp4'       => '-'
             ];
+}
+function test_rewrite() {
+   $my_path = str_replace('/admin/index.php', '', $_SERVER["PHP_SELF"]);
+   $my_path = str_replace('/index.php', '', $my_path);
+   $save_elevel = error_reporting(); // save error level to restore
+   error_reporting(0);  // trun off errors reporting
+   $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$my_path/media.php?ping";
+   $response = file_get_contents($link, true);
+   if ($response !== 'pong') {
+       error_reporting($save_elevel); // restore error level
+       return 'nn'; // no connection, status unknown
+   } 
+   $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$my_path/media/ping";
+   $response = file_get_contents($link, true);
+   if ($response == 'pong') {
+        error_reporting($save_elevel);  // restore error level
+       return 'on';  // server rewrite on 
+    } 
+    error_reporting($save_elevel);  // restore error level
+    return 'off';  // server rewrite off 
 }

@@ -148,9 +148,9 @@ function show_media($event_connect_kind, $event_connect_id)
                 $html_before = '<div class="glightbox-desc custom-desc' . $media_event_id[$i] . '">' . $tmp_picinfo;
                 $picture = print_thumbnail($tree_pict_path, $event_event, 0, 120, '', '', true, $link_attrib, $html_before); 
 
-                $thumb_url = thumbnail_exists($temp_path, $event_event); //in media_inc.php: returns url of thumb or empty string
+                $thumb_url = thumbnail_exists($temp_path, $event_event); //in media_inc.php: returns [folder, file ] of thumb or empty string
                 if (!empty($thumb_url)) {
-                    $templ_person["pic_path" . $i] = $thumb_url; //for the time being pdf only with thumbs
+                    $templ_person["pic_path" . $i] = implode($thumb_url); //for the time being pdf only with thumbs
                 } else {
                     $templ_person["pic_path" . $i] = $temp_path . $event_event; // use original picture instead
                 }

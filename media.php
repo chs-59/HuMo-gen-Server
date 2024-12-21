@@ -1,9 +1,10 @@
 <?php
 session_start();
 $url = urldecode($_SERVER['QUERY_STRING']);
+if ($url == 'ping') {echo 'pong'; exit;}
 // skip test for logo and favicon
-if (in_array($url, array('media/logo.png', 'media/logo.jpg', 'media/favicon.ico'))) { 
-    print_mediafile(__DIR__ . '/' . $url) ; 
+if (in_array($url, array('logo.png', 'logo.jpg', 'favicon.ico'))) { 
+    print_mediafile(__DIR__ . '/media/' . $url) ; 
     }
 // session expired / no filename
 if (!$_SESSION['tree_id'] || empty($url)) { print_mediafile(__DIR__ . '/images/missing-image.jpg'); }
@@ -24,23 +25,23 @@ $groupsql = $dbh->query("SELECT * FROM humo_groups WHERE group_id='" . $user_gro
 $groupDb = $groupsql->fetch(PDO::FETCH_OBJ);
 $usersql = $dbh->query("SELECT * FROM humo_users WHERE user_id='" . $user_id . "'");
 $userDb = $usersql->fetch(PDO::FETCH_OBJ);
+$datasql = $dbh->query("SELECT * FROM humo_trees WHERE tree_prefix='" . $tree_prefix . "'");
+$dataDb = $datasql->fetch(PDO::FETCH_OBJ);
+$tree_pict_path = $dataDb->tree_pict_path;
+if (substr($tree_pict_path, 0, 1) === '|') { $tree_pict_path = 'media/'; }
+$tree_pict_path_rewrite = $dataDb->tree_pict_path_rewrite;
 
 // free access to admin or editor of current tree
 if ( ( isset($_SESSION['group_id_admin']) && $groupDb->group_admin === 'j' )  
     || $groupDb->group_edit_trees == $tree_id
     || $userDb->user_edit_trees == $tree_id ) {
-    print_mediafile(__DIR__ . '/' . $url);  
+    print_mediafile(__DIR__ . '/' . $tree_pict_path . $url);  
 }
 // access to media files bloced
 if ($groupDb->group_pictures == 'n')  { 
     print_mediafile(__DIR__ . '/images/missing-image.jpg'); 
 }
 
-$datasql = $dbh->query("SELECT * FROM humo_trees WHERE tree_prefix='" . $tree_prefix . "'");
-$dataDb = $datasql->fetch(PDO::FETCH_OBJ);
-$tree_pict_path = $dataDb->tree_pict_path;
-if (substr($tree_pict_path, 0, 1) === '|') { $tree_pict_path = 'media/'; }
-$picture_dbname = str_replace( $tree_pict_path, '', $url ); //delete pic-path for db lookup
 $picture_dbname = preg_replace( '/thumb_(.+\.\w{3})\.jpg/', '$1', $picture_dbname ); //delete thumb extensions for lookup (new style)
 $picture_dbname = str_replace('thumb_', '', $picture_dbname ); //delete thumb extension for lookup (old style)
 $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' "
