@@ -776,6 +776,7 @@ if (isset($_POST['install_tables2'])) {
         tree_email='',
         tree_owner='',
         tree_pict_path='|../pictures/',
+        tree_pict_path_rewrite='n',
         tree_privacy=''
         ";
         $db_update = $dbh->query($sql);
