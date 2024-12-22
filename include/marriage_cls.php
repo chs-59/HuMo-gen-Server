@@ -173,7 +173,6 @@ class marriage_cls
             //}
             $text .= ' ' . $temp_text;
         }
-
         // *** End of living together. NO end place, end text or end source yet. ***
         $temp_text = '';
         $temp = '';
@@ -838,9 +837,10 @@ class marriage_cls
             if ($presentation == 'shorter') {
                 $addition = '';
             }
-        } else {
-            $text = '<b>' . $relation_number . $relation_kind . '</b> ' . $text;
-        }
+        } 
+//        else {
+//            $text = '<b>' . $relation_number . $relation_kind . '</b> ' . $text;
+//        }
 
         if ($addition) {
             $text .= '<b>' . $addition . '</b>';
