@@ -382,70 +382,7 @@ if (!defined('ADMIN_PAGE')) {
             </div>
         </div>
 
-        <div class="row mb-2">
-            <div class="col-md-4">
-                <?= __('Thumbnail libraries and tools'); ?>
-            </div>
-
-            <div class="col-md-8">
-                <?php
-                $is_thumblib = false;
-                $no_windows = (strtolower(substr(PHP_OS, 0, 3)) !== 'win');
-
-                echo __('Imagick (images):');
-                if (extension_loaded('imagick')) {
-                ?>
-                    <?= strtolower(__('Yes')); ?><br>
-
-                <?php
-                    if ($no_windows) {
-                        echo '- ' . __('Ghostscript (PDF support):') . ' ';
-                        echo (trim(shell_exec('type -P gs'))) ? strtolower(__('Yes')) . '<br>' : strtolower(__('No')) . '<br>';
-                        echo '- ' . __('ffmpeg (movie support):') . ' ';
-                        echo (trim(shell_exec('type -P ffmpeg'))) ? strtolower(__('Yes')) . '<br>' : strtolower(__('No')) . '<br>';
-
-                        $is_thumblib = true;
-                    }
-
-                } else {
-                    echo ' ' . strtolower(__('No')) . '<br>';
-                }
-
-                echo __('GD (images):');
-                if (extension_loaded('gd')) {
-                    echo ' ' . strtolower(__('Yes')) . '<br>';
-                    $is_thumblib = true;
-                } else {
-                    echo ' ' . strtolower(__('No')) . '<br>';
-                }
-
-                if (!$is_thumblib) {
-                    echo __('No Thumbnail library available') . '<br>';
-                }
-                ?>
-
-                <?php if (isset($_POST["thumbnail_auto_create"]) && ($_POST["thumbnail_auto_create"] == 'y' || $_POST["thumbnail_auto_create"] == 'n')) {
-                    $db_functions->update_settings('thumbnail_auto_create', $_POST["thumbnail_auto_create"]);
-                    $humo_option["thumbnail_auto_create"] = $_POST["thumbnail_auto_create"];
-                }
-                ?>
-                <form method="POST" action="index.php">
-                    <input type="hidden" name="page" value="<?= $page; ?>">
-                    <div class="row mb-2">
-                        <div class="col-md-auto">
-                            <?= __('Automatically create thumbnails?'); ?>
-                        </div>
-                        <div class="col-md-auto">
-                            <select size="1" name="thumbnail_auto_create" onChange="this.form.submit();" class="form-select form-select-sm">
-                                <option value="n"><?= __('No'); ?></option>
-                                <option value="y" <?= $humo_option["thumbnail_auto_create"] == 'y' ? 'selected' : ''; ?>><?= __('Yes'); ?></option>
-                            </select>
-                        </div>
-                    </div>
-                </form>
-
-            </div>
-        </div>
+        
     <?php } ?>
 
 
