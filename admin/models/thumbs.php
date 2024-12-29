@@ -47,6 +47,20 @@ class ThumbsModel
             $dbh->query("UPDATE humo_trees SET tree_pict_path_rewrite='" . safe_text_db($rewrite_flag_db) . "' WHERE tree_id=" . safe_text_db($tree_id));
        }
     }
+    public function save_picture_thumbnail($dbh, $tree_id)
+    {
+        if (isset($_POST['change_thumbnail_status'])) {
+            $picture_thumbnail = $_POST['thumbnail_status'];
+            $dbh->query("UPDATE humo_trees SET tree_pict_thumbnail='" . safe_text_db($picture_thumbnail) . "' WHERE tree_id=" . safe_text_db($tree_id));
+       }
+    }
+    public function save_picture_resize($dbh, $tree_id)
+    {
+        if (isset($_POST['change_resize_status'])) {
+            $picture_resize= $_POST['resize_status'];
+            $dbh->query("UPDATE humo_trees SET tree_pict_resize='" . safe_text_db($picture_resize) . "' WHERE tree_id=" . safe_text_db($tree_id));
+       }
+    }
 
     public function get_tree_pict_path($dbh, $tree_id)
     {
@@ -64,6 +78,28 @@ class ThumbsModel
             return '';
         }
         return $data2Db->tree_pict_path_rewrite;
+    }
+    public function get_tree_pict_thumbnail($dbh, $tree_id)
+    {
+        $data2sql = $dbh->query("SELECT * FROM humo_trees WHERE tree_id=" . $tree_id);
+        $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
+        if (!property_exists($data2Db, 'tree_pict_thumbnail')) {
+            $sql = "ALTER TABLE humo_trees ADD tree_pict_thumbnail VARCHAR(100) CHARACTER SET utf8 AFTER tree_pict_path;";
+            $dbh->query($sql);
+            return 'n';
+        }
+        return $data2Db->tree_pict_thumbnail;
+    }
+    public function get_tree_pict_resize($dbh, $tree_id)
+    {
+        $data2sql = $dbh->query("SELECT * FROM humo_trees WHERE tree_id=" . $tree_id);
+        $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
+        if (!property_exists($data2Db, 'tree_pict_resize')) {
+            $sql = "ALTER TABLE humo_trees ADD tree_pict_resize VARCHAR(100) CHARACTER SET utf8 AFTER tree_pict_path;";
+            $dbh->query($sql);
+            return '0x0';
+        }
+        return $data2Db->tree_pict_resize;
     }
     
     public function get_default_path($tree_pict_path)
