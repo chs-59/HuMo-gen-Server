@@ -2,10 +2,13 @@
 // holds the prefixes for existent category subdirectories
 global $pcat_dirs;
 $pcat_dirs = get_pcat_dirs();
-
+global $pict_options;
+$pict_options = get_pict_options();
 // lookup which library is available or none
 function create_thumbnail($folder, $file)
 {
+    global $pict_options;
+    if ($pict_options[2] == 'n') { return (false); } // thumbnails disabled
     $theight = 120; // default
     if (extension_loaded('imagick')) {
         return (create_thumbnail_IM($folder, $file, $theight)); // true on success
@@ -18,12 +21,12 @@ function create_thumbnail($folder, $file)
 // lookup which library is available or none
 function resize_picture($folder, $file)
 {
-    $maxheight = 2160; // default : 1080;
-    $maxwidth = 3840;  // default : 1920;
+    global $pict_options;
+    if (empty($pict_options[0])) { return (false); } // resizing disabled
     if (extension_loaded('imagick')) {
-        return (resize_picture_IM($folder, $file, $maxwidth, $maxheight)); // true on success
+        return (resize_picture_IM($folder, $file, $pict_options[0], $pict_options[1])); // true on success
     } elseif ((extension_loaded('gd'))) {
-        return (resize_picture_GD($folder, $file, $maxwidth, $maxheight)); // true on success
+        return (resize_picture_GD($folder, $file,  $pict_options[0], $pict_options[1])); // true on success
     } else {
         return (false); // no resizing
     }
@@ -112,12 +115,12 @@ function resize_picture_IM($folder, $file, $maxheight = 1080, $maxwidth = 1920)
 //search for a thumbnail or mime type placeholder and returns the image tag
 function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $attrib = '', $link2hires=false, $link_attrib='', $html_before='')
 {
-    global $pcat_dirs, $humo_option, $dbh, $tree_id;
+    global $pcat_dirs, $pict_options, $dbh, $tree_id;
 
     if (!$file || !$folder) {
         return '<img src="../images/thumb_missing-image.jpg" style="width:auto; height:120px;" title="' . $folder . $file . ' missing path/filename">';
     }
-    
+
     $img_style = ' style="';
     if ($maxw > 0 && $maxh > 0) {
         $img_style .= 'width:auto; height:auto; max-width:' . $maxw . 'px; max-height:' . $maxh . 'px; ' . $css . '" ' . $attrib;
@@ -146,17 +149,19 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
     if (!file_exists($folder . $file)) {
         return '<img src="../images/thumb_missing-image.jpg" style="width:auto; height:120px;" title="' . $folder . $file . ' not found">';
     }
+
     $rwfolder = $folder; // rwfolder will be changed due to rewrite mode
-    $data2sql = $dbh->query("SELECT tree_pict_path_rewrite FROM humo_trees WHERE tree_id=" . $tree_id);
+    $data2sql = $dbh->query("SELECT * FROM humo_trees WHERE tree_id=" . $tree_id);
     $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
+    // for rewrite: remove tree_pict_path from folder to get subfolder
+    $subfolder = str_replace( '../' .$data2Db->tree_pict_path, '', $folder);
     if ($data2Db->tree_pict_path_rewrite == 'i'){
-        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media.php?';}
+        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media.php?' . $subfolder;}
         else { $rwfolder = 'media.php?';}
     } elseif ($data2Db->tree_pict_path_rewrite == 's') {
-        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media/';}
+        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media/' . $subfolder;}
         else { $rwfolder = 'media/';}       
     }
-echo 'folder: ' . $rwfolder;
     $link = '';
     $link_close = '';
     if ($link2hires) {
@@ -164,7 +169,7 @@ echo 'folder: ' . $rwfolder;
         $link_close = '</a>';
     }
     $thumb_url =  thumbnail_exists($folder, $file); // array! folder, file
-    if (!empty($thumb_url)) {
+    if (!empty($thumb_url && $pict_options[2] == 'y')) {
         return $link . '<img src="' . $rwfolder . $thumb_url[1] . '"' . $img_style . '>' . $link_close;
     } // found thumbnail
 
@@ -176,9 +181,9 @@ echo 'folder: ' . $rwfolder;
     ) {
         // script will possibily die here and hidden no_thumb file becomes persistent
         // so this code might be skiped afterwords
-        if ($humo_option["thumbnail_auto_create"] == 'y' && create_thumbnail($folder, $file)) {
-                $newthumb_url =  thumbnail_exists($folder, $file); // test for dir in filename
-                return $link . '<img src="' . $rwfolder . $newthumb_url[1] . '"' . $img_style . '>' . $link_close;
+        if (create_thumbnail($folder, $file)) {
+            $newthumb_url =  thumbnail_exists($folder, $file); // test for dir in filename
+            return $link . '<img src="' . $rwfolder . $newthumb_url[1] . '"' . $img_style . '>' . $link_close;
         }
     }
 
@@ -499,4 +504,19 @@ function test_rewrite() {
     } 
     error_reporting($save_elevel);  // restore error level
     return 'off';  // server rewrite off 
+}
+
+function get_pict_options () {
+    global $dbh, $tree_id;
+    $resize_vals = array ( 0, 0, 'n');
+    $data2sql = $dbh->query("SELECT * FROM humo_trees WHERE tree_id=" . $tree_id);
+    $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
+    if (isset($data2Db->tree_pict_resize)) {
+        $tmp_res = $data2Db->tree_pict_resize;
+        $resize_vals = explode('|', $tmp_res); 
+   }
+    if (isset($data2Db->tree_pict_thumbnail)) {
+        $resize_vals[2] =$data2Db->tree_pict_thumbnail;
+   }
+   return $resize_vals;
 }
