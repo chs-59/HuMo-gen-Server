@@ -480,7 +480,7 @@ if ($popup == false) {
         <div id="humo_top" <?= $top_dir; ?>>
 
             <span id="top_website_name">
-                &nbsp;<a href="index.php" style="color:brown;">HuMo-genealogy</a>
+                &nbsp;<a href="index.php" style="color:brown;">HuMo-gen-Server</a>
             </span>
         <?php
     }
