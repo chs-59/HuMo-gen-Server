@@ -322,6 +322,17 @@ div.photobook {
     text-align: center;
     overflow: auto;
 }
+/* Photobook */
+div.photobook_select {
+    background-color: #FAF1EB;
+    margin: 2px;
+    border: 1px solid #0000ff;
+    height: 250px;
+    width: 200px;
+    float: left;
+    text-align: center;
+    overflow: auto;
+}
 
 div.photobook img {
     display: inline;
