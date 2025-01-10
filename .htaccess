@@ -1,11 +1,8 @@
 # Url_rewrite option
 RewriteEngine On
 
+# protect files in media directory with mod_rewrite
 RewriteRule ^(.*?/?)media/(.+) media.php?$2 [B,QSA,L]
-# Enable media security for a direcory other than media/:
-# Place .htaccess file in that dir, paste and adjust these lines:
-# RewriteEngine On
-# RewriteRule ^(.+)$ /ABS.PATH2HUMO-GEN/media.php?media_filename=MEDIADIR_AS_CONFIGURED_IN_HUMO-GEN/$1 [B,QSA,L]
 
 # MVC (and wrong links will direct to index.php).
 RewriteCond %{REQUEST_FILENAME} !-f
