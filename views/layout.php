@@ -217,10 +217,8 @@ $menu_top = getActiveTopMenu($page);
     // TODO replace with bootstrap carousel.
     // *** Always load script, because of "Random photo" at homepage (also used in other pages showing pictures) ***
     // *** Photo lightbox effect using GLightbox ***
-    echo '<link rel="stylesheet" href="include/glightbox/css/glightbox.css">';
-    echo '<script src="include/glightbox/js/glightbox.min.js"></script>';
-    // TODO: could be done here using "defer". But bootstrap will be tried first.
-    // *** Remark: there is also a script in footer script, otherwise GLightbox doesn't work ***
+    echo '<link rel="stylesheet" href="include/glightbox/css/glightbox.min.css">';
+    // *** Remark: GLightbox scripts at the end ***
 
     // *** CSS changes for mobile devices ***
     echo '<link rel="stylesheet" media="(max-width: 640px)" href="css/gedcom_mobile.css">';
@@ -773,8 +771,6 @@ $menu_top = getActiveTopMenu($page);
         ?>
 
         <br>
-        <script src="include/glightbox/glightbox_footer.js"></script>
-
         <!-- July 2024: Bootstrap popover -->
         <script>
             const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
@@ -828,6 +824,8 @@ $menu_top = getActiveTopMenu($page);
             </div>
         </footer>
     <?php } ?>
+    <script src="include/glightbox/js/glightbox.js"></script>
+    <script src="include/glightbox/glightbox_footer.js"></script>
 
 </body>
 
