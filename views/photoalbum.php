@@ -275,7 +275,7 @@ function show_media_files($pref)
                 }
                 
                 
-                if (in_array(strtolower(pathinfo($filename, PATHINFO_EXTENSION)), array('jpg', 'jpeg', 'png', 'gif', 'bmp', 'tif'))) {
+                if (in_array(strtolower(pathinfo($filename, PATHINFO_EXTENSION)), array('jpg', 'jpeg', 'png', 'gif', 'tif', 'mp4', 'webm'))) {
                     $link_attrib = 'class="glightbox3" data-gallery="gallery1" data-glightbox="description: .custom-desc' . $picture_nr .'"';
                     $html_before = '<div class="glightbox-desc custom-desc' . $picture_nr . '">' . $picture_text2 . '</div>';
                     $picture = print_thumbnail($dir, $filename, 175, 120, '', '', true, $link_attrib, $html_before); 
