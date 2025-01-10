@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-genealogy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-27 20:59+0100\n"
-"PO-Revision-Date: 2024-11-27 20:59+0100\n"
+"POT-Creation-Date: 2025-01-10 14:31+0100\n"
+"PO-Revision-Date: 2025-01-10 14:31+0100\n"
 "Last-Translator: Osman Öz <osmanoz50@gmail.com>, 2021,2024\n"
 "Language-Team: Turkish (Turkey) (http://app.transifex.com/humo-gen/humo-gen/"
 "language/tr_TR/)\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4\n"
 "X-Launchpad-Export-Date: 2012-03-21 21:20+0000\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-KeywordsList: __\n"
@@ -217,8 +217,8 @@ msgid "December"
 msgstr "Aralık"
 
 # Nomen Nescio: unknown name.
-#: admin/include/editor_cls.php:296 admin/include/editor_event_cls.php:1080
-#: admin/include/editor_event_cls.php:1089 admin/views/editor.php:661
+#: admin/include/editor_cls.php:296 admin/include/editor_event_cls.php:1067
+#: admin/include/editor_event_cls.php:1076 admin/views/editor.php:661
 #: admin/views/editor.php:670 admin/views/editor.php:1382
 #: admin/views/statistics_old.php:89 admin/views/statistics_old.php:100
 #: include/person_cls.php:915 include/person_cls.php:917
@@ -275,44 +275,44 @@ msgid "[]"
 msgstr "[]"
 
 #: admin/include/editor_event_cls.php:18 admin/include/editor_event_cls.php:54
-#: admin/include/editor_event_cls.php:483
-#: admin/include/editor_event_cls.php:1058
-#: admin/include/editor_event_cls.php:1061
+#: admin/include/editor_event_cls.php:486
+#: admin/include/editor_event_cls.php:1045
+#: admin/include/editor_event_cls.php:1048
 msgid "Picture/ Media"
 msgstr "Resim/ Medya"
 
-#: admin/include/editor_event_cls.php:20 admin/include/editor_event_cls.php:429
-#: admin/include/editor_event_cls.php:1219
-#: admin/include/editor_event_cls.php:1530
-#: admin/include/editor_event_cls.php:1533 admin/views/editor.php:1171
+#: admin/include/editor_event_cls.php:20 admin/include/editor_event_cls.php:432
+#: admin/include/editor_event_cls.php:1206
+#: admin/include/editor_event_cls.php:1517
+#: admin/include/editor_event_cls.php:1520 admin/views/editor.php:1171
 #: admin/views/tree_merge.php:1453 views/list.php:320 views/list.php:327
 msgid "Profession"
 msgstr "Meslek"
 
 # Language indicator, used for birthday RSS
-#: admin/include/editor_event_cls.php:22 admin/include/editor_event_cls.php:276
-#: admin/include/editor_event_cls.php:295
-#: admin/include/editor_event_cls.php:318
-#: admin/include/editor_event_cls.php:335
-#: admin/include/editor_event_cls.php:1276 admin/include/editor_sources.php:205
+#: admin/include/editor_event_cls.php:22 admin/include/editor_event_cls.php:279
+#: admin/include/editor_event_cls.php:298
+#: admin/include/editor_event_cls.php:321
+#: admin/include/editor_event_cls.php:338
+#: admin/include/editor_event_cls.php:1263 admin/include/editor_sources.php:205
 #: admin/include/editor_sources.php:213 admin/views/tree_merge.php:1456
-#: app/model/tree_index.php:940
+#: app/model/tree_index.php:1019
 msgid "Event"
 msgstr "Etkinlik"
 
-#: admin/include/editor_event_cls.php:24 admin/include/editor_event_cls.php:984
+#: admin/include/editor_event_cls.php:24 admin/include/editor_event_cls.php:987
 #: admin/views/editor_person.php:1029 admin/views/editor_person.php:1392
 #: admin/views/editor_relation.php:733 include/witness.php:62
 msgid "clergy"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:26 admin/include/editor_event_cls.php:988
+#: admin/include/editor_event_cls.php:26 admin/include/editor_event_cls.php:991
 #: admin/views/editor_person.php:764 admin/views/editor_person.php:1314
 #: admin/views/editor_relation.php:519 include/witness.php:45
 msgid "officiator"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:28 admin/include/editor_event_cls.php:992
+#: admin/include/editor_event_cls.php:28 admin/include/editor_event_cls.php:995
 #: admin/views/editor_person.php:1029 include/witness.php:59
 msgid "godfather"
 msgstr "vaftiz babası"
@@ -335,17 +335,17 @@ msgstr ""
 msgid "witness"
 msgstr "tanık"
 
-#: admin/include/editor_event_cls.php:36 admin/include/editor_event_cls.php:960
-#: admin/include/editor_event_cls.php:1705
+#: admin/include/editor_event_cls.php:36 admin/include/editor_event_cls.php:963
+#: admin/include/editor_event_cls.php:1720
 #: admin/include/editor_media_select.php:82
 #: admin/include/editor_person_select.php:115
 #: admin/include/editor_place_select.php:77
 #: admin/include/editor_relation_select.php:46 admin/views/editor.php:148
 #: admin/views/editor_person.php:393 admin/views/gedcom_export.php:330
 #: app/model/mailform.php:83 app/model/register.php:95
-#: app/model/tree_index.php:583 app/model/tree_index.php:940
-#: app/model/user_settings.php:88 views/anniversary.php:96
-#: views/family.php:1244 views/family.php:1312 views/layout.php:352
+#: app/model/tree_index.php:583 app/model/tree_index.php:1019
+#: app/model/user_settings.php:79 views/anniversary.php:96
+#: views/family.php:1244 views/family.php:1312 views/layout.php:350
 #: views/list.php:147 views/list.php:639 views/list_names.php:296
 #: views/list_names.php:299 views/mailform.php:48 views/mailform.php:50
 #: views/register.php:58 views/relations.php:94 views/relations.php:96
@@ -353,65 +353,65 @@ msgstr "tanık"
 msgid "Name"
 msgstr "İsim"
 
-#: admin/include/editor_event_cls.php:38 admin/include/editor_event_cls.php:363
-#: admin/include/editor_event_cls.php:1697
-#: admin/include/editor_event_cls.php:1698 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:38 admin/include/editor_event_cls.php:366
+#: admin/include/editor_event_cls.php:1712
+#: admin/include/editor_event_cls.php:1713 admin/views/editor.php:1126
 msgid "Prefix"
 msgstr "Önek"
 
-#: admin/include/editor_event_cls.php:40 admin/include/editor_event_cls.php:363
-#: admin/include/editor_event_cls.php:1697
-#: admin/include/editor_event_cls.php:1699 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:40 admin/include/editor_event_cls.php:366
+#: admin/include/editor_event_cls.php:1712
+#: admin/include/editor_event_cls.php:1714 admin/views/editor.php:1126
 msgid "Suffix"
 msgstr "Sonek"
 
 #: admin/include/editor_event_cls.php:42
-#: admin/include/editor_event_cls.php:1700 admin/views/tree_merge.php:1478
+#: admin/include/editor_event_cls.php:1715 admin/views/tree_merge.php:1478
 msgid "Title of Nobility"
 msgstr "Asalet Ünvanı"
 
-#: admin/include/editor_event_cls.php:44 admin/include/editor_event_cls.php:363
-#: admin/include/editor_event_cls.php:1697
-#: admin/include/editor_event_cls.php:1701 admin/include/editor_sources.php:341
-#: admin/views/edit_repository.php:127 admin/views/edit_source.php:273
+#: admin/include/editor_event_cls.php:44 admin/include/editor_event_cls.php:366
+#: admin/include/editor_event_cls.php:1712
+#: admin/include/editor_event_cls.php:1716 admin/include/editor_sources.php:341
+#: admin/views/edit_repository.php:127 admin/views/edit_source.php:271
 #: admin/views/editor.php:1126 admin/views/tree_merge.php:1481
 #: include/show_source_pdf.php:43 views/source.php:33 views/source.php:109
 #: views/sources.php:52
 msgid "Title"
 msgstr "Ünvan"
 
-#: admin/include/editor_event_cls.php:46 admin/include/editor_event_cls.php:277
-#: admin/include/editor_event_cls.php:1103
-#: admin/include/editor_event_cls.php:1314
+#: admin/include/editor_event_cls.php:46 admin/include/editor_event_cls.php:280
+#: admin/include/editor_event_cls.php:1090
+#: admin/include/editor_event_cls.php:1301
 msgid "Adoption"
 msgstr "Evlat Edinme"
 
 #: admin/include/editor_event_cls.php:48
-#: admin/include/editor_event_cls.php:1702 admin/views/tree_merge.php:1484
+#: admin/include/editor_event_cls.php:1717 admin/views/tree_merge.php:1484
 msgid "Title of Lordship"
 msgstr "Lordluk Ünvanı"
 
-#: admin/include/editor_event_cls.php:50 admin/include/editor_event_cls.php:278
-#: admin/include/editor_event_cls.php:319 admin/views/edit_repository.php:207
-#: include/marriage_cls.php:689 include/person_cls.php:2861
+#: admin/include/editor_event_cls.php:50 admin/include/editor_event_cls.php:281
+#: admin/include/editor_event_cls.php:322 admin/views/edit_repository.php:207
+#: include/marriage_cls.php:688 include/person_cls.php:2861
 msgid "URL/ Internet link"
 msgstr "URL/ İnternet bağlantısı"
 
-#: admin/include/editor_event_cls.php:52 admin/include/editor_event_cls.php:279
+#: admin/include/editor_event_cls.php:52 admin/include/editor_event_cls.php:282
 msgid "Colour mark by person"
 msgstr "Kişiye göre renk işareti"
 
-#: admin/include/editor_event_cls.php:56 admin/include/editor_event_cls.php:456
-#: admin/include/editor_event_cls.php:1239
-#: admin/include/editor_event_cls.php:1563
-#: admin/include/editor_event_cls.php:1566 admin/views/editor_relation.php:792
+#: admin/include/editor_event_cls.php:56 admin/include/editor_event_cls.php:459
+#: admin/include/editor_event_cls.php:1226
+#: admin/include/editor_event_cls.php:1550
+#: admin/include/editor_event_cls.php:1553 admin/views/editor_relation.php:792
 #: admin/views/editor_relation.php:795
 msgid "Religion"
 msgstr "Din"
 
 #: admin/include/editor_event_cls.php:89 admin/include/editor_sources.php:113
 #: admin/include/editor_sources.php:167 admin/include/editor_sources.php:464
-#: admin/views/edit_source.php:139 admin/views/editor.php:1539
+#: admin/views/edit_source.php:137 admin/views/editor.php:1539
 #: admin/views/editor.php:1916 admin/views/gedcom.php:1470
 #: admin/views/notes.php:243
 msgid "text"
@@ -424,62 +424,62 @@ msgid "ID"
 msgstr "KİMLİK"
 
 # Language indicator, used for birthday RSS
-#: admin/include/editor_event_cls.php:269
-#: admin/include/editor_event_cls.php:312
-#: admin/include/editor_event_cls.php:1293 views/list.php:76 views/list.php:77
+#: admin/include/editor_event_cls.php:272
+#: admin/include/editor_event_cls.php:315
+#: admin/include/editor_event_cls.php:1280 views/list.php:76 views/list.php:77
 #: views/list.php:991
 msgid "Events"
 msgstr "Etkinlikler"
 
-#: admin/include/editor_event_cls.php:283
-#: admin/include/editor_event_cls.php:324
+#: admin/include/editor_event_cls.php:286
+#: admin/include/editor_event_cls.php:327
 msgid "Add event"
 msgstr "Etkinlik ekle"
 
-#: admin/include/editor_event_cls.php:295
-#: admin/include/editor_event_cls.php:335
+#: admin/include/editor_event_cls.php:298
+#: admin/include/editor_event_cls.php:338
 msgid "For items like:"
 msgstr "Şu tür öğeler için:"
 
-#: admin/include/editor_event_cls.php:295 include/language_event.php:12
+#: admin/include/editor_event_cls.php:298 include/language_event.php:12
 msgid "baptized as child"
 msgstr "çocuk olarak vaftiz edildi"
 
-#: admin/include/editor_event_cls.php:295 include/language_event.php:25
+#: admin/include/editor_event_cls.php:298 include/language_event.php:25
 msgid "depart"
 msgstr "ayrılma"
 
-#: admin/include/editor_event_cls.php:295
-#: admin/include/editor_event_cls.php:335
+#: admin/include/editor_event_cls.php:298
+#: admin/include/editor_event_cls.php:338
 msgid "etc."
 msgstr "vb."
 
-#: admin/include/editor_event_cls.php:335 include/language_event.php:42
+#: admin/include/editor_event_cls.php:338 include/language_event.php:42
 msgid "Marriage contract"
 msgstr "Evlilik sözleşmesi"
 
-#: admin/include/editor_event_cls.php:335 include/language_event.php:43
+#: admin/include/editor_event_cls.php:338 include/language_event.php:43
 msgid "Marriage license"
 msgstr "Evlilik cüzdanı"
 
-#: admin/include/editor_event_cls.php:363
-#: admin/include/editor_event_cls.php:1251
-#: admin/include/editor_event_cls.php:1691
-#: admin/include/editor_event_cls.php:1693 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:366
+#: admin/include/editor_event_cls.php:1238
+#: admin/include/editor_event_cls.php:1706
+#: admin/include/editor_event_cls.php:1708 admin/views/editor.php:1126
 #: include/person_cls.php:1856
 msgid "Nickname"
 msgstr "Takma ad"
 
-#: admin/include/editor_event_cls.php:366
-#: admin/include/editor_event_cls.php:442
-#: admin/include/editor_event_cls.php:468
-#: admin/include/editor_event_cls.php:488
-#: admin/include/editor_event_cls.php:490
-#: admin/include/editor_event_cls.php:492 admin/include/editor_sources.php:558
+#: admin/include/editor_event_cls.php:369
+#: admin/include/editor_event_cls.php:445
+#: admin/include/editor_event_cls.php:471
+#: admin/include/editor_event_cls.php:491
+#: admin/include/editor_event_cls.php:493
+#: admin/include/editor_event_cls.php:495 admin/include/editor_sources.php:558
 #: admin/views/cms_pages.php:224 admin/views/cms_pages.php:292
 #: admin/views/edit_address.php:264 admin/views/edit_address.php:267
 #: admin/views/edit_repository.php:218 admin/views/edit_repository.php:221
-#: admin/views/edit_source.php:397 admin/views/edit_source.php:399
+#: admin/views/edit_source.php:395 admin/views/edit_source.php:397
 #: admin/views/editor.php:1417 admin/views/editor.php:1419
 #: admin/views/editor.php:1760 admin/views/editor.php:1823
 #: admin/views/editor.php:1912 admin/views/editor_person.php:372
@@ -489,26 +489,26 @@ msgstr "Takma ad"
 msgid "Add"
 msgstr "Ekle"
 
-#: admin/include/editor_event_cls.php:935
+#: admin/include/editor_event_cls.php:938
 msgid "Select GEDCOM number or type name of person:"
 msgstr "GEDCOM numarasını seçin veya kişinin adını yazın:"
 
-#: admin/include/editor_event_cls.php:941
-#: admin/include/editor_event_cls.php:1106 admin/views/editor.php:306
+#: admin/include/editor_event_cls.php:944
+#: admin/include/editor_event_cls.php:1093 admin/views/editor.php:306
 #: admin/views/editor_person.php:307 admin/views/editor_relation.php:115
 #: admin/views/editor_relation.php:1225
 msgid "GEDCOM number (ID)"
 msgstr "GEDCOM numarası (Kimlik)"
 
-#: admin/include/editor_event_cls.php:945
-#: admin/include/editor_event_cls.php:1062
-#: admin/include/editor_event_cls.php:1107
-#: admin/include/editor_event_cls.php:1469
+#: admin/include/editor_event_cls.php:948
+#: admin/include/editor_event_cls.php:1049
+#: admin/include/editor_event_cls.php:1094
+#: admin/include/editor_event_cls.php:1456
 #: admin/include/editor_media_select.php:83
 #: admin/include/editor_person_select.php:127
 #: admin/include/editor_place_select.php:78
 #: admin/include/editor_relation_select.php:54
-#: admin/include/editor_sources.php:467 admin/views/edit_source.php:142
+#: admin/include/editor_sources.php:467 admin/views/edit_source.php:140
 #: admin/views/editor.php:149 admin/views/editor.php:307
 #: admin/views/editor.php:747 admin/views/editor.php:1259
 #: admin/views/editor.php:1293 admin/views/editor.php:1313
@@ -529,52 +529,52 @@ msgstr "GEDCOM numarası (Kimlik)"
 #: admin/views/tree_merge.php:646 admin/views/users.php:120
 #: app/model/tree_index.php:48 app/model/tree_index.php:155
 #: app/model/tree_index.php:629 views/addresses.php:31
-#: views/latest_changes.php:23 views/layout.php:353 views/list.php:100
+#: views/latest_changes.php:23 views/layout.php:351 views/list.php:100
 #: views/list.php:163 views/list.php:454 views/list_places_families.php:95
-#: views/photoalbum.php:191 views/relations.php:97 views/relations.php:105
+#: views/photoalbum.php:190 views/relations.php:97 views/relations.php:105
 #: views/relations.php:208 views/relations.php:211 views/relations.php:219
 #: views/sources.php:26
 msgid "Search"
 msgstr "Arama"
 
-#: admin/include/editor_event_cls.php:953
-#: admin/include/editor_event_cls.php:958
-#: admin/include/editor_event_cls.php:1000 admin/views/cms_pages.php:196
+#: admin/include/editor_event_cls.php:956
+#: admin/include/editor_event_cls.php:961
+#: admin/include/editor_event_cls.php:1003 admin/views/cms_pages.php:196
 #: admin/views/edit_address.php:87 admin/views/edit_address.php:278
 #: admin/views/edit_repository.php:70 admin/views/edit_repository.php:229
-#: admin/views/edit_source.php:194 admin/views/edit_source.php:405
+#: admin/views/edit_source.php:192 admin/views/edit_source.php:403
 #: admin/views/editor_person.php:1238 admin/views/editor_person.php:1702
-#: admin/views/editor_relation.php:1051 admin/views/index_admin.php:705
-#: admin/views/thumbs.php:349 include/calculate_age_cls.php:371
+#: admin/views/editor_relation.php:1051 admin/views/index_admin.php:618
+#: admin/views/thumbs.php:451 include/calculate_age_cls.php:371
 #: include/calculate_age_cls.php:393 include/calculate_age_cls.php:497
 #: include/calculate_age_cls.php:519 views/fanchart.php:657
 msgid "or"
 msgstr "veya"
 
-#: admin/include/editor_event_cls.php:971
+#: admin/include/editor_event_cls.php:974
 msgid "Select role or type other role:"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:975
+#: admin/include/editor_event_cls.php:978
 #, fuzzy
 #| msgid "Select place"
 msgid "Select role"
 msgstr "Yer seçin"
 
-#: admin/include/editor_event_cls.php:981
+#: admin/include/editor_event_cls.php:984
 #, fuzzy
 #| msgid "witness"
 msgid "Witness"
 msgstr "tanık"
 
-#: admin/include/editor_event_cls.php:995
-#: admin/include/editor_event_cls.php:1002
+#: admin/include/editor_event_cls.php:998
+#: admin/include/editor_event_cls.php:1005
 #, fuzzy
 #| msgid "Other name"
 msgid "Other role"
 msgstr "Diğer adı"
 
-#: admin/include/editor_event_cls.php:1083
+#: admin/include/editor_event_cls.php:1070
 #: admin/include/editor_relation_select.php:110 admin/views/editor.php:664
 #: admin/views/editor_person.php:249 admin/views/editor_relation.php:63
 #: admin/views/editor_relation.php:272 admin/views/editor_relation.php:305
@@ -589,165 +589,165 @@ msgstr "Diğer adı"
 msgid "and"
 msgstr "ve"
 
+#: admin/include/editor_event_cls.php:1151
 #: admin/include/editor_event_cls.php:1164
-#: admin/include/editor_event_cls.php:1177
 msgid "Selected colour"
 msgstr "Seçilen renk"
 
-#: admin/include/editor_event_cls.php:1180
+#: admin/include/editor_event_cls.php:1167
 msgid "Change colour mark by person"
 msgstr "Kişiye göre renk işaretini değiştir"
 
-#: admin/include/editor_event_cls.php:1181
+#: admin/include/editor_event_cls.php:1168
 msgid "Colour 1"
 msgstr "Renk 1"
 
-#: admin/include/editor_event_cls.php:1182
+#: admin/include/editor_event_cls.php:1169
 msgid "Colour 2"
 msgstr "Renk 2"
 
-#: admin/include/editor_event_cls.php:1183
+#: admin/include/editor_event_cls.php:1170
 msgid "Colour 3"
 msgstr "Renk 3"
 
-#: admin/include/editor_event_cls.php:1184
+#: admin/include/editor_event_cls.php:1171
 msgid "Colour 4"
 msgstr "Renk 4"
 
-#: admin/include/editor_event_cls.php:1185
+#: admin/include/editor_event_cls.php:1172
 msgid "Colour 5"
 msgstr "Renk 5"
 
-#: admin/include/editor_event_cls.php:1186
+#: admin/include/editor_event_cls.php:1173
 msgid "Colour 6"
 msgstr "Renk 6"
 
-#: admin/include/editor_event_cls.php:1187
+#: admin/include/editor_event_cls.php:1174
 msgid "Colour 7"
 msgstr "Renk 7"
 
-#: admin/include/editor_event_cls.php:1188
+#: admin/include/editor_event_cls.php:1175
 msgid "Colour 8"
 msgstr "Renk 8"
 
-#: admin/include/editor_event_cls.php:1189
+#: admin/include/editor_event_cls.php:1176
 msgid "Colour 9"
 msgstr "Renk 9"
 
-#: admin/include/editor_event_cls.php:1190
+#: admin/include/editor_event_cls.php:1177
 msgid "Colour 10"
 msgstr "Renk 10"
 
-#: admin/include/editor_event_cls.php:1191
+#: admin/include/editor_event_cls.php:1178
 msgid "Colour 11"
 msgstr "Renk 11"
 
-#: admin/include/editor_event_cls.php:1192
+#: admin/include/editor_event_cls.php:1179
 msgid "Colour 12"
 msgstr "Renk 12"
 
-#: admin/include/editor_event_cls.php:1193
+#: admin/include/editor_event_cls.php:1180
 msgid "Colour 13"
 msgstr "Renk 13"
 
-#: admin/include/editor_event_cls.php:1194
+#: admin/include/editor_event_cls.php:1181
 msgid "Colour 14"
 msgstr "Renk 14"
 
-#: admin/include/editor_event_cls.php:1200
+#: admin/include/editor_event_cls.php:1187
 msgid "Also change"
 msgstr "Ayrıca değiştir"
 
-#: admin/include/editor_event_cls.php:1202 admin/include/editor_inc.php:526
+#: admin/include/editor_event_cls.php:1189 admin/include/editor_inc.php:526
 #: admin/views/gedcom_export.php:256 app/model/family.php:240
 #: include/person_cls.php:1028 include/person_cls.php:1029
 #: views/hourglass.php:160
 msgid "Descendants"
 msgstr "Nesiller"
 
-#: admin/include/editor_event_cls.php:1203 admin/include/editor_inc.php:527
-#: admin/views/gedcom_export.php:274 app/model/ancestor.php:162
+#: admin/include/editor_event_cls.php:1190 admin/include/editor_inc.php:527
+#: admin/views/gedcom_export.php:274 app/model/ancestor.php:153
 #: include/person_cls.php:1037 include/person_cls.php:1038
 #: views/hourglass.php:140
 msgid "Ancestors"
 msgstr "Atalar"
 
-#: admin/include/editor_event_cls.php:1253
-#: admin/include/editor_event_cls.php:1730
+#: admin/include/editor_event_cls.php:1240
+#: admin/include/editor_event_cls.php:1745
 msgid "German Rufname"
 msgstr "Alman Takma Adı"
 
-#: admin/include/editor_event_cls.php:1306
+#: admin/include/editor_event_cls.php:1293
 msgid "Baptise"
 msgstr "Vaftiz"
 
-#: admin/include/editor_event_cls.php:1322
+#: admin/include/editor_event_cls.php:1309
 msgid "Settling"
 msgstr "Yerleşme"
 
-#: admin/include/editor_event_cls.php:1334
+#: admin/include/editor_event_cls.php:1321
 msgid "Characteristics"
 msgstr "Özellikler"
 
-#: admin/include/editor_event_cls.php:1344 admin/views/editor_person.php:1380
+#: admin/include/editor_event_cls.php:1331 admin/views/editor_person.php:1380
 msgid "Buried"
 msgstr "Defnedildi"
 
-#: admin/include/editor_event_cls.php:1351
+#: admin/include/editor_event_cls.php:1338
 msgid "Will"
 msgstr "Vasiyet"
 
-#: admin/include/editor_event_cls.php:1358 views/anniversary.php:62
+#: admin/include/editor_event_cls.php:1345 views/anniversary.php:62
 #: views/anniversary.php:217
 msgid "Religious"
 msgstr "Dini"
 
-#: admin/include/editor_event_cls.php:1367 include/language_event.php:27
+#: admin/include/editor_event_cls.php:1354 include/language_event.php:27
 msgid "Education"
 msgstr "Eğitim"
 
-#: admin/include/editor_event_cls.php:1374
+#: admin/include/editor_event_cls.php:1361
 msgid "Social"
 msgstr "Sosyal"
 
-#: admin/include/editor_event_cls.php:1382
+#: admin/include/editor_event_cls.php:1369
 msgid "LDS"
 msgstr "LDS"
 
-#: admin/include/editor_event_cls.php:1392
+#: admin/include/editor_event_cls.php:1379
 msgid "Jewish"
 msgstr "Yahudi"
 
-#: admin/include/editor_event_cls.php:1422
-#: admin/include/editor_event_cls.php:1698
+#: admin/include/editor_event_cls.php:1409
+#: admin/include/editor_event_cls.php:1713
 msgid "e.g. Lt. Cmndr."
 msgstr "örneğin Teğmen Komutan."
 
-#: admin/include/editor_event_cls.php:1424
-#: admin/include/editor_event_cls.php:1699
+#: admin/include/editor_event_cls.php:1411
+#: admin/include/editor_event_cls.php:1714
 msgid "e.g. Jr."
 msgstr "örneğin Jr."
 
-#: admin/include/editor_event_cls.php:1426
-#: admin/include/editor_event_cls.php:1700
+#: admin/include/editor_event_cls.php:1413
+#: admin/include/editor_event_cls.php:1715
 msgid "e.g. Jhr., Jkvr."
 msgstr "örneğin Jhr., Jkvr."
 
-#: admin/include/editor_event_cls.php:1428
-#: admin/include/editor_event_cls.php:1701
+#: admin/include/editor_event_cls.php:1415
+#: admin/include/editor_event_cls.php:1716
 msgid "e.g. Prof., Dr."
 msgstr "örneğin Profesör, Doktor"
 
-#: admin/include/editor_event_cls.php:1430
-#: admin/include/editor_event_cls.php:1702
+#: admin/include/editor_event_cls.php:1417
+#: admin/include/editor_event_cls.php:1717
 msgid "e.g. Lord of Amsterdam"
 msgstr "örneğin Amsterdam Lordu"
 
-#: admin/include/editor_event_cls.php:1443
-#: admin/include/editor_event_cls.php:1540
-#: admin/include/editor_event_cls.php:1573 admin/include/editor_sources.php:348
+#: admin/include/editor_event_cls.php:1430
+#: admin/include/editor_event_cls.php:1527
+#: admin/include/editor_event_cls.php:1560 admin/include/editor_sources.php:348
 #: admin/include/editor_sources.php:410 admin/views/edit_repository.php:157
-#: admin/views/edit_source.php:289 admin/views/editor.php:1249
+#: admin/views/edit_source.php:287 admin/views/editor.php:1249
 #: admin/views/editor.php:1283 admin/views/editor.php:1303
 #: admin/views/editor.php:1323 admin/views/editor.php:1662
 #: admin/views/editor_person.php:670 admin/views/editor_person.php:768
@@ -757,17 +757,17 @@ msgstr "örneğin Amsterdam Lordu"
 #: admin/views/editor_relation.php:357 admin/views/editor_relation.php:434
 #: admin/views/editor_relation.php:524 admin/views/editor_relation.php:662
 #: admin/views/editor_relation.php:738 admin/views/editor_relation.php:836
-#: app/model/tree_index.php:940 include/show_source_pdf.php:49
+#: app/model/tree_index.php:1019 include/show_source_pdf.php:49
 #: views/list.php:237 views/list.php:257 views/list.php:702 views/list.php:728
 #: views/source.php:37 views/source.php:115 views/sources.php:69
 msgid "Date"
 msgstr "Tarih"
 
-#: admin/include/editor_event_cls.php:1465
-#: admin/include/editor_event_cls.php:1547
-#: admin/include/editor_event_cls.php:1580 admin/include/editor_sources.php:355
+#: admin/include/editor_event_cls.php:1452
+#: admin/include/editor_event_cls.php:1534
+#: admin/include/editor_event_cls.php:1567 admin/include/editor_sources.php:355
 #: admin/include/editor_sources.php:417 admin/views/edit_address.php:141
-#: admin/views/edit_repository.php:167 admin/views/edit_source.php:297
+#: admin/views/edit_repository.php:167 admin/views/edit_source.php:295
 #: admin/views/editor.php:1255 admin/views/editor.php:1289
 #: admin/views/editor.php:1309 admin/views/editor.php:1329
 #: admin/views/editor.php:1601 admin/views/editor_person.php:677
@@ -784,11 +784,11 @@ msgstr "Tarih"
 msgid "Place"
 msgstr "Yer"
 
-#: admin/include/editor_event_cls.php:1484
-#: admin/include/editor_event_cls.php:1554
-#: admin/include/editor_event_cls.php:1587 admin/include/editor_sources.php:369
+#: admin/include/editor_event_cls.php:1471
+#: admin/include/editor_event_cls.php:1541
+#: admin/include/editor_event_cls.php:1574 admin/include/editor_sources.php:369
 #: admin/views/edit_address.php:253 admin/views/edit_repository.php:187
-#: admin/views/edit_source.php:378 admin/views/editor.php:1655
+#: admin/views/edit_source.php:376 admin/views/editor.php:1655
 #: admin/views/editor_person.php:445 admin/views/editor_person.php:704
 #: admin/views/editor_person.php:795 admin/views/editor_person.php:885
 #: admin/views/editor_person.php:980 admin/views/editor_person.php:1066
@@ -806,7 +806,7 @@ msgstr "Yer"
 msgid "Text"
 msgstr "Metin"
 
-#: admin/include/editor_event_cls.php:1496 admin/include/editor_sources.php:71
+#: admin/include/editor_event_cls.php:1483 admin/include/editor_sources.php:71
 #: admin/include/editor_sources.php:77 admin/include/editor_sources.php:83
 #: admin/include/editor_sources.php:89 admin/include/editor_sources.php:95
 #: admin/include/editor_sources.php:101 admin/include/editor_sources.php:107
@@ -834,87 +834,103 @@ msgstr "Metin"
 msgid "Source"
 msgstr "Kaynak"
 
-#: admin/include/editor_event_cls.php:1604
+#: admin/include/editor_event_cls.php:1594
 msgid "Upload new image"
 msgstr "Yeni resim yükle"
 
-#: admin/include/editor_event_cls.php:1606 admin/update/install_update.php:605
+#: admin/include/editor_event_cls.php:1600 admin/update/install_update.php:614
 #: admin/views/backup.php:110 admin/views/gedcom.php:67
 #: admin/views/settings.php:99 admin/views/settings.php:652
 msgid "Upload"
 msgstr "Yükle"
 
-#: admin/include/editor_event_cls.php:1708 include/person_cls.php:1840
+#: admin/include/editor_event_cls.php:1605
+msgid "Main media folder"
+msgstr ""
+
+#: admin/include/editor_event_cls.php:1614
+#, fuzzy
+#| msgid "Category name"
+msgid "Category"
+msgstr "Kategori adı"
+
+#: admin/include/editor_event_cls.php:1616
+#, fuzzy
+#| msgid "Directory created."
+msgid "Directory"
+msgstr "Dizin oluşturuldu."
+
+#: admin/include/editor_event_cls.php:1723 include/person_cls.php:1840
 #: include/person_cls.php:1846
 msgid "Also known as"
 msgstr "Ayrıca şöyle bilinir"
 
-#: admin/include/editor_event_cls.php:1709 include/language_event.php:80
+#: admin/include/editor_event_cls.php:1724 include/language_event.php:80
 msgid "alias name"
 msgstr "takma ad"
 
-#: admin/include/editor_event_cls.php:1710 include/language_event.php:83
+#: admin/include/editor_event_cls.php:1725 include/language_event.php:83
 msgid "Short name (for reports)"
 msgstr "Kısa ad (raporlar için)"
 
-#: admin/include/editor_event_cls.php:1711 include/language_event.php:86
+#: admin/include/editor_event_cls.php:1726 include/language_event.php:86
 msgid "Adopted name"
 msgstr "Kabul edilen isim"
 
-#: admin/include/editor_event_cls.php:1715 admin/views/editor_person.php:426
+#: admin/include/editor_event_cls.php:1730 admin/views/editor_person.php:426
 #: include/language_event.php:89
 msgid "Hebrew name"
 msgstr "İbranice adı"
 
-#: admin/include/editor_event_cls.php:1718 include/language_event.php:92
+#: admin/include/editor_event_cls.php:1733 include/language_event.php:92
 msgid "Census name"
 msgstr "Nüfus sayımı adı"
 
-#: admin/include/editor_event_cls.php:1719 include/language_event.php:95
+#: admin/include/editor_event_cls.php:1734 include/language_event.php:95
 msgid "Married name"
 msgstr "Evlilik adı"
 
-#: admin/include/editor_event_cls.php:1720 include/language_event.php:98
+#: admin/include/editor_event_cls.php:1735 include/language_event.php:98
 msgid "Given name"
 msgstr "Adı"
 
-#: admin/include/editor_event_cls.php:1721 include/language_event.php:101
+#: admin/include/editor_event_cls.php:1736 include/language_event.php:101
 msgid "Farm name"
 msgstr "Çiftlik adı"
 
-#: admin/include/editor_event_cls.php:1722 include/language_event.php:104
+#: admin/include/editor_event_cls.php:1737 include/language_event.php:104
 msgid "Birth name"
 msgstr "Doğum adı"
 
-#: admin/include/editor_event_cls.php:1723 include/language_event.php:107
+#: admin/include/editor_event_cls.php:1738 include/language_event.php:107
 msgid "Indian name"
 msgstr "Hint adı"
 
-#: admin/include/editor_event_cls.php:1724 include/language_event.php:110
+#: admin/include/editor_event_cls.php:1739 include/language_event.php:110
 msgid "Formal name"
 msgstr "Resmi adı"
 
-#: admin/include/editor_event_cls.php:1725 include/language_event.php:113
+#: admin/include/editor_event_cls.php:1740 include/language_event.php:113
 msgid "Current name"
 msgstr "Geçerli adı"
 
-#: admin/include/editor_event_cls.php:1726 include/language_event.php:116
+#: admin/include/editor_event_cls.php:1741 include/language_event.php:116
 msgid "Soldier name"
 msgstr "Askeri adı"
 
-#: admin/include/editor_event_cls.php:1727 include/language_event.php:122
+#: admin/include/editor_event_cls.php:1742 include/language_event.php:122
 msgid "Religious name"
 msgstr "Dini adı"
 
-#: admin/include/editor_event_cls.php:1728 include/language_event.php:125
+#: admin/include/editor_event_cls.php:1743 include/language_event.php:125
 msgid "Other name"
 msgstr "Diğer adı"
 
-#: admin/include/editor_event_cls.php:1729 include/language_event.php:119
+#: admin/include/editor_event_cls.php:1744 include/language_event.php:119
 msgid "Formerly known as"
 msgstr "Eskiden bilinen adıyla"
 
-#: admin/include/editor_inc.php:269 admin/models/settings_admin.php:125
+#: admin/include/editor_inc.php:262 admin/models/settings_admin.php:125
 #: admin/models/settings_admin.php:144
 msgid "Photo upload failed, check folder rights"
 msgstr "Fotoğraf yüklenemedi, klasör haklarını kontrol edin"
@@ -932,25 +948,26 @@ msgid "Also remove colour marks of"
 msgstr "Ayrıca renk işaretlerini kaldırın"
 
 #: admin/include/editor_inc.php:530 admin/include/editor_inc.php:1085
-#: admin/include/editor_user_settings.php:100 admin/models/editor.php:1393
+#: admin/include/editor_user_settings.php:90 admin/models/editor.php:1393
 #: admin/models/editor.php:1958 admin/views/cms_pages.php:37
 #: admin/views/cms_pages.php:60 admin/views/edit_address.php:35
-#: admin/views/edit_repository.php:31 admin/views/edit_source.php:121
+#: admin/views/edit_repository.php:31 admin/views/edit_source.php:119
 #: admin/views/editor.php:339 admin/views/editor.php:356
 #: admin/views/editor_relation.php:246 admin/views/gedcom.php:88
 #: admin/views/gedcom_export.php:462 admin/views/gedcom_export.php:478
 #: admin/views/gedcom_export.php:495 admin/views/gedcom_export.php:540
 #: admin/views/groups.php:50 admin/views/groups.php:532
-#: admin/views/index_admin.php:442 admin/views/index_admin.php:450
-#: admin/views/index_admin.php:459 admin/views/install.php:304
-#: admin/views/maps_locations.php:98 admin/views/maps_locations.php:120
-#: admin/views/maps_locations.php:199 admin/views/notes.php:91
-#: admin/views/settings.php:147 admin/views/settings.php:162
-#: admin/views/settings.php:188 admin/views/settings.php:211
-#: admin/views/settings.php:226 admin/views/settings.php:268
-#: admin/views/settings.php:280 admin/views/settings.php:295
-#: admin/views/settings.php:332 admin/views/settings.php:804
-#: admin/views/settings_homepage.php:345 admin/views/thumbs.php:451
+#: admin/views/install.php:304 admin/views/maps_locations.php:98
+#: admin/views/maps_locations.php:120 admin/views/maps_locations.php:199
+#: admin/views/notes.php:91 admin/views/settings.php:147
+#: admin/views/settings.php:162 admin/views/settings.php:188
+#: admin/views/settings.php:211 admin/views/settings.php:226
+#: admin/views/settings.php:268 admin/views/settings.php:280
+#: admin/views/settings.php:295 admin/views/settings.php:332
+#: admin/views/settings.php:804 admin/views/settings_homepage.php:345
+#: admin/views/thumbs.php:162 admin/views/thumbs.php:172
+#: admin/views/thumbs.php:181 admin/views/thumbs.php:191
+#: admin/views/thumbs.php:211 admin/views/thumbs.php:553
 #: admin/views/tree_merge.php:892 admin/views/tree_merge.php:905
 #: admin/views/tree_merge.php:918 admin/views/tree_merge.php:935
 #: admin/views/trees.php:29 admin/views/users.php:19 views/mailform.php:79
@@ -958,16 +975,15 @@ msgid "Yes"
 msgstr "Evet"
 
 #: admin/include/editor_inc.php:531 admin/include/editor_inc.php:1086
-#: admin/include/editor_user_settings.php:106 admin/models/editor.php:1394
+#: admin/include/editor_user_settings.php:91 admin/models/editor.php:1394
 #: admin/models/editor.php:1959 admin/views/cms_pages.php:38
 #: admin/views/cms_pages.php:61 admin/views/edit_address.php:36
-#: admin/views/edit_repository.php:32 admin/views/edit_source.php:122
+#: admin/views/edit_repository.php:32 admin/views/edit_source.php:120
 #: admin/views/editor.php:340 admin/views/editor.php:357
 #: admin/views/editor_relation.php:247 admin/views/gedcom.php:89
 #: admin/views/gedcom_export.php:463 admin/views/gedcom_export.php:479
 #: admin/views/gedcom_export.php:496 admin/views/gedcom_export.php:539
 #: admin/views/groups.php:51 admin/views/groups.php:533
-#: admin/views/index_admin.php:454 admin/views/index_admin.php:462
 #: admin/views/install.php:305 admin/views/maps_locations.php:99
 #: admin/views/maps_locations.php:121 admin/views/maps_locations.php:200
 #: admin/views/notes.php:92 admin/views/settings.php:148
@@ -976,10 +992,14 @@ msgstr "Evet"
 #: admin/views/settings.php:269 admin/views/settings.php:281
 #: admin/views/settings.php:296 admin/views/settings.php:333
 #: admin/views/settings.php:805 admin/views/settings_homepage.php:346
-#: admin/views/thumbs.php:452 admin/views/tree_merge.php:893
-#: admin/views/tree_merge.php:906 admin/views/tree_merge.php:919
-#: admin/views/tree_merge.php:936 admin/views/trees.php:30
-#: admin/views/users.php:20 views/mailform.php:80
+#: admin/views/thumbs.php:92 admin/views/thumbs.php:95
+#: admin/views/thumbs.php:102 admin/views/thumbs.php:162
+#: admin/views/thumbs.php:172 admin/views/thumbs.php:181
+#: admin/views/thumbs.php:191 admin/views/thumbs.php:210
+#: admin/views/thumbs.php:229 admin/views/thumbs.php:554
+#: admin/views/tree_merge.php:893 admin/views/tree_merge.php:906
+#: admin/views/tree_merge.php:919 admin/views/tree_merge.php:936
+#: admin/views/trees.php:30 admin/views/users.php:20 views/mailform.php:80
 msgid "No"
 msgstr "Hayır"
 
@@ -1030,7 +1050,7 @@ msgstr "Cinsiyet"
 
 #: admin/include/editor_sources.php:77 admin/include/editor_sources.php:83
 #: admin/views/editor.php:1246 admin/views/editor_person.php:650
-#: app/model/tree_index.php:895 app/model/tree_index.php:897
+#: app/model/tree_index.php:974 app/model/tree_index.php:976
 #: googlemaps/namesearch.php:185 include/person_cls.php:2013
 #: include/person_cls.php:2014 include/person_cls.php:2016
 #: include/person_cls.php:2017 views/ancestor_sheet.php:295
@@ -1041,8 +1061,8 @@ msgid "born"
 msgstr "doğdu"
 
 #: admin/include/editor_sources.php:89 admin/views/editor.php:1280
-#: admin/views/editor_person.php:1015 app/model/timeline.php:102
-#: app/model/tree_index.php:904 app/model/tree_index.php:906
+#: admin/views/editor_person.php:1015 app/model/timeline.php:83
+#: app/model/tree_index.php:983 app/model/tree_index.php:985
 #: googlemaps/namesearch.php:188 include/person_cls.php:2181
 #: include/person_cls.php:2182 include/person_cls.php:2184
 #: include/person_cls.php:2185 views/family.php:1145 views/list.php:235
@@ -1052,7 +1072,7 @@ msgstr "vaftiz edildi"
 
 #: admin/include/editor_sources.php:95 admin/include/editor_sources.php:101
 #: admin/views/editor.php:1300 admin/views/editor_person.php:1105
-#: app/model/tree_index.php:913 app/model/tree_index.php:915
+#: app/model/tree_index.php:992 app/model/tree_index.php:994
 #: googlemaps/namesearch.php:194 include/person_cls.php:2334
 #: include/person_cls.php:2335 include/person_cls.php:2337
 #: include/person_cls.php:2338 views/ancestor_sheet.php:295
@@ -1062,19 +1082,20 @@ msgid "died"
 msgstr "öldü"
 
 #: admin/include/editor_sources.php:107 admin/views/editor.php:1320
-#: admin/views/editor_person.php:1416 app/model/timeline.php:128
+#: admin/views/editor_person.php:1416 app/model/timeline.php:109
 #: googlemaps/namesearch.php:197 include/person_cls.php:2513 views/list.php:255
 #: views/list.php:263 views/list.php:641 views/maps.php:454 views/maps.php:585
 msgid "buried"
 msgstr "defnedildi"
 
 #: admin/include/editor_sources.php:113 admin/include/editor_sources.php:205
-#: admin/include/editor_sources.php:213 include/show_sources.php:99
-#: include/show_sources.php:232 include/show_sources.php:365
+#: admin/include/editor_sources.php:213 admin/views/thumbs.php:748
+#: include/show_sources.php:99 include/show_sources.php:232
+#: include/show_sources.php:365
 msgid "source"
 msgstr "kaynak"
 
-#: admin/include/editor_sources.php:119
+#: admin/include/editor_sources.php:119 admin/views/thumbs.php:727
 msgid "person"
 msgstr "kişi"
 
@@ -1116,7 +1137,7 @@ msgstr "Dini Evlilik"
 msgid "Divorce"
 msgstr "Boşanma"
 
-#: admin/include/editor_sources.php:173
+#: admin/include/editor_sources.php:173 admin/views/thumbs.php:739
 msgid "relation"
 msgstr "ilişki"
 
@@ -1124,10 +1145,10 @@ msgstr "ilişki"
 #: admin/views/cms_pages.php:254 admin/views/cms_pages.php:281
 #: admin/views/edit_address.php:274 admin/views/edit_address.php:277
 #: admin/views/edit_rename_place.php:82 admin/views/edit_repository.php:225
-#: admin/views/edit_repository.php:228 admin/views/edit_source.php:402
-#: admin/views/edit_source.php:404 admin/views/editor_person.php:356
+#: admin/views/edit_repository.php:228 admin/views/edit_source.php:400
+#: admin/views/edit_source.php:402 admin/views/editor_person.php:356
 #: admin/views/editor_person.php:1701 admin/views/editor_relation.php:271
-#: admin/views/editor_relation.php:1049 admin/views/index_admin.php:170
+#: admin/views/editor_relation.php:1049 admin/views/index_admin.php:139
 #: admin/views/language_editor.php:264 admin/views/maps_worldmap.php:103
 #: admin/views/maps_worldmap.php:138 admin/views/prefix_editor.php:27
 #: admin/views/tree_merge.php:948
@@ -1142,7 +1163,7 @@ msgstr "Sırayı değiştirmek için sürükleyin (otomatik olarak kaydeder)"
 msgid "Drag to change order"
 msgstr "Sırayı değiştirmek için sürükleyin"
 
-#: admin/include/editor_sources.php:362 admin/views/edit_source.php:330
+#: admin/include/editor_sources.php:362 admin/views/edit_source.php:328
 #: admin/views/settings_homepage.php:242 include/person_cls.php:1932
 #: include/person_cls.php:1933 include/person_cls.php:1935
 #: include/person_cls.php:1936 include/show_source_pdf.php:90
@@ -1158,7 +1179,7 @@ msgstr "Kaynak rol"
 msgid "e.g. Writer, Brother, Sister, Father."
 msgstr "örneğin Yazar, Erkek Kardeş, Kız Kardeş, Baba."
 
-#: admin/include/editor_sources.php:388 admin/views/edit_source.php:370
+#: admin/include/editor_sources.php:388 admin/views/edit_source.php:368
 #: include/show_source_pdf.php:126 include/tfpdf/tfpdfextend.php:1083
 #: views/source.php:71
 msgid "Page"
@@ -1200,7 +1221,7 @@ msgstr "Ekstra metin"
 msgid "Search existing source"
 msgstr "Mevcut kaynağı ara"
 
-#: admin/include/editor_sources.php:461 admin/views/edit_source.php:136
+#: admin/include/editor_sources.php:461 admin/views/edit_source.php:134
 #: views/list.php:219 views/list.php:226
 msgid "gedcomnumber (ID)"
 msgstr "gedcom numarası (kimlik)"
@@ -1233,19 +1254,19 @@ msgstr "yeni kaynak ekle"
 msgid "Add another source"
 msgstr "Başka bir kaynak ekle"
 
-#: admin/include/editor_sources.php:578 admin/views/edit_source.php:197
+#: admin/include/editor_sources.php:578 admin/views/edit_source.php:195
 msgid "Add source"
 msgstr "Kaynak ekle"
 
-#: admin/include/editor_user_settings.php:8 admin/views/users.php:54
+#: admin/include/editor_user_settings.php:42 admin/views/users.php:54
 msgid "Extra settings"
 msgstr "Ekstra ayarlar"
 
-#: admin/include/editor_user_settings.php:49
+#: admin/include/editor_user_settings.php:44
 msgid "Hide or show family trees per user."
 msgstr "Kullanıcı başına aile ağaçlarını gizleyin veya gösterin."
 
-#: admin/include/editor_user_settings.php:52
+#: admin/include/editor_user_settings.php:48
 msgid ""
 "These are settings PER USER, it's also possible to set these setting PER "
 "USER GROUP."
@@ -1253,24 +1274,24 @@ msgstr ""
 "Bunlar KULLANICI BAŞINA ayarlardır, bu ayarı KULLANICI GRUBU BAŞINA "
 "ayarlamak da mümkündür."
 
-#: admin/include/editor_user_settings.php:76 admin/views/groups.php:617
+#: admin/include/editor_user_settings.php:72 admin/views/groups.php:617
 #: admin/views/maps_locations.php:188 admin/views/notes.php:22
 #: admin/views/trees.php:38 views/help.php:68 views/help.php:72
-#: views/help.php:76 views/help.php:81 views/layout.php:285
-#: views/layout.php:508 views/list.php:152 views/list.php:443
+#: views/help.php:76 views/help.php:81 views/layout.php:283
+#: views/layout.php:506 views/list.php:152 views/list.php:443
 #: views/list.php:643 views/statistics.php:21
 msgid "Family tree"
 msgstr "Aile ağacı"
 
-#: admin/include/editor_user_settings.php:77 admin/views/groups.php:618
+#: admin/include/editor_user_settings.php:73 admin/views/groups.php:618
 msgid "Show tree?"
 msgstr "Ağaç gösterilsin mi?"
 
-#: admin/include/editor_user_settings.php:78 admin/views/groups.php:619
+#: admin/include/editor_user_settings.php:74 admin/views/groups.php:619
 msgid "Edit tree?"
 msgstr "Ağaç düzenlensin mi?"
 
-#: admin/include/editor_user_settings.php:78 admin/views/cms_pages.php:374
+#: admin/include/editor_user_settings.php:74 admin/views/cms_pages.php:374
 #: admin/views/extensions.php:95 admin/views/extensions.php:117
 #: admin/views/groups.php:104 admin/views/groups.php:137
 #: admin/views/groups.php:225 admin/views/groups.php:356
@@ -1284,13 +1305,13 @@ msgstr "Ağaç düzenlensin mi?"
 #: admin/views/settings.php:744 admin/views/settings.php:794
 #: admin/views/settings_homepage.php:21 admin/views/settings_homepage.php:244
 #: admin/views/settings_homepage.php:331 admin/views/settings_special.php:51
-#: admin/views/thumbs.php:76 admin/views/tree_data.php:60
+#: admin/views/thumbs.php:118 admin/views/tree_data.php:45
 #: admin/views/tree_text.php:71 admin/views/tree_text.php:73
 #: admin/views/users.php:56 views/user_settings.php:90
 msgid "Change"
 msgstr "Değiştir"
 
-#: admin/include/editor_user_settings.php:93
+#: admin/include/editor_user_settings.php:89
 msgid "Use user-group setting"
 msgstr "Kullanıcı grubu ayarını kullan"
 
@@ -1300,9 +1321,9 @@ msgstr "Geçerli bir aile numarası yok."
 
 #: admin/include/index_check_update.php:7
 #: admin/include/index_check_update.php:11
-#: admin/include/index_check_update.php:275
-#: admin/include/index_check_update.php:281
-#: admin/include/index_check_update.php:290
+#: admin/include/index_check_update.php:159
+#: admin/include/index_check_update.php:165
+#: admin/include/index_check_update.php:174
 msgid "Update options"
 msgstr "Güncelleme seçenekleri"
 
@@ -1310,32 +1331,32 @@ msgstr "Güncelleme seçenekleri"
 msgid "update check is disabled."
 msgstr "güncelleme kontrolü devre dışı."
 
-#: admin/include/index_check_update.php:274
+#: admin/include/index_check_update.php:158
 msgid "Update check failed."
 msgstr "Güncelleme kontrolü başarısız oldu."
 
-#: admin/include/index_check_update.php:280
-#: admin/include/index_check_update.php:289
+#: admin/include/index_check_update.php:164
+#: admin/include/index_check_update.php:173
 msgid "is up-to-date!"
 msgstr "güncel!"
 
-#: admin/include/index_check_update.php:296
+#: admin/include/index_check_update.php:180
 msgid "Update available"
 msgstr "Güncelleme mevcut"
 
-#: admin/include/index_check_update.php:301
+#: admin/include/index_check_update.php:185
 msgid "Beta version available"
 msgstr "Beta sürümü mevcut"
 
-#: admin/include/index_check_update.php:313 admin/update/install_update.php:584
+#: admin/include/index_check_update.php:197 admin/update/install_update.php:594
 msgid "Online version check unavailable."
 msgstr "Çevrimiçi sürüm kontrolü kullanılamıyor."
 
-#: admin/include/index_check_update.php:334
+#: admin/include/index_check_update.php:218
 msgid "Debug information:"
 msgstr "Hata ayıklama bilgileri:"
 
-#: admin/include/select_tree.php:18 views/layout.php:287 views/maps.php:40
+#: admin/include/select_tree.php:18 views/layout.php:285 views/maps.php:40
 msgid "Select a family tree:"
 msgstr "Bir aile ağacı seçin:"
 
@@ -1349,16 +1370,16 @@ msgstr ""
 "önerilir!<br><b>GÜNCELLEME PROSEDÜRÜNÜ ASLA KESİNTİLEMEYİN!</b><br><b>Lütfen "
 "güncellemenin tamamlandığına dair bildirim gelene kadar bekleyin!</b>"
 
-#: admin/include/update.php:33 admin/views/index_admin.php:16
+#: admin/include/update.php:33 admin/views/index_admin.php:13
 #, php-format
 msgid "%s status"
 msgstr "%s durumu"
 
-#: admin/include/update.php:245 admin/views/install.php:1158
+#: admin/include/update.php:245 admin/views/install.php:1162
 msgid "All updates completed, click at \"Mainmenu\""
 msgstr "Tüm güncellemeler tamamlandı, \"Ana Menü\" ye tıklayın"
 
-#: admin/include/update.php:246 admin/views/install.php:1159
+#: admin/include/update.php:246 admin/views/install.php:1163
 #: admin/views/menu.php:48
 msgid "Main menu"
 msgstr "Ana menü"
@@ -1432,7 +1453,7 @@ msgstr "Unprocessed_tags tablosunu güncelle..."
 msgid "Access to admin pages is not allowed."
 msgstr "Yönetici sayfalarına erişime izin verilmez."
 
-#: admin/index.php:392 admin/views/index_admin.php:11 admin/views/menu.php:43
+#: admin/index.php:392 admin/views/index_admin.php:8 admin/views/menu.php:43
 #: admin/views/menu.php:48
 msgid "Administration"
 msgstr "Yönetim"
@@ -1461,8 +1482,8 @@ msgstr "Temaları göster/ gizle"
 #: admin/index.php:579 admin/views/gedcom_export.php:361
 #: admin/views/maps.php:35 admin/views/maps_settings.php:24
 #: admin/views/menu.php:66 admin/views/settings_admin.php:8
-#: admin/views/settings_admin.php:39 admin/views/tree_merge.php:1039
-#: views/family.php:53 views/family.php:1319
+#: admin/views/settings_admin.php:39 admin/views/thumbs.php:196
+#: admin/views/tree_merge.php:1039 views/family.php:53 views/family.php:1319
 msgid "Settings"
 msgstr "Ayarlar"
 
@@ -1508,17 +1529,17 @@ msgid "Prefix editor"
 msgstr "Önek düzenleyici"
 
 #: admin/index.php:598 admin/views/maps.php:29 admin/views/menu.php:72
-#: views/help.php:105 views/layout.php:597
+#: views/help.php:105 views/layout.php:595
 msgid "World map"
 msgstr "Dünya haritası"
 
-#: admin/index.php:603 admin/views/index_admin.php:668 admin/views/menu.php:78
+#: admin/index.php:603 admin/views/index_admin.php:581 admin/views/menu.php:78
 #: admin/views/menu.php:81
 msgid "Family trees"
 msgstr "Aile ağaçları"
 
 #: admin/index.php:605 admin/views/groups.php:231 admin/views/menu.php:82
-#: admin/views/tree_data.php:41
+#: admin/views/tree_data.php:26
 msgid "Pictures/ create thumbnails"
 msgstr "Resimler/ küçük resimler oluşturun"
 
@@ -1526,8 +1547,7 @@ msgstr "Resimler/ küçük resimler oluşturun"
 msgid "Picture settings"
 msgstr "Resim ayarları"
 
-#: admin/index.php:608 admin/views/thumbs.php:21 admin/views/thumbs.php:125
-#: admin/views/thumbs.php:132
+#: admin/index.php:608 admin/views/thumbs.php:21
 msgid "Create thumbnails"
 msgstr "Küçük resimler oluştur"
 
@@ -1576,13 +1596,13 @@ msgstr "Gizlilik filtresi"
 msgid "Gedcom export"
 msgstr "Gedcomu dışa aktar"
 
-#: admin/index.php:629 admin/views/index_admin.php:417
-#: admin/views/index_admin.php:423 admin/views/menu.php:88
+#: admin/index.php:629 admin/views/index_admin.php:375
+#: admin/views/index_admin.php:379 admin/views/menu.php:88
 msgid "Database backup"
 msgstr "Veritabanı yedekleme"
 
 #: admin/index.php:630 admin/views/menu.php:89 admin/views/statistics.php:280
-#: admin/views/users.php:55 views/help.php:95 views/layout.php:588
+#: admin/views/users.php:55 views/help.php:95 views/layout.php:586
 msgid "Statistics"
 msgstr "İstatistikler"
 
@@ -1590,12 +1610,12 @@ msgstr "İstatistikler"
 msgid "Persons and families"
 msgstr "Kişiler ve aileler"
 
-#: admin/index.php:637 admin/views/edit_source.php:105
+#: admin/index.php:637 admin/views/edit_source.php:103
 #: admin/views/groups.php:355 admin/views/menu.php:100
 #: admin/views/tree_merge.php:1592 app/controller/sourcesController.php:29
 #: include/show_sources.php:346 views/ancestor_report_pdf.php:375
 #: views/family.php:72 views/family_pdf.php:562 views/help.php:86
-#: views/layout.php:542 views/sources.php:16
+#: views/layout.php:540 views/sources.php:16
 msgid "Sources"
 msgstr "Kaynaklar"
 
@@ -1620,7 +1640,7 @@ msgid "Users"
 msgstr "Kullanıcılar"
 
 #: admin/index.php:647 admin/views/groups.php:33 admin/views/menu.php:114
-#: admin/views/thumbs.php:159
+#: admin/views/thumbs.php:121
 msgid "User groups"
 msgstr "Kullanıcı grupları"
 
@@ -1628,7 +1648,7 @@ msgstr "Kullanıcı grupları"
 msgid "Log"
 msgstr "Günlük"
 
-#: admin/index.php:652 admin/views/index_admin.php:522 admin/views/log.php:12
+#: admin/index.php:652 admin/views/index_admin.php:435 admin/views/log.php:12
 msgid "Logfile users"
 msgstr "Günlük dosyası kullanıcıları"
 
@@ -1680,30 +1700,30 @@ msgstr "Dosya başarıyla yüklendi."
 msgid "Upload has failed."
 msgstr "Yükleme başarısız oldu."
 
-#: admin/models/index_admin.php:25
+#: admin/models/index_admin.php:10
 msgid "Database connection status:"
 msgstr "Veritabanı bağlantı durumu:"
 
-#: admin/models/index_admin.php:32
+#: admin/models/index_admin.php:17
 msgid "MySQL connection: OK!"
 msgstr "MySQL bağlantısı: Tamam!"
 
-#: admin/models/index_admin.php:39
+#: admin/models/index_admin.php:24
 msgid "There is no MySQL connection: please check host/ username and password."
 msgstr ""
 "MySQL bağlantısı yok: lütfen ana bilgisayar/ kullanıcı adı ve şifreyi "
 "kontrol edin."
 
-#: admin/models/index_admin.php:49
+#: admin/models/index_admin.php:34
 msgid "Database connection: OK!"
 msgstr "Veritabanı bağlantısı: Tamam!"
 
-#: admin/models/index_admin.php:54
+#: admin/models/index_admin.php:38
 msgid "No database found! Check MySQL connection and database name"
 msgstr ""
 "Veritabanı bulunamadı! MySQL bağlantısını ve veritabanı adını kontrol edin"
 
-#: admin/models/index_admin.php:60 admin/update/install_update.php:475
+#: admin/models/index_admin.php:44 admin/update/install_update.php:483
 msgid ""
 "The configuration file is not writable! Please change the include/db_login."
 "php file manually."
@@ -1711,7 +1731,7 @@ msgstr ""
 "Yapılandırma dosyası yazılabilir değil! Lütfen include/db_login.php "
 "dosyasını manuel olarak değiştirin."
 
-#: admin/models/index_admin.php:103 admin/update/install_update.php:517
+#: admin/models/index_admin.php:87 admin/update/install_update.php:525
 msgid ""
 "There is a problem in the db_login file, maybe an old db_login file is used."
 msgstr ""
@@ -1722,7 +1742,7 @@ msgstr ""
 msgid "Saved"
 msgstr "Kaydedildi"
 
-#: admin/models/language_editor.php:90 admin/views/thumbs.php:339
+#: admin/models/language_editor.php:90 admin/views/thumbs.php:441
 #: admin/views/tree_text.php:15
 msgid "Language"
 msgstr "Dil"
@@ -1753,66 +1773,66 @@ msgstr "Hata: kullanıcı adı muhtemelen zaten mevcut."
 msgid "%s Update"
 msgstr "%s Güncelleme"
 
-#: admin/update/install_update.php:29
+#: admin/update/install_update.php:32
 msgid "Version:"
 msgstr "Sürüm:"
 
-#: admin/update/install_update.php:33
+#: admin/update/install_update.php:36
 msgid "no version number available..."
 msgstr "sürüm numarası yok..."
 
-#: admin/update/install_update.php:36
+#: admin/update/install_update.php:39
 #, php-format
 msgid "%s is up-to-date!"
 msgstr "%s güncel!"
 
-#: admin/update/install_update.php:38
+#: admin/update/install_update.php:41
 #, php-format
 msgid "If needed: re-install all or some of the %s files"
 msgstr "Gerekirse:  %s dosyalarının tümünü veya bir kısmını yeniden yükleyin"
 
-#: admin/update/install_update.php:44
+#: admin/update/install_update.php:47
 #, php-format
 msgid "%s beta version"
 msgstr "%s beta sürümü"
 
-#: admin/update/install_update.php:46
+#: admin/update/install_update.php:49
 msgid "Sometimes there is a beta version available."
 msgstr "Bazen bir beta sürümü mevcuttur."
 
-#: admin/update/install_update.php:49
+#: admin/update/install_update.php:52
 #, php-format
 msgid "%s beta version available"
 msgstr "%s beta sürümü mevcut"
 
-#: admin/update/install_update.php:52
+#: admin/update/install_update.php:55
 msgid "No beta version available."
 msgstr "Beta sürümü mevcut değil."
 
-#: admin/update/install_update.php:62 admin/update/install_update.php:635
+#: admin/update/install_update.php:65 admin/update/install_update.php:638
 #, php-format
 msgid "Enable/ disable %s update check."
 msgstr "%s güncelleştirme kontrolünü etkinleştir/ devre dışı bırak."
 
-#: admin/update/install_update.php:68 admin/update/install_update.php:640
+#: admin/update/install_update.php:71 admin/update/install_update.php:643
 #, php-format
 msgid "Check regularly for %s updates."
 msgstr "%s güncellemelerini düzenli olarak kontrol edin."
 
-#: admin/update/install_update.php:79
+#: admin/update/install_update.php:82
 #, php-format
 msgid "Debug %s update"
 msgstr "Hata ayıklama güncellemesi %s"
 
-#: admin/update/install_update.php:82
+#: admin/update/install_update.php:86
 msgid "Debug"
 msgstr "Hata Ayıklama"
 
-#: admin/update/install_update.php:88
+#: admin/update/install_update.php:93
 msgid "Automatic update"
 msgstr "Otomatik güncelleme"
 
-#: admin/update/install_update.php:90
+#: admin/update/install_update.php:95
 msgid ""
 "Every step can take some time, please be patient and wait till the step is "
 "completed!"
@@ -1820,68 +1840,68 @@ msgstr ""
 "Her adım biraz zaman alabilir, lütfen sabırlı olun ve adım tamamlanana kadar "
 "bekleyin!"
 
-#: admin/update/install_update.php:124
+#: admin/update/install_update.php:129
 #, php-format
 msgid "Step 1) Download and unzip new %s version"
 msgstr "Adım 1) Yeni %s sürümünü indirin ve sıkıştırmasını açın"
 
-#: admin/update/install_update.php:136
+#: admin/update/install_update.php:141
 #, php-format
 msgid "Download and unzip new %s version"
 msgstr "Yeni %s sürümünü indirin ve sıkıştırmasını açın"
 
-#: admin/update/install_update.php:140 admin/update/install_update.php:623
+#: admin/update/install_update.php:145 admin/update/install_update.php:633
 #, php-format
 msgid "%s version history"
 msgstr "%s sürüm geçmişi"
 
-#: admin/update/install_update.php:157
+#: admin/update/install_update.php:162
 msgid "Found update file, skipped download of update!"
 msgstr "Güncelleme dosyası bulundu, güncellemenin indirilmesi atlandı!"
 
-#: admin/update/install_update.php:279
+#: admin/update/install_update.php:283
 msgid "Automatic download successfull!"
 msgstr "Otomatik indirme başarılı!"
 
-#: admin/update/install_update.php:281
+#: admin/update/install_update.php:285
 msgid "Automatic download of file failed."
 msgstr "Dosyanın otomatik indirilmesi başarısız oldu."
 
-#: admin/update/install_update.php:290
+#: admin/update/install_update.php:294
 msgid "File successfully unzipped!"
 msgstr "Dosya başarıyla açıldı!"
 
-#: admin/update/install_update.php:301
+#: admin/update/install_update.php:305
 msgid "Step 2)"
 msgstr "Adım 2)"
 
-#: admin/update/install_update.php:308
+#: admin/update/install_update.php:312
 msgid "Check files"
 msgstr "Dosyaları kontrol et"
 
-#: admin/update/install_update.php:320
+#: admin/update/install_update.php:325
 msgid "Step 2) Compare existing and update files (no installation yet)..."
 msgstr ""
 "Adım 2) Mevcut dosyaları karşılaştırın ve dosyaları güncelleyin (henüz "
 "yükleme yok)..."
 
-#: admin/update/install_update.php:323
+#: admin/update/install_update.php:329
 msgid "Step 3) Installation of new files..."
 msgstr "Adım 3) Yeni dosyaların yüklenmesi..."
 
-#: admin/update/install_update.php:401
+#: admin/update/install_update.php:408
 msgid "Installation of file failed"
 msgstr "Dosya yüklenmesi başarısız oldu"
 
-#: admin/update/install_update.php:403
+#: admin/update/install_update.php:410
 msgid "File installed!"
 msgstr "Dosya yüklendi!"
 
-#: admin/update/install_update.php:418
+#: admin/update/install_update.php:425
 msgid "Directory created."
 msgstr "Dizin oluşturuldu."
 
-#: admin/update/install_update.php:428
+#: admin/update/install_update.php:435
 #, php-format
 msgid ""
 "The following files are not part of the %s system files (anymore). If you "
@@ -1890,99 +1910,99 @@ msgstr ""
 "Aşağıdaki dosyalar %s (artık) sistem dosyalarının bir parçası değildir. "
 "İsterseniz, kaldırılabilirler."
 
-#: admin/update/install_update.php:437
+#: admin/update/install_update.php:444
 #, fuzzy
 #| msgid "Select all files (recommended option)"
 msgid "Select all files (recommended option, please check these files first!)"
 msgstr "Tüm dosyaları seç (önerilen seçenek)"
 
-#: admin/update/install_update.php:471
+#: admin/update/install_update.php:478
 msgid "Update new db_login.php file..."
 msgstr "Yeni db_login.php dosyasını güncelleyin..."
 
-#: admin/update/install_update.php:519
+#: admin/update/install_update.php:527
 msgid "File is updated."
 msgstr "Dosya güncellendi."
 
-#: admin/update/install_update.php:529
+#: admin/update/install_update.php:535
 msgid "Install files!"
 msgstr "Dosyaları yükleyin!"
 
-#: admin/update/install_update.php:547
+#: admin/update/install_update.php:554
 msgid "Update completed and installation files removed!"
 msgstr "Güncelleme tamamlandı ve yükleme dosyaları kaldırıldı!"
 
-#: admin/update/install_update.php:553
+#: admin/update/install_update.php:560
 #, php-format
 msgid "Current %s version:"
 msgstr "Geçerli %s sürümü:"
 
-#: admin/update/install_update.php:556
+#: admin/update/install_update.php:563
 #, php-format
 msgid "Available %s version:"
 msgstr "Kullanılabilir %s sürümü:"
 
-#: admin/update/install_update.php:560
+#: admin/update/install_update.php:567
 msgid "There are 2 update methods: automatic and manually."
 msgstr "2 güncelleme yöntemi vardır: otomatik ve manuel."
 
-#: admin/update/install_update.php:563
+#: admin/update/install_update.php:570
 #, php-format
 msgid "1) Automatic update of %s"
 msgstr "1) %s için otomatik güncelleme"
 
-#: admin/update/install_update.php:565 admin/update/install_update.php:571
+#: admin/update/install_update.php:572 admin/update/install_update.php:578
 msgid "a) [Optional, but highly recommended] Do a database backup first"
 msgstr ""
 "a) [İsteğe bağlı, ancak şiddetle tavsiye edilir] Önce bir veritabanı "
 "yedeklemesi yapın"
 
-#: admin/update/install_update.php:565 admin/update/install_update.php:571
+#: admin/update/install_update.php:572 admin/update/install_update.php:578
 msgid "backup page"
 msgstr "yedekleme sayfası"
 
-#: admin/update/install_update.php:566
+#: admin/update/install_update.php:573
 msgid "b)"
 msgstr "b)"
 
-#: admin/update/install_update.php:566
+#: admin/update/install_update.php:573
 msgid "Start automatic update"
 msgstr "Otomatik güncellemeyi başlat"
 
-#: admin/update/install_update.php:569
+#: admin/update/install_update.php:576
 #, php-format
 msgid "1) Manual update of %s"
 msgstr "1) %s için manuel güncelleme"
 
-#: admin/update/install_update.php:573
+#: admin/update/install_update.php:580
 msgid "b) Download the new version: "
 msgstr "b) Yeni sürümü indirin: "
 
-#: admin/update/install_update.php:574
+#: admin/update/install_update.php:581
 #, php-format
 msgid "%s version:"
 msgstr "%s sürümü:"
 
-#: admin/update/install_update.php:577
+#: admin/update/install_update.php:584
 #, php-format
 msgid "c) Unzip the file and replace the old %s files by the new %s files."
 msgstr ""
 "c) Dosyayı açın ve eski %s dosyalarını yeni %s dosyalarıyla değiştirin."
 
-#: admin/update/install_update.php:579
+#: admin/update/install_update.php:586
 msgid "Full installation and update instructions can be found at:"
 msgstr "Tam yükleme ve güncelleme talimatları şu adreste bulunabilir:"
 
-#: admin/update/install_update.php:580
+#: admin/update/install_update.php:587
 #, php-format
 msgid "%s manual"
 msgstr "%s kılavuzu"
 
-#: admin/update/install_update.php:588
+#: admin/update/install_update.php:595
 msgid "Semi-automatic update"
 msgstr "Yarı otomatik güncelleme"
 
-#: admin/update/install_update.php:589
+#: admin/update/install_update.php:596
 msgid ""
 "In some cases the automatic update doesn't work. Then use this semi-"
 "automatic update method."
@@ -1990,37 +2010,37 @@ msgstr ""
 "Bazı durumlarda otomatik güncelleme çalışmaz. Ardından bu yarı otomatik "
 "güncelleme yöntemini kullanın."
 
-#: admin/update/install_update.php:590
+#: admin/update/install_update.php:597
 #, php-format
 msgid "1. Download a new version of %s."
 msgstr "1. %s uygulamasının yeni bir sürümünü indirin."
 
-#: admin/update/install_update.php:591
+#: admin/update/install_update.php:598
 msgid "2. Rename the zip file into: humo-gen_update.zip"
 msgstr "2. Zip dosyasını şu şekilde yeniden adlandırın: humo-gen_update.zip"
 
-#: admin/update/install_update.php:599
+#: admin/update/install_update.php:607
 msgid "Upload failed, check folder rights"
 msgstr "Yükleme başarısız oldu, klasör haklarını kontrol edin"
 
-#: admin/update/install_update.php:604
+#: admin/update/install_update.php:613
 msgid "3. Upload humo-gen_update.zip:"
 msgstr "3. humo-gen_update.zip dosyasını yükleyin:"
 
-#: admin/update/install_update.php:607
+#: admin/update/install_update.php:616
 msgid "OR: manually upload the file to folder: admin/update/"
 msgstr "VEYA: dosyayı klasöre manuel olarak yükleyin: admin/update/"
 
-#: admin/update/install_update.php:610
+#: admin/update/install_update.php:620
 msgid "4. Then click:"
 msgstr "4. Ardından tıklayın:"
 
-#: admin/update/install_update.php:618
+#: admin/update/install_update.php:628
 #, php-format
 msgid "start update of %s."
 msgstr "%s güncellemesini başlatın."
 
-#: admin/update/install_update.php:625 admin/views/index_admin.php:23
+#: admin/update/install_update.php:634 admin/views/index_admin.php:20
 #, php-format
 msgid "%s version"
 msgstr "%s sürümü"
@@ -2116,7 +2136,7 @@ msgstr "En güncel yedek!"
 msgid "Restore database"
 msgstr "Veritabanını geri yükle"
 
-#: admin/views/backup.php:150 admin/views/index_admin.php:422
+#: admin/views/backup.php:150 admin/views/index_admin.php:378
 msgid "No backup file found!"
 msgstr "Yedek dosya bulunamadı!"
 
@@ -2161,7 +2181,8 @@ msgstr ""
 "Hesaplama; kişilerin doğum, vaftiz, ölüm, defin ve evlilik tarihleri ile "
 "ebeveyn ve çocukların bu tarihleri kullanılarak yapılacaktır."
 
-#: admin/views/cal_date.php:21 admin/views/thumbs.php:38
+#: admin/views/cal_date.php:21 admin/views/thumbs.php:37
+#: admin/views/thumbs.php:148 admin/views/thumbs.php:250
 msgid "Choose family tree"
 msgstr "Aile ağacı seçin"
 
@@ -2297,7 +2318,6 @@ msgstr ""
 "için, ../../../../klasör adı kullanın"
 
 #: admin/views/cms_pages.php:400 admin/views/thumbs.php:61
-#: admin/views/tree_data.php:28
 msgid "Use default picture path:"
 msgstr "Varsayılan resim yolunu kullan:"
 
@@ -2373,11 +2393,11 @@ msgid "Close"
 msgstr "Kapat"
 
 #: admin/views/edit_address.php:279 admin/views/edit_repository.php:230
-#: admin/views/edit_source.php:405
+#: admin/views/edit_source.php:403
 msgid "Delete"
 msgstr "Sil"
 
-#: admin/views/edit_address.php:296 admin/views/edit_source.php:420
+#: admin/views/edit_address.php:296 admin/views/edit_source.php:418
 #: admin/views/editor.php:729
 msgid "Preview"
 msgstr "Önizleme"
@@ -2425,11 +2445,11 @@ msgstr "Geçerli depo numarası yok."
 
 #: admin/views/edit_repository.php:197 admin/views/gedcom_export.php:351
 #: app/model/mailform.php:84 app/model/register.php:96
-#: app/model/user_settings.php:89
+#: app/model/user_settings.php:80
 msgid "E-mail"
 msgstr "E-posta"
 
-#: admin/views/edit_source.php:106
+#: admin/views/edit_source.php:104
 msgid ""
 "These sources can be connected to multiple persons, families, events and "
 "other items."
@@ -2437,81 +2457,81 @@ msgstr ""
 "Bu kaynaklar birden fazla kişiye, aileye, etkinliğe ve diğer öğelere "
 "bağlanabilir."
 
-#: admin/views/edit_source.php:110
+#: admin/views/edit_source.php:108
 msgid "Source is removed!"
 msgstr "Kaynak kaldırıldı!"
 
-#: admin/views/edit_source.php:116
+#: admin/views/edit_source.php:114
 msgid "Are you sure you want to remove this source and ALL source references?"
 msgstr ""
 "Bu kaynağı ve TÜM kaynak referanslarını kaldırmak istediğinizden emin "
 "misiniz?"
 
-#: admin/views/edit_source.php:151 admin/views/edit_source.php:161
+#: admin/views/edit_source.php:149 admin/views/edit_source.php:159
 msgid "Select source"
 msgstr "Kaynak Seç"
 
-#: admin/views/edit_source.php:184 admin/views/edit_source.php:265
+#: admin/views/edit_source.php:182 admin/views/edit_source.php:263
 msgid "restricted"
 msgstr "kısıtlı"
 
-#: admin/views/edit_source.php:226 include/show_source_pdf.php:31
+#: admin/views/edit_source.php:224 include/show_source_pdf.php:31
 #: views/source.php:20 views/source.php:25
 msgid "No valid source number."
 msgstr "Geçerli kaynak numarası yok."
 
-#: admin/views/edit_source.php:261 admin/views/editor.php:1880
+#: admin/views/edit_source.php:259 admin/views/editor.php:1880
 #: admin/views/log.php:35 admin/views/notes.php:224
 #: admin/views/settings_homepage.php:16
 msgid "Status"
 msgstr "Durum"
 
-#: admin/views/edit_source.php:264
+#: admin/views/edit_source.php:262
 msgid "publish"
 msgstr "yayınla"
 
-#: admin/views/edit_source.php:267
+#: admin/views/edit_source.php:265
 msgid "restricted = only visible for selected user groups"
 msgstr "kısıtlı = yalnızca seçili kullanıcı grupları için görünür"
 
-#: admin/views/edit_source.php:281 include/show_source_pdf.php:102
+#: admin/views/edit_source.php:279 include/show_source_pdf.php:102
 #: views/mailform.php:62 views/mailform.php:64 views/source.php:59
 msgid "Subject"
 msgstr "Konu"
 
-#: admin/views/edit_source.php:305 views/source.php:108
+#: admin/views/edit_source.php:303 views/source.php:108
 msgid "Repository"
 msgstr "Depo"
 
-#: admin/views/edit_source.php:315
+#: admin/views/edit_source.php:313
 msgid "Add repositories"
 msgstr "Depolar ekle"
 
-#: admin/views/edit_source.php:321 include/show_source_pdf.php:69
+#: admin/views/edit_source.php:319 include/show_source_pdf.php:69
 #: views/source.php:47
 msgid "Publication"
 msgstr "Yayın"
 
-#: admin/views/edit_source.php:324
+#: admin/views/edit_source.php:322
 msgid "will be shown as a link."
 msgstr "bağlantı olarak gösterilecektir."
 
-#: admin/views/edit_source.php:338 include/show_source_pdf.php:96
+#: admin/views/edit_source.php:336 include/show_source_pdf.php:96
 #: views/source.php:56
 msgid "Author"
 msgstr "Yazar"
 
-#: admin/views/edit_source.php:346 admin/views/statistics.php:64
+#: admin/views/edit_source.php:344 admin/views/statistics.php:64
 #: include/show_source_pdf.php:108 views/source.php:62
 msgid "Nr."
 msgstr "No."
 
-#: admin/views/edit_source.php:354 include/show_source_pdf.php:114
+#: admin/views/edit_source.php:352 include/show_source_pdf.php:114
 #: views/source.php:65
 msgid "Kind"
 msgstr "Tür"
 
-#: admin/views/edit_source.php:362 include/show_source_pdf.php:120
+#: admin/views/edit_source.php:360 include/show_source_pdf.php:120
 #: views/source.php:68
 msgid "Archive"
 msgstr "Arşiv"
@@ -2523,7 +2543,7 @@ msgstr "Sık kullanılanlar listesi"
 #: admin/views/editor.php:93 admin/views/tree_check.php:60
 #: admin/views/tree_check_changes.php:195
 #: app/controller/latest_changesController.php:20 views/help.php:114
-#: views/layout.php:609
+#: views/layout.php:607
 msgid "Latest changes"
 msgstr "Son değişiklikler"
 
@@ -2577,10 +2597,10 @@ msgstr "Bu çocuğun bağlantısını kesmek istediğinizden emin misiniz?"
 #: admin/views/editor.php:433 admin/views/editor_relation.php:38
 #: admin/views/editor_relation.php:42 admin/views/statistics_general.php:286
 #: admin/views/statistics_old.php:84 admin/views/tree_check_changes.php:123
-#: app/controller/descendant_chartController.php:96
-#: app/controller/familyController.php:44
-#: app/controller/hourglassController.php:77
-#: app/controller/outline_reportController.php:57
+#: app/controller/descendant_chartController.php:88
+#: app/controller/familyController.php:36
+#: app/controller/hourglassController.php:70
+#: app/controller/outline_reportController.php:49
 #: views/list_places_families.php:212
 msgid "Family"
 msgstr "Aile"
@@ -2590,23 +2610,23 @@ msgid "Browse"
 msgstr "Göz at"
 
 #: admin/views/editor.php:617 admin/views/editor_relation.php:278
-#: admin/views/editor_relation.php:491 include/marriage_cls.php:812
+#: admin/views/editor_relation.php:491 include/marriage_cls.php:811
 msgid "marriage/ relation"
 msgstr "evlilik/ ilişki"
 
 #: admin/views/editor.php:619 admin/views/editor_relation.php:579
-#: include/marriage_cls.php:375 include/marriage_cls.php:381
-#: include/marriage_cls.php:390 include/marriage_cls.php:391
+#: include/marriage_cls.php:374 include/marriage_cls.php:380
+#: include/marriage_cls.php:389 include/marriage_cls.php:390
 msgid "Married"
 msgstr "Evli"
 
 #: admin/views/editor.php:626 include/marriage_cls.php:61
-#: include/marriage_cls.php:158 include/marriage_cls.php:256
-#: include/marriage_cls.php:362 include/marriage_cls.php:389
-#: include/marriage_cls.php:445 include/marriage_cls.php:529
-#: include/marriage_cls.php:788 include/marriage_cls.php:792
-#: include/marriage_cls.php:800 include/marriage_cls.php:804
-#: include/marriage_cls.php:817 include/marriage_cls.php:821
+#: include/marriage_cls.php:158 include/marriage_cls.php:255
+#: include/marriage_cls.php:361 include/marriage_cls.php:388
+#: include/marriage_cls.php:444 include/marriage_cls.php:528
+#: include/marriage_cls.php:787 include/marriage_cls.php:791
+#: include/marriage_cls.php:799 include/marriage_cls.php:803
+#: include/marriage_cls.php:816 include/marriage_cls.php:820
 #: views/ancestor_report.php:221 views/ancestor_report_pdf.php:282
 #: views/ancestor_report_rtf.php:271 views/descendant_chart.php:385
 msgid " to: "
@@ -2634,7 +2654,7 @@ msgstr "%s içinde düzenlensin mi? <b>Her zaman verilerinizi yedekleyin!</b>"
 msgid "Add person"
 msgstr "Kişi ekle"
 
-#: admin/views/editor.php:741 views/layout.php:808 views/list.php:479
+#: admin/views/editor.php:741 views/layout.php:819 views/list.php:479
 #: views/maps.php:31 views/relations.php:354 views/timeline.php:178
 msgid "Help"
 msgstr "Yardım"
@@ -2727,7 +2747,7 @@ msgid "stillborn child"
 msgstr "ölü doğan çocuk"
 
 #: admin/views/editor.php:1413 admin/views/tree_merge.php:1675
-#: views/addresses.php:12 views/layout.php:555
+#: views/addresses.php:12 views/layout.php:553
 msgid "Addresses"
 msgstr "Adresler"
 
@@ -3119,8 +3139,8 @@ msgstr "1. kişiyi seçin"
 msgid "Select person 2"
 msgstr "2. kişiyi seçin"
 
-#: admin/views/editor_relation.php:347 include/marriage_cls.php:187
-#: include/marriage_cls.php:206
+#: admin/views/editor_relation.php:347 include/marriage_cls.php:186
+#: include/marriage_cls.php:205
 msgid "End living together"
 msgstr "Birlikte yaşamaya son ver"
 
@@ -3462,11 +3482,11 @@ msgstr "Eski soy ağacı öğelerini %s tablosundan kaldırın..."
 #: admin/views/gedcom.php:562 admin/views/gedcom.php:586
 #: admin/views/gedcom.php:612 admin/views/gedcom.php:636
 #: admin/views/gedcom.php:662 admin/views/gedcom.php:698
-#: admin/views/index_admin.php:311 admin/views/index_admin.php:318
-#: admin/views/index_admin.php:325 admin/views/index_admin.php:332
-#: admin/views/index_admin.php:339 admin/views/index_admin.php:346
-#: admin/views/index_admin.php:353 admin/views/index_admin.php:360
-#: admin/views/index_admin.php:367 admin/views/index_admin.php:374
+#: admin/views/index_admin.php:272 admin/views/index_admin.php:279
+#: admin/views/index_admin.php:286 admin/views/index_admin.php:293
+#: admin/views/index_admin.php:300 admin/views/index_admin.php:307
+#: admin/views/index_admin.php:314 admin/views/index_admin.php:321
+#: admin/views/index_admin.php:328 admin/views/index_admin.php:335
 msgid "Optimize table..."
 msgstr "Tabloyu en iyileştir..."
 
@@ -3563,13 +3583,13 @@ msgstr "ADIM 4) Son veritabanı işleme:"
 msgid "Processing of referenced texts into standard texts..."
 msgstr "Referans alınan metinlerin standart metinlere işlenmesi..."
 
-#: admin/views/gedcom.php:1792 admin/views/index_admin.php:691
+#: admin/views/gedcom.php:1792 admin/views/index_admin.php:604
 #: admin/views/statistics_old.php:66 admin/views/tree_admin.php:82
 #: app/model/tree_index.php:282
 msgid "persons"
 msgstr "kişiler"
 
-#: admin/views/gedcom.php:2021 admin/views/index_admin.php:691
+#: admin/views/gedcom.php:2021 admin/views/index_admin.php:604
 #: admin/views/statistics_old.php:66 admin/views/tree_admin.php:82
 #: app/model/tree_index.php:282
 msgid "families"
@@ -4191,7 +4211,7 @@ msgstr "Tüm değişiklikleri kaydet"
 msgid "Hide or show family trees per user group."
 msgstr "Kullanıcı grubu başına aile ağaçlarını gizleyin veya gösterin."
 
-#: admin/views/groups.php:611 admin/views/index_admin.php:708
+#: admin/views/groups.php:611 admin/views/index_admin.php:621
 #: admin/views/menu.php:96 include/person_cls.php:1094
 #: include/person_cls.php:1095
 msgid "Editor"
@@ -4211,7 +4231,7 @@ msgstr "Bu ayarlar kullanıcı başına da ayarlanabilir!"
 msgid "Hide or show photo categories per user group."
 msgstr "Kullanıcı grubu başına fotoğraf kategorilerini gizleyin veya gösterin."
 
-#: admin/views/groups.php:711 admin/views/thumbs.php:314
+#: admin/views/groups.php:711 admin/views/thumbs.php:416
 msgid "Category prefix"
 msgstr "Kategori öneki"
 
@@ -4223,41 +4243,41 @@ msgstr "Kategori gösterilsin mi?"
 msgid "No photo categories available."
 msgstr "Fotoğraf kategorisi yok."
 
-#: admin/views/index_admin.php:28
+#: admin/views/index_admin.php:25
 #, php-format
 msgid "%s extensions"
 msgstr "%s uzantıları"
 
-#: admin/views/index_admin.php:36
+#: admin/views/index_admin.php:33
 msgid "PHP Version"
 msgstr "PHP Sürümü"
 
-#: admin/views/index_admin.php:43
+#: admin/views/index_admin.php:40
 msgid "It is recommended to update PHP!"
 msgstr "PHP'yi güncellemeniz önerilir!"
 
-#: admin/views/index_admin.php:55
+#: admin/views/index_admin.php:52
 msgid "MySQL Version"
 msgstr "MySQL Sürümü"
 
-#: admin/views/index_admin.php:62
+#: admin/views/index_admin.php:59
 msgid "It is recommended to update MySQL!"
 msgstr "MySQL'i güncellemeniz önerilir!"
 
-#: admin/views/index_admin.php:75
+#: admin/views/index_admin.php:73
 msgid "Database"
 msgstr "Veritabanı"
 
-#: admin/views/index_admin.php:78 admin/views/index_admin.php:505
+#: admin/views/index_admin.php:76 admin/views/index_admin.php:420
 #: admin/views/tree_admin.php:80
 msgid "OK"
 msgstr "Tamam"
 
-#: admin/views/index_admin.php:79 admin/views/index_admin.php:148
+#: admin/views/index_admin.php:77 admin/views/index_admin.php:117
 msgid "Database name"
 msgstr "Veritabanı adı"
 
-#: admin/views/index_admin.php:85
+#: admin/views/index_admin.php:83
 #, php-format
 msgid ""
 "<b>There is no database connection! To connect the MySQL database to %s, "
@@ -4266,55 +4286,55 @@ msgstr ""
 "<b>Veritabanı bağlantısı yok! MySQL veritabanını %s'e bağlamak için şu "
 "ayarları doldurun:</b>"
 
-#: admin/views/index_admin.php:120
+#: admin/views/index_admin.php:89
 msgid "Database setting"
 msgstr "Veritabanı ayarı"
 
-#: admin/views/index_admin.php:121
+#: admin/views/index_admin.php:90
 msgid "Database value"
 msgstr "Veritabanı değeri"
 
-#: admin/views/index_admin.php:122
+#: admin/views/index_admin.php:91
 msgid "Example website provider"
 msgstr "Örnek web sitesi sağlayıcısı"
 
-#: admin/views/index_admin.php:123
+#: admin/views/index_admin.php:92
 msgid "Example for XAMPP"
 msgstr "XAMPP için örnek"
 
-#: admin/views/index_admin.php:127
+#: admin/views/index_admin.php:96
 msgid "Database host"
 msgstr "Veritabanı ana bilgisayarı"
 
-#: admin/views/index_admin.php:134
+#: admin/views/index_admin.php:103
 msgid "Database username"
 msgstr "Veritabanı kullanıcı adı"
 
-#: admin/views/index_admin.php:141
+#: admin/views/index_admin.php:110
 msgid "Database password"
 msgstr "Veritabanı şifresi"
 
-#: admin/views/index_admin.php:157
+#: admin/views/index_admin.php:126
 msgid "At a local PC also install database"
 msgstr "Yerel bir bilgisayarda da veritabanını yükleyin"
 
-#: admin/views/index_admin.php:161
+#: admin/views/index_admin.php:130
 msgid "YES, also install database"
 msgstr "EVET, veritabanını da yükleyin"
 
-#: admin/views/index_admin.php:164
+#: admin/views/index_admin.php:133
 msgid "NO"
 msgstr "HAYIR"
 
-#: admin/views/index_admin.php:165 admin/views/maps_locations.php:633
+#: admin/views/index_admin.php:134 admin/views/maps_locations.php:633
 msgid "YES"
 msgstr "EVET"
 
-#: admin/views/index_admin.php:169
+#: admin/views/index_admin.php:138
 msgid "Save settings and connect to database"
 msgstr "Ayarları kaydedin ve veritabanına bağlanın"
 
-#: admin/views/index_admin.php:177
+#: admin/views/index_admin.php:146
 msgid ""
 "Sometimes it's needed to add these lines to a /php.ini and admin/php.ini "
 "files to activate the PDO driver:"
@@ -4322,144 +4342,118 @@ msgstr ""
 "PDO sürücüsünü etkinleştirmek için bazen bu satırları /php.ini ve admin/php."
 "ini dosyalarına eklemek gerekir:"
 
-#: admin/views/index_admin.php:187
+#: admin/views/index_admin.php:152
 msgid "The database has NOT been created!"
 msgstr "Veritabanı oluşturulmadı!"
 
-#: admin/views/index_admin.php:214
+#: admin/views/index_admin.php:180
 msgid "Continue installation"
 msgstr "Yüklemeye devam et"
 
-#: admin/views/index_admin.php:234
+#: admin/views/index_admin.php:195
 msgid "Database tables"
 msgstr "Veritabanı tabloları"
 
-#: admin/views/index_admin.php:238
+#: admin/views/index_admin.php:199
 #, php-format
 msgid "No %s tables found in database."
 msgstr "Veritabanında %s tablosu bulunamadı."
 
-#: admin/views/index_admin.php:242
+#: admin/views/index_admin.php:203
 #, php-format
 msgid "Install %s database tables"
 msgstr "%s veritabanı tablolarını yükle"
 
-#: admin/views/index_admin.php:275
+#: admin/views/index_admin.php:236
 msgid "Size of statistics table"
 msgstr "İstatistik tablosunun boyutu"
 
-#: admin/views/index_admin.php:280
+#: admin/views/index_admin.php:241
 msgid "If needed remove old statistics."
 msgstr "Gerekirse eski istatistikleri kaldırın."
 
-#: admin/views/index_admin.php:303
+#: admin/views/index_admin.php:264
 msgid "Size of database"
 msgstr "Veritabanı boyutu"
 
-#: admin/views/index_admin.php:309
+#: admin/views/index_admin.php:270
 msgid "This may take some time. Please wait..."
 msgstr "Bu biraz zaman alabilir. Lütfen bekleyin..."
 
-#: admin/views/index_admin.php:381
+#: admin/views/index_admin.php:342
 msgid "Optimize database."
 msgstr "Veritabanını optimize edin."
 
-#: admin/views/index_admin.php:407
+#: admin/views/index_admin.php:368
 msgid "Status of database backup"
 msgstr "Veritabanı yedekleme durumu"
 
-#: admin/views/index_admin.php:414
+#: admin/views/index_admin.php:374
 msgid "Last database backup"
 msgstr "Son veritabanı yedeklemesi"
 
-#: admin/views/index_admin.php:432
-msgid "Thumbnail libraries and tools"
-msgstr ""
-
-#: admin/views/index_admin.php:439
-msgid "Imagick (images):"
-msgstr ""
-
-#: admin/views/index_admin.php:444
-msgid "Ghostscript (PDF support):"
-msgstr ""
-
-#: admin/views/index_admin.php:449
-msgid "ffmpeg (movie support):"
-msgstr ""
-
-#: admin/views/index_admin.php:457
-msgid "GD (images):"
-msgstr ""
-
-#: admin/views/index_admin.php:466
-#, fuzzy
-#| msgid "No beta version available."
-msgid "No Thumbnail library available"
-msgstr "Beta sürümü mevcut değil."
-
-#: admin/views/index_admin.php:496 admin/views/users.php:33
+#: admin/views/index_admin.php:411 admin/views/users.php:33
 msgid "Standard admin username and admin password is used."
 msgstr "Standart yönetici kullanıcı adı ve yönetici şifresi kullanılır."
 
-#: admin/views/index_admin.php:497
+#: admin/views/index_admin.php:412
 msgid "Change admin username and password."
 msgstr "Yönetici kullanıcı adını ve şifresini değiştirin."
 
-#: admin/views/index_admin.php:499 admin/views/users.php:37
+#: admin/views/index_admin.php:414 admin/views/users.php:37
 msgid "Standard admin username is used."
 msgstr "Standart yönetici kullanıcı adı kullanılır."
 
-#: admin/views/index_admin.php:500
+#: admin/views/index_admin.php:415
 msgid "Change admin username."
 msgstr "Yönetici kullanıcı adını değiştirin."
 
-#: admin/views/index_admin.php:502 admin/views/users.php:41
+#: admin/views/index_admin.php:417 admin/views/users.php:41
 msgid "Standard admin password is used."
 msgstr "Standart yönetici şifresi kullanılır."
 
-#: admin/views/index_admin.php:503
+#: admin/views/index_admin.php:418
 msgid "Change admin password."
 msgstr "Yönetici şifresini değiştirin."
 
-#: admin/views/index_admin.php:521
+#: admin/views/index_admin.php:434
 msgid "Number of failed logins attempts last month"
 msgstr "Geçen ay başarısız oturum açma girişimlerinin sayısı"
 
-#: admin/views/index_admin.php:528
+#: admin/views/index_admin.php:441
 #, php-format
 msgid "%s security items"
 msgstr "%s güvenlik öğeleri"
 
-#: admin/views/index_admin.php:534
+#: admin/views/index_admin.php:447
 msgid "Check admin account"
 msgstr "Yönetici hesabını kontrol edin"
 
-#: admin/views/index_admin.php:550
+#: admin/views/index_admin.php:463
 msgid "Failed login attempts"
 msgstr "Başarısız oturum açma girişimleri"
 
-#: admin/views/index_admin.php:571
+#: admin/views/index_admin.php:484
 msgid "Login control"
 msgstr "Giriş kontrolü"
 
-#: admin/views/index_admin.php:578
+#: admin/views/index_admin.php:491
 msgid "At the moment you are logged in through PHP-MySQL."
 msgstr "Şu anda PHP-MySQL üzerinden giriş yapıyorsunuz."
 
-#: admin/views/index_admin.php:580
+#: admin/views/index_admin.php:493
 msgid "At the moment you are logged in through an .htacces file."
 msgstr "Şu anda bir .htacces dosyası aracılığıyla oturum açmış durumdasınız."
 
-#: admin/views/index_admin.php:582
+#: admin/views/index_admin.php:495
 msgid "The folder \"admin\" has NOT YET been secured."
 msgstr "\"admin\" klasörü HENÜZ güvenli DEĞİLDİR."
 
-#: admin/views/index_admin.php:588
+#: admin/views/index_admin.php:501
 msgid "INFO"
 msgstr "BİLGİ"
 
-#: admin/views/index_admin.php:594
+#: admin/views/index_admin.php:507
 #, php-format
 msgid ""
 "After installation of the tables (click on the left at Install) the admin "
@@ -4479,11 +4473,11 @@ msgstr ""
 "oluşturabilirsiniz.<br>\n"
 ".htaccess dosyası oluşturun:"
 
-#: admin/views/index_admin.php:600
+#: admin/views/index_admin.php:513
 msgid "Secured website"
 msgstr "Güvenli web sitesi"
 
-#: admin/views/index_admin.php:606
+#: admin/views/index_admin.php:519
 msgid ""
 "Next, you need a file with user names and passwords.<br>\n"
 "For example go to: http://www.htaccesstools.com/htpasswd-generator/<br>\n"
@@ -4495,40 +4489,40 @@ msgstr ""
 "<br>\n"
 ".htpasswd dosyası şuna benzer:<br>"
 
-#: admin/views/index_admin.php:613
+#: admin/views/index_admin.php:526
 msgid "You can also try this password generator:"
 msgstr "Bu şifre oluşturucuyu da deneyebilirsiniz:"
 
-#: admin/views/index_admin.php:617
+#: admin/views/index_admin.php:530
 msgid "Generate new ht-password"
 msgstr "Yeni ht şifresi oluştur"
 
-#: admin/views/index_admin.php:644 admin/views/index_admin.php:650
-#: admin/views/index_admin.php:654
+#: admin/views/index_admin.php:557 admin/views/index_admin.php:563
+#: admin/views/index_admin.php:567
 #, php-format
 msgid "Debug %s pages"
 msgstr "%s sayfalarında hata ayıklayın"
 
-#: admin/views/index_admin.php:649
+#: admin/views/index_admin.php:562
 msgid "OK (option is OFF)"
 msgstr "Tamam (seçenek KAPALI)"
 
-#: admin/views/index_admin.php:653
+#: admin/views/index_admin.php:566
 msgid "UNSAFE (option is ON)."
 msgstr "GÜVENLİ DEĞİL (seçenek AÇIK)."
 
-#: admin/views/index_admin.php:684
+#: admin/views/index_admin.php:597
 msgid "Status tree"
 msgstr "Durum ağacı"
 
-#: admin/views/index_admin.php:695 admin/views/tree_admin.php:84
+#: admin/views/index_admin.php:608 admin/views/tree_admin.php:84
 msgid ""
 "This tree does not yet contain any data or has not been imported properly!"
 msgstr ""
 "Bu ağaç henüz herhangi bir veri içermiyor veya düzgün bir şekilde içe "
 "aktarılmadı!"
 
-#: admin/views/index_admin.php:701 admin/views/trees.php:55
+#: admin/views/index_admin.php:614 admin/views/trees.php:55
 msgid "Import Gedcom file"
 msgstr "Gedcom dosyasını içe aktar"
 
@@ -4641,11 +4635,11 @@ msgstr "Tablolar oluşturma:"
 #: admin/views/install.php:642 admin/views/install.php:660
 #: admin/views/install.php:683 admin/views/install.php:702
 #: admin/views/install.php:731 admin/views/install.php:749
-#: admin/views/install.php:787 admin/views/install.php:816
-#: admin/views/install.php:875 admin/views/install.php:932
-#: admin/views/install.php:966 admin/views/install.php:996
-#: admin/views/install.php:1035 admin/views/install.php:1058
-#: admin/views/install.php:1092 admin/views/install.php:1125
+#: admin/views/install.php:791 admin/views/install.php:820
+#: admin/views/install.php:879 admin/views/install.php:936
+#: admin/views/install.php:970 admin/views/install.php:1000
+#: admin/views/install.php:1039 admin/views/install.php:1062
+#: admin/views/install.php:1096 admin/views/install.php:1129
 #, php-format
 msgid "create table: %s."
 msgstr "tablo oluştur: %s."
@@ -4656,7 +4650,7 @@ msgstr "tablo oluştur: %s."
 msgid "filling table: %s."
 msgstr "doldurma tablosu: %s."
 
-#: admin/views/install.php:1157
+#: admin/views/install.php:1161
 msgid "No errors above? This means that the database has been processed!"
 msgstr "Yukarıda hata yok mu? Bu, veritabanının işlendiği anlamına gelir!"
 
@@ -4752,8 +4746,8 @@ msgstr "Kullanıcı adı veya e-posta adresi"
 msgid "Two factor authentication (2FA) code if needed"
 msgstr "Gerekirse iki faktörlü kimlik doğrulama (2FA) kodu"
 
-#: admin/views/login.php:35 views/help.php:119 views/layout.php:620
-#: views/layout.php:623 views/login.php:16 views/login.php:50
+#: admin/views/login.php:35 views/help.php:119 views/layout.php:618
+#: views/layout.php:621 views/login.php:16 views/login.php:50
 msgid "Login"
 msgstr "Oturum aç"
 
@@ -4847,8 +4841,9 @@ msgstr "Veritabanına eklemeye başladı."
 msgid ""
 "<b>A location database could not be created.</b>\n"
 "<p>This could mean that the PHP function \"allow_url_fopen\" was disabled by "
-"your webhost for security considerations and the PHP extension \"curl\" "
-"(which is an alternative to allow_url_fopen) is not loaded on the server.\n"
+"your webhost for security considerations and the PHP extension "
+"\"curl\" (which is an alternative to allow_url_fopen) is not loaded on the "
+"server.\n"
 "<p>You could contact your webhost and request to either have "
 "\"allow_url_fopen\" enabled or \"curl\" loaded."
 msgstr ""
@@ -5080,7 +5075,7 @@ msgstr ""
 msgid "API key"
 msgstr "API anahtarı"
 
-#: admin/views/menu.php:44 views/help.php:64 views/layout.php:484
+#: admin/views/menu.php:44 views/help.php:64 views/layout.php:482
 msgid "Home"
 msgstr "Anasayfa"
 
@@ -5088,11 +5083,11 @@ msgstr "Anasayfa"
 msgid "Website"
 msgstr "İnternet sitesi"
 
-#: admin/views/menu.php:52 views/layout.php:650
+#: admin/views/menu.php:52 views/layout.php:648
 msgid "Logoff"
 msgstr "Oturumu Kapat"
 
-#: admin/views/menu.php:61 views/layout.php:637
+#: admin/views/menu.php:61 views/layout.php:635
 msgid "Control"
 msgstr "Kontrol"
 
@@ -5365,7 +5360,7 @@ msgstr "Gmail: TLS"
 msgid "SMTP: debugging"
 msgstr "SMTP: hata ayıklama"
 
-#: admin/views/settings.php:488
+#: admin/views/settings.php:488 admin/views/thumbs.php:81
 msgid "Off"
 msgstr "Kapalı"
 
@@ -5452,7 +5447,7 @@ msgstr "Macarca - raporlar ve listeler: Smith John"
 msgid "Default timeline file (per language)"
 msgstr "Varsayılan zaman çizelgesi dosyası (dil başına)"
 
-#: admin/views/settings.php:573 admin/views/thumbs.php:350
+#: admin/views/settings.php:573 admin/views/thumbs.php:452
 #: admin/views/tree_admin.php:18 admin/views/tree_text.php:17
 msgid "Default"
 msgstr "Varsayılan"
@@ -5615,7 +5610,7 @@ msgid "Selected family tree"
 msgstr "Seçilen aile ağacı"
 
 #: admin/views/settings_homepage.php:89 admin/views/settings_homepage.php:205
-#: app/model/tree_index.php:119 views/help.php:72 views/layout.php:521
+#: app/model/tree_index.php:119 views/help.php:72 views/layout.php:519
 msgid "Names"
 msgstr "Adlar"
 
@@ -5625,7 +5620,7 @@ msgid "Today in history"
 msgstr "Tarihte bugün"
 
 #: admin/views/settings_homepage.php:91 admin/views/settings_homepage.php:207
-#: app/model/tree_index.php:98 views/layout.php:386
+#: app/model/tree_index.php:98 views/layout.php:384
 msgid "Favourites"
 msgstr "Sık kullanılanlar"
 
@@ -5920,8 +5915,8 @@ msgstr "Tek ziyaretçiler - Ülke menşei"
 msgid "Country of origin"
 msgstr "Ülke menşei"
 
-#: admin/views/statistics_general.php:160 app/model/descendant.php:446
-#: views/list.php:355
+#: admin/views/statistics_general.php:160 admin/views/thumbs.php:82
+#: app/model/descendant.php:446 views/list.php:355
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
@@ -5978,87 +5973,119 @@ msgstr "İstatistik verilerini KALDIR"
 msgid "User agent information"
 msgstr "Kullanıcı aracısı bilgileri"
 
-#: admin/views/thumbs.php:24 admin/views/thumbs.php:141
-#: admin/views/thumbs.php:148
+#: admin/views/thumbs.php:24 admin/views/thumbs.php:265
 msgid "Show thumbnails"
 msgstr "Küçük resimleri göster"
 
-#: admin/views/thumbs.php:48 admin/views/tree_data.php:24
+#: admin/views/thumbs.php:52 admin/views/tree_data.php:24
 msgid "Path to the pictures"
 msgstr "Resimlere giden yol"
 
-#: admin/views/thumbs.php:71 admin/views/tree_data.php:37
-#, php-format
-msgid ""
-"Example of picture path:<br>\n"
-"www.myhomepage.nl/humo-gen/ => folder for %s files.<br>\n"
-"www.myhomepage.nl/pictures/ => folder for pictures.<br>\n"
-"Use a relative path, exactly as shown here: <b>../pictures/</b>"
-msgstr ""
-"Resim yolu örneği:<br>\n"
-"www.myhomepage.nl/humo-gen/ => %s dosyaları için klasör.<br>\n"
-"www.myhomepage.nl/pictures/ => resimler için klasör.<br>\n"
-"Tam olarak burada gösterildiği gibi göreli bir yol kullanın: <b>../resimler/"
-"</b>"
-
-#: admin/views/thumbs.php:90
-msgid "Subdirectories:"
-msgstr "Alt dizinler:"
-
-#: admin/views/thumbs.php:102
+#: admin/views/thumbs.php:71
 msgid "Status of picture path"
 msgstr "Resim yolunun durumu"
 
-#: admin/views/thumbs.php:106
-msgid "Picture path exists."
-msgstr "Resim yolu var."
+#: admin/views/thumbs.php:80
+msgid "On"
+msgstr ""
 
-#: admin/views/thumbs.php:113
+#: admin/views/thumbs.php:88
+#, fuzzy
+#| msgid "Medical condition"
+msgid "Media directory"
+msgstr "Tıbbi durum"
+
+#: admin/views/thumbs.php:91
+msgid "Safe. Path protected by rewrite engine."
+msgstr ""
+
+#: admin/views/thumbs.php:94
+msgid "Unsafe. Path inside DocRoot."
+msgstr ""
+
+#: admin/views/thumbs.php:97
+msgid "Safe. Path outside DocRoot."
+msgstr ""
+
+#: admin/views/thumbs.php:98
+msgid "Yes - Use server rewrite"
+msgstr ""
+
+#: admin/views/thumbs.php:98
+msgid "Use HuMo rewrite"
+msgstr ""
+
+#: admin/views/thumbs.php:101
 msgid "Picture path doesn't exist!"
 msgstr "Resim yolu yok!"
 
-#: admin/views/thumbs.php:149
-msgid "You can change filenames here."
-msgstr "Dosya adlarını buradan değiştirebilirsiniz."
+#: admin/views/thumbs.php:110
+msgid "Rewrite media path"
+msgstr ""
 
-#: admin/views/thumbs.php:158
+#: admin/views/thumbs.php:120
 msgid "To show pictures, also check the user-group settings: "
 msgstr "Resimleri göstermek için kullanıcı grubu ayarlarını da kontrol edin: "
 
-#: admin/views/thumbs.php:166
-msgid ""
-"- Creating thumbnails<br>\n"
-"- ATTENTION: it may be necessary to (temporarily) change access to the "
-"folder with the pictures (rwxrwxrwx)<br>\n"
-"- Sometimes the php.ini has to be changed slightly, remove the ; before the "
-"line with:"
+#: admin/views/thumbs.php:156
+msgid "Test"
 msgstr ""
-"- Küçük resimler oluşturma<br>\n"
-"- DİKKAT: Resimlerin bulunduğu klasöre erişimi (geçici olarak) değiştirmek "
-"gerekebilir (rwxrwxrwx)<br>\n"
-"- Bazen php.ini biraz değiştirilmelidir, kaldırılmalıdır ; ile satırdan önce:"
 
-#: admin/views/thumbs.php:194
+#: admin/views/thumbs.php:159
+msgid "Imagick (images)"
+msgstr ""
+
+#: admin/views/thumbs.php:169
+msgid "Ghostscript (PDF support)"
+msgstr ""
+
+#: admin/views/thumbs.php:178
+msgid "ffmpeg (movie support)"
+msgstr ""
+
+#: admin/views/thumbs.php:188
+msgid "GD (images)"
+msgstr ""
+
+#: admin/views/thumbs.php:206
+msgid "Use thumbnails [create and display]?"
+msgstr ""
+
+#: admin/views/thumbs.php:225
+msgid "Resize pictures on upload [set maximum width and height]?"
+msgstr ""
+
+#: admin/views/thumbs.php:239
+#, fuzzy
+#| msgid "No beta version available."
+msgid "No Thumbnail library available"
+msgstr "Beta sürümü mevcut değil."
+
+#: admin/views/thumbs.php:258
+msgid "You can change filenames here."
+msgstr "Dosya adlarını buradan değiştirebilirsiniz."
+
+#: admin/views/thumbs.php:296
 msgid "Photos"
 msgstr "Fotoğraflar"
 
-#: admin/views/thumbs.php:264
+#: admin/views/thumbs.php:366
 msgid "Prefix has to be 2 letters and _"
 msgstr "Önek 2 harf ve _ olmalıdır"
 
-#: admin/views/thumbs.php:271
+#: admin/views/thumbs.php:373
 msgid "When creating a category you have to give it a name"
 msgstr "Bir kategori oluştururken ona bir isim vermelisiniz"
 
-#: admin/views/thumbs.php:282
+#: admin/views/thumbs.php:384
 msgid "A category with this prefix already exists!"
 msgstr "Bu öneki olan bir kategori zaten var!"
 
-#: admin/views/thumbs.php:300
+#: admin/views/thumbs.php:402
 msgid "Create categories for your photo albums"
 msgstr "Fotoğraf albümleriniz için kategoriler oluşturun"
 
-#: admin/views/thumbs.php:306
+#: admin/views/thumbs.php:408
 msgid ""
 "Here you can create categories for all your photo albums.</li><li><b>A "
 "category will not be displayed in the photobook menu unless there is at "
@@ -6089,7 +6116,7 @@ msgstr ""
 "Smith.jpg</li><li>Varsayılan fotoğraf kategorisinde görüntülenmesini "
 "istediğiniz resimlerin ön eke ihtiyacı yoktur."
 
-#: admin/views/thumbs.php:307
+#: admin/views/thumbs.php:409
 msgid ""
 "A (sub)directory could also be a category. Example: category prefix = ab_, "
 "the directory name = ab."
@@ -6097,33 +6124,63 @@ msgstr ""
 "Bir (alt)dizin aynı zamanda bir kategori de olabilir. Örnek: kategori öneki "
 "= ab_, dizin adı = ab."
 
-#: admin/views/thumbs.php:315
+#: admin/views/thumbs.php:417
 msgid "Category name"
 msgstr "Kategori adı"
 
-#: admin/views/thumbs.php:385
+#: admin/views/thumbs.php:487
 msgid "default - without prefix"
 msgstr "varsayılan - öneksiz"
 
-#: admin/views/thumbs.php:450
+#: admin/views/thumbs.php:552
 msgid "Do you really want to delete category:"
 msgstr "Kategoriyi gerçekten silmek istiyor musunuz:"
 
-#: admin/views/thumbs.php:457
+#: admin/views/thumbs.php:559
 msgid "Save changes"
 msgstr "Değişiklikleri kaydet"
 
-#: admin/views/thumbs.php:495 admin/views/thumbs.php:497
+#: admin/views/thumbs.php:618
+#, fuzzy
+#| msgid "Selected family tree"
+msgid "Deleted file:"
+msgstr "Seçilen aile ağacı"
+
+#: admin/views/thumbs.php:622 admin/views/thumbs.php:624
 msgid "Changed filename:"
 msgstr "Değiştirilen dosya adı:"
 
-#: admin/views/thumbs.php:495 admin/views/thumbs.php:497
+#: admin/views/thumbs.php:622 admin/views/thumbs.php:624
 msgid "into filename:"
 msgstr "dosya adına:"
 
-#: admin/views/thumbs.php:600
+#: admin/views/thumbs.php:716
+#, fuzzy
+#| msgid "Edit tree?"
+msgid "Used in tree"
+msgstr "Ağaç düzenlensin mi?"
+
+#: admin/views/thumbs.php:763
 msgid "Change filename"
 msgstr "Dosya adını değiştir"
+
+#: admin/views/thumbs.php:771
+#, fuzzy
+#| msgid "Not living"
+msgid "Not in use"
+msgstr "Yaşamıyor"
+
+#: admin/views/thumbs.php:772
+#, fuzzy
+#| msgid "Delete"
+msgid "Delete file:"
+msgstr "Sil"
+
+#: admin/views/thumbs.php:772
+#, fuzzy
+#| msgid "Delete"
+msgid "Delete file"
+msgstr "Sil"
 
 #: admin/views/tree_admin.php:2
 msgid ""
@@ -6260,7 +6317,7 @@ msgid "All editors"
 msgstr "Tüm düzenleyiciler"
 
 #: admin/views/tree_check_changes.php:241 views/help.php:68
-#: views/layout.php:516 views/statistics.php:24
+#: views/layout.php:514 views/statistics.php:24
 msgid "Persons"
 msgstr "Kişiler"
 
@@ -6474,8 +6531,8 @@ msgstr "defin tarihi"
 #: admin/views/tree_check_consistency.php:481
 #: admin/views/tree_check_consistency.php:610
 #: admin/views/tree_check_consistency.php:614
-#: admin/views/tree_check_consistency.php:658 app/model/timeline.php:221
-#: app/model/timeline.php:338 include/marriage_cls.php:786
+#: admin/views/tree_check_consistency.php:658 app/model/timeline.php:202
+#: app/model/timeline.php:319 include/marriage_cls.php:785
 #: views/ancestor_sheet_pdf.php:373
 msgid "marriage"
 msgstr "evlilik"
@@ -6511,22 +6568,22 @@ msgstr "annenin önceki çocuğu"
 
 #: admin/views/tree_check_consistency.php:621
 #: admin/views/tree_check_consistency.php:625
-#: admin/views/tree_check_consistency.php:665 app/model/timeline.php:227
-#: app/model/timeline.php:344
+#: admin/views/tree_check_consistency.php:665 app/model/timeline.php:208
+#: app/model/timeline.php:325
 msgid "marriage notice"
 msgstr "evlilik bildirimi"
 
 #: admin/views/tree_check_consistency.php:631
 #: admin/views/tree_check_consistency.php:635
-#: admin/views/tree_check_consistency.php:672 app/model/timeline.php:224
-#: app/model/timeline.php:341
+#: admin/views/tree_check_consistency.php:672 app/model/timeline.php:205
+#: app/model/timeline.php:322
 msgid "church marriage"
 msgstr "kilise evliliği"
 
 #: admin/views/tree_check_consistency.php:641
 #: admin/views/tree_check_consistency.php:645
-#: admin/views/tree_check_consistency.php:679 app/model/timeline.php:230
-#: app/model/timeline.php:347
+#: admin/views/tree_check_consistency.php:679 app/model/timeline.php:211
+#: app/model/timeline.php:328
 msgid "church marriage notice"
 msgstr "kilise evlilik bildirimi"
 
@@ -6756,23 +6813,23 @@ msgid ""
 msgstr ""
 "Sitede e-posta adresi gösterilmeyecek: bir e-posta formu oluşturulacak!"
 
-#: admin/views/tree_data.php:46
+#: admin/views/tree_data.php:31
 msgid "Tree privacy"
 msgstr "Ağaç gizliliği"
 
-#: admin/views/tree_data.php:49
+#: admin/views/tree_data.php:34
 msgid "Standard"
 msgstr "Standart"
 
-#: admin/views/tree_data.php:50
+#: admin/views/tree_data.php:35
 msgid "FILTER ALL persons"
 msgstr "TÜM kişileri FİLTRELE"
 
-#: admin/views/tree_data.php:51
+#: admin/views/tree_data.php:36
 msgid "DISPLAY ALL persons"
 msgstr "TÜM kişileri GÖRÜNTÜLE"
 
-#: admin/views/tree_data.php:53
+#: admin/views/tree_data.php:38
 msgid "This option is valid for ALL persons in this tree!"
 msgstr "Bu seçenek, bu ağaçtaki TÜM kişiler için geçerlidir!"
 
@@ -7578,13 +7635,13 @@ msgid "Unblock IP address"
 msgstr "IP adresinin engellemesini kaldır"
 
 #: app/controller/ancestor_chartController.php:25
-#: app/controller/ancestor_sheetController.php:28 app/model/ancestor.php:150
+#: app/controller/ancestor_sheetController.php:28 app/model/ancestor.php:141
 #: views/ancestor_sheet.php:250 views/ancestor_sheet_pdf.php:295
 #: views/ancestor_sheet_pdf.php:316 views/help.php:34
 msgid "Ancestor sheet"
 msgstr "Ata Sayfası"
 
-#: app/controller/ancestor_reportController.php:35 app/model/ancestor.php:131
+#: app/controller/ancestor_reportController.php:35 app/model/ancestor.php:122
 #: include/person_cls.php:1037 include/person_cls.php:1038
 #: views/ancestor_report_pdf.php:67 views/ancestor_report_pdf.php:82
 #: views/ancestor_report_rtf.php:62 views/help.php:22
@@ -7602,11 +7659,11 @@ msgstr "Bu sayfayı görme yetkiniz yok."
 msgid "Address by person"
 msgstr "Kişiye göre adres"
 
-#: app/model/ancestor.php:141
+#: app/model/ancestor.php:132
 msgid "Ancestor chart"
 msgstr "Ata Grafiği"
 
-#: app/model/ancestor.php:157 views/help.php:38
+#: app/model/ancestor.php:148 views/help.php:38
 msgid "Fanchart"
 msgstr "Fan grafiği"
 
@@ -7639,7 +7696,7 @@ msgid "%s Mail form."
 msgstr "%s Posta formu."
 
 #: app/model/mailform.php:79 app/model/register.php:92
-#: app/model/user_settings.php:85 views/family.php:1241
+#: app/model/user_settings.php:76 views/family.php:1241
 #, php-format
 msgid "Message sent through %s from the website."
 msgstr "İleti, web sitesinden %s aracılığıyla gönderildi."
@@ -7652,7 +7709,7 @@ msgstr "Son ziyaret edilen aile:"
 msgid "Receive newsletter"
 msgstr "Haber bülteni al"
 
-#: app/model/maps.php:284
+#: app/model/maps.php:275
 msgid "Results are limited."
 msgstr "Sonuçlar sınırlıdır."
 
@@ -7660,7 +7717,7 @@ msgstr "Sonuçlar sınırlıdır."
 msgid "ERROR: username already exists"
 msgstr "HATA: kullanıcı adı zaten var"
 
-#: app/model/register.php:59 app/model/user_settings.php:34
+#: app/model/register.php:59 app/model/user_settings.php:25
 msgid "ERROR: No identical passwords"
 msgstr "HATA: Aynı şifre yok"
 
@@ -7672,106 +7729,106 @@ msgstr "HATA: Şifre en az 6 karakter içermelidir"
 msgid "New registered user"
 msgstr "Yeni kayıtlı kullanıcı"
 
-#: app/model/reset_password.php:55
+#: app/model/reset_password.php:35
 msgid "Your email address is not correct"
 msgstr "E-posta adresiniz doğru değil"
 
-#: app/model/reset_password.php:61 views/mailform.php:35 views/register.php:51
+#: app/model/reset_password.php:41 views/mailform.php:35 views/register.php:51
 msgid "Wrong answer to the block-spam question! Try again..."
 msgstr "Spam engelleme sorusuna yanlış yanıt! Tekrar deneyin..."
 
-#: app/model/reset_password.php:70
+#: app/model/reset_password.php:50
 msgid "This email address was not found in our database."
 msgstr "Bu e-posta adresi veritabanımızda bulunamadı."
 
-#: app/model/reset_password.php:70 app/model/reset_password.php:72
-#: app/model/reset_password.php:138 views/reset_password.php:32
+#: app/model/reset_password.php:50 app/model/reset_password.php:52
+#: app/model/reset_password.php:118 views/reset_password.php:32
 #: views/reset_password.php:178
 msgid "Please contact the site owner."
 msgstr "Lütfen site sahibiyle iletişime geçin."
 
-#: app/model/reset_password.php:72
+#: app/model/reset_password.php:52
 msgid "Password activation failed because mail address is used multiple times."
 msgstr ""
 "Posta adresi birden çok kez kullanıldığı için şifre etkinleştirme başarısız "
 "oldu."
 
-#: app/model/reset_password.php:138
+#: app/model/reset_password.php:118
 msgid "Password activation failed."
 msgstr "Şifre etkinleştirme başarısız oldu."
 
-#: app/model/reset_password.php:142
+#: app/model/reset_password.php:122
 msgid "Password must be at least 4 char and maximum 15 char long"
 msgstr "Şifre en az 4 karakter ve en fazla 15 karakter uzunluğunda olmalıdır"
 
-#: app/model/reset_password.php:146
+#: app/model/reset_password.php:126
 msgid "The passwords don't match!"
 msgstr "Şifreler uyuşmuyor!"
 
-#: app/model/timeline.php:80 app/model/timeline.php:296
-#: app/model/timeline.php:404
+#: app/model/timeline.php:61 app/model/timeline.php:277
+#: app/model/timeline.php:385
 msgid "birth"
 msgstr "doğum"
 
-#: app/model/timeline.php:113 app/model/timeline.php:210
-#: app/model/timeline.php:308 app/model/timeline.php:415
+#: app/model/timeline.php:94 app/model/timeline.php:191
+#: app/model/timeline.php:289 app/model/timeline.php:396
 msgid "death"
 msgstr "ölüm"
 
-#: app/model/timeline.php:138 app/model/timeline.php:159
-#: app/model/timeline.php:170
+#: app/model/timeline.php:119 app/model/timeline.php:140
+#: app/model/timeline.php:151
 msgid "Date of death unknown"
 msgstr "Ölüm tarihi bilinmiyor"
 
-#: app/model/timeline.php:148 app/model/timeline.php:158
-#: app/model/timeline.php:169
+#: app/model/timeline.php:129 app/model/timeline.php:139
+#: app/model/timeline.php:150
 msgid "Date of birth unknown"
 msgstr "Doğum tarihi bilinmiyor"
 
 # Use a spouse male text here. There is no seperate male/ female text in
 # english.
-#: app/model/timeline.php:205
+#: app/model/timeline.php:186
 msgid "SPOUSE_MALE"
 msgstr "Eş"
 
 # Use a spouse male text here. There is no seperate male/ female text in
 # english.
-#: app/model/timeline.php:205
+#: app/model/timeline.php:186
 msgid "SPOUSE_FEMALE"
 msgstr "Eş"
 
-#: app/model/timeline.php:233 app/model/timeline.php:350
+#: app/model/timeline.php:214 app/model/timeline.php:331
 msgid "partnership"
 msgstr "birliktelik"
 
-#: app/model/timeline.php:241 app/model/timeline.php:358
+#: app/model/timeline.php:222 app/model/timeline.php:339
 msgid "with "
 msgstr "ile "
 
-#: app/model/timeline.php:272 views/relations.php:1704 views/relations.php:1737
+#: app/model/timeline.php:253 views/relations.php:1704 views/relations.php:1737
 #: views/relations.php:1790 views/relations.php:1833 views/relations.php:1851
 #: views/relations.php:3181 views/relations.php:3513
 msgid "son"
 msgstr "oğul"
 
-#: app/model/timeline.php:274 views/relations.php:1704 views/relations.php:3184
+#: app/model/timeline.php:255 views/relations.php:1704 views/relations.php:3184
 #: views/relations.php:3516
 msgid "daughter"
 msgstr "kız evlat"
 
-#: app/model/timeline.php:276
+#: app/model/timeline.php:257
 msgid "child "
 msgstr "çocuk "
 
-#: app/model/timeline.php:392
+#: app/model/timeline.php:373
 msgid "grandson"
 msgstr "erkek torun"
 
-#: app/model/timeline.php:394
+#: app/model/timeline.php:375
 msgid "granddaughter"
 msgstr "kız torun"
 
-#: app/model/timeline.php:396 views/relations.php:1870 views/relations.php:1874
+#: app/model/timeline.php:377 views/relations.php:1870 views/relations.php:1874
 msgid "grandchild"
 msgstr "torun"
 
@@ -7828,59 +7885,47 @@ msgstr "En az: 3 karakter."
 msgid "All but selected tree"
 msgstr "Seçilen ağaç hariç tümü"
 
-#: app/model/tree_index.php:632 views/layout.php:367 views/layout.php:371
+#: app/model/tree_index.php:632 views/layout.php:365 views/layout.php:369
 #: views/list.php:166 views/list.php:283
 msgid "Advanced search"
 msgstr "Gelişmiş arama"
 
-#: app/model/tree_index.php:682
+#: app/model/tree_index.php:716 app/model/tree_index.php:742
 #, fuzzy
 #| msgid "Photo's per page"
 msgid "Go to person&apos;s page"
 msgstr "Sayfa başına fotoğraf"
 
-#: app/model/tree_index.php:845
+#: app/model/tree_index.php:924
 msgid "Patronyms"
 msgstr "Aile adları"
 
-#: app/model/tree_index.php:956 app/model/tree_index.php:983
+#: app/model/tree_index.php:1035 app/model/tree_index.php:1062
 #: views/anniversary.php:151 views/anniversary.php:312 views/list.php:859
 #: views/list_places_families.php:245
 msgid " persons are not shown due to privacy settings"
 msgstr " gizlilik ayarları nedeniyle kişiler gösterilmiyor"
 
-#: app/model/tree_index.php:999
-#, php-format
-msgid "This website is created using %s, a freeware genealogical  program"
-msgstr ""
-"Bu web sitesi, ücretsiz bir soyağacı programı olan %s kullanılarak "
-"oluşturulmuştur"
-
-#: app/model/tree_index.php:1005
-#, php-format
-msgid "European law: %s cookie information"
-msgstr "Avrupa hukuku: %s çerez bilgileri"
-
-#: app/model/user_settings.php:49
+#: app/model/user_settings.php:40
 msgid "Your settings are updated!"
 msgstr "Ayarlarınız güncellendi!"
 
-#: app/model/user_settings.php:64 app/model/user_settings.php:72
+#: app/model/user_settings.php:55 app/model/user_settings.php:63
 msgid ""
 "Wrong 2FA code. Please enter valid 2FA code to enable 2FA authentication."
 msgstr ""
 "Yanlış 2FA kodu. 2FA kimlik doğrulamasını etkinleştirmek için lütfen geçerli "
 "bir 2FA kodu girin."
 
-#: app/model/user_settings.php:68
+#: app/model/user_settings.php:59
 msgid "Enabled 2FA authentication."
 msgstr "2FA kimlik doğrulaması etkinleştirildi."
 
-#: app/model/user_settings.php:80
+#: app/model/user_settings.php:71
 msgid "Updated profile"
 msgstr "Profil güncellendi"
 
-#: app/model/user_settings.php:87
+#: app/model/user_settings.php:78
 msgid "User updated his/ her profile"
 msgstr "O/ o kullanıcı profilini güncelledi"
 
@@ -8233,62 +8278,62 @@ msgstr "Yartzeit"
 msgid "Non marital"
 msgstr "Evlilik dışı"
 
-#: include/marriage_cls.php:261 include/marriage_cls.php:263
-#: include/marriage_cls.php:265 views/list_places_families.php:47
+#: include/marriage_cls.php:260 include/marriage_cls.php:262
+#: include/marriage_cls.php:264 views/list_places_families.php:47
 msgid "Marriage notice"
 msgstr "Evlilik bildirimi"
 
-#: include/marriage_cls.php:450 include/marriage_cls.php:452
-#: include/marriage_cls.php:454 views/list_places_families.php:63
+#: include/marriage_cls.php:449 include/marriage_cls.php:451
+#: include/marriage_cls.php:453 views/list_places_families.php:63
 #: views/list_places_families.php:213
 msgid "Married notice (religious)"
 msgstr "Evlilik bildirimi (dini)"
 
-#: include/marriage_cls.php:534 include/marriage_cls.php:536
-#: include/marriage_cls.php:538 views/list_places_families.php:71
+#: include/marriage_cls.php:533 include/marriage_cls.php:535
+#: include/marriage_cls.php:537 views/list_places_families.php:71
 #: views/list_places_families.php:214
 msgid "Married (religious)"
 msgstr "Evli (dini)"
 
-#: include/marriage_cls.php:544 include/marriage_cls.php:545
+#: include/marriage_cls.php:543 include/marriage_cls.php:544
 msgid "religion: "
 msgstr "din: "
 
-#: include/marriage_cls.php:596
+#: include/marriage_cls.php:595
 msgid "from:"
 msgstr "itibaren:"
 
-#: include/marriage_cls.php:601 include/marriage_cls.php:603
-#: include/marriage_cls.php:605 include/marriage_cls.php:832
-#: include/marriage_cls.php:833
+#: include/marriage_cls.php:600 include/marriage_cls.php:602
+#: include/marriage_cls.php:604 include/marriage_cls.php:831
+#: include/marriage_cls.php:832
 msgid "divorced"
 msgstr "boşanmış"
 
-#: include/marriage_cls.php:615 include/marriage_cls.php:616
-#: include/marriage_cls.php:819
+#: include/marriage_cls.php:614 include/marriage_cls.php:615
+#: include/marriage_cls.php:818
 msgid "Married/ Related"
 msgstr "Evli/ İlişkili"
 
-#: include/marriage_cls.php:772 include/person_cls.php:1266 views/list.php:1097
+#: include/marriage_cls.php:771 include/person_cls.php:1266 views/list.php:1097
 #: views/list_places_families.php:395
 msgid "1st"
 msgstr "1."
 
-#: include/marriage_cls.php:775 include/person_cls.php:1268 views/list.php:1099
+#: include/marriage_cls.php:774 include/person_cls.php:1268 views/list.php:1099
 #: views/list_places_families.php:397 views/relations.php:1631
 #: views/relations.php:2082 views/relations.php:2285 views/relations.php:2441
 #: views/relations.php:2893
 msgid "2nd"
 msgstr "2."
 
-#: include/marriage_cls.php:778 include/person_cls.php:1270 views/list.php:1101
+#: include/marriage_cls.php:777 include/person_cls.php:1270 views/list.php:1101
 #: views/list_places_families.php:399 views/relations.php:1634
 #: views/relations.php:2085 views/relations.php:2288 views/relations.php:2444
 #: views/relations.php:2896
 msgid "3rd"
 msgstr "3."
 
-#: include/marriage_cls.php:781 include/person_cls.php:1272 views/list.php:1103
+#: include/marriage_cls.php:780 include/person_cls.php:1272 views/list.php:1103
 #: views/list_places_families.php:401 views/relations.php:1307
 #: views/relations.php:1638 views/relations.php:2089 views/relations.php:2661
 #: views/relations.php:2765 views/relations.php:2900 views/relations.php:3645
@@ -8296,15 +8341,15 @@ msgstr "3."
 msgid "th"
 msgstr "bu"
 
-#: include/marriage_cls.php:790
+#: include/marriage_cls.php:789
 msgid "Married "
 msgstr "Evli "
 
-#: include/marriage_cls.php:798 include/marriage_cls.php:802
+#: include/marriage_cls.php:797 include/marriage_cls.php:801
 msgid "related"
 msgstr "ilgili"
 
-#: include/marriage_cls.php:814
+#: include/marriage_cls.php:813
 msgid "married/ related"
 msgstr "evli/ ilgili"
 
@@ -8333,7 +8378,7 @@ msgid "Timeline"
 msgstr "Zaman çizelgesi"
 
 #: include/person_cls.php:1059 include/person_cls.php:1060 views/help.php:100
-#: views/layout.php:592
+#: views/layout.php:590
 msgid "Relationship calculator"
 msgstr "İlişki hesaplayıcı"
 
@@ -8342,7 +8387,7 @@ msgstr "İlişki hesaplayıcı"
 msgid "Hourglass chart"
 msgstr "Kum saati grafiği"
 
-#: include/person_cls.php:1091 include/person_cls.php:1092 views/layout.php:644
+#: include/person_cls.php:1091 include/person_cls.php:1092 views/layout.php:642
 msgid "Admin"
 msgstr "Yönetici"
 
@@ -8455,10 +8500,6 @@ msgstr "İkametgâhlar (aile)"
 #: include/show_addresses.php:170
 msgid "phone"
 msgstr "telefon"
-
-#: include/show_picture.php:200
-msgid "Missing image"
-msgstr "Eksik görüntü"
 
 #: include/show_sources.php:62 include/show_sources.php:165
 #: include/show_sources.php:249
@@ -8876,7 +8917,7 @@ msgstr "Eşler"
 msgid "No results found for this month"
 msgstr "Bu ay için sonuç bulunamadı"
 
-#: views/cookies.php:1 views/layout.php:811
+#: views/cookies.php:1 views/layout.php:822
 #, php-format
 msgid "%s cookie information"
 msgstr "%s çerez bilgileri"
@@ -9330,7 +9371,7 @@ msgstr ""
 msgid "Menu items"
 msgstr "Menü öğeleri"
 
-#: views/help.php:64 views/help.php:146 views/layout.php:512
+#: views/help.php:64 views/help.php:146 views/layout.php:510
 msgid "Family tree index"
 msgstr "Aile ağacı dizini"
 
@@ -9383,7 +9424,7 @@ msgstr ""
 "seçim yapabilirsiniz. Sonuçlar yer adına göre alfabetik olarak "
 "sıralanacaktır."
 
-#: views/help.php:81 views/layout.php:531
+#: views/help.php:81 views/layout.php:529
 msgid "Photobook"
 msgstr "Fotoğraf kitabı"
 
@@ -9399,7 +9440,7 @@ msgstr ""
 
 #: views/help.php:86 views/help.php:90 views/help.php:95 views/help.php:100
 #: views/help.php:105 views/help.php:109 views/help.php:114
-#: views/layout.php:579
+#: views/layout.php:577
 msgid "Tools"
 msgstr "Araçlar"
 
@@ -9410,7 +9451,7 @@ msgstr ""
 "Burada soy araştırmalarında kullanılan tüm kaynakların bir listesini "
 "bulacaksınız."
 
-#: views/help.php:90 views/layout.php:584
+#: views/help.php:90 views/layout.php:582
 msgid "Anniversary list"
 msgstr "Yıldönümü listesi"
 
@@ -9459,7 +9500,7 @@ msgstr ""
 "Bu, veritabanında bulunan kişilerle ilgili bir dünya haritası gösterecek ve "
 "doğumlara veya ölümlere göre eşleme yapabilecektir."
 
-#: views/help.php:109 views/layout.php:604
+#: views/help.php:109 views/layout.php:602
 msgid "Contact"
 msgstr "İletişim"
 
@@ -9510,7 +9551,7 @@ msgstr ""
 "Menü çubuğunda, menü düğmelerinin sağında, ekran dilini değiştirmenize izin "
 "veren birkaç ulusal bayrak göreceksiniz."
 
-#: views/help.php:129 views/help.php:136 views/layout.php:640
+#: views/help.php:129 views/help.php:136 views/layout.php:638
 #: views/user_settings.php:22
 msgid "User settings"
 msgstr "Kullanıcı ayarları"
@@ -9584,33 +9625,45 @@ msgstr ""
 msgid "Recently changed persons and new persons"
 msgstr "Yakın zamanda değiştirilen kişiler ve yeni kişiler"
 
-#: views/layout.php:352 views/list.php:147
+#: views/layout.php:350 views/list.php:147
 msgid "Minimum:"
 msgstr "En az:"
 
-#: views/layout.php:352 views/list.php:147
+#: views/layout.php:350 views/list.php:147
 msgid "characters"
 msgstr "karakterler"
 
-#: views/layout.php:388
+#: views/layout.php:386
 msgid "Favourites list:"
 msgstr "Sık kullanılanlar listesi:"
 
-#: views/layout.php:495
+#: views/layout.php:493
 msgid "Information"
 msgstr "Bilgi"
 
-#: views/layout.php:526
+#: views/layout.php:524
 msgid "Places (by persons)"
 msgstr "Yerler (kişilere göre)"
 
-#: views/layout.php:527
+#: views/layout.php:525
 msgid "Places (by families)"
 msgstr "Yerler (ailelere göre)"
 
-#: views/layout.php:627
+#: views/layout.php:625
 msgid "Register"
 msgstr "Kayıt Ol"
+
+#: views/layout.php:804
+#, php-format
+msgid "This website is created using %s, a freeware genealogical  program"
+msgstr ""
+"Bu web sitesi, ücretsiz bir soyağacı programı olan %s kullanılarak "
+"oluşturulmuştur"
+
+#: views/layout.php:810
+#, php-format
+msgid "European law: %s cookie information"
+msgstr "Avrupa hukuku: %s çerez bilgileri"
 
 #: views/list.php:35
 msgid "birth pl."
@@ -10001,7 +10054,7 @@ msgstr "PDF (Dikey)"
 msgid "PDF (Landscape)"
 msgstr "PDF (Yatay)"
 
-#: views/photoalbum.php:169
+#: views/photoalbum.php:168
 msgid "Photo's per page"
 msgstr "Sayfa başına fotoğraf"
 
@@ -10670,6 +10723,41 @@ msgstr "Bir tema seçin"
 #: views/user_settings.php:125 views/user_settings.php:128
 msgid "Standard-colours"
 msgstr "Standart renkler"
+
+#, php-format
+#~ msgid ""
+#~ "Example of picture path:<br>\n"
+#~ "www.myhomepage.nl/humo-gen/ => folder for %s files.<br>\n"
+#~ "www.myhomepage.nl/pictures/ => folder for pictures.<br>\n"
+#~ "Use a relative path, exactly as shown here: <b>../pictures/</b>"
+#~ msgstr ""
+#~ "Resim yolu örneği:<br>\n"
+#~ "www.myhomepage.nl/humo-gen/ => %s dosyaları için klasör.<br>\n"
+#~ "www.myhomepage.nl/pictures/ => resimler için klasör.<br>\n"
+#~ "Tam olarak burada gösterildiği gibi göreli bir yol kullanın: <b>../"
+#~ "resimler/</b>"
+
+#~ msgid "Subdirectories:"
+#~ msgstr "Alt dizinler:"
+
+#~ msgid "Picture path exists."
+#~ msgstr "Resim yolu var."
+
+#~ msgid ""
+#~ "- Creating thumbnails<br>\n"
+#~ "- ATTENTION: it may be necessary to (temporarily) change access to the "
+#~ "folder with the pictures (rwxrwxrwx)<br>\n"
+#~ "- Sometimes the php.ini has to be changed slightly, remove the ; before "
+#~ "the line with:"
+#~ msgstr ""
+#~ "- Küçük resimler oluşturma<br>\n"
+#~ "- DİKKAT: Resimlerin bulunduğu klasöre erişimi (geçici olarak) "
+#~ "değiştirmek gerekebilir (rwxrwxrwx)<br>\n"
+#~ "- Bazen php.ini biraz değiştirilmelidir, kaldırılmalıdır ; ile satırdan "
+#~ "önce:"
+
+#~ msgid "Missing image"
+#~ msgstr "Eksik görüntü"
 
 #~ msgid "Media upload failed, check folder rights"
 #~ msgstr "Medya yüklenemedi, klasör haklarını kontrol edin"
