@@ -47,7 +47,7 @@ function create_thumbnail_IM($folder, $file, $theight = 120)
     $success = false;
     $pict_path_original = $folder . $file;
     $pict_path_thumb = $folder . 'thumb_' . $file . '.jpg';
-    $imtype = strtoupper(substr($file, -3));
+    $imtype = strtoupper(pathinfo($file, PATHINFO_EXTENSION));
     if (Imagick::queryformats($imtype . '*')) {
         $fhandle = fopen($folder . '.' . $file . '.no_thumb', "w"); // create no_thumb to mark corrupt files
         fclose($fhandle);
@@ -57,6 +57,7 @@ function create_thumbnail_IM($folder, $file, $theight = 120)
         } elseif (($imtype == 'MP4' ||
                 $imtype == 'MPG' ||
                 $imtype == 'FLV' ||
+                $imtype == 'WEBM' ||
                 $imtype == 'MOV' ||
                 $imtype == 'AVI')
             && $is_ffmpeg
@@ -190,33 +191,35 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
     $extensions_check = strtolower(pathinfo($file, PATHINFO_EXTENSION));
     switch ($extensions_check) {
         case 'pdf':
-            return '<img src="../images/pdf.jpg" alt="PDF">';
+            return $link . '<img src="../images/pdf.jpg" alt="PDF">' . $link_close;;
         case 'docx':
-            return '<img src="../images/msdoc.gif" alt="DOCX">';
+            return $link . '<img src="../images/msdoc.gif" alt="DOCX">' . $link_close;;
         case 'doc':
-            return '<img src="../images/msdoc.gif" alt="DOC">';
+            return $link . '<img src="../images/msdoc.gif" alt="DOC">' . $link_close;;
         case 'wmv':
-            return '<img src="../images/video-file.png" alt="WMV">';
+            return $link . '<img src="../images/video-file.png" alt="WMV">' . $link_close;;
         case 'avi':
-            return '<img src="../images/video-file.png" alt="AVI">';
+            return $link . '<img src="../images/video-file.png" alt="AVI">' . $link_close;;
         case 'mp4':
-            return '<img src="../images/video-file.png" alt="MP4">';
+            return $link . '<img src="../images/video-file.png" alt="MP4">' . $link_close;;
+        case 'webm':
+            return $link . '<img src="../images/video-file.png" alt="WEBM">' . $link_close;;
         case 'mpg':
-            return '<img src="../images/video-file.png" alt="MPG">';
+            return $link . '<img src="../images/video-file.png" alt="MPG">' . $link_close;;
         case 'mov':
-            return '<img src="../images/video-file.png" alt="MOV">';
+            return $link . '<img src="../images/video-file.png" alt="MOV">' . $link_close;;
         case 'wma':
-            return '<img src="../images/video-file.png" alt="WMA">';
+            return $link . '<img src="../images/video-file.png" alt="WMA">' . $link_close;;
         case 'wav':
-            return '<img src="../images/audio.gif" alt="WAV">';
+            return $link . '<img src="../images/audio.gif" alt="WAV">' . $link_close;;
         case 'mp3':
-            return '<img src="../images/audio.gif" alt="MP3">';
+            return $link . '<img src="../images/audio.gif" alt="MP3">' . $link_close;;
         case 'mid':
-            return '<img src="../images/audio.gif" alt="MID">';
+            return $link . '<img src="../images/audio.gif" alt="MID">' . $link_close;;
         case 'ram':
-            return '<img src="../images/audio.gif" alt="RAM">';
+            return $link . '<img src="../images/audio.gif" alt="RAM">' . $link_close;;
         case 'ra':
-            return '<img src="../images/audio.gif" alt="RA">';
+            return $link . '<img src="../images/audio.gif" alt="RA">' . $link_close;;
         case 'jpg':
             return $link . '<img src="' . $rwfolder . $file . '"' . $img_style . '>' . $link_close;
         case 'jpeg':
@@ -258,6 +261,7 @@ function check_media_type($folder, $file)
         'audio/x-wav',
         'audio/x-pn-realaudio',
         'audio/x-realaudio',
+        'audio/webm',
         'application/pdf',
         'application/msword',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -267,7 +271,8 @@ function check_media_type($folder, $file)
         'video/x-msvideo',
         'video/msvideo',
         'video/mpeg',
-        'video/mp4'
+        'video/mp4',
+        'video/webm'
     ];
     $mtype  = mime_content_type($folder . $file);
 
