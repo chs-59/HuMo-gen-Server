@@ -115,7 +115,7 @@ function show_media($event_connect_kind, $event_connect_id)
                 $event_event = strtolower($event_event);
             }
             // *** Show photo using the lightbox effect ***
-            if (in_array(strtolower(pathinfo($event_event, PATHINFO_EXTENSION)), array('jpg', 'jpeg', 'png', 'gif', 'bmp', 'tif'))) {
+            if (in_array(strtolower(pathinfo($event_event, PATHINFO_EXTENSION)), array('jpg', 'jpeg', 'png', 'gif', 'tif', 'mp4', 'webm'))) {
 
                 $line_pos = 0;
                 if ($media_event_text[$i]) {
@@ -203,9 +203,9 @@ function show_media($event_connect_kind, $event_connect_id)
                 $process_text .= '<div class="photo">';
                 $process_text .= $picture;
 
-                if (!file_exists($temp_path . $event_event) && !file_exists($temp_path . strtolower($event_event))) {
-                    $picture_text .= '<br><b>' . __('Missing image') . ':<br>' . $temp_path . $event_event . '</b>';
-                }
+//                if (!file_exists($temp_path . $event_event) && !file_exists($temp_path . strtolower($event_event))) {
+//                    $picture_text .= '<br><b>' . __('Missing image') . ':<br>' . $temp_path . $event_event . '</b>';
+//                }
                 // *** Show text by picture ***
                 if (isset($picture_text)) {
                     $process_text .= '<div class="phototext">' . $picture_text . '</div>';
