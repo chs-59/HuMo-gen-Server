@@ -29,10 +29,9 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
 </ul>
 
 <!-- Align content to the left -->
-<div style="float: left; background-color:white; height:500px; padding:10px;">
-    <?php if ($thumbs['menu_tab'] == 'picture_settings' || $thumbs['menu_tab'] == 'picture_thumbnails' || $thumbs['menu_tab'] == 'picture_show') { ?>
+<div style="background-color:white; height:500px; padding:10px;">
+    <?php if ($thumbs['menu_tab'] == 'picture_settings') { ?>
         <div class="p-3 m-2 genealogy_search">
-
             <div class="row mb-2">
                 <div class="col-md-4">
                     <label for="tree" class="col-form-label"><?= __('Choose family tree'); ?></label>
@@ -42,6 +41,11 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                     <?= select_tree($dbh, $page, $tree_id, $thumbs['menu_tab']); ?>
                 </div>
             </div>
+        <form method="POST" action="index.php">
+                <input type="hidden" name="page" value="thumbs">
+                <input type="hidden" name="menu_tab" value="<?= $thumbs['menu_tab']; ?>">
+                <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
+
 
             <div class="row mb-2">
                 <div class="col-md-4">
@@ -50,10 +54,6 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
 
                 <!-- Set path to pictures -->
                 <div class="col-md-8">
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="page" value="thumbs">
-                        <input type="hidden" name="menu_tab" value="<?= $thumbs['menu_tab']; ?>">
-                        <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
 
                         <div class="form-check">
                             <input class="form-check-input" type="radio" value="yes" name="default_path" id="default_path" <?= $thumbs['default_path'] ? 'checked' : ''; ?>>
@@ -68,10 +68,6 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                             </label>
                         </div>
                 </div>
-            </div>
-
-
-            <div class="row mb-2">
                 <div class="col-md-4"><?= __('Status of picture path'); ?></div>
 
                 <div class="col-md-7">
@@ -87,18 +83,18 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                         echo '</span><br><br>';
                         // this code only for display, calculation is done in 
                         // function save_picture_path_rewrite in admin/models/thumbs.php
-                        echo ('DocumentRoot = <br>' . $_SERVER['DOCUMENT_ROOT'] . '</br></br>');
+                        echo ('DocumentRoot = <br>' . $_SERVER['DOCUMENT_ROOT'] . '<br><br>');
                         if ( file_exists($prefx . $thumbs['tree_pict_path']) ) { 
-                            echo (__('Media directory') . ' =<br>' . realpath($prefx . $thumbs['tree_pict_path']) . '/</br>');
+                            echo (__('Media directory') . ' =<br>' . realpath($prefx . $thumbs['tree_pict_path']) . '/<br>');
                             if ( preg_match('/^media\//', $thumbs['tree_pict_path'])
                                     && $rewrite_status == 'on' )  {
-                                    echo '<span class="bg-success-subtle">' . __('Safe. Path protected by rewrite engine.') . '</span></br>';
+                                    echo '<span class="bg-success-subtle">' . __('Safe. Path protected by rewrite engine.') . '</span><br>';
                                     $display_rewrite = __('No');
                             } elseif (str_contains( realpath($prefx . $thumbs['tree_pict_path']), $_SERVER['DOCUMENT_ROOT'] )  ) {
-                                echo '<span class="bg-danger-subtle">' . __('Unsafe. Path inside DocRoot.') . '</span></br>';
+                                echo '<span class="bg-danger-subtle">' . __('Unsafe. Path inside DocRoot.') . '</span><br>';
                                 $display_rewrite = __('No');
                             } else {
-                                echo '<span class="bg-success-subtle">' . __('Safe. Path outside DocRoot.') . '</span></br>';
+                                echo '<span class="bg-success-subtle">' . __('Safe. Path outside DocRoot.') . '</span><br>';
                                 $display_rewrite = ($rewrite_status == 'on' ? __('Yes - Use server rewrite') : __('Use HuMo rewrite'));
                             }
                         } else {
@@ -120,34 +116,146 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                 <div class="col-md-4">&nbsp;</div>
                         <div class="col-md-7">
                             <input type="submit" name="change_tree_data" value="<?= __('Change'); ?>" class="btn btn-sm btn-success"><br>
-                        </DIV>
-                    </form>
+                        </div>
+                        - <?= __('To show pictures, also check the user-group settings: '); ?>
+            <a href="index.php?page=groups"><?= __('User groups'); ?></a>
 
             </div>
+            </form>
+       </div>
 
-            <!-- Create thumbnails -->
-            <?php
+    <?php } 
+
+            // -- enable thumbnails and resize -->
             if ($thumbs['menu_tab'] == 'picture_thumbnails') {
-                $thumb_height = 120; // *** Standard thumb height ***
+            // TODO refactor
+                $is_thumblib = false;
+                $no_windows = (strtolower(substr(PHP_OS, 0, 3)) !== 'win');
+                if ($no_windows || extension_loaded('gd')) {
+                    $is_thumblib = true;
+                }
+
+            // Auto create thumbnails
+//            if (isset($_POST["thumbnail_auto_create"]) && ($_POST["thumbnail_auto_create"] == 'y' || $_POST["thumbnail_auto_create"] == 'n')) {
+//                $db_functions->update_settings('thumbnail_auto_create', $_POST["thumbnail_auto_create"]);
+//                $humo_option["thumbnail_auto_create"] = $_POST["thumbnail_auto_create"];
+//            }            
             ?>
+
+            <div class="p-3 m-2 genealogy_search">
                 <div class="row mb-2">
-                    <div class="col-md-4"><?= __('Create thumbnails'); ?></div>
+                    <div class="col-md-4">
+                        <label for="tree" class="col-form-label"><?= __('Choose family tree'); ?></label>
+                    </div>
 
                     <div class="col-md-7">
-                        <form method="POST" action="index.php">
-                            <input type="hidden" name="page" value="thumbs">
-                            <input type="hidden" name="menu_tab" value="picture_thumbnails">
-                            <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
-                            <input type="submit" name="thumbnail" value="<?= __('Create thumbnails'); ?>" class="btn btn-sm btn-success">
-                        </form>
+                        <?= select_tree($dbh, $page, $tree_id, $thumbs['menu_tab']); ?>
                     </div>
                 </div>
-            <?php } ?>
 
-            <!-- Show thumbnails -->
-            <?php if ($thumbs['menu_tab'] == 'picture_show') { ?>
+                <h4><?= _('Test') ?></h4>
                 <div class="row mb-2">
-                    <div class="col-md-4"><?= __('Show thumbnails'); ?></div>
+                    <div class="col-md-7">
+                        <?= __('Imagick (images)'); ?>
+                    </div>
+                    <div class="col-md-auto">
+                        <b><?= extension_loaded('imagick') ? strtolower(__('Yes')) : strtolower(__('No')); ?></b>
+                    </div>
+                </div>
+
+                <?php if (extension_loaded('imagick') && $no_windows) { ?>
+                    <div class="row mb-2">
+                        <div class="col-md-7">
+                            <?= __('Ghostscript (PDF support)'); ?>
+                        </div>
+                        <div class="col-md-auto">
+                            <b><?= (trim(shell_exec('type -P gs'))) ? strtolower(__('Yes')) . '<br>' : strtolower(__('No')); ?></b>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-md-7">
+                            <?= __('ffmpeg (movie support)'); ?>
+                        </div>
+                        <div class="col-md-auto">
+                            <b><?= (trim(shell_exec('type -P ffmpeg'))) ? strtolower(__('Yes')) . '<br>' : strtolower(__('No')); ?></b>
+                        </div>
+                    </div>
+                <?php } ?>
+
+                <div class="row mb-2">
+                    <div class="col-md-7">
+                        <?= __('GD (images)'); ?>
+                    </div>
+                    <div class="col-md-auto">
+                        <b><?= extension_loaded('gd') ? strtolower(__('Yes')) : strtolower(__('No')); ?></b>
+                    </div>
+                </div>
+
+                <?php if ( $is_thumblib) { ?>
+                <h4><?= __('Settings') ?></h4>
+
+                <!-- Automatically create thumbnails -->
+                <form method="POST" action="index.php">
+                    <input type="hidden" name="page" value="thumbs">
+                    <input type="hidden" name="menu_tab" value="<?= $thumbs['menu_tab']; ?>">
+                    <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
+                    <input type="hidden" name="change_thumbnail_status" value="yes">
+                    <div class="row mb-2">
+                        <div class="col-md-7">
+                            <?= __('Use thumbnails [create and display]?'); ?>
+                        </div>
+                        <div class="col-md-auto">
+                            <select size="1" name="thumbnail_status" onChange="this.form.submit();" class="form-select form-select-sm">
+                                <option value="n"><?= __('No'); ?></option>
+                                <option value="y" <?= $thumbs["tree_pict_thumbnail"] == 'y' ? 'selected' : ''; ?>><?= __('Yes'); ?></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+
+
+                <form method="POST" action="index.php">
+                    <input type="hidden" name="page" value="thumbs">
+                    <input type="hidden" name="menu_tab" value="<?= $thumbs['menu_tab']; ?>">
+                    <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
+                    <input type="hidden" name="change_resize_status" value="yes">
+                    <div class="row mb-2">
+                        <div class="col-md-7">
+                            <?= __('Resize pictures on upload [set maximum width and height]?'); ?>
+                        </div>
+                        <div class="col-md-auto">
+                            <select size="1" name="resize_status" onChange="this.form.submit();" class="form-select form-select-sm">
+                                <option value="0|0"><?= __('No'); ?></option>
+                                <option value="720|480" <?= $thumbs["tree_pict_resize"] == '720|480' ? 'selected' : ''; ?>>720×480</option>
+                                <option value="1280|720" <?= $thumbs["tree_pict_resize"] == '1280|720' ? 'selected' : ''; ?>>1280×720</option>
+                                <option value="1920|1080" <?= $thumbs["tree_pict_resize"] == '1920|1080' ? 'selected' : ''; ?>>1920x1080</option>
+                                <option value="3840|2160" <?= $thumbs["tree_pict_resize"] == '3840|2160' ? 'selected' : ''; ?>>3840x2160</option>
+                           </select>
+                        </div>
+                    </div>
+                </form>
+                <?php } else { ?>
+                    <?= __('No Thumbnail library available'); ?><br>
+                <?php } ?>
+        </div>
+
+        <?php } ?>
+
+        <!-- Show thumbnails -->
+        <?php if ($thumbs['menu_tab'] == 'picture_show') { ?>
+        <div class="p-3 m-2 genealogy_search">
+               <div class="row mb-2">
+                    <div class="col-md-4">
+                        <label for="tree" class="col-form-label"><?= __('Choose family tree'); ?></label>
+                    </div>
+
+                    <div class="col-md-7">
+                        <?= select_tree($dbh, $page, $tree_id, $thumbs['menu_tab']); ?>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><?= __('You can change filenames here.'); ?></div>
 
                     <div class="col-md-7">
                         <form method="POST" action="index.php">
@@ -155,29 +263,14 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                             <input type="hidden" name="menu_tab" value="picture_show">
                             <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
                             <input type="submit" name="change_filename" value="<?= __('Show thumbnails'); ?>" class="btn btn-sm btn-success">
-                            <?= ' ' . __('You can change filenames here.'); ?>
                         </form>
                     </div>
                 </div>
+        </div>
             <?php } ?>
 
-        </div>
+        <?php 
 
-        <?php if ($thumbs['menu_tab'] == 'picture_settings') { ?>
-            - <?= __('To show pictures, also check the user-group settings: '); ?>
-            <a href="index.php?page=groups"><?= __('User groups'); ?></a>
-        <?php
-        }
-
-        // *** Create picture thumbnails ***
-        if ($thumbs['menu_tab'] == 'picture_thumbnails') {
-        ?>
-            <?= __('- Creating thumbnails<br>
-- ATTENTION: it may be necessary to (temporarily) change access to the folder with the pictures (rwxrwxrwx)<br>
-- Sometimes the php.ini has to be changed slightly, remove the ; before the line with:'); ?>
-            <i>extension=php.gd2.dll</i>
-        <?php }
-    }
 
 
     // *** Picture categories ***
@@ -469,10 +562,29 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
         </form>
         <?php
     }
+    $pict_path = $data2Db->tree_pict_path;
+    if (substr($pict_path, 0, 1) === '|') {
+        $pict_path = 'media/';
+    }
+// Check for trees with identical tree_pict_path to inherit delete button
+// if same media file is used in different trees    
+$same_picpath = array();
+$tree_checksql = $dbh->query("SELECT * FROM humo_trees");
+while ($treeCheck = $tree_checksql->fetch(PDO::FETCH_OBJ)) {
+    if ($treeCheck->tree_id != $tree_id
+            && $treeCheck->tree_pict_path == $pict_path) {
+        $same_picpath[] = $treeCheck->tree_id;
+    }    
+}
 
     // *** Change filename ***
     if (isset($_POST['filename'])) {
-        $picture_path_old = $_POST['picture_path'];
+        $db_path = $_POST['picture_path'];
+        $picture_path = $prefx . $pict_path . $db_path;
+        $db_filename = $db_path . $_POST['filename'];
+        $db_filename_old = $db_path . $_POST['filename_old'];
+//        echo('pp: ' . $picture_path . 'File: ' . $db_filename);
+/*   $picture_path_old = $_POST['picture_path'];
         $picture_path_new = $_POST['picture_path'];
         // *** If filename has a category AND a sub category directory exists, use it ***
         if (substr($_POST['filename'], 0, 2) !== substr($_POST['filename_old'], 0, 2) && ($_POST['filename'][2] == '_' || $_POST['filename_old'][2] == '_')) { // we only have to do this if something changed in a prefix
@@ -490,36 +602,40 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                 $picture_path_new = substr($picture_path_new, 0, -3);  // move from subfolder to main folder
             }
         }
+*/
         // remove thumb old naming system
-        if (file_exists($picture_path_old . 'thumb_' . $_POST['filename_old'])) {
-            unlink($picture_path_old . 'thumb_' . $_POST['filename_old']);
+        if (file_exists($picture_path . 'thumb_' . $_POST['filename_old'])) {
+            unlink($picture_path . 'thumb_' . $_POST['filename_old']);
         }
         // remove old thumb new system
-        if (file_exists($picture_path_old . 'thumb_' . $_POST['filename_old'] . '.jpg')) {
-            unlink($picture_path_old . 'thumb_' . $_POST['filename_old'] . '.jpg');
+        if (file_exists($picture_path . 'thumb_' . $_POST['filename_old'] . '.jpg')) {
+            unlink($picture_path . 'thumb_' . $_POST['filename_old'] . '.jpg');
         }
-        // rename and create new thumbnail       
-        if (file_exists($picture_path_old . $_POST['filename_old'])) {
-            rename($picture_path_old . $_POST['filename_old'], $picture_path_new . $_POST['filename']);
-            echo '<b>' . __('Changed filename:') . ' </b>' . $picture_path_old .  $_POST['filename_old'] . ' <b>' . __('into filename:') . '</b> ' . $picture_path_new .  $_POST['filename'] . '<br>';
-            if (check_media_type($picture_path_new, $_POST['filename']) && create_thumbnail($picture_path_new, $_POST['filename'])) {
-                echo '<b>' . __('Changed filename:') . ' ' . __('into filename:') . '</b> ' . $picture_path_new . 'thumb_' . $_POST['filename'] . '.jpg<br>';
+        // delete file or rename and create new thumbnail       
+        if (file_exists($picture_path . $_POST['filename_old'])) {
+            if (isset($_POST['delete_file'])) {
+                unlink($picture_path . $_POST['filename_old']); 
+                echo '<b>' . __('Deleted file:') . ' </b>' . $picture_path .  $_POST['filename_old'] . '<br>';
+            }
+            else {
+                rename($picture_path . $_POST['filename_old'], $picture_path . $_POST['filename']);
+                echo '<b>' . __('Changed filename:') . ' </b>' . $picture_path .  $_POST['filename_old'] . ' <b>' . __('into filename:') . '</b> ' . $picture_path .  $_POST['filename'] . '<br>';
+                if (check_media_type($picture_path, $_POST['filename']) && create_thumbnail($picture_path, $_POST['filename'])) {
+                    echo '<b>' . __('Changed filename:') . ' ' . __('into filename:') . '</b> ' . $picture_path . 'thumb_' . $_POST['filename'] . '.jpg<br>';
+                }
+                $sql = "UPDATE humo_events SET
+                event_event='" . safe_text_db($db_filename) . "' WHERE event_event='" . safe_text_db($db_filename_old) . "'";
+                $result = $dbh->query($sql);
             }
         }
 
-        $sql = "UPDATE humo_events SET
-            event_event='" . safe_text_db($_POST['filename']) . "' WHERE event_event='" . safe_text_db($_POST['filename_old']) . "'";
-        $result = $dbh->query($sql);
-    }
+     }
 
 
-    // *** Create thumbnails ***
+    // *** Show thumbnails to rename ***
     $counter = 0;
-    if (isset($_POST["thumbnail"]) || isset($_POST['change_filename'])) {
-        $pict_path = $data2Db->tree_pict_path;
-        if (substr($pict_path, 0, 1) === '|') {
-            $pict_path = 'media/';
-        }
+//    if (isset($_POST["thumbnail"]) || isset($_POST['change_filename'])) {
+    if (isset($_POST['change_filename'])) {
 
         //$selected_picture_folder=$prefx.$pict_path;
         $array_picture_folder[] = $prefx . $pict_path;
@@ -551,7 +667,7 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                 $files = preg_grep('/^([^.])/', scandir($selected_picture_folder));
                 foreach ($files as $filename) {
 
-                    if (
+/*                    if (
                         substr($filename, 0, 5) !== 'thumb' &&
                         isset($_POST["thumbnail"]) &&
                         !is_dir($selected_picture_folder . $filename)  &&
@@ -565,7 +681,7 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                             create_thumbnail($selected_picture_folder, $filename); // in media_inc.php script 
                         }
                     }
-
+*/
                     // *** Show thumbnails ***
                     if (
                         substr($filename, 0, 5) !== 'thumb' &&
@@ -573,46 +689,92 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                         !is_dir($selected_picture_folder . $filename)
                     ) {
         ?>
-                        <div class="photobook">
+                        <div class="photobook_select">
                             <?php
                             echo print_thumbnail($selected_picture_folder, $filename);
                             // *** Show name of connected persons ***
                             include_once(__DIR__ . '/../../include/person_cls.php');
-                            $picture_text = '';
-                            $sql = "SELECT * FROM humo_events WHERE event_tree_id='" . safe_text_db($tree_id) . "'
+                            $db_dir = str_replace($array_picture_folder[0], '', $selected_picture_folder);
+                            $picture_text = '<br>';
+//                            $sql = "SELECT * FROM humo_events WHERE event_tree_id='" . safe_text_db($tree_id) . "' "
+//                                . "AND (event_connect_kind='person' OR event_connect_kind='family' OR event_connect_kind='source') "
+                            $sql = "SELECT * FROM humo_events WHERE (event_connect_kind='person' OR event_connect_kind='family' OR event_connect_kind='source') "
+                                . "AND event_connect_id NOT LIKE '' AND event_event='" . $db_dir . $filename . "'";
+/*                            $sql = "SELECT * FROM humo_events WHERE event_tree_id='" . safe_text_db($tree_id) . "'
                                 AND event_connect_kind='person' AND event_kind='picture'
-                                AND LOWER(event_event)='" . safe_text_db(strtolower($filename)) . "'";
-                            $afbqry = $dbh->query($sql);
+                                AND LOWER(event_event)='" . safe_text_db(strtolower($db_dir . $filename)) . "'";
+*/
+
                             $picture_privacy = false;
+                            $is_connected = false;
+                            
+                            $afbqry = $dbh->query($sql);
                             while ($afbDb = $afbqry->fetch(PDO::FETCH_OBJ)) {
-                                $person_cls = new person_cls;
-                                $db_functions->set_tree_id($tree_id);
-                                $personDb = $db_functions->get_person($afbDb->event_connect_id);
-                                $name = $person_cls->person_name($personDb);
+                                if ($afbDb->event_tree_id != $tree_id) {
+                                    // do nothing unless:
+                                    if (in_array($afbDb->event_tree_id, $same_picpath)) {
+                                        $picture_text .= __('Used in tree') . ' ' . $afbDb->event_tree_id . '<br>';
+                                        $is_connected = true;
+                                    }
+                                } 
+                                elseif ($afbDb && $afbDb->event_connect_kind === 'person') {
+                                    $person_cls = new person_cls;
+                                    $db_functions->set_tree_id($tree_id);
+                                    $personDb = $db_functions->get_person($afbDb->event_connect_id);
+                        //            var_dump($personDb);
+                                    $name = $person_cls->person_name($personDb);
+                                    $picture_text .= '<a href="' . $prefx . 'admin/index.php?page=editor&menu_tab=person&tree_id=' 
+                                            . $tree_id . '&person=' . $personDb->pers_gedcomnumber . '" target="_blank"><b>'. __('person') . ':</b> ' . $name["standard_name"] . '</a><br>';
+                                    $is_connected = true;
+                                } elseif ($afbDb && $afbDb->event_connect_kind === 'family') {
+                                    $fqry = "SELECT * FROM humo_families WHERE fam_gedcomnumber='" . $afbDb->event_connect_id . "'";
+                                    $family_qry = $dbh->query($fqry);
+                                    $family_Db = $family_qry->fetch(PDO::FETCH_OBJ);
+//                                    var_dump($family_Db);
+                                    @$personman = $db_functions->get_person($family_Db->fam_man);
+//                                    var_dump($personman);
+                                    @$personwoman = $db_functions->get_person($family_Db->fam_woman);
+                                    $picture_text .= '<a href="' . $prefx . 'admin/index.php?page=editor&menu_tab=marriage&tree_id=' 
+                                            . $tree_id . '&person=' . $family_Db->fam_man . '&family=' . $afbDb->event_connect_id . '" target="_blank"><b>' 
+                                            . __('relation') . ':</b> ' . $personman->pers_lastname . ' &amp; ' . $personwoman->pers_lastname . '</a><br>';
+                                    $is_connected = true;
 
-                                // *** Person url example (optional: "main_person=I23"): http://localhost/humo-genealogy/family/2/F10?main_person=I23/ ***
-                                $uri_path = '../'; // *** Needed if url_rewrite is enabled ***
-                                $url = $person_cls->person_url2($personDb->pers_tree_id, $personDb->pers_famc, $personDb->pers_fams, $personDb->pers_gedcomnumber);
-                                $picture_text .= '<br><a href="' . $url . '">' . $name["standard_name"] . '</a><br>';
+                                } elseif ($afbDb && $afbDb->event_connect_kind === 'source') {
+                                    $sourceDb = $db_functions->get_source($afbDb->event_connect_id);
+                                    //var_dump($sourceDb);
+                                    $title = $sourceDb->source_title;// || $sourceDb->source_gedcomnr;
+                                    $picture_text .= '<a href="' . $prefx . 'admin/index.php?page=edit_sources&source_id=' . $sourceDb->source_gedcomnr 
+                                            . '&tree_id=' . $tree_id .  '" target="_blank"><b>' 
+                                            . __('source') . ':</b> ' . $title . '</a><br>';
+                                    $is_connected = true;
+
+                                }
+                                
                             }
-                            echo $picture_text;
 
-                            if (isset($_POST['change_filename'])) {
                             ?>
                                 <form method="POST" action="index.php">
                                     <input type="hidden" name="page" value="thumbs">
                                     <input type="hidden" name="menu_tab" value="picture_show">
                                     <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
-                                    <input type="hidden" name="picture_path" value="<?= $selected_picture_folder; ?>">
+                                    <input type="hidden" name="picture_path" value="<?= $db_dir; ?>">
                                     <input type="hidden" name="filename_old" value="<?= $filename; ?>">
                                     <input type="text" name="filename" value="<?= $filename; ?>" size="20">
                                     <input type="submit" name="change_filename" value="<?= __('Change filename'); ?>">
-                                </form>
-                            <?php } else { ?>
-                                <div class="photobooktext"><?= $filename; ?></div>
-                            <?php } ?>
-                        </div>
+                               
     <?php
+                        if ($is_connected) {
+                            echo '</form>';
+                            echo $picture_text;
+                        }
+                        else  {
+                           echo '<br><br>' . __('Not in use') . '<br>';
+                           echo '<input type="submit" onclick="return confirm(\'' . __('Delete file:') . ' ' . $filename . '?\');" name="delete_file" value="' . __('Delete file') . '">';
+                           echo '</form>';
+                        }
+
+                        echo '</div>';
+                        
                     }
                 }
             }
