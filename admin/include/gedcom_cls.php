@@ -2940,7 +2940,7 @@ class gedcom_cls
         $loop = count($line2) - 2;
 
         $marr_flag = 0;
-
+        $count_civil_religion = 0;
         for ($z = 1; $z <= $loop; $z++) {
 
             if ($second_marr > 0 && $z >= $first_marr && $z < $second_marr) {
@@ -3315,6 +3315,11 @@ class gedcom_cls
                 if ($buffer6 === '2 TYPE') {
                     $processed = true;
                     $temp_kind = strtolower(substr($buffer, 7));
+                    // Ahnenblatt uses "2 TYPE RELI". Other programs: "2 TYPE religious"
+                    if ($temp_kind == 'reli') {
+                        $temp_kind = 'religious';
+                    }
+
                     // *** Save marriage type in database, to show proper text if there is no further data.
                     //     Otherwise it will be "relation". ***
                     if ($family["fam_kind"] === '') {
@@ -3415,6 +3420,11 @@ class gedcom_cls
                     $buffer = ""; // to prevent use of this text in text marriage!
                 }
             }
+            // Quick & dirty method to solve 2 TYPE problem in Ahnenblatt GEDCOM.
+            // 2 TYPE isn't used directly after 1 MARR. So just assume 2nd MARR = religious.
+            if ($buffer6 === '1 MARR' && $gen_program == 'AHN' && $count_civil_religion > 0) {
+                $temp_kind = 'religious'; // Just assume second MARR is religious.
+            }
 
             if ($level[1] == 'MARR' && $temp_kind === 'religious') {
                 if ($buffer6 === '1 MARR') {
@@ -3464,6 +3474,7 @@ class gedcom_cls
 
                 if ($buffer6 === '1 MARR') {
                     $processed = true;
+                    $count_civil_religion++; // Needed for Ahnenblatt.
                 }
                 if ($buffer6 === '2 DATE') {
                     $processed = true;
