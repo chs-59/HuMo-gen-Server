@@ -43,9 +43,9 @@ picture galleries
 - Fixed inconsistences produced by category suffix
 - Fixed bug when renaming files in subfolder
 
-## HOWTO
-This HOWTO will only cover the differences to HGO. For a complete (but a 
-bit outdated) guide look [here](https://sourceforge.net/projects/humo-gen/files/HuMo-gen_Manual/2022_06_05%20HuMo-gen_manual.pdf/download).
+## HOWTO (in progress) 
+This HOWTO will only cover the differences to HGO. For all other topics
+look [here](https://sourceforge.net/projects/humo-gen/files/HuMo-gen_Manual/2022_06_05%20HuMo-gen_manual.pdf/download).
 
 ### Media folder
 Default media folder of HuMo-gen Server is _media/_, a subfolder of the main 
@@ -57,17 +57,23 @@ _media/_ for each tree like _media/tree\_01/_, _media/tree\_02_ and so on.
 We will find out how to configure this later on.
  
 #### Access restriction to media files
-Files in your media folders might hold sensitive data or copyright protected 
-material. You probably don't want these files to be readable by world. 
-If you are on an Apache server or a compatible one you just have to turn on 
-mod_rewrite to be safe. All request to _media/_ will be redirected to a script 
-that let only allowed users access the files. This is the 
-first option.
-If you don't have Apache or mod_rewrite or even want more protection on the files 
-you can use a second option: place your files _outside_ the DocumentRoot path of 
-your server. 
+Files in your media folders may hold sensitive data or copyright protected 
+material. You probably don't want these files to be readable by world. To protect
+files from unwanted access HuMo-gen-Server offers two options:
+1. If you are on an Apache server or a compatible one you just have to turn on 
+_mod\_rewrite_ to be safe. All request to _media/_ will be redirected to a script 
+that let only allowed users access the files. This is your first option.
+2. If you don't have Apache or mod_rewrite or even want more protection on the 
+files you are recommend to use the second option: Just place your files 
+anywhere _outside_ the DocumentRoot path of your server. 
+
+Have in mind that the access to media files is configured in _group_ settings. 
+HuMo-gen-Server rely on these settings and will not protect files that are 
+readable by group _guest_!
+
+#### How to configure the media path
 1. Log into the admin area and go to the settings 
 _Family trees-->Pictures/ Create thumbnails_. It will look like this:
 
-
+![pic path settings](images/docu/HuMo-gen_Server_picpath.webp)
 
