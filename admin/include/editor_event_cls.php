@@ -112,7 +112,8 @@ class editor_event_cls
         global $db_functions;
 
         include_once(__DIR__ . "/../include/media_inc.php");
-        global $pcat_dirs;
+        global $pcat_dirs; // old suffix categories - deprecated
+        global $mediacats;
 
         $text = '';
 
@@ -137,7 +138,7 @@ class editor_event_cls
             }
             @usort($picture_array, 'strnatcasecmp');   // sorts case insensitive and with digits as numbers: pic1, pic3, pic11
 
-            $is_cat = false; // flags there are category files (for use later on)
+/*            $is_cat = false; // flags there are category files (for use later on)
             $picture_array2 = array(); // declare, otherwise if not used gives error
             // if subfolders exist for category files, list those too
             $temp = $dbh->query("SHOW TABLES LIKE 'humo_photocat'");
@@ -163,6 +164,7 @@ class editor_event_cls
             $picture_array = array_merge($picture_array, $picture_array2);
             //@sort($picture_array);  
             //@usort($picture_array,'strnatcasecmp');   // sorts case insensitive and with digits as numbers: pic1, pic3, pic11
+*/
             $nr_pictures = count($picture_array);
         }
 
@@ -1473,8 +1475,32 @@ class editor_event_cls
                                 <textarea rows="1" name="event_text[<?= $data_listDb->event_id; ?>]" <?= $field_text_selected; ?> class="form-control form-control-sm"><?= $editor_cls->text_show($data_listDb->event_text); ?></textarea>
                             </div>
                         </div>
-
                         <?php
+                        $picture_array = array("picture", "marriage_picture", "source_picture");
+                        if (in_array($event_kind, $picture_array) && !empty($mediacats)) {
+                        ?>
+                            <div class="row mb-2">
+                                <label for="event_date" class="col-md-3 col-form-label"><?= __('Categories'); ?></label>
+                                <div class="col-md-7">
+                                    <select size="<?= count($mediacats)+1; ?>" name="event_categories<?= $data_listDb->event_id; ?>[]" class="form-select form-select-sm" multiple>
+                                        <option value="__none__" onclick="function {var el=this.parentElement.options;for(var i=0; i<el.length; i++){el[i].selected = false;}}"><?= __('Reset selection') ?></option>
+                                    <?php
+                                    $optcat = "";
+                                    $sel_cats = explode(', ', $data_listDb->event_categories);
+                                    var_dump($sel_cats);
+                                    foreach ($mediacats as $category) {
+                                        $sel = '';
+                                        if (in_array($category[0], $sel_cats)) { $sel = ' selected'; }
+                                        $optcat .='<option value="' . $category[0]. '"' . $sel . '>' . $category[1]. "</option>\n";
+                                    }
+                                    echo $optcat;
+                        ?>
+                                </select>
+                                </div>
+                            </div>
+                        <?php
+                        }
+
                         $witness_array = array("ASSO", "witness");
                         if (!in_array($event_kind, $witness_array)) {
                         ?>
