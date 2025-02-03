@@ -621,16 +621,24 @@ If possible, try to filter with that'); ?></i>
         </thead>
         <?php
         $data3sql = $dbh->query("SELECT * FROM humo_trees WHERE tree_prefix!='EMPTY' ORDER BY tree_order");
+        $cat_trees = [];
         while ($data3Db = $data3sql->fetch(PDO::FETCH_OBJ)) {
             $treetext = show_tree_text($data3Db->tree_id, $selected_language);
             $treetext_name = $treetext['name'];
+            // we need this in the category section below
+            $cat_trees['id'][] = $data3Db->tree_id;
+            $cat_trees['treetext_name'][$data3Db->tree_id] = $treetext_name;
+            $cat_trees['tree_show'][$data3Db->tree_id] = true;
         ?>
             <tr>
                 <td><?= $data3Db->tree_id; ?> <?= $treetext_name; ?></td>
                 <?php
                 // *** Show/ hide tree for user ***
                 $check = ' checked';
-                if (in_array($data3Db->tree_id, $hide_tree_array)) $check = '';
+                if (in_array($data3Db->tree_id, $hide_tree_array)){
+                    $check = '';
+                    $cat_trees['tree_show'][$data3Db->tree_id] = false;
+                }
                 ?>
                 <td><input type="checkbox" name="show_tree_<?= $data3Db->tree_id; ?>" <?= $check; ?>></td>
 
@@ -656,92 +664,62 @@ If possible, try to filter with that'); ?></i>
 
     <?php
     // *** Photo categories ***
-    // *** User settings per photo category ***
-    $hide_photocat_array = explode(";", $groupDb->group_hide_photocat);
+    $hide_mediacat_array = json_decode($groupDb->group_hide_photocat, true);
 
     // *** Update photocat settings ***
-    $table_exists = $dbh->query("SHOW TABLES LIKE 'humo_photocat'")->rowCount() > 0;
-    if ($table_exists and isset($_POST['change_photocat']) and is_numeric($_POST["id"])) {
-        /*
-        $group_hide_photocat='';
-        $data3sql = $dbh->query("SELECT * FROM humo_photocat GROUP BY photocat_prefix ORDER BY photocat_order");
-        while($data3Db=$data3sql->fetch(PDO::FETCH_OBJ)){
-            // *** Show/ hide categories ***
-            $check='show_photocat_'.$data3Db->photocat_id;
-            if (!isset($_POST["$check"])){
-                if ($group_hide_photocat!=''){ $group_hide_photocat.=';'; }
-                $group_hide_photocat.=$data3Db->photocat_id;
-            }
-        }
-        */
-
-        $group_hide_photocat = '';
-        $photocat_prefix_array[] = '';
+    $table_exists = $dbh->query("SHOW TABLES LIKE 'humo_mediacat'")->rowCount() > 0;
+    if ($table_exists and isset($_POST['change_photocat']) and is_numeric($_POST["group_id"])) {
+ 
+        $group_hide_mediacat = [];
         // *** Can't use GROUP BY in this querie because we need multiple fields (not allowed in MySQL 5.7) ***
-        $data3sql = $dbh->query("SELECT * FROM humo_photocat ORDER BY photocat_order");
+        $data3sql = $dbh->query("SELECT * FROM `humo_mediacat` WHERE `humo_mediacat`.`mediacat_tree_id`>0 ORDER BY `humo_mediacat`.`mediacat_tree_id` ASC, `humo_mediacat`.`mediacat_order` ASC");
         while ($data3Db = $data3sql->fetch(PDO::FETCH_OBJ)) {
-            // *** Only use first found prefix ***
-            if (!in_array($data3Db->photocat_prefix, $photocat_prefix_array)) {
-                $photocat_prefix_array[] = $data3Db->photocat_prefix;
-
-                // *** Show/ hide categories ***
-                $check = 'show_photocat_' . $data3Db->photocat_id;
-                if (!isset($_POST["$check"])) {
-                    if ($group_hide_photocat != '') {
-                        $group_hide_photocat .= ';';
-                    }
-                    $group_hide_photocat .= $data3Db->photocat_id;
-                }
+        // *** Show/ hide categories ***
+            $check = 'show_photocat_' . $data3Db->mediacat_id;
+            if (!isset($_POST["$check"])) {
+                $group_hide_mediacat[$data3Db->mediacat_tree_id][] = $data3Db->mediacat_name;
             }
         }
-        // *** Remove array, so it can be re-used ***
-        unset($photocat_prefix_array);
-
-        $sql = "UPDATE humo_groups SET group_hide_photocat='" . $group_hide_photocat . "'  WHERE group_id=" . $_POST["id"];
+        $sql = "UPDATE humo_groups SET group_hide_photocat='" . json_encode($group_hide_mediacat) . "'  WHERE group_id=" . $_POST["group_id"];
         $result = $dbh->query($sql);
-
-        $hide_photocat_array = explode(";", $group_hide_photocat);
+        $hide_mediacat_array = $group_hide_mediacat;
     }
+
+    
     ?>
 
     <h2><?= __('Hide or show photo categories per user group.'); ?></h2>
     <table class="table">
         <thead class="table-primary">
             <tr>
-                <th><?= __('Category prefix'); ?></th>
+                <th><?= __('Category name'); ?></th>
                 <th><?= __('Show category?'); ?> <input type="submit" name="change_photocat" value="<?= __('Change'); ?>" class="btn btn-sm btn-success"></th>
             </tr>
         </thead>
 
         <?php
-        $temp = $dbh->query("SHOW TABLES LIKE 'humo_photocat'");
-        if ($temp->rowCount()) {   // a humo_photocat table exists
-            /*
-            $data3sql = $dbh->query("SELECT * FROM humo_photocat GROUP BY photocat_prefix ORDER BY photocat_order");
-            // MySQL 5.7: doesn't work yet:
-            //$data3sql = $dbh->query("SELECT photocat_id,photocat_prefix FROM humo_photocat GROUP BY photocat_prefix,photocat_id ORDER BY photocat_order");
-            while($data3Db=$data3sql->fetch(PDO::FETCH_OBJ)){
-                // *** Show/ hide photo categories for user ***
-                $check=' checked'; if (in_array($data3Db->photocat_id, $hide_photocat_array)) $check='';
-                echo '<tr><td>'.$data3Db->photocat_prefix.'</td>';
-                echo '<td><input type="checkbox" name="show_photocat_'.$data3Db->photocat_id.'"'.$check.'></td></tr>';
-            }
-            */
+        $temp = $dbh->query("SHOW TABLES LIKE 'humo_mediacat'");
+        if ($temp->rowCount()) {   // a humo_mediacat table exists
+            //    var_dump($cat_trees); echo'<br>';
 
             // *** Can't do GROUP BY because we need multiple fields and MySQL 5.7 doesn't like that ***
-            $data3sql = $dbh->query("SELECT * FROM humo_photocat ORDER BY photocat_order");
-            $photocat_prefix_array[] = '';
+            $data3sql = $dbh->query("SELECT * FROM `humo_mediacat` WHERE `humo_mediacat`.`mediacat_tree_id`>0 ORDER BY `humo_mediacat`.`mediacat_tree_id` ASC, `humo_mediacat`.`mediacat_order` ASC");
+            $tree_name_array[] = '';
             while ($data3Db = $data3sql->fetch(PDO::FETCH_OBJ)) {
-                // *** Only use first found prefix ***
-                if (!in_array($data3Db->photocat_prefix, $photocat_prefix_array)) {
-                    $photocat_prefix_array[] = $data3Db->photocat_prefix;
+                if ($cat_trees['tree_show'][$data3Db->mediacat_tree_id]) {
+                    $tree_name = $cat_trees['treetext_name'][$data3Db->mediacat_tree_id];
+                // *** Only use first found name ***
+                    if (!in_array($tree_name, $tree_name_array)) {
+                        $tree_name_array[] = $tree_name;
+                        echo '<tr><td><b>' . $tree_name . '</b></td></tr>';
+                    }
                     // *** Show/ hide photo categories for user ***
                     $check = ' checked';
-                    if (in_array($data3Db->photocat_id, $hide_photocat_array)) $check = '';
-                    echo '<tr><td>' . $data3Db->photocat_prefix . '</td>';
-                    echo '<td><input type="checkbox" name="show_photocat_' . $data3Db->photocat_id . '"' . $check . '></td></tr>';
+                    if (isset($hide_mediacat_array[$data3Db->mediacat_tree_id]) && in_array($data3Db->mediacat_name, $hide_mediacat_array[$data3Db->mediacat_tree_id])) { $check = ''; }
+                    echo '<tr><td>' . $data3Db->mediacat_name . '</td>';
+                    echo '<td><input type="checkbox" name="show_photocat_' . $data3Db->mediacat_id . '"' . $check . '></td></tr>';
                 }
-            }
+                }
         } else
             echo '<tr><td colspan="2">' . __('No photo categories available.') . '</td></tr>';
         ?>
