@@ -61,6 +61,11 @@ if (isset($tree_id) && isset($_POST['submit_button'])) {
         $gedcom_texts = $_POST['gedcom_texts'];
     }
 
+    $gedcom_cats = '';
+    if (isset($_POST['gedcom_cats'])) {
+        $gedcom_cats = $_POST['gedcom_cats'];
+    }
+    
     $gedcom_sources = '';
     if (isset($_POST['gedcom_sources'])) {
         $gedcom_sources = $_POST['gedcom_sources'];
@@ -628,6 +633,9 @@ if (isset($tree_id) && isset($_POST['submit_button'])) {
 
                 if ($gedcom_texts == 'yes' && $sourceDb->event_text) {
                     $buffer .= '2 NOTE ' . process_text(3, $sourceDb->event_text);
+                }
+                if ($gedcom_cats == 'yes' && $sourceDb->event_categories) {
+                    $buffer .= "2 _CTG " . process_text(3, $sourceDb->event_categories);
                 }
 
                 if ($gedcom_sources == 'yes') {
@@ -1250,6 +1258,9 @@ if (isset($tree_id) && isset($_POST['submit_button'])) {
                 if ($gedcom_texts == 'yes' && $sourceDb->event_text) {
                     $buffer .= '2 NOTE ' . process_text(3, $sourceDb->event_text);
                 }
+                if ($gedcom_cats == 'yes' && $sourceDb->event_categories) {
+                    $buffer .= "2 _CTG " . process_text(3, $sourceDb->event_categories);
+                }
 
                 if ($gedcom_sources == 'yes') {
                     sources_export('family', 'fam_event_source', $sourceDb->event_id, 2);
@@ -1530,6 +1541,9 @@ if (isset($tree_id) && isset($_POST['submit_button'])) {
 
                     if ($gedcom_texts == 'yes' && $sourceDb->event_text) {
                         $buffer .= '2 NOTE ' . process_text(3, $sourceDb->event_text);
+                    }
+                    if ($gedcom_cats == 'yes' && $sourceDb->event_categories) {
+                        $buffer .= "2 _CTG " . process_text(3, $sourceDb->event_categories);
                     }
 
                     //if ($gedcom_sources=='yes'){
