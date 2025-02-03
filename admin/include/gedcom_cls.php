@@ -253,6 +253,7 @@ class gedcom_cls
                             $event['gedcom'][$event_nr] = 'FAMC';
                             $event['date'][$event_nr] = '';
                             $event['text'][$event_nr] = '';
+                            $event['categories'][$event_nr] = '';
                             $event['place'][$event_nr] = '';
                         }
                     } else {
@@ -1648,6 +1649,7 @@ class gedcom_cls
                     $event['gedcom'][$event_nr] = 'OCCU';
                     $event['date'][$event_nr] = '';
                     $event['text'][$event_nr] = '';
+                    $event['categories'][$event_nr] = '';
                     $event['place'][$event_nr] = '';
                 }
 
@@ -1716,6 +1718,7 @@ class gedcom_cls
                     $event['gedcom'][$event_nr] = 'RELI';
                     $event['date'][$event_nr] = '';
                     $event['text'][$event_nr] = '';
+                    $event['categories'][$event_nr] = '';
                     $event['place'][$event_nr] = '';
                 }
 
@@ -2688,7 +2691,6 @@ class gedcom_cls
                     event_connect_kind2='" . $this->text_process($event['connect_kind2'][$i]) . "',
                     event_connect_id2='" . $this->text_process($event['connect_id2'][$i]) . "',";
                 }
-
                 $gebeurtsql .= "
                 event_kind='" . $this->text_process($event['kind'][$i]) . "',
                 event_event='" . $this->text_process($event['event'][$i]) . "',
@@ -2696,6 +2698,7 @@ class gedcom_cls
                 event_gedcom='" . $this->text_process($event['gedcom'][$i]) . "',
                 event_date='" . $this->process_date($this->text_process($event['date'][$i])) . "',
                 event_text='" . $this->text_process($event['text'][$i]) . "',
+                event_categories='" . $this->text_process($event['categories'][$i]) . "',
                 event_place='" . $this->text_process($event['place'][$i]) . "'";
                 $dbh->query($gebeurtsql);
             }
@@ -2739,6 +2742,7 @@ class gedcom_cls
                 event_gedcom='" . $this->text_process($event2['gedcom'][$i]) . "',
                 event_date='" . $this->process_date($this->text_process($event2['date'][$i])) . "',
                 event_text='" . $this->text_process($event2['text'][$i]) . "',
+                event_categories='" . $this->text_process($event2['categories'][$i]) . "',
                 event_place='" . $this->text_process($event2['place'][$i]) . "'";
                 $dbh->query($gebeurtsql);
             }
@@ -4260,6 +4264,7 @@ class gedcom_cls
                 event_gedcom='" . $this->text_process($event['gedcom'][$i]) . "',
                 event_date='" . $this->process_date($this->text_process($event['date'][$i])) . "',
                 event_text='" . $this->text_process($event['text'][$i]) . "',
+                event_categories='" . $this->text_process($event['categories'][$i]) . "',
                 event_place='" . $this->text_process($event['place'][$i]) . "'";
                 $dbh->query($gebeurtsql);
             }
@@ -5040,6 +5045,7 @@ class gedcom_cls
                 event_gedcom='" . $this->text_process($event['gedcom'][$i]) . "',
                 event_date='" . $this->process_date($this->text_process($event['date'][$i])) . "',
                 event_text='" . $this->text_process($event['text'][$i]) . "',
+                event_categories='" . $this->text_process($event['categories'][$i]) . "',
                 event_place='" . $this->text_process($event['place'][$i]) . "'";
                 $dbh->query($gebeurtsql);
             }
@@ -6016,6 +6022,7 @@ class gedcom_cls
         event_date='" . $this->process_date($this->text_process($event['date'])) . "',
         event_place='" . $this->text_process($event['place']) . "',
         event_text='" . $this->text_process($event['text']) . "',
+        event_categories='" . $this->text_process($event['categories']) . "',
 
         event_new_user_id='" . $event["new_user_id"] . "',
         event_changed_user_id='" . $event["changed_user_id"] . "',
@@ -6146,6 +6153,9 @@ class gedcom_cls
             if ($text != '') {
                 $text .= "|";
             }
+            $processed = true;
+            $text .= substr($buffer, 7);
+        } elseif ($buffer6 === ($number) . ' _CTG') {
             $processed = true;
             $text .= substr($buffer, 7);
         } elseif ($buffer6 === ($number) . ' TITL') {
@@ -7036,6 +7046,7 @@ class gedcom_cls
                 $event2['gedcom'][$event2_nr] = 'OBJE';
                 $event2['date'][$event2_nr] = '';
                 $event2['text'][$event2_nr] = '';
+                $event2['categories'][$event2_nr] = '';
                 $event2['place'][$event2_nr] = '';
             } else {
                 $event_nr++;
@@ -7048,6 +7059,7 @@ class gedcom_cls
                 $event['gedcom'][$event_nr] = 'OBJE';
                 $event['date'][$event_nr] = '';
                 $event['text'][$event_nr] = '';
+                $event['categories'][$event_nr] = '';
                 $event['place'][$event_nr] = '';
             }
 
@@ -7120,6 +7132,14 @@ class gedcom_cls
                 $event2['text'][$event2_nr] = $this->process_texts($event2['text'][$event2_nr], $buffer, $test_number2);
             } else {
                 $event['text'][$event_nr] = $this->process_texts($event['text'][$event_nr], $buffer, $test_number2);
+            }
+        }
+        // *** HuMo-gen-Server categories ***
+        if ($level[$test_number2] == '_CTG') {
+            if ($event_picture == true) {
+                $event2['categories'][$event2_nr] = $this->process_texts($event2['categories'][$event2_nr], $buffer, $test_number2);
+            } else {
+                $event['categories'][$event_nr] = $this->process_texts($event['categories'][$event_nr], $buffer, $test_number2);
             }
         }
 

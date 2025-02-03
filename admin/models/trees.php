@@ -89,7 +89,8 @@ class TreesModel
                 tree_families='0',
                 tree_email='',
                 tree_privacy='',
-                tree_pict_path='|../pictures/'";
+                tree_pict_path='|../pictures/',
+                tree_pict_path_rewrite='n'";
             $dbh->query($sql);
 
             $_SESSION['tree_prefix'] = $new_tree_prefix;
@@ -99,7 +100,7 @@ class TreesModel
         }
 
         if (isset($_POST['change_tree_data'])) {
-            $tree_pict_path = $_POST['tree_pict_path'];
+/*            $tree_pict_path = $_POST['tree_pict_path'];
             if (substr($_POST['tree_pict_path'], 0, 1) === '|') {
                 if (isset($_POST['default_path']) && $_POST['default_path'] == 'no') {
                     $tree_pict_path = substr($tree_pict_path, 1);
@@ -107,11 +108,12 @@ class TreesModel
             } elseif (isset($_POST['default_path']) && $_POST['default_path'] == 'yes') {
                 $tree_pict_path = '|' . $tree_pict_path;
             }
-
+removed from sql, tree_pict_path is not longer set here:
+ *                 tree_pict_path='" . safe_text_db($tree_pict_path) . "',
+*/
             $sql = "UPDATE humo_trees SET
                 tree_email='" . safe_text_db($_POST['tree_email']) . "',
                 tree_owner='" . safe_text_db($_POST['tree_owner']) . "',
-                tree_pict_path='" . safe_text_db($tree_pict_path) . "',
                 tree_privacy='" . safe_text_db($_POST['tree_privacy']) . "'
                 WHERE tree_id=" . $this->tree_id;
             $dbh->query($sql);

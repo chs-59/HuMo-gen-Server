@@ -464,6 +464,22 @@ if (isset($tree_id) and isset($_POST['submit_button'])) {
                     </select>
                 </div>
             </div>
+        
+            <div class="row mb-2">
+                <div class="col-md-4"><?= __('Export categories (No GEDCOM Standard!)'); ?></div>
+                <div class="col-md-4">
+                    <?php
+                    $selected = '';
+                    if (isset($_POST['gedcom_cats']) and $_POST['gedcom_cats'] == 'no') {
+                        $selected = ' selected';
+                    }
+                    ?>
+                    <select size="1" name="gedcom_cats" class="form-select form-select-sm">
+                        <option value="yes"><?= __('Yes'); ?></option>
+                        <option value="no" <?= $selected; ?>><?= __('No'); ?></option>
+                    </select>
+                </div>
+            </div>
 
             <div class="row mb-2">
                 <div class="col-md-4"><?= __('Export sources'); ?></div>

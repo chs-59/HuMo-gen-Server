@@ -165,7 +165,6 @@ if (isset($update['up_to_date']) && $update['up_to_date'] == 'yes') {
                 // *** Copy HuMo-genealogy update to server using curl ***
                 if (function_exists('curl_exec')) {
                     // *** First try to download from GitHub ***
-                    //$source='https://github.com/HuubMons/HuMo-genealogy/archive/refs/heads/master.zip';
                     $source = $update['new_version_auto_download_github'];
                     $destination = 'update/humo-gen_update.zip';
                     $resource = curl_init();

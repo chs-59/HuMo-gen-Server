@@ -299,7 +299,7 @@ if (isset($_FILES['photo_upload']) && $_FILES['photo_upload']['name']) {
         echo '<font color="red">' . __('No valid picture, media or document file') .  '</font>';
     }
 }
-
+//var_dump($_POST);
 
 // *** Change event ***
 //also check is_numeric
@@ -372,6 +372,9 @@ if (isset($_POST['event_id'])) {
             if (isset($_POST["event_text"][$key]) && $_POST["event_text"][$key] != $eventDb->event_text) {
                 $event_changed = true;
             }
+            if (isset($_POST["event_categories" . $key]) && implode(', ', $_POST["event_categories" . $key]) != $eventDb->event_text) {
+                $event_changed = true; 
+            }
 
             if ($event_changed) {
                 $sql = "UPDATE humo_events SET
@@ -401,6 +404,10 @@ if (isset($_POST['event_id'])) {
                 }
                 if (isset($_POST["event_text"][$key])) {
                     $sql .= "event_text='" . $editor_cls->text_process($_POST["event_text"][$key]) . "',";
+                }
+                if (isset($_POST["event_categories" . $key])) {
+                    if (in_array('__none__', $_POST["event_categories" . $key])) {$sql .= "event_categories='',"; }
+                    else { $sql .= "event_categories='" . implode(', ', $_POST["event_categories" . $key]) . "',"; }
                 }
                 $sql .= "event_changed_user_id='" . $userid . "'";
 

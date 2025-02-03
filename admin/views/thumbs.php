@@ -29,10 +29,9 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
 </ul>
 
 <!-- Align content to the left -->
-<div style="float: left; background-color:white; height:500px; padding:10px;">
-    <?php if ($thumbs['menu_tab'] == 'picture_settings' || $thumbs['menu_tab'] == 'picture_thumbnails' || $thumbs['menu_tab'] == 'picture_show') { ?>
+<div style="background-color:white; height:500px; padding:10px;">
+    <?php if ($thumbs['menu_tab'] == 'picture_settings') { ?>
         <div class="p-3 m-2 genealogy_search">
-
             <div class="row mb-2">
                 <div class="col-md-4">
                     <label for="tree" class="col-form-label"><?= __('Choose family tree'); ?></label>
@@ -42,6 +41,11 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                     <?= select_tree($dbh, $page, $tree_id, $thumbs['menu_tab']); ?>
                 </div>
             </div>
+        <form method="POST" action="index.php">
+                <input type="hidden" name="page" value="thumbs">
+                <input type="hidden" name="menu_tab" value="<?= $thumbs['menu_tab']; ?>">
+                <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
+
 
             <div class="row mb-2">
                 <div class="col-md-4">
@@ -50,10 +54,6 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
 
                 <!-- Set path to pictures -->
                 <div class="col-md-8">
-                    <form method="POST" action="index.php">
-                        <input type="hidden" name="page" value="thumbs">
-                        <input type="hidden" name="menu_tab" value="<?= $thumbs['menu_tab']; ?>">
-                        <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
 
                         <div class="form-check">
                             <input class="form-check-input" type="radio" value="yes" name="default_path" id="default_path" <?= $thumbs['default_path'] ? 'checked' : ''; ?>>
@@ -68,10 +68,6 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                             </label>
                         </div>
                 </div>
-            </div>
-
-
-            <div class="row mb-2">
                 <div class="col-md-4"><?= __('Status of picture path'); ?></div>
 
                 <div class="col-md-7">
@@ -87,18 +83,18 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                         echo '</span><br><br>';
                         // this code only for display, calculation is done in 
                         // function save_picture_path_rewrite in admin/models/thumbs.php
-                        echo ('DocumentRoot = <br>' . $_SERVER['DOCUMENT_ROOT'] . '</br></br>');
+                        echo ('DocumentRoot = <br>' . $_SERVER['DOCUMENT_ROOT'] . '<br><br>');
                         if ( file_exists($prefx . $thumbs['tree_pict_path']) ) { 
-                            echo (__('Media directory') . ' =<br>' . realpath($prefx . $thumbs['tree_pict_path']) . '/</br>');
+                            echo (__('Media directory') . ' =<br>' . realpath($prefx . $thumbs['tree_pict_path']) . '/<br>');
                             if ( preg_match('/^media\//', $thumbs['tree_pict_path'])
                                     && $rewrite_status == 'on' )  {
-                                    echo '<span class="bg-success-subtle">' . __('Safe. Path protected by rewrite engine.') . '</span></br>';
+                                    echo '<span class="bg-success-subtle">' . __('Safe. Path protected by rewrite engine.') . '</span><br>';
                                     $display_rewrite = __('No');
                             } elseif (str_contains( realpath($prefx . $thumbs['tree_pict_path']), $_SERVER['DOCUMENT_ROOT'] )  ) {
-                                echo '<span class="bg-danger-subtle">' . __('Unsafe. Path inside DocRoot.') . '</span></br>';
+                                echo '<span class="bg-danger-subtle">' . __('Unsafe. Path inside DocRoot.') . '</span><br>';
                                 $display_rewrite = __('No');
                             } else {
-                                echo '<span class="bg-success-subtle">' . __('Safe. Path outside DocRoot.') . '</span></br>';
+                                echo '<span class="bg-success-subtle">' . __('Safe. Path outside DocRoot.') . '</span><br>';
                                 $display_rewrite = ($rewrite_status == 'on' ? __('Yes - Use server rewrite') : __('Use HuMo rewrite'));
                             }
                         } else {
@@ -120,34 +116,146 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                 <div class="col-md-4">&nbsp;</div>
                         <div class="col-md-7">
                             <input type="submit" name="change_tree_data" value="<?= __('Change'); ?>" class="btn btn-sm btn-success"><br>
-                        </DIV>
-                    </form>
+                        </div>
+                        - <?= __('To show pictures, also check the user-group settings: '); ?>
+            <a href="index.php?page=groups"><?= __('User groups'); ?></a>
 
             </div>
+            </form>
+       </div>
 
-            <!-- Create thumbnails -->
-            <?php
+    <?php } 
+
+            // -- enable thumbnails and resize -->
             if ($thumbs['menu_tab'] == 'picture_thumbnails') {
-                $thumb_height = 120; // *** Standard thumb height ***
+            // TODO refactor
+                $is_thumblib = false;
+                $no_windows = (strtolower(substr(PHP_OS, 0, 3)) !== 'win');
+                if ($no_windows || extension_loaded('gd')) {
+                    $is_thumblib = true;
+                }
+
+            // Auto create thumbnails
+//            if (isset($_POST["thumbnail_auto_create"]) && ($_POST["thumbnail_auto_create"] == 'y' || $_POST["thumbnail_auto_create"] == 'n')) {
+//                $db_functions->update_settings('thumbnail_auto_create', $_POST["thumbnail_auto_create"]);
+//                $humo_option["thumbnail_auto_create"] = $_POST["thumbnail_auto_create"];
+//            }            
             ?>
+
+            <div class="p-3 m-2 genealogy_search">
                 <div class="row mb-2">
-                    <div class="col-md-4"><?= __('Create thumbnails'); ?></div>
+                    <div class="col-md-4">
+                        <label for="tree" class="col-form-label"><?= __('Choose family tree'); ?></label>
+                    </div>
 
                     <div class="col-md-7">
-                        <form method="POST" action="index.php">
-                            <input type="hidden" name="page" value="thumbs">
-                            <input type="hidden" name="menu_tab" value="picture_thumbnails">
-                            <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
-                            <input type="submit" name="thumbnail" value="<?= __('Create thumbnails'); ?>" class="btn btn-sm btn-success">
-                        </form>
+                        <?= select_tree($dbh, $page, $tree_id, $thumbs['menu_tab']); ?>
                     </div>
                 </div>
-            <?php } ?>
 
-            <!-- Show thumbnails -->
-            <?php if ($thumbs['menu_tab'] == 'picture_show') { ?>
+                <h4><?= _('Test') ?></h4>
                 <div class="row mb-2">
-                    <div class="col-md-4"><?= __('Show thumbnails'); ?></div>
+                    <div class="col-md-7">
+                        <?= __('Imagick (images)'); ?>
+                    </div>
+                    <div class="col-md-auto">
+                        <b><?= extension_loaded('imagick') ? strtolower(__('Yes')) : strtolower(__('No')); ?></b>
+                    </div>
+                </div>
+
+                <?php if (extension_loaded('imagick') && $no_windows) { ?>
+                    <div class="row mb-2">
+                        <div class="col-md-7">
+                            <?= __('Ghostscript (PDF support)'); ?>
+                        </div>
+                        <div class="col-md-auto">
+                            <b><?= (trim(shell_exec('type -P gs'))) ? strtolower(__('Yes')) . '<br>' : strtolower(__('No')); ?></b>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-md-7">
+                            <?= __('ffmpeg (movie support)'); ?>
+                        </div>
+                        <div class="col-md-auto">
+                            <b><?= (trim(shell_exec('type -P ffmpeg'))) ? strtolower(__('Yes')) . '<br>' : strtolower(__('No')); ?></b>
+                        </div>
+                    </div>
+                <?php } ?>
+
+                <div class="row mb-2">
+                    <div class="col-md-7">
+                        <?= __('GD (images)'); ?>
+                    </div>
+                    <div class="col-md-auto">
+                        <b><?= extension_loaded('gd') ? strtolower(__('Yes')) : strtolower(__('No')); ?></b>
+                    </div>
+                </div>
+
+                <?php if ( $is_thumblib) { ?>
+                <h4><?= __('Settings') ?></h4>
+
+                <!-- Automatically create thumbnails -->
+                <form method="POST" action="index.php">
+                    <input type="hidden" name="page" value="thumbs">
+                    <input type="hidden" name="menu_tab" value="<?= $thumbs['menu_tab']; ?>">
+                    <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
+                    <input type="hidden" name="change_thumbnail_status" value="yes">
+                    <div class="row mb-2">
+                        <div class="col-md-7">
+                            <?= __('Use thumbnails [create and display]?'); ?>
+                        </div>
+                        <div class="col-md-auto">
+                            <select size="1" name="thumbnail_status" onChange="this.form.submit();" class="form-select form-select-sm">
+                                <option value="n"><?= __('No'); ?></option>
+                                <option value="y" <?= $thumbs["tree_pict_thumbnail"] == 'y' ? 'selected' : ''; ?>><?= __('Yes'); ?></option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+
+
+                <form method="POST" action="index.php">
+                    <input type="hidden" name="page" value="thumbs">
+                    <input type="hidden" name="menu_tab" value="<?= $thumbs['menu_tab']; ?>">
+                    <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
+                    <input type="hidden" name="change_resize_status" value="yes">
+                    <div class="row mb-2">
+                        <div class="col-md-7">
+                            <?= __('Resize pictures on upload [set maximum width and height]?'); ?>
+                        </div>
+                        <div class="col-md-auto">
+                            <select size="1" name="resize_status" onChange="this.form.submit();" class="form-select form-select-sm">
+                                <option value="0|0"><?= __('No'); ?></option>
+                                <option value="720|480" <?= $thumbs["tree_pict_resize"] == '720|480' ? 'selected' : ''; ?>>720×480</option>
+                                <option value="1280|720" <?= $thumbs["tree_pict_resize"] == '1280|720' ? 'selected' : ''; ?>>1280×720</option>
+                                <option value="1920|1080" <?= $thumbs["tree_pict_resize"] == '1920|1080' ? 'selected' : ''; ?>>1920x1080</option>
+                                <option value="3840|2160" <?= $thumbs["tree_pict_resize"] == '3840|2160' ? 'selected' : ''; ?>>3840x2160</option>
+                           </select>
+                        </div>
+                    </div>
+                </form>
+                <?php } else { ?>
+                    <?= __('No Thumbnail library available'); ?><br>
+                <?php } ?>
+        </div>
+
+        <?php } ?>
+
+        <!-- Show thumbnails -->
+        <?php if ($thumbs['menu_tab'] == 'picture_show') { ?>
+        <div class="p-3 m-2 genealogy_search">
+               <div class="row mb-2">
+                    <div class="col-md-4">
+                        <label for="tree" class="col-form-label"><?= __('Choose family tree'); ?></label>
+                    </div>
+
+                    <div class="col-md-7">
+                        <?= select_tree($dbh, $page, $tree_id, $thumbs['menu_tab']); ?>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-4"><?= __('You can change filenames here.'); ?></div>
 
                     <div class="col-md-7">
                         <form method="POST" action="index.php">
@@ -155,56 +263,58 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                             <input type="hidden" name="menu_tab" value="picture_show">
                             <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
                             <input type="submit" name="change_filename" value="<?= __('Show thumbnails'); ?>" class="btn btn-sm btn-success">
-                            <?= ' ' . __('You can change filenames here.'); ?>
                         </form>
                     </div>
                 </div>
+        </div>
             <?php } ?>
 
-        </div>
+        <?php 
 
-        <?php if ($thumbs['menu_tab'] == 'picture_settings') { ?>
-            - <?= __('To show pictures, also check the user-group settings: '); ?>
-            <a href="index.php?page=groups"><?= __('User groups'); ?></a>
-        <?php
-        }
-
-        // *** Create picture thumbnails ***
-        if ($thumbs['menu_tab'] == 'picture_thumbnails') {
-        ?>
-            <?= __('- Creating thumbnails<br>
-- ATTENTION: it may be necessary to (temporarily) change access to the folder with the pictures (rwxrwxrwx)<br>
-- Sometimes the php.ini has to be changed slightly, remove the ; before the line with:'); ?>
-            <i>extension=php.gd2.dll</i>
-        <?php }
-    }
 
 
     // *** Picture categories ***
     if ($thumbs['menu_tab'] == 'picture_categories') {
-        $temp = $dbh->query("SHOW TABLES LIKE 'humo_photocat'");
+
+        $temp = $dbh->query("SHOW TABLES LIKE 'humo_mediacat'");
         if (!$temp->rowCount()) {
             // no category database table exists - so create it
-            // It has 4 columns:
-            //     1. id
-            //     2. name of category prefix- 2 letters and underscore chosen by admin (ws_   bp_)
-            //     3. language for name of category
-            //     4. name of category
 
-            $albumtbl = "CREATE TABLE humo_photocat (
-                photocat_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                photocat_order MEDIUMINT(6),
-                photocat_prefix VARCHAR(30) CHARACTER SET utf8,
-                photocat_language VARCHAR(10) CHARACTER SET utf8,
-                photocat_name VARCHAR(50) CHARACTER SET utf8
-        ) DEFAULT CHARSET=utf8";
+            $albumtbl = "CREATE TABLE humo_mediacat (
+              mediacat_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                mediacat_order MEDIUMINT(6),
+                mediacat_tree_id smallint(5), 
+                mediacat_name VARCHAR(30) CHARACTER SET utf8,
+                mediacat_language_names TEXT CHARACTER SET utf8
+            ) DEFAULT CHARSET=utf8";
             $dbh->query($albumtbl);
-            // Enter the default category with default name that can be changed by admin afterwards
-            $dbh->query("INSERT INTO humo_photocat (photocat_prefix,photocat_order,photocat_language,photocat_name) VALUES ('none','1','default','" . safe_text_db(__('Photos')) . "')");
+            // also create table item event_categories in humo_events
+            $d2sql = $dbh->query("SELECT * FROM humo_events");
+            $d2Db = $d2sql->fetch(PDO::FETCH_OBJ);
+            if (!property_exists($d2Db, 'event_categories')) {
+                $sql = "ALTER TABLE humo_events ADD event_categories VARCHAR(1023) CHARACTER SET utf8 AFTER event_event;";
+                $dbh->query($sql);
+            }
+        
+       }
+        $cat_setup = $dbh->query("SELECT * FROM humo_mediacat WHERE mediacat_tree_id='" . ($tree_id * -1) . "'");
+        if (!$cat_setup->rowCount()) {
+            // categories never been setup - create default
+//            $treesql = $dbh->query("SELECT * FROM humo_mediacat WHERE mediacat_tree_id='" . $tree_id . "'");
+//            $dataDb = $datasql->fetch(PDO::FETCH_OBJ);
+//            if (!$treesql->rowCount()) {
+                // no categories for this tree - create default
+                $languages = array();
+                foreach ($language_file as $lang){ $languages[$lang] = ''; }
+                // Enter the default categories with default name that can be changed by admin afterwards
+                $dbh->query("INSERT INTO humo_mediacat (mediacat_order,mediacat_tree_id,mediacat_name,mediacat_language_names) VALUES ('1','" . $tree_id . "','persons','" . json_encode($languages) . "')");
+                $dbh->query("INSERT INTO humo_mediacat (mediacat_order,mediacat_tree_id,mediacat_name,mediacat_language_names) VALUES ('2','" . $tree_id . "','families','" . json_encode($languages) . "')");
+                $dbh->query("INSERT INTO humo_mediacat (mediacat_order,mediacat_tree_id,mediacat_name,mediacat_language_names) VALUES ('3','" . $tree_id . "','sources','" . json_encode($languages) . "')");
+                // negative tree_id is to indicate directory was allready setup and all categories were deleted by user. In this case default cats should not be restored
+                $dbh->query("INSERT INTO humo_mediacat (mediacat_order,mediacat_tree_id,mediacat_name) VALUES ('1','" . ($tree_id * -1) . "','__none__')");
+//            }
+            //echo '<h1 align=center>'.__('Photo album categories').'</h1>';
         }
-
-        //echo '<h1 align=center>'.__('Photo album categories').'</h1>';
-
         $language_tree = $selected_language; // Default language
         if (isset($_GET['language_tree'])) {
             $language_tree = $_GET['language_tree'];
@@ -212,23 +322,22 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
         if (isset($_POST['language_tree'])) {
             $language_tree = $_POST['language_tree'];
         }
-
         if (isset($_GET['cat_drop2']) && $_GET['cat_drop2'] == 1 && !isset($_POST['save_cat'])) {
             // delete category and make sure that the order sequence is restored
-            $dbh->query("UPDATE humo_photocat SET photocat_order = (photocat_order-1) WHERE photocat_order > '" . safe_text_db($_GET['cat_order']) . "'");
-            $dbh->query("DELETE FROM humo_photocat WHERE photocat_prefix = '" . safe_text_db($_GET['cat_prefix']) . "'");
+            $dbh->query("UPDATE humo_mediacat SET mediacat_order = (mediacat_order-1) WHERE mediacat_order > '" . safe_text_db($_GET['cat_order']) . "' AND mediacat_tree_id = '" . $tree_id . "'");
+            $dbh->query("DELETE FROM humo_mediacat WHERE mediacat_name = '" . safe_text_db($_GET['cat_prefix']) . "'");
         }
         if (isset($_GET['cat_up']) && !isset($_POST['save_cat'])) {
             // move category up
-            $dbh->query("UPDATE humo_photocat SET photocat_order = '999' WHERE photocat_order ='" . safe_text_db($_GET['cat_up']) . "'");  // set present one to temp
-            $dbh->query("UPDATE humo_photocat SET photocat_order = '" . $_GET['cat_up'] . "' WHERE photocat_order ='" . (safe_text_db($_GET['cat_up']) - 1) . "'");  // move the one above down
-            $dbh->query("UPDATE humo_photocat SET photocat_order = '" . (safe_text_db($_GET['cat_up']) - 1) . "' WHERE photocat_order = '999'");  // move this one up
+            $dbh->query("UPDATE humo_mediacat SET mediacat_order = '999' WHERE mediacat_order ='" . safe_text_db($_GET['cat_up']) . "' AND mediacat_tree_id = '" . $tree_id . "'");  // set present one to temp
+            $dbh->query("UPDATE humo_mediacat SET mediacat_order = '" . $_GET['cat_up'] . "' WHERE mediacat_order ='" . (safe_text_db($_GET['cat_up']) - 1) . "' AND mediacat_tree_id = '" . $tree_id . "'");  // move the one above down
+            $dbh->query("UPDATE humo_mediacat SET mediacat_order = '" . (safe_text_db($_GET['cat_up']) - 1) . "' WHERE mediacat_order = '999' AND mediacat_tree_id = '" . $tree_id . "'");  // move this one up
         }
         if (isset($_GET['cat_down']) && !isset($_POST['save_cat'])) {
             // move category down
-            $dbh->query("UPDATE humo_photocat SET photocat_order = '999' WHERE photocat_order ='" . safe_text_db($_GET['cat_down']) . "'");  // set present one to temp
-            $dbh->query("UPDATE humo_photocat SET photocat_order = '" . safe_text_db($_GET['cat_down']) . "' WHERE photocat_order ='" . (safe_text_db($_GET['cat_down']) + 1) . "'");  // move the one under it up
-            $dbh->query("UPDATE humo_photocat SET photocat_order = '" . (safe_text_db($_GET['cat_down']) + 1) . "' WHERE photocat_order = '999'");  // move this one down
+            $dbh->query("UPDATE humo_mediacat SET mediacat_order = '999' WHERE mediacat_order ='" . safe_text_db($_GET['cat_down']) . "' AND mediacat_tree_id = '" . $tree_id . "'");  // set present one to temp
+            $dbh->query("UPDATE humo_mediacat SET mediacat_order = '" . safe_text_db($_GET['cat_down']) . "' WHERE mediacat_order ='" . (safe_text_db($_GET['cat_down']) + 1) . "' AND mediacat_tree_id = '" . $tree_id . "'");  // move the one under it up
+            $dbh->query("UPDATE humo_mediacat SET mediacat_order = '" . (safe_text_db($_GET['cat_down']) + 1) . "' WHERE mediacat_order = '999' AND mediacat_tree_id = '" . $tree_id . "'");  // move this one down
         }
 
         if (isset($_POST['save_cat'])) {  // the user decided to add a new category and/or save changes to names
@@ -236,65 +345,45 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
 
             //$qry = "SELECT * FROM humo_photocat GROUP BY photocat_prefix";
             // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
-            $qry = "SELECT photocat_prefix, photocat_order FROM humo_photocat GROUP BY photocat_prefix, photocat_order";
+            $qry = "SELECT * FROM humo_mediacat WHERE mediacat_tree_id = '" . $tree_id . "'";
             $result = $dbh->query($qry);
 
             while ($resultDb = $result->fetch(PDO::FETCH_OBJ)) {
-                if (isset($_POST[$resultDb->photocat_prefix])) {
-                    if ($language_tree != "default") {
-                        // only update names for the chosen language
-                        $check_lang = $dbh->query("SELECT * FROM humo_photocat WHERE photocat_prefix = '" . $resultDb->photocat_prefix . "' AND photocat_language='" . safe_text_db($language_tree) . "'");
-                        if ($check_lang->rowCount() != 0) { // this language already has a name for this category - update it
-                            $dbh->query("UPDATE humo_photocat SET photocat_name = '" . safe_text_db($_POST[$resultDb->photocat_prefix]) . "'
-                                WHERE photocat_prefix = '" . $resultDb->photocat_prefix . "' AND photocat_language='" . safe_text_db($language_tree) . "'");
-                        } else {  // this language doesn't yet have a name for this category - create it
-                            $dbh->query("INSERT INTO humo_photocat (photocat_prefix, photocat_order, photocat_language, photocat_name) VALUES ('" . $resultDb->photocat_prefix . "', '" . $resultDb->photocat_order . "', '" . $language_tree . "', '" . safe_text_db($_POST[$resultDb->photocat_prefix]) . "')");
-                        }
-                    } else {  // update entered names for all languages 
-                        $check_default = $dbh->query("SELECT * FROM humo_photocat WHERE photocat_prefix = '" . $resultDb->photocat_prefix . "' AND photocat_language='default'");
-                        if ($check_default->rowCount() != 0) {    // there is a default name for this language - update it
-                            $dbh->query("UPDATE humo_photocat SET photocat_name = '" . safe_text_db($_POST[$resultDb->photocat_prefix]) . "'
-                                WHERE photocat_prefix='" . $resultDb->photocat_prefix . "' AND photocat_language='default'");
-                        } else {  // no default name yet for this category - create it
-                            $dbh->query("INSERT INTO humo_photocat (photocat_prefix, photocat_order, photocat_language, photocat_name) VALUES ('" . $resultDb->photocat_prefix . "', '" . $resultDb->photocat_order . "', 'default', '" . safe_text_db($_POST[$resultDb->photocat_prefix]) . "')");
-                        }
-                    }
+                if (isset($_POST[$resultDb->mediacat_name])) {
+                    $cat_translations = json_decode($resultDb->mediacat_language_names, true);
+                   $cat_translations[$language_tree] = str_replace('"', '', $_POST[$resultDb->mediacat_name]);
+                    $dbh->query("UPDATE humo_mediacat SET mediacat_language_names = '" . json_encode($cat_translations, JSON_UNESCAPED_UNICODE) . "'
+                                WHERE mediacat_name='" . $resultDb->mediacat_name . "' AND mediacat_tree_id = '" . $tree_id . "'"); 
                 }
             }
 
             // save new category
-            if (isset($_POST['new_cat_prefix']) and isset($_POST['new_cat_name'])) {
-                if ($_POST['new_cat_prefix'] != "") {
-                    $new_cat_prefix = $_POST['new_cat_prefix'];
-                    $new_cat_name = $_POST['new_cat_name'];
-                    $warning_prefix = "";
-                    $warning_invalid_prefix = "";
-                    if (preg_match('/^[a-z][a-z]_$/', $_POST['new_cat_prefix']) !== 1) {
-                        $warning_invalid_prefix = __('Prefix has to be 2 letters and _');
-                        $warning_prefix = $_POST['new_cat_prefix'];
-                    } else {
-                        $warning_exist_prefix = "";
-                        $check_exist = $dbh->query("SELECT * FROM humo_photocat WHERE photocat_prefix='" . safe_text_db($new_cat_prefix) . "'");
-                        if ($check_exist->rowCount() == 0) {
-                            if ($_POST['new_cat_name'] == "") {
-                                $warning_noname = __('When creating a category you have to give it a name');
-                                $warning_prefix = $_POST['new_cat_prefix'];
-                            } else {
-                                $highest_order = $dbh->query("SELECT MAX(photocat_order) AS maxorder FROM humo_photocat");
-                                $orderDb = $highest_order->fetch(PDO::FETCH_ASSOC);
-                                $order = $orderDb['maxorder'];
-                                $order++;
-                                $qry = "INSERT INTO humo_photocat (photocat_prefix,photocat_order,photocat_language,photocat_name) VALUES ('" . safe_text_db($new_cat_prefix) . "', '" . safe_text_db($order) . "', '" . safe_text_db($language_tree) . "', '" . safe_text_db($new_cat_name) . "')";
-                                $dbh->query($qry);
-                            }
-                        } else {   // this category prefix already exists!
-                            $warning_exist_prefix = __('A category with this prefix already exists!');
-                            $warning_prefix = $_POST['new_cat_prefix'];
-                        }
-                    }
+            if (isset($_POST['new_cat_prefix']) && isset($_POST['new_cat_name'])
+                    && str_replace('"', '', $_POST['new_cat_prefix']) != "") {
+                $new_cat_name = str_replace('"', '', $_POST['new_cat_prefix']);
+                $check_exist = $dbh->query("SELECT * FROM humo_mediacat WHERE mediacat_name='" . safe_text_db($new_cat_name) . "' AND mediacat_tree_id = '" . $tree_id . "'");
+                if ($check_exist->rowCount() == 0 
+                        && strlen($new_cat_name) < 30
+                        && preg_match('/^[A-Za-z0-9_-]+$/', $new_cat_name)) {
+                    $languages = array();
+                    foreach ($language_file as $lang){ $languages[$lang] = ''; }
+                    $languages[$language_tree] = str_replace('"', '', $_POST['new_cat_name']);
+                    $highest_order = $dbh->query("SELECT MAX(mediacat_order) AS maxorder FROM humo_mediacat");
+                    $orderDb = $highest_order->fetch(PDO::FETCH_ASSOC);
+                    $order = $orderDb['maxorder'];
+                    $order++;
+                    $qry = "INSERT INTO humo_mediacat (mediacat_order,mediacat_tree_id,mediacat_name,mediacat_language_names) VALUES ('" . 
+                            safe_text_db($order) . "', '" . safe_text_db($tree_id) . "', '" . safe_text_db($new_cat_name) . "', '" . 
+                            json_encode($languages, JSON_UNESCAPED_UNICODE)  . "')";
+                    $dbh->query($qry);
+                } else {   // this category prefix already exists!
+                    $warning_exist_prefix = __('Category exists or name invalid!');
+                    $warning_prefix = $_POST['new_cat_prefix'];
                 }
             }
         }
+        
+       
         ?>
 
         <form method="post" action="index.php" style="display : inline;">
@@ -303,6 +392,15 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
             <input type="hidden" name="language_tree" value="<?= $language_tree; ?>">
 
             <div class="p-3 m-2 genealogy_search">
+                <div class="row mb-2">
+                    <div class="col-md-4">
+                        <label for="tree" class="col-form-label"><?= __('Choose family tree'); ?></label>
+                    </div>
+
+                    <div class="col-md-7">
+                        <?= select_tree($dbh, $page, $tree_id, $thumbs['menu_tab']); ?>
+                    </div>
+                </div>
 
                 <div class="row mb-2">
                     <div class="col-md-11">
@@ -312,16 +410,16 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
 
                 <div class="row mb-2">
                     <div class="col-md-11">
-                        <li><?= __('Here you can create categories for all your photo albums.</li><li><b>A category will not be displayed in the photobook menu unless there is at least one picture for it.</b></li><li>Click "Default" to create one default name in all languages. Choose a language from the list to set a specific name for that language.<br><b>TIP:</b> First set an English name as default for all languages, then create specific names for those languages that you know. That way no tabs will display without a name in any language. In any case, setting a default name will not overwrite names for specific languages that you have already set.</li><li>The category prefix has to be made up of two letters and an underscore (like: <b>sp_</b> or <b>ws_</b>).</li><li>Pictures that you want to appear in a specific category have to be named with that prefix like: <b>sp_</b>John Smith.jpg</li><li>Pictures that you want to be displayed in the default photo category don\'t need a prefix.'); ?>
-                        <li><?= __('A (sub)directory could also be a category. Example: category prefix = ab_, the directory name = ab.'); ?></li>
+                        <li><?= __('Here you can create categories for all media files in the "Photobook" section.</li><li><b>Without any category no pictures will be displayed there!</b></li><li>On first use of this page default categories are created: "persons", "families" and "sources" will display all media files of the corresponding data sheet sections.</li><li>Feel free to add, remove, restore or reorder any category. Put translations for your prefered languages into the right input fields</li>'); ?>
+                        <li><?= __('Category names are limited to a maximum of 30 characters. Only A-Z, a-z, 0-9, - and _ are accepted!</li>'); ?></li>
                     </div>
                 </div>
 
                 <table class="humo" cellspacing="0" style="margin-left:0px; text-align:center; width:80%">
                     <tr>
                         <td style="border-bottom:0px;"></td>
-                        <td style="font-size:120%;border-bottom:0px;width:25%" white-space:nowrap;"><b><?= __('Category prefix'); ?></b></td>
-                        <td style="font-size:120%;border-bottom:0px;width:60%"><b><?= __('Category name'); ?></b></td>
+                        <td style="font-size:120%;border-bottom:0px;width:25%" white-space:nowrap;"><b><?= __('Category name'); ?></b></td>
+                        <td style="font-size:120%;border-bottom:0px;width:60%"><b><?= __('Category translation'); ?></b></td>
                     </tr>
 
                     <?php
@@ -355,75 +453,68 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                                 </div>
 
                                 <div class="col-md-auto">
-                                    <?= __('or'); ?>
-                                    <a href="index.php?page=thumbs&amp;menu_tab=picture_categories&amp;language_tree=default<?= $add; ?>"><?= __('Default'); ?></a>
                                 </div>
                             </div>
                         </td>
                     </tr>
 
                     <?php
-                    // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
-                    $qry = "SELECT photocat_prefix, photocat_order FROM humo_photocat GROUP BY photocat_prefix, photocat_order ORDER BY photocat_order";
+
+                    $qry = "SELECT * FROM humo_mediacat WHERE mediacat_tree_id = '". $tree_id ."' ORDER BY mediacat_order";
                     $cat_result = $dbh->query($qry);
                     $number = 1;  // number on list
 
                     while ($catDb = $cat_result->fetch(PDO::FETCH_OBJ)) {
-                        $name = $dbh->query("SELECT * FROM humo_photocat WHERE photocat_prefix='" . $catDb->photocat_prefix . "' AND photocat_language = '" . safe_text_db($language_tree) . "'");
-                        if ($name->rowCount()) {  // there is a name for this language
-                            $nameDb = $name->fetch(PDO::FETCH_OBJ);
-                            $catname = $nameDb->photocat_name;
-                        } else {  // maybe a default is set
-                            $name = $dbh->query("SELECT * FROM humo_photocat WHERE photocat_prefix='" . $catDb->photocat_prefix . "' AND photocat_language = 'default'");
-                            if ($name->rowCount()) {  // there is a default name for this category
-                                $nameDb = $name->fetch(PDO::FETCH_OBJ);
-                                $catname = $nameDb->photocat_name;
-                            } else {  // no name at all
-                                $catname = "";
-                            }
-                        }
-
+                        //var_dump($catDb); exit;
+                        $catname = $catDb->mediacat_name;
+                        $langs = json_decode($catDb->mediacat_language_names, true);
+                        $catlang = $langs[$language_tree2];
+                        if (empty($catlang)) { $catlang = $catname;}
                         // arrows
-                        $order_sequence = $dbh->query("SELECT MAX(photocat_order) AS maxorder, MIN(photocat_order) AS minorder FROM humo_photocat");
+                        $order_sequence = $dbh->query("SELECT MAX(mediacat_order) AS maxorder, MIN(mediacat_order) AS minorder FROM humo_mediacat WHERE mediacat_tree_id = '". $tree_id ."'");
                         $orderDb = $order_sequence->fetch(PDO::FETCH_ASSOC);
                         $maxorder = $orderDb['maxorder'];
                         $minorder = $orderDb['minorder'];
 
-                        $prefname = $catDb->photocat_prefix;
-                        if ($catDb->photocat_prefix == 'none') {
-                            $prefname = __('default - without prefix');
-                        }  // display default in the display language, so it is clear to everyone
-                    ?>
+
+                        ?>
                         <tr>
                             <td>
                                 <div style="width:25px;" class="d-inline-block">
                                     <?php
-                                    if ($catDb->photocat_prefix != 'none') {
+                                    echo '<a href="index.php?page=thumbs&amp;menu_tab=picture_categories&amp;cat_order=' . $catDb->mediacat_order . '&amp;cat_prefix=' . $catDb->mediacat_name . '&amp;cat_drop=1"><img src="images/button_drop.png"></a>';
+
+/*                                    if ($catDb->photocat_prefix != 'none') {
                                         echo '<a href="index.php?page=thumbs&amp;menu_tab=picture_categories&amp;cat_order=' . $catDb->photocat_order . '&amp;cat_prefix=' . $catDb->photocat_prefix . '&amp;cat_drop=1"><img src="images/button_drop.png"></a>';
                                     }
+*/
                                     ?>
                                 </div>
 
                                 <div style="width:20px;" class="d-inline-block">
                                     <?php
-                                    if ($catDb->photocat_order != $minorder) {
-                                        echo '<a href="index.php?page=thumbs&amp;menu_tab=picture_categories&amp;cat_prefix=' . $catDb->photocat_prefix . '&amp;cat_up=' . $catDb->photocat_order . '"><img src="images/arrow_up.gif"></a>';
+                                    if ($catDb->mediacat_order != $minorder) {
+//                                    if ($catDb->photocat_order != $minorder) {
+//                                        echo '<a href="index.php?page=thumbs&amp;menu_tab=picture_categories&amp;cat_prefix=' . $catDb->photocat_prefix . '&amp;cat_up=' . $catDb->photocat_order . '"><img src="images/arrow_up.gif"></a>';
+                                        echo '<a href="index.php?page=thumbs&amp;menu_tab=picture_categories&amp;cat_prefix=' . $catDb->mediacat_name . '&amp;cat_up=' . $catDb->mediacat_order . '"><img src="images/arrow_up.gif"></a>';
                                     }
                                     ?>
                                 </div>
 
                                 <div style="width:20px;" class="d-inline-block">
                                     <?php
-                                    if ($catDb->photocat_order != $maxorder) {
-                                        echo '<a href="index.php?page=thumbs&amp;menu_tab=picture_categories&amp;cat_prefix=' . $catDb->photocat_prefix . '&amp;cat_down=' . $catDb->photocat_order . '"><img src="images/arrow_down.gif"></a>';
+                                    if ($catDb->mediacat_order != $maxorder) {
+//                                    if ($catDb->photocat_order != $maxorder) {
+//                                        echo '<a href="index.php?page=thumbs&amp;menu_tab=picture_categories&amp;cat_prefix=' . $catDb->photocat_prefix . '&amp;cat_down=' . $catDb->photocat_order . '"><img src="images/arrow_down.gif"></a>';
+                                        echo '<a href="index.php?page=thumbs&amp;menu_tab=picture_categories&amp;cat_prefix=' . $catDb->mediacat_name . '&amp;cat_down=' . $catDb->mediacat_order . '"><img src="images/arrow_down.gif"></a>';
                                     }
                                     ?>
                                 </div>
                             </td>
 
-                            <td style="white-space:nowrap;"><?= $prefname; ?></td>
+                            <td style="white-space:nowrap;"><?= $catname; ?></td>
 
-                            <td><input type="text" name="<?= $catDb->photocat_prefix; ?>" value="<?= $catname; ?>" size="30" class="form-control form-control-sm"></td>
+                            <td><input type="text" name="<?= $catDb->mediacat_name; ?>" value="<?= $catlang; ?>" size="30" class="form-control form-control-sm"></td>
                         </tr>
                     <?php
                     }
@@ -469,10 +560,29 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
         </form>
         <?php
     }
+    $pict_path = $data2Db->tree_pict_path;
+    if (substr($pict_path, 0, 1) === '|') {
+        $pict_path = 'media/';
+    }
+// Check for trees with identical tree_pict_path to inherit delete button
+// if same media file is used in different trees    
+$same_picpath = array();
+$tree_checksql = $dbh->query("SELECT * FROM humo_trees");
+while ($treeCheck = $tree_checksql->fetch(PDO::FETCH_OBJ)) {
+    if ($treeCheck->tree_id != $tree_id
+            && $treeCheck->tree_pict_path == $pict_path) {
+        $same_picpath[] = $treeCheck->tree_id;
+    }    
+}
 
     // *** Change filename ***
     if (isset($_POST['filename'])) {
-        $picture_path_old = $_POST['picture_path'];
+        $db_path = $_POST['picture_path'];
+        $picture_path = $prefx . $pict_path . $db_path;
+        $db_filename = $db_path . $_POST['filename'];
+        $db_filename_old = $db_path . $_POST['filename_old'];
+//        echo('pp: ' . $picture_path . 'File: ' . $db_filename);
+/*   $picture_path_old = $_POST['picture_path'];
         $picture_path_new = $_POST['picture_path'];
         // *** If filename has a category AND a sub category directory exists, use it ***
         if (substr($_POST['filename'], 0, 2) !== substr($_POST['filename_old'], 0, 2) && ($_POST['filename'][2] == '_' || $_POST['filename_old'][2] == '_')) { // we only have to do this if something changed in a prefix
@@ -490,36 +600,40 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                 $picture_path_new = substr($picture_path_new, 0, -3);  // move from subfolder to main folder
             }
         }
+*/
         // remove thumb old naming system
-        if (file_exists($picture_path_old . 'thumb_' . $_POST['filename_old'])) {
-            unlink($picture_path_old . 'thumb_' . $_POST['filename_old']);
+        if (file_exists($picture_path . 'thumb_' . $_POST['filename_old'])) {
+            unlink($picture_path . 'thumb_' . $_POST['filename_old']);
         }
         // remove old thumb new system
-        if (file_exists($picture_path_old . 'thumb_' . $_POST['filename_old'] . '.jpg')) {
-            unlink($picture_path_old . 'thumb_' . $_POST['filename_old'] . '.jpg');
+        if (file_exists($picture_path . 'thumb_' . $_POST['filename_old'] . '.jpg')) {
+            unlink($picture_path . 'thumb_' . $_POST['filename_old'] . '.jpg');
         }
-        // rename and create new thumbnail       
-        if (file_exists($picture_path_old . $_POST['filename_old'])) {
-            rename($picture_path_old . $_POST['filename_old'], $picture_path_new . $_POST['filename']);
-            echo '<b>' . __('Changed filename:') . ' </b>' . $picture_path_old .  $_POST['filename_old'] . ' <b>' . __('into filename:') . '</b> ' . $picture_path_new .  $_POST['filename'] . '<br>';
-            if (check_media_type($picture_path_new, $_POST['filename']) && create_thumbnail($picture_path_new, $_POST['filename'])) {
-                echo '<b>' . __('Changed filename:') . ' ' . __('into filename:') . '</b> ' . $picture_path_new . 'thumb_' . $_POST['filename'] . '.jpg<br>';
+        // delete file or rename and create new thumbnail       
+        if (file_exists($picture_path . $_POST['filename_old'])) {
+            if (isset($_POST['delete_file'])) {
+                unlink($picture_path . $_POST['filename_old']); 
+                echo '<b>' . __('Deleted file:') . ' </b>' . $picture_path .  $_POST['filename_old'] . '<br>';
+            }
+            else {
+                rename($picture_path . $_POST['filename_old'], $picture_path . $_POST['filename']);
+                echo '<b>' . __('Changed filename:') . ' </b>' . $picture_path .  $_POST['filename_old'] . ' <b>' . __('into filename:') . '</b> ' . $picture_path .  $_POST['filename'] . '<br>';
+                if (check_media_type($picture_path, $_POST['filename']) && create_thumbnail($picture_path, $_POST['filename'])) {
+                    echo '<b>' . __('Changed filename:') . ' ' . __('into filename:') . '</b> ' . $picture_path . 'thumb_' . $_POST['filename'] . '.jpg<br>';
+                }
+                $sql = "UPDATE humo_events SET
+                event_event='" . safe_text_db($db_filename) . "' WHERE event_event='" . safe_text_db($db_filename_old) . "'";
+                $result = $dbh->query($sql);
             }
         }
 
-        $sql = "UPDATE humo_events SET
-            event_event='" . safe_text_db($_POST['filename']) . "' WHERE event_event='" . safe_text_db($_POST['filename_old']) . "'";
-        $result = $dbh->query($sql);
-    }
+     }
 
 
-    // *** Create thumbnails ***
+    // *** Show thumbnails to rename ***
     $counter = 0;
-    if (isset($_POST["thumbnail"]) || isset($_POST['change_filename'])) {
-        $pict_path = $data2Db->tree_pict_path;
-        if (substr($pict_path, 0, 1) === '|') {
-            $pict_path = 'media/';
-        }
+//    if (isset($_POST["thumbnail"]) || isset($_POST['change_filename'])) {
+    if (isset($_POST['change_filename'])) {
 
         //$selected_picture_folder=$prefx.$pict_path;
         $array_picture_folder[] = $prefx . $pict_path;
@@ -551,7 +665,7 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                 $files = preg_grep('/^([^.])/', scandir($selected_picture_folder));
                 foreach ($files as $filename) {
 
-                    if (
+/*                    if (
                         substr($filename, 0, 5) !== 'thumb' &&
                         isset($_POST["thumbnail"]) &&
                         !is_dir($selected_picture_folder . $filename)  &&
@@ -565,7 +679,7 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                             create_thumbnail($selected_picture_folder, $filename); // in media_inc.php script 
                         }
                     }
-
+*/
                     // *** Show thumbnails ***
                     if (
                         substr($filename, 0, 5) !== 'thumb' &&
@@ -573,46 +687,92 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
                         !is_dir($selected_picture_folder . $filename)
                     ) {
         ?>
-                        <div class="photobook">
+                        <div class="photobook_select">
                             <?php
                             echo print_thumbnail($selected_picture_folder, $filename);
                             // *** Show name of connected persons ***
                             include_once(__DIR__ . '/../../include/person_cls.php');
-                            $picture_text = '';
-                            $sql = "SELECT * FROM humo_events WHERE event_tree_id='" . safe_text_db($tree_id) . "'
+                            $db_dir = str_replace($array_picture_folder[0], '', $selected_picture_folder);
+                            $picture_text = '<br>';
+//                            $sql = "SELECT * FROM humo_events WHERE event_tree_id='" . safe_text_db($tree_id) . "' "
+//                                . "AND (event_connect_kind='person' OR event_connect_kind='family' OR event_connect_kind='source') "
+                            $sql = "SELECT * FROM humo_events WHERE (event_connect_kind='person' OR event_connect_kind='family' OR event_connect_kind='source') "
+                                . "AND event_connect_id NOT LIKE '' AND event_event='" . $db_dir . $filename . "'";
+/*                            $sql = "SELECT * FROM humo_events WHERE event_tree_id='" . safe_text_db($tree_id) . "'
                                 AND event_connect_kind='person' AND event_kind='picture'
-                                AND LOWER(event_event)='" . safe_text_db(strtolower($filename)) . "'";
-                            $afbqry = $dbh->query($sql);
+                                AND LOWER(event_event)='" . safe_text_db(strtolower($db_dir . $filename)) . "'";
+*/
+
                             $picture_privacy = false;
+                            $is_connected = false;
+                            
+                            $afbqry = $dbh->query($sql);
                             while ($afbDb = $afbqry->fetch(PDO::FETCH_OBJ)) {
-                                $person_cls = new person_cls;
-                                $db_functions->set_tree_id($tree_id);
-                                $personDb = $db_functions->get_person($afbDb->event_connect_id);
-                                $name = $person_cls->person_name($personDb);
+                                if ($afbDb->event_tree_id != $tree_id) {
+                                    // do nothing unless:
+                                    if (in_array($afbDb->event_tree_id, $same_picpath)) {
+                                        $picture_text .= __('Used in tree') . ' ' . $afbDb->event_tree_id . '<br>';
+                                        $is_connected = true;
+                                    }
+                                } 
+                                elseif ($afbDb && $afbDb->event_connect_kind === 'person') {
+                                    $person_cls = new person_cls;
+                                    $db_functions->set_tree_id($tree_id);
+                                    $personDb = $db_functions->get_person($afbDb->event_connect_id);
+                        //            var_dump($personDb);
+                                    $name = $person_cls->person_name($personDb);
+                                    $picture_text .= '<a href="' . $prefx . 'admin/index.php?page=editor&menu_tab=person&tree_id=' 
+                                            . $tree_id . '&person=' . $personDb->pers_gedcomnumber . '" target="_blank"><b>'. __('person') . ':</b> ' . $name["standard_name"] . '</a><br>';
+                                    $is_connected = true;
+                                } elseif ($afbDb && $afbDb->event_connect_kind === 'family') {
+                                    $fqry = "SELECT * FROM humo_families WHERE fam_gedcomnumber='" . $afbDb->event_connect_id . "'";
+                                    $family_qry = $dbh->query($fqry);
+                                    $family_Db = $family_qry->fetch(PDO::FETCH_OBJ);
+//                                    var_dump($family_Db);
+                                    @$personman = $db_functions->get_person($family_Db->fam_man);
+//                                    var_dump($personman);
+                                    @$personwoman = $db_functions->get_person($family_Db->fam_woman);
+                                    $picture_text .= '<a href="' . $prefx . 'admin/index.php?page=editor&menu_tab=marriage&tree_id=' 
+                                            . $tree_id . '&person=' . $family_Db->fam_man . '&family=' . $afbDb->event_connect_id . '" target="_blank"><b>' 
+                                            . __('relation') . ':</b> ' . $personman->pers_lastname . ' &amp; ' . $personwoman->pers_lastname . '</a><br>';
+                                    $is_connected = true;
 
-                                // *** Person url example (optional: "main_person=I23"): http://localhost/humo-genealogy/family/2/F10?main_person=I23/ ***
-                                $uri_path = '../'; // *** Needed if url_rewrite is enabled ***
-                                $url = $person_cls->person_url2($personDb->pers_tree_id, $personDb->pers_famc, $personDb->pers_fams, $personDb->pers_gedcomnumber);
-                                $picture_text .= '<br><a href="' . $url . '">' . $name["standard_name"] . '</a><br>';
+                                } elseif ($afbDb && $afbDb->event_connect_kind === 'source') {
+                                    $sourceDb = $db_functions->get_source($afbDb->event_connect_id);
+                                    //var_dump($sourceDb);
+                                    $title = $sourceDb->source_title;// || $sourceDb->source_gedcomnr;
+                                    $picture_text .= '<a href="' . $prefx . 'admin/index.php?page=edit_sources&source_id=' . $sourceDb->source_gedcomnr 
+                                            . '&tree_id=' . $tree_id .  '" target="_blank"><b>' 
+                                            . __('source') . ':</b> ' . $title . '</a><br>';
+                                    $is_connected = true;
+
+                                }
+                                
                             }
-                            echo $picture_text;
 
-                            if (isset($_POST['change_filename'])) {
                             ?>
                                 <form method="POST" action="index.php">
                                     <input type="hidden" name="page" value="thumbs">
                                     <input type="hidden" name="menu_tab" value="picture_show">
                                     <input type="hidden" name="tree_id" value="<?= $tree_id; ?>">
-                                    <input type="hidden" name="picture_path" value="<?= $selected_picture_folder; ?>">
+                                    <input type="hidden" name="picture_path" value="<?= $db_dir; ?>">
                                     <input type="hidden" name="filename_old" value="<?= $filename; ?>">
                                     <input type="text" name="filename" value="<?= $filename; ?>" size="20">
                                     <input type="submit" name="change_filename" value="<?= __('Change filename'); ?>">
-                                </form>
-                            <?php } else { ?>
-                                <div class="photobooktext"><?= $filename; ?></div>
-                            <?php } ?>
-                        </div>
+                               
     <?php
+                        if ($is_connected) {
+                            echo '</form>';
+                            echo $picture_text;
+                        }
+                        else  {
+                           echo '<br><br>' . __('Not in use') . '<br>';
+                           echo '<input type="submit" onclick="return confirm(\'' . __('Delete file:') . ' ' . $filename . '?\');" name="delete_file" value="' . __('Delete file') . '">';
+                           echo '</form>';
+                        }
+
+                        echo '</div>';
+                        
                     }
                 }
             }

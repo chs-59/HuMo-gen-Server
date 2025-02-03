@@ -2,10 +2,15 @@
 // holds the prefixes for existent category subdirectories
 global $pcat_dirs;
 $pcat_dirs = get_pcat_dirs();
-
+global $mediacats;
+$mediacats = get_mediacats();
+global $pict_options;
+$pict_options = get_pict_options();
 // lookup which library is available or none
 function create_thumbnail($folder, $file)
 {
+    global $pict_options;
+    if ($pict_options[2] == 'n') { return (false); } // thumbnails disabled
     $theight = 120; // default
     if (extension_loaded('imagick')) {
         return (create_thumbnail_IM($folder, $file, $theight)); // true on success
@@ -18,12 +23,12 @@ function create_thumbnail($folder, $file)
 // lookup which library is available or none
 function resize_picture($folder, $file)
 {
-    $maxheight = 2160; // default : 1080;
-    $maxwidth = 3840;  // default : 1920;
+    global $pict_options;
+    if (empty($pict_options[0])) { return (false); } // resizing disabled
     if (extension_loaded('imagick')) {
-        return (resize_picture_IM($folder, $file, $maxwidth, $maxheight)); // true on success
+        return (resize_picture_IM($folder, $file, $pict_options[0], $pict_options[1])); // true on success
     } elseif ((extension_loaded('gd'))) {
-        return (resize_picture_GD($folder, $file, $maxwidth, $maxheight)); // true on success
+        return (resize_picture_GD($folder, $file,  $pict_options[0], $pict_options[1])); // true on success
     } else {
         return (false); // no resizing
     }
@@ -44,7 +49,7 @@ function create_thumbnail_IM($folder, $file, $theight = 120)
     $success = false;
     $pict_path_original = $folder . $file;
     $pict_path_thumb = $folder . 'thumb_' . $file . '.jpg';
-    $imtype = strtoupper(substr($file, -3));
+    $imtype = strtoupper(pathinfo($file, PATHINFO_EXTENSION));
     if (Imagick::queryformats($imtype . '*')) {
         $fhandle = fopen($folder . '.' . $file . '.no_thumb', "w"); // create no_thumb to mark corrupt files
         fclose($fhandle);
@@ -54,6 +59,7 @@ function create_thumbnail_IM($folder, $file, $theight = 120)
         } elseif (($imtype == 'MP4' ||
                 $imtype == 'MPG' ||
                 $imtype == 'FLV' ||
+                $imtype == 'WEBM' ||
                 $imtype == 'MOV' ||
                 $imtype == 'AVI')
             && $is_ffmpeg
@@ -112,12 +118,12 @@ function resize_picture_IM($folder, $file, $maxheight = 1080, $maxwidth = 1920)
 //search for a thumbnail or mime type placeholder and returns the image tag
 function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $attrib = '', $link2hires=false, $link_attrib='', $html_before='')
 {
-    global $pcat_dirs, $humo_option, $dbh, $tree_id;
+    global $pcat_dirs, $pict_options, $dbh, $tree_id;
 
     if (!$file || !$folder) {
         return '<img src="../images/thumb_missing-image.jpg" style="width:auto; height:120px;" title="' . $folder . $file . ' missing path/filename">';
     }
-    
+
     $img_style = ' style="';
     if ($maxw > 0 && $maxh > 0) {
         $img_style .= 'width:auto; height:auto; max-width:' . $maxw . 'px; max-height:' . $maxh . 'px; ' . $css . '" ' . $attrib;
@@ -146,17 +152,19 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
     if (!file_exists($folder . $file)) {
         return '<img src="../images/thumb_missing-image.jpg" style="width:auto; height:120px;" title="' . $folder . $file . ' not found">';
     }
+
     $rwfolder = $folder; // rwfolder will be changed due to rewrite mode
-    $data2sql = $dbh->query("SELECT tree_pict_path_rewrite FROM humo_trees WHERE tree_id=" . $tree_id);
+    $data2sql = $dbh->query("SELECT * FROM humo_trees WHERE tree_id=" . $tree_id);
     $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
+    // for rewrite: remove tree_pict_path from folder to get subfolder
+    $subfolder = str_replace( '../' .$data2Db->tree_pict_path, '', $folder);
     if ($data2Db->tree_pict_path_rewrite == 'i'){
-        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media.php?';}
+        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media.php?' . $subfolder;}
         else { $rwfolder = 'media.php?';}
     } elseif ($data2Db->tree_pict_path_rewrite == 's') {
-        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media/';}
+        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media/' . $subfolder;}
         else { $rwfolder = 'media/';}       
     }
-echo 'folder: ' . $rwfolder;
     $link = '';
     $link_close = '';
     if ($link2hires) {
@@ -164,7 +172,7 @@ echo 'folder: ' . $rwfolder;
         $link_close = '</a>';
     }
     $thumb_url =  thumbnail_exists($folder, $file); // array! folder, file
-    if (!empty($thumb_url)) {
+    if (!empty($thumb_url && $pict_options[2] == 'y')) {
         return $link . '<img src="' . $rwfolder . $thumb_url[1] . '"' . $img_style . '>' . $link_close;
     } // found thumbnail
 
@@ -176,42 +184,44 @@ echo 'folder: ' . $rwfolder;
     ) {
         // script will possibily die here and hidden no_thumb file becomes persistent
         // so this code might be skiped afterwords
-        if ($humo_option["thumbnail_auto_create"] == 'y' && create_thumbnail($folder, $file)) {
-                $newthumb_url =  thumbnail_exists($folder, $file); // test for dir in filename
-                return $link . '<img src="' . $rwfolder . $newthumb_url[1] . '"' . $img_style . '>' . $link_close;
+        if (create_thumbnail($folder, $file)) {
+            $newthumb_url =  thumbnail_exists($folder, $file); // test for dir in filename
+            return $link . '<img src="' . $rwfolder . $newthumb_url[1] . '"' . $img_style . '>' . $link_close;
         }
     }
 
     $extensions_check = strtolower(pathinfo($file, PATHINFO_EXTENSION));
     switch ($extensions_check) {
         case 'pdf':
-            return '<img src="../images/pdf.jpg" alt="PDF">';
+            return $link . '<img src="../images/pdf.jpg" alt="PDF">' . $link_close;;
         case 'docx':
-            return '<img src="../images/msdoc.gif" alt="DOCX">';
+            return $link . '<img src="../images/msdoc.gif" alt="DOCX">' . $link_close;;
         case 'doc':
-            return '<img src="../images/msdoc.gif" alt="DOC">';
+            return $link . '<img src="../images/msdoc.gif" alt="DOC">' . $link_close;;
         case 'wmv':
-            return '<img src="../images/video-file.png" alt="WMV">';
+            return $link . '<img src="../images/video-file.png" alt="WMV">' . $link_close;;
         case 'avi':
-            return '<img src="../images/video-file.png" alt="AVI">';
+            return $link . '<img src="../images/video-file.png" alt="AVI">' . $link_close;;
         case 'mp4':
-            return '<img src="../images/video-file.png" alt="MP4">';
+            return $link . '<img src="../images/video-file.png" alt="MP4">' . $link_close;;
+        case 'webm':
+            return $link . '<img src="../images/video-file.png" alt="WEBM">' . $link_close;;
         case 'mpg':
-            return '<img src="../images/video-file.png" alt="MPG">';
+            return $link . '<img src="../images/video-file.png" alt="MPG">' . $link_close;;
         case 'mov':
-            return '<img src="../images/video-file.png" alt="MOV">';
+            return $link . '<img src="../images/video-file.png" alt="MOV">' . $link_close;;
         case 'wma':
-            return '<img src="../images/video-file.png" alt="WMA">';
+            return $link . '<img src="../images/video-file.png" alt="WMA">' . $link_close;;
         case 'wav':
-            return '<img src="../images/audio.gif" alt="WAV">';
+            return $link . '<img src="../images/audio.gif" alt="WAV">' . $link_close;;
         case 'mp3':
-            return '<img src="../images/audio.gif" alt="MP3">';
+            return $link . '<img src="../images/audio.gif" alt="MP3">' . $link_close;;
         case 'mid':
-            return '<img src="../images/audio.gif" alt="MID">';
+            return $link . '<img src="../images/audio.gif" alt="MID">' . $link_close;;
         case 'ram':
-            return '<img src="../images/audio.gif" alt="RAM">';
+            return $link . '<img src="../images/audio.gif" alt="RAM">' . $link_close;;
         case 'ra':
-            return '<img src="../images/audio.gif" alt="RA">';
+            return $link . '<img src="../images/audio.gif" alt="RA">' . $link_close;;
         case 'jpg':
             return $link . '<img src="' . $rwfolder . $file . '"' . $img_style . '>' . $link_close;
         case 'jpeg':
@@ -253,6 +263,7 @@ function check_media_type($folder, $file)
         'audio/x-wav',
         'audio/x-pn-realaudio',
         'audio/x-realaudio',
+        'audio/webm',
         'application/pdf',
         'application/msword',
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -262,7 +273,8 @@ function check_media_type($folder, $file)
         'video/x-msvideo',
         'video/msvideo',
         'video/mpeg',
-        'video/mp4'
+        'video/mp4',
+        'video/webm'
     ];
     $mtype  = mime_content_type($folder . $file);
 
@@ -447,6 +459,24 @@ function get_pcat_dirs() // returns a.array with existing cat subfolders key=>di
     }
     return $tmp_pcat_dirs;
 }
+function get_mediacats() // returns a.array with existing cat subfolders key=>dir val=>category name localized
+{
+    global $dbh, $tree_id, $selected_language;
+    $cat_array = array();
+    $existsq = $dbh->query("SHOW TABLES LIKE 'humo_mediacat'");
+    if (!$existsq->fetch(PDO::FETCH_OBJ)) { return array(); }
+    $catg = $dbh->query("SELECT * FROM humo_mediacat WHERE mediacat_tree_id = '". $tree_id .
+            "' AND mediacat_name != 'persons' AND mediacat_name != 'families' AND mediacat_name != 'sources' ORDER BY mediacat_order");
+    $i = 0;
+    while ($catDb = $catg->fetch(PDO::FETCH_OBJ)) {
+        $langs = json_decode($catDb->mediacat_language_names, true);
+        $lang = $langs[$selected_language];
+        if (empty($lang)) { $lang = $catDb->mediacat_name; }
+        $cat_array[$i] = array($catDb->mediacat_name, $lang);
+        $i++;
+    }
+   return $cat_array;
+}
 function get_GDmime () {
     return [ 'image/pjpeg'  => 'JPG',
              'image/jpeg'   => 'JPG',
@@ -499,4 +529,19 @@ function test_rewrite() {
     } 
     error_reporting($save_elevel);  // restore error level
     return 'off';  // server rewrite off 
+}
+
+function get_pict_options () {
+    global $dbh, $tree_id;
+    $resize_vals = array ( 0, 0, 'n');
+    $data2sql = $dbh->query("SELECT * FROM humo_trees WHERE tree_id=" . $tree_id);
+    $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
+    if (isset($data2Db->tree_pict_resize)) {
+        $tmp_res = $data2Db->tree_pict_resize;
+        $resize_vals = explode('|', $tmp_res); 
+   }
+    if (isset($data2Db->tree_pict_thumbnail)) {
+        $resize_vals[2] =$data2Db->tree_pict_thumbnail;
+   }
+   return $resize_vals;
 }

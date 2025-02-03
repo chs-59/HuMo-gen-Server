@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-genealogy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-27 20:59+0100\n"
-"PO-Revision-Date: 2024-11-27 20:59+0100\n"
+"POT-Creation-Date: 2025-01-10 14:31+0100\n"
+"PO-Revision-Date: 2025-01-10 14:31+0100\n"
 "Last-Translator: Yossi Beck <yosbeck@gmail.com>, 2015\n"
 "Language-Team: Russian (http://www.transifex.com/humo-gen/humo-gen/language/"
 "ru/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4\n"
 "X-Launchpad-Export-Date: 2012-03-21 21:20+0000\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-KeywordsList: __\n"
@@ -221,8 +221,8 @@ msgid "December"
 msgstr "Декабрь"
 
 # Nomen Nescio: unknown name.
-#: admin/include/editor_cls.php:296 admin/include/editor_event_cls.php:1080
-#: admin/include/editor_event_cls.php:1089 admin/views/editor.php:661
+#: admin/include/editor_cls.php:296 admin/include/editor_event_cls.php:1067
+#: admin/include/editor_event_cls.php:1076 admin/views/editor.php:661
 #: admin/views/editor.php:670 admin/views/editor.php:1382
 #: admin/views/statistics_old.php:89 admin/views/statistics_old.php:100
 #: include/person_cls.php:915 include/person_cls.php:917
@@ -279,44 +279,44 @@ msgid "[]"
 msgstr "[]"
 
 #: admin/include/editor_event_cls.php:18 admin/include/editor_event_cls.php:54
-#: admin/include/editor_event_cls.php:483
-#: admin/include/editor_event_cls.php:1058
-#: admin/include/editor_event_cls.php:1061
+#: admin/include/editor_event_cls.php:486
+#: admin/include/editor_event_cls.php:1045
+#: admin/include/editor_event_cls.php:1048
 msgid "Picture/ Media"
 msgstr "Фото/Видео"
 
-#: admin/include/editor_event_cls.php:20 admin/include/editor_event_cls.php:429
-#: admin/include/editor_event_cls.php:1219
-#: admin/include/editor_event_cls.php:1530
-#: admin/include/editor_event_cls.php:1533 admin/views/editor.php:1171
+#: admin/include/editor_event_cls.php:20 admin/include/editor_event_cls.php:432
+#: admin/include/editor_event_cls.php:1206
+#: admin/include/editor_event_cls.php:1517
+#: admin/include/editor_event_cls.php:1520 admin/views/editor.php:1171
 #: admin/views/tree_merge.php:1453 views/list.php:320 views/list.php:327
 msgid "Profession"
 msgstr "Профессия"
 
 # Language indicator, used for birthday RSS
-#: admin/include/editor_event_cls.php:22 admin/include/editor_event_cls.php:276
-#: admin/include/editor_event_cls.php:295
-#: admin/include/editor_event_cls.php:318
-#: admin/include/editor_event_cls.php:335
-#: admin/include/editor_event_cls.php:1276 admin/include/editor_sources.php:205
+#: admin/include/editor_event_cls.php:22 admin/include/editor_event_cls.php:279
+#: admin/include/editor_event_cls.php:298
+#: admin/include/editor_event_cls.php:321
+#: admin/include/editor_event_cls.php:338
+#: admin/include/editor_event_cls.php:1263 admin/include/editor_sources.php:205
 #: admin/include/editor_sources.php:213 admin/views/tree_merge.php:1456
-#: app/model/tree_index.php:940
+#: app/model/tree_index.php:1019
 msgid "Event"
 msgstr "Событие"
 
-#: admin/include/editor_event_cls.php:24 admin/include/editor_event_cls.php:984
+#: admin/include/editor_event_cls.php:24 admin/include/editor_event_cls.php:987
 #: admin/views/editor_person.php:1029 admin/views/editor_person.php:1392
 #: admin/views/editor_relation.php:733 include/witness.php:62
 msgid "clergy"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:26 admin/include/editor_event_cls.php:988
+#: admin/include/editor_event_cls.php:26 admin/include/editor_event_cls.php:991
 #: admin/views/editor_person.php:764 admin/views/editor_person.php:1314
 #: admin/views/editor_relation.php:519 include/witness.php:45
 msgid "officiator"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:28 admin/include/editor_event_cls.php:992
+#: admin/include/editor_event_cls.php:28 admin/include/editor_event_cls.php:995
 #: admin/views/editor_person.php:1029 include/witness.php:59
 msgid "godfather"
 msgstr "крестный отец"
@@ -339,17 +339,17 @@ msgstr ""
 msgid "witness"
 msgstr "свидетель"
 
-#: admin/include/editor_event_cls.php:36 admin/include/editor_event_cls.php:960
-#: admin/include/editor_event_cls.php:1705
+#: admin/include/editor_event_cls.php:36 admin/include/editor_event_cls.php:963
+#: admin/include/editor_event_cls.php:1720
 #: admin/include/editor_media_select.php:82
 #: admin/include/editor_person_select.php:115
 #: admin/include/editor_place_select.php:77
 #: admin/include/editor_relation_select.php:46 admin/views/editor.php:148
 #: admin/views/editor_person.php:393 admin/views/gedcom_export.php:330
 #: app/model/mailform.php:83 app/model/register.php:95
-#: app/model/tree_index.php:583 app/model/tree_index.php:940
-#: app/model/user_settings.php:88 views/anniversary.php:96
-#: views/family.php:1244 views/family.php:1312 views/layout.php:352
+#: app/model/tree_index.php:583 app/model/tree_index.php:1019
+#: app/model/user_settings.php:79 views/anniversary.php:96
+#: views/family.php:1244 views/family.php:1312 views/layout.php:350
 #: views/list.php:147 views/list.php:639 views/list_names.php:296
 #: views/list_names.php:299 views/mailform.php:48 views/mailform.php:50
 #: views/register.php:58 views/relations.php:94 views/relations.php:96
@@ -357,65 +357,65 @@ msgstr "свидетель"
 msgid "Name"
 msgstr "Имя"
 
-#: admin/include/editor_event_cls.php:38 admin/include/editor_event_cls.php:363
-#: admin/include/editor_event_cls.php:1697
-#: admin/include/editor_event_cls.php:1698 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:38 admin/include/editor_event_cls.php:366
+#: admin/include/editor_event_cls.php:1712
+#: admin/include/editor_event_cls.php:1713 admin/views/editor.php:1126
 msgid "Prefix"
 msgstr "Префикс"
 
-#: admin/include/editor_event_cls.php:40 admin/include/editor_event_cls.php:363
-#: admin/include/editor_event_cls.php:1697
-#: admin/include/editor_event_cls.php:1699 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:40 admin/include/editor_event_cls.php:366
+#: admin/include/editor_event_cls.php:1712
+#: admin/include/editor_event_cls.php:1714 admin/views/editor.php:1126
 msgid "Suffix"
 msgstr "Суффикс"
 
 #: admin/include/editor_event_cls.php:42
-#: admin/include/editor_event_cls.php:1700 admin/views/tree_merge.php:1478
+#: admin/include/editor_event_cls.php:1715 admin/views/tree_merge.php:1478
 msgid "Title of Nobility"
 msgstr "Дворянский титул"
 
-#: admin/include/editor_event_cls.php:44 admin/include/editor_event_cls.php:363
-#: admin/include/editor_event_cls.php:1697
-#: admin/include/editor_event_cls.php:1701 admin/include/editor_sources.php:341
-#: admin/views/edit_repository.php:127 admin/views/edit_source.php:273
+#: admin/include/editor_event_cls.php:44 admin/include/editor_event_cls.php:366
+#: admin/include/editor_event_cls.php:1712
+#: admin/include/editor_event_cls.php:1716 admin/include/editor_sources.php:341
+#: admin/views/edit_repository.php:127 admin/views/edit_source.php:271
 #: admin/views/editor.php:1126 admin/views/tree_merge.php:1481
 #: include/show_source_pdf.php:43 views/source.php:33 views/source.php:109
 #: views/sources.php:52
 msgid "Title"
 msgstr "Заголовок"
 
-#: admin/include/editor_event_cls.php:46 admin/include/editor_event_cls.php:277
-#: admin/include/editor_event_cls.php:1103
-#: admin/include/editor_event_cls.php:1314
+#: admin/include/editor_event_cls.php:46 admin/include/editor_event_cls.php:280
+#: admin/include/editor_event_cls.php:1090
+#: admin/include/editor_event_cls.php:1301
 msgid "Adoption"
 msgstr "Усыновление"
 
 #: admin/include/editor_event_cls.php:48
-#: admin/include/editor_event_cls.php:1702 admin/views/tree_merge.php:1484
+#: admin/include/editor_event_cls.php:1717 admin/views/tree_merge.php:1484
 msgid "Title of Lordship"
 msgstr "Титул лорда"
 
-#: admin/include/editor_event_cls.php:50 admin/include/editor_event_cls.php:278
-#: admin/include/editor_event_cls.php:319 admin/views/edit_repository.php:207
-#: include/marriage_cls.php:689 include/person_cls.php:2861
+#: admin/include/editor_event_cls.php:50 admin/include/editor_event_cls.php:281
+#: admin/include/editor_event_cls.php:322 admin/views/edit_repository.php:207
+#: include/marriage_cls.php:688 include/person_cls.php:2861
 msgid "URL/ Internet link"
 msgstr "URL/Интернет ссылка"
 
-#: admin/include/editor_event_cls.php:52 admin/include/editor_event_cls.php:279
+#: admin/include/editor_event_cls.php:52 admin/include/editor_event_cls.php:282
 msgid "Colour mark by person"
 msgstr "Цветовой знак по персоне"
 
-#: admin/include/editor_event_cls.php:56 admin/include/editor_event_cls.php:456
-#: admin/include/editor_event_cls.php:1239
-#: admin/include/editor_event_cls.php:1563
-#: admin/include/editor_event_cls.php:1566 admin/views/editor_relation.php:792
+#: admin/include/editor_event_cls.php:56 admin/include/editor_event_cls.php:459
+#: admin/include/editor_event_cls.php:1226
+#: admin/include/editor_event_cls.php:1550
+#: admin/include/editor_event_cls.php:1553 admin/views/editor_relation.php:792
 #: admin/views/editor_relation.php:795
 msgid "Religion"
 msgstr "Религия"
 
 #: admin/include/editor_event_cls.php:89 admin/include/editor_sources.php:113
 #: admin/include/editor_sources.php:167 admin/include/editor_sources.php:464
-#: admin/views/edit_source.php:139 admin/views/editor.php:1539
+#: admin/views/edit_source.php:137 admin/views/editor.php:1539
 #: admin/views/editor.php:1916 admin/views/gedcom.php:1470
 #: admin/views/notes.php:243
 msgid "text"
@@ -428,62 +428,62 @@ msgid "ID"
 msgstr "ID"
 
 # Language indicator, used for birthday RSS
-#: admin/include/editor_event_cls.php:269
-#: admin/include/editor_event_cls.php:312
-#: admin/include/editor_event_cls.php:1293 views/list.php:76 views/list.php:77
+#: admin/include/editor_event_cls.php:272
+#: admin/include/editor_event_cls.php:315
+#: admin/include/editor_event_cls.php:1280 views/list.php:76 views/list.php:77
 #: views/list.php:991
 msgid "Events"
 msgstr "События"
 
-#: admin/include/editor_event_cls.php:283
-#: admin/include/editor_event_cls.php:324
+#: admin/include/editor_event_cls.php:286
+#: admin/include/editor_event_cls.php:327
 msgid "Add event"
 msgstr "Добавить событие"
 
-#: admin/include/editor_event_cls.php:295
-#: admin/include/editor_event_cls.php:335
+#: admin/include/editor_event_cls.php:298
+#: admin/include/editor_event_cls.php:338
 msgid "For items like:"
 msgstr "Для таких элементов, как:"
 
-#: admin/include/editor_event_cls.php:295 include/language_event.php:12
+#: admin/include/editor_event_cls.php:298 include/language_event.php:12
 msgid "baptized as child"
 msgstr "крещён в детстве"
 
-#: admin/include/editor_event_cls.php:295 include/language_event.php:25
+#: admin/include/editor_event_cls.php:298 include/language_event.php:25
 msgid "depart"
 msgstr "отходить"
 
-#: admin/include/editor_event_cls.php:295
-#: admin/include/editor_event_cls.php:335
+#: admin/include/editor_event_cls.php:298
+#: admin/include/editor_event_cls.php:338
 msgid "etc."
 msgstr "и т. д."
 
-#: admin/include/editor_event_cls.php:335 include/language_event.php:42
+#: admin/include/editor_event_cls.php:338 include/language_event.php:42
 msgid "Marriage contract"
 msgstr "Брачный контракт"
 
-#: admin/include/editor_event_cls.php:335 include/language_event.php:43
+#: admin/include/editor_event_cls.php:338 include/language_event.php:43
 msgid "Marriage license"
 msgstr "Свидетельство о браке"
 
-#: admin/include/editor_event_cls.php:363
-#: admin/include/editor_event_cls.php:1251
-#: admin/include/editor_event_cls.php:1691
-#: admin/include/editor_event_cls.php:1693 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:366
+#: admin/include/editor_event_cls.php:1238
+#: admin/include/editor_event_cls.php:1706
+#: admin/include/editor_event_cls.php:1708 admin/views/editor.php:1126
 #: include/person_cls.php:1856
 msgid "Nickname"
 msgstr "прозвище"
 
-#: admin/include/editor_event_cls.php:366
-#: admin/include/editor_event_cls.php:442
-#: admin/include/editor_event_cls.php:468
-#: admin/include/editor_event_cls.php:488
-#: admin/include/editor_event_cls.php:490
-#: admin/include/editor_event_cls.php:492 admin/include/editor_sources.php:558
+#: admin/include/editor_event_cls.php:369
+#: admin/include/editor_event_cls.php:445
+#: admin/include/editor_event_cls.php:471
+#: admin/include/editor_event_cls.php:491
+#: admin/include/editor_event_cls.php:493
+#: admin/include/editor_event_cls.php:495 admin/include/editor_sources.php:558
 #: admin/views/cms_pages.php:224 admin/views/cms_pages.php:292
 #: admin/views/edit_address.php:264 admin/views/edit_address.php:267
 #: admin/views/edit_repository.php:218 admin/views/edit_repository.php:221
-#: admin/views/edit_source.php:397 admin/views/edit_source.php:399
+#: admin/views/edit_source.php:395 admin/views/edit_source.php:397
 #: admin/views/editor.php:1417 admin/views/editor.php:1419
 #: admin/views/editor.php:1760 admin/views/editor.php:1823
 #: admin/views/editor.php:1912 admin/views/editor_person.php:372
@@ -493,26 +493,26 @@ msgstr "прозвище"
 msgid "Add"
 msgstr "Добавить"
 
-#: admin/include/editor_event_cls.php:935
+#: admin/include/editor_event_cls.php:938
 msgid "Select GEDCOM number or type name of person:"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:941
-#: admin/include/editor_event_cls.php:1106 admin/views/editor.php:306
+#: admin/include/editor_event_cls.php:944
+#: admin/include/editor_event_cls.php:1093 admin/views/editor.php:306
 #: admin/views/editor_person.php:307 admin/views/editor_relation.php:115
 #: admin/views/editor_relation.php:1225
 msgid "GEDCOM number (ID)"
 msgstr "Номер GEDCOM (ID)"
 
-#: admin/include/editor_event_cls.php:945
-#: admin/include/editor_event_cls.php:1062
-#: admin/include/editor_event_cls.php:1107
-#: admin/include/editor_event_cls.php:1469
+#: admin/include/editor_event_cls.php:948
+#: admin/include/editor_event_cls.php:1049
+#: admin/include/editor_event_cls.php:1094
+#: admin/include/editor_event_cls.php:1456
 #: admin/include/editor_media_select.php:83
 #: admin/include/editor_person_select.php:127
 #: admin/include/editor_place_select.php:78
 #: admin/include/editor_relation_select.php:54
-#: admin/include/editor_sources.php:467 admin/views/edit_source.php:142
+#: admin/include/editor_sources.php:467 admin/views/edit_source.php:140
 #: admin/views/editor.php:149 admin/views/editor.php:307
 #: admin/views/editor.php:747 admin/views/editor.php:1259
 #: admin/views/editor.php:1293 admin/views/editor.php:1313
@@ -533,52 +533,52 @@ msgstr "Номер GEDCOM (ID)"
 #: admin/views/tree_merge.php:646 admin/views/users.php:120
 #: app/model/tree_index.php:48 app/model/tree_index.php:155
 #: app/model/tree_index.php:629 views/addresses.php:31
-#: views/latest_changes.php:23 views/layout.php:353 views/list.php:100
+#: views/latest_changes.php:23 views/layout.php:351 views/list.php:100
 #: views/list.php:163 views/list.php:454 views/list_places_families.php:95
-#: views/photoalbum.php:191 views/relations.php:97 views/relations.php:105
+#: views/photoalbum.php:190 views/relations.php:97 views/relations.php:105
 #: views/relations.php:208 views/relations.php:211 views/relations.php:219
 #: views/sources.php:26
 msgid "Search"
 msgstr "Поиск"
 
-#: admin/include/editor_event_cls.php:953
-#: admin/include/editor_event_cls.php:958
-#: admin/include/editor_event_cls.php:1000 admin/views/cms_pages.php:196
+#: admin/include/editor_event_cls.php:956
+#: admin/include/editor_event_cls.php:961
+#: admin/include/editor_event_cls.php:1003 admin/views/cms_pages.php:196
 #: admin/views/edit_address.php:87 admin/views/edit_address.php:278
 #: admin/views/edit_repository.php:70 admin/views/edit_repository.php:229
-#: admin/views/edit_source.php:194 admin/views/edit_source.php:405
+#: admin/views/edit_source.php:192 admin/views/edit_source.php:403
 #: admin/views/editor_person.php:1238 admin/views/editor_person.php:1702
-#: admin/views/editor_relation.php:1051 admin/views/index_admin.php:705
-#: admin/views/thumbs.php:349 include/calculate_age_cls.php:371
+#: admin/views/editor_relation.php:1051 admin/views/index_admin.php:618
+#: admin/views/thumbs.php:451 include/calculate_age_cls.php:371
 #: include/calculate_age_cls.php:393 include/calculate_age_cls.php:497
 #: include/calculate_age_cls.php:519 views/fanchart.php:657
 msgid "or"
 msgstr "или"
 
-#: admin/include/editor_event_cls.php:971
+#: admin/include/editor_event_cls.php:974
 msgid "Select role or type other role:"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:975
+#: admin/include/editor_event_cls.php:978
 #, fuzzy
 #| msgid "Select place"
 msgid "Select role"
 msgstr "Выберите место"
 
-#: admin/include/editor_event_cls.php:981
+#: admin/include/editor_event_cls.php:984
 #, fuzzy
 #| msgid "witness"
 msgid "Witness"
 msgstr "свидетель"
 
-#: admin/include/editor_event_cls.php:995
-#: admin/include/editor_event_cls.php:1002
+#: admin/include/editor_event_cls.php:998
+#: admin/include/editor_event_cls.php:1005
 #, fuzzy
 #| msgid "Other name"
 msgid "Other role"
 msgstr "Другое имя"
 
-#: admin/include/editor_event_cls.php:1083
+#: admin/include/editor_event_cls.php:1070
 #: admin/include/editor_relation_select.php:110 admin/views/editor.php:664
 #: admin/views/editor_person.php:249 admin/views/editor_relation.php:63
 #: admin/views/editor_relation.php:272 admin/views/editor_relation.php:305
@@ -593,171 +593,171 @@ msgstr "Другое имя"
 msgid "and"
 msgstr "и"
 
+#: admin/include/editor_event_cls.php:1151
 #: admin/include/editor_event_cls.php:1164
-#: admin/include/editor_event_cls.php:1177
 msgid "Selected colour"
 msgstr "Выберите цвет"
 
-#: admin/include/editor_event_cls.php:1180
+#: admin/include/editor_event_cls.php:1167
 msgid "Change colour mark by person"
 msgstr "Изменить цветовую метку человеком"
 
-#: admin/include/editor_event_cls.php:1181
+#: admin/include/editor_event_cls.php:1168
 msgid "Colour 1"
 msgstr "Цвет 1"
 
-#: admin/include/editor_event_cls.php:1182
+#: admin/include/editor_event_cls.php:1169
 msgid "Colour 2"
 msgstr "Цвет 2"
 
-#: admin/include/editor_event_cls.php:1183
+#: admin/include/editor_event_cls.php:1170
 msgid "Colour 3"
 msgstr "Цвет 3"
 
-#: admin/include/editor_event_cls.php:1184
+#: admin/include/editor_event_cls.php:1171
 msgid "Colour 4"
 msgstr "Цвет 4"
 
-#: admin/include/editor_event_cls.php:1185
+#: admin/include/editor_event_cls.php:1172
 msgid "Colour 5"
 msgstr "Цвет 5"
 
-#: admin/include/editor_event_cls.php:1186
+#: admin/include/editor_event_cls.php:1173
 msgid "Colour 6"
 msgstr "Цвет 6"
 
-#: admin/include/editor_event_cls.php:1187
+#: admin/include/editor_event_cls.php:1174
 msgid "Colour 7"
 msgstr "Цвет 7"
 
-#: admin/include/editor_event_cls.php:1188
+#: admin/include/editor_event_cls.php:1175
 msgid "Colour 8"
 msgstr "Цвет 8"
 
-#: admin/include/editor_event_cls.php:1189
+#: admin/include/editor_event_cls.php:1176
 msgid "Colour 9"
 msgstr "Цвет 9"
 
-#: admin/include/editor_event_cls.php:1190
+#: admin/include/editor_event_cls.php:1177
 msgid "Colour 10"
 msgstr "Цвет 10"
 
-#: admin/include/editor_event_cls.php:1191
+#: admin/include/editor_event_cls.php:1178
 msgid "Colour 11"
 msgstr "Цвет 11"
 
-#: admin/include/editor_event_cls.php:1192
+#: admin/include/editor_event_cls.php:1179
 msgid "Colour 12"
 msgstr "Цвет 12"
 
-#: admin/include/editor_event_cls.php:1193
+#: admin/include/editor_event_cls.php:1180
 msgid "Colour 13"
 msgstr "Цвет 13"
 
-#: admin/include/editor_event_cls.php:1194
+#: admin/include/editor_event_cls.php:1181
 msgid "Colour 14"
 msgstr "Цвет 14"
 
-#: admin/include/editor_event_cls.php:1200
+#: admin/include/editor_event_cls.php:1187
 msgid "Also change"
 msgstr "Также изменить"
 
-#: admin/include/editor_event_cls.php:1202 admin/include/editor_inc.php:526
+#: admin/include/editor_event_cls.php:1189 admin/include/editor_inc.php:526
 #: admin/views/gedcom_export.php:256 app/model/family.php:240
 #: include/person_cls.php:1028 include/person_cls.php:1029
 #: views/hourglass.php:160
 msgid "Descendants"
 msgstr "Потомки"
 
-#: admin/include/editor_event_cls.php:1203 admin/include/editor_inc.php:527
-#: admin/views/gedcom_export.php:274 app/model/ancestor.php:162
+#: admin/include/editor_event_cls.php:1190 admin/include/editor_inc.php:527
+#: admin/views/gedcom_export.php:274 app/model/ancestor.php:153
 #: include/person_cls.php:1037 include/person_cls.php:1038
 #: views/hourglass.php:140
 msgid "Ancestors"
 msgstr "Предки"
 
-#: admin/include/editor_event_cls.php:1253
-#: admin/include/editor_event_cls.php:1730
+#: admin/include/editor_event_cls.php:1240
+#: admin/include/editor_event_cls.php:1745
 msgid "German Rufname"
 msgstr "Немецкое имя"
 
-#: admin/include/editor_event_cls.php:1306
+#: admin/include/editor_event_cls.php:1293
 #, fuzzy
 #| msgid "baptised"
 msgid "Baptise"
 msgstr "крещение"
 
-#: admin/include/editor_event_cls.php:1322
+#: admin/include/editor_event_cls.php:1309
 #, fuzzy
 #| msgid "Settings"
 msgid "Settling"
 msgstr "Настройки"
 
-#: admin/include/editor_event_cls.php:1334
+#: admin/include/editor_event_cls.php:1321
 #, fuzzy
 #| msgid "Character set"
 msgid "Characteristics"
 msgstr "Кодировка"
 
-#: admin/include/editor_event_cls.php:1344 admin/views/editor_person.php:1380
+#: admin/include/editor_event_cls.php:1331 admin/views/editor_person.php:1380
 msgid "Buried"
 msgstr "похоронен"
 
-#: admin/include/editor_event_cls.php:1351
+#: admin/include/editor_event_cls.php:1338
 msgid "Will"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1358 views/anniversary.php:62
+#: admin/include/editor_event_cls.php:1345 views/anniversary.php:62
 #: views/anniversary.php:217
 msgid "Religious"
 msgstr "Религиозный"
 
-#: admin/include/editor_event_cls.php:1367 include/language_event.php:27
+#: admin/include/editor_event_cls.php:1354 include/language_event.php:27
 msgid "Education"
 msgstr "Образование"
 
-#: admin/include/editor_event_cls.php:1374
+#: admin/include/editor_event_cls.php:1361
 msgid "Social"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1382
+#: admin/include/editor_event_cls.php:1369
 msgid "LDS"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1392
+#: admin/include/editor_event_cls.php:1379
 msgid "Jewish"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1422
-#: admin/include/editor_event_cls.php:1698
+#: admin/include/editor_event_cls.php:1409
+#: admin/include/editor_event_cls.php:1713
 msgid "e.g. Lt. Cmndr."
 msgstr "например Лейтенант-коммандер."
 
-#: admin/include/editor_event_cls.php:1424
-#: admin/include/editor_event_cls.php:1699
+#: admin/include/editor_event_cls.php:1411
+#: admin/include/editor_event_cls.php:1714
 msgid "e.g. Jr."
 msgstr "например младший"
 
-#: admin/include/editor_event_cls.php:1426
-#: admin/include/editor_event_cls.php:1700
+#: admin/include/editor_event_cls.php:1413
+#: admin/include/editor_event_cls.php:1715
 msgid "e.g. Jhr., Jkvr."
 msgstr "например Jhr., Jkvr."
 
-#: admin/include/editor_event_cls.php:1428
-#: admin/include/editor_event_cls.php:1701
+#: admin/include/editor_event_cls.php:1415
+#: admin/include/editor_event_cls.php:1716
 msgid "e.g. Prof., Dr."
 msgstr "например проф., д.т.н."
 
-#: admin/include/editor_event_cls.php:1430
-#: admin/include/editor_event_cls.php:1702
+#: admin/include/editor_event_cls.php:1417
+#: admin/include/editor_event_cls.php:1717
 msgid "e.g. Lord of Amsterdam"
 msgstr "например Лорд Амстердама"
 
-#: admin/include/editor_event_cls.php:1443
-#: admin/include/editor_event_cls.php:1540
-#: admin/include/editor_event_cls.php:1573 admin/include/editor_sources.php:348
+#: admin/include/editor_event_cls.php:1430
+#: admin/include/editor_event_cls.php:1527
+#: admin/include/editor_event_cls.php:1560 admin/include/editor_sources.php:348
 #: admin/include/editor_sources.php:410 admin/views/edit_repository.php:157
-#: admin/views/edit_source.php:289 admin/views/editor.php:1249
+#: admin/views/edit_source.php:287 admin/views/editor.php:1249
 #: admin/views/editor.php:1283 admin/views/editor.php:1303
 #: admin/views/editor.php:1323 admin/views/editor.php:1662
 #: admin/views/editor_person.php:670 admin/views/editor_person.php:768
@@ -767,17 +767,17 @@ msgstr "например Лорд Амстердама"
 #: admin/views/editor_relation.php:357 admin/views/editor_relation.php:434
 #: admin/views/editor_relation.php:524 admin/views/editor_relation.php:662
 #: admin/views/editor_relation.php:738 admin/views/editor_relation.php:836
-#: app/model/tree_index.php:940 include/show_source_pdf.php:49
+#: app/model/tree_index.php:1019 include/show_source_pdf.php:49
 #: views/list.php:237 views/list.php:257 views/list.php:702 views/list.php:728
 #: views/source.php:37 views/source.php:115 views/sources.php:69
 msgid "Date"
 msgstr "Дата"
 
-#: admin/include/editor_event_cls.php:1465
-#: admin/include/editor_event_cls.php:1547
-#: admin/include/editor_event_cls.php:1580 admin/include/editor_sources.php:355
+#: admin/include/editor_event_cls.php:1452
+#: admin/include/editor_event_cls.php:1534
+#: admin/include/editor_event_cls.php:1567 admin/include/editor_sources.php:355
 #: admin/include/editor_sources.php:417 admin/views/edit_address.php:141
-#: admin/views/edit_repository.php:167 admin/views/edit_source.php:297
+#: admin/views/edit_repository.php:167 admin/views/edit_source.php:295
 #: admin/views/editor.php:1255 admin/views/editor.php:1289
 #: admin/views/editor.php:1309 admin/views/editor.php:1329
 #: admin/views/editor.php:1601 admin/views/editor_person.php:677
@@ -794,11 +794,11 @@ msgstr "Дата"
 msgid "Place"
 msgstr "Место"
 
-#: admin/include/editor_event_cls.php:1484
-#: admin/include/editor_event_cls.php:1554
-#: admin/include/editor_event_cls.php:1587 admin/include/editor_sources.php:369
+#: admin/include/editor_event_cls.php:1471
+#: admin/include/editor_event_cls.php:1541
+#: admin/include/editor_event_cls.php:1574 admin/include/editor_sources.php:369
 #: admin/views/edit_address.php:253 admin/views/edit_repository.php:187
-#: admin/views/edit_source.php:378 admin/views/editor.php:1655
+#: admin/views/edit_source.php:376 admin/views/editor.php:1655
 #: admin/views/editor_person.php:445 admin/views/editor_person.php:704
 #: admin/views/editor_person.php:795 admin/views/editor_person.php:885
 #: admin/views/editor_person.php:980 admin/views/editor_person.php:1066
@@ -816,7 +816,7 @@ msgstr "Место"
 msgid "Text"
 msgstr "Текст"
 
-#: admin/include/editor_event_cls.php:1496 admin/include/editor_sources.php:71
+#: admin/include/editor_event_cls.php:1483 admin/include/editor_sources.php:71
 #: admin/include/editor_sources.php:77 admin/include/editor_sources.php:83
 #: admin/include/editor_sources.php:89 admin/include/editor_sources.php:95
 #: admin/include/editor_sources.php:101 admin/include/editor_sources.php:107
@@ -844,87 +844,103 @@ msgstr "Текст"
 msgid "Source"
 msgstr "Источник"
 
-#: admin/include/editor_event_cls.php:1604
+#: admin/include/editor_event_cls.php:1594
 msgid "Upload new image"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1606 admin/update/install_update.php:605
+#: admin/include/editor_event_cls.php:1600 admin/update/install_update.php:614
 #: admin/views/backup.php:110 admin/views/gedcom.php:67
 #: admin/views/settings.php:99 admin/views/settings.php:652
 msgid "Upload"
 msgstr "Загрузить"
 
-#: admin/include/editor_event_cls.php:1708 include/person_cls.php:1840
+#: admin/include/editor_event_cls.php:1605
+msgid "Main media folder"
+msgstr ""
+
+#: admin/include/editor_event_cls.php:1614
+#, fuzzy
+#| msgid "Category name"
+msgid "Category"
+msgstr "Наименование категории"
+
+#: admin/include/editor_event_cls.php:1616
+#, fuzzy
+#| msgid "Directory created."
+msgid "Directory"
+msgstr "Папка создана."
+
+#: admin/include/editor_event_cls.php:1723 include/person_cls.php:1840
 #: include/person_cls.php:1846
 msgid "Also known as"
 msgstr "Также известен/известна как"
 
-#: admin/include/editor_event_cls.php:1709 include/language_event.php:80
+#: admin/include/editor_event_cls.php:1724 include/language_event.php:80
 msgid "alias name"
 msgstr "Псевдоним"
 
-#: admin/include/editor_event_cls.php:1710 include/language_event.php:83
+#: admin/include/editor_event_cls.php:1725 include/language_event.php:83
 msgid "Short name (for reports)"
 msgstr "Короткое имя (Для отчётов)"
 
-#: admin/include/editor_event_cls.php:1711 include/language_event.php:86
+#: admin/include/editor_event_cls.php:1726 include/language_event.php:86
 msgid "Adopted name"
 msgstr "Имя при усыновлении"
 
-#: admin/include/editor_event_cls.php:1715 admin/views/editor_person.php:426
+#: admin/include/editor_event_cls.php:1730 admin/views/editor_person.php:426
 #: include/language_event.php:89
 msgid "Hebrew name"
 msgstr "Еврейское имя"
 
-#: admin/include/editor_event_cls.php:1718 include/language_event.php:92
+#: admin/include/editor_event_cls.php:1733 include/language_event.php:92
 msgid "Census name"
 msgstr "Имя при переписи"
 
-#: admin/include/editor_event_cls.php:1719 include/language_event.php:95
+#: admin/include/editor_event_cls.php:1734 include/language_event.php:95
 msgid "Married name"
 msgstr "Фамилия в замужестве"
 
-#: admin/include/editor_event_cls.php:1720 include/language_event.php:98
+#: admin/include/editor_event_cls.php:1735 include/language_event.php:98
 msgid "Given name"
 msgstr "Собственное имя"
 
-#: admin/include/editor_event_cls.php:1721 include/language_event.php:101
+#: admin/include/editor_event_cls.php:1736 include/language_event.php:101
 msgid "Farm name"
 msgstr "Название фермы"
 
-#: admin/include/editor_event_cls.php:1722 include/language_event.php:104
+#: admin/include/editor_event_cls.php:1737 include/language_event.php:104
 msgid "Birth name"
 msgstr "Имя при рождении"
 
-#: admin/include/editor_event_cls.php:1723 include/language_event.php:107
+#: admin/include/editor_event_cls.php:1738 include/language_event.php:107
 msgid "Indian name"
 msgstr "Индейское имя"
 
-#: admin/include/editor_event_cls.php:1724 include/language_event.php:110
+#: admin/include/editor_event_cls.php:1739 include/language_event.php:110
 msgid "Formal name"
 msgstr "Официальное название"
 
-#: admin/include/editor_event_cls.php:1725 include/language_event.php:113
+#: admin/include/editor_event_cls.php:1740 include/language_event.php:113
 msgid "Current name"
 msgstr "Нынешнее название"
 
-#: admin/include/editor_event_cls.php:1726 include/language_event.php:116
+#: admin/include/editor_event_cls.php:1741 include/language_event.php:116
 msgid "Soldier name"
 msgstr "Имя солдата"
 
-#: admin/include/editor_event_cls.php:1727 include/language_event.php:122
+#: admin/include/editor_event_cls.php:1742 include/language_event.php:122
 msgid "Religious name"
 msgstr "Имя при крещении"
 
-#: admin/include/editor_event_cls.php:1728 include/language_event.php:125
+#: admin/include/editor_event_cls.php:1743 include/language_event.php:125
 msgid "Other name"
 msgstr "Другое имя"
 
-#: admin/include/editor_event_cls.php:1729 include/language_event.php:119
+#: admin/include/editor_event_cls.php:1744 include/language_event.php:119
 msgid "Formerly known as"
 msgstr "Ранее известен/известна как"
 
-#: admin/include/editor_inc.php:269 admin/models/settings_admin.php:125
+#: admin/include/editor_inc.php:262 admin/models/settings_admin.php:125
 #: admin/models/settings_admin.php:144
 msgid "Photo upload failed, check folder rights"
 msgstr "Загрузка фотографии не удалась, проверьте права на папку."
@@ -942,25 +958,26 @@ msgid "Also remove colour marks of"
 msgstr "Также удалить цветовые метки "
 
 #: admin/include/editor_inc.php:530 admin/include/editor_inc.php:1085
-#: admin/include/editor_user_settings.php:100 admin/models/editor.php:1393
+#: admin/include/editor_user_settings.php:90 admin/models/editor.php:1393
 #: admin/models/editor.php:1958 admin/views/cms_pages.php:37
 #: admin/views/cms_pages.php:60 admin/views/edit_address.php:35
-#: admin/views/edit_repository.php:31 admin/views/edit_source.php:121
+#: admin/views/edit_repository.php:31 admin/views/edit_source.php:119
 #: admin/views/editor.php:339 admin/views/editor.php:356
 #: admin/views/editor_relation.php:246 admin/views/gedcom.php:88
 #: admin/views/gedcom_export.php:462 admin/views/gedcom_export.php:478
 #: admin/views/gedcom_export.php:495 admin/views/gedcom_export.php:540
 #: admin/views/groups.php:50 admin/views/groups.php:532
-#: admin/views/index_admin.php:442 admin/views/index_admin.php:450
-#: admin/views/index_admin.php:459 admin/views/install.php:304
-#: admin/views/maps_locations.php:98 admin/views/maps_locations.php:120
-#: admin/views/maps_locations.php:199 admin/views/notes.php:91
-#: admin/views/settings.php:147 admin/views/settings.php:162
-#: admin/views/settings.php:188 admin/views/settings.php:211
-#: admin/views/settings.php:226 admin/views/settings.php:268
-#: admin/views/settings.php:280 admin/views/settings.php:295
-#: admin/views/settings.php:332 admin/views/settings.php:804
-#: admin/views/settings_homepage.php:345 admin/views/thumbs.php:451
+#: admin/views/install.php:304 admin/views/maps_locations.php:98
+#: admin/views/maps_locations.php:120 admin/views/maps_locations.php:199
+#: admin/views/notes.php:91 admin/views/settings.php:147
+#: admin/views/settings.php:162 admin/views/settings.php:188
+#: admin/views/settings.php:211 admin/views/settings.php:226
+#: admin/views/settings.php:268 admin/views/settings.php:280
+#: admin/views/settings.php:295 admin/views/settings.php:332
+#: admin/views/settings.php:804 admin/views/settings_homepage.php:345
+#: admin/views/thumbs.php:162 admin/views/thumbs.php:172
+#: admin/views/thumbs.php:181 admin/views/thumbs.php:191
+#: admin/views/thumbs.php:211 admin/views/thumbs.php:553
 #: admin/views/tree_merge.php:892 admin/views/tree_merge.php:905
 #: admin/views/tree_merge.php:918 admin/views/tree_merge.php:935
 #: admin/views/trees.php:29 admin/views/users.php:19 views/mailform.php:79
@@ -968,16 +985,15 @@ msgid "Yes"
 msgstr "Да"
 
 #: admin/include/editor_inc.php:531 admin/include/editor_inc.php:1086
-#: admin/include/editor_user_settings.php:106 admin/models/editor.php:1394
+#: admin/include/editor_user_settings.php:91 admin/models/editor.php:1394
 #: admin/models/editor.php:1959 admin/views/cms_pages.php:38
 #: admin/views/cms_pages.php:61 admin/views/edit_address.php:36
-#: admin/views/edit_repository.php:32 admin/views/edit_source.php:122
+#: admin/views/edit_repository.php:32 admin/views/edit_source.php:120
 #: admin/views/editor.php:340 admin/views/editor.php:357
 #: admin/views/editor_relation.php:247 admin/views/gedcom.php:89
 #: admin/views/gedcom_export.php:463 admin/views/gedcom_export.php:479
 #: admin/views/gedcom_export.php:496 admin/views/gedcom_export.php:539
 #: admin/views/groups.php:51 admin/views/groups.php:533
-#: admin/views/index_admin.php:454 admin/views/index_admin.php:462
 #: admin/views/install.php:305 admin/views/maps_locations.php:99
 #: admin/views/maps_locations.php:121 admin/views/maps_locations.php:200
 #: admin/views/notes.php:92 admin/views/settings.php:148
@@ -986,10 +1002,14 @@ msgstr "Да"
 #: admin/views/settings.php:269 admin/views/settings.php:281
 #: admin/views/settings.php:296 admin/views/settings.php:333
 #: admin/views/settings.php:805 admin/views/settings_homepage.php:346
-#: admin/views/thumbs.php:452 admin/views/tree_merge.php:893
-#: admin/views/tree_merge.php:906 admin/views/tree_merge.php:919
-#: admin/views/tree_merge.php:936 admin/views/trees.php:30
-#: admin/views/users.php:20 views/mailform.php:80
+#: admin/views/thumbs.php:92 admin/views/thumbs.php:95
+#: admin/views/thumbs.php:102 admin/views/thumbs.php:162
+#: admin/views/thumbs.php:172 admin/views/thumbs.php:181
+#: admin/views/thumbs.php:191 admin/views/thumbs.php:210
+#: admin/views/thumbs.php:229 admin/views/thumbs.php:554
+#: admin/views/tree_merge.php:893 admin/views/tree_merge.php:906
+#: admin/views/tree_merge.php:919 admin/views/tree_merge.php:936
+#: admin/views/trees.php:30 admin/views/users.php:20 views/mailform.php:80
 msgid "No"
 msgstr "Нет"
 
@@ -1046,7 +1066,7 @@ msgstr "Пол"
 
 #: admin/include/editor_sources.php:77 admin/include/editor_sources.php:83
 #: admin/views/editor.php:1246 admin/views/editor_person.php:650
-#: app/model/tree_index.php:895 app/model/tree_index.php:897
+#: app/model/tree_index.php:974 app/model/tree_index.php:976
 #: googlemaps/namesearch.php:185 include/person_cls.php:2013
 #: include/person_cls.php:2014 include/person_cls.php:2016
 #: include/person_cls.php:2017 views/ancestor_sheet.php:295
@@ -1057,8 +1077,8 @@ msgid "born"
 msgstr "рождение"
 
 #: admin/include/editor_sources.php:89 admin/views/editor.php:1280
-#: admin/views/editor_person.php:1015 app/model/timeline.php:102
-#: app/model/tree_index.php:904 app/model/tree_index.php:906
+#: admin/views/editor_person.php:1015 app/model/timeline.php:83
+#: app/model/tree_index.php:983 app/model/tree_index.php:985
 #: googlemaps/namesearch.php:188 include/person_cls.php:2181
 #: include/person_cls.php:2182 include/person_cls.php:2184
 #: include/person_cls.php:2185 views/family.php:1145 views/list.php:235
@@ -1068,7 +1088,7 @@ msgstr "крещение"
 
 #: admin/include/editor_sources.php:95 admin/include/editor_sources.php:101
 #: admin/views/editor.php:1300 admin/views/editor_person.php:1105
-#: app/model/tree_index.php:913 app/model/tree_index.php:915
+#: app/model/tree_index.php:992 app/model/tree_index.php:994
 #: googlemaps/namesearch.php:194 include/person_cls.php:2334
 #: include/person_cls.php:2335 include/person_cls.php:2337
 #: include/person_cls.php:2338 views/ancestor_sheet.php:295
@@ -1078,19 +1098,20 @@ msgid "died"
 msgstr "умер"
 
 #: admin/include/editor_sources.php:107 admin/views/editor.php:1320
-#: admin/views/editor_person.php:1416 app/model/timeline.php:128
+#: admin/views/editor_person.php:1416 app/model/timeline.php:109
 #: googlemaps/namesearch.php:197 include/person_cls.php:2513 views/list.php:255
 #: views/list.php:263 views/list.php:641 views/maps.php:454 views/maps.php:585
 msgid "buried"
 msgstr "захоронен"
 
 #: admin/include/editor_sources.php:113 admin/include/editor_sources.php:205
-#: admin/include/editor_sources.php:213 include/show_sources.php:99
-#: include/show_sources.php:232 include/show_sources.php:365
+#: admin/include/editor_sources.php:213 admin/views/thumbs.php:748
+#: include/show_sources.php:99 include/show_sources.php:232
+#: include/show_sources.php:365
 msgid "source"
 msgstr "источник"
 
-#: admin/include/editor_sources.php:119
+#: admin/include/editor_sources.php:119 admin/views/thumbs.php:727
 msgid "person"
 msgstr "персона"
 
@@ -1132,7 +1153,7 @@ msgstr "Венчание"
 msgid "Divorce"
 msgstr "Развод"
 
-#: admin/include/editor_sources.php:173
+#: admin/include/editor_sources.php:173 admin/views/thumbs.php:739
 #, fuzzy
 #| msgid "cremation"
 msgid "relation"
@@ -1142,10 +1163,10 @@ msgstr "кремация"
 #: admin/views/cms_pages.php:254 admin/views/cms_pages.php:281
 #: admin/views/edit_address.php:274 admin/views/edit_address.php:277
 #: admin/views/edit_rename_place.php:82 admin/views/edit_repository.php:225
-#: admin/views/edit_repository.php:228 admin/views/edit_source.php:402
-#: admin/views/edit_source.php:404 admin/views/editor_person.php:356
+#: admin/views/edit_repository.php:228 admin/views/edit_source.php:400
+#: admin/views/edit_source.php:402 admin/views/editor_person.php:356
 #: admin/views/editor_person.php:1701 admin/views/editor_relation.php:271
-#: admin/views/editor_relation.php:1049 admin/views/index_admin.php:170
+#: admin/views/editor_relation.php:1049 admin/views/index_admin.php:139
 #: admin/views/language_editor.php:264 admin/views/maps_worldmap.php:103
 #: admin/views/maps_worldmap.php:138 admin/views/prefix_editor.php:27
 #: admin/views/tree_merge.php:948
@@ -1160,7 +1181,7 @@ msgstr "Перетащите для изменения порядка (сохр�
 msgid "Drag to change order"
 msgstr "Перетащите для изменения порядка"
 
-#: admin/include/editor_sources.php:362 admin/views/edit_source.php:330
+#: admin/include/editor_sources.php:362 admin/views/edit_source.php:328
 #: admin/views/settings_homepage.php:242 include/person_cls.php:1932
 #: include/person_cls.php:1933 include/person_cls.php:1935
 #: include/person_cls.php:1936 include/show_source_pdf.php:90
@@ -1176,7 +1197,7 @@ msgstr "Исходная роль"
 msgid "e.g. Writer, Brother, Sister, Father."
 msgstr "например Писатель, Брат, Сестра, Отец."
 
-#: admin/include/editor_sources.php:388 admin/views/edit_source.php:370
+#: admin/include/editor_sources.php:388 admin/views/edit_source.php:368
 #: include/show_source_pdf.php:126 include/tfpdf/tfpdfextend.php:1083
 #: views/source.php:71
 msgid "Page"
@@ -1218,7 +1239,7 @@ msgstr "Дополнительный текст"
 msgid "Search existing source"
 msgstr "Поиск существующего источника"
 
-#: admin/include/editor_sources.php:461 admin/views/edit_source.php:136
+#: admin/include/editor_sources.php:461 admin/views/edit_source.php:134
 #: views/list.php:219 views/list.php:226
 msgid "gedcomnumber (ID)"
 msgstr "номер gedcom (идентификатор)"
@@ -1255,20 +1276,20 @@ msgstr "добавить новый источник"
 msgid "Add another source"
 msgstr "Добавить другой источник"
 
-#: admin/include/editor_sources.php:578 admin/views/edit_source.php:197
+#: admin/include/editor_sources.php:578 admin/views/edit_source.php:195
 msgid "Add source"
 msgstr "Добавить ресурс"
 
-#: admin/include/editor_user_settings.php:8 admin/views/users.php:54
+#: admin/include/editor_user_settings.php:42 admin/views/users.php:54
 msgid "Extra settings"
 msgstr "Дополнительные настройки"
 
-#: admin/include/editor_user_settings.php:49
+#: admin/include/editor_user_settings.php:44
 msgid "Hide or show family trees per user."
 msgstr ""
 "Отображать или скрывать генеалогические деревья различным пользователям."
 
-#: admin/include/editor_user_settings.php:52
+#: admin/include/editor_user_settings.php:48
 msgid ""
 "These are settings PER USER, it's also possible to set these setting PER "
 "USER GROUP."
@@ -1276,24 +1297,24 @@ msgstr ""
 "Эта настройка НА ПОЛЬЗОВАТЕЛЯ, вы также можете выполнить настройку НА ГРУППУ "
 "ПОЛЬЗОВАТЕЛЕЙ."
 
-#: admin/include/editor_user_settings.php:76 admin/views/groups.php:617
+#: admin/include/editor_user_settings.php:72 admin/views/groups.php:617
 #: admin/views/maps_locations.php:188 admin/views/notes.php:22
 #: admin/views/trees.php:38 views/help.php:68 views/help.php:72
-#: views/help.php:76 views/help.php:81 views/layout.php:285
-#: views/layout.php:508 views/list.php:152 views/list.php:443
+#: views/help.php:76 views/help.php:81 views/layout.php:283
+#: views/layout.php:506 views/list.php:152 views/list.php:443
 #: views/list.php:643 views/statistics.php:21
 msgid "Family tree"
 msgstr "Генеалогическое дерево"
 
-#: admin/include/editor_user_settings.php:77 admin/views/groups.php:618
+#: admin/include/editor_user_settings.php:73 admin/views/groups.php:618
 msgid "Show tree?"
 msgstr "Отобразить древо?"
 
-#: admin/include/editor_user_settings.php:78 admin/views/groups.php:619
+#: admin/include/editor_user_settings.php:74 admin/views/groups.php:619
 msgid "Edit tree?"
 msgstr "Редактировать древо?"
 
-#: admin/include/editor_user_settings.php:78 admin/views/cms_pages.php:374
+#: admin/include/editor_user_settings.php:74 admin/views/cms_pages.php:374
 #: admin/views/extensions.php:95 admin/views/extensions.php:117
 #: admin/views/groups.php:104 admin/views/groups.php:137
 #: admin/views/groups.php:225 admin/views/groups.php:356
@@ -1307,13 +1328,13 @@ msgstr "Редактировать древо?"
 #: admin/views/settings.php:744 admin/views/settings.php:794
 #: admin/views/settings_homepage.php:21 admin/views/settings_homepage.php:244
 #: admin/views/settings_homepage.php:331 admin/views/settings_special.php:51
-#: admin/views/thumbs.php:76 admin/views/tree_data.php:60
+#: admin/views/thumbs.php:118 admin/views/tree_data.php:45
 #: admin/views/tree_text.php:71 admin/views/tree_text.php:73
 #: admin/views/users.php:56 views/user_settings.php:90
 msgid "Change"
 msgstr "Изменить"
 
-#: admin/include/editor_user_settings.php:93
+#: admin/include/editor_user_settings.php:89
 msgid "Use user-group setting"
 msgstr "Использовать настройку группы пользователей"
 
@@ -1323,9 +1344,9 @@ msgstr "Некорректный идентификатор семьи."
 
 #: admin/include/index_check_update.php:7
 #: admin/include/index_check_update.php:11
-#: admin/include/index_check_update.php:275
-#: admin/include/index_check_update.php:281
-#: admin/include/index_check_update.php:290
+#: admin/include/index_check_update.php:159
+#: admin/include/index_check_update.php:165
+#: admin/include/index_check_update.php:174
 msgid "Update options"
 msgstr "Настройки обновления"
 
@@ -1333,36 +1354,36 @@ msgstr "Настройки обновления"
 msgid "update check is disabled."
 msgstr "проверка обновлений отключена."
 
-#: admin/include/index_check_update.php:274
+#: admin/include/index_check_update.php:158
 #, fuzzy
 #| msgid "update check is disabled."
 msgid "Update check failed."
 msgstr "проверка обновлений отключена."
 
-#: admin/include/index_check_update.php:280
-#: admin/include/index_check_update.php:289
+#: admin/include/index_check_update.php:164
+#: admin/include/index_check_update.php:173
 msgid "is up-to-date!"
 msgstr "находится в актуальном состоянии!"
 
-#: admin/include/index_check_update.php:296
+#: admin/include/index_check_update.php:180
 msgid "Update available"
 msgstr "Доступно обновление"
 
-#: admin/include/index_check_update.php:301
+#: admin/include/index_check_update.php:185
 msgid "Beta version available"
 msgstr "Доступна бета-версия"
 
-#: admin/include/index_check_update.php:313 admin/update/install_update.php:584
+#: admin/include/index_check_update.php:197 admin/update/install_update.php:594
 msgid "Online version check unavailable."
 msgstr "Онлайн проверка версии недоступна."
 
-#: admin/include/index_check_update.php:334
+#: admin/include/index_check_update.php:218
 #, fuzzy
 #| msgid "Cookie information"
 msgid "Debug information:"
 msgstr "Информация о cookie"
 
-#: admin/include/select_tree.php:18 views/layout.php:287 views/maps.php:40
+#: admin/include/select_tree.php:18 views/layout.php:285 views/maps.php:40
 msgid "Select a family tree:"
 msgstr "Выбор генеалогического дерева:"
 
@@ -1376,16 +1397,16 @@ msgstr ""
 "данных!<br><b>НИКОГДА НЕ ПРЕРЫВАЙТЕ ПРОЦЕДУРУ ОБНОВЛЕНИЯ!</"
 "b><br><b>Дождитесь сообщения, что обновление завершено!</b>"
 
-#: admin/include/update.php:33 admin/views/index_admin.php:16
+#: admin/include/update.php:33 admin/views/index_admin.php:13
 #, php-format
 msgid "%s status"
 msgstr "%s Статус"
 
-#: admin/include/update.php:245 admin/views/install.php:1158
+#: admin/include/update.php:245 admin/views/install.php:1162
 msgid "All updates completed, click at \"Mainmenu\""
 msgstr "Все обновления завершены, нажмите \"Главное меню\""
 
-#: admin/include/update.php:246 admin/views/install.php:1159
+#: admin/include/update.php:246 admin/views/install.php:1163
 #: admin/views/menu.php:48
 msgid "Main menu"
 msgstr "Главное меню"
@@ -1459,7 +1480,7 @@ msgstr "Обновите таблицу unprocessed_tags..."
 msgid "Access to admin pages is not allowed."
 msgstr ""
 
-#: admin/index.php:392 admin/views/index_admin.php:11 admin/views/menu.php:43
+#: admin/index.php:392 admin/views/index_admin.php:8 admin/views/menu.php:43
 #: admin/views/menu.php:48
 msgid "Administration"
 msgstr "Администрирование"
@@ -1488,8 +1509,8 @@ msgstr "Показать/скрыть темы"
 #: admin/index.php:579 admin/views/gedcom_export.php:361
 #: admin/views/maps.php:35 admin/views/maps_settings.php:24
 #: admin/views/menu.php:66 admin/views/settings_admin.php:8
-#: admin/views/settings_admin.php:39 admin/views/tree_merge.php:1039
-#: views/family.php:53 views/family.php:1319
+#: admin/views/settings_admin.php:39 admin/views/thumbs.php:196
+#: admin/views/tree_merge.php:1039 views/family.php:53 views/family.php:1319
 msgid "Settings"
 msgstr "Настройки"
 
@@ -1535,19 +1556,19 @@ msgid "Prefix editor"
 msgstr "Редактор префиксов"
 
 #: admin/index.php:598 admin/views/maps.php:29 admin/views/menu.php:72
-#: views/help.php:105 views/layout.php:597
+#: views/help.php:105 views/layout.php:595
 #, fuzzy
 #| msgid "Google maps"
 msgid "World map"
 msgstr "Карты Google"
 
-#: admin/index.php:603 admin/views/index_admin.php:668 admin/views/menu.php:78
+#: admin/index.php:603 admin/views/index_admin.php:581 admin/views/menu.php:78
 #: admin/views/menu.php:81
 msgid "Family trees"
 msgstr "Генеалогические деревья"
 
 #: admin/index.php:605 admin/views/groups.php:231 admin/views/menu.php:82
-#: admin/views/tree_data.php:41
+#: admin/views/tree_data.php:26
 msgid "Pictures/ create thumbnails"
 msgstr "Фотограции/создать миниатюры"
 
@@ -1555,8 +1576,7 @@ msgstr "Фотограции/создать миниатюры"
 msgid "Picture settings"
 msgstr "Параметры изображения"
 
-#: admin/index.php:608 admin/views/thumbs.php:21 admin/views/thumbs.php:125
-#: admin/views/thumbs.php:132
+#: admin/index.php:608 admin/views/thumbs.php:21
 msgid "Create thumbnails"
 msgstr "Создать миниатюры"
 
@@ -1605,13 +1625,13 @@ msgstr "Фильтр приватности"
 msgid "Gedcom export"
 msgstr "Экспорт в Gedcom файл"
 
-#: admin/index.php:629 admin/views/index_admin.php:417
-#: admin/views/index_admin.php:423 admin/views/menu.php:88
+#: admin/index.php:629 admin/views/index_admin.php:375
+#: admin/views/index_admin.php:379 admin/views/menu.php:88
 msgid "Database backup"
 msgstr "Резервное копирование БД"
 
 #: admin/index.php:630 admin/views/menu.php:89 admin/views/statistics.php:280
-#: admin/views/users.php:55 views/help.php:95 views/layout.php:588
+#: admin/views/users.php:55 views/help.php:95 views/layout.php:586
 msgid "Statistics"
 msgstr "Статистика"
 
@@ -1621,12 +1641,12 @@ msgstr "Статистика"
 msgid "Persons and families"
 msgstr "Места (по семьям)"
 
-#: admin/index.php:637 admin/views/edit_source.php:105
+#: admin/index.php:637 admin/views/edit_source.php:103
 #: admin/views/groups.php:355 admin/views/menu.php:100
 #: admin/views/tree_merge.php:1592 app/controller/sourcesController.php:29
 #: include/show_sources.php:346 views/ancestor_report_pdf.php:375
 #: views/family.php:72 views/family_pdf.php:562 views/help.php:86
-#: views/layout.php:542 views/sources.php:16
+#: views/layout.php:540 views/sources.php:16
 msgid "Sources"
 msgstr "Источники"
 
@@ -1651,7 +1671,7 @@ msgid "Users"
 msgstr "Пользователи"
 
 #: admin/index.php:647 admin/views/groups.php:33 admin/views/menu.php:114
-#: admin/views/thumbs.php:159
+#: admin/views/thumbs.php:121
 msgid "User groups"
 msgstr "Группы пользователя"
 
@@ -1659,7 +1679,7 @@ msgstr "Группы пользователя"
 msgid "Log"
 msgstr "Журнал"
 
-#: admin/index.php:652 admin/views/index_admin.php:522 admin/views/log.php:12
+#: admin/index.php:652 admin/views/index_admin.php:435 admin/views/log.php:12
 msgid "Logfile users"
 msgstr "Журнал авторизации"
 
@@ -1713,28 +1733,28 @@ msgstr "Файл успешно загружен."
 msgid "Upload has failed."
 msgstr "Загрузка не удалась."
 
-#: admin/models/index_admin.php:25
+#: admin/models/index_admin.php:10
 msgid "Database connection status:"
 msgstr "Статус подключения к БД:"
 
-#: admin/models/index_admin.php:32
+#: admin/models/index_admin.php:17
 msgid "MySQL connection: OK!"
 msgstr "Подключение к MySQL: OK!"
 
-#: admin/models/index_admin.php:39
+#: admin/models/index_admin.php:24
 msgid "There is no MySQL connection: please check host/ username and password."
 msgstr ""
 "Отсутствует подключение к MySQL: проверьте адрес сервера и логин/пароль БД."
 
-#: admin/models/index_admin.php:49
+#: admin/models/index_admin.php:34
 msgid "Database connection: OK!"
 msgstr "Подключение к БД: OK!"
 
-#: admin/models/index_admin.php:54
+#: admin/models/index_admin.php:38
 msgid "No database found! Check MySQL connection and database name"
 msgstr "БД не найдена! Проверьте подключение к MySQL и название БД."
 
-#: admin/models/index_admin.php:60 admin/update/install_update.php:475
+#: admin/models/index_admin.php:44 admin/update/install_update.php:483
 msgid ""
 "The configuration file is not writable! Please change the include/db_login."
 "php file manually."
@@ -1742,7 +1762,7 @@ msgstr ""
 "Файл конфигурации недоступен для записи! Отредактируйте настройки в файле "
 "include/db_login.php ручную!"
 
-#: admin/models/index_admin.php:103 admin/update/install_update.php:517
+#: admin/models/index_admin.php:87 admin/update/install_update.php:525
 msgid ""
 "There is a problem in the db_login file, maybe an old db_login file is used."
 msgstr ""
@@ -1752,7 +1772,7 @@ msgstr ""
 msgid "Saved"
 msgstr "Сохранено"
 
-#: admin/models/language_editor.php:90 admin/views/thumbs.php:339
+#: admin/models/language_editor.php:90 admin/views/thumbs.php:441
 #: admin/views/tree_text.php:15
 msgid "Language"
 msgstr "Язык"
@@ -1789,69 +1809,69 @@ msgstr "ОШИБКА: пользователь уже существует"
 msgid "%s Update"
 msgstr "обновление %s"
 
-#: admin/update/install_update.php:29
+#: admin/update/install_update.php:32
 msgid "Version:"
 msgstr "Версия:"
 
-#: admin/update/install_update.php:33
+#: admin/update/install_update.php:36
 msgid "no version number available..."
 msgstr "номер версии недоступен..."
 
-#: admin/update/install_update.php:36
+#: admin/update/install_update.php:39
 #, php-format
 msgid "%s is up-to-date!"
 msgstr "%s актуален!"
 
-#: admin/update/install_update.php:38
+#: admin/update/install_update.php:41
 #, php-format
 msgid "If needed: re-install all or some of the %s files"
 msgstr "При необходимости: переустановите все или некоторые файлы %s"
 
-#: admin/update/install_update.php:44
+#: admin/update/install_update.php:47
 #, php-format
 msgid "%s beta version"
 msgstr "%s бета-версия"
 
-#: admin/update/install_update.php:46
+#: admin/update/install_update.php:49
 msgid "Sometimes there is a beta version available."
 msgstr "Иногда доступна бета-версия."
 
-#: admin/update/install_update.php:49
+#: admin/update/install_update.php:52
 #, php-format
 msgid "%s beta version available"
 msgstr "доступна бета-версия %s"
 
-#: admin/update/install_update.php:52
+#: admin/update/install_update.php:55
 msgid "No beta version available."
 msgstr "Бета-версия недоступна."
 
-#: admin/update/install_update.php:62 admin/update/install_update.php:635
+#: admin/update/install_update.php:65 admin/update/install_update.php:638
 #, php-format
 msgid "Enable/ disable %s update check."
 msgstr "Включить/отключить проверку обновления %s."
 
-#: admin/update/install_update.php:68 admin/update/install_update.php:640
+#: admin/update/install_update.php:71 admin/update/install_update.php:643
 #, php-format
 msgid "Check regularly for %s updates."
 msgstr "Регулярно проверяйте наличие обновлений %s."
 
-#: admin/update/install_update.php:79
+#: admin/update/install_update.php:82
 #, fuzzy, php-format
 #| msgid "Debug %s pages"
 msgid "Debug %s update"
 msgstr "Страницы %s отладки"
 
-#: admin/update/install_update.php:82
+#: admin/update/install_update.php:86
 #, fuzzy
 #| msgid "Debug mode"
 msgid "Debug"
 msgstr "Режим отладки"
 
-#: admin/update/install_update.php:88
+#: admin/update/install_update.php:93
 msgid "Automatic update"
 msgstr "Автоматическое обновление"
 
-#: admin/update/install_update.php:90
+#: admin/update/install_update.php:95
 msgid ""
 "Every step can take some time, please be patient and wait till the step is "
 "completed!"
@@ -1859,68 +1879,68 @@ msgstr ""
 "Каждый шаг может занаять некоторое время. Дождитесь полного завершения "
 "каждого шага!"
 
-#: admin/update/install_update.php:124
+#: admin/update/install_update.php:129
 #, php-format
 msgid "Step 1) Download and unzip new %s version"
 msgstr "Шаг 1) Загрузите и распакуйте новую версию %s"
 
-#: admin/update/install_update.php:136
+#: admin/update/install_update.php:141
 #, php-format
 msgid "Download and unzip new %s version"
 msgstr "Загрузите и распакуйте новую версию %s"
 
-#: admin/update/install_update.php:140 admin/update/install_update.php:623
+#: admin/update/install_update.php:145 admin/update/install_update.php:633
 #, php-format
 msgid "%s version history"
 msgstr "история версий %s"
 
-#: admin/update/install_update.php:157
+#: admin/update/install_update.php:162
 msgid "Found update file, skipped download of update!"
 msgstr "Найден файл обновления, пропущена загрузка обновления!"
 
-#: admin/update/install_update.php:279
+#: admin/update/install_update.php:283
 msgid "Automatic download successfull!"
 msgstr "Автоматическая закачка завершена успешено!"
 
-#: admin/update/install_update.php:281
+#: admin/update/install_update.php:285
 #, fuzzy
 #| msgid "Installation of file failed"
 msgid "Automatic download of file failed."
 msgstr "Установка файла не удалась"
 
-#: admin/update/install_update.php:290
+#: admin/update/install_update.php:294
 msgid "File successfully unzipped!"
 msgstr "Файл упешно распакован!"
 
-#: admin/update/install_update.php:301
+#: admin/update/install_update.php:305
 msgid "Step 2)"
 msgstr "Шаг 2)"
 
-#: admin/update/install_update.php:308
+#: admin/update/install_update.php:312
 msgid "Check files"
 msgstr "Проверка файлов"
 
-#: admin/update/install_update.php:320
+#: admin/update/install_update.php:325
 msgid "Step 2) Compare existing and update files (no installation yet)..."
 msgstr "Шаг 2) Сравнение существующих и новых файлов (пока без установки)..."
 
-#: admin/update/install_update.php:323
+#: admin/update/install_update.php:329
 msgid "Step 3) Installation of new files..."
 msgstr "Шаг 3) Установка новых файлов..."
 
-#: admin/update/install_update.php:401
+#: admin/update/install_update.php:408
 msgid "Installation of file failed"
 msgstr "Установка файла не удалась"
 
-#: admin/update/install_update.php:403
+#: admin/update/install_update.php:410
 msgid "File installed!"
 msgstr "Файл установлен!"
 
-#: admin/update/install_update.php:418
+#: admin/update/install_update.php:425
 msgid "Directory created."
 msgstr "Папка создана."
 
-#: admin/update/install_update.php:428
+#: admin/update/install_update.php:435
 #, php-format
 msgid ""
 "The following files are not part of the %s system files (anymore). If you "
@@ -1929,95 +1949,95 @@ msgstr ""
 "Следующие файлы больше не являются частью системных файлов %s (больше). Если "
 "вы хотите, их можно удалить."
 
-#: admin/update/install_update.php:437
+#: admin/update/install_update.php:444
 msgid "Select all files (recommended option, please check these files first!)"
 msgstr ""
 
-#: admin/update/install_update.php:471
+#: admin/update/install_update.php:478
 msgid "Update new db_login.php file..."
 msgstr "Обновление файла db_login.php..."
 
-#: admin/update/install_update.php:519
+#: admin/update/install_update.php:527
 msgid "File is updated."
 msgstr "Файл обновлён!"
 
-#: admin/update/install_update.php:529
+#: admin/update/install_update.php:535
 msgid "Install files!"
 msgstr "Установка файлов!"
 
-#: admin/update/install_update.php:547
+#: admin/update/install_update.php:554
 msgid "Update completed and installation files removed!"
 msgstr "Обновление завершено, установочные файлы удалены!"
 
-#: admin/update/install_update.php:553
+#: admin/update/install_update.php:560
 #, php-format
 msgid "Current %s version:"
 msgstr "Текущая версия %s:"
 
-#: admin/update/install_update.php:556
+#: admin/update/install_update.php:563
 #, php-format
 msgid "Available %s version:"
 msgstr "Доступная версия %s:"
 
-#: admin/update/install_update.php:560
+#: admin/update/install_update.php:567
 msgid "There are 2 update methods: automatic and manually."
 msgstr "Существует 2 метода обновления: автоматический и ручной."
 
-#: admin/update/install_update.php:563
+#: admin/update/install_update.php:570
 #, php-format
 msgid "1) Automatic update of %s"
 msgstr "1) Автоматическое обновление %s"
 
-#: admin/update/install_update.php:565 admin/update/install_update.php:571
+#: admin/update/install_update.php:572 admin/update/install_update.php:578
 msgid "a) [Optional, but highly recommended] Do a database backup first"
 msgstr ""
 "a) [Не обязательно, но рекомендуется] Выполните резервное копирование БД"
 
-#: admin/update/install_update.php:565 admin/update/install_update.php:571
+#: admin/update/install_update.php:572 admin/update/install_update.php:578
 msgid "backup page"
 msgstr "резервная страница"
 
-#: admin/update/install_update.php:566
+#: admin/update/install_update.php:573
 msgid "b)"
 msgstr "b)"
 
-#: admin/update/install_update.php:566
+#: admin/update/install_update.php:573
 msgid "Start automatic update"
 msgstr "Запуск автоматического обновления"
 
-#: admin/update/install_update.php:569
+#: admin/update/install_update.php:576
 #, php-format
 msgid "1) Manual update of %s"
 msgstr "1) Ручное обновление %s"
 
-#: admin/update/install_update.php:573
+#: admin/update/install_update.php:580
 msgid "b) Download the new version: "
 msgstr "b) Скачайте новую версию:"
 
-#: admin/update/install_update.php:574
+#: admin/update/install_update.php:581
 #, php-format
 msgid "%s version:"
 msgstr "версия %s:"
 
-#: admin/update/install_update.php:577
+#: admin/update/install_update.php:584
 #, php-format
 msgid "c) Unzip the file and replace the old %s files by the new %s files."
 msgstr "c) Распакуйте файл и замените старые файлы %s новыми файлами %s."
 
-#: admin/update/install_update.php:579
+#: admin/update/install_update.php:586
 msgid "Full installation and update instructions can be found at:"
 msgstr "Полное руководство по установке и обновлению: "
 
-#: admin/update/install_update.php:580
+#: admin/update/install_update.php:587
 #, php-format
 msgid "%s manual"
 msgstr "%s руководство пользователя"
 
-#: admin/update/install_update.php:588
+#: admin/update/install_update.php:595
 msgid "Semi-automatic update"
 msgstr "Полуавтоматическое обновление"
 
-#: admin/update/install_update.php:589
+#: admin/update/install_update.php:596
 msgid ""
 "In some cases the automatic update doesn't work. Then use this semi-"
 "automatic update method."
@@ -2025,37 +2045,37 @@ msgstr ""
 "В некоторых случаях автоматическое обновление не работает. Затем используйте "
 "этот полуавтоматический метод обновления."
 
-#: admin/update/install_update.php:590
+#: admin/update/install_update.php:597
 #, php-format
 msgid "1. Download a new version of %s."
 msgstr "1. Загрузите новую версию %s."
 
-#: admin/update/install_update.php:591
+#: admin/update/install_update.php:598
 msgid "2. Rename the zip file into: humo-gen_update.zip"
 msgstr "2. Переименуйте zip-файл в: humo-gen_update.zip"
 
-#: admin/update/install_update.php:599
+#: admin/update/install_update.php:607
 msgid "Upload failed, check folder rights"
 msgstr "Загрузка не удалась, проверьте права на папку"
 
-#: admin/update/install_update.php:604
+#: admin/update/install_update.php:613
 msgid "3. Upload humo-gen_update.zip:"
 msgstr "3. Загрузить humo-gen_update.zip:"
 
-#: admin/update/install_update.php:607
+#: admin/update/install_update.php:616
 msgid "OR: manually upload the file to folder: admin/update/"
 msgstr "ИЛИ: вручную загрузите файл в папку: admin/update/"
 
-#: admin/update/install_update.php:610
+#: admin/update/install_update.php:620
 msgid "4. Then click:"
 msgstr "4. Затем нажмите:"
 
-#: admin/update/install_update.php:618
+#: admin/update/install_update.php:628
 #, php-format
 msgid "start update of %s."
 msgstr "запустите обновление %s."
 
-#: admin/update/install_update.php:625 admin/views/index_admin.php:23
+#: admin/update/install_update.php:634 admin/views/index_admin.php:20
 #, php-format
 msgid "%s version"
 msgstr "%s Версия PHP"
@@ -2160,7 +2180,7 @@ msgstr ""
 msgid "Restore database"
 msgstr "Восстановление БД"
 
-#: admin/views/backup.php:150 admin/views/index_admin.php:422
+#: admin/views/backup.php:150 admin/views/index_admin.php:378
 msgid "No backup file found!"
 msgstr "Резервная копия не найдена!"
 
@@ -2205,7 +2225,8 @@ msgstr ""
 "Рассчёт будет произведён на основании дат рождения, крещения, смерти, "
 "погребения или свадьбы этих персон и таких же дат их родителей и детей."
 
-#: admin/views/cal_date.php:21 admin/views/thumbs.php:38
+#: admin/views/cal_date.php:21 admin/views/thumbs.php:37
+#: admin/views/thumbs.php:148 admin/views/thumbs.php:250
 msgid "Choose family tree"
 msgstr "Выбрать генеалогическое древо"
 
@@ -2343,7 +2364,6 @@ msgstr ""
 "используйте ../../../../имя_папки"
 
 #: admin/views/cms_pages.php:400 admin/views/thumbs.php:61
-#: admin/views/tree_data.php:28
 msgid "Use default picture path:"
 msgstr "Использовать путь изображений по-умолчанию:"
 
@@ -2421,11 +2441,11 @@ msgid "Close"
 msgstr "Закрыть"
 
 #: admin/views/edit_address.php:279 admin/views/edit_repository.php:230
-#: admin/views/edit_source.php:405
+#: admin/views/edit_source.php:403
 msgid "Delete"
 msgstr "Удалить"
 
-#: admin/views/edit_address.php:296 admin/views/edit_source.php:420
+#: admin/views/edit_address.php:296 admin/views/edit_source.php:418
 #: admin/views/editor.php:729
 msgid "Preview"
 msgstr "Предпросмотр"
@@ -2473,11 +2493,11 @@ msgstr "Некорректный идентификатор репозитори
 
 #: admin/views/edit_repository.php:197 admin/views/gedcom_export.php:351
 #: app/model/mailform.php:84 app/model/register.php:96
-#: app/model/user_settings.php:89
+#: app/model/user_settings.php:80
 msgid "E-mail"
 msgstr "E-mail"
 
-#: admin/views/edit_source.php:106
+#: admin/views/edit_source.php:104
 msgid ""
 "These sources can be connected to multiple persons, families, events and "
 "other items."
@@ -2485,79 +2505,79 @@ msgstr ""
 "Эти источники могут быть связаны с несколькими людьми, семьями, событиями и "
 "другими предметами."
 
-#: admin/views/edit_source.php:110
+#: admin/views/edit_source.php:108
 msgid "Source is removed!"
 msgstr "Источник удалён!"
 
-#: admin/views/edit_source.php:116
+#: admin/views/edit_source.php:114
 msgid "Are you sure you want to remove this source and ALL source references?"
 msgstr "Вы уверены, что ходите удалить этот источник и ВСЕ ссылки на него?"
 
-#: admin/views/edit_source.php:151 admin/views/edit_source.php:161
+#: admin/views/edit_source.php:149 admin/views/edit_source.php:159
 msgid "Select source"
 msgstr "Выбор ресурса"
 
-#: admin/views/edit_source.php:184 admin/views/edit_source.php:265
+#: admin/views/edit_source.php:182 admin/views/edit_source.php:263
 msgid "restricted"
 msgstr "ограничено"
 
-#: admin/views/edit_source.php:226 include/show_source_pdf.php:31
+#: admin/views/edit_source.php:224 include/show_source_pdf.php:31
 #: views/source.php:20 views/source.php:25
 msgid "No valid source number."
 msgstr "Некорректный идентификатор ресурса."
 
-#: admin/views/edit_source.php:261 admin/views/editor.php:1880
+#: admin/views/edit_source.php:259 admin/views/editor.php:1880
 #: admin/views/log.php:35 admin/views/notes.php:224
 #: admin/views/settings_homepage.php:16
 msgid "Status"
 msgstr "Статус"
 
-#: admin/views/edit_source.php:264
+#: admin/views/edit_source.php:262
 msgid "publish"
 msgstr "публиковать"
 
-#: admin/views/edit_source.php:267
+#: admin/views/edit_source.php:265
 msgid "restricted = only visible for selected user groups"
 msgstr "ограничено = отображается только выбранным группам пользователей"
 
-#: admin/views/edit_source.php:281 include/show_source_pdf.php:102
+#: admin/views/edit_source.php:279 include/show_source_pdf.php:102
 #: views/mailform.php:62 views/mailform.php:64 views/source.php:59
 msgid "Subject"
 msgstr "Тема"
 
-#: admin/views/edit_source.php:305 views/source.php:108
+#: admin/views/edit_source.php:303 views/source.php:108
 msgid "Repository"
 msgstr "Репозиторий"
 
-#: admin/views/edit_source.php:315
+#: admin/views/edit_source.php:313
 msgid "Add repositories"
 msgstr "Добавление репозиториев"
 
-#: admin/views/edit_source.php:321 include/show_source_pdf.php:69
+#: admin/views/edit_source.php:319 include/show_source_pdf.php:69
 #: views/source.php:47
 msgid "Publication"
 msgstr "Публикация"
 
-#: admin/views/edit_source.php:324
+#: admin/views/edit_source.php:322
 msgid "will be shown as a link."
 msgstr "будет отображаться как ссылка."
 
-#: admin/views/edit_source.php:338 include/show_source_pdf.php:96
+#: admin/views/edit_source.php:336 include/show_source_pdf.php:96
 #: views/source.php:56
 msgid "Author"
 msgstr "Автор"
 
-#: admin/views/edit_source.php:346 admin/views/statistics.php:64
+#: admin/views/edit_source.php:344 admin/views/statistics.php:64
 #: include/show_source_pdf.php:108 views/source.php:62
 msgid "Nr."
 msgstr "Nr."
 
-#: admin/views/edit_source.php:354 include/show_source_pdf.php:114
+#: admin/views/edit_source.php:352 include/show_source_pdf.php:114
 #: views/source.php:65
 msgid "Kind"
 msgstr "Добрый"
 
-#: admin/views/edit_source.php:362 include/show_source_pdf.php:120
+#: admin/views/edit_source.php:360 include/show_source_pdf.php:120
 #: views/source.php:68
 msgid "Archive"
 msgstr "Архив"
@@ -2569,7 +2589,7 @@ msgstr "Список избранного"
 #: admin/views/editor.php:93 admin/views/tree_check.php:60
 #: admin/views/tree_check_changes.php:195
 #: app/controller/latest_changesController.php:20 views/help.php:114
-#: views/layout.php:609
+#: views/layout.php:607
 msgid "Latest changes"
 msgstr "Последние изменения "
 
@@ -2623,10 +2643,10 @@ msgstr "Вы уверены, что хотите разорвать связь �
 #: admin/views/editor.php:433 admin/views/editor_relation.php:38
 #: admin/views/editor_relation.php:42 admin/views/statistics_general.php:286
 #: admin/views/statistics_old.php:84 admin/views/tree_check_changes.php:123
-#: app/controller/descendant_chartController.php:96
-#: app/controller/familyController.php:44
-#: app/controller/hourglassController.php:77
-#: app/controller/outline_reportController.php:57
+#: app/controller/descendant_chartController.php:88
+#: app/controller/familyController.php:36
+#: app/controller/hourglassController.php:70
+#: app/controller/outline_reportController.php:49
 #: views/list_places_families.php:212
 msgid "Family"
 msgstr "Семья"
@@ -2636,23 +2656,23 @@ msgid "Browse"
 msgstr "Обзор"
 
 #: admin/views/editor.php:617 admin/views/editor_relation.php:278
-#: admin/views/editor_relation.php:491 include/marriage_cls.php:812
+#: admin/views/editor_relation.php:491 include/marriage_cls.php:811
 msgid "marriage/ relation"
 msgstr "Брак "
 
 #: admin/views/editor.php:619 admin/views/editor_relation.php:579
-#: include/marriage_cls.php:375 include/marriage_cls.php:381
-#: include/marriage_cls.php:390 include/marriage_cls.php:391
+#: include/marriage_cls.php:374 include/marriage_cls.php:380
+#: include/marriage_cls.php:389 include/marriage_cls.php:390
 msgid "Married"
 msgstr "В браке"
 
 #: admin/views/editor.php:626 include/marriage_cls.php:61
-#: include/marriage_cls.php:158 include/marriage_cls.php:256
-#: include/marriage_cls.php:362 include/marriage_cls.php:389
-#: include/marriage_cls.php:445 include/marriage_cls.php:529
-#: include/marriage_cls.php:788 include/marriage_cls.php:792
-#: include/marriage_cls.php:800 include/marriage_cls.php:804
-#: include/marriage_cls.php:817 include/marriage_cls.php:821
+#: include/marriage_cls.php:158 include/marriage_cls.php:255
+#: include/marriage_cls.php:361 include/marriage_cls.php:388
+#: include/marriage_cls.php:444 include/marriage_cls.php:528
+#: include/marriage_cls.php:787 include/marriage_cls.php:791
+#: include/marriage_cls.php:799 include/marriage_cls.php:803
+#: include/marriage_cls.php:816 include/marriage_cls.php:820
 #: views/ancestor_report.php:221 views/ancestor_report_pdf.php:282
 #: views/ancestor_report_rtf.php:271 views/descendant_chart.php:385
 msgid " to: "
@@ -2683,7 +2703,7 @@ msgstr ""
 msgid "Add person"
 msgstr "Добавить персону"
 
-#: admin/views/editor.php:741 views/layout.php:808 views/list.php:479
+#: admin/views/editor.php:741 views/layout.php:819 views/list.php:479
 #: views/maps.php:31 views/relations.php:354 views/timeline.php:178
 msgid "Help"
 msgstr "Справка"
@@ -2776,7 +2796,7 @@ msgid "stillborn child"
 msgstr "мертворожденный ребёнок"
 
 #: admin/views/editor.php:1413 admin/views/tree_merge.php:1675
-#: views/addresses.php:12 views/layout.php:555
+#: views/addresses.php:12 views/layout.php:553
 msgid "Addresses"
 msgstr "Адреса"
 
@@ -3178,8 +3198,8 @@ msgstr "Выбрать персону 1"
 msgid "Select person 2"
 msgstr "Выбрать персону 2"
 
-#: admin/views/editor_relation.php:347 include/marriage_cls.php:187
-#: include/marriage_cls.php:206
+#: admin/views/editor_relation.php:347 include/marriage_cls.php:186
+#: include/marriage_cls.php:205
 msgid "End living together"
 msgstr "Расторгнуть брак"
 
@@ -3535,11 +3555,11 @@ msgstr "Удаление объектов старых генеалогичес�
 #: admin/views/gedcom.php:562 admin/views/gedcom.php:586
 #: admin/views/gedcom.php:612 admin/views/gedcom.php:636
 #: admin/views/gedcom.php:662 admin/views/gedcom.php:698
-#: admin/views/index_admin.php:311 admin/views/index_admin.php:318
-#: admin/views/index_admin.php:325 admin/views/index_admin.php:332
-#: admin/views/index_admin.php:339 admin/views/index_admin.php:346
-#: admin/views/index_admin.php:353 admin/views/index_admin.php:360
-#: admin/views/index_admin.php:367 admin/views/index_admin.php:374
+#: admin/views/index_admin.php:272 admin/views/index_admin.php:279
+#: admin/views/index_admin.php:286 admin/views/index_admin.php:293
+#: admin/views/index_admin.php:300 admin/views/index_admin.php:307
+#: admin/views/index_admin.php:314 admin/views/index_admin.php:321
+#: admin/views/index_admin.php:328 admin/views/index_admin.php:335
 msgid "Optimize table..."
 msgstr "Оптимизация таблицы..."
 
@@ -3637,13 +3657,13 @@ msgstr "ШАГ 4) Окончательная обработка базы дан�
 msgid "Processing of referenced texts into standard texts..."
 msgstr "Обработка ссылочных текстов в стандартные тексты..."
 
-#: admin/views/gedcom.php:1792 admin/views/index_admin.php:691
+#: admin/views/gedcom.php:1792 admin/views/index_admin.php:604
 #: admin/views/statistics_old.php:66 admin/views/tree_admin.php:82
 #: app/model/tree_index.php:282
 msgid "persons"
 msgstr "персоны"
 
-#: admin/views/gedcom.php:2021 admin/views/index_admin.php:691
+#: admin/views/gedcom.php:2021 admin/views/index_admin.php:604
 #: admin/views/statistics_old.php:66 admin/views/tree_admin.php:82
 #: app/model/tree_index.php:282
 msgid "families"
@@ -4288,7 +4308,7 @@ msgstr "Сохранить все изменения"
 msgid "Hide or show family trees per user group."
 msgstr "Отображение генеалогических древ для различных групп пользователей."
 
-#: admin/views/groups.php:611 admin/views/index_admin.php:708
+#: admin/views/groups.php:611 admin/views/index_admin.php:621
 #: admin/views/menu.php:96 include/person_cls.php:1094
 #: include/person_cls.php:1095
 msgid "Editor"
@@ -4308,7 +4328,7 @@ msgid "Hide or show photo categories per user group."
 msgstr ""
 "Скрытие или отображение категорий фотографий для каждой группы пользователей."
 
-#: admin/views/groups.php:711 admin/views/thumbs.php:314
+#: admin/views/groups.php:711 admin/views/thumbs.php:416
 msgid "Category prefix"
 msgstr "Префикс категории"
 
@@ -4320,41 +4340,41 @@ msgstr "Показывать категорию?"
 msgid "No photo categories available."
 msgstr "Категории фотографий недоступны."
 
-#: admin/views/index_admin.php:28
+#: admin/views/index_admin.php:25
 #, php-format
 msgid "%s extensions"
 msgstr "%s расширений"
 
-#: admin/views/index_admin.php:36
+#: admin/views/index_admin.php:33
 msgid "PHP Version"
 msgstr "Версия PHP"
 
-#: admin/views/index_admin.php:43
+#: admin/views/index_admin.php:40
 msgid "It is recommended to update PHP!"
 msgstr "Рекомендуется обновить PHP!"
 
-#: admin/views/index_admin.php:55
+#: admin/views/index_admin.php:52
 msgid "MySQL Version"
 msgstr "Версия MySQL"
 
-#: admin/views/index_admin.php:62
+#: admin/views/index_admin.php:59
 msgid "It is recommended to update MySQL!"
 msgstr "Рекомендуется обновить MySQL!"
 
-#: admin/views/index_admin.php:75
+#: admin/views/index_admin.php:73
 msgid "Database"
 msgstr "БД"
 
-#: admin/views/index_admin.php:78 admin/views/index_admin.php:505
+#: admin/views/index_admin.php:76 admin/views/index_admin.php:420
 #: admin/views/tree_admin.php:80
 msgid "OK"
 msgstr "OK"
 
-#: admin/views/index_admin.php:79 admin/views/index_admin.php:148
+#: admin/views/index_admin.php:77 admin/views/index_admin.php:117
 msgid "Database name"
 msgstr "Название БД"
 
-#: admin/views/index_admin.php:85
+#: admin/views/index_admin.php:83
 #, php-format
 msgid ""
 "<b>There is no database connection! To connect the MySQL database to %s, "
@@ -4363,55 +4383,55 @@ msgstr ""
 "<b>Нет соединения с базой данных! Чтобы подключить базу данных MySQL к %s, "
 "заполните следующие параметры:</b>"
 
-#: admin/views/index_admin.php:120
+#: admin/views/index_admin.php:89
 msgid "Database setting"
 msgstr "Настройки БД"
 
-#: admin/views/index_admin.php:121
+#: admin/views/index_admin.php:90
 msgid "Database value"
 msgstr "Параметры БД"
 
-#: admin/views/index_admin.php:122
+#: admin/views/index_admin.php:91
 msgid "Example website provider"
 msgstr "Пример провайдера веб-сайта"
 
-#: admin/views/index_admin.php:123
+#: admin/views/index_admin.php:92
 msgid "Example for XAMPP"
 msgstr "Пример для XAMPP"
 
-#: admin/views/index_admin.php:127
+#: admin/views/index_admin.php:96
 msgid "Database host"
 msgstr "Адрес сервера БД"
 
-#: admin/views/index_admin.php:134
+#: admin/views/index_admin.php:103
 msgid "Database username"
 msgstr "Пользователь для подключения к БД"
 
-#: admin/views/index_admin.php:141
+#: admin/views/index_admin.php:110
 msgid "Database password"
 msgstr "Пароль для подключения к БД"
 
-#: admin/views/index_admin.php:157
+#: admin/views/index_admin.php:126
 msgid "At a local PC also install database"
 msgstr "На локальном компьютере возможно установить БД"
 
-#: admin/views/index_admin.php:161
+#: admin/views/index_admin.php:130
 msgid "YES, also install database"
 msgstr "ДА, установить БД"
 
-#: admin/views/index_admin.php:164
+#: admin/views/index_admin.php:133
 msgid "NO"
 msgstr "НЕТ"
 
-#: admin/views/index_admin.php:165 admin/views/maps_locations.php:633
+#: admin/views/index_admin.php:134 admin/views/maps_locations.php:633
 msgid "YES"
 msgstr "ДА"
 
-#: admin/views/index_admin.php:169
+#: admin/views/index_admin.php:138
 msgid "Save settings and connect to database"
 msgstr "Сохранить настройки и подключиться к БД"
 
-#: admin/views/index_admin.php:177
+#: admin/views/index_admin.php:146
 msgid ""
 "Sometimes it's needed to add these lines to a /php.ini and admin/php.ini "
 "files to activate the PDO driver:"
@@ -4419,152 +4439,126 @@ msgstr ""
 "Иногда для активации драйвера PDO необходимо добавить эти строки в файлы /"
 "php.ini и admin/php.ini:"
 
-#: admin/views/index_admin.php:187
+#: admin/views/index_admin.php:152
 msgid "The database has NOT been created!"
 msgstr "БД не была создана!"
 
-#: admin/views/index_admin.php:214
+#: admin/views/index_admin.php:180
 msgid "Continue installation"
 msgstr "Продолжить установку"
 
-#: admin/views/index_admin.php:234
+#: admin/views/index_admin.php:195
 msgid "Database tables"
 msgstr "Таблицы БД"
 
-#: admin/views/index_admin.php:238
+#: admin/views/index_admin.php:199
 #, php-format
 msgid "No %s tables found in database."
 msgstr "В базе данных не найдено %s таблиц."
 
-#: admin/views/index_admin.php:242
+#: admin/views/index_admin.php:203
 #, php-format
 msgid "Install %s database tables"
 msgstr "Установить таблицы базы данных %s"
 
-#: admin/views/index_admin.php:275
+#: admin/views/index_admin.php:236
 msgid "Size of statistics table"
 msgstr "Размер таблицы статистики"
 
-#: admin/views/index_admin.php:280
+#: admin/views/index_admin.php:241
 msgid "If needed remove old statistics."
 msgstr "Можно удалить старую статистику."
 
-#: admin/views/index_admin.php:303
+#: admin/views/index_admin.php:264
 #, fuzzy
 #| msgid "Restore database"
 msgid "Size of database"
 msgstr "Восстановление БД"
 
-#: admin/views/index_admin.php:309
+#: admin/views/index_admin.php:270
 msgid "This may take some time. Please wait..."
 msgstr "Восстановление займёт некоторое время. Пожалуйста ожидайте..."
 
-#: admin/views/index_admin.php:381
+#: admin/views/index_admin.php:342
 #, fuzzy
 #| msgid "Optimize table..."
 msgid "Optimize database."
 msgstr "Оптимизация таблицы..."
 
-#: admin/views/index_admin.php:407
+#: admin/views/index_admin.php:368
 #, fuzzy
 #| msgid "Database backup"
 msgid "Status of database backup"
 msgstr "Резервное копирование БД"
 
-#: admin/views/index_admin.php:414
+#: admin/views/index_admin.php:374
 #, fuzzy
 #| msgid "Database backup"
 msgid "Last database backup"
 msgstr "Резервное копирование БД"
 
-#: admin/views/index_admin.php:432
-msgid "Thumbnail libraries and tools"
-msgstr ""
-
-#: admin/views/index_admin.php:439
-msgid "Imagick (images):"
-msgstr ""
-
-#: admin/views/index_admin.php:444
-msgid "Ghostscript (PDF support):"
-msgstr ""
-
-#: admin/views/index_admin.php:449
-msgid "ffmpeg (movie support):"
-msgstr ""
-
-#: admin/views/index_admin.php:457
-msgid "GD (images):"
-msgstr ""
-
-#: admin/views/index_admin.php:466
-#, fuzzy
-#| msgid "No beta version available."
-msgid "No Thumbnail library available"
-msgstr "Бета-версия недоступна."
-
-#: admin/views/index_admin.php:496 admin/views/users.php:33
+#: admin/views/index_admin.php:411 admin/views/users.php:33
 msgid "Standard admin username and admin password is used."
 msgstr "Используется стандартное имя пользователя и пароль администратора."
 
-#: admin/views/index_admin.php:497
+#: admin/views/index_admin.php:412
 msgid "Change admin username and password."
 msgstr "Изменить имя и пароль стандартного администратора."
 
-#: admin/views/index_admin.php:499 admin/views/users.php:37
+#: admin/views/index_admin.php:414 admin/views/users.php:37
 msgid "Standard admin username is used."
 msgstr "Используется стандартное имя администратора."
 
-#: admin/views/index_admin.php:500
+#: admin/views/index_admin.php:415
 msgid "Change admin username."
 msgstr "Изменить имя администратора."
 
-#: admin/views/index_admin.php:502 admin/views/users.php:41
+#: admin/views/index_admin.php:417 admin/views/users.php:41
 msgid "Standard admin password is used."
 msgstr "Используется стандартный пароль администратора."
 
-#: admin/views/index_admin.php:503
+#: admin/views/index_admin.php:418
 msgid "Change admin password."
 msgstr "Сменить пароль администратора."
 
-#: admin/views/index_admin.php:521
+#: admin/views/index_admin.php:434
 msgid "Number of failed logins attempts last month"
 msgstr "Количество неудачных попыток входа"
 
-#: admin/views/index_admin.php:528
+#: admin/views/index_admin.php:441
 #, php-format
 msgid "%s security items"
 msgstr "%s элементы безопасности"
 
-#: admin/views/index_admin.php:534
+#: admin/views/index_admin.php:447
 msgid "Check admin account"
 msgstr "Проверка учётной записи администратора"
 
-#: admin/views/index_admin.php:550
+#: admin/views/index_admin.php:463
 msgid "Failed login attempts"
 msgstr "Неудачные попытки входа"
 
-#: admin/views/index_admin.php:571
+#: admin/views/index_admin.php:484
 msgid "Login control"
 msgstr "Управление авторизацией"
 
-#: admin/views/index_admin.php:578
+#: admin/views/index_admin.php:491
 msgid "At the moment you are logged in through PHP-MySQL."
 msgstr "Сейчас Вы авторизованы через PHP-MySQL."
 
-#: admin/views/index_admin.php:580
+#: admin/views/index_admin.php:493
 msgid "At the moment you are logged in through an .htacces file."
 msgstr "Сейчас Вы авторизованы через файл .htacces."
 
-#: admin/views/index_admin.php:582
+#: admin/views/index_admin.php:495
 msgid "The folder \"admin\" has NOT YET been secured."
 msgstr "Папка \"admin\" недостаточно защищена."
 
-#: admin/views/index_admin.php:588
+#: admin/views/index_admin.php:501
 msgid "INFO"
 msgstr "ИНФО"
 
-#: admin/views/index_admin.php:594
+#: admin/views/index_admin.php:507
 #, php-format
 msgid ""
 "After installation of the tables (click on the left at Install) the admin "
@@ -4585,11 +4579,11 @@ msgstr ""
 "<br>\n"
 "Сделайте файл .htaccess:"
 
-#: admin/views/index_admin.php:600
+#: admin/views/index_admin.php:513
 msgid "Secured website"
 msgstr "Безопасность сайта"
 
-#: admin/views/index_admin.php:606
+#: admin/views/index_admin.php:519
 msgid ""
 "Next, you need a file with user names and passwords.<br>\n"
 "For example go to: http://www.htaccesstools.com/htpasswd-generator/<br>\n"
@@ -4600,40 +4594,40 @@ msgstr ""
 "generator/<br>\n"
 "Файл .htpasswd будет выглядеть примерно так:<br>"
 
-#: admin/views/index_admin.php:613
+#: admin/views/index_admin.php:526
 msgid "You can also try this password generator:"
 msgstr "Можно воспользоваться генератором этим паролей:"
 
-#: admin/views/index_admin.php:617
+#: admin/views/index_admin.php:530
 msgid "Generate new ht-password"
 msgstr "Генерировать новый ht-password"
 
-#: admin/views/index_admin.php:644 admin/views/index_admin.php:650
-#: admin/views/index_admin.php:654
+#: admin/views/index_admin.php:557 admin/views/index_admin.php:563
+#: admin/views/index_admin.php:567
 #, php-format
 msgid "Debug %s pages"
 msgstr "Страницы %s отладки"
 
-#: admin/views/index_admin.php:649
+#: admin/views/index_admin.php:562
 msgid "OK (option is OFF)"
 msgstr "OK (опция отключена)"
 
-#: admin/views/index_admin.php:653
+#: admin/views/index_admin.php:566
 msgid "UNSAFE (option is ON)."
 msgstr "НЕБЕЗОПАСНО (опция включена)."
 
-#: admin/views/index_admin.php:684
+#: admin/views/index_admin.php:597
 msgid "Status tree"
 msgstr "Статус дерева"
 
-#: admin/views/index_admin.php:695 admin/views/tree_admin.php:84
+#: admin/views/index_admin.php:608 admin/views/tree_admin.php:84
 msgid ""
 "This tree does not yet contain any data or has not been imported properly!"
 msgstr ""
 "Генеалогическое дерево не содержит информации либо было некорректно "
 "импортировано!"
 
-#: admin/views/index_admin.php:701 admin/views/trees.php:55
+#: admin/views/index_admin.php:614 admin/views/trees.php:55
 msgid "Import Gedcom file"
 msgstr "Импорт Gedcom файла"
 
@@ -4744,11 +4738,11 @@ msgstr "Создание табилц:"
 #: admin/views/install.php:642 admin/views/install.php:660
 #: admin/views/install.php:683 admin/views/install.php:702
 #: admin/views/install.php:731 admin/views/install.php:749
-#: admin/views/install.php:787 admin/views/install.php:816
-#: admin/views/install.php:875 admin/views/install.php:932
-#: admin/views/install.php:966 admin/views/install.php:996
-#: admin/views/install.php:1035 admin/views/install.php:1058
-#: admin/views/install.php:1092 admin/views/install.php:1125
+#: admin/views/install.php:791 admin/views/install.php:820
+#: admin/views/install.php:879 admin/views/install.php:936
+#: admin/views/install.php:970 admin/views/install.php:1000
+#: admin/views/install.php:1039 admin/views/install.php:1062
+#: admin/views/install.php:1096 admin/views/install.php:1129
 #, php-format
 msgid "create table: %s."
 msgstr "создание таблицы: %s."
@@ -4760,7 +4754,7 @@ msgstr "создание таблицы: %s."
 msgid "filling table: %s."
 msgstr "создание таблицы: %s."
 
-#: admin/views/install.php:1157
+#: admin/views/install.php:1161
 msgid "No errors above? This means that the database has been processed!"
 msgstr "Нет ошибок выше? Это означает, что база данных обработана!"
 
@@ -4858,8 +4852,8 @@ msgstr "Имя пользователя или адрес электронной
 msgid "Two factor authentication (2FA) code if needed"
 msgstr ""
 
-#: admin/views/login.php:35 views/help.php:119 views/layout.php:620
-#: views/layout.php:623 views/login.php:16 views/login.php:50
+#: admin/views/login.php:35 views/help.php:119 views/layout.php:618
+#: views/layout.php:621 views/login.php:16 views/login.php:50
 msgid "Login"
 msgstr "Вход"
 
@@ -4966,15 +4960,17 @@ msgstr "Начато добавление в базу"
 msgid ""
 "<b>A location database could not be created.</b>\n"
 "<p>This could mean that the PHP function \"allow_url_fopen\" was disabled by "
-"your webhost for security considerations and the PHP extension \"curl\" "
-"(which is an alternative to allow_url_fopen) is not loaded on the server.\n"
+"your webhost for security considerations and the PHP extension "
+"\"curl\" (which is an alternative to allow_url_fopen) is not loaded on the "
+"server.\n"
 "<p>You could contact your webhost and request to either have "
 "\"allow_url_fopen\" enabled or \"curl\" loaded."
 msgstr ""
 "<b>Геолокационная база данных не может быть создана.</b>\n"
 "<p>Это может произойти из-за того, что PHP функция  \"allow_url_fopen\" "
-"отключенга на хостинге из соображений безопасности и расширение PHP \"curl\" "
-"(являющееся альтернативой allow_url_fopen) не установлено на сервере.\n"
+"отключенга на хостинге из соображений безопасности и расширение PHP "
+"\"curl\" (являющееся альтернативой allow_url_fopen) не установлено на "
+"сервере.\n"
 "<p>Вы мождете связаться с администратором хостинга и либо рапзрешить "
 "\"allow_url_fopen\", либо установить расширение \"curl\"."
 
@@ -5207,7 +5203,7 @@ msgstr ""
 msgid "API key"
 msgstr "API key"
 
-#: admin/views/menu.php:44 views/help.php:64 views/layout.php:484
+#: admin/views/menu.php:44 views/help.php:64 views/layout.php:482
 msgid "Home"
 msgstr "Главная"
 
@@ -5215,11 +5211,11 @@ msgstr "Главная"
 msgid "Website"
 msgstr "Вебсайт"
 
-#: admin/views/menu.php:52 views/layout.php:650
+#: admin/views/menu.php:52 views/layout.php:648
 msgid "Logoff"
 msgstr "Выход"
 
-#: admin/views/menu.php:61 views/layout.php:637
+#: admin/views/menu.php:61 views/layout.php:635
 msgid "Control"
 msgstr "Управление"
 
@@ -5516,7 +5512,7 @@ msgstr "Gmail: TLS"
 msgid "SMTP: debugging"
 msgstr "SMTP: отладка"
 
-#: admin/views/settings.php:488
+#: admin/views/settings.php:488 admin/views/thumbs.php:81
 msgid "Off"
 msgstr "Выключенный"
 
@@ -5603,7 +5599,7 @@ msgstr "Венгерский - в отчётах и в списках: Фами�
 msgid "Default timeline file (per language)"
 msgstr "Файл временной шкалы по умолчанию (для каждого языка)"
 
-#: admin/views/settings.php:573 admin/views/thumbs.php:350
+#: admin/views/settings.php:573 admin/views/thumbs.php:452
 #: admin/views/tree_admin.php:18 admin/views/tree_text.php:17
 msgid "Default"
 msgstr "По-умолчанию"
@@ -5767,7 +5763,7 @@ msgid "Selected family tree"
 msgstr "Выбранное генеалогическое дерево"
 
 #: admin/views/settings_homepage.php:89 admin/views/settings_homepage.php:205
-#: app/model/tree_index.php:119 views/help.php:72 views/layout.php:521
+#: app/model/tree_index.php:119 views/help.php:72 views/layout.php:519
 msgid "Names"
 msgstr "Имена"
 
@@ -5777,7 +5773,7 @@ msgid "Today in history"
 msgstr "Этот день в истории"
 
 #: admin/views/settings_homepage.php:91 admin/views/settings_homepage.php:207
-#: app/model/tree_index.php:98 views/layout.php:386
+#: app/model/tree_index.php:98 views/layout.php:384
 msgid "Favourites"
 msgstr "Избранное"
 
@@ -6090,8 +6086,8 @@ msgstr "Уникальные посещения - по стране происх
 msgid "Country of origin"
 msgstr "Страна происхождения"
 
-#: admin/views/statistics_general.php:160 app/model/descendant.php:446
-#: views/list.php:355
+#: admin/views/statistics_general.php:160 admin/views/thumbs.php:82
+#: app/model/descendant.php:446 views/list.php:355
 msgid "Unknown"
 msgstr "Неизвестно"
 
@@ -6147,88 +6143,120 @@ msgstr "УДАЛИТЬ статистику"
 msgid "User agent information"
 msgstr "Информация о браузере посетителя"
 
-#: admin/views/thumbs.php:24 admin/views/thumbs.php:141
-#: admin/views/thumbs.php:148
+#: admin/views/thumbs.php:24 admin/views/thumbs.php:265
 msgid "Show thumbnails"
 msgstr "Отображать миниатюры"
 
-#: admin/views/thumbs.php:48 admin/views/tree_data.php:24
+#: admin/views/thumbs.php:52 admin/views/tree_data.php:24
 msgid "Path to the pictures"
 msgstr "Путь к изображениям"
 
-#: admin/views/thumbs.php:71 admin/views/tree_data.php:37
-#, php-format
-msgid ""
-"Example of picture path:<br>\n"
-"www.myhomepage.nl/humo-gen/ => folder for %s files.<br>\n"
-"www.myhomepage.nl/pictures/ => folder for pictures.<br>\n"
-"Use a relative path, exactly as shown here: <b>../pictures/</b>"
-msgstr ""
-"Пример пути к изображению:<br>\n"
-"www.myhomepage.nl/humo-gen/ => папка для %s файлов.<br>\n"
-"www.myhomepage.nl/pictures/ => папка для картинок.<br>\n"
-"Используйте относительный путь, как показано здесь: <b>../pictures/</b>"
-
-#: admin/views/thumbs.php:90
-msgid "Subdirectories:"
-msgstr ""
-
-#: admin/views/thumbs.php:102
+#: admin/views/thumbs.php:71
 msgid "Status of picture path"
 msgstr "Статус пути к изображениям"
 
-#: admin/views/thumbs.php:106
-msgid "Picture path exists."
-msgstr "Путь к изображениям существует."
+#: admin/views/thumbs.php:80
+msgid "On"
+msgstr ""
 
-#: admin/views/thumbs.php:113
+#: admin/views/thumbs.php:88
+#, fuzzy
+#| msgid "Medical condition"
+msgid "Media directory"
+msgstr "Медицинское состояние"
+
+#: admin/views/thumbs.php:91
+msgid "Safe. Path protected by rewrite engine."
+msgstr ""
+
+#: admin/views/thumbs.php:94
+msgid "Unsafe. Path inside DocRoot."
+msgstr ""
+
+#: admin/views/thumbs.php:97
+msgid "Safe. Path outside DocRoot."
+msgstr ""
+
+#: admin/views/thumbs.php:98
+msgid "Yes - Use server rewrite"
+msgstr ""
+
+#: admin/views/thumbs.php:98
+msgid "Use HuMo rewrite"
+msgstr ""
+
+#: admin/views/thumbs.php:101
 msgid "Picture path doesn't exist!"
 msgstr "Путь к изображениям не существует!"
 
-#: admin/views/thumbs.php:149
-msgid "You can change filenames here."
-msgstr "Вы можете изменить именования файлов."
+#: admin/views/thumbs.php:110
+msgid "Rewrite media path"
+msgstr ""
 
-#: admin/views/thumbs.php:158
+#: admin/views/thumbs.php:120
 msgid "To show pictures, also check the user-group settings: "
 msgstr ""
 "Для отображения изображений проверьте настройки пользовательских групп:"
 
-#: admin/views/thumbs.php:166
-msgid ""
-"- Creating thumbnails<br>\n"
-"- ATTENTION: it may be necessary to (temporarily) change access to the "
-"folder with the pictures (rwxrwxrwx)<br>\n"
-"- Sometimes the php.ini has to be changed slightly, remove the ; before the "
-"line with:"
+#: admin/views/thumbs.php:156
+msgid "Test"
 msgstr ""
-"- Создание миниатюр<br>\n"
-"- ВНИМАНИЕ: может потребоваться (временно) изменить права доступа в папке с "
-"фотографиями (rwxrwxrwx)<br>\n"
-"- Иногда необходимо в файле php.ini удалить комментирующий символ ; в начале "
-"строки с:"
 
-#: admin/views/thumbs.php:194
+#: admin/views/thumbs.php:159
+msgid "Imagick (images)"
+msgstr ""
+
+#: admin/views/thumbs.php:169
+msgid "Ghostscript (PDF support)"
+msgstr ""
+
+#: admin/views/thumbs.php:178
+msgid "ffmpeg (movie support)"
+msgstr ""
+
+#: admin/views/thumbs.php:188
+msgid "GD (images)"
+msgstr ""
+
+#: admin/views/thumbs.php:206
+msgid "Use thumbnails [create and display]?"
+msgstr ""
+
+#: admin/views/thumbs.php:225
+msgid "Resize pictures on upload [set maximum width and height]?"
+msgstr ""
+
+#: admin/views/thumbs.php:239
+#, fuzzy
+#| msgid "No beta version available."
+msgid "No Thumbnail library available"
+msgstr "Бета-версия недоступна."
+
+#: admin/views/thumbs.php:258
+msgid "You can change filenames here."
+msgstr "Вы можете изменить именования файлов."
+
+#: admin/views/thumbs.php:296
 msgid "Photos"
 msgstr "Фотографии"
 
-#: admin/views/thumbs.php:264
+#: admin/views/thumbs.php:366
 msgid "Prefix has to be 2 letters and _"
 msgstr "Префикс должен содержать 2 буквы и символ _"
 
-#: admin/views/thumbs.php:271
+#: admin/views/thumbs.php:373
 msgid "When creating a category you have to give it a name"
 msgstr "При создании категории необходимо задать имя"
 
-#: admin/views/thumbs.php:282
+#: admin/views/thumbs.php:384
 msgid "A category with this prefix already exists!"
 msgstr "Категория с таким префиксом уже существует!"
 
-#: admin/views/thumbs.php:300
+#: admin/views/thumbs.php:402
 msgid "Create categories for your photo albums"
 msgstr "Создать категории для фотоальбома"
 
-#: admin/views/thumbs.php:306
+#: admin/views/thumbs.php:408
 msgid ""
 "Here you can create categories for all your photo albums.</li><li><b>A "
 "category will not be displayed in the photobook menu unless there is at "
@@ -6260,39 +6288,69 @@ msgstr ""
 "li><li>Изображения, которые вы хотите отображать в категории фотографий по "
 "умолчанию, не нуждаются в префиксе."
 
-#: admin/views/thumbs.php:307
+#: admin/views/thumbs.php:409
 msgid ""
 "A (sub)directory could also be a category. Example: category prefix = ab_, "
 "the directory name = ab."
 msgstr ""
 
-#: admin/views/thumbs.php:315
+#: admin/views/thumbs.php:417
 msgid "Category name"
 msgstr "Наименование категории"
 
-#: admin/views/thumbs.php:385
+#: admin/views/thumbs.php:487
 msgid "default - without prefix"
 msgstr "по-умолчанию - без префикса"
 
-#: admin/views/thumbs.php:450
+#: admin/views/thumbs.php:552
 msgid "Do you really want to delete category:"
 msgstr "Вы действительно хотите удалить категорию:"
 
-#: admin/views/thumbs.php:457
+#: admin/views/thumbs.php:559
 msgid "Save changes"
 msgstr "Сохранить изменения"
 
-#: admin/views/thumbs.php:495 admin/views/thumbs.php:497
+#: admin/views/thumbs.php:618
+#, fuzzy
+#| msgid "Deleted location:"
+msgid "Deleted file:"
+msgstr "Удалённое место:"
+
+#: admin/views/thumbs.php:622 admin/views/thumbs.php:624
 msgid "Changed filename:"
 msgstr "Изменено имя файла:"
 
-#: admin/views/thumbs.php:495 admin/views/thumbs.php:497
+#: admin/views/thumbs.php:622 admin/views/thumbs.php:624
 msgid "into filename:"
 msgstr "на имя файла:"
 
-#: admin/views/thumbs.php:600
+#: admin/views/thumbs.php:716
+#, fuzzy
+#| msgid "Edit tree?"
+msgid "Used in tree"
+msgstr "Редактировать древо?"
+
+#: admin/views/thumbs.php:763
 msgid "Change filename"
 msgstr "Изменение имени файла"
+
+#: admin/views/thumbs.php:771
+#, fuzzy
+#| msgid "Not living"
+msgid "Not in use"
+msgstr "Не живущий"
+
+#: admin/views/thumbs.php:772
+#, fuzzy
+#| msgid "Delete"
+msgid "Delete file:"
+msgstr "Удалить"
+
+#: admin/views/thumbs.php:772
+#, fuzzy
+#| msgid "Delete"
+msgid "Delete file"
+msgstr "Удалить"
 
 #: admin/views/tree_admin.php:2
 msgid ""
@@ -6438,7 +6496,7 @@ msgid "All editors"
 msgstr "Редактор адресов"
 
 #: admin/views/tree_check_changes.php:241 views/help.php:68
-#: views/layout.php:516 views/statistics.php:24
+#: views/layout.php:514 views/statistics.php:24
 msgid "Persons"
 msgstr "Персоны"
 
@@ -6700,8 +6758,8 @@ msgstr "дата погребения "
 #: admin/views/tree_check_consistency.php:481
 #: admin/views/tree_check_consistency.php:610
 #: admin/views/tree_check_consistency.php:614
-#: admin/views/tree_check_consistency.php:658 app/model/timeline.php:221
-#: app/model/timeline.php:338 include/marriage_cls.php:786
+#: admin/views/tree_check_consistency.php:658 app/model/timeline.php:202
+#: app/model/timeline.php:319 include/marriage_cls.php:785
 #: views/ancestor_sheet_pdf.php:373
 msgid "marriage"
 msgstr "Брак "
@@ -6737,22 +6795,22 @@ msgstr "первый ребёнок матери"
 
 #: admin/views/tree_check_consistency.php:621
 #: admin/views/tree_check_consistency.php:625
-#: admin/views/tree_check_consistency.php:665 app/model/timeline.php:227
-#: app/model/timeline.php:344
+#: admin/views/tree_check_consistency.php:665 app/model/timeline.php:208
+#: app/model/timeline.php:325
 msgid "marriage notice"
 msgstr "уведомление о браке"
 
 #: admin/views/tree_check_consistency.php:631
 #: admin/views/tree_check_consistency.php:635
-#: admin/views/tree_check_consistency.php:672 app/model/timeline.php:224
-#: app/model/timeline.php:341
+#: admin/views/tree_check_consistency.php:672 app/model/timeline.php:205
+#: app/model/timeline.php:322
 msgid "church marriage"
 msgstr "венчание"
 
 #: admin/views/tree_check_consistency.php:641
 #: admin/views/tree_check_consistency.php:645
-#: admin/views/tree_check_consistency.php:679 app/model/timeline.php:230
-#: app/model/timeline.php:347
+#: admin/views/tree_check_consistency.php:679 app/model/timeline.php:211
+#: app/model/timeline.php:328
 msgid "church marriage notice"
 msgstr "уведомление о церковном браке"
 
@@ -6981,23 +7039,23 @@ msgid ""
 "generated!"
 msgstr "E-mail address не будет отображаться на сайте!"
 
-#: admin/views/tree_data.php:46
+#: admin/views/tree_data.php:31
 msgid "Tree privacy"
 msgstr "Приватность древа"
 
-#: admin/views/tree_data.php:49
+#: admin/views/tree_data.php:34
 msgid "Standard"
 msgstr "Стандартно"
 
-#: admin/views/tree_data.php:50
+#: admin/views/tree_data.php:35
 msgid "FILTER ALL persons"
 msgstr "СКРЫТЬ ВСЕ персоны"
 
-#: admin/views/tree_data.php:51
+#: admin/views/tree_data.php:36
 msgid "DISPLAY ALL persons"
 msgstr "ОТОБРАЖАТЬ ВСЕ персоны"
 
-#: admin/views/tree_data.php:53
+#: admin/views/tree_data.php:38
 msgid "This option is valid for ALL persons in this tree!"
 msgstr "Эта опция действительна для ВСЕХ пользователей в этом дереве!"
 
@@ -7810,13 +7868,13 @@ msgid "Unblock IP address"
 msgstr "Разблокировать IP адрес:"
 
 #: app/controller/ancestor_chartController.php:25
-#: app/controller/ancestor_sheetController.php:28 app/model/ancestor.php:150
+#: app/controller/ancestor_sheetController.php:28 app/model/ancestor.php:141
 #: views/ancestor_sheet.php:250 views/ancestor_sheet_pdf.php:295
 #: views/ancestor_sheet_pdf.php:316 views/help.php:34
 msgid "Ancestor sheet"
 msgstr "Таблица предков"
 
-#: app/controller/ancestor_reportController.php:35 app/model/ancestor.php:131
+#: app/controller/ancestor_reportController.php:35 app/model/ancestor.php:122
 #: include/person_cls.php:1037 include/person_cls.php:1038
 #: views/ancestor_report_pdf.php:67 views/ancestor_report_pdf.php:82
 #: views/ancestor_report_rtf.php:62 views/help.php:22
@@ -7834,11 +7892,11 @@ msgstr "Вы не авторизованы для просмотра этой с
 msgid "Address by person"
 msgstr "Адрес персоны"
 
-#: app/model/ancestor.php:141
+#: app/model/ancestor.php:132
 msgid "Ancestor chart"
 msgstr "График предков"
 
-#: app/model/ancestor.php:157 views/help.php:38
+#: app/model/ancestor.php:148 views/help.php:38
 msgid "Fanchart"
 msgstr "Круговой график"
 
@@ -7871,7 +7929,7 @@ msgid "%s Mail form."
 msgstr "%s  Почтовая форма"
 
 #: app/model/mailform.php:79 app/model/register.php:92
-#: app/model/user_settings.php:85 views/family.php:1241
+#: app/model/user_settings.php:76 views/family.php:1241
 #, php-format
 msgid "Message sent through %s from the website."
 msgstr "Сообщение, отправленное через %s с веб-сайта."
@@ -7884,7 +7942,7 @@ msgstr "Посленяя просмотренная семья:"
 msgid "Receive newsletter"
 msgstr "Получать новостную рассылку"
 
-#: app/model/maps.php:284
+#: app/model/maps.php:275
 msgid "Results are limited."
 msgstr ""
 
@@ -7892,7 +7950,7 @@ msgstr ""
 msgid "ERROR: username already exists"
 msgstr "ОШИБКА: пользователь уже существует"
 
-#: app/model/register.php:59 app/model/user_settings.php:34
+#: app/model/register.php:59 app/model/user_settings.php:25
 msgid "ERROR: No identical passwords"
 msgstr "ОШИБКА: введённые пароли различаются"
 
@@ -7904,104 +7962,104 @@ msgstr "ОШИБКА: пароль должен состоять минимум 
 msgid "New registered user"
 msgstr "Новый зарегистрированный пользователь"
 
-#: app/model/reset_password.php:55
+#: app/model/reset_password.php:35
 msgid "Your email address is not correct"
 msgstr "Ваш email адрес некорректен"
 
-#: app/model/reset_password.php:61 views/mailform.php:35 views/register.php:51
+#: app/model/reset_password.php:41 views/mailform.php:35 views/register.php:51
 msgid "Wrong answer to the block-spam question! Try again..."
 msgstr "Неверный ответ на анти-спам вопрос! Попробйте ещё раз..."
 
-#: app/model/reset_password.php:70
+#: app/model/reset_password.php:50
 msgid "This email address was not found in our database."
 msgstr "Этот email адрес не найден в базе данных."
 
-#: app/model/reset_password.php:70 app/model/reset_password.php:72
-#: app/model/reset_password.php:138 views/reset_password.php:32
+#: app/model/reset_password.php:50 app/model/reset_password.php:52
+#: app/model/reset_password.php:118 views/reset_password.php:32
 #: views/reset_password.php:178
 msgid "Please contact the site owner."
 msgstr "Свяжитесь с владельцем сайта."
 
-#: app/model/reset_password.php:72
+#: app/model/reset_password.php:52
 msgid "Password activation failed because mail address is used multiple times."
 msgstr ""
 
-#: app/model/reset_password.php:138
+#: app/model/reset_password.php:118
 msgid "Password activation failed."
 msgstr "Активация пароля не успешна."
 
-#: app/model/reset_password.php:142
+#: app/model/reset_password.php:122
 msgid "Password must be at least 4 char and maximum 15 char long"
 msgstr "Пароль должен содержать не менее 4 символов и не более 15 символов"
 
-#: app/model/reset_password.php:146
+#: app/model/reset_password.php:126
 msgid "The passwords don't match!"
 msgstr "Пароли не совпадают"
 
-#: app/model/timeline.php:80 app/model/timeline.php:296
-#: app/model/timeline.php:404
+#: app/model/timeline.php:61 app/model/timeline.php:277
+#: app/model/timeline.php:385
 msgid "birth"
 msgstr "рождение"
 
-#: app/model/timeline.php:113 app/model/timeline.php:210
-#: app/model/timeline.php:308 app/model/timeline.php:415
+#: app/model/timeline.php:94 app/model/timeline.php:191
+#: app/model/timeline.php:289 app/model/timeline.php:396
 msgid "death"
 msgstr "смерть"
 
-#: app/model/timeline.php:138 app/model/timeline.php:159
-#: app/model/timeline.php:170
+#: app/model/timeline.php:119 app/model/timeline.php:140
+#: app/model/timeline.php:151
 msgid "Date of death unknown"
 msgstr "Дата смерти не известна"
 
-#: app/model/timeline.php:148 app/model/timeline.php:158
-#: app/model/timeline.php:169
+#: app/model/timeline.php:129 app/model/timeline.php:139
+#: app/model/timeline.php:150
 msgid "Date of birth unknown"
 msgstr "Дата рождения неизвестна"
 
 # Use a spouse male text here. There is no seperate male/ female text in
 # english.
-#: app/model/timeline.php:205
+#: app/model/timeline.php:186
 msgid "SPOUSE_MALE"
 msgstr "Супруг"
 
 # Use a spouse male text here. There is no seperate male/ female text in
 # english.
-#: app/model/timeline.php:205
+#: app/model/timeline.php:186
 msgid "SPOUSE_FEMALE"
 msgstr "Супруга"
 
-#: app/model/timeline.php:233 app/model/timeline.php:350
+#: app/model/timeline.php:214 app/model/timeline.php:331
 msgid "partnership"
 msgstr "партнёрство"
 
-#: app/model/timeline.php:241 app/model/timeline.php:358
+#: app/model/timeline.php:222 app/model/timeline.php:339
 msgid "with "
 msgstr "с  "
 
-#: app/model/timeline.php:272 views/relations.php:1704 views/relations.php:1737
+#: app/model/timeline.php:253 views/relations.php:1704 views/relations.php:1737
 #: views/relations.php:1790 views/relations.php:1833 views/relations.php:1851
 #: views/relations.php:3181 views/relations.php:3513
 msgid "son"
 msgstr "сын "
 
-#: app/model/timeline.php:274 views/relations.php:1704 views/relations.php:3184
+#: app/model/timeline.php:255 views/relations.php:1704 views/relations.php:3184
 #: views/relations.php:3516
 msgid "daughter"
 msgstr "дочь "
 
-#: app/model/timeline.php:276
+#: app/model/timeline.php:257
 msgid "child "
 msgstr "ребёнок"
 
-#: app/model/timeline.php:392
+#: app/model/timeline.php:373
 msgid "grandson"
 msgstr "внук"
 
-#: app/model/timeline.php:394
+#: app/model/timeline.php:375
 msgid "granddaughter"
 msgstr "внучка"
 
-#: app/model/timeline.php:396 views/relations.php:1870 views/relations.php:1874
+#: app/model/timeline.php:377 views/relations.php:1870 views/relations.php:1874
 msgid "grandchild"
 msgstr "внук/внучка "
 
@@ -8060,58 +8118,47 @@ msgstr "Минимум: 3 символа."
 msgid "All but selected tree"
 msgstr "Все, кроме выбранного дерева"
 
-#: app/model/tree_index.php:632 views/layout.php:367 views/layout.php:371
+#: app/model/tree_index.php:632 views/layout.php:365 views/layout.php:369
 #: views/list.php:166 views/list.php:283
 msgid "Advanced search"
 msgstr "Расширенный поиск"
 
-#: app/model/tree_index.php:682
+#: app/model/tree_index.php:716 app/model/tree_index.php:742
 #, fuzzy
 #| msgid "Photo's per page"
 msgid "Go to person&apos;s page"
 msgstr "Фотографии на странице"
 
-#: app/model/tree_index.php:845
+#: app/model/tree_index.php:924
 msgid "Patronyms"
 msgstr "Отчества"
 
-#: app/model/tree_index.php:956 app/model/tree_index.php:983
+#: app/model/tree_index.php:1035 app/model/tree_index.php:1062
 #: views/anniversary.php:151 views/anniversary.php:312 views/list.php:859
 #: views/list_places_families.php:245
 msgid " persons are not shown due to privacy settings"
 msgstr "персона не отображена вследствие настроек приватности"
 
-#: app/model/tree_index.php:999
-#, fuzzy, php-format
-#| msgid "This database is made by %s, a freeware genealogical  program"
-msgid "This website is created using %s, a freeware genealogical  program"
-msgstr "БД создана в %s, свободной генеалогической программе"
-
-#: app/model/tree_index.php:1005
-#, php-format
-msgid "European law: %s cookie information"
-msgstr "Европейское законодательство: информация о файлах cookie %s"
-
-#: app/model/user_settings.php:49
+#: app/model/user_settings.php:40
 msgid "Your settings are updated!"
 msgstr "Ваши настройки обновлены!"
 
-#: app/model/user_settings.php:64 app/model/user_settings.php:72
+#: app/model/user_settings.php:55 app/model/user_settings.php:63
 msgid ""
 "Wrong 2FA code. Please enter valid 2FA code to enable 2FA authentication."
 msgstr ""
 
-#: app/model/user_settings.php:68
+#: app/model/user_settings.php:59
 #, fuzzy
 #| msgid "SMTP: authentication"
 msgid "Enabled 2FA authentication."
 msgstr "SMTP: аутентификация"
 
-#: app/model/user_settings.php:80
+#: app/model/user_settings.php:71
 msgid "Updated profile"
 msgstr "Обновлённый профиль"
 
-#: app/model/user_settings.php:87
+#: app/model/user_settings.php:78
 msgid "User updated his/ her profile"
 msgstr "Пользователь обновил профиль"
 
@@ -8477,62 +8524,62 @@ msgstr "Ярцайт"
 msgid "Non marital"
 msgstr "Внебрачный"
 
-#: include/marriage_cls.php:261 include/marriage_cls.php:263
-#: include/marriage_cls.php:265 views/list_places_families.php:47
+#: include/marriage_cls.php:260 include/marriage_cls.php:262
+#: include/marriage_cls.php:264 views/list_places_families.php:47
 msgid "Marriage notice"
 msgstr "Уведомление о браке"
 
-#: include/marriage_cls.php:450 include/marriage_cls.php:452
-#: include/marriage_cls.php:454 views/list_places_families.php:63
+#: include/marriage_cls.php:449 include/marriage_cls.php:451
+#: include/marriage_cls.php:453 views/list_places_families.php:63
 #: views/list_places_families.php:213
 msgid "Married notice (religious)"
 msgstr "Уведомление о браке (венчание)"
 
-#: include/marriage_cls.php:534 include/marriage_cls.php:536
-#: include/marriage_cls.php:538 views/list_places_families.php:71
+#: include/marriage_cls.php:533 include/marriage_cls.php:535
+#: include/marriage_cls.php:537 views/list_places_families.php:71
 #: views/list_places_families.php:214
 msgid "Married (religious)"
 msgstr "Женат (повенчан)"
 
-#: include/marriage_cls.php:544 include/marriage_cls.php:545
+#: include/marriage_cls.php:543 include/marriage_cls.php:544
 msgid "religion: "
 msgstr "Религия;"
 
-#: include/marriage_cls.php:596
+#: include/marriage_cls.php:595
 msgid "from:"
 msgstr "от:"
 
-#: include/marriage_cls.php:601 include/marriage_cls.php:603
-#: include/marriage_cls.php:605 include/marriage_cls.php:832
-#: include/marriage_cls.php:833
+#: include/marriage_cls.php:600 include/marriage_cls.php:602
+#: include/marriage_cls.php:604 include/marriage_cls.php:831
+#: include/marriage_cls.php:832
 msgid "divorced"
 msgstr "разведенный"
 
-#: include/marriage_cls.php:615 include/marriage_cls.php:616
-#: include/marriage_cls.php:819
+#: include/marriage_cls.php:614 include/marriage_cls.php:615
+#: include/marriage_cls.php:818
 msgid "Married/ Related"
 msgstr "Женат/ Родственник"
 
-#: include/marriage_cls.php:772 include/person_cls.php:1266 views/list.php:1097
+#: include/marriage_cls.php:771 include/person_cls.php:1266 views/list.php:1097
 #: views/list_places_families.php:395
 msgid "1st"
 msgstr "1-й"
 
-#: include/marriage_cls.php:775 include/person_cls.php:1268 views/list.php:1099
+#: include/marriage_cls.php:774 include/person_cls.php:1268 views/list.php:1099
 #: views/list_places_families.php:397 views/relations.php:1631
 #: views/relations.php:2082 views/relations.php:2285 views/relations.php:2441
 #: views/relations.php:2893
 msgid "2nd"
 msgstr "2-й"
 
-#: include/marriage_cls.php:778 include/person_cls.php:1270 views/list.php:1101
+#: include/marriage_cls.php:777 include/person_cls.php:1270 views/list.php:1101
 #: views/list_places_families.php:399 views/relations.php:1634
 #: views/relations.php:2085 views/relations.php:2288 views/relations.php:2444
 #: views/relations.php:2896
 msgid "3rd"
 msgstr "3-й"
 
-#: include/marriage_cls.php:781 include/person_cls.php:1272 views/list.php:1103
+#: include/marriage_cls.php:780 include/person_cls.php:1272 views/list.php:1103
 #: views/list_places_families.php:401 views/relations.php:1307
 #: views/relations.php:1638 views/relations.php:2089 views/relations.php:2661
 #: views/relations.php:2765 views/relations.php:2900 views/relations.php:3645
@@ -8540,15 +8587,15 @@ msgstr "3-й"
 msgid "th"
 msgstr "-й"
 
-#: include/marriage_cls.php:790
+#: include/marriage_cls.php:789
 msgid "Married "
 msgstr "Женат"
 
-#: include/marriage_cls.php:798 include/marriage_cls.php:802
+#: include/marriage_cls.php:797 include/marriage_cls.php:801
 msgid "related"
 msgstr "связанный"
 
-#: include/marriage_cls.php:814
+#: include/marriage_cls.php:813
 msgid "married/ related"
 msgstr "женат/ родственник"
 
@@ -8577,7 +8624,7 @@ msgid "Timeline"
 msgstr "Список исторических событий"
 
 #: include/person_cls.php:1059 include/person_cls.php:1060 views/help.php:100
-#: views/layout.php:592
+#: views/layout.php:590
 msgid "Relationship calculator"
 msgstr "Расчёт родства"
 
@@ -8586,7 +8633,7 @@ msgstr "Расчёт родства"
 msgid "Hourglass chart"
 msgstr "График-песочные часы"
 
-#: include/person_cls.php:1091 include/person_cls.php:1092 views/layout.php:644
+#: include/person_cls.php:1091 include/person_cls.php:1092 views/layout.php:642
 msgid "Admin"
 msgstr "Администратор"
 
@@ -8705,10 +8752,6 @@ msgstr "Residences (family)"
 #| msgid "Phone"
 msgid "phone"
 msgstr "Телефон"
-
-#: include/show_picture.php:200
-msgid "Missing image"
-msgstr "Изображение отсутствует"
 
 #: include/show_sources.php:62 include/show_sources.php:165
 #: include/show_sources.php:249
@@ -9128,7 +9171,7 @@ msgstr "Супруги"
 msgid "No results found for this month"
 msgstr "За этот месяц результатов не найдено"
 
-#: views/cookies.php:1 views/layout.php:811
+#: views/cookies.php:1 views/layout.php:822
 #, php-format
 msgid "%s cookie information"
 msgstr "информация о файлах cookie %s"
@@ -9595,7 +9638,7 @@ msgstr ""
 msgid "Menu items"
 msgstr "Пункты меню"
 
-#: views/help.php:64 views/help.php:146 views/layout.php:512
+#: views/help.php:64 views/help.php:146 views/layout.php:510
 msgid "Family tree index"
 msgstr "Индексный указатель"
 
@@ -9657,7 +9700,7 @@ msgstr ""
 "между расширенным или кратким представлением. Результаты будут отсортированы "
 "в алфавитном порядке по названию места."
 
-#: views/help.php:81 views/layout.php:531
+#: views/help.php:81 views/layout.php:529
 msgid "Photobook"
 msgstr "Фотоальбом"
 
@@ -9673,7 +9716,7 @@ msgstr ""
 
 #: views/help.php:86 views/help.php:90 views/help.php:95 views/help.php:100
 #: views/help.php:105 views/help.php:109 views/help.php:114
-#: views/layout.php:579
+#: views/layout.php:577
 msgid "Tools"
 msgstr "Инструменты"
 
@@ -9684,7 +9727,7 @@ msgstr ""
 "Здесь вы найдете список всех источников, использованных в генеалогическом "
 "исследовании."
 
-#: views/help.php:90 views/layout.php:584
+#: views/help.php:90 views/layout.php:582
 msgid "Anniversary list"
 msgstr "Список годовщин"
 
@@ -9747,7 +9790,7 @@ msgstr ""
 "При этом будет отображена карта Google, относящаяся к людям, присутствующим "
 "в базе данных, с возможностью сопоставления по рождениям или смертям."
 
-#: views/help.php:109 views/layout.php:604
+#: views/help.php:109 views/layout.php:602
 msgid "Contact"
 msgstr "Контакты"
 
@@ -9798,7 +9841,7 @@ msgstr ""
 "В строке меню, справа от кнопок меню, вы заметите несколько национальных "
 "флагов, которые позволяют вам изменять язык отображения."
 
-#: views/help.php:129 views/help.php:136 views/layout.php:640
+#: views/help.php:129 views/help.php:136 views/layout.php:638
 #: views/user_settings.php:22
 msgid "User settings"
 msgstr "Пользовательские настройки"
@@ -9881,33 +9924,44 @@ msgstr ""
 msgid "Recently changed persons and new persons"
 msgstr "Недавно изменившиеся лица и новые лица"
 
-#: views/layout.php:352 views/list.php:147
+#: views/layout.php:350 views/list.php:147
 msgid "Minimum:"
 msgstr "Минимум:"
 
-#: views/layout.php:352 views/list.php:147
+#: views/layout.php:350 views/list.php:147
 msgid "characters"
 msgstr "символов"
 
-#: views/layout.php:388
+#: views/layout.php:386
 msgid "Favourites list:"
 msgstr "Избранное:"
 
-#: views/layout.php:495
+#: views/layout.php:493
 msgid "Information"
 msgstr "информация"
 
-#: views/layout.php:526
+#: views/layout.php:524
 msgid "Places (by persons)"
 msgstr "Места (по персонам)"
 
-#: views/layout.php:527
+#: views/layout.php:525
 msgid "Places (by families)"
 msgstr "Места (по семьям)"
 
-#: views/layout.php:627
+#: views/layout.php:625
 msgid "Register"
 msgstr "Регистрация"
+
+#: views/layout.php:804
+#, fuzzy, php-format
+#| msgid "This database is made by %s, a freeware genealogical  program"
+msgid "This website is created using %s, a freeware genealogical  program"
+msgstr "БД создана в %s, свободной генеалогической программе"
+
+#: views/layout.php:810
+#, php-format
+msgid "European law: %s cookie information"
+msgstr "Европейское законодательство: информация о файлах cookie %s"
 
 #: views/list.php:35
 msgid "birth pl."
@@ -10300,7 +10354,7 @@ msgstr "PDF (Портрет)"
 msgid "PDF (Landscape)"
 msgstr "PDF (Пейзаж)"
 
-#: views/photoalbum.php:169
+#: views/photoalbum.php:168
 msgid "Photo's per page"
 msgstr "Фотографии на странице"
 
@@ -10973,6 +11027,37 @@ msgstr "Выбор темы"
 msgid "Standard-colours"
 msgstr "Стандартные цвета"
 
+#, php-format
+#~ msgid ""
+#~ "Example of picture path:<br>\n"
+#~ "www.myhomepage.nl/humo-gen/ => folder for %s files.<br>\n"
+#~ "www.myhomepage.nl/pictures/ => folder for pictures.<br>\n"
+#~ "Use a relative path, exactly as shown here: <b>../pictures/</b>"
+#~ msgstr ""
+#~ "Пример пути к изображению:<br>\n"
+#~ "www.myhomepage.nl/humo-gen/ => папка для %s файлов.<br>\n"
+#~ "www.myhomepage.nl/pictures/ => папка для картинок.<br>\n"
+#~ "Используйте относительный путь, как показано здесь: <b>../pictures/</b>"
+
+#~ msgid "Picture path exists."
+#~ msgstr "Путь к изображениям существует."
+
+#~ msgid ""
+#~ "- Creating thumbnails<br>\n"
+#~ "- ATTENTION: it may be necessary to (temporarily) change access to the "
+#~ "folder with the pictures (rwxrwxrwx)<br>\n"
+#~ "- Sometimes the php.ini has to be changed slightly, remove the ; before "
+#~ "the line with:"
+#~ msgstr ""
+#~ "- Создание миниатюр<br>\n"
+#~ "- ВНИМАНИЕ: может потребоваться (временно) изменить права доступа в папке "
+#~ "с фотографиями (rwxrwxrwx)<br>\n"
+#~ "- Иногда необходимо в файле php.ini удалить комментирующий символ ; в "
+#~ "начале строки с:"
+
+#~ msgid "Missing image"
+#~ msgstr "Изображение отсутствует"
+
 #~ msgid "Media upload failed, check folder rights"
 #~ msgstr "Загрузка медиа не удалась, проверьте права на папку."
 
@@ -11257,9 +11342,6 @@ msgstr "Стандартные цвета"
 #~ "о местоположении были изменены непосредственно в редакторе %s</"
 #~ "li><li>Если вы хотите удалить все места, которые устарели (отметьте поле "
 #~ "ниже)</li></ul></p>"
-
-#~ msgid "Deleted location:"
-#~ msgstr "Удалённое место:"
 
 #~ msgid "Changed location:"
 #~ msgstr "Изменённое место:"

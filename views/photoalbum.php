@@ -6,30 +6,21 @@ if ($user['group_pictures'] != 'j' || $user['group_photobook'] != 'j') {
 }
 
 // *** Show categories ***
-if ($photoalbum['show_categories']) {
-    $photoalbum['category_enabled']['none'] = true; // *** Always show main category ***
+if (!empty($photoalbum['category'])) {
 ?>
     <ul class="nav nav-tabs mt-1">
         <?php
         foreach ($photoalbum['category'] as $category) {
-            if ($photoalbum['category_enabled'][$category] == true) {
+//            if ($photoalbum['category_enabled'][$category] == true) {
                 // check if name for this category exists for this language
-                $qry2 = "SELECT * FROM humo_photocat WHERE photocat_prefix ='" . $category . "' AND photocat_language ='" . $selected_language . "'";
+                $qry2 = "SELECT * FROM humo_mediacat WHERE mediacat_name ='" . $category . "' AND mediacat_tree_id ='" . $tree_id . "'";
                 $result2 = $dbh->query($qry2);
                 if ($result2->rowCount() != 0) {
                     $catnameDb = $result2->fetch(PDO::FETCH_OBJ);
-                    $menutab_name = $catnameDb->photocat_name;
+                    $menutab_name = json_decode($catnameDb->mediacat_language_names, true)[$selected_language];
+                    if (empty($menutab_name)) { $menutab_name = $catnameDb->mediacat_name; } 
                 } else {
-                    // check if default name exists for this category
-                    $qry3 = "SELECT * FROM humo_photocat WHERE photocat_prefix ='" . $category . "' AND photocat_language ='default'";
-                    $result3 = $dbh->query($qry3);
-                    if ($result3->rowCount() != 0) {
-                        $catnameDb = $result3->fetch(PDO::FETCH_OBJ);
-                        $menutab_name = $catnameDb->photocat_name;
-                    } else {
-                        // no name at all (neither default nor specific)
-                        $menutab_name = __('NO NAME');
-                    }
+                    // no categories defined
                 }
 
                 $path = 'index.php?page=photoalbum?tree_id=' . $tree_id . '&amp;select_category=' . $category;
@@ -41,38 +32,31 @@ if ($photoalbum['show_categories']) {
                     <a class="nav-link genealogy_nav-link <?php if ($category == $photoalbum['chosen_tab']) echo 'active'; ?>" href="<?= $path; ?>"><?= $menutab_name; ?></a>
                 </li>
         <?php
-            }
+ //           }
         }
         ?>
     </ul>
 
     <?php
-}
-
-// *** Show media/ photo's ***
-if (isset($photoalbum['media_files'])) {
-    if ($photoalbum['show_categories'] == false) {  // *** There are no categories: show regular photo album ***
-        show_media_files("none");  // show all
-    } else {  // *** Show album with category tabs ***
-        // *** Check is photo category tree is shown or hidden for user group ***
-        $hide_photocat_array = explode(";", $user['group_hide_photocat']);
-        $hide_photocat = false;
-        if (in_array($photoalbum['category_id'][$photoalbum['chosen_tab']], $hide_photocat_array)) $hide_photocat = true;
-        if ($hide_photocat == false)
-            show_media_files($photoalbum['chosen_tab']);  // show only pics that match this category
-        else {
+} else {
     ?>
             <div style="float: left; background-color:white; height:auto; width:98%;padding:5px;"><br>
-                <?= __('*** Privacy filter is active, one or more items are filtered. Please login to see all items ***'); ?><br><br>
+                <?= __('*** No category available for this tree ***'); ?><br><br>
             </div>
+
     <?php
-        }
-    }
-} else {
-    // *** Search is used, but there were no results, to prevent empty screen show search bar ***
-    $photoalbum['media_files'][] = '';
-    show_media_files("none");  // show all
 }
+// *** Show media/ photo's ***
+if (!empty($photoalbum['media_files'])) {
+        show_media_files($photoalbum['chosen_tab']);  // show only pics that match this category
+} else {
+    ?>
+    <div style="float: left; background-color:white; height:auto; width:98%;padding:5px;"><br>
+       <?= __('*** No pictures available ***'); ?><br><br>
+        </div>
+<?php
+}
+    
 
 // *** $pref = category ***
 function show_media_files($pref)
@@ -125,7 +109,7 @@ function show_media_files($pref)
             $data["page_nr"][] = $i;
             if ($item == $calculated) {
                 $data["page_link"][$i] = '';
-                $data["page_status"][$i] = 'active';
+                $data["page_status"][$i] = 'disabled';
             } else {
                 $data["page_link"][$i] = $albumpath . "start=" . $start . "&amp;item=" . $calculated;
                 $data["page_status"][$i] = '';
@@ -138,7 +122,6 @@ function show_media_files($pref)
     $data["next_status"] = '';
     $calculated = ($i - 1) * $photoalbum['show_pictures'];
     if ($calculated < $nr_pictures) {
-        $data["page_nr"][] = $i;
         $data["next_link"] = $albumpath . "start=" . $i . "&amp;item=" . $calculated;
     } else {
         $data["next_status"] = 'disabled';
@@ -146,19 +129,19 @@ function show_media_files($pref)
 
     //$menu_path_photoalbum = $link_cls->get_link($uri_path, 'photoalbum',$tree_id);
     $path = 'index.php?page=photoalbum?tree_id=' . $tree_id;
-    if ($photoalbum['show_categories'] === true) {
+    //if ($photoalbum['show_categories'] === true) {
         $path .= '&amp;select_category=' . $pref;
-    }
+    //}
 
     if ($humo_option["url_rewrite"] == "j") {
         $path = 'photoalbum/' . $tree_id;
-        if ($photoalbum['show_categories'] === true) {
+        //if ($photoalbum['show_categories'] === true) {
             $path .= '?select_category=' . $pref;
-        }
+        //}
     }
     ?>
 
-    <div <?= $photoalbum['show_categories'] === true ? 'style="float: left; background-color:white; height:auto; width:98%;padding:5px;"' : ''; ?>>
+    <div style="float: left; background-color:white; height:auto; width:98%;padding:5px;">
 
         <form method="post" action="<?= $path; ?>" style="display:inline">
             <div class="row mb-2">
@@ -201,81 +184,30 @@ function show_media_files($pref)
         for ($picture_nr = $item; $picture_nr < ($item + $photoalbum['show_pictures']); $picture_nr++) {
             if (isset($photoalbum['media_files'][$picture_nr]) && $photoalbum['media_files'][$picture_nr]) {
                 $filename = $photoalbum['media_files'][$picture_nr];
-                $picture_text = '';    // Text with link to person
-                $picture_text2 = '';    // Text without link to person
-
-                $sql = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "'
-                    AND event_connect_kind='person' AND LEFT(event_kind,7)='picture' AND LOWER(event_event)='" . safe_text_db(strtolower($filename)) . "'";
-                $afbqry = $dbh->query($sql);
-                if (!$afbqry->rowCount()) {
-                    $picture_text = substr($filename, 0, -4);
+                $picture_text = '';
+                $picture_text2 = '';
+                $picture_pictext = $photoalbum['media_files_pictext'][$filename];    // picture text
+                $picture_linktext = $photoalbum['media_files_linktext'][$filename];    // Text with link to person
+                $picture_nolinktext = $photoalbum['media_files_nolinktext'][$filename];    // Text without link to person
+                $date_place = date_place($photoalbum['media_files_date'][$filename],$photoalbum['media_files_place'][$filename]);
+                if ($picture_linktext) { 
+                    $picture_text .= $picture_linktext; 
+                    $picture_text2 .= $picture_nolinktext; 
                 }
-                while ($afbDb = $afbqry->fetch(PDO::FETCH_OBJ)) {
-                    $person_cls = new person_cls;
-                    $personDb = $db_functions->get_person($afbDb->event_connect_id);
-                    $name = $person_cls->person_name($personDb);
-                    $privacy = $person_cls->set_privacy($personDb);
-                    if (!$privacy) {
-                        // *** Person url example (optional: "main_person=I23"): http://localhost/humo-genealogy/family/2/F10?main_person=I23/ ***
-                        $url = $person_cls->person_url2($personDb->pers_tree_id, $personDb->pers_famc, $personDb->pers_fams, $personDb->pers_gedcomnumber);
-                        $picture_text .= '<a href="' . $url . '">' . $name["standard_name"] . '</a><br>';
-                        $picture_text2 .= $name["standard_name"];
+                if ($picture_pictext || $date_place) {
+                    if ($date_place) {
+                        $picture_text .= $date_place . ' ';
                     }
+                    $picture_text .= $picture_pictext . '<br>';
 
-                    $date_place = date_place($afbDb->event_date, $afbDb->event_place);
-                    if ($afbDb->event_text || $date_place) {
-                        if ($date_place) {
-                            $picture_text .= $date_place . ' ';
-                        }
-                        $picture_text .= $afbDb->event_text . '<br>';
-
-                        $picture_text2 .= '<br>';
-                        if ($date_place) {
-                            $picture_text2 .= $date_place . ' ';
-                        }
-                        $picture_text2 .= $afbDb->event_text;
+                    $picture_text2 .= '<br>';
+                    if ($date_place) {
+                        $picture_text2 .= $date_place . ' ';
                     }
-                }
-
-                // *** Show texts from connected objects (where object is saved in seperate table): Family Tree Maker GEDCOM file ***
-                $picture_qry = $dbh->query("SELECT * FROM humo_events
-                    WHERE event_tree_id='" . $tree_id . "' AND event_kind='object' AND LOWER(event_event)='" . strtolower($filename) . "'");
-                while ($pictureDb = $picture_qry->fetch(PDO::FETCH_OBJ)) {
-                    $connect_qry = $dbh->query("SELECT * FROM humo_connections WHERE connect_tree_id='" . $tree_id . "'
-                        AND connect_sub_kind='pers_object' AND connect_source_id='" . $pictureDb->event_gedcomnr . "'");
-                    while ($connectDb = $connect_qry->fetch(PDO::FETCH_OBJ)) {
-                        $person_cls = new person_cls;
-                        @$personDb = $db_functions->get_person($connectDb->connect_connect_id);
-                        $name = $person_cls->person_name($personDb);
-                        $privacy = $person_cls->set_privacy($personDb);
-                        if (!$privacy) {
-                            // *** Person url example (optional: "main_person=I23"): http://localhost/humo-genealogy/family/2/F10?main_person=I23/ ***
-                            $url = $person_cls->person_url2($personDb->pers_tree_id, $personDb->pers_famc, $personDb->pers_fams, $personDb->pers_gedcomnumber);
-                            if ($picture_text !== '' && $picture_text !== '0') {
-                                $picture_text .= '<br>';
-                            }
-                            $picture_text .= '<a href="' . $url . '">' . $name["standard_name"] . '</a><br>';
-                            $picture_text2 .= $name["standard_name"];
-                        }
-
-                        $date_place = date_place($pictureDb->event_date, $pictureDb->event_place);
-                        if ($pictureDb->event_text || $date_place) {
-                            if ($date_place) {
-                                $picture_text .= $date_place . ' ';
-                            }
-                            $picture_text .= $pictureDb->event_text . '<br>';
-
-                            $picture_text2 .= '<br>';
-                            if ($date_place) {
-                                $picture_text2 .= $date_place . ' ';
-                            }
-                            $picture_text2 .= $pictureDb->event_text;
-                        }
-                    }
+                    $picture_text2 .= $picture_pictext;
                 }
                 
-                
-                if (in_array(strtolower(pathinfo($filename, PATHINFO_EXTENSION)), array('jpg', 'jpeg', 'png', 'gif', 'bmp', 'tif'))) {
+                if (in_array(strtolower(pathinfo($filename, PATHINFO_EXTENSION)), array('jpg', 'jpeg', 'png', 'gif', 'tif', 'mp4', 'webm'))) {
                     $link_attrib = 'class="glightbox3" data-gallery="gallery1" data-glightbox="description: .custom-desc' . $picture_nr .'"';
                     $html_before = '<div class="glightbox-desc custom-desc' . $picture_nr . '">' . $picture_text2 . '</div>';
                     $picture = print_thumbnail($dir, $filename, 175, 120, '', '', true, $link_attrib, $html_before); 

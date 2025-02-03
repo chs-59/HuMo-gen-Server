@@ -14,8 +14,6 @@ class PhotoalbumController
         $photoalbum['show_pictures'] = $photoalbumModel->get_show_pictures();
         $photoalbum['search_media'] = $photoalbumModel->get_search_media();
 
-        $photoalbum['show_categories'] = false;
-
         $categories = $photoalbumModel->get_categories($dbh);
         $photoalbum = array_merge($photoalbum, $categories);
 

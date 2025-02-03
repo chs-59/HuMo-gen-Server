@@ -1,13 +1,10 @@
-// HuMo-genealogy version check.
-version=6.7.9a
-// Version date yyyy-mm-dd
+// HuMo-gen-Server
+version=10.0.0
 version_date=2024-11-12
-version_download=http://sourceforge.net/projects/humo-gen
-version_auto_download=http://humo-gen.com/update/humo-gen_update.zip
-new_version_auto_download_github=https://github.com/HuubMons/HuMo-genealogy/archive/refs/heads/master.zip
-
-// Beta version
+version_download=
+version_auto_download=
+new_version_auto_download_github=https://github.com/chs-59/HuMo-gen-Server/archive/refs/heads/master.zip
 beta_version=2019-11-28
 beta_version_date=2019-11-28
-beta_version_download=http://sourceforge.net/projects/humo-gen
-beta_version_auto_download=http://humo-gen.com/update/humo-gen_beta_update.zip
+beta_version_download=
+beta_version_auto_download=

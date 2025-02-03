@@ -23,22 +23,7 @@
         <div class="row mb-2">
             <div class="col-md-3"><?= __('Path to the pictures'); ?></div>
             <div class="col-md-auto">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" value="yes" name="default_path" id="default_path" <?= $trees['default_path'] ? 'checked' : ''; ?>>
-                    <label class="form-check-label" for="default_path"><?= __('Use default picture path:'); ?> <b>media/</b></label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" value="no" name="default_path" id="default_path" <?= !$trees['default_path'] ? 'checked' : ''; ?>>
-                    <label class="form-check-label" for="default_path">
-                        <input type="text" name="tree_pict_path" value="<?= $trees['tree_pict_path']; ?>" size="40" placeholder="../pictures/" class="form-control form-control-sm">
-                    </label>
-                </div>
-
-                <?php printf(__('Example of picture path:<br>
-www.myhomepage.nl/humo-gen/ => folder for %s files.<br>
-www.myhomepage.nl/pictures/ => folder for pictures.<br>
-Use a relative path, exactly as shown here: <b>../pictures/</b>'), 'HuMo-genealogy'); ?><br>
-                <a href="index.php?page=thumbs"><?= __('Pictures/ create thumbnails'); ?></a>
+                &Gt;&Gt; <a href="index.php?page=thumbs"><?= __('Pictures/ create thumbnails'); ?></a>
             </div>
         </div>
 

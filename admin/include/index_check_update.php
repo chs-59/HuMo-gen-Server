@@ -37,16 +37,15 @@ if ($check_update && $page != 'login' && $page != 'update' && $popup == false) {
 
     // *** Update check, once a day ***
     // 86400 = 1 day. yyyy-mm-dd
-    if ($humo_option['update_last_check'] != 'DISABLED' && strtotime("now") - strtotime($humo_option['update_last_check']) > 86400) {
+    if ($humo_option['update_last_check'] != 'DISABLED' ) { // && strtotime("now") - strtotime($humo_option['update_last_check']) > 86400) {
         $link_name = str_replace(' ', '_', $_SERVER['SERVER_NAME']);
         $link_version = str_replace(' ', '_', $humo_option["version"]);
-
-        if (function_exists('curl_exec')) {
-            // First try GitHub ***
+//        if (function_exists('curl_exec')) {
+        if (true) {            // First try GitHub ***
             // *** Oct. 2021: Added random number to prevent CURL cache problems ***
-            $source = 'https://raw.githubusercontent.com/HuubMons/HuMo-genealogy/master/admin/update/version_check.txt?random=' . rand();
-
-            $resource = curl_init();
+//            $source = 'https://github.com/chs-59/HuMo-genealogy-Server/blob/master/admin/update/version_check.txt?random=' . rand();
+            $source = 'https://raw.githubusercontent.com/chs-59/HuMo-gen-Server/refs/heads/master/admin/update/version_check.txt';
+/*            $resource = curl_init();
             curl_setopt($resource, CURLOPT_URL, $source);
             curl_setopt($resource, CURLOPT_HEADER, false);
             curl_setopt($resource, CURLOPT_RETURNTRANSFER, true);
@@ -63,7 +62,8 @@ if ($check_update && $page != 'login' && $page != 'update' && $popup == false) {
 
             $content = curl_exec($resource);
             curl_close($resource);
-
+*/
+            $content = file_get_contents($source, true);
             $content_array = explode(PHP_EOL, $content); // *** Split array into seperate lines ***
 
             // *** Debug information and validation of data ***
@@ -86,131 +86,7 @@ if ($check_update && $page != 'login' && $page != 'update' && $popup == false) {
                 }
             }
 
-            // *** Use humo-gen.com if GitHub isn't working ***
-            if (!isset($content_array)) {
-                // *** Read update data from HuMo-genealogy website ***
-                // *** Oct. 2021: Added random number to prevent CURL cache problems ***
-                $source = 'https://humo-gen.com/update/index.php?status=check_update&website=' . $link_name . '&version=' . $link_version . '&random=' . rand();
-
-                //$update_file='update/temp_update_check.php';
-                $resource = curl_init();
-                curl_setopt($resource, CURLOPT_URL, $source);
-                curl_setopt($resource, CURLOPT_HEADER, false);
-                curl_setopt($resource, CURLOPT_RETURNTRANSFER, true);
-                //curl_setopt($resource, CURLOPT_CONNECTTIMEOUT, 20);
-                // *** BE AWARE: for provider Hostinger this must be a low value, otherwise the $dbh connection will be disconnected! ***
-                curl_setopt($resource, CURLOPT_CONNECTTIMEOUT, 15);
-
-                // *** Oct 2021: Don't use CURL cache ***
-                curl_setopt($resource, CURLOPT_FRESH_CONNECT, true); // don't use a cached version of the url
-
-                $content = curl_exec($resource);
-                curl_close($resource);
-
-                $content_array = explode(PHP_EOL, $content); // *** Split array into seperate lines ***
-
-                // *** Debug information and validation of data ***
-                if (isset($content_array[0])) {
-                    $debug_update .= ' HG:' . $content_array[0] . ' ';
-
-                    // *** Check if there is valid information, there should be 4 version lines ***
-                    $valid = 0;
-                    foreach ($content_array as $content_line) {
-                        if (substr($content_line, 0, 7) === 'version') {
-                            $valid++;
-                        }
-                    }
-
-                    if ($valid > 3) {
-                        $debug_update .= ' Valid.';
-                    } else {
-                        unset($content_array);
-                        $debug_update .= ' Invalid.';
-                    }
-                }
-
-                //if($content != ''){
-                //	$fp = @fopen($update_file, 'w');
-                //	$fw = @fwrite($fp, $content);
-                //	@fclose($fp);
-                //}
-            }
-
-            // *** If provider or curl blocks https link: DISABLE SSL and recheck ***
-            if (!isset($content_array)) {
-                // *** Oct. 2021: Added random number to prevent CURL cache problems ***
-                $source = 'https://humo-gen.com/update/index.php?status=check_update&website=' . $link_name . '&version=' . $link_version . '&random=' . rand();
-
-                //$update_file='update/temp_update_check.php';
-                $resource = curl_init();
-                curl_setopt($resource, CURLOPT_URL, $source);
-                curl_setopt($resource, CURLOPT_HEADER, false);
-                curl_setopt($resource, CURLOPT_RETURNTRANSFER, true);
-                //curl_setopt($resource, CURLOPT_CONNECTTIMEOUT, 20);
-                // *** BE AWARE: for provider Hostinger this must be a low value, otherwise the $dbh connection will be disconnected! ***
-                curl_setopt($resource, CURLOPT_CONNECTTIMEOUT, 15);
-
-                // *** Oct 2021: Don't use CURL cache ***
-                curl_setopt($resource, CURLOPT_FRESH_CONNECT, true); // don't use a cached version of the url
-
-                // *********************************************************************
-                // *** EXTRA SETTINGS TO DISABLE SSL CHECK NEEDED FOR SOME PROVIDERS ***
-                //Disable CURLOPT_SSL_VERIFYHOST and CURLOPT_SSL_VERIFYPEER by
-                //setting them to false.
-                curl_setopt($resource, CURLOPT_SSL_VERIFYHOST, false);
-                curl_setopt($resource, CURLOPT_SSL_VERIFYPEER, false);
-                // *********************************************************************
-
-                $content = curl_exec($resource);
-                curl_close($resource);
-
-                $content_array = explode(PHP_EOL, $content); // *** Split array into seperate lines ***
-
-                // *** Debug information ***
-                if (isset($content_array[0])) {
-                    $debug_update .= ' 3:' . $content_array[0] . ' ';
-                }
-            }
         }
-
-        // *** Copy HuMo-genealogy to server using file_get_contents ***
-        /*
-        if (!file_exists('update/temp_update_check.php')){
-            $source='https://humo-gen.com/update/index.php?status=check_update&website='.$link_name.'&version='.$link_version;
-            $update_file='update/temp_update_check.php';
-
-            $content = @file_get_contents($source);
-            //if ($content === false) {
-            //	$this->_log->addError(sprintf('Could not download update "%s"!', $updateUrl));
-            //	return false;
-            //}
-
-            // *** Open file ***
-            $handle = fopen($update_file, 'w');
-            //if (!$handle) {
-            //	$this->_log->addError(sprintf('Could not open file handle to save update to "%s"!', $updateFile));
-            //	return false;
-            //}
-
-            // *** Copy file ***
-            if (!fwrite($handle, $content)) {
-            //	$this->_log->addError(sprintf('Could not write update to file "%s"!', $updateFile));
-            //	fclose($handle);
-            //	return false;
-            }
-
-            fclose($handle);
-        }
-        */
-
-        // *** Copy HuMo-genealogy to server using copy ***
-        // DISABLED BECAUSE MOST PROVIDERS BLOCK THIS COPY FUNCTION FOR OTHER WEBSITES...
-        //if (!file_exists('update/temp_update_check.php')){
-        //	$source='https://humo-gen.com/update/index.php?status=check_update&website='.$link_name.'&version='.$link_version;
-        //	$update_file='update/temp_update_check.php';
-        //	@copy($source, $update_file);
-        //}
-
 
         //if ($f = @fopen($update_file, 'r')){
         //if (is_file($update_file) AND $f = @fopen($update_file, 'r')){
@@ -233,10 +109,17 @@ if ($check_update && $page != 'login' && $page != 'update' && $popup == false) {
             //while(!feof($f)) { 
             foreach ($content_array as $content_line) {
                 //$update_data = fgets( $f, 4096 );
+                if (str_starts_with('/', $content_line)) {
+                    continue; 
+                    break;
+                }
                 $update_array = explode("=", $content_line);
+                if (!empty($update_array[1])) { 
+                    $update[$update_array[0]] = trim($update_array[1]);
+                }
 
                 // *** HuMo-genealogy version ***
-                if ($update_array[0] === 'version') {
+/*                if ($update_array[0] === 'version') {
                     $update['version'] = trim($update_array[1]);
                 }
                 if ($update_array[0] === 'version_date') {
@@ -265,6 +148,7 @@ if ($check_update && $page != 'login' && $page != 'update' && $popup == false) {
                 if ($update_array[0] === 'beta_version_auto_download') {
                     $update['beta_version_auto_download'] = trim($update_array[1]);
                 }
+*/
             }
             //fclose($f);
 

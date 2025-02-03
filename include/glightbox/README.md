@@ -7,6 +7,7 @@ GLightbox is a pure javascript lightbox. It can display images, iframes, inline 
 - **Small** - only 11KB Gzipped
 - **Fast and Responsive** - works with any screen size
 - **Gallery Support** - Create multiple galleries
+- **Response Images Support** - Let the browser use the optimal image for the current screen resolution
 - **Video Support** - Youtube, Vimeo and self hosted videos with autoplay
 - **Inline content support** - display any inline content
 - **Iframe support** - need to embed an iframe? no problem
@@ -35,7 +36,7 @@ $ bower install glightbox
 import '/path/to/glightbox.js';
 
 // Using a bundler like webpack
-import Glightbox from 'glightbox';
+import GLightbox from 'glightbox';
 ```
 
 Or manually download and link `glightbox.min.js` in your HTML:
@@ -49,7 +50,7 @@ Or manually download and link `glightbox.min.js` in your HTML:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 
-<script>
+<script type="text/javascript">
   const lightbox = GLightbox({ ...options });
 </script>
 
@@ -106,6 +107,16 @@ Or manually download and link `glightbox.min.js` in your HTML:
 <a href="https://picsum.photos/1200/800" data-type="image">
   <img src="small.jpg" alt="image" />
 </a>
+
+<!-- Using responsive images: specify sizes and srcset through data attributes in the
+     same way you would with the img tag.
+     See: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images -->
+<a href="deafult.jpg" class="glightbox6" data-title="Responsive example"
+data-description="Your browser will choose the optimal image for the resolution"
+data-sizes="(max-width: 600px) 480px, 800px"
+data-srcset="img480.jpx 480w img800.jpg 800w">
+  <img src="small.jpg" alt="image" />
+</a>
 ```
 
 ## Slide Options
@@ -113,6 +124,7 @@ Or manually download and link `glightbox.min.js` in your HTML:
 You can specify some options to each individual slide, the available options are:
 
 - title
+- alt
 - description
 - descPosition
 - type
@@ -163,7 +175,8 @@ const myGallery = GLightbox({
         },
         {
             'href': 'https://picsum.photos/1200/800',
-            'type': 'image'
+            'type': 'image',
+            'alt': 'image text alternatives'
         },
         {
             'href': 'https://www.youtube.com/watch?v=Ga6RYejo6Hk',
@@ -348,6 +361,8 @@ lightbox.on('slide_removed', (index) => {
 
 GLightbox includes "[Plyr](https://plyr.io/)" the best player out there, you can pass any Plyr option to the player, view all available options here [Plyr options](https://github.com/sampotts/plyr). GLightbox will only inject the player library if required and only when the lightbox is opened.
 
+**Internet Explorer 11. If you need support for this browser you need to set the js url to use the polyfilled version. This is not the default because IE11 is ancient and we need to let it die.**
+
 ### Autoplay for mobile/tablet
 
 Please note, autoplay is blocked in some browsers, there’s nothing we can do to change that unfortunately, the browser will decide if your video can be autoplayed. Please do not post issues about this, instead inform yourself about this topic:
@@ -358,7 +373,38 @@ Please note, autoplay is blocked in some browsers, there’s nothing we can do t
 
 they decide if a video can be autoplayed based in a few rules
 
+```
+plyr: {
+    js: 'https://cdn.plyr.io/3.6.2/plyr.polyfilled.js',
+    ....
+```
 
+```javascript
+const lightbox = GLightbox({
+  plyr: {
+    css: 'https://cdn.plyr.io/3.5.6/plyr.css', // Default not required to include
+    js: 'https://cdn.plyr.io/3.5.6/plyr.js', // Default not required to include
+    config: {
+      ratio: '16:9', // or '4:3'
+      muted: false,
+      hideControls: true,
+      youtube: {
+        noCookie: true,
+        rel: 0,
+        showinfo: 0,
+        iv_load_policy: 3
+      },
+      vimeo: {
+        byline: false,
+        portrait: false,
+        title: false,
+        speed: true,
+        transparent: false
+      }
+    }
+  }
+});
+```
 
 ## API
 
@@ -650,7 +696,7 @@ We only provide support for bugs and feature requests, so please only post issue
 
 ## Changelog
 
-#### Latest version v3.0.8
+#### Latest version vundefined
 
 See the [CHANGELOG.md](CHANGELOG.md) file for details
 

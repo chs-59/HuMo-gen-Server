@@ -18,26 +18,31 @@ $tree_prefix   = $_SESSION['tree_prefix'];
 $tree_id       = $_SESSION['tree_id'];
 $user_group_id = $_SESSION['user_group_id'];
 $user_id       = $_SESSION['user_id'];
-
+if (str_contains( $_SERVER['HTTP_REFERER'], 'admin/') 
+        && isset($_SESSION['admin_tree_id']) ) {
+    $tree_id = $_SESSION['admin_tree_id'];
+}
 $db_functions = new db_functions($dbh);
 $db_functions->set_tree_id($tree_id);
 $groupsql = $dbh->query("SELECT * FROM humo_groups WHERE group_id='" . $user_group_id . "'");
 $groupDb = $groupsql->fetch(PDO::FETCH_OBJ);
 $usersql = $dbh->query("SELECT * FROM humo_users WHERE user_id='" . $user_id . "'");
 $userDb = $usersql->fetch(PDO::FETCH_OBJ);
-$datasql = $dbh->query("SELECT * FROM humo_trees WHERE tree_prefix='" . $tree_prefix . "'");
+$datasql = $dbh->query("SELECT * FROM humo_trees WHERE tree_id='" . $tree_id . "'");
 $dataDb = $datasql->fetch(PDO::FETCH_OBJ);
 $tree_pict_path = $dataDb->tree_pict_path;
-if (substr($tree_pict_path, 0, 1) === '|') { $tree_pict_path = 'media/'; }
-$tree_pict_path_rewrite = $dataDb->tree_pict_path_rewrite;
-
+if (substr($tree_pict_path, 0, 1) === '|'                   // chopstick code
+        || preg_match('/^media\//', $tree_pict_path)) {     // tree is subfolder of media
+    $tree_pict_path = 'media/'; 
+}
 // free access to admin or editor of current tree
 if ( ( isset($_SESSION['group_id_admin']) && $groupDb->group_admin === 'j' )  
     || $groupDb->group_edit_trees == $tree_id
     || $userDb->user_edit_trees == $tree_id ) {
     print_mediafile(__DIR__ . '/' . $tree_pict_path . $url);  
 }
-// access to media files bloced
+//echo '<br>TID: ' .$tree_id .  ' TPP: ' . $tree_pict_path . ' URL: ' .  $url; exit;
+// access to media files blocked
 if ($groupDb->group_pictures == 'n')  { 
     print_mediafile(__DIR__ . '/images/missing-image.jpg'); 
 }
@@ -49,11 +54,10 @@ $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' "
         . "AND event_connect_id NOT LIKE '' AND event_event='" . $picture_dbname . "'";
 
 $media_qry = $dbh->query($qry);
-
 while ($media_qryDb = $media_qry->fetch(PDO::FETCH_OBJ)) {    
 
     if (    $media_qryDb ) {   // pic in db
-        $media_filename = __DIR__ . '/' . $url;
+        $media_filename = __DIR__ . '/' . $tree_pict_path . $url;
         // person
         if ($media_qryDb && $media_qryDb->event_connect_kind === 'person') {
             $person_cls = new person_cls;
@@ -85,6 +89,7 @@ function print_mediafile ($filename) {
     if (!file_exists( $filename)) {
         $filename = __DIR__ . '/images/missing-image.jpg';        
     }
+    session_abort();
     $content_type_header = mime_content_type($filename);
     $filesize = filesize($filename);
     header('Content-Type: ' . $content_type_header);
