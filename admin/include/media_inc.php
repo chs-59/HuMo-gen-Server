@@ -2,6 +2,8 @@
 // holds the prefixes for existent category subdirectories
 global $pcat_dirs;
 $pcat_dirs = get_pcat_dirs();
+global $mediacats;
+$mediacats = get_mediacats();
 global $pict_options;
 $pict_options = get_pict_options();
 // lookup which library is available or none
@@ -456,6 +458,24 @@ function get_pcat_dirs() // returns a.array with existing cat subfolders key=>di
         }
     }
     return $tmp_pcat_dirs;
+}
+function get_mediacats() // returns a.array with existing cat subfolders key=>dir val=>category name localized
+{
+    global $dbh, $tree_id, $selected_language;
+    $cat_array = array();
+    $existsq = $dbh->query("SHOW TABLES LIKE 'humo_mediacat'");
+    if (!$existsq->fetch(PDO::FETCH_OBJ)) { return array(); }
+    $catg = $dbh->query("SELECT * FROM humo_mediacat WHERE mediacat_tree_id = '". $tree_id .
+            "' AND mediacat_name != 'persons' AND mediacat_name != 'families' AND mediacat_name != 'sources' ORDER BY mediacat_order");
+    $i = 0;
+    while ($catDb = $catg->fetch(PDO::FETCH_OBJ)) {
+        $langs = json_decode($catDb->mediacat_language_names, true);
+        $lang = $langs[$selected_language];
+        if (empty($lang)) { $lang = $catDb->mediacat_name; }
+        $cat_array[$i] = array($catDb->mediacat_name, $lang);
+        $i++;
+    }
+   return $cat_array;
 }
 function get_GDmime () {
     return [ 'image/pjpeg'  => 'JPG',
