@@ -703,16 +703,10 @@ class Mainindex_cls
 
                     // *** Show picture using GLightbox ***
                     $link_attrib = 'class="glightbox" data-glightbox="description: ' . $date_place . str_replace("&", "&amp;", $picqryDb->event_text) .'"';
-                    $html_before = '';
                     $css = 'border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);';
-                    $text .= print_thumbnail($tree_pict_path, $picname, 175, 120, $css, 'width="90%"', true, $link_attrib, $html_before); 
+                    $text .= print_thumbnail($tree_pict_path, $picname, -1, -1, $css, 'width="90%"', true, $link_attrib, '', true); 
                     $text .= '<br>';
                     
-                    //$text .= '<a href="' . $tree_pict_path . $picname . '" class="glightbox" data-glightbox="description: ' . $date_place . str_replace("&", "&amp;", $picqryDb->event_text) . '"><img src="' . $tree_pict_path . $picname .
-                    //    '" width="90%" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></a><br>';
-                    // *** Person url example (optional: "main_person=I23"): http://localhost/humo-genealogy/family/2/F10?main_person=I23/ ***
-
-                    // TODO: this is almost same code as code in photoalbum.php.
                     $name = $man_cls->person_name($personmnDb);
                     $privacy = $man_cls->set_privacy($personmnDb);
                     // if photo is from family there will be different link and text as a first line
