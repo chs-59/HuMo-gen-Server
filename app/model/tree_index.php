@@ -640,6 +640,8 @@ class Mainindex_cls
         // adding static table for displayed photos storage
         static $temp_pic_names_table = [];
         $text = '';
+        
+        include_once(__DIR__ . "/../../admin/include/media_inc.php");
 
         $tree_pict_path = $dataDb->tree_pict_path;
         if (substr($tree_pict_path, 0, 1) === '|') {
@@ -700,8 +702,14 @@ class Mainindex_cls
                     $text .= '<div style="text-align: center;">';
 
                     // *** Show picture using GLightbox ***
-                    $text .= '<a href="' . $tree_pict_path . $picname . '" class="glightbox" data-glightbox="description: ' . $date_place . str_replace("&", "&amp;", $picqryDb->event_text) . '"><img src="' . $tree_pict_path . $picname .
-                        '" width="90%" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></a><br>';
+                    $link_attrib = 'class="glightbox" data-glightbox="description: ' . $date_place . str_replace("&", "&amp;", $picqryDb->event_text) .'"';
+                    $html_before = '';
+                    $css = 'border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);';
+                    $text .= print_thumbnail($tree_pict_path, $picname, 175, 120, $css, 'width="90%"', true, $link_attrib, $html_before); 
+                    $text .= '<br>';
+                    
+                    //$text .= '<a href="' . $tree_pict_path . $picname . '" class="glightbox" data-glightbox="description: ' . $date_place . str_replace("&", "&amp;", $picqryDb->event_text) . '"><img src="' . $tree_pict_path . $picname .
+                    //    '" width="90%" style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"></a><br>';
                     // *** Person url example (optional: "main_person=I23"): http://localhost/humo-genealogy/family/2/F10?main_person=I23/ ***
 
                     // TODO: this is almost same code as code in photoalbum.php.
