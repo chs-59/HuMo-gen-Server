@@ -1,5 +1,5 @@
 <?php
-// holds the prefixes for existent category subdirectories
+// holds categories of selected tree
 global $pcat_dirs;
 $pcat_dirs = get_pcat_dirs();
 global $mediacats;
@@ -153,6 +153,7 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
     // should be removed after a while in later versions (2024-12-17)
     // looking for media files in suffix folder and add suffix folder to Db
     if (!file_exists($folder . $file)) {
+        $pcat_dirs = get_pcat_dirs();
         if (array_key_exists(substr($file, 0, 3), $pcat_dirs)
             && file_exists($folder . substr($file, 0, 2) . '/' . $file) ) {
             $sql = "UPDATE humo_events SET
@@ -305,7 +306,6 @@ function check_media_type($folder, $file)
 
 function thumbnail_exists($folder, $file) // returns [folder, filename] or ''
 {
-    global $pcat_dirs;
     $pparts = pathinfo($file);
     if (!$file || !file_exists($folder . $file)) {
         return '';
@@ -440,7 +440,10 @@ function resize_picture_GD($folder, $file, $maxheight = 1080, $maxwidth = 1920)
     }
     return ($success);
 }
-function get_pcat_dirs() // returns a.array with existing cat subfolders key=>dir val=>category name localized
+// DEPRECATED! - this is just to repair broken links where 
+// old category subdirs are not in database and a table humo_photocat still exists
+// (new: humo_mediacat)
+function get_pcat_dirs() 
 {
     global $dbh, $tree_id, $selected_language;
 
@@ -452,7 +455,7 @@ function get_pcat_dirs() // returns a.array with existing cat subfolders key=>di
     $tree_pict_path = __DIR__ . '/../../' . $tree_pict_path;
     $tmp_pcat_dirs = array();
     $temp = $dbh->query("SHOW TABLES LIKE 'humo_photocat'");
-    if ($temp->rowCount()) {   // there is a category table
+    if ($temp->rowCount()) {   // there is an old category table
         $catg = $dbh->query("SELECT photocat_prefix FROM humo_photocat WHERE photocat_prefix != 'none' GROUP BY photocat_prefix");
         if ($catg->rowCount()) {
             while ($catDb = $catg->fetch(PDO::FETCH_OBJ)) {
@@ -478,7 +481,7 @@ function get_pcat_dirs() // returns a.array with existing cat subfolders key=>di
     }
     return $tmp_pcat_dirs;
 }
-function get_mediacats() // returns a.array with existing cat subfolders key=>dir val=>category name localized
+function get_mediacats() // returns a.array with user created categories key=>dir val=>category name localized
 {
     global $dbh, $tree_id, $selected_language;
     $cat_array = array();
