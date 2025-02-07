@@ -8,7 +8,6 @@ function show_media($event_connect_kind, $event_connect_id)
     global $data, $page;
 
     include_once(__DIR__ . "/../admin/include/media_inc.php");
-    global $pcat_dirs;
 
     $templ_person = array(); // local version
     $process_text = '';
@@ -101,17 +100,8 @@ function show_media($event_connect_kind, $event_connect_id)
             //$event_event = html_entity_decode($pictureDb->event_event, ENT_NOQUOTES, 'ISO-8859-15');
             $event_event = $media_event_event[$i];
 
-            // in case subfolders are made for photobook categories and this was not already set in $picture_path, look there
-            // (if the $picture_path is already set with subfolder this anyway gives false and so the $picture_path given will work)
-            $temp_path = $tree_pict_path; // use temp path to modify
-
-            // look in category subfolder if exists - lookup code moved to media_inc.php
-            if (array_key_exists(substr($event_event, 0, 3), $pcat_dirs)) {
-                $temp_path .= substr($event_event, 0, 2) . '/';
-            }
-
             // *** In some cases the picture name must be converted to lower case ***
-            if (file_exists($temp_path . strtolower($event_event))) {
+            if (file_exists($tree_pict_path . strtolower($event_event))) {
                 $event_event = strtolower($event_event);
             }
             // *** Show photo using the lightbox effect ***
@@ -148,11 +138,11 @@ function show_media($event_connect_kind, $event_connect_id)
                 $html_before = '<div class="glightbox-desc custom-desc' . $media_event_id[$i] . '">' . $tmp_picinfo;
                 $picture = print_thumbnail($tree_pict_path, $event_event, 0, 120, '', '', true, $link_attrib, $html_before); 
 
-                $thumb_url = thumbnail_exists($temp_path, $event_event); //in media_inc.php: returns [folder, file ] of thumb or empty string
+                $thumb_url = thumbnail_exists($tree_pict_path, $event_event); //in media_inc.php: returns [folder, file ] of thumb or empty string
                 if (!empty($thumb_url)) {
                     $templ_person["pic_path" . $i] = implode($thumb_url); //for the time being pdf only with thumbs
                 } else {
-                    $templ_person["pic_path" . $i] = $temp_path . $event_event; // use original picture instead
+                    $templ_person["pic_path" . $i] = $tree_pict_path . $event_event; // use original picture instead
                 }
                 // *** Remove spaces ***
                 $templ_person["pic_path" . $i] = trim($templ_person["pic_path" . $i]);
