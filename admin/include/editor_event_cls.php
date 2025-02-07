@@ -112,7 +112,6 @@ class editor_event_cls
         global $db_functions;
 
         include_once(__DIR__ . "/../include/media_inc.php");
-        global $pcat_dirs; // old suffix categories - deprecated
         global $mediacats;
 
         $text = '';
@@ -1634,11 +1633,7 @@ class editor_event_cls
                             $optdir = '';
                             foreach ($subfolders as $folder) {
                                 $bfolder = pathinfo($folder, PATHINFO_BASENAME);
-                                if (in_array($bfolder, $ignore)) {
-                                    // do nothing
-                                } elseif (array_key_exists( $bfolder .  '_', $pcat_dirs)) {
-                                    $optcat .='<option value="' . $bfolder . '">' . __('Category') .': ' . $pcat_dirs[$bfolder . '_']. '</option>';
-                                } else { 
+                                if (!in_array($bfolder, $ignore)) {
                                     $optdir .= '<option value="' . $bfolder . '">' . __('Directory') .': ' . $bfolder . '</option>';
                                 }
                             }
