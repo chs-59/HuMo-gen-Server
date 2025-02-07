@@ -410,8 +410,9 @@ $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
 
                 <div class="row mb-2">
                     <div class="col-md-11">
-                        <li><?= __('Here you can create categories for all media files in the "Photobook" section.</li><li><b>Without any category no pictures will be displayed there!</b></li><li>On first use of this page default categories are created: "persons", "families" and "sources" will display all media files of the corresponding data sheet sections.</li><li>Feel free to add, remove, restore or reorder any category. Put translations for your prefered languages into the right input fields</li>'); ?>
-                        <li><?= __('Category names are limited to a maximum of 30 characters. Only A-Z, a-z, 0-9, - and _ are accepted!</li>'); ?></li>
+                        <li><?= __('Here you can create categories for all media files in the "Photobook" section.</li><li><b>Without any category no pictures will be displayed there!</b></li><li>On first use of this page default categories are created: "persons", "families" and "sources" will display all media files of the corresponding data sheet sections.</li><li>Feel free to add, remove, restore or reorder any category. Put translations for your prefered languages into the right input fields</li>'); ?></li>
+                        <li><?= __('Category names are limited to a maximum of 30 characters. Only A-Z, a-z, 0-9, - and _ are accepted!'); ?></li>
+                        <li><?= __('Consult <a href="../README.md" target="_new">README</a> for more information'); ?></li>
                     </div>
                 </div>
 
