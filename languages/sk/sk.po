@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-genealogy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-10 14:31+0100\n"
-"PO-Revision-Date: 2025-01-10 14:31+0100\n"
+"POT-Creation-Date: 2025-02-07 17:06+0100\n"
+"PO-Revision-Date: 2025-02-07 17:06+0100\n"
 "Last-Translator: Dusan Bajus\n"
 "Language-Team: Slovak (http://www.transifex.com/humo-gen/humo-gen/language/"
 "sk/)\n"
@@ -218,8 +218,8 @@ msgid "December"
 msgstr "December"
 
 # Nomen Nescio: unknown name.
-#: admin/include/editor_cls.php:296 admin/include/editor_event_cls.php:1067
-#: admin/include/editor_event_cls.php:1076 admin/views/editor.php:661
+#: admin/include/editor_cls.php:296 admin/include/editor_event_cls.php:1068
+#: admin/include/editor_event_cls.php:1077 admin/views/editor.php:661
 #: admin/views/editor.php:670 admin/views/editor.php:1382
 #: admin/views/statistics_old.php:89 admin/views/statistics_old.php:100
 #: include/person_cls.php:915 include/person_cls.php:917
@@ -276,44 +276,44 @@ msgid "[]"
 msgstr "[]"
 
 #: admin/include/editor_event_cls.php:18 admin/include/editor_event_cls.php:54
-#: admin/include/editor_event_cls.php:486
-#: admin/include/editor_event_cls.php:1045
-#: admin/include/editor_event_cls.php:1048
+#: admin/include/editor_event_cls.php:487
+#: admin/include/editor_event_cls.php:1046
+#: admin/include/editor_event_cls.php:1049
 msgid "Picture/ Media"
 msgstr "Obrázky/ Média"
 
-#: admin/include/editor_event_cls.php:20 admin/include/editor_event_cls.php:432
-#: admin/include/editor_event_cls.php:1206
-#: admin/include/editor_event_cls.php:1517
-#: admin/include/editor_event_cls.php:1520 admin/views/editor.php:1171
+#: admin/include/editor_event_cls.php:20 admin/include/editor_event_cls.php:433
+#: admin/include/editor_event_cls.php:1207
+#: admin/include/editor_event_cls.php:1542
+#: admin/include/editor_event_cls.php:1545 admin/views/editor.php:1171
 #: admin/views/tree_merge.php:1453 views/list.php:320 views/list.php:327
 msgid "Profession"
 msgstr "Zamestnanie"
 
 # Language indicator, used for birthday RSS
-#: admin/include/editor_event_cls.php:22 admin/include/editor_event_cls.php:279
-#: admin/include/editor_event_cls.php:298
-#: admin/include/editor_event_cls.php:321
-#: admin/include/editor_event_cls.php:338
-#: admin/include/editor_event_cls.php:1263 admin/include/editor_sources.php:205
+#: admin/include/editor_event_cls.php:22 admin/include/editor_event_cls.php:280
+#: admin/include/editor_event_cls.php:299
+#: admin/include/editor_event_cls.php:322
+#: admin/include/editor_event_cls.php:339
+#: admin/include/editor_event_cls.php:1264 admin/include/editor_sources.php:205
 #: admin/include/editor_sources.php:213 admin/views/tree_merge.php:1456
-#: app/model/tree_index.php:1019
+#: app/model/tree_index.php:1021
 msgid "Event"
 msgstr "Udalosť"
 
-#: admin/include/editor_event_cls.php:24 admin/include/editor_event_cls.php:987
+#: admin/include/editor_event_cls.php:24 admin/include/editor_event_cls.php:988
 #: admin/views/editor_person.php:1029 admin/views/editor_person.php:1392
 #: admin/views/editor_relation.php:733 include/witness.php:62
 msgid "clergy"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:26 admin/include/editor_event_cls.php:991
+#: admin/include/editor_event_cls.php:26 admin/include/editor_event_cls.php:992
 #: admin/views/editor_person.php:764 admin/views/editor_person.php:1314
 #: admin/views/editor_relation.php:519 include/witness.php:45
 msgid "officiator"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:28 admin/include/editor_event_cls.php:995
+#: admin/include/editor_event_cls.php:28 admin/include/editor_event_cls.php:996
 #: admin/views/editor_person.php:1029 include/witness.php:59
 msgid "godfather"
 msgstr "krstný otec"
@@ -336,15 +336,15 @@ msgstr ""
 msgid "witness"
 msgstr "svedok"
 
-#: admin/include/editor_event_cls.php:36 admin/include/editor_event_cls.php:963
-#: admin/include/editor_event_cls.php:1720
+#: admin/include/editor_event_cls.php:36 admin/include/editor_event_cls.php:964
+#: admin/include/editor_event_cls.php:1741
 #: admin/include/editor_media_select.php:82
 #: admin/include/editor_person_select.php:115
 #: admin/include/editor_place_select.php:77
 #: admin/include/editor_relation_select.php:46 admin/views/editor.php:148
 #: admin/views/editor_person.php:393 admin/views/gedcom_export.php:330
 #: app/model/mailform.php:83 app/model/register.php:95
-#: app/model/tree_index.php:583 app/model/tree_index.php:1019
+#: app/model/tree_index.php:583 app/model/tree_index.php:1021
 #: app/model/user_settings.php:79 views/anniversary.php:96
 #: views/family.php:1244 views/family.php:1312 views/layout.php:350
 #: views/list.php:147 views/list.php:639 views/list_names.php:296
@@ -354,26 +354,26 @@ msgstr "svedok"
 msgid "Name"
 msgstr "Meno"
 
-#: admin/include/editor_event_cls.php:38 admin/include/editor_event_cls.php:366
-#: admin/include/editor_event_cls.php:1712
-#: admin/include/editor_event_cls.php:1713 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:38 admin/include/editor_event_cls.php:367
+#: admin/include/editor_event_cls.php:1733
+#: admin/include/editor_event_cls.php:1734 admin/views/editor.php:1126
 msgid "Prefix"
 msgstr "Predpona"
 
-#: admin/include/editor_event_cls.php:40 admin/include/editor_event_cls.php:366
-#: admin/include/editor_event_cls.php:1712
-#: admin/include/editor_event_cls.php:1714 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:40 admin/include/editor_event_cls.php:367
+#: admin/include/editor_event_cls.php:1733
+#: admin/include/editor_event_cls.php:1735 admin/views/editor.php:1126
 msgid "Suffix"
 msgstr "Prípona"
 
 #: admin/include/editor_event_cls.php:42
-#: admin/include/editor_event_cls.php:1715 admin/views/tree_merge.php:1478
+#: admin/include/editor_event_cls.php:1736 admin/views/tree_merge.php:1478
 msgid "Title of Nobility"
 msgstr "Šľachtický titul"
 
-#: admin/include/editor_event_cls.php:44 admin/include/editor_event_cls.php:366
-#: admin/include/editor_event_cls.php:1712
-#: admin/include/editor_event_cls.php:1716 admin/include/editor_sources.php:341
+#: admin/include/editor_event_cls.php:44 admin/include/editor_event_cls.php:367
+#: admin/include/editor_event_cls.php:1733
+#: admin/include/editor_event_cls.php:1737 admin/include/editor_sources.php:341
 #: admin/views/edit_repository.php:127 admin/views/edit_source.php:271
 #: admin/views/editor.php:1126 admin/views/tree_merge.php:1481
 #: include/show_source_pdf.php:43 views/source.php:33 views/source.php:109
@@ -381,31 +381,31 @@ msgstr "Šľachtický titul"
 msgid "Title"
 msgstr "Titul"
 
-#: admin/include/editor_event_cls.php:46 admin/include/editor_event_cls.php:280
-#: admin/include/editor_event_cls.php:1090
-#: admin/include/editor_event_cls.php:1301
+#: admin/include/editor_event_cls.php:46 admin/include/editor_event_cls.php:281
+#: admin/include/editor_event_cls.php:1091
+#: admin/include/editor_event_cls.php:1302
 msgid "Adoption"
 msgstr "Adopcia"
 
 #: admin/include/editor_event_cls.php:48
-#: admin/include/editor_event_cls.php:1717 admin/views/tree_merge.php:1484
+#: admin/include/editor_event_cls.php:1738 admin/views/tree_merge.php:1484
 msgid "Title of Lordship"
 msgstr "Titul urodzenosti"
 
-#: admin/include/editor_event_cls.php:50 admin/include/editor_event_cls.php:281
-#: admin/include/editor_event_cls.php:322 admin/views/edit_repository.php:207
+#: admin/include/editor_event_cls.php:50 admin/include/editor_event_cls.php:282
+#: admin/include/editor_event_cls.php:323 admin/views/edit_repository.php:207
 #: include/marriage_cls.php:688 include/person_cls.php:2861
 msgid "URL/ Internet link"
 msgstr "URL/ Internet odkaz"
 
-#: admin/include/editor_event_cls.php:52 admin/include/editor_event_cls.php:282
+#: admin/include/editor_event_cls.php:52 admin/include/editor_event_cls.php:283
 msgid "Colour mark by person"
 msgstr "Farebná značka osoby"
 
-#: admin/include/editor_event_cls.php:56 admin/include/editor_event_cls.php:459
-#: admin/include/editor_event_cls.php:1226
-#: admin/include/editor_event_cls.php:1550
-#: admin/include/editor_event_cls.php:1553 admin/views/editor_relation.php:792
+#: admin/include/editor_event_cls.php:56 admin/include/editor_event_cls.php:460
+#: admin/include/editor_event_cls.php:1227
+#: admin/include/editor_event_cls.php:1575
+#: admin/include/editor_event_cls.php:1578 admin/views/editor_relation.php:792
 #: admin/views/editor_relation.php:795
 msgid "Religion"
 msgstr "Vierovyznanie"
@@ -425,58 +425,58 @@ msgid "ID"
 msgstr "ID"
 
 # Language indicator, used for birthday RSS
-#: admin/include/editor_event_cls.php:272
-#: admin/include/editor_event_cls.php:315
-#: admin/include/editor_event_cls.php:1280 views/list.php:76 views/list.php:77
+#: admin/include/editor_event_cls.php:273
+#: admin/include/editor_event_cls.php:316
+#: admin/include/editor_event_cls.php:1281 views/list.php:76 views/list.php:77
 #: views/list.php:991
 msgid "Events"
 msgstr "Udalosti"
 
-#: admin/include/editor_event_cls.php:286
-#: admin/include/editor_event_cls.php:327
+#: admin/include/editor_event_cls.php:287
+#: admin/include/editor_event_cls.php:328
 msgid "Add event"
 msgstr "Pridaj udalosť"
 
-#: admin/include/editor_event_cls.php:298
-#: admin/include/editor_event_cls.php:338
+#: admin/include/editor_event_cls.php:299
+#: admin/include/editor_event_cls.php:339
 msgid "For items like:"
 msgstr "Pre položku ako:"
 
-#: admin/include/editor_event_cls.php:298 include/language_event.php:12
+#: admin/include/editor_event_cls.php:299 include/language_event.php:12
 msgid "baptized as child"
 msgstr "pokrstený ako dieťa"
 
-#: admin/include/editor_event_cls.php:298 include/language_event.php:25
+#: admin/include/editor_event_cls.php:299 include/language_event.php:25
 msgid "depart"
 msgstr "odchod"
 
-#: admin/include/editor_event_cls.php:298
-#: admin/include/editor_event_cls.php:338
+#: admin/include/editor_event_cls.php:299
+#: admin/include/editor_event_cls.php:339
 msgid "etc."
 msgstr "atď."
 
-#: admin/include/editor_event_cls.php:338 include/language_event.php:42
+#: admin/include/editor_event_cls.php:339 include/language_event.php:42
 msgid "Marriage contract"
 msgstr "Manželská zmluva"
 
-#: admin/include/editor_event_cls.php:338 include/language_event.php:43
+#: admin/include/editor_event_cls.php:339 include/language_event.php:43
 msgid "Marriage license"
 msgstr "Manželská licencia"
 
-#: admin/include/editor_event_cls.php:366
-#: admin/include/editor_event_cls.php:1238
-#: admin/include/editor_event_cls.php:1706
-#: admin/include/editor_event_cls.php:1708 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:367
+#: admin/include/editor_event_cls.php:1239
+#: admin/include/editor_event_cls.php:1727
+#: admin/include/editor_event_cls.php:1729 admin/views/editor.php:1126
 #: include/person_cls.php:1856
 msgid "Nickname"
 msgstr "Prezývka"
 
-#: admin/include/editor_event_cls.php:369
-#: admin/include/editor_event_cls.php:445
-#: admin/include/editor_event_cls.php:471
-#: admin/include/editor_event_cls.php:491
-#: admin/include/editor_event_cls.php:493
-#: admin/include/editor_event_cls.php:495 admin/include/editor_sources.php:558
+#: admin/include/editor_event_cls.php:370
+#: admin/include/editor_event_cls.php:446
+#: admin/include/editor_event_cls.php:472
+#: admin/include/editor_event_cls.php:492
+#: admin/include/editor_event_cls.php:494
+#: admin/include/editor_event_cls.php:496 admin/include/editor_sources.php:558
 #: admin/views/cms_pages.php:224 admin/views/cms_pages.php:292
 #: admin/views/edit_address.php:264 admin/views/edit_address.php:267
 #: admin/views/edit_repository.php:218 admin/views/edit_repository.php:221
@@ -490,21 +490,21 @@ msgstr "Prezývka"
 msgid "Add"
 msgstr "Pridať"
 
-#: admin/include/editor_event_cls.php:938
+#: admin/include/editor_event_cls.php:939
 msgid "Select GEDCOM number or type name of person:"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:944
-#: admin/include/editor_event_cls.php:1093 admin/views/editor.php:306
+#: admin/include/editor_event_cls.php:945
+#: admin/include/editor_event_cls.php:1094 admin/views/editor.php:306
 #: admin/views/editor_person.php:307 admin/views/editor_relation.php:115
 #: admin/views/editor_relation.php:1225
 msgid "GEDCOM number (ID)"
 msgstr "GEDCOM číslo: (ID)"
 
-#: admin/include/editor_event_cls.php:948
-#: admin/include/editor_event_cls.php:1049
-#: admin/include/editor_event_cls.php:1094
-#: admin/include/editor_event_cls.php:1456
+#: admin/include/editor_event_cls.php:949
+#: admin/include/editor_event_cls.php:1050
+#: admin/include/editor_event_cls.php:1095
+#: admin/include/editor_event_cls.php:1457
 #: admin/include/editor_media_select.php:83
 #: admin/include/editor_person_select.php:127
 #: admin/include/editor_place_select.php:78
@@ -532,50 +532,50 @@ msgstr "GEDCOM číslo: (ID)"
 #: app/model/tree_index.php:629 views/addresses.php:31
 #: views/latest_changes.php:23 views/layout.php:351 views/list.php:100
 #: views/list.php:163 views/list.php:454 views/list_places_families.php:95
-#: views/photoalbum.php:190 views/relations.php:97 views/relations.php:105
+#: views/photoalbum.php:173 views/relations.php:97 views/relations.php:105
 #: views/relations.php:208 views/relations.php:211 views/relations.php:219
 #: views/sources.php:26
 msgid "Search"
 msgstr "Hľadaj"
 
-#: admin/include/editor_event_cls.php:956
-#: admin/include/editor_event_cls.php:961
-#: admin/include/editor_event_cls.php:1003 admin/views/cms_pages.php:196
+#: admin/include/editor_event_cls.php:957
+#: admin/include/editor_event_cls.php:962
+#: admin/include/editor_event_cls.php:1004 admin/views/cms_pages.php:196
 #: admin/views/edit_address.php:87 admin/views/edit_address.php:278
 #: admin/views/edit_repository.php:70 admin/views/edit_repository.php:229
 #: admin/views/edit_source.php:192 admin/views/edit_source.php:403
 #: admin/views/editor_person.php:1238 admin/views/editor_person.php:1702
 #: admin/views/editor_relation.php:1051 admin/views/index_admin.php:618
-#: admin/views/thumbs.php:451 include/calculate_age_cls.php:371
-#: include/calculate_age_cls.php:393 include/calculate_age_cls.php:497
-#: include/calculate_age_cls.php:519 views/fanchart.php:657
+#: include/calculate_age_cls.php:371 include/calculate_age_cls.php:393
+#: include/calculate_age_cls.php:497 include/calculate_age_cls.php:519
+#: views/fanchart.php:657
 msgid "or"
 msgstr "alebo"
 
-#: admin/include/editor_event_cls.php:974
+#: admin/include/editor_event_cls.php:975
 msgid "Select role or type other role:"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:978
+#: admin/include/editor_event_cls.php:979
 #, fuzzy
 #| msgid "Select place"
 msgid "Select role"
 msgstr "Vyber miesto"
 
-#: admin/include/editor_event_cls.php:984
+#: admin/include/editor_event_cls.php:985
 #, fuzzy
 #| msgid "witness"
 msgid "Witness"
 msgstr "svedok"
 
-#: admin/include/editor_event_cls.php:998
-#: admin/include/editor_event_cls.php:1005
+#: admin/include/editor_event_cls.php:999
+#: admin/include/editor_event_cls.php:1006
 #, fuzzy
 #| msgid "Other name"
 msgid "Other role"
 msgstr "Iné meno"
 
-#: admin/include/editor_event_cls.php:1070
+#: admin/include/editor_event_cls.php:1071
 #: admin/include/editor_relation_select.php:110 admin/views/editor.php:664
 #: admin/views/editor_person.php:249 admin/views/editor_relation.php:63
 #: admin/views/editor_relation.php:272 admin/views/editor_relation.php:305
@@ -590,169 +590,169 @@ msgstr "Iné meno"
 msgid "and"
 msgstr "a"
 
-#: admin/include/editor_event_cls.php:1151
-#: admin/include/editor_event_cls.php:1164
+#: admin/include/editor_event_cls.php:1152
+#: admin/include/editor_event_cls.php:1165
 msgid "Selected colour"
 msgstr "Vybratá farba"
 
-#: admin/include/editor_event_cls.php:1167
+#: admin/include/editor_event_cls.php:1168
 msgid "Change colour mark by person"
 msgstr "Zmeň farebnú značku osoby"
 
-#: admin/include/editor_event_cls.php:1168
+#: admin/include/editor_event_cls.php:1169
 msgid "Colour 1"
 msgstr "Farba 1"
 
-#: admin/include/editor_event_cls.php:1169
+#: admin/include/editor_event_cls.php:1170
 msgid "Colour 2"
 msgstr "Farba 2"
 
-#: admin/include/editor_event_cls.php:1170
+#: admin/include/editor_event_cls.php:1171
 msgid "Colour 3"
 msgstr "Farba 3"
 
-#: admin/include/editor_event_cls.php:1171
+#: admin/include/editor_event_cls.php:1172
 msgid "Colour 4"
 msgstr "Farba 4"
 
-#: admin/include/editor_event_cls.php:1172
+#: admin/include/editor_event_cls.php:1173
 msgid "Colour 5"
 msgstr "Farba 5"
 
-#: admin/include/editor_event_cls.php:1173
+#: admin/include/editor_event_cls.php:1174
 msgid "Colour 6"
 msgstr "Farba 6"
 
-#: admin/include/editor_event_cls.php:1174
+#: admin/include/editor_event_cls.php:1175
 msgid "Colour 7"
 msgstr "Farba 7"
 
-#: admin/include/editor_event_cls.php:1175
+#: admin/include/editor_event_cls.php:1176
 msgid "Colour 8"
 msgstr "Farba 8"
 
-#: admin/include/editor_event_cls.php:1176
+#: admin/include/editor_event_cls.php:1177
 msgid "Colour 9"
 msgstr "Farba 9"
 
-#: admin/include/editor_event_cls.php:1177
+#: admin/include/editor_event_cls.php:1178
 msgid "Colour 10"
 msgstr "Farba 10"
 
-#: admin/include/editor_event_cls.php:1178
+#: admin/include/editor_event_cls.php:1179
 msgid "Colour 11"
 msgstr "Farba 11"
 
-#: admin/include/editor_event_cls.php:1179
+#: admin/include/editor_event_cls.php:1180
 msgid "Colour 12"
 msgstr "Farba 12"
 
-#: admin/include/editor_event_cls.php:1180
+#: admin/include/editor_event_cls.php:1181
 msgid "Colour 13"
 msgstr "Farba 13"
 
-#: admin/include/editor_event_cls.php:1181
+#: admin/include/editor_event_cls.php:1182
 msgid "Colour 14"
 msgstr "Farba 14"
 
-#: admin/include/editor_event_cls.php:1187
+#: admin/include/editor_event_cls.php:1188
 msgid "Also change"
 msgstr "Tiež zmeň"
 
-#: admin/include/editor_event_cls.php:1189 admin/include/editor_inc.php:526
+#: admin/include/editor_event_cls.php:1190 admin/include/editor_inc.php:533
 #: admin/views/gedcom_export.php:256 app/model/family.php:240
 #: include/person_cls.php:1028 include/person_cls.php:1029
 #: views/hourglass.php:160
 msgid "Descendants"
 msgstr "Potomkovia"
 
-#: admin/include/editor_event_cls.php:1190 admin/include/editor_inc.php:527
+#: admin/include/editor_event_cls.php:1191 admin/include/editor_inc.php:534
 #: admin/views/gedcom_export.php:274 app/model/ancestor.php:153
 #: include/person_cls.php:1037 include/person_cls.php:1038
 #: views/hourglass.php:140
 msgid "Ancestors"
 msgstr "Predkovia"
 
-#: admin/include/editor_event_cls.php:1240
-#: admin/include/editor_event_cls.php:1745
+#: admin/include/editor_event_cls.php:1241
+#: admin/include/editor_event_cls.php:1766
 msgid "German Rufname"
 msgstr "Nemecké Rufname"
 
-#: admin/include/editor_event_cls.php:1293
+#: admin/include/editor_event_cls.php:1294
 #, fuzzy
 #| msgid "baptised"
 msgid "Baptise"
 msgstr "pokrstený"
 
-#: admin/include/editor_event_cls.php:1309
+#: admin/include/editor_event_cls.php:1310
 #, fuzzy
 #| msgid "Settings"
 msgid "Settling"
 msgstr "Nastavenia"
 
-#: admin/include/editor_event_cls.php:1321
+#: admin/include/editor_event_cls.php:1322
 #, fuzzy
 #| msgid "Character set"
 msgid "Characteristics"
 msgstr "Nastavenie znakov"
 
-#: admin/include/editor_event_cls.php:1331 admin/views/editor_person.php:1380
+#: admin/include/editor_event_cls.php:1332 admin/views/editor_person.php:1380
 msgid "Buried"
 msgstr "Pochovaný"
 
-#: admin/include/editor_event_cls.php:1338
+#: admin/include/editor_event_cls.php:1339
 msgid "Will"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1345 views/anniversary.php:62
+#: admin/include/editor_event_cls.php:1346 views/anniversary.php:62
 #: views/anniversary.php:217
 msgid "Religious"
 msgstr "Cirkevný"
 
-#: admin/include/editor_event_cls.php:1354 include/language_event.php:27
+#: admin/include/editor_event_cls.php:1355 include/language_event.php:27
 msgid "Education"
 msgstr "Vzdelanie"
 
-#: admin/include/editor_event_cls.php:1361
+#: admin/include/editor_event_cls.php:1362
 msgid "Social"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1369
+#: admin/include/editor_event_cls.php:1370
 msgid "LDS"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1379
+#: admin/include/editor_event_cls.php:1380
 msgid "Jewish"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1409
-#: admin/include/editor_event_cls.php:1713
+#: admin/include/editor_event_cls.php:1410
+#: admin/include/editor_event_cls.php:1734
 msgid "e.g. Lt. Cmndr."
 msgstr "napr. Lt. Cmndr."
 
-#: admin/include/editor_event_cls.php:1411
-#: admin/include/editor_event_cls.php:1714
+#: admin/include/editor_event_cls.php:1412
+#: admin/include/editor_event_cls.php:1735
 msgid "e.g. Jr."
 msgstr "napr. Jr."
 
-#: admin/include/editor_event_cls.php:1413
-#: admin/include/editor_event_cls.php:1715
+#: admin/include/editor_event_cls.php:1414
+#: admin/include/editor_event_cls.php:1736
 msgid "e.g. Jhr., Jkvr."
 msgstr "e.g. Jhr., Jkvr."
 
-#: admin/include/editor_event_cls.php:1415
-#: admin/include/editor_event_cls.php:1716
+#: admin/include/editor_event_cls.php:1416
+#: admin/include/editor_event_cls.php:1737
 msgid "e.g. Prof., Dr."
 msgstr "e.g. Prof., Dr."
 
-#: admin/include/editor_event_cls.php:1417
-#: admin/include/editor_event_cls.php:1717
+#: admin/include/editor_event_cls.php:1418
+#: admin/include/editor_event_cls.php:1738
 msgid "e.g. Lord of Amsterdam"
 msgstr "e.g. Lord of Amsterdam"
 
-#: admin/include/editor_event_cls.php:1430
-#: admin/include/editor_event_cls.php:1527
-#: admin/include/editor_event_cls.php:1560 admin/include/editor_sources.php:348
+#: admin/include/editor_event_cls.php:1431
+#: admin/include/editor_event_cls.php:1552
+#: admin/include/editor_event_cls.php:1585 admin/include/editor_sources.php:348
 #: admin/include/editor_sources.php:410 admin/views/edit_repository.php:157
 #: admin/views/edit_source.php:287 admin/views/editor.php:1249
 #: admin/views/editor.php:1283 admin/views/editor.php:1303
@@ -764,15 +764,15 @@ msgstr "e.g. Lord of Amsterdam"
 #: admin/views/editor_relation.php:357 admin/views/editor_relation.php:434
 #: admin/views/editor_relation.php:524 admin/views/editor_relation.php:662
 #: admin/views/editor_relation.php:738 admin/views/editor_relation.php:836
-#: app/model/tree_index.php:1019 include/show_source_pdf.php:49
+#: app/model/tree_index.php:1021 include/show_source_pdf.php:49
 #: views/list.php:237 views/list.php:257 views/list.php:702 views/list.php:728
 #: views/source.php:37 views/source.php:115 views/sources.php:69
 msgid "Date"
 msgstr "Dátum"
 
-#: admin/include/editor_event_cls.php:1452
-#: admin/include/editor_event_cls.php:1534
-#: admin/include/editor_event_cls.php:1567 admin/include/editor_sources.php:355
+#: admin/include/editor_event_cls.php:1453
+#: admin/include/editor_event_cls.php:1559
+#: admin/include/editor_event_cls.php:1592 admin/include/editor_sources.php:355
 #: admin/include/editor_sources.php:417 admin/views/edit_address.php:141
 #: admin/views/edit_repository.php:167 admin/views/edit_source.php:295
 #: admin/views/editor.php:1255 admin/views/editor.php:1289
@@ -791,9 +791,9 @@ msgstr "Dátum"
 msgid "Place"
 msgstr "Miesto"
 
-#: admin/include/editor_event_cls.php:1471
-#: admin/include/editor_event_cls.php:1541
-#: admin/include/editor_event_cls.php:1574 admin/include/editor_sources.php:369
+#: admin/include/editor_event_cls.php:1472
+#: admin/include/editor_event_cls.php:1566
+#: admin/include/editor_event_cls.php:1599 admin/include/editor_sources.php:369
 #: admin/views/edit_address.php:253 admin/views/edit_repository.php:187
 #: admin/views/edit_source.php:376 admin/views/editor.php:1655
 #: admin/views/editor_person.php:445 admin/views/editor_person.php:704
@@ -813,7 +813,19 @@ msgstr "Miesto"
 msgid "Text"
 msgstr "Text"
 
-#: admin/include/editor_event_cls.php:1483 admin/include/editor_sources.php:71
+#: admin/include/editor_event_cls.php:1482
+#, fuzzy
+#| msgid "Category name"
+msgid "Categories"
+msgstr "Názov kategórie"
+
+#: admin/include/editor_event_cls.php:1485
+#, fuzzy
+#| msgid "Select location"
+msgid "Reset selection"
+msgstr "Vyber miesto"
+
+#: admin/include/editor_event_cls.php:1508 admin/include/editor_sources.php:71
 #: admin/include/editor_sources.php:77 admin/include/editor_sources.php:83
 #: admin/include/editor_sources.php:89 admin/include/editor_sources.php:95
 #: admin/include/editor_sources.php:101 admin/include/editor_sources.php:107
@@ -841,99 +853,93 @@ msgstr "Text"
 msgid "Source"
 msgstr "Zdroj"
 
-#: admin/include/editor_event_cls.php:1594
+#: admin/include/editor_event_cls.php:1619
 msgid "Upload new image"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1600 admin/update/install_update.php:614
+#: admin/include/editor_event_cls.php:1625 admin/update/install_update.php:614
 #: admin/views/backup.php:110 admin/views/gedcom.php:67
 #: admin/views/settings.php:99 admin/views/settings.php:652
 msgid "Upload"
 msgstr "Nahrávanie"
 
-#: admin/include/editor_event_cls.php:1605
+#: admin/include/editor_event_cls.php:1630
 msgid "Main media folder"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1614
-#, fuzzy
-#| msgid "Category name"
-msgid "Category"
-msgstr "Názov kategórie"
-
-#: admin/include/editor_event_cls.php:1616
+#: admin/include/editor_event_cls.php:1637
 #, fuzzy
 #| msgid "Directory created."
 msgid "Directory"
 msgstr "Adresár bol vytvorený."
 
-#: admin/include/editor_event_cls.php:1723 include/person_cls.php:1840
+#: admin/include/editor_event_cls.php:1744 include/person_cls.php:1840
 #: include/person_cls.php:1846
 msgid "Also known as"
 msgstr "Známy tiež ako"
 
-#: admin/include/editor_event_cls.php:1724 include/language_event.php:80
+#: admin/include/editor_event_cls.php:1745 include/language_event.php:80
 msgid "alias name"
 msgstr "alias"
 
-#: admin/include/editor_event_cls.php:1725 include/language_event.php:83
+#: admin/include/editor_event_cls.php:1746 include/language_event.php:83
 msgid "Short name (for reports)"
 msgstr "Skrátené meno"
 
-#: admin/include/editor_event_cls.php:1726 include/language_event.php:86
+#: admin/include/editor_event_cls.php:1747 include/language_event.php:86
 msgid "Adopted name"
 msgstr "Prijaté meno"
 
-#: admin/include/editor_event_cls.php:1730 admin/views/editor_person.php:426
+#: admin/include/editor_event_cls.php:1751 admin/views/editor_person.php:426
 #: include/language_event.php:89
 msgid "Hebrew name"
 msgstr "Židovské meno"
 
-#: admin/include/editor_event_cls.php:1733 include/language_event.php:92
+#: admin/include/editor_event_cls.php:1754 include/language_event.php:92
 msgid "Census name"
 msgstr "Meno v sčítaní ľudu"
 
-#: admin/include/editor_event_cls.php:1734 include/language_event.php:95
+#: admin/include/editor_event_cls.php:1755 include/language_event.php:95
 msgid "Married name"
 msgstr "Meno po sobáši"
 
-#: admin/include/editor_event_cls.php:1735 include/language_event.php:98
+#: admin/include/editor_event_cls.php:1756 include/language_event.php:98
 msgid "Given name"
 msgstr "Krstné meno"
 
-#: admin/include/editor_event_cls.php:1736 include/language_event.php:101
+#: admin/include/editor_event_cls.php:1757 include/language_event.php:101
 msgid "Farm name"
 msgstr "Názov farmy"
 
-#: admin/include/editor_event_cls.php:1737 include/language_event.php:104
+#: admin/include/editor_event_cls.php:1758 include/language_event.php:104
 msgid "Birth name"
 msgstr "Rodné meno"
 
-#: admin/include/editor_event_cls.php:1738 include/language_event.php:107
+#: admin/include/editor_event_cls.php:1759 include/language_event.php:107
 msgid "Indian name"
 msgstr "Indianske meno"
 
-#: admin/include/editor_event_cls.php:1739 include/language_event.php:110
+#: admin/include/editor_event_cls.php:1760 include/language_event.php:110
 msgid "Formal name"
 msgstr "Formálne meno"
 
-#: admin/include/editor_event_cls.php:1740 include/language_event.php:113
+#: admin/include/editor_event_cls.php:1761 include/language_event.php:113
 msgid "Current name"
 msgstr "Súčasné meno"
 
-#: admin/include/editor_event_cls.php:1741 include/language_event.php:116
+#: admin/include/editor_event_cls.php:1762 include/language_event.php:116
 msgid "Soldier name"
 msgstr "Vojenské meno"
 
-#: admin/include/editor_event_cls.php:1742 include/language_event.php:122
+#: admin/include/editor_event_cls.php:1763 include/language_event.php:122
 msgid "Religious name"
 msgstr "Cirkevné meno"
 
-#: admin/include/editor_event_cls.php:1743 include/language_event.php:125
+#: admin/include/editor_event_cls.php:1764 include/language_event.php:125
 msgid "Other name"
 msgstr "Iné meno"
 
-#: admin/include/editor_event_cls.php:1744 include/language_event.php:119
+#: admin/include/editor_event_cls.php:1765 include/language_event.php:119
 msgid "Formerly known as"
 msgstr "Predtým známy ako"
 
@@ -946,15 +952,15 @@ msgstr "Načítanie obrázku zlyhalo, skontrolujte práva priečinku"
 msgid "No valid picture, media or document file"
 msgstr "Neplatný obrázok, média alebo dokument"
 
-#: admin/include/editor_inc.php:512 admin/include/editor_inc.php:1084
+#: admin/include/editor_inc.php:519 admin/include/editor_inc.php:1091
 msgid "Are you sure you want to remove this event?"
 msgstr "Naozaj chceš vymazať túto udalosť?"
 
-#: admin/include/editor_inc.php:525
+#: admin/include/editor_inc.php:532
 msgid "Also remove colour marks of"
 msgstr "Vymazať tiež farebnú značku"
 
-#: admin/include/editor_inc.php:530 admin/include/editor_inc.php:1085
+#: admin/include/editor_inc.php:537 admin/include/editor_inc.php:1092
 #: admin/include/editor_user_settings.php:90 admin/models/editor.php:1393
 #: admin/models/editor.php:1958 admin/views/cms_pages.php:37
 #: admin/views/cms_pages.php:60 admin/views/edit_address.php:35
@@ -962,26 +968,27 @@ msgstr "Vymazať tiež farebnú značku"
 #: admin/views/editor.php:339 admin/views/editor.php:356
 #: admin/views/editor_relation.php:246 admin/views/gedcom.php:88
 #: admin/views/gedcom_export.php:462 admin/views/gedcom_export.php:478
-#: admin/views/gedcom_export.php:495 admin/views/gedcom_export.php:540
-#: admin/views/groups.php:50 admin/views/groups.php:532
-#: admin/views/install.php:304 admin/views/maps_locations.php:98
-#: admin/views/maps_locations.php:120 admin/views/maps_locations.php:199
-#: admin/views/notes.php:91 admin/views/settings.php:147
-#: admin/views/settings.php:162 admin/views/settings.php:188
-#: admin/views/settings.php:211 admin/views/settings.php:226
-#: admin/views/settings.php:268 admin/views/settings.php:280
-#: admin/views/settings.php:295 admin/views/settings.php:332
-#: admin/views/settings.php:804 admin/views/settings_homepage.php:345
-#: admin/views/thumbs.php:162 admin/views/thumbs.php:172
-#: admin/views/thumbs.php:181 admin/views/thumbs.php:191
-#: admin/views/thumbs.php:211 admin/views/thumbs.php:553
-#: admin/views/tree_merge.php:892 admin/views/tree_merge.php:905
-#: admin/views/tree_merge.php:918 admin/views/tree_merge.php:935
-#: admin/views/trees.php:29 admin/views/users.php:19 views/mailform.php:79
+#: admin/views/gedcom_export.php:494 admin/views/gedcom_export.php:511
+#: admin/views/gedcom_export.php:556 admin/views/groups.php:50
+#: admin/views/groups.php:532 admin/views/install.php:304
+#: admin/views/maps_locations.php:98 admin/views/maps_locations.php:120
+#: admin/views/maps_locations.php:199 admin/views/notes.php:91
+#: admin/views/settings.php:147 admin/views/settings.php:162
+#: admin/views/settings.php:188 admin/views/settings.php:211
+#: admin/views/settings.php:226 admin/views/settings.php:268
+#: admin/views/settings.php:280 admin/views/settings.php:295
+#: admin/views/settings.php:332 admin/views/settings.php:804
+#: admin/views/settings_homepage.php:345 admin/views/thumbs.php:162
+#: admin/views/thumbs.php:172 admin/views/thumbs.php:181
+#: admin/views/thumbs.php:191 admin/views/thumbs.php:211
+#: admin/views/thumbs.php:552 admin/views/tree_merge.php:892
+#: admin/views/tree_merge.php:905 admin/views/tree_merge.php:918
+#: admin/views/tree_merge.php:935 admin/views/trees.php:29
+#: admin/views/users.php:19 views/mailform.php:79
 msgid "Yes"
 msgstr "Áno"
 
-#: admin/include/editor_inc.php:531 admin/include/editor_inc.php:1086
+#: admin/include/editor_inc.php:538 admin/include/editor_inc.php:1093
 #: admin/include/editor_user_settings.php:91 admin/models/editor.php:1394
 #: admin/models/editor.php:1959 admin/views/cms_pages.php:38
 #: admin/views/cms_pages.php:61 admin/views/edit_address.php:36
@@ -989,24 +996,25 @@ msgstr "Áno"
 #: admin/views/editor.php:340 admin/views/editor.php:357
 #: admin/views/editor_relation.php:247 admin/views/gedcom.php:89
 #: admin/views/gedcom_export.php:463 admin/views/gedcom_export.php:479
-#: admin/views/gedcom_export.php:496 admin/views/gedcom_export.php:539
-#: admin/views/groups.php:51 admin/views/groups.php:533
-#: admin/views/install.php:305 admin/views/maps_locations.php:99
-#: admin/views/maps_locations.php:121 admin/views/maps_locations.php:200
-#: admin/views/notes.php:92 admin/views/settings.php:148
-#: admin/views/settings.php:163 admin/views/settings.php:189
-#: admin/views/settings.php:212 admin/views/settings.php:227
-#: admin/views/settings.php:269 admin/views/settings.php:281
-#: admin/views/settings.php:296 admin/views/settings.php:333
-#: admin/views/settings.php:805 admin/views/settings_homepage.php:346
-#: admin/views/thumbs.php:92 admin/views/thumbs.php:95
-#: admin/views/thumbs.php:102 admin/views/thumbs.php:162
-#: admin/views/thumbs.php:172 admin/views/thumbs.php:181
-#: admin/views/thumbs.php:191 admin/views/thumbs.php:210
-#: admin/views/thumbs.php:229 admin/views/thumbs.php:554
-#: admin/views/tree_merge.php:893 admin/views/tree_merge.php:906
-#: admin/views/tree_merge.php:919 admin/views/tree_merge.php:936
-#: admin/views/trees.php:30 admin/views/users.php:20 views/mailform.php:80
+#: admin/views/gedcom_export.php:495 admin/views/gedcom_export.php:512
+#: admin/views/gedcom_export.php:555 admin/views/groups.php:51
+#: admin/views/groups.php:533 admin/views/install.php:305
+#: admin/views/maps_locations.php:99 admin/views/maps_locations.php:121
+#: admin/views/maps_locations.php:200 admin/views/notes.php:92
+#: admin/views/settings.php:148 admin/views/settings.php:163
+#: admin/views/settings.php:189 admin/views/settings.php:212
+#: admin/views/settings.php:227 admin/views/settings.php:269
+#: admin/views/settings.php:281 admin/views/settings.php:296
+#: admin/views/settings.php:333 admin/views/settings.php:805
+#: admin/views/settings_homepage.php:346 admin/views/thumbs.php:92
+#: admin/views/thumbs.php:95 admin/views/thumbs.php:102
+#: admin/views/thumbs.php:162 admin/views/thumbs.php:172
+#: admin/views/thumbs.php:181 admin/views/thumbs.php:191
+#: admin/views/thumbs.php:210 admin/views/thumbs.php:229
+#: admin/views/thumbs.php:553 admin/views/tree_merge.php:893
+#: admin/views/tree_merge.php:906 admin/views/tree_merge.php:919
+#: admin/views/tree_merge.php:936 admin/views/trees.php:30
+#: admin/views/users.php:20 views/mailform.php:80
 msgid "No"
 msgstr "Nie"
 
@@ -1061,7 +1069,7 @@ msgstr "Pohlavie"
 
 #: admin/include/editor_sources.php:77 admin/include/editor_sources.php:83
 #: admin/views/editor.php:1246 admin/views/editor_person.php:650
-#: app/model/tree_index.php:974 app/model/tree_index.php:976
+#: app/model/tree_index.php:976 app/model/tree_index.php:978
 #: googlemaps/namesearch.php:185 include/person_cls.php:2013
 #: include/person_cls.php:2014 include/person_cls.php:2016
 #: include/person_cls.php:2017 views/ancestor_sheet.php:295
@@ -1073,7 +1081,7 @@ msgstr "narodený/á"
 
 #: admin/include/editor_sources.php:89 admin/views/editor.php:1280
 #: admin/views/editor_person.php:1015 app/model/timeline.php:83
-#: app/model/tree_index.php:983 app/model/tree_index.php:985
+#: app/model/tree_index.php:985 app/model/tree_index.php:987
 #: googlemaps/namesearch.php:188 include/person_cls.php:2181
 #: include/person_cls.php:2182 include/person_cls.php:2184
 #: include/person_cls.php:2185 views/family.php:1145 views/list.php:235
@@ -1083,7 +1091,7 @@ msgstr "pokrstený"
 
 #: admin/include/editor_sources.php:95 admin/include/editor_sources.php:101
 #: admin/views/editor.php:1300 admin/views/editor_person.php:1105
-#: app/model/tree_index.php:992 app/model/tree_index.php:994
+#: app/model/tree_index.php:994 app/model/tree_index.php:996
 #: googlemaps/namesearch.php:194 include/person_cls.php:2334
 #: include/person_cls.php:2335 include/person_cls.php:2337
 #: include/person_cls.php:2338 views/ancestor_sheet.php:295
@@ -1100,13 +1108,13 @@ msgid "buried"
 msgstr "pochovaný"
 
 #: admin/include/editor_sources.php:113 admin/include/editor_sources.php:205
-#: admin/include/editor_sources.php:213 admin/views/thumbs.php:748
+#: admin/include/editor_sources.php:213 admin/views/thumbs.php:747
 #: include/show_sources.php:99 include/show_sources.php:232
 #: include/show_sources.php:365
 msgid "source"
 msgstr "zdroj"
 
-#: admin/include/editor_sources.php:119 admin/views/thumbs.php:727
+#: admin/include/editor_sources.php:119 admin/views/thumbs.php:726
 msgid "person"
 msgstr "osoba"
 
@@ -1148,7 +1156,7 @@ msgstr "Cirkevný sobáš"
 msgid "Divorce"
 msgstr "Rozvod"
 
-#: admin/include/editor_sources.php:173 admin/views/thumbs.php:739
+#: admin/include/editor_sources.php:173 admin/views/thumbs.php:738
 #, fuzzy
 #| msgid "cremation"
 msgid "relation"
@@ -1312,7 +1320,7 @@ msgstr "Upraviť rodokmeň?"
 #: admin/views/groups.php:225 admin/views/groups.php:356
 #: admin/views/groups.php:391 admin/views/groups.php:438
 #: admin/views/groups.php:568 admin/views/groups.php:619
-#: admin/views/groups.php:712 admin/views/log.php:98
+#: admin/views/groups.php:696 admin/views/log.php:98
 #: admin/views/maps_settings.php:41 admin/views/settings.php:33
 #: admin/views/settings.php:178 admin/views/settings.php:240
 #: admin/views/settings.php:361 admin/views/settings.php:502
@@ -1330,7 +1338,7 @@ msgstr "Zmeniť"
 msgid "Use user-group setting"
 msgstr "Použi užívateľké nastavenie"
 
-#: admin/include/gedcom_export.php:2065
+#: admin/include/gedcom_export.php:2079
 msgid "No valid family number."
 msgstr "Neplatné číslo rodiny."
 
@@ -1648,7 +1656,7 @@ msgid "Repositories"
 msgstr "Úložiská"
 
 #: admin/index.php:639 admin/views/edit_address.php:25
-#: admin/views/gedcom_export.php:504 admin/views/menu.php:102
+#: admin/views/gedcom_export.php:520 admin/views/menu.php:102
 msgid "Shared addresses"
 msgstr "Zdieľané adresy"
 
@@ -1758,7 +1766,7 @@ msgstr "Problém v súbore db_login, možno sa používa starý db_login súbor.
 msgid "Saved"
 msgstr "Uložené"
 
-#: admin/models/language_editor.php:90 admin/views/thumbs.php:441
+#: admin/models/language_editor.php:90 admin/views/thumbs.php:447
 #: admin/views/tree_text.php:15
 msgid "Language"
 msgstr "Jazyk"
@@ -1780,7 +1788,7 @@ msgid "Changed logo."
 msgstr "Zmenená lokalita:"
 
 #: admin/models/tree_text.php:17 admin/views/editor.php:1372
-#: include/show_tree_text.php:7 views/photoalbum.php:31
+#: include/show_tree_text.php:7
 msgid "NO NAME"
 msgstr "BEZ MENA"
 
@@ -2202,6 +2210,7 @@ msgstr ""
 
 #: admin/views/cal_date.php:21 admin/views/thumbs.php:37
 #: admin/views/thumbs.php:148 admin/views/thumbs.php:250
+#: admin/views/thumbs.php:397
 msgid "Choose family tree"
 msgstr "Vyberte rodokmeň"
 
@@ -3817,24 +3826,28 @@ msgid "Export texts"
 msgstr "Export textov"
 
 #: admin/views/gedcom_export.php:469
+msgid "Export categories (No GEDCOM Standard!)"
+msgstr ""
+
+#: admin/views/gedcom_export.php:485
 msgid "Export sources"
 msgstr "Export zdrojov"
 
-#: admin/views/gedcom_export.php:492
+#: admin/views/gedcom_export.php:508
 msgid "Export longitude & latitude by places"
 msgstr "Export zem. súradníc podľa miesta"
 
-#: admin/views/gedcom_export.php:516
+#: admin/views/gedcom_export.php:532
 #, fuzzy
 #| msgid "Shared addresses"
 msgid "Export shared addresses"
 msgstr "Zdieľané adresy"
 
-#: admin/views/gedcom_export.php:517
+#: admin/views/gedcom_export.php:533
 msgid "Convert all shared addresses as single addresses"
 msgstr ""
 
-#: admin/views/gedcom_export.php:520
+#: admin/views/gedcom_export.php:536
 msgid ""
 "\"Shared addresses\" is <b>only compatible</b> with HuMo-genealogy and "
 "Haza-21 programs.<br>\n"
@@ -3842,19 +3855,19 @@ msgid ""
 "be lost."
 msgstr ""
 
-#: admin/views/gedcom_export.php:523
+#: admin/views/gedcom_export.php:539
 msgid "There are no shared addresses, standard GEDCOM export is used."
 msgstr ""
 
-#: admin/views/gedcom_export.php:530
+#: admin/views/gedcom_export.php:546
 msgid "Show export status"
 msgstr "Ukáž stav exportu"
 
-#: admin/views/gedcom_export.php:546
+#: admin/views/gedcom_export.php:562
 msgid "GEDCOM export"
 msgstr "Export GEDCOM"
 
-#: admin/views/gedcom_export.php:548
+#: admin/views/gedcom_export.php:564
 msgid "Start export"
 msgstr "Štart export"
 
@@ -4277,19 +4290,19 @@ msgstr ""
 msgid "These settings can also be set per user!"
 msgstr "Tieto nastavenia môžu byť tiež nastavené pre užívateľa!"
 
-#: admin/views/groups.php:707
+#: admin/views/groups.php:691
 msgid "Hide or show photo categories per user group."
 msgstr "Skryť alebo zobraziť kategórie fotografií pre užívateľskú skupinu."
 
-#: admin/views/groups.php:711 admin/views/thumbs.php:416
-msgid "Category prefix"
-msgstr "Prefix kategórie"
+#: admin/views/groups.php:695 admin/views/thumbs.php:422
+msgid "Category name"
+msgstr "Názov kategórie"
 
-#: admin/views/groups.php:712
+#: admin/views/groups.php:696
 msgid "Show category?"
 msgstr "Zobraziť kategóriu?"
 
-#: admin/views/groups.php:746
+#: admin/views/groups.php:724
 msgid "No photo categories available."
 msgstr "Žiadna kategória fotografií k dispozícii."
 
@@ -5541,8 +5554,8 @@ msgstr "Maďarsky - reports and lists: Smith John"
 msgid "Default timeline file (per language)"
 msgstr "Základná časová os (podľa jazyka)"
 
-#: admin/views/settings.php:573 admin/views/thumbs.php:452
-#: admin/views/tree_admin.php:18 admin/views/tree_text.php:17
+#: admin/views/settings.php:573 admin/views/tree_admin.php:18
+#: admin/views/tree_text.php:17
 msgid "Default"
 msgstr "Základné"
 
@@ -6178,116 +6191,88 @@ msgstr "Nie je Beta verzia."
 msgid "You can change filenames here."
 msgstr "Tu môžeš zmeniť názvy súborov."
 
-#: admin/views/thumbs.php:296
-msgid "Photos"
-msgstr "Fotky"
+#: admin/views/thumbs.php:380
+msgid "Category exists or name invalid!"
+msgstr ""
 
-#: admin/views/thumbs.php:366
-msgid "Prefix has to be 2 letters and _"
-msgstr "Prefix má mať 2 písmena a _"
-
-#: admin/views/thumbs.php:373
-msgid "When creating a category you have to give it a name"
-msgstr "Pri vytváraní kategórii budete musieť dať jej meno"
-
-#: admin/views/thumbs.php:384
-msgid "A category with this prefix already exists!"
-msgstr "Kategória s týmto prefixom už existuje!"
-
-#: admin/views/thumbs.php:402
+#: admin/views/thumbs.php:407
 msgid "Create categories for your photo albums"
 msgstr "Vytvor kategórie pre tvoj fotoalbum"
 
-#: admin/views/thumbs.php:408
+#: admin/views/thumbs.php:413
 msgid ""
-"Here you can create categories for all your photo albums.</li><li><b>A "
-"category will not be displayed in the photobook menu unless there is at "
-"least one picture for it.</b></li><li>Click \"Default\" to create one "
-"default name in all languages. Choose a language from the list to set a "
-"specific name for that language.<br><b>TIP:</b> First set an English name as "
-"default for all languages, then create specific names for those languages "
-"that you know. That way no tabs will display without a name in any language. "
-"In any case, setting a default name will not overwrite names for specific "
-"languages that you have already set.</li><li>The category prefix has to be "
-"made up of two letters and an underscore (like: <b>sp_</b> or <b>ws_</b>).</"
-"li><li>Pictures that you want to appear in a specific category have to be "
-"named with that prefix like: <b>sp_</b>John Smith.jpg</li><li>Pictures that "
-"you want to be displayed in the default photo category don't need a prefix."
-msgstr ""
-"Tu si môžete vytvoriť kategórie pre všetky vaše fotoalbumy. </li> <li> <b> "
-"Kategória nebude zobrazená v ponuke fotoknihy, ak neexistuje aspoň jeden "
-"snímok. </b> </li> <li> Kliknutím na tlačidlo \"Základné\" vytvorte "
-"predvolený názov vo všetkých jazykoch. Vyberte jazyk zo zoznamu - nastavte "
-"konkrétny názov pre daný jazyk <br> <b>Tip:</b> Najprv nastavte Anglický "
-"názov ako predvolené pre všetky jazyky, potom vytvorte špecifické mená pre "
-"tie jazyky, ktoré poznáte. Tak žiadne záložky nebudú bez názvu v akomkoľvek "
-"jazyku. V každom prípade, nastavte predvolený názov  pre konkrétne jazyky, "
-"ktoré ste už nastavili </li> <li> Kategória prefix musí byť tvorená z dvoch "
-"písmen a podčiarknutie (ako : <b> sp_ </b> alebo <b> ws_ </b>) </li> <li> "
-"Fotografie, ktoré chcete zobraziť v konkrétnej kategórii musia byť "
-"pomenované s prefixom, napr. : <b> sp_</b>John Smith.jpg </li> <li> "
-"Fotografie, ktoré chcete zobraziť v základnej kategórii fotografií "
-"nepotrebujú prefix."
-
-#: admin/views/thumbs.php:409
-msgid ""
-"A (sub)directory could also be a category. Example: category prefix = ab_, "
-"the directory name = ab."
+"Here you can create categories for all media files in the \"Photobook\" "
+"section.</li><li><b>Without any category no pictures will be displayed there!"
+"</b></li><li>On first use of this page default categories are created: "
+"\"persons\", \"families\" and \"sources\" will display all media files of "
+"the corresponding data sheet sections.</li><li>Feel free to add, remove, "
+"restore or reorder any category. Put translations for your prefered "
+"languages into the right input fields</li>"
 msgstr ""
 
-#: admin/views/thumbs.php:417
-msgid "Category name"
+#: admin/views/thumbs.php:414
+msgid ""
+"Category names are limited to a maximum of 30 characters. Only A-Z, a-z, "
+"0-9, - and _ are accepted!"
+msgstr ""
+
+#: admin/views/thumbs.php:415
+msgid ""
+"Consult <a href=\"../README.md\" target=\"_new\">README</a> for more "
+"information"
+msgstr ""
+
+#: admin/views/thumbs.php:423
+#, fuzzy
+#| msgid "Category name"
+msgid "Category translation"
 msgstr "Názov kategórie"
 
-#: admin/views/thumbs.php:487
-msgid "default - without prefix"
-msgstr "základné - bez prefixu"
-
-#: admin/views/thumbs.php:552
+#: admin/views/thumbs.php:551
 msgid "Do you really want to delete category:"
 msgstr "Naozaj chceš vymazať kategóriu:"
 
-#: admin/views/thumbs.php:559
+#: admin/views/thumbs.php:558
 msgid "Save changes"
 msgstr "Ulož zmeny"
 
-#: admin/views/thumbs.php:618
+#: admin/views/thumbs.php:617
 #, fuzzy
 #| msgid "Deleted location:"
 msgid "Deleted file:"
 msgstr "Vymazať lokalitu:"
 
-#: admin/views/thumbs.php:622 admin/views/thumbs.php:624
+#: admin/views/thumbs.php:621 admin/views/thumbs.php:623
 msgid "Changed filename:"
 msgstr "Zmenený názov súboru:"
 
-#: admin/views/thumbs.php:622 admin/views/thumbs.php:624
+#: admin/views/thumbs.php:621 admin/views/thumbs.php:623
 msgid "into filename:"
 msgstr "na súbor:"
 
-#: admin/views/thumbs.php:716
+#: admin/views/thumbs.php:715
 #, fuzzy
 #| msgid "Edit tree?"
 msgid "Used in tree"
 msgstr "Upraviť rodokmeň?"
 
-#: admin/views/thumbs.php:763
+#: admin/views/thumbs.php:762
 msgid "Change filename"
 msgstr "Zmeň názov súboru"
 
-#: admin/views/thumbs.php:771
+#: admin/views/thumbs.php:770
 #, fuzzy
 #| msgid "Not living"
 msgid "Not in use"
 msgstr "Nežije"
 
-#: admin/views/thumbs.php:772
+#: admin/views/thumbs.php:771
 #, fuzzy
 #| msgid "Delete"
 msgid "Delete file:"
 msgstr "Vymazať"
 
-#: admin/views/thumbs.php:772
+#: admin/views/thumbs.php:771
 #, fuzzy
 #| msgid "Delete"
 msgid "Delete file"
@@ -8045,17 +8030,17 @@ msgstr "Všetkých ale z vybratého rodokmeňa"
 msgid "Advanced search"
 msgstr "Rozšírené hľadanie"
 
-#: app/model/tree_index.php:716 app/model/tree_index.php:742
+#: app/model/tree_index.php:718 app/model/tree_index.php:744
 #, fuzzy
 #| msgid "Photo's per page"
 msgid "Go to person&apos;s page"
 msgstr "Obrázkov na stránku"
 
-#: app/model/tree_index.php:924
+#: app/model/tree_index.php:926
 msgid "Patronyms"
 msgstr "Otcovské mená"
 
-#: app/model/tree_index.php:1035 app/model/tree_index.php:1062
+#: app/model/tree_index.php:1037 app/model/tree_index.php:1064
 #: views/anniversary.php:151 views/anniversary.php:312 views/list.php:859
 #: views/list_places_families.php:245
 msgid " persons are not shown due to privacy settings"
@@ -9256,7 +9241,7 @@ msgid "TIP: use %s for other (ancestor and descendant) reports."
 msgstr "TIP: použi %s  pre iné výpisy (potomkov - predkov)."
 
 #: views/family.php:534 views/family.php:602 views/outline_report.php:328
-#: views/outline_report.php:344 views/photoalbum.php:66 views/timeline.php:216
+#: views/outline_report.php:344 views/timeline.php:216
 msgid ""
 "*** Privacy filter is active, one or more items are filtered. Please login "
 "to see all items ***"
@@ -10264,7 +10249,17 @@ msgstr "PDF (Na výšku)"
 msgid "PDF (Landscape)"
 msgstr "PDF (Na šírku)"
 
-#: views/photoalbum.php:168
+#: views/photoalbum.php:44
+msgid "*** No category available for this tree ***"
+msgstr ""
+
+#: views/photoalbum.php:55
+#, fuzzy
+#| msgid "No photo categories available."
+msgid "*** No pictures available ***"
+msgstr "Žiadna kategória fotografií k dispozícii."
+
+#: views/photoalbum.php:151
 msgid "Photo's per page"
 msgstr "Obrázkov na stránku"
 
@@ -10935,6 +10930,55 @@ msgstr "Vyber tému"
 #: views/user_settings.php:125 views/user_settings.php:128
 msgid "Standard-colours"
 msgstr "Štandarné farby"
+
+#~ msgid "Category prefix"
+#~ msgstr "Prefix kategórie"
+
+#~ msgid "Photos"
+#~ msgstr "Fotky"
+
+#~ msgid "Prefix has to be 2 letters and _"
+#~ msgstr "Prefix má mať 2 písmena a _"
+
+#~ msgid "When creating a category you have to give it a name"
+#~ msgstr "Pri vytváraní kategórii budete musieť dať jej meno"
+
+#~ msgid "A category with this prefix already exists!"
+#~ msgstr "Kategória s týmto prefixom už existuje!"
+
+#~ msgid ""
+#~ "Here you can create categories for all your photo albums.</li><li><b>A "
+#~ "category will not be displayed in the photobook menu unless there is at "
+#~ "least one picture for it.</b></li><li>Click \"Default\" to create one "
+#~ "default name in all languages. Choose a language from the list to set a "
+#~ "specific name for that language.<br><b>TIP:</b> First set an English name "
+#~ "as default for all languages, then create specific names for those "
+#~ "languages that you know. That way no tabs will display without a name in "
+#~ "any language. In any case, setting a default name will not overwrite "
+#~ "names for specific languages that you have already set.</li><li>The "
+#~ "category prefix has to be made up of two letters and an underscore (like: "
+#~ "<b>sp_</b> or <b>ws_</b>).</li><li>Pictures that you want to appear in a "
+#~ "specific category have to be named with that prefix like: <b>sp_</b>John "
+#~ "Smith.jpg</li><li>Pictures that you want to be displayed in the default "
+#~ "photo category don't need a prefix."
+#~ msgstr ""
+#~ "Tu si môžete vytvoriť kategórie pre všetky vaše fotoalbumy. </li> <li> "
+#~ "<b> Kategória nebude zobrazená v ponuke fotoknihy, ak neexistuje aspoň "
+#~ "jeden snímok. </b> </li> <li> Kliknutím na tlačidlo \"Základné\" vytvorte "
+#~ "predvolený názov vo všetkých jazykoch. Vyberte jazyk zo zoznamu - "
+#~ "nastavte konkrétny názov pre daný jazyk <br> <b>Tip:</b> Najprv nastavte "
+#~ "Anglický názov ako predvolené pre všetky jazyky, potom vytvorte "
+#~ "špecifické mená pre tie jazyky, ktoré poznáte. Tak žiadne záložky nebudú "
+#~ "bez názvu v akomkoľvek jazyku. V každom prípade, nastavte predvolený "
+#~ "názov  pre konkrétne jazyky, ktoré ste už nastavili </li> <li> Kategória "
+#~ "prefix musí byť tvorená z dvoch písmen a podčiarknutie (ako : <b> sp_ </"
+#~ "b> alebo <b> ws_ </b>) </li> <li> Fotografie, ktoré chcete zobraziť v "
+#~ "konkrétnej kategórii musia byť pomenované s prefixom, napr. : <b> sp_</"
+#~ "b>John Smith.jpg </li> <li> Fotografie, ktoré chcete zobraziť v základnej "
+#~ "kategórii fotografií nepotrebujú prefix."
+
+#~ msgid "default - without prefix"
+#~ msgstr "základné - bez prefixu"
 
 #, php-format
 #~ msgid ""
