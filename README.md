@@ -117,7 +117,7 @@ at least one category for your media files. In admin panel go to Family Trees->
 Pictures / create thumbnails and choose the Family tree you
 want to add categories to:
 
-![Category settings 01](images/docu/HuMo-gen-Server-Categories_01.webm)
+![Category settings 01](images/docu/HuMo-gen-Server-Categories_01.webp)
 
 (1) Now go to the slider _Photo album  categories_
 
@@ -135,7 +135,7 @@ implemented in GEDCOM. HuMo-gen-Server will ex- and import the categories of a
 media file with the program specific tag _\_CTG_  but very likely the data will 
 be lost if you im- and export it with another genealocical program.
 
-![Category settings 02](images/docu/HuMo-gen-Server-Categories_02.webm)
+![Category settings 02](images/docu/HuMo-gen-Server-Categories_02.webp)
 
 (1) Choose a language
 
@@ -145,7 +145,7 @@ naming convention described on the page.
 (3) Type in a translation for the selected language and save changes (4)
 
 #### Add media file to category
-![Category settings 03](images/docu/HuMo-gen-Server-Categories_03.webm)
+![Category settings 03](images/docu/HuMo-gen-Server-Categories_03.webp)
 
 When you upload and edit a media file for a person, a family or a source you will
 see a _categories_ section with your created categories. You can select more 
@@ -154,7 +154,7 @@ If you can't see this category section you probably did not create an own
 category in the steps above.
 
 #### View categories
-![Category settings 04](images/docu/HuMo-gen-Server-Categories_04.webm)
+![Category settings 04](images/docu/HuMo-gen-Server-Categories_04.webp)
 
 Categories will be set up as tabs in Photobook view. Here you see the three 
 default categories and the user created ones. If you owe some thousands of 
@@ -164,7 +164,7 @@ why you have to log out and in again to see pictures here that has newly been
 added to a category.
 
 #### Hide categories in group settings
-![Category settings 05](images/docu/HuMo-gen-Server-Categories_05.webm)
+![Category settings 05](images/docu/HuMo-gen-Server-Categories_05.webp)
 
 Within the admin panel User->User groups you can hide selected categories from
 showing up in Photobook section. Mention: This is NOT a security feature. The 
