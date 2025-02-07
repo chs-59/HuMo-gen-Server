@@ -1,5 +1,5 @@
 <?php
-// holds the prefixes for existent category subdirectories
+// holds categories of selected tree
 global $pcat_dirs;
 $pcat_dirs = get_pcat_dirs();
 global $mediacats;
@@ -115,8 +115,21 @@ function resize_picture_IM($folder, $file, $maxheight = 1080, $maxwidth = 1920)
     }
     return ($success);
 }
-//search for a thumbnail or mime type placeholder and returns the image tag
-function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $attrib = '', $link2hires=false, $link_attrib='', $html_before='')
+//takes path and filename of media file and returns html code for thumbnail image and if configured link to hires
+/* ***** OPTIONS array
+ * folder      : path to media directory
+ * file        : filename or media file (may include subdirectory)
+ * maxw        : maximum width of thumbnail ( 0 = auto, negative value = disable)
+ * maxh        : maximum height of thumbnail ( 0 = auto, negative value = disable)
+ * css         : css code for image tag ("style=" is set by function!)
+ * attrib      : attribute for image tag 
+ * link2hires  : if true link thumbnail to original media file 
+ * link_attrib : attribute for link tag
+ * html_before : HTML code between link and image tag (eg used for gallery tags)
+ * use_hires   : force the use of original picture as thumbnail image (eg used for random_photo on front page)
+ */
+
+function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $attrib = '', $link2hires=false, $link_attrib='', $html_before='', $use_hires=false)
 {
     global $pcat_dirs, $pict_options, $dbh, $tree_id;
 
@@ -131,6 +144,8 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
         $img_style .= 'height:auto; max-width:' . $maxw . 'px; ' . $css . '" ' . $attrib;
     } elseif ($maxh > 0) {
         $img_style .= 'width:auto; max-height:' . $maxh . 'px; ' . $css . '" ' . $attrib;
+    } elseif ($maxw < 0 && $maxh < 0) {
+        $img_style .= $css . '" ' . $attrib;
     } else {
         $img_style .= 'width:auto; height:120px; ' . $css . '" ' . $attrib;
     }
@@ -138,6 +153,7 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
     // should be removed after a while in later versions (2024-12-17)
     // looking for media files in suffix folder and add suffix folder to Db
     if (!file_exists($folder . $file)) {
+        $pcat_dirs = get_pcat_dirs();
         if (array_key_exists(substr($file, 0, 3), $pcat_dirs)
             && file_exists($folder . substr($file, 0, 2) . '/' . $file) ) {
             $sql = "UPDATE humo_events SET
@@ -152,16 +168,16 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
     if (!file_exists($folder . $file)) {
         return '<img src="../images/thumb_missing-image.jpg" style="width:auto; height:120px;" title="' . $folder . $file . ' not found">';
     }
-
+    
     $rwfolder = $folder; // rwfolder will be changed due to rewrite mode
     $data2sql = $dbh->query("SELECT * FROM humo_trees WHERE tree_id=" . $tree_id);
     $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
     // for rewrite: remove tree_pict_path from folder to get subfolder
     $subfolder = str_replace( '../' .$data2Db->tree_pict_path, '', $folder);
-    if ($data2Db->tree_pict_path_rewrite == 'i'){
+    if ($data2Db->tree_pict_path_rewrite == 'i'){ // use mod_rewrite
         if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media.php?' . $subfolder;}
         else { $rwfolder = 'media.php?';}
-    } elseif ($data2Db->tree_pict_path_rewrite == 's') {
+    } elseif ($data2Db->tree_pict_path_rewrite == 's') { // use intern routing
         if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media/' . $subfolder;}
         else { $rwfolder = 'media/';}       
     }
@@ -171,6 +187,10 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
         $link = '<a href="' . $rwfolder . $file . '" ' . $link_attrib . '>' . $html_before;
         $link_close = '</a>';
     }
+    if ($use_hires) {
+        return $link . '<img src="' . $rwfolder . $file . '"' . $img_style . '>' . $link_close;
+    }
+
     $thumb_url =  thumbnail_exists($folder, $file); // array! folder, file
     if (!empty($thumb_url && $pict_options[2] == 'y')) {
         return $link . '<img src="' . $rwfolder . $thumb_url[1] . '"' . $img_style . '>' . $link_close;
@@ -286,7 +306,6 @@ function check_media_type($folder, $file)
 
 function thumbnail_exists($folder, $file) // returns [folder, filename] or ''
 {
-    global $pcat_dirs;
     $pparts = pathinfo($file);
     if (!$file || !file_exists($folder . $file)) {
         return '';
@@ -421,7 +440,10 @@ function resize_picture_GD($folder, $file, $maxheight = 1080, $maxwidth = 1920)
     }
     return ($success);
 }
-function get_pcat_dirs() // returns a.array with existing cat subfolders key=>dir val=>category name localized
+// DEPRECATED! - this is just to repair broken links where 
+// old category subdirs are not in database and a table humo_photocat still exists
+// (new: humo_mediacat)
+function get_pcat_dirs() 
 {
     global $dbh, $tree_id, $selected_language;
 
@@ -433,7 +455,7 @@ function get_pcat_dirs() // returns a.array with existing cat subfolders key=>di
     $tree_pict_path = __DIR__ . '/../../' . $tree_pict_path;
     $tmp_pcat_dirs = array();
     $temp = $dbh->query("SHOW TABLES LIKE 'humo_photocat'");
-    if ($temp->rowCount()) {   // there is a category table
+    if ($temp->rowCount()) {   // there is an old category table
         $catg = $dbh->query("SELECT photocat_prefix FROM humo_photocat WHERE photocat_prefix != 'none' GROUP BY photocat_prefix");
         if ($catg->rowCount()) {
             while ($catDb = $catg->fetch(PDO::FETCH_OBJ)) {
@@ -459,7 +481,7 @@ function get_pcat_dirs() // returns a.array with existing cat subfolders key=>di
     }
     return $tmp_pcat_dirs;
 }
-function get_mediacats() // returns a.array with existing cat subfolders key=>dir val=>category name localized
+function get_mediacats() // returns a.array with user created categories key=>dir val=>category name localized
 {
     global $dbh, $tree_id, $selected_language;
     $cat_array = array();
