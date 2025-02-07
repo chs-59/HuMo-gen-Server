@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-genealogy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-10 14:31+0100\n"
-"PO-Revision-Date: 2025-01-10 14:31+0100\n"
+"POT-Creation-Date: 2025-02-07 17:06+0100\n"
+"PO-Revision-Date: 2025-02-07 17:06+0100\n"
 "Last-Translator: Gianni Salza <salzagi@gmail.com>, 2019\n"
 "Language-Team: Italian (http://app.transifex.com/humo-gen/humo-gen/language/"
 "it/)\n"
@@ -218,8 +218,8 @@ msgid "December"
 msgstr "Dicembre"
 
 # Nomen Nescio: unknown name.
-#: admin/include/editor_cls.php:296 admin/include/editor_event_cls.php:1067
-#: admin/include/editor_event_cls.php:1076 admin/views/editor.php:661
+#: admin/include/editor_cls.php:296 admin/include/editor_event_cls.php:1068
+#: admin/include/editor_event_cls.php:1077 admin/views/editor.php:661
 #: admin/views/editor.php:670 admin/views/editor.php:1382
 #: admin/views/statistics_old.php:89 admin/views/statistics_old.php:100
 #: include/person_cls.php:915 include/person_cls.php:917
@@ -276,41 +276,41 @@ msgid "[]"
 msgstr "[]"
 
 #: admin/include/editor_event_cls.php:18 admin/include/editor_event_cls.php:54
-#: admin/include/editor_event_cls.php:486 admin/include/editor_event_cls.php:1045
-#: admin/include/editor_event_cls.php:1048
+#: admin/include/editor_event_cls.php:487 admin/include/editor_event_cls.php:1046
+#: admin/include/editor_event_cls.php:1049
 msgid "Picture/ Media"
 msgstr "Picture/ Media"
 
-#: admin/include/editor_event_cls.php:20 admin/include/editor_event_cls.php:432
-#: admin/include/editor_event_cls.php:1206
-#: admin/include/editor_event_cls.php:1517
-#: admin/include/editor_event_cls.php:1520 admin/views/editor.php:1171
+#: admin/include/editor_event_cls.php:20 admin/include/editor_event_cls.php:433
+#: admin/include/editor_event_cls.php:1207
+#: admin/include/editor_event_cls.php:1542
+#: admin/include/editor_event_cls.php:1545 admin/views/editor.php:1171
 #: admin/views/tree_merge.php:1453 views/list.php:320 views/list.php:327
 msgid "Profession"
 msgstr "Profesione"
 
 # Language indicator, used for birthday RSS
-#: admin/include/editor_event_cls.php:22 admin/include/editor_event_cls.php:279
-#: admin/include/editor_event_cls.php:298 admin/include/editor_event_cls.php:321
-#: admin/include/editor_event_cls.php:338 admin/include/editor_event_cls.php:1263
+#: admin/include/editor_event_cls.php:22 admin/include/editor_event_cls.php:280
+#: admin/include/editor_event_cls.php:299 admin/include/editor_event_cls.php:322
+#: admin/include/editor_event_cls.php:339 admin/include/editor_event_cls.php:1264
 #: admin/include/editor_sources.php:205 admin/include/editor_sources.php:213
-#: admin/views/tree_merge.php:1456 app/model/tree_index.php:1019
+#: admin/views/tree_merge.php:1456 app/model/tree_index.php:1021
 msgid "Event"
 msgstr "Evento"
 
-#: admin/include/editor_event_cls.php:24 admin/include/editor_event_cls.php:987
+#: admin/include/editor_event_cls.php:24 admin/include/editor_event_cls.php:988
 #: admin/views/editor_person.php:1029 admin/views/editor_person.php:1392
 #: admin/views/editor_relation.php:733 include/witness.php:62
 msgid "clergy"
 msgstr "clero"
 
-#: admin/include/editor_event_cls.php:26 admin/include/editor_event_cls.php:991
+#: admin/include/editor_event_cls.php:26 admin/include/editor_event_cls.php:992
 #: admin/views/editor_person.php:764 admin/views/editor_person.php:1314
 #: admin/views/editor_relation.php:519 include/witness.php:45
 msgid "officiator"
 msgstr "officiante"
 
-#: admin/include/editor_event_cls.php:28 admin/include/editor_event_cls.php:995
+#: admin/include/editor_event_cls.php:28 admin/include/editor_event_cls.php:996
 #: admin/views/editor_person.php:1029 include/witness.php:59
 msgid "godfather"
 msgstr "padrino"
@@ -331,15 +331,15 @@ msgstr "direttore di pompe funebri"
 msgid "witness"
 msgstr "testimone"
 
-#: admin/include/editor_event_cls.php:36 admin/include/editor_event_cls.php:963
-#: admin/include/editor_event_cls.php:1720
+#: admin/include/editor_event_cls.php:36 admin/include/editor_event_cls.php:964
+#: admin/include/editor_event_cls.php:1741
 #: admin/include/editor_media_select.php:82
 #: admin/include/editor_person_select.php:115
 #: admin/include/editor_place_select.php:77
 #: admin/include/editor_relation_select.php:46 admin/views/editor.php:148
 #: admin/views/editor_person.php:393 admin/views/gedcom_export.php:330
 #: app/model/mailform.php:83 app/model/register.php:95
-#: app/model/tree_index.php:583 app/model/tree_index.php:1019
+#: app/model/tree_index.php:583 app/model/tree_index.php:1021
 #: app/model/user_settings.php:79 views/anniversary.php:96 views/family.php:1244
 #: views/family.php:1312 views/layout.php:350 views/list.php:147
 #: views/list.php:639 views/list_names.php:296 views/list_names.php:299
@@ -348,26 +348,26 @@ msgstr "testimone"
 msgid "Name"
 msgstr "Nome"
 
-#: admin/include/editor_event_cls.php:38 admin/include/editor_event_cls.php:366
-#: admin/include/editor_event_cls.php:1712
-#: admin/include/editor_event_cls.php:1713 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:38 admin/include/editor_event_cls.php:367
+#: admin/include/editor_event_cls.php:1733
+#: admin/include/editor_event_cls.php:1734 admin/views/editor.php:1126
 msgid "Prefix"
 msgstr "Prefisso"
 
-#: admin/include/editor_event_cls.php:40 admin/include/editor_event_cls.php:366
-#: admin/include/editor_event_cls.php:1712
-#: admin/include/editor_event_cls.php:1714 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:40 admin/include/editor_event_cls.php:367
+#: admin/include/editor_event_cls.php:1733
+#: admin/include/editor_event_cls.php:1735 admin/views/editor.php:1126
 msgid "Suffix"
 msgstr "Suffisso"
 
-#: admin/include/editor_event_cls.php:42 admin/include/editor_event_cls.php:1715
+#: admin/include/editor_event_cls.php:42 admin/include/editor_event_cls.php:1736
 #: admin/views/tree_merge.php:1478
 msgid "Title of Nobility"
 msgstr "Titolo di nobiltà"
 
-#: admin/include/editor_event_cls.php:44 admin/include/editor_event_cls.php:366
-#: admin/include/editor_event_cls.php:1712
-#: admin/include/editor_event_cls.php:1716 admin/include/editor_sources.php:341
+#: admin/include/editor_event_cls.php:44 admin/include/editor_event_cls.php:367
+#: admin/include/editor_event_cls.php:1733
+#: admin/include/editor_event_cls.php:1737 admin/include/editor_sources.php:341
 #: admin/views/edit_repository.php:127 admin/views/edit_source.php:271
 #: admin/views/editor.php:1126 admin/views/tree_merge.php:1481
 #: include/show_source_pdf.php:43 views/source.php:33 views/source.php:109
@@ -375,31 +375,31 @@ msgstr "Titolo di nobiltà"
 msgid "Title"
 msgstr "Titolo"
 
-#: admin/include/editor_event_cls.php:46 admin/include/editor_event_cls.php:280
-#: admin/include/editor_event_cls.php:1090
-#: admin/include/editor_event_cls.php:1301
+#: admin/include/editor_event_cls.php:46 admin/include/editor_event_cls.php:281
+#: admin/include/editor_event_cls.php:1091
+#: admin/include/editor_event_cls.php:1302
 msgid "Adoption"
 msgstr "Adozione"
 
-#: admin/include/editor_event_cls.php:48 admin/include/editor_event_cls.php:1717
+#: admin/include/editor_event_cls.php:48 admin/include/editor_event_cls.php:1738
 #: admin/views/tree_merge.php:1484
 msgid "Title of Lordship"
 msgstr "Titolo di Signore"
 
-#: admin/include/editor_event_cls.php:50 admin/include/editor_event_cls.php:281
-#: admin/include/editor_event_cls.php:322 admin/views/edit_repository.php:207
+#: admin/include/editor_event_cls.php:50 admin/include/editor_event_cls.php:282
+#: admin/include/editor_event_cls.php:323 admin/views/edit_repository.php:207
 #: include/marriage_cls.php:688 include/person_cls.php:2861
 msgid "URL/ Internet link"
 msgstr "Link internet/ URL/"
 
-#: admin/include/editor_event_cls.php:52 admin/include/editor_event_cls.php:282
+#: admin/include/editor_event_cls.php:52 admin/include/editor_event_cls.php:283
 msgid "Colour mark by person"
 msgstr "Colore per contrassegnare la persona"
 
-#: admin/include/editor_event_cls.php:56 admin/include/editor_event_cls.php:459
-#: admin/include/editor_event_cls.php:1226
-#: admin/include/editor_event_cls.php:1550
-#: admin/include/editor_event_cls.php:1553 admin/views/editor_relation.php:792
+#: admin/include/editor_event_cls.php:56 admin/include/editor_event_cls.php:460
+#: admin/include/editor_event_cls.php:1227
+#: admin/include/editor_event_cls.php:1575
+#: admin/include/editor_event_cls.php:1578 admin/views/editor_relation.php:792
 #: admin/views/editor_relation.php:795
 msgid "Religion"
 msgstr "Religione"
@@ -419,50 +419,50 @@ msgid "ID"
 msgstr "ID"
 
 # Language indicator, used for birthday RSS
-#: admin/include/editor_event_cls.php:272 admin/include/editor_event_cls.php:315
-#: admin/include/editor_event_cls.php:1280 views/list.php:76 views/list.php:77
+#: admin/include/editor_event_cls.php:273 admin/include/editor_event_cls.php:316
+#: admin/include/editor_event_cls.php:1281 views/list.php:76 views/list.php:77
 #: views/list.php:991
 msgid "Events"
 msgstr "Evento"
 
-#: admin/include/editor_event_cls.php:286 admin/include/editor_event_cls.php:327
+#: admin/include/editor_event_cls.php:287 admin/include/editor_event_cls.php:328
 msgid "Add event"
 msgstr "Aggiungi evento"
 
-#: admin/include/editor_event_cls.php:298 admin/include/editor_event_cls.php:338
+#: admin/include/editor_event_cls.php:299 admin/include/editor_event_cls.php:339
 msgid "For items like:"
 msgstr "Per elementi come:"
 
-#: admin/include/editor_event_cls.php:298 include/language_event.php:12
+#: admin/include/editor_event_cls.php:299 include/language_event.php:12
 msgid "baptized as child"
 msgstr "battezzato da bambino"
 
-#: admin/include/editor_event_cls.php:298 include/language_event.php:25
+#: admin/include/editor_event_cls.php:299 include/language_event.php:25
 msgid "depart"
 msgstr "partire"
 
-#: admin/include/editor_event_cls.php:298 admin/include/editor_event_cls.php:338
+#: admin/include/editor_event_cls.php:299 admin/include/editor_event_cls.php:339
 msgid "etc."
 msgstr "ecc."
 
-#: admin/include/editor_event_cls.php:338 include/language_event.php:42
+#: admin/include/editor_event_cls.php:339 include/language_event.php:42
 msgid "Marriage contract"
 msgstr "Contratto di matrimonio"
 
-#: admin/include/editor_event_cls.php:338 include/language_event.php:43
+#: admin/include/editor_event_cls.php:339 include/language_event.php:43
 msgid "Marriage license"
 msgstr "Licenza di matrimonio"
 
-#: admin/include/editor_event_cls.php:366 admin/include/editor_event_cls.php:1238
-#: admin/include/editor_event_cls.php:1706
-#: admin/include/editor_event_cls.php:1708 admin/views/editor.php:1126
+#: admin/include/editor_event_cls.php:367 admin/include/editor_event_cls.php:1239
+#: admin/include/editor_event_cls.php:1727
+#: admin/include/editor_event_cls.php:1729 admin/views/editor.php:1126
 #: include/person_cls.php:1856
 msgid "Nickname"
 msgstr "Soprannome"
 
-#: admin/include/editor_event_cls.php:369 admin/include/editor_event_cls.php:445
-#: admin/include/editor_event_cls.php:471 admin/include/editor_event_cls.php:491
-#: admin/include/editor_event_cls.php:493 admin/include/editor_event_cls.php:495
+#: admin/include/editor_event_cls.php:370 admin/include/editor_event_cls.php:446
+#: admin/include/editor_event_cls.php:472 admin/include/editor_event_cls.php:492
+#: admin/include/editor_event_cls.php:494 admin/include/editor_event_cls.php:496
 #: admin/include/editor_sources.php:558 admin/views/cms_pages.php:224
 #: admin/views/cms_pages.php:292 admin/views/edit_address.php:264
 #: admin/views/edit_address.php:267 admin/views/edit_repository.php:218
@@ -476,19 +476,19 @@ msgstr "Soprannome"
 msgid "Add"
 msgstr "Aggiungi"
 
-#: admin/include/editor_event_cls.php:938
+#: admin/include/editor_event_cls.php:939
 msgid "Select GEDCOM number or type name of person:"
 msgstr "Scegli il numero GEDCOM o inserisci il nome della persona:"
 
-#: admin/include/editor_event_cls.php:944 admin/include/editor_event_cls.php:1093
+#: admin/include/editor_event_cls.php:945 admin/include/editor_event_cls.php:1094
 #: admin/views/editor.php:306 admin/views/editor_person.php:307
 #: admin/views/editor_relation.php:115 admin/views/editor_relation.php:1225
 msgid "GEDCOM number (ID)"
 msgstr "Numero GEDCOM (ID)"
 
-#: admin/include/editor_event_cls.php:948 admin/include/editor_event_cls.php:1049
-#: admin/include/editor_event_cls.php:1094
-#: admin/include/editor_event_cls.php:1456
+#: admin/include/editor_event_cls.php:949 admin/include/editor_event_cls.php:1050
+#: admin/include/editor_event_cls.php:1095
+#: admin/include/editor_event_cls.php:1457
 #: admin/include/editor_media_select.php:83
 #: admin/include/editor_person_select.php:127
 #: admin/include/editor_place_select.php:78
@@ -516,42 +516,42 @@ msgstr "Numero GEDCOM (ID)"
 #: app/model/tree_index.php:629 views/addresses.php:31
 #: views/latest_changes.php:23 views/layout.php:351 views/list.php:100
 #: views/list.php:163 views/list.php:454 views/list_places_families.php:95
-#: views/photoalbum.php:190 views/relations.php:97 views/relations.php:105
+#: views/photoalbum.php:173 views/relations.php:97 views/relations.php:105
 #: views/relations.php:208 views/relations.php:211 views/relations.php:219
 #: views/sources.php:26
 msgid "Search"
 msgstr "Cerca"
 
-#: admin/include/editor_event_cls.php:956 admin/include/editor_event_cls.php:961
-#: admin/include/editor_event_cls.php:1003 admin/views/cms_pages.php:196
+#: admin/include/editor_event_cls.php:957 admin/include/editor_event_cls.php:962
+#: admin/include/editor_event_cls.php:1004 admin/views/cms_pages.php:196
 #: admin/views/edit_address.php:87 admin/views/edit_address.php:278
 #: admin/views/edit_repository.php:70 admin/views/edit_repository.php:229
 #: admin/views/edit_source.php:192 admin/views/edit_source.php:403
 #: admin/views/editor_person.php:1238 admin/views/editor_person.php:1702
 #: admin/views/editor_relation.php:1051 admin/views/index_admin.php:618
-#: admin/views/thumbs.php:451 include/calculate_age_cls.php:371
-#: include/calculate_age_cls.php:393 include/calculate_age_cls.php:497
-#: include/calculate_age_cls.php:519 views/fanchart.php:657
+#: include/calculate_age_cls.php:371 include/calculate_age_cls.php:393
+#: include/calculate_age_cls.php:497 include/calculate_age_cls.php:519
+#: views/fanchart.php:657
 msgid "or"
 msgstr "o"
 
-#: admin/include/editor_event_cls.php:974
+#: admin/include/editor_event_cls.php:975
 msgid "Select role or type other role:"
 msgstr "Seleziona un ruolo o digita un altro ruolo:"
 
-#: admin/include/editor_event_cls.php:978
+#: admin/include/editor_event_cls.php:979
 msgid "Select role"
 msgstr "Seleziona ruolo"
 
-#: admin/include/editor_event_cls.php:984
+#: admin/include/editor_event_cls.php:985
 msgid "Witness"
 msgstr "Testimone"
 
-#: admin/include/editor_event_cls.php:998 admin/include/editor_event_cls.php:1005
+#: admin/include/editor_event_cls.php:999 admin/include/editor_event_cls.php:1006
 msgid "Other role"
 msgstr "Altro ruolo"
 
-#: admin/include/editor_event_cls.php:1070
+#: admin/include/editor_event_cls.php:1071
 #: admin/include/editor_relation_select.php:110 admin/views/editor.php:664
 #: admin/views/editor_person.php:249 admin/views/editor_relation.php:63
 #: admin/views/editor_relation.php:272 admin/views/editor_relation.php:305
@@ -566,163 +566,163 @@ msgstr "Altro ruolo"
 msgid "and"
 msgstr "e"
 
-#: admin/include/editor_event_cls.php:1151
-#: admin/include/editor_event_cls.php:1164
+#: admin/include/editor_event_cls.php:1152
+#: admin/include/editor_event_cls.php:1165
 msgid "Selected colour"
 msgstr "Seleziona il colore"
 
-#: admin/include/editor_event_cls.php:1167
+#: admin/include/editor_event_cls.php:1168
 msgid "Change colour mark by person"
 msgstr "Cambia il colore per la persona"
 
-#: admin/include/editor_event_cls.php:1168
+#: admin/include/editor_event_cls.php:1169
 msgid "Colour 1"
 msgstr "Colore 1"
 
-#: admin/include/editor_event_cls.php:1169
+#: admin/include/editor_event_cls.php:1170
 msgid "Colour 2"
 msgstr "Colore 2"
 
-#: admin/include/editor_event_cls.php:1170
+#: admin/include/editor_event_cls.php:1171
 msgid "Colour 3"
 msgstr "Colore 3"
 
-#: admin/include/editor_event_cls.php:1171
+#: admin/include/editor_event_cls.php:1172
 msgid "Colour 4"
 msgstr "Colore 4"
 
-#: admin/include/editor_event_cls.php:1172
+#: admin/include/editor_event_cls.php:1173
 msgid "Colour 5"
 msgstr "Colore 5"
 
-#: admin/include/editor_event_cls.php:1173
+#: admin/include/editor_event_cls.php:1174
 msgid "Colour 6"
 msgstr "Colore 6"
 
-#: admin/include/editor_event_cls.php:1174
+#: admin/include/editor_event_cls.php:1175
 msgid "Colour 7"
 msgstr "Colore 7"
 
-#: admin/include/editor_event_cls.php:1175
+#: admin/include/editor_event_cls.php:1176
 msgid "Colour 8"
 msgstr "Colore 8"
 
-#: admin/include/editor_event_cls.php:1176
+#: admin/include/editor_event_cls.php:1177
 msgid "Colour 9"
 msgstr "Colore 9"
 
-#: admin/include/editor_event_cls.php:1177
+#: admin/include/editor_event_cls.php:1178
 msgid "Colour 10"
 msgstr "Colore 10"
 
-#: admin/include/editor_event_cls.php:1178
+#: admin/include/editor_event_cls.php:1179
 msgid "Colour 11"
 msgstr "Colore 11"
 
-#: admin/include/editor_event_cls.php:1179
+#: admin/include/editor_event_cls.php:1180
 msgid "Colour 12"
 msgstr "Colore 12"
 
-#: admin/include/editor_event_cls.php:1180
+#: admin/include/editor_event_cls.php:1181
 msgid "Colour 13"
 msgstr "Colore 13"
 
-#: admin/include/editor_event_cls.php:1181
+#: admin/include/editor_event_cls.php:1182
 msgid "Colour 14"
 msgstr "Colore 14"
 
-#: admin/include/editor_event_cls.php:1187
+#: admin/include/editor_event_cls.php:1188
 msgid "Also change"
 msgstr "Anche cambiare"
 
-#: admin/include/editor_event_cls.php:1189 admin/include/editor_inc.php:526
+#: admin/include/editor_event_cls.php:1190 admin/include/editor_inc.php:533
 #: admin/views/gedcom_export.php:256 app/model/family.php:240
 #: include/person_cls.php:1028 include/person_cls.php:1029
 #: views/hourglass.php:160
 msgid "Descendants"
 msgstr "Discendenti"
 
-#: admin/include/editor_event_cls.php:1190 admin/include/editor_inc.php:527
+#: admin/include/editor_event_cls.php:1191 admin/include/editor_inc.php:534
 #: admin/views/gedcom_export.php:274 app/model/ancestor.php:153
 #: include/person_cls.php:1037 include/person_cls.php:1038
 #: views/hourglass.php:140
 msgid "Ancestors"
 msgstr "Antenati"
 
-#: admin/include/editor_event_cls.php:1240
-#: admin/include/editor_event_cls.php:1745
+#: admin/include/editor_event_cls.php:1241
+#: admin/include/editor_event_cls.php:1766
 msgid "German Rufname"
 msgstr "Soprannome  di Famiglia"
 
-#: admin/include/editor_event_cls.php:1293
+#: admin/include/editor_event_cls.php:1294
 msgid "Baptise"
 msgstr "Battezzare"
 
-#: admin/include/editor_event_cls.php:1309
+#: admin/include/editor_event_cls.php:1310
 msgid "Settling"
 msgstr "Sistemazione"
 
-#: admin/include/editor_event_cls.php:1321
+#: admin/include/editor_event_cls.php:1322
 msgid "Characteristics"
 msgstr "Caratteristiche"
 
-#: admin/include/editor_event_cls.php:1331 admin/views/editor_person.php:1380
+#: admin/include/editor_event_cls.php:1332 admin/views/editor_person.php:1380
 msgid "Buried"
 msgstr "Sepolto"
 
-#: admin/include/editor_event_cls.php:1338
+#: admin/include/editor_event_cls.php:1339
 msgid "Will"
 msgstr "Volontà"
 
-#: admin/include/editor_event_cls.php:1345 views/anniversary.php:62
+#: admin/include/editor_event_cls.php:1346 views/anniversary.php:62
 #: views/anniversary.php:217
 msgid "Religious"
 msgstr "Religioso"
 
-#: admin/include/editor_event_cls.php:1354 include/language_event.php:27
+#: admin/include/editor_event_cls.php:1355 include/language_event.php:27
 msgid "Education"
 msgstr "Educazione"
 
-#: admin/include/editor_event_cls.php:1361
+#: admin/include/editor_event_cls.php:1362
 msgid "Social"
 msgstr "Social"
 
-#: admin/include/editor_event_cls.php:1369
+#: admin/include/editor_event_cls.php:1370
 msgid "LDS"
 msgstr "LDS"
 
-#: admin/include/editor_event_cls.php:1379
+#: admin/include/editor_event_cls.php:1380
 msgid "Jewish"
 msgstr "Ebreo"
 
-#: admin/include/editor_event_cls.php:1409
-#: admin/include/editor_event_cls.php:1713
+#: admin/include/editor_event_cls.php:1410
+#: admin/include/editor_event_cls.php:1734
 msgid "e.g. Lt. Cmndr."
 msgstr "per esempio Lt. Cmndr."
 
-#: admin/include/editor_event_cls.php:1411
-#: admin/include/editor_event_cls.php:1714
+#: admin/include/editor_event_cls.php:1412
+#: admin/include/editor_event_cls.php:1735
 msgid "e.g. Jr."
 msgstr "per esempio Jr."
 
-#: admin/include/editor_event_cls.php:1413
-#: admin/include/editor_event_cls.php:1715
+#: admin/include/editor_event_cls.php:1414
+#: admin/include/editor_event_cls.php:1736
 msgid "e.g. Jhr., Jkvr."
 msgstr "ad esempio JHR., Jkvr."
 
-#: admin/include/editor_event_cls.php:1415
-#: admin/include/editor_event_cls.php:1716
+#: admin/include/editor_event_cls.php:1416
+#: admin/include/editor_event_cls.php:1737
 msgid "e.g. Prof., Dr."
 msgstr "ad esempio Prof., Dr."
 
-#: admin/include/editor_event_cls.php:1417
-#: admin/include/editor_event_cls.php:1717
+#: admin/include/editor_event_cls.php:1418
+#: admin/include/editor_event_cls.php:1738
 msgid "e.g. Lord of Amsterdam"
 msgstr "ad esempio Conte di Cuccagna"
 
-#: admin/include/editor_event_cls.php:1430
-#: admin/include/editor_event_cls.php:1527
-#: admin/include/editor_event_cls.php:1560 admin/include/editor_sources.php:348
+#: admin/include/editor_event_cls.php:1431
+#: admin/include/editor_event_cls.php:1552
+#: admin/include/editor_event_cls.php:1585 admin/include/editor_sources.php:348
 #: admin/include/editor_sources.php:410 admin/views/edit_repository.php:157
 #: admin/views/edit_source.php:287 admin/views/editor.php:1249
 #: admin/views/editor.php:1283 admin/views/editor.php:1303
@@ -734,15 +734,15 @@ msgstr "ad esempio Conte di Cuccagna"
 #: admin/views/editor_relation.php:357 admin/views/editor_relation.php:434
 #: admin/views/editor_relation.php:524 admin/views/editor_relation.php:662
 #: admin/views/editor_relation.php:738 admin/views/editor_relation.php:836
-#: app/model/tree_index.php:1019 include/show_source_pdf.php:49
+#: app/model/tree_index.php:1021 include/show_source_pdf.php:49
 #: views/list.php:237 views/list.php:257 views/list.php:702 views/list.php:728
 #: views/source.php:37 views/source.php:115 views/sources.php:69
 msgid "Date"
 msgstr "Data"
 
-#: admin/include/editor_event_cls.php:1452
-#: admin/include/editor_event_cls.php:1534
-#: admin/include/editor_event_cls.php:1567 admin/include/editor_sources.php:355
+#: admin/include/editor_event_cls.php:1453
+#: admin/include/editor_event_cls.php:1559
+#: admin/include/editor_event_cls.php:1592 admin/include/editor_sources.php:355
 #: admin/include/editor_sources.php:417 admin/views/edit_address.php:141
 #: admin/views/edit_repository.php:167 admin/views/edit_source.php:295
 #: admin/views/editor.php:1255 admin/views/editor.php:1289
@@ -761,9 +761,9 @@ msgstr "Data"
 msgid "Place"
 msgstr "Luogo"
 
-#: admin/include/editor_event_cls.php:1471
-#: admin/include/editor_event_cls.php:1541
-#: admin/include/editor_event_cls.php:1574 admin/include/editor_sources.php:369
+#: admin/include/editor_event_cls.php:1472
+#: admin/include/editor_event_cls.php:1566
+#: admin/include/editor_event_cls.php:1599 admin/include/editor_sources.php:369
 #: admin/views/edit_address.php:253 admin/views/edit_repository.php:187
 #: admin/views/edit_source.php:376 admin/views/editor.php:1655
 #: admin/views/editor_person.php:445 admin/views/editor_person.php:704
@@ -783,7 +783,19 @@ msgstr "Luogo"
 msgid "Text"
 msgstr "Testo"
 
-#: admin/include/editor_event_cls.php:1483 admin/include/editor_sources.php:71
+#: admin/include/editor_event_cls.php:1482
+#, fuzzy
+#| msgid "Category name"
+msgid "Categories"
+msgstr "Nome della categoria"
+
+#: admin/include/editor_event_cls.php:1485
+#, fuzzy
+#| msgid "Select location"
+msgid "Reset selection"
+msgstr "Seleziona il paese"
+
+#: admin/include/editor_event_cls.php:1508 admin/include/editor_sources.php:71
 #: admin/include/editor_sources.php:77 admin/include/editor_sources.php:83
 #: admin/include/editor_sources.php:89 admin/include/editor_sources.php:95
 #: admin/include/editor_sources.php:101 admin/include/editor_sources.php:107
@@ -811,99 +823,93 @@ msgstr "Testo"
 msgid "Source"
 msgstr "Provenienza"
 
-#: admin/include/editor_event_cls.php:1594
+#: admin/include/editor_event_cls.php:1619
 msgid "Upload new image"
 msgstr "Carica nuova immagine"
 
-#: admin/include/editor_event_cls.php:1600 admin/update/install_update.php:614
+#: admin/include/editor_event_cls.php:1625 admin/update/install_update.php:614
 #: admin/views/backup.php:110 admin/views/gedcom.php:67
 #: admin/views/settings.php:99 admin/views/settings.php:652
 msgid "Upload"
 msgstr "Carica"
 
-#: admin/include/editor_event_cls.php:1605
+#: admin/include/editor_event_cls.php:1630
 msgid "Main media folder"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:1614
-#, fuzzy
-#| msgid "Category name"
-msgid "Category"
-msgstr "Nome della categoria"
-
-#: admin/include/editor_event_cls.php:1616
+#: admin/include/editor_event_cls.php:1637
 #, fuzzy
 #| msgid "Directory created."
 msgid "Directory"
 msgstr "Directory creata."
 
-#: admin/include/editor_event_cls.php:1723 include/person_cls.php:1840
+#: admin/include/editor_event_cls.php:1744 include/person_cls.php:1840
 #: include/person_cls.php:1846
 msgid "Also known as"
 msgstr "Anche noto come"
 
-#: admin/include/editor_event_cls.php:1724 include/language_event.php:80
+#: admin/include/editor_event_cls.php:1745 include/language_event.php:80
 msgid "alias name"
 msgstr "altrimenti detto"
 
-#: admin/include/editor_event_cls.php:1725 include/language_event.php:83
+#: admin/include/editor_event_cls.php:1746 include/language_event.php:83
 msgid "Short name (for reports)"
 msgstr "Nome abbreviato (per i rapporti)"
 
-#: admin/include/editor_event_cls.php:1726 include/language_event.php:86
+#: admin/include/editor_event_cls.php:1747 include/language_event.php:86
 msgid "Adopted name"
 msgstr "Nome adottato"
 
-#: admin/include/editor_event_cls.php:1730 admin/views/editor_person.php:426
+#: admin/include/editor_event_cls.php:1751 admin/views/editor_person.php:426
 #: include/language_event.php:89
 msgid "Hebrew name"
 msgstr "Nome Ebraico"
 
-#: admin/include/editor_event_cls.php:1733 include/language_event.php:92
+#: admin/include/editor_event_cls.php:1754 include/language_event.php:92
 msgid "Census name"
 msgstr "Nome censimento"
 
-#: admin/include/editor_event_cls.php:1734 include/language_event.php:95
+#: admin/include/editor_event_cls.php:1755 include/language_event.php:95
 msgid "Married name"
 msgstr "Nome da sposata"
 
-#: admin/include/editor_event_cls.php:1735 include/language_event.php:98
+#: admin/include/editor_event_cls.php:1756 include/language_event.php:98
 msgid "Given name"
 msgstr "Nome di battesimo"
 
-#: admin/include/editor_event_cls.php:1736 include/language_event.php:101
+#: admin/include/editor_event_cls.php:1757 include/language_event.php:101
 msgid "Farm name"
 msgstr "Nome della Fattoria"
 
-#: admin/include/editor_event_cls.php:1737 include/language_event.php:104
+#: admin/include/editor_event_cls.php:1758 include/language_event.php:104
 msgid "Birth name"
 msgstr "Nome di battesimo"
 
-#: admin/include/editor_event_cls.php:1738 include/language_event.php:107
+#: admin/include/editor_event_cls.php:1759 include/language_event.php:107
 msgid "Indian name"
 msgstr "Nome indiano"
 
-#: admin/include/editor_event_cls.php:1739 include/language_event.php:110
+#: admin/include/editor_event_cls.php:1760 include/language_event.php:110
 msgid "Formal name"
 msgstr "Nome ufficiale"
 
-#: admin/include/editor_event_cls.php:1740 include/language_event.php:113
+#: admin/include/editor_event_cls.php:1761 include/language_event.php:113
 msgid "Current name"
 msgstr "Nome attuale"
 
-#: admin/include/editor_event_cls.php:1741 include/language_event.php:116
+#: admin/include/editor_event_cls.php:1762 include/language_event.php:116
 msgid "Soldier name"
 msgstr "Nome da soldato"
 
-#: admin/include/editor_event_cls.php:1742 include/language_event.php:122
+#: admin/include/editor_event_cls.php:1763 include/language_event.php:122
 msgid "Religious name"
 msgstr "Nome da religioso"
 
-#: admin/include/editor_event_cls.php:1743 include/language_event.php:125
+#: admin/include/editor_event_cls.php:1764 include/language_event.php:125
 msgid "Other name"
 msgstr "Altro nome"
 
-#: admin/include/editor_event_cls.php:1744 include/language_event.php:119
+#: admin/include/editor_event_cls.php:1765 include/language_event.php:119
 msgid "Formerly known as"
 msgstr "Precedentemente noto come"
 
@@ -916,15 +922,15 @@ msgstr "Caricamento foto non riuscito, controllare diritti di una cartella"
 msgid "No valid picture, media or document file"
 msgstr "Nessuna immagine valida, file di media o documento"
 
-#: admin/include/editor_inc.php:512 admin/include/editor_inc.php:1084
+#: admin/include/editor_inc.php:519 admin/include/editor_inc.php:1091
 msgid "Are you sure you want to remove this event?"
 msgstr "Sei sicuro di voler rimuovere questo evento?"
 
-#: admin/include/editor_inc.php:525
+#: admin/include/editor_inc.php:532
 msgid "Also remove colour marks of"
 msgstr "Rimuovi anche il colore di"
 
-#: admin/include/editor_inc.php:530 admin/include/editor_inc.php:1085
+#: admin/include/editor_inc.php:537 admin/include/editor_inc.php:1092
 #: admin/include/editor_user_settings.php:90 admin/models/editor.php:1393
 #: admin/models/editor.php:1958 admin/views/cms_pages.php:37
 #: admin/views/cms_pages.php:60 admin/views/edit_address.php:35
@@ -932,26 +938,27 @@ msgstr "Rimuovi anche il colore di"
 #: admin/views/editor.php:339 admin/views/editor.php:356
 #: admin/views/editor_relation.php:246 admin/views/gedcom.php:88
 #: admin/views/gedcom_export.php:462 admin/views/gedcom_export.php:478
-#: admin/views/gedcom_export.php:495 admin/views/gedcom_export.php:540
-#: admin/views/groups.php:50 admin/views/groups.php:532
-#: admin/views/install.php:304 admin/views/maps_locations.php:98
-#: admin/views/maps_locations.php:120 admin/views/maps_locations.php:199
-#: admin/views/notes.php:91 admin/views/settings.php:147
-#: admin/views/settings.php:162 admin/views/settings.php:188
-#: admin/views/settings.php:211 admin/views/settings.php:226
-#: admin/views/settings.php:268 admin/views/settings.php:280
-#: admin/views/settings.php:295 admin/views/settings.php:332
-#: admin/views/settings.php:804 admin/views/settings_homepage.php:345
-#: admin/views/thumbs.php:162 admin/views/thumbs.php:172
-#: admin/views/thumbs.php:181 admin/views/thumbs.php:191
-#: admin/views/thumbs.php:211 admin/views/thumbs.php:553
-#: admin/views/tree_merge.php:892 admin/views/tree_merge.php:905
-#: admin/views/tree_merge.php:918 admin/views/tree_merge.php:935
-#: admin/views/trees.php:29 admin/views/users.php:19 views/mailform.php:79
+#: admin/views/gedcom_export.php:494 admin/views/gedcom_export.php:511
+#: admin/views/gedcom_export.php:556 admin/views/groups.php:50
+#: admin/views/groups.php:532 admin/views/install.php:304
+#: admin/views/maps_locations.php:98 admin/views/maps_locations.php:120
+#: admin/views/maps_locations.php:199 admin/views/notes.php:91
+#: admin/views/settings.php:147 admin/views/settings.php:162
+#: admin/views/settings.php:188 admin/views/settings.php:211
+#: admin/views/settings.php:226 admin/views/settings.php:268
+#: admin/views/settings.php:280 admin/views/settings.php:295
+#: admin/views/settings.php:332 admin/views/settings.php:804
+#: admin/views/settings_homepage.php:345 admin/views/thumbs.php:162
+#: admin/views/thumbs.php:172 admin/views/thumbs.php:181
+#: admin/views/thumbs.php:191 admin/views/thumbs.php:211
+#: admin/views/thumbs.php:552 admin/views/tree_merge.php:892
+#: admin/views/tree_merge.php:905 admin/views/tree_merge.php:918
+#: admin/views/tree_merge.php:935 admin/views/trees.php:29
+#: admin/views/users.php:19 views/mailform.php:79
 msgid "Yes"
 msgstr "Si"
 
-#: admin/include/editor_inc.php:531 admin/include/editor_inc.php:1086
+#: admin/include/editor_inc.php:538 admin/include/editor_inc.php:1093
 #: admin/include/editor_user_settings.php:91 admin/models/editor.php:1394
 #: admin/models/editor.php:1959 admin/views/cms_pages.php:38
 #: admin/views/cms_pages.php:61 admin/views/edit_address.php:36
@@ -959,21 +966,22 @@ msgstr "Si"
 #: admin/views/editor.php:340 admin/views/editor.php:357
 #: admin/views/editor_relation.php:247 admin/views/gedcom.php:89
 #: admin/views/gedcom_export.php:463 admin/views/gedcom_export.php:479
-#: admin/views/gedcom_export.php:496 admin/views/gedcom_export.php:539
-#: admin/views/groups.php:51 admin/views/groups.php:533
-#: admin/views/install.php:305 admin/views/maps_locations.php:99
-#: admin/views/maps_locations.php:121 admin/views/maps_locations.php:200
-#: admin/views/notes.php:92 admin/views/settings.php:148
-#: admin/views/settings.php:163 admin/views/settings.php:189
-#: admin/views/settings.php:212 admin/views/settings.php:227
-#: admin/views/settings.php:269 admin/views/settings.php:281
-#: admin/views/settings.php:296 admin/views/settings.php:333
-#: admin/views/settings.php:805 admin/views/settings_homepage.php:346
-#: admin/views/thumbs.php:92 admin/views/thumbs.php:95 admin/views/thumbs.php:102
+#: admin/views/gedcom_export.php:495 admin/views/gedcom_export.php:512
+#: admin/views/gedcom_export.php:555 admin/views/groups.php:51
+#: admin/views/groups.php:533 admin/views/install.php:305
+#: admin/views/maps_locations.php:99 admin/views/maps_locations.php:121
+#: admin/views/maps_locations.php:200 admin/views/notes.php:92
+#: admin/views/settings.php:148 admin/views/settings.php:163
+#: admin/views/settings.php:189 admin/views/settings.php:212
+#: admin/views/settings.php:227 admin/views/settings.php:269
+#: admin/views/settings.php:281 admin/views/settings.php:296
+#: admin/views/settings.php:333 admin/views/settings.php:805
+#: admin/views/settings_homepage.php:346 admin/views/thumbs.php:92
+#: admin/views/thumbs.php:95 admin/views/thumbs.php:102
 #: admin/views/thumbs.php:162 admin/views/thumbs.php:172
 #: admin/views/thumbs.php:181 admin/views/thumbs.php:191
 #: admin/views/thumbs.php:210 admin/views/thumbs.php:229
-#: admin/views/thumbs.php:554 admin/views/tree_merge.php:893
+#: admin/views/thumbs.php:553 admin/views/tree_merge.php:893
 #: admin/views/tree_merge.php:906 admin/views/tree_merge.php:919
 #: admin/views/tree_merge.php:936 admin/views/trees.php:30
 #: admin/views/users.php:20 views/mailform.php:80
@@ -1027,7 +1035,7 @@ msgstr "Sesso"
 
 #: admin/include/editor_sources.php:77 admin/include/editor_sources.php:83
 #: admin/views/editor.php:1246 admin/views/editor_person.php:650
-#: app/model/tree_index.php:974 app/model/tree_index.php:976
+#: app/model/tree_index.php:976 app/model/tree_index.php:978
 #: googlemaps/namesearch.php:185 include/person_cls.php:2013
 #: include/person_cls.php:2014 include/person_cls.php:2016
 #: include/person_cls.php:2017 views/ancestor_sheet.php:295
@@ -1039,7 +1047,7 @@ msgstr "nato"
 
 #: admin/include/editor_sources.php:89 admin/views/editor.php:1280
 #: admin/views/editor_person.php:1015 app/model/timeline.php:83
-#: app/model/tree_index.php:983 app/model/tree_index.php:985
+#: app/model/tree_index.php:985 app/model/tree_index.php:987
 #: googlemaps/namesearch.php:188 include/person_cls.php:2181
 #: include/person_cls.php:2182 include/person_cls.php:2184
 #: include/person_cls.php:2185 views/family.php:1145 views/list.php:235
@@ -1049,7 +1057,7 @@ msgstr "battezzato"
 
 #: admin/include/editor_sources.php:95 admin/include/editor_sources.php:101
 #: admin/views/editor.php:1300 admin/views/editor_person.php:1105
-#: app/model/tree_index.php:992 app/model/tree_index.php:994
+#: app/model/tree_index.php:994 app/model/tree_index.php:996
 #: googlemaps/namesearch.php:194 include/person_cls.php:2334
 #: include/person_cls.php:2335 include/person_cls.php:2337
 #: include/person_cls.php:2338 views/ancestor_sheet.php:295
@@ -1066,13 +1074,13 @@ msgid "buried"
 msgstr "inumazione"
 
 #: admin/include/editor_sources.php:113 admin/include/editor_sources.php:205
-#: admin/include/editor_sources.php:213 admin/views/thumbs.php:748
+#: admin/include/editor_sources.php:213 admin/views/thumbs.php:747
 #: include/show_sources.php:99 include/show_sources.php:232
 #: include/show_sources.php:365
 msgid "source"
 msgstr "fonte"
 
-#: admin/include/editor_sources.php:119 admin/views/thumbs.php:727
+#: admin/include/editor_sources.php:119 admin/views/thumbs.php:726
 msgid "person"
 msgstr "persona"
 
@@ -1114,7 +1122,7 @@ msgstr "Matrimonio religioso"
 msgid "Divorce"
 msgstr "Divorzio"
 
-#: admin/include/editor_sources.php:173 admin/views/thumbs.php:739
+#: admin/include/editor_sources.php:173 admin/views/thumbs.php:738
 msgid "relation"
 msgstr "relazione"
 
@@ -1273,7 +1281,7 @@ msgstr "Modifica Albero?"
 #: admin/views/groups.php:225 admin/views/groups.php:356
 #: admin/views/groups.php:391 admin/views/groups.php:438
 #: admin/views/groups.php:568 admin/views/groups.php:619
-#: admin/views/groups.php:712 admin/views/log.php:98
+#: admin/views/groups.php:696 admin/views/log.php:98
 #: admin/views/maps_settings.php:41 admin/views/settings.php:33
 #: admin/views/settings.php:178 admin/views/settings.php:240
 #: admin/views/settings.php:361 admin/views/settings.php:502
@@ -1291,7 +1299,7 @@ msgstr "Modifica"
 msgid "Use user-group setting"
 msgstr "Usa le impostazioni dell'Utente / Gruppo"
 
-#: admin/include/gedcom_export.php:2065
+#: admin/include/gedcom_export.php:2079
 msgid "No valid family number."
 msgstr "Numero di famiglia non valido."
 
@@ -1599,7 +1607,7 @@ msgid "Repositories"
 msgstr "Repository"
 
 #: admin/index.php:639 admin/views/edit_address.php:25
-#: admin/views/gedcom_export.php:504 admin/views/menu.php:102
+#: admin/views/gedcom_export.php:520 admin/views/menu.php:102
 msgid "Shared addresses"
 msgstr "Indirizzi condivisi"
 
@@ -1717,7 +1725,7 @@ msgstr ""
 msgid "Saved"
 msgstr "Salvato"
 
-#: admin/models/language_editor.php:90 admin/views/thumbs.php:441
+#: admin/models/language_editor.php:90 admin/views/thumbs.php:447
 #: admin/views/tree_text.php:15
 msgid "Language"
 msgstr "Lingua"
@@ -1735,7 +1743,7 @@ msgid "Changed logo."
 msgstr "Logo cambiato."
 
 #: admin/models/tree_text.php:17 admin/views/editor.php:1372
-#: include/show_tree_text.php:7 views/photoalbum.php:31
+#: include/show_tree_text.php:7
 msgid "NO NAME"
 msgstr "SENZA NOME"
 
@@ -2161,6 +2169,7 @@ msgstr ""
 
 #: admin/views/cal_date.php:21 admin/views/thumbs.php:37
 #: admin/views/thumbs.php:148 admin/views/thumbs.php:250
+#: admin/views/thumbs.php:397
 msgid "Choose family tree"
 msgstr "Scegli l'albero genealogico"
 
@@ -3754,22 +3763,26 @@ msgid "Export texts"
 msgstr "Esporta Testi"
 
 #: admin/views/gedcom_export.php:469
+msgid "Export categories (No GEDCOM Standard!)"
+msgstr ""
+
+#: admin/views/gedcom_export.php:485
 msgid "Export sources"
 msgstr "Esporta Fonti"
 
-#: admin/views/gedcom_export.php:492
+#: admin/views/gedcom_export.php:508
 msgid "Export longitude & latitude by places"
 msgstr "Esporta longitudine e latitudine dei luoghi"
 
-#: admin/views/gedcom_export.php:516
+#: admin/views/gedcom_export.php:532
 msgid "Export shared addresses"
 msgstr "Esportare indirizzi duplicati"
 
-#: admin/views/gedcom_export.php:517
+#: admin/views/gedcom_export.php:533
 msgid "Convert all shared addresses as single addresses"
 msgstr "Converti tutti gli indirizzi duplicati come indirizzi singoli"
 
-#: admin/views/gedcom_export.php:520
+#: admin/views/gedcom_export.php:536
 msgid ""
 "\"Shared addresses\" is <b>only compatible</b> with HuMo-genealogy and Haza-21 "
 "programs.<br>\n"
@@ -3781,21 +3794,21 @@ msgstr ""
 "Altri programmi: convertire gli indirizzi duplicati. L'opzione \"indirizzo "
 "condiviso\" sarà ignorata."
 
-#: admin/views/gedcom_export.php:523
+#: admin/views/gedcom_export.php:539
 msgid "There are no shared addresses, standard GEDCOM export is used."
 msgstr ""
 "Non ci sono indirizzi condivisi, viene utilizzata l'esportazione GEDCOM "
 "standard."
 
-#: admin/views/gedcom_export.php:530
+#: admin/views/gedcom_export.php:546
 msgid "Show export status"
 msgstr "Mostra lo stato dell'esportazione"
 
-#: admin/views/gedcom_export.php:546
+#: admin/views/gedcom_export.php:562
 msgid "GEDCOM export"
 msgstr "Esporta GEDCOM‎"
 
-#: admin/views/gedcom_export.php:548
+#: admin/views/gedcom_export.php:564
 msgid "Start export"
 msgstr "Inizia l'esportazione"
 
@@ -4224,19 +4237,19 @@ msgstr ""
 msgid "These settings can also be set per user!"
 msgstr "Queste impostazioni possono anche essere impostate per utente!"
 
-#: admin/views/groups.php:707
+#: admin/views/groups.php:691
 msgid "Hide or show photo categories per user group."
 msgstr "Nascondi o mostra le categorie di foto per gruppo di utenti."
 
-#: admin/views/groups.php:711 admin/views/thumbs.php:416
-msgid "Category prefix"
-msgstr "Prefisso per la categoria"
+#: admin/views/groups.php:695 admin/views/thumbs.php:422
+msgid "Category name"
+msgstr "Nome della categoria"
 
-#: admin/views/groups.php:712
+#: admin/views/groups.php:696
 msgid "Show category?"
 msgstr "Mostrare la categoria?"
 
-#: admin/views/groups.php:746
+#: admin/views/groups.php:724
 msgid "No photo categories available."
 msgstr "Non è disponibile alcuna categoria di foto."
 
@@ -5442,8 +5455,8 @@ msgstr "Ungherese - rapporti e liste: Smith, John"
 msgid "Default timeline file (per language)"
 msgstr "File della timeline di default (per lingua)"
 
-#: admin/views/settings.php:573 admin/views/thumbs.php:452
-#: admin/views/tree_admin.php:18 admin/views/tree_text.php:17
+#: admin/views/settings.php:573 admin/views/tree_admin.php:18
+#: admin/views/tree_text.php:17
 msgid "Default"
 msgstr "Predefinito"
 
@@ -6063,120 +6076,88 @@ msgstr "Versione beta di HuMo-gen non è disponibile."
 msgid "You can change filenames here."
 msgstr "Puoi cambiare i nomi dei file qui."
 
-#: admin/views/thumbs.php:296
-msgid "Photos"
-msgstr "Foto"
+#: admin/views/thumbs.php:380
+msgid "Category exists or name invalid!"
+msgstr ""
 
-#: admin/views/thumbs.php:366
-msgid "Prefix has to be 2 letters and _"
-msgstr "Il prefisso deve essere di 2 lettere e _"
-
-#: admin/views/thumbs.php:373
-msgid "When creating a category you have to give it a name"
-msgstr "Quando crei una categoria devi dargli un nome"
-
-#: admin/views/thumbs.php:384
-msgid "A category with this prefix already exists!"
-msgstr "Una categoria con questo prefisso esiste già!"
-
-#: admin/views/thumbs.php:402
+#: admin/views/thumbs.php:407
 msgid "Create categories for your photo albums"
 msgstr "Crea le categorie per i tuoi album fotografici"
 
-#: admin/views/thumbs.php:408
+#: admin/views/thumbs.php:413
 msgid ""
-"Here you can create categories for all your photo albums.</li><li><b>A "
-"category will not be displayed in the photobook menu unless there is at least "
-"one picture for it.</b></li><li>Click \"Default\" to create one default name "
-"in all languages. Choose a language from the list to set a specific name for "
-"that language.<br><b>TIP:</b> First set an English name as default for all "
-"languages, then create specific names for those languages that you know. That "
-"way no tabs will display without a name in any language. In any case, setting "
-"a default name will not overwrite names for specific languages that you have "
-"already set.</li><li>The category prefix has to be made up of two letters and "
-"an underscore (like: <b>sp_</b> or <b>ws_</b>).</li><li>Pictures that you want "
-"to appear in a specific category have to be named with that prefix like: "
-"<b>sp_</b>John Smith.jpg</li><li>Pictures that you want to be displayed in the "
-"default photo category don't need a prefix."
+"Here you can create categories for all media files in the \"Photobook\" "
+"section.</li><li><b>Without any category no pictures will be displayed there!</"
+"b></li><li>On first use of this page default categories are created: "
+"\"persons\", \"families\" and \"sources\" will display all media files of the "
+"corresponding data sheet sections.</li><li>Feel free to add, remove, restore "
+"or reorder any category. Put translations for your prefered languages into the "
+"right input fields</li>"
 msgstr ""
-"Qui puoi creare categorie per tutti i tuoi album fotografici. </li> <li> <b> "
-"Una categoria non verrà visualizzata nel menu del fotolibro a meno che non ci "
-"sia almeno un'immagine per essa. </b></li><li>  Fare clic su \"Predefinito \" "
-"per creare un nome predefinito in tutte le lingue. Scegli una lingua "
-"dall'elenco per impostare un nome specifico per quella lingua. <br> <b> "
-"SUGGERIMENTO: </b> imposta innanzitutto un nome in Italiano come predefinito "
-"per tutte le lingue, quindi crea nomi specifici per quelle lingue che conosci. "
-"In questo modo non verranno visualizzate schede senza un nome in nessuna "
-"lingua. In ogni caso, l'impostazione di un nome predefinito non sovrascriverà "
-"i nomi per lingue specifiche che hai già impostato. </li><li> Il prefisso di "
-"categoria deve essere composto da due lettere e un carattere di sottolineatura "
-"(come: <b>sp_</b> o <b>ws_</b>). </li><li> Le immagini che si desidera "
-"visualizzare in una categoria specifica devono essere denominate con quel "
-"prefisso come: <b> sp_</b>Mario Rossi.jpg </li><li> Le immagini che si "
-"desidera visualizzare nella categoria foto predefinita non hanno bisogno di un "
-"prefisso."
 
-#: admin/views/thumbs.php:409
+#: admin/views/thumbs.php:414
 msgid ""
-"A (sub)directory could also be a category. Example: category prefix = ab_, the "
-"directory name = ab."
+"Category names are limited to a maximum of 30 characters. Only A-Z, a-z, 0-9, "
+"- and _ are accepted!"
 msgstr ""
-"Una (sotto)directory potrebbe anche essere una categoria. Esempio: prefisso "
-"della categoria = ab_, nome della directory = ab."
 
-#: admin/views/thumbs.php:417
-msgid "Category name"
+#: admin/views/thumbs.php:415
+msgid ""
+"Consult <a href=\"../README.md\" target=\"_new\">README</a> for more "
+"information"
+msgstr ""
+
+#: admin/views/thumbs.php:423
+#, fuzzy
+#| msgid "Category name"
+msgid "Category translation"
 msgstr "Nome della categoria"
 
-#: admin/views/thumbs.php:487
-msgid "default - without prefix"
-msgstr "predefinito - senza prefisso"
-
-#: admin/views/thumbs.php:552
+#: admin/views/thumbs.php:551
 msgid "Do you really want to delete category:"
 msgstr "Vuoi davvero eliminare la categoria:"
 
-#: admin/views/thumbs.php:559
+#: admin/views/thumbs.php:558
 msgid "Save changes"
 msgstr "Salva le modifiche"
 
-#: admin/views/thumbs.php:618
+#: admin/views/thumbs.php:617
 #, fuzzy
 #| msgid "Selected family tree"
 msgid "Deleted file:"
 msgstr "Albero Genealogico scelto"
 
-#: admin/views/thumbs.php:622 admin/views/thumbs.php:624
+#: admin/views/thumbs.php:621 admin/views/thumbs.php:623
 msgid "Changed filename:"
 msgstr "Modificato il Nome del file:"
 
-#: admin/views/thumbs.php:622 admin/views/thumbs.php:624
+#: admin/views/thumbs.php:621 admin/views/thumbs.php:623
 msgid "into filename:"
 msgstr "nel nome del file:"
 
-#: admin/views/thumbs.php:716
+#: admin/views/thumbs.php:715
 #, fuzzy
 #| msgid "Edit tree?"
 msgid "Used in tree"
 msgstr "Modifica Albero?"
 
-#: admin/views/thumbs.php:763
+#: admin/views/thumbs.php:762
 msgid "Change filename"
 msgstr "Modifica il Nome del file"
 
-#: admin/views/thumbs.php:771
+#: admin/views/thumbs.php:770
 #, fuzzy
 #| msgid "Not living"
 msgid "Not in use"
 msgstr "Non vivente"
 
-#: admin/views/thumbs.php:772
+#: admin/views/thumbs.php:771
 #, fuzzy
 #| msgid "Delete"
 msgid "Delete file:"
 msgstr "Cancella"
 
-#: admin/views/thumbs.php:772
+#: admin/views/thumbs.php:771
 #, fuzzy
 #| msgid "Delete"
 msgid "Delete file"
@@ -7880,17 +7861,17 @@ msgstr "Tutti tranne l'albero selezionato"
 msgid "Advanced search"
 msgstr "Ricerca avanzata"
 
-#: app/model/tree_index.php:716 app/model/tree_index.php:742
+#: app/model/tree_index.php:718 app/model/tree_index.php:744
 #, fuzzy
 #| msgid "Photo's per page"
 msgid "Go to person&apos;s page"
 msgstr "Foto per pagina"
 
-#: app/model/tree_index.php:924
+#: app/model/tree_index.php:926
 msgid "Patronyms"
 msgstr "Patronimico"
 
-#: app/model/tree_index.php:1035 app/model/tree_index.php:1062
+#: app/model/tree_index.php:1037 app/model/tree_index.php:1064
 #: views/anniversary.php:151 views/anniversary.php:312 views/list.php:859
 #: views/list_places_families.php:245
 msgid " persons are not shown due to privacy settings"
@@ -9059,7 +9040,7 @@ msgid "TIP: use %s for other (ancestor and descendant) reports."
 msgstr "Suggerimento: usa %s per altre relazioni (antenati e discendenti)."
 
 #: views/family.php:534 views/family.php:602 views/outline_report.php:328
-#: views/outline_report.php:344 views/photoalbum.php:66 views/timeline.php:216
+#: views/outline_report.php:344 views/timeline.php:216
 msgid ""
 "*** Privacy filter is active, one or more items are filtered. Please login to "
 "see all items ***"
@@ -10040,7 +10021,17 @@ msgstr "PDF (Pagine in orizzontale)"
 msgid "PDF (Landscape)"
 msgstr "PDF (Pagine in verticale)"
 
-#: views/photoalbum.php:168
+#: views/photoalbum.php:44
+msgid "*** No category available for this tree ***"
+msgstr ""
+
+#: views/photoalbum.php:55
+#, fuzzy
+#| msgid "No photo categories available."
+msgid "*** No pictures available ***"
+msgstr "Non è disponibile alcuna categoria di foto."
+
+#: views/photoalbum.php:151
 msgid "Photo's per page"
 msgstr "Foto per pagina"
 
@@ -10717,6 +10708,64 @@ msgstr "Selezionare un tema"
 #: views/user_settings.php:125 views/user_settings.php:128
 msgid "Standard-colours"
 msgstr "Colori standard"
+
+#~ msgid "Category prefix"
+#~ msgstr "Prefisso per la categoria"
+
+#~ msgid "Photos"
+#~ msgstr "Foto"
+
+#~ msgid "Prefix has to be 2 letters and _"
+#~ msgstr "Il prefisso deve essere di 2 lettere e _"
+
+#~ msgid "When creating a category you have to give it a name"
+#~ msgstr "Quando crei una categoria devi dargli un nome"
+
+#~ msgid "A category with this prefix already exists!"
+#~ msgstr "Una categoria con questo prefisso esiste già!"
+
+#~ msgid ""
+#~ "Here you can create categories for all your photo albums.</li><li><b>A "
+#~ "category will not be displayed in the photobook menu unless there is at "
+#~ "least one picture for it.</b></li><li>Click \"Default\" to create one "
+#~ "default name in all languages. Choose a language from the list to set a "
+#~ "specific name for that language.<br><b>TIP:</b> First set an English name "
+#~ "as default for all languages, then create specific names for those "
+#~ "languages that you know. That way no tabs will display without a name in "
+#~ "any language. In any case, setting a default name will not overwrite names "
+#~ "for specific languages that you have already set.</li><li>The category "
+#~ "prefix has to be made up of two letters and an underscore (like: <b>sp_</b> "
+#~ "or <b>ws_</b>).</li><li>Pictures that you want to appear in a specific "
+#~ "category have to be named with that prefix like: <b>sp_</b>John Smith.jpg</"
+#~ "li><li>Pictures that you want to be displayed in the default photo category "
+#~ "don't need a prefix."
+#~ msgstr ""
+#~ "Qui puoi creare categorie per tutti i tuoi album fotografici. </li> <li> "
+#~ "<b> Una categoria non verrà visualizzata nel menu del fotolibro a meno che "
+#~ "non ci sia almeno un'immagine per essa. </b></li><li>  Fare clic su "
+#~ "\"Predefinito \" per creare un nome predefinito in tutte le lingue. Scegli "
+#~ "una lingua dall'elenco per impostare un nome specifico per quella lingua. "
+#~ "<br> <b> SUGGERIMENTO: </b> imposta innanzitutto un nome in Italiano come "
+#~ "predefinito per tutte le lingue, quindi crea nomi specifici per quelle "
+#~ "lingue che conosci. In questo modo non verranno visualizzate schede senza "
+#~ "un nome in nessuna lingua. In ogni caso, l'impostazione di un nome "
+#~ "predefinito non sovrascriverà i nomi per lingue specifiche che hai già "
+#~ "impostato. </li><li> Il prefisso di categoria deve essere composto da due "
+#~ "lettere e un carattere di sottolineatura (come: <b>sp_</b> o <b>ws_</b>). </"
+#~ "li><li> Le immagini che si desidera visualizzare in una categoria specifica "
+#~ "devono essere denominate con quel prefisso come: <b> sp_</b>Mario Rossi.jpg "
+#~ "</li><li> Le immagini che si desidera visualizzare nella categoria foto "
+#~ "predefinita non hanno bisogno di un prefisso."
+
+#~ msgid ""
+#~ "A (sub)directory could also be a category. Example: category prefix = ab_, "
+#~ "the directory name = ab."
+#~ msgstr ""
+#~ "Una (sotto)directory potrebbe anche essere una categoria. Esempio: prefisso "
+#~ "della categoria = ab_, nome della directory = ab."
+
+#~ msgid "default - without prefix"
+#~ msgstr "predefinito - senza prefisso"
 
 #, php-format
 #~ msgid ""

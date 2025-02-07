@@ -11,7 +11,7 @@ The "Server" version puts its focus on a reliable code base that
 can be used out in the World Wide Web as a stable and secure platform 
 on hosting environments running Linux machines with Apache and/or Nginx. 
 HuMo-gen Server is not tested on Windows, nor on iOS or any Docker solutions.  
-The code base is 6.7.9a of HuMo-genealogy extended by usefull new 
+The code base is 6.7.9a of HuMo-genealogy extended by useful new 
 features and a bunch of code and interface cleanups along with bug fixes. 
 You will find a list of differences below.
 
@@ -24,7 +24,7 @@ movies, documents). See HOWTO below. (HGO: lot of bugs and security issues)
 - Use of **thumbnails** (create and display) can be switched on/off 
 **by family tree** (HGO: feature not implemented)
 - Picture **resize on upload** can be **disabled** or maximum resolution 
-values can be set. (HGO: allways on, fixed values)
+values can be set. (HGO: always on, fixed values)
 - View/rename thumbnails function displays **all connections** to database (HGO: only 
 persons)
 - Add function to **delete files** that are not used in database (HGO: feature 
@@ -32,7 +32,7 @@ not available)
 - **Categories** are widely **rebuild**: 
     - Free category name up to 30 characters (HGO: 2 character filename suffix 
 or folder)
-    - Free amout of categories selectable (HGO: one Category per file)
+    - Free amount of categories electable (HGO: one Category per file)
     - Three default categories: persons, families, sources (HGO: persons only)
     - Categories set up by tree (HGO: global)
     - Category selection for media files added to data editors of person,
@@ -48,21 +48,21 @@ Player not used, playback depends on browser capabilities)
 - Global option to _enable automatic thumbnail generation_ removed. Reason: Thumbnail
 settings moved to tree pictures settings.
 - Detection of image libraries removed from admin start page
-- Picture path can only be set at one place in backend (HGO: four places). 
+- Picture path can only be set at one place in back-end (HGO: four places). 
 - Function _create all thumbnails_ removed. Reason: Timeout problems on large 
 picture galleries
-- Fixed inconsistences produced by category suffix
-- Fixed bug when renaming files in subfolder
+- Fixed inconsistencies produced by category suffix
+- Fixed bug when renaming files in sub-folder
 
 ## HOWTO (in progress) 
 This HOWTO will only cover the differences to HGO. For all other topics
 look [here](https://sourceforge.net/projects/humo-gen/files/HuMo-gen_Manual/2022_06_05%20HuMo-gen_manual.pdf/download).
 
 ### Media folder
-Default media folder of HuMo-gen Server is _media/_, a subfolder of the main 
+Default media folder of HuMo-gen Server is _media/_, a sub-folder of the main 
 directory your HuMo-gen Server files resides. You should not rename or
 remove _media/_ but you might want to put your media files someware else.
-For example it's wise, to choose seperate media folders for each family tree in your
+For example it's wise, to choose separate media folders for each family tree in your
 installation not to mess up with your files. You can do this by creating subfolders within
 _media/_ for each tree like _media/tree\_01/_, _media/tree\_02_ and so on.
 We will find out how to configure this later on.
@@ -90,7 +90,7 @@ and your media path are located and if the media path configured is a safe place
 
 **!!!Important!!!** Be aware that access to media files is configured in _group_
  settings. Especially have a close look at the group _guest_!!! Giving this group
-access to pictures will probably conteract your security effords.
+access to pictures will probably counteract your security effords.
 
 #### How to configure the media path
 1. Log into the admin area and go to the settings 
@@ -112,7 +112,7 @@ is needed and HuMo-gen-Server will use server rewrite (mod_rewrite) for this tas
 ![pic path settings](images/docu/PicturePathSettingsOutside.png)
 
 ### Categories
-If you want to use the **Photobook** section in the frontend you have to set up
+If you want to use the **Photobook** section in the front-end you have to set up
 at least one category for your media files. In admin panel go to Family Trees->
 Pictures / create thumbnails and choose the Family tree you
 want to add categories to:
@@ -133,7 +133,7 @@ them (and create them again if you changed your mind)
 Before you want to create your own category(ies) be aware that this is not
 implemented in GEDCOM. HuMo-gen-Server will ex- and import the categories of a
 media file with the program specific tag _\_CTG_  but very likely the data will 
-be lost if you im- and export it with another genealocical program.
+be lost if you in- and export it with another genealocical program.
 
 ![Category settings 02](images/docu/HuMo-gen-Server-Categories_02.webp)
 
@@ -159,7 +159,7 @@ category in the steps above.
 Categories will be set up as tabs in Photobook view. Here you see the three 
 default categories and the user created ones. If you owe some thousands of 
 media files like me it will take a short time before pictures will show up the 
-first time but the list will be catched and you don't have to wait again. But that's
+first time but the list will be cached and you don't have to wait again. But that's
 why you have to log out and in again to see pictures here that has newly been
 added to a category.
 
@@ -169,3 +169,13 @@ added to a category.
 Within the admin panel User->User groups you can hide selected categories from
 showing up in Photobook section. Mention: This is NOT a security feature. The 
 pictures of a hidden category can still be seen in famaly trees and sources. 
+
+#### Export and import categories to GEDCOM file
+The categories of media files in the database can be exported to and imported 
+from GEDCOM file using a program defined GEDCOM tag. To do so set the option
+_Export categories_ within the GEDCOM file export dialog to _yes_.
+
+**Important!** Categories are unknown to the GEDCOM standard so you probably will
+loose these data when editing your family tree with other programs than HuMo-gen-Server.
+If you import a GEDCOM file with category tags to a new installation of HuMo-gen-
+Server you have to set up the category names afterwords in the admin panel!
