@@ -15,7 +15,7 @@ The code base is 6.7.9a of HuMo-genealogy extended by usefull new
 features and a bunch of code and interface cleanups along with bug fixes. 
 You will find a list of differences below.
 
-Berlin, January 2025
+Berlin, February 2025
 Christian Seel
 
 ## Differences HuMo-gen Server (HGS) to original HuMo-genealogy (HGO)
@@ -78,7 +78,7 @@ able to access the picture by a direct link or just guessing or probing
 the filename. To manage this problem HuMo-gen-Server offers two options:
 1. Turn on _mod\_rewrite_ on your server. Then all request to _media/_ will be 
 redirected to a script that let only allowed users access the files. If you need
-more then one media directory place them all into _media/_. This is 
+more than one media directory place them all into _media/_. This is 
 your first option.
 2. But the second option is even better: Place your media folder _outside_ the
 DocumentRoot of you server. Example: If your server operates within _/var/www/htdocs_
@@ -111,3 +111,61 @@ is needed and HuMo-gen-Server will use server rewrite (mod_rewrite) for this tas
 
 ![pic path settings](images/docu/PicturePathSettingsOutside.png)
 
+### Categories
+If you want to use the **Photobook** section in the frontend you have to set up
+at least one category for your media files. In admin panel go to Family Trees->
+Pictures / create thumbnails and choose the Family tree you
+want to add categories to:
+
+![Category settings 01](images/docu/HuMo-gen-Server-Categories_01.webm)
+
+(1) Now go to the slider _Photo album  categories_
+
+(2) If you come her for the first time three categories will be created on default.
+"persons", "families" and "sources" are predefined but you are free to delete 
+them (and create them again if you changed your mind)
+
+(3) Chose a language for which you want to add a translation of the category name,
+
+(4) put the translations in here and save changes (5).
+
+#### Create your own category
+Before you want to create your own category(ies) be aware that this is not
+implemented in GEDCOM. HuMo-gen-Server will ex- and import the categories of a
+media file with the program specific tag _\_CTG_  but very likely the data will 
+be lost if you im- and export it with another genealocical program.
+
+![Category settings 02](images/docu/HuMo-gen-Server-Categories_02.webm)
+
+(1) Choose a language
+
+(2) Type in the category name that will operate as a key. Watch out to follow the
+naming convention described on the page.
+
+(3) Type in a translation for the selected language and save changes (4)
+
+#### Add media file to category
+![Category settings 03](images/docu/HuMo-gen-Server-Categories_03.webm)
+
+When you upload and edit a media file for a person, a family or a source you will
+see a _categories_ section with your created categories. You can select more 
+than one by holding the ctrl-Key on your keyboard when selecting with click. 
+If you can't see this category section you probably did not create an own 
+category in the steps above.
+
+#### View categories
+![Category settings 04](images/docu/HuMo-gen-Server-Categories_04.webm)
+
+Categories will be set up as tabs in Photobook view. Here you see the three 
+default categories and the user created ones. If you owe some thousands of 
+media files like me it will take a short time before pictures will show up the 
+first time but the list will be catched and you don't have to wait again. But that's
+why you have to log out and in again to see pictures here that has newly been
+added to a category.
+
+#### Hide categories in group settings
+![Category settings 05](images/docu/HuMo-gen-Server-Categories_05.webm)
+
+Within the admin panel User->User groups you can hide selected categories from
+showing up in Photobook section. Mention: This is NOT a security feature. The 
+pictures of a hidden category can still be seen in famaly trees and sources. 
