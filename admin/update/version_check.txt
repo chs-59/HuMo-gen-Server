@@ -1,6 +1,6 @@
 // HuMo-gen-Server
-version=10.0.0
-version_date=2024-11-12
+version=0.9.1
+version_date=2025-02-10
 version_download=
 version_auto_download=
 new_version_auto_download_github=https://github.com/chs-59/HuMo-gen-Server/archive/refs/heads/master.zip
