@@ -1,5 +1,5 @@
 // HuMo-gen-Server
-version=0.9.1
+version=0.9.11
 version_date=2025-02-10
 version_download=
 version_auto_download=
