@@ -145,7 +145,7 @@ naming convention described on the page.
 (3) Type in a translation for the selected language and save changes (4)
 
 #### Add media file to category
-![Category settings 03](images/docu/HuMo-gen-Server-Categories_03.webm)
+![Category settings 03](images/docu/HuMo-gen-Server-Categories_03.webp)
 
 When you upload and edit a media file for a person, a family or a source you will
 see a _categories_ section with your created categories. You can select more 
