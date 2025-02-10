@@ -160,8 +160,9 @@ class Mainindex_cls
 
                 // *** Random photo ***
                 if ($module_item[$i] == 'random_photo') {
+                    $tmp_rp = $this->random_photo();
+                    if (!$bot_visit && !empty($tmp_rp)) {
                     $header = __('Random photo');
-                    if (!$bot_visit) {
                         $temp .= $this->random_photo();
                     }
                 }
@@ -636,11 +637,14 @@ class Mainindex_cls
     // *** Random photo ***
     public function random_photo()
     {
-        global $dataDb, $tree_id, $dbh, $db_functions, $humo_option;
+        global $dataDb, $tree_id, $dbh, $db_functions, $humo_option, $user;
         // adding static table for displayed photos storage
         static $temp_pic_names_table = [];
         $text = '';
         
+        if ($user['group_pictures'] != 'j'){
+            return $text;
+        }
         include_once(__DIR__ . "/../../admin/include/media_inc.php");
 
         $tree_pict_path = $dataDb->tree_pict_path;
@@ -653,17 +657,6 @@ class Mainindex_cls
             WHERE event_tree_id='" . $tree_id . "' AND event_kind='picture' AND (event_connect_kind='person' OR event_connect_kind='family')  AND event_connect_id NOT LIKE ''
             ORDER BY RAND()";
         $picqry = $dbh->query($qry);
-        // We will go unique-random aproach than only randomness
-        // 'ORDER BY RAND' is pseudorandom. It's still not random - now im implementing uniqueness
-        // first we count number of rows with this query
-        // $rowCount = $picqry->rowCount();
-        // then we skip some rows if sum of rows is enough to skip - thats why we count
-        // $skipCount = random_int(0, $rowCount - 5);
-        // for ($i = 0; $i < $skipCount; $i++) {
-        //     if (!$picqry->fetch(PDO::FETCH_OBJ)) {
-        //         return null;
-        //     }
-        // }
 
         while ($picqryDb = $picqry->fetch(PDO::FETCH_OBJ)) {
             // TODO check code. Doesn't show pictures including a space. Nov 2024: disabled this code.
@@ -679,17 +672,9 @@ class Mainindex_cls
             if (($check_file === 'png' || $check_file === 'gif' || $check_file === 'jpg' || $check_file === 'jpeg') && file_exists($tree_pict_path . $picname) && !in_array($picname, $temp_pic_names_table)) {
 
                 @$personmnDb = $db_functions->get_person($picqryDb->event_connect_id);
-                // echo '<pre>';
-                // echo $pic_conn_kind . '<br>';
-                // echo $picname . '<br>';
                 // i see that $man_cls also gets information about family privacy so no need to change this code
                 $man_cls = new person_cls($personmnDb);
-                // var_dump($man_cls->privacy);
-                // echo '</pre>';
-                // echo 'privacy:';
-                // var_dump($man_privacy);
-                // echo '<br>';
-
+ 
                 if ($man_cls->privacy == '') {
                     $date_place = '';
 

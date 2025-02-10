@@ -523,7 +523,7 @@ if (isset($_POST['install_tables2'])) {
             group_gen_protection VARCHAR(1) CHARACTER SET utf8 NOT NULL DEFAULT 'n',
             group_hide_trees VARCHAR(200) NOT NULL DEFAULT '',
             group_edit_trees VARCHAR(200) NOT NULL DEFAULT '',
-            group_hide_photocat VARCHAR(200) NOT NULL DEFAULT '',
+            group_hide_photocat text NOT NULL DEFAULT '',
             PRIMARY KEY (`group_id`)
         ) DEFAULT CHARSET=utf8");
         //group_editor varchar(1) CHARACTER SET utf8 NOT NULL DEFAULT 'n',

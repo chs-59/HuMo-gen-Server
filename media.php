@@ -16,18 +16,22 @@ include_once(__DIR__ . "/include/person_cls.php");
 
 $tree_prefix   = $_SESSION['tree_prefix'];
 $tree_id       = $_SESSION['tree_id'];
-$user_group_id = $_SESSION['user_group_id'];
-$user_id       = $_SESSION['user_id'];
+$user_group_id = $_SESSION['user_group_id']; // not set on guest
+$user_id       = $_SESSION['user_id'];       // not set on guest
 if (str_contains( $_SERVER['HTTP_REFERER'], 'admin/') 
         && isset($_SESSION['admin_tree_id']) ) {
     $tree_id = $_SESSION['admin_tree_id'];
 }
 $db_functions = new db_functions($dbh);
 $db_functions->set_tree_id($tree_id);
+$tmpuserq = '';
+if (empty($user_id)) {  $tmpuserq = "SELECT * FROM humo_users WHERE user_name='guest'";         }
+else {                  $tmpuserq = "SELECT * FROM humo_users WHERE user_id='" . $user_id . "'";}
+$usersql = $dbh->query($tmpuserq);
+$userDb = $usersql->fetch(PDO::FETCH_OBJ);
+if (empty($user_group_id)){ $user_group_id = $userDb->user_group_id; }
 $groupsql = $dbh->query("SELECT * FROM humo_groups WHERE group_id='" . $user_group_id . "'");
 $groupDb = $groupsql->fetch(PDO::FETCH_OBJ);
-$usersql = $dbh->query("SELECT * FROM humo_users WHERE user_id='" . $user_id . "'");
-$userDb = $usersql->fetch(PDO::FETCH_OBJ);
 $datasql = $dbh->query("SELECT * FROM humo_trees WHERE tree_id='" . $tree_id . "'");
 $dataDb = $datasql->fetch(PDO::FETCH_OBJ);
 $tree_pict_path = $dataDb->tree_pict_path;
@@ -41,9 +45,8 @@ if ( ( isset($_SESSION['group_id_admin']) && $groupDb->group_admin === 'j' )
     || $userDb->user_edit_trees == $tree_id ) {
     print_mediafile(__DIR__ . '/' . $tree_pict_path . $url);  
 }
-//echo '<br>TID: ' .$tree_id .  ' TPP: ' . $tree_pict_path . ' URL: ' .  $url; exit;
 // access to media files blocked
-if ($groupDb->group_pictures == 'n')  { 
+if ($groupDb->group_pictures != 'j')  { 
     print_mediafile(__DIR__ . '/images/missing-image.jpg'); 
 }
 
