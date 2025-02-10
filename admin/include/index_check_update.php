@@ -43,27 +43,9 @@ if ($check_update && $page != 'login' && $page != 'update' && $popup == false) {
 //        if (function_exists('curl_exec')) {
         if (true) {            // First try GitHub ***
             // *** Oct. 2021: Added random number to prevent CURL cache problems ***
-//            $source = 'https://github.com/chs-59/HuMo-genealogy-Server/blob/master/admin/update/version_check.txt?random=' . rand();
-            $source = 'https://raw.githubusercontent.com/chs-59/HuMo-gen-Server/refs/heads/master/admin/update/version_check.txt';
-/*            $resource = curl_init();
-            curl_setopt($resource, CURLOPT_URL, $source);
-            curl_setopt($resource, CURLOPT_HEADER, false);
-            curl_setopt($resource, CURLOPT_RETURNTRANSFER, true);
-            //curl_setopt($resource, CURLOPT_CONNECTTIMEOUT, 20);
-            // *** BE AWARE: for provider Hostinger this must be a low value, otherwise the $dbh connection will be disconnected! ***
-            curl_setopt($resource, CURLOPT_CONNECTTIMEOUT, 15);
+            $gitsource = 'https://raw.githubusercontent.com/chs-59/HuMo-gen-Server/refs/heads/master/admin/update/version_check.txt';
 
-            // *** Oct 2021: Don't use CURL cache ***
-            curl_setopt($resource, CURLOPT_FRESH_CONNECT, true); // don't use a cached version of the url
-
-            // *** Added for GitHub ***
-            curl_setopt($resource, CURLOPT_FOLLOWLOCATION, true);
-            curl_setopt($resource, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-
-            $content = curl_exec($resource);
-            curl_close($resource);
-*/
-            $content = file_get_contents($source, true);
+            $content = file_get_contents($gitsource, true);
             $content_array = explode(PHP_EOL, $content); // *** Split array into seperate lines ***
 
             // *** Debug information and validation of data ***
