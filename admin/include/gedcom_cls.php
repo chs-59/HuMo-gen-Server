@@ -22,7 +22,6 @@ class gedcom_cls
         global $nrsource, $source;
         global $address_array, $nraddress2, $address_order;
         global $pers_place_index;
-
         $line2 = explode("\n", $person_array);
 
         //TEST LINE
@@ -2691,6 +2690,9 @@ class gedcom_cls
                     event_connect_kind2='" . $this->text_process($event['connect_kind2'][$i]) . "',
                     event_connect_id2='" . $this->text_process($event['connect_id2'][$i]) . "',";
                 }
+                if (isset($event['categories'][$i])) {
+                    $gebeurtsql .= "event_categories='" . $this->text_process($event['categories'][$i]). "', ";
+                }
                 $gebeurtsql .= "
                 event_kind='" . $this->text_process($event['kind'][$i]) . "',
                 event_event='" . $this->text_process($event['event'][$i]) . "',
@@ -2698,7 +2700,6 @@ class gedcom_cls
                 event_gedcom='" . $this->text_process($event['gedcom'][$i]) . "',
                 event_date='" . $this->process_date($this->text_process($event['date'][$i])) . "',
                 event_text='" . $this->text_process($event['text'][$i]) . "',
-                event_categories='" . $this->text_process($event['categories'][$i]) . "',
                 event_place='" . $this->text_process($event['place'][$i]) . "'";
                 $dbh->query($gebeurtsql);
             }
@@ -6711,7 +6712,7 @@ class gedcom_cls
                 $connect['source_id'][$connect_nr] = $new_source_gedcomnr;
 
                 $nrsource++;
-                //unset ($source);  //Reset array
+                //unset($source);  //Reset array
                 $source["source_gedcomnr"][$nrsource] = $new_source_gedcomnr;
                 $source["source_status"][$nrsource] = '';
                 $source["source_title"][$nrsource] = '';
