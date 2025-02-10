@@ -1145,6 +1145,7 @@ if (isset($_POST['install_tables2'])) {
             event_date varchar(35) CHARACTER SET utf8,
             event_place varchar(120) CHARACTER SET utf8,
             event_text text CHARACTER SET utf8,
+            event_categories varchar(1023) CHARACTER SET utf8,
             event_quality varchar(1) CHARACTER SET utf8 DEFAULT '',
             event_new_user_id smallint NULL DEFAULT NULL,
             event_new_datetime datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
