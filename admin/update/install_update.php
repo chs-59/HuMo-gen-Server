@@ -95,35 +95,6 @@ if (isset($update['up_to_date']) && $update['up_to_date'] == 'yes') {
         <?= __('Every step can take some time, please be patient and wait till the step is completed!'); ?><br><br>
 
         <?php
-        /*
-        // Problem: HuMo-gen-Server = 11 MB. Could be too large to upload for some providers in standard form without changing parameters.
-
-        // *** Only upload .ged or .zip files ***
-        if (isset($_POST['optional_upload'])) {
-            if (strtolower(substr($_FILES['upload_file']['name'], -4)) == '.zip' or strtolower(substr($_FILES['upload_file']['name'], -4)) == '.ged') {
-                $new_upload = 'update/humo-gen_update.zip';
-                // *** Move and check for succesful upload ***
-                echo '<p><b>' . $new_upload . '<br>';
-                if (move_uploaded_file($_FILES['upload_file']['tmp_name'], $new_upload))
-                    echo __('File successfully uploaded.') . '</b>';
-                else
-                    echo __('Upload has failed.') . '</b>';
-            }
-        }
-
-        $reinstall = '';
-        if (isset($_GET['re_install'])) {
-            $reinstall = '&amp;re_install=1';
-        }
-
-        <?= __('Optional: manually upload new version.'); ?>
-        <?php printf(__('First download latest %s version from Github or Sourceforge.'), 'HuMo-gen-Server'); ?>
-
-        <form name='uploadform' enctype='multipart/form-data' action="<?= $path_tmp; ?>page=install_update&auto=1&step=1&update_check=1<?= $reinstall; ?>" method="post">
-            <input type="file" name="upload_file">
-            <input type="submit" name="optional_upload" value="Upload">
-        </form><br>
-        */
 
 
         printf(__('Step 1) Download and unzip new %s version'), 'HuMo-gen-Server');
@@ -201,45 +172,6 @@ if (isset($update['up_to_date']) && $update['up_to_date'] == 'yes') {
                         }
                     }
 
-                    // TEST
-                    /*
-                    $curl = curl_init();
-                    $fp = fopen($destination, "w+");
-                    curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-                    curl_setopt($curl, CURLOPT_FILE, $fp);
-                    curl_setopt($curl, CURLOPT_URL, $source);
-                    curl_exec ($curl);
-                    curl_close($curl);
-                    fclose($fp);
-
-                    // Er is een LEEG zip bestand...
-                    if (is_file($destination)) $download = true;
-
-                    end; //test
-                    */
-
-                    //You can use CURLOPT_FILE to directly download to a file, just set that option to a previously
-                    // opened file pointer created with fopen($filename, 'w').
-
-                    /*
-                    # Open the file for writing...
-                    $GlobalFileHandle = fopen($destination, 'w+');
-                    curl_setopt($resource, CURLOPT_FILE, $GlobalFileHandle);
-
-                    # Assign a callback function to the CURL Write-Function
-                    curl_setopt($resource, CURLOPT_WRITEFUNCTION, 'curlWriteFile');
-
-                    # Execute the download - note we DO NOT put the result into a variable!
-                    curl_exec($resource);
-
-                    # Close CURL
-                    curl_close($resource);
-
-                    # Close the file pointer
-                    fclose($GlobalFileHandle);
-
-                    if (is_file($destination)) $download = true;
-                    */
 
                     // *** Download failed from Github, now try humo-gen.com ***
                     if ($download == false) {
@@ -294,11 +226,11 @@ if (isset($update['up_to_date']) && $update['up_to_date'] == 'yes') {
                     echo __('File successfully unzipped!') . '<br>';
 
                     // *** July 2022: Archive from GitHub contains master folder ***
-                    // Change folder: update/humo-gen_update/HuMo-genealogy-master
+                    // Change folder: update/humo-gen_update/HuMo-gen-Server-master
                     // Into: update/humo-gen_update
-                    if (is_dir('update/humo-gen_update/HuMo-genealogy-master')) {
+                    if (is_dir('update/humo-gen_update/HuMo-gen-Server-master')) {
                         rename('update/humo-gen_update', 'update/humo-gen_update_temp');
-                        rename('update/humo-gen_update_temp/HuMo-genealogy-master', 'update/humo-gen_update');
+                        rename('update/humo-gen_update_temp/HuMo-gen-Server-master', 'update/humo-gen_update');
                         rmdir('update/humo-gen_update_temp');
                     }
 
@@ -449,6 +381,7 @@ if (isset($update['up_to_date']) && $update['up_to_date'] == 'yes') {
                 //for ($i=0; $i<=count($existing_files)-1; $i++){
                 // *** Skip first file (.htaccess) because of comparison problems ***
                 for ($i = 1; $i <= count($existing_files) - 1; $i++) {
+                    echo 'Dir: ' . $existing_dir[$i] . ' File:' . $existing_files[$i] . '<br>'; 
                     if (!is_dir($existing_dir[$i] . '/' . $existing_files[$i])) {
                         $key = array_search($existing_dir_files[$i], $update_dir_files);
                         if (!$key) {
