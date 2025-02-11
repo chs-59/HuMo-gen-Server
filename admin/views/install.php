@@ -21,6 +21,7 @@ $table['cms_pages'] = '';
 $table['user_notes'] = '';
 $table['user_log'] = '';
 $table['stat_country'] = '';
+$table['location'] = '';
 
 $query = $dbh->query("SHOW TABLES");
 while ($row = $query->fetch()) {
@@ -54,6 +55,9 @@ while ($row = $query->fetch()) {
 
     if ($row[0] == 'humo_stat_country') {
         $table['stat_country'] = "1";
+    }
+    if ($row[0] == 'humo_location') {
+        $table['location'] = "1";
     }
 }
 
@@ -100,7 +104,11 @@ if (!isset($_POST['install_tables2'])) {
         if (isset($_POST["table_stat_country"])) {
             $check_stat_country = ' checked';
         }
-        //$check_tags=''; if (isset($_POST["table_tags"])){ $check_tags=' checked'; }
+         $check_stat_country = '';
+        if (isset($_POST["table_location"])) {
+            $check_stat_country = ' checked';
+        }
+       //$check_tags=''; if (isset($_POST["table_tags"])){ $check_tags=' checked'; }
 
         if (!$table['settings']) {
             $check_settings = " checked disabled";
@@ -132,6 +140,9 @@ if (!isset($_POST['install_tables2'])) {
         if (!$table['stat_country']) {
             $check_stat_country = " checked disabled";
         }
+        if (!$table['location']) {
+            $check_location = " checked disabled";
+        }
 
         $username_admin = 'admin';
         if (isset($_POST["username_admin"])) {
@@ -160,6 +171,7 @@ if (!isset($_POST['install_tables2'])) {
         $check_user_notes = ' checked disabled';
         $check_log = ' checked disabled';
         $check_stat_country = ' checked disabled';
+        $check_location = ' checked disabled';
         //$check_tags=' checked';
 
         /*
@@ -207,6 +219,9 @@ if (!isset($_POST['install_tables2'])) {
         }
         if ($table['stat_country']) {
             $check_stat_country = "";
+        }
+        if ($table['location']) {
+            $check_location = "";
         }
 
         $username_admin = 'admin';
@@ -290,6 +305,11 @@ if (!isset($_POST['install_tables2'])) {
         <div class="form-check">
             <input class="form-check-input" type="checkbox" name="table_stat_country" <?= $check_stat_country; ?>>
             <label class="form-check-label"><?= __('Empty statistics country table.'); ?></label>
+        </div>
+        
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="table_location" <?= $check_location; ?>>
+            <label class="form-check-label"><?= __('Empty location table.'); ?></label>
         </div><br>
 
         <p><b><?= __('Family tree tables'); ?></b></p>
@@ -324,6 +344,7 @@ if (isset($_POST['install_tables2'])) {
     $table_user_notes = "";
     $table_groups = "";
     $table_stat_country = "";
+    $table_location = "";
     //$table_tags="";
 
     if ($table['settings']) {
@@ -356,6 +377,9 @@ if (isset($_POST['install_tables2'])) {
     if ($table['stat_country']) {
         $table_stat_country = "1";
     }
+    if ($table['location']) {
+        $table_location = "1";
+    }
 
     if (isset($_POST["table_settings"])) {
         $table_settings = '';
@@ -386,6 +410,9 @@ if (isset($_POST['install_tables2'])) {
     }
     if (isset($_POST["table_stat_country"])) {
         $table_stat_country = '';
+    }
+    if (isset($_POST["table_location"])) {
+        $table_location = '';
     }
     //if (isset($_POST["table_tags"])) $table_tags='';
 
@@ -721,6 +748,23 @@ if (isset($_POST['install_tables2'])) {
             PRIMARY KEY  (`note_id`)
             ) DEFAULT CHARSET=utf8");
     }
+    if (!$table_location) {
+        try {
+            $dbh->query("DROP TABLE humo_location");
+        } catch (Exception $e) {
+            //
+        }
+        printf(__('create table: %s.'), 'humo_location');
+        echo '<br>';
+        $dbh->query("CREATE TABLE humo_location (
+                location_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                location_location VARCHAR(120) CHARACTER SET utf8,
+                location_lat FLOAT(10,6),
+                location_lng FLOAT(10,6),
+                location_status TEXT
+            ) DEFAULT CHARSET=utf8");
+    }
+
 
     if (!$table_stat_country) {
         try {
