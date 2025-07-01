@@ -174,11 +174,14 @@ function print_thumbnail($folder, $file, $maxw = 0, $maxh = 120, $css = '', $att
     $data2Db = $data2sql->fetch(PDO::FETCH_OBJ);
     // for rewrite: remove tree_pict_path from folder to get subfolder
     $subfolder = str_replace( '../' .$data2Db->tree_pict_path, '', $folder);
+    
+    // $_SERVER["PHP_SELF"] to detect admin path
+    // leading "/" not in test tring to avoid return value 0 (evaluates to false)
     if ($data2Db->tree_pict_path_rewrite == 'i'){ // use mod_rewrite
-        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media.php?' . $subfolder;}
+        if (strpos( $_SERVER["PHP_SELF"], 'admin/index.php' ) ) { $rwfolder = '../media.php?' . $subfolder;}
         else { $rwfolder = 'media.php?';}
     } elseif ($data2Db->tree_pict_path_rewrite == 's') { // use intern routing
-        if (strpos( $_SERVER["PHP_SELF"], '/admin/index.php' ) ) { $rwfolder = '../media/' . $subfolder;}
+        if (strpos( $_SERVER["PHP_SELF"], 'admin/index.php' ) ) { $rwfolder = '../media/' . $subfolder;}
         else { $rwfolder = 'media/';}       
     }
     $link = '';
