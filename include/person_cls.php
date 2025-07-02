@@ -506,14 +506,16 @@ class person_cls
                 $rufname_qry = $db_functions->get_events_connect('person', $personDb->pers_gedcomnumber, 'name');
                 foreach ($rufname_qry as $rufnameDb) {
                     if ($rufnameDb->event_gedcom == "_RUFN") {
-                        //$pers_firstname = str_ireplace($rufnameDb->event_event,'<u>'.$rufnameDb->event_event.'</u>',$pers_firstname);
+                        $pers_firstname = str_ireplace($rufnameDb->event_event,'<u>'.$rufnameDb->event_event.'</u>',$pers_firstname);
                         //$pers_firstname .= '&quot;'.$rufnameDb->event_event.'&quot;';
 
+                        /*
                         if ($pers_firstname) {
                             $pers_firstname .= ' ';
                         }
                         $pers_firstname .= '<u>' . $rufnameDb->event_event . '</u>'; // *** Show Rufname underlined... ***
 
+                        */
                         if ($show_name_texts == true && $rufnameDb->event_text) {
                             if ($pers_firstname) {
                                 $pers_firstname .= ' ';
