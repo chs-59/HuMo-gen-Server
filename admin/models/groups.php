@@ -50,7 +50,7 @@ class GroupsModel
             }
 
             $group_admin = 'n';
-            if (isset($_POST["group_admin"])) {
+            if (isset($_POST["group_admin"]) && $this->group_id != 3 ) {
                 $group_admin = 'j';
             }
             //$group_editor='n'; if (isset($_POST["group_editor"])){ $group_editor='j'; }
