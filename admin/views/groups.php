@@ -123,6 +123,9 @@ $groupDb = $groupresult->fetch(PDO::FETCH_OBJ);
                 $disabled = ' disabled';
                 echo '<input type="hidden" name="group_admin" value="' . $groupDb->group_admin . '">';
             }
+            if ($groupDb->group_id == '3') {
+                $disabled = ' disabled';
+            }
             ?>
             <td><input type="checkbox" name="group_admin" <?= $check . $disabled; ?>></td>
         </tr>
@@ -646,8 +649,9 @@ If possible, try to filter with that'); ?></i>
                     <?php
                     // *** Editor rights per family tree (NOT USED FOR ADMINISTRATOR) ***
                     $check = '';
-                    if (in_array($data3Db->tree_id, $edit_tree_array)) $check = ' checked';
                     $disabled = '';
+                    if ($groupDb->group_id == '3') { $disabled = ' disabled'; }
+                    else if (in_array($data3Db->tree_id, $edit_tree_array) ) $check = ' checked';
                     if ($groupDb->group_admin == 'j') {
                         $check = ' checked';
                         $disabled = ' disabled';
