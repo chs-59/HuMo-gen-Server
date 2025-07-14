@@ -706,6 +706,7 @@ while ($treeCheck = $tree_checksql->fetch(PDO::FETCH_OBJ)) {
 
                             $picture_privacy = false;
                             $is_connected = false;
+                            $db_functions->set_tree_id($tree_id);
                             
                             $afbqry = $dbh->query($sql);
                             while ($afbDb = $afbqry->fetch(PDO::FETCH_OBJ)) {
@@ -718,7 +719,7 @@ while ($treeCheck = $tree_checksql->fetch(PDO::FETCH_OBJ)) {
                                 } 
                                 elseif ($afbDb && $afbDb->event_connect_kind === 'person') {
                                     $person_cls = new person_cls;
-                                    $db_functions->set_tree_id($tree_id);
+    //                                $db_functions->set_tree_id($tree_id);
                                     $personDb = $db_functions->get_person($afbDb->event_connect_id);
                         //            var_dump($personDb);
                                     $name = $person_cls->person_name($personDb);
@@ -726,7 +727,7 @@ while ($treeCheck = $tree_checksql->fetch(PDO::FETCH_OBJ)) {
                                             . $tree_id . '&person=' . $personDb->pers_gedcomnumber . '" target="_blank"><b>'. __('person') . ':</b> ' . $name["standard_name"] . '</a><br>';
                                     $is_connected = true;
                                 } elseif ($afbDb && $afbDb->event_connect_kind === 'family') {
-                                    $fqry = "SELECT * FROM humo_families WHERE fam_gedcomnumber='" . $afbDb->event_connect_id . "'";
+                                    $fqry = "SELECT * FROM humo_families WHERE fam_tree_id='" . safe_text_db($tree_id) . "' AND fam_gedcomnumber='" . $afbDb->event_connect_id . "'";
                                     $family_qry = $dbh->query($fqry);
                                     $family_Db = $family_qry->fetch(PDO::FETCH_OBJ);
 //                                    var_dump($family_Db);
@@ -739,8 +740,9 @@ while ($treeCheck = $tree_checksql->fetch(PDO::FETCH_OBJ)) {
                                     $is_connected = true;
 
                                 } elseif ($afbDb && $afbDb->event_connect_kind === 'source') {
+    //                                $db_functions->set_tree_id($tree_id);
                                     $sourceDb = $db_functions->get_source($afbDb->event_connect_id);
-                                    //var_dump($sourceDb);
+                                    //var_dump($db_functions);
                                     $title = $sourceDb->source_title;// || $sourceDb->source_gedcomnr;
                                     $picture_text .= '<a href="' . $prefx . 'admin/index.php?page=edit_sources&source_id=' . $sourceDb->source_gedcomnr 
                                             . '&tree_id=' . $tree_id .  '" target="_blank"><b>' 
