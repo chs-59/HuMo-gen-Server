@@ -724,7 +724,7 @@ class Mainindex_cls
                             $man_name_and_surname = ($personmnDb2->pers_firstname) . ' ' . ($personmnDb2->pers_lastname);
                             $woman_name_and_surname = ($personmnDb3->pers_firstname) . ' ' . ($personmnDb3->pers_lastname);
 
-                            $link_text = $man_name_and_surname . ' - ' . $woman_name_and_surname . ' family';
+                            $link_text = $man_name_and_surname . ' - ' . $woman_name_and_surname . ' - ' . __('family');
                         } else {
                             $link_text = __('Go to person&apos;s page');
                         }
