@@ -1633,8 +1633,10 @@ class editor_event_cls
                             $optdir = '';
                             foreach ($subfolders as $folder) {
                                 $bfolder = pathinfo($folder, PATHINFO_BASENAME);
+                                $private_folder_select = '';
+                                if ($bfolder == $_SESSION['user_name_admin']) { $private_folder_select = ' selected'; }
                                 if (!in_array($bfolder, $ignore)) {
-                                    $optdir .= '<option value="' . $bfolder . '">' . __('Directory') .': ' . $bfolder . '</option>';
+                                    $optdir .= '<option value="' . $bfolder . '"' . $private_folder_select . '>' . __('Directory') .': ' . $bfolder . '</option>';
                                 }
                             }
                             echo $optcat . $optdir;
