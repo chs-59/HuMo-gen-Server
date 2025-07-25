@@ -149,7 +149,7 @@ function ancestor_chart_person($id, $box_appearance)
         $person_cls = new person_cls($personDb);
         $pers_privacy = $person_cls->privacy;
         $name = $person_cls->person_name($personDb);
-        $name2 = $name["name"];
+        $name2 = $name["short_name"];
         $name2 = $dirmark2 . $name2 . $name["colour_mark"] . $dirmark2;
 
         // *** Replace pop-up icon by a text box ***
