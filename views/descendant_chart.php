@@ -239,6 +239,16 @@ if ($hourglass === false) {
                         ?>
                     </select>
                 </div>
+                <div class="col-md-auto">
+                    <?php 
+                    echo '<input type="checkbox" id="fnames" name="firstname" onchange="window.location=this.value" value="' . 
+                            $path . 'main_person=' . $data["main_person"] . '&amp;direction=' . $data["direction"] . '&amp;dnachart=' . $data["dna"] .
+                                '&amp;chosensize=' . $data["size"] . '&amp;chosengen=' . $data["chosengen"] . '&amp;firstnames=';
+                    if ($data["firstnames"] == 'a') { echo 's" checked>'; }
+                    else { echo 'a">'; }
+                    ?>
+                    <label for="fnames"> <?= __('all first names'); ?></label>
+                </div>
 
                 <div class="col-md-auto">
                     <label for="amount"><?= __('Zoom level:'); ?></label>
