@@ -72,6 +72,7 @@ class Descendant_chartController
             "chosengenanc" => $chosengenanc,
             "size" => $size,
             "direction" => $direction,
+            "firstnames" => $descendantModel->getFirstnames(),
 
             "hsize" => $hsize,
             "vdist" => $vdist,
