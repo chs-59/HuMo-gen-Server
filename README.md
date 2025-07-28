@@ -179,3 +179,29 @@ _Export categories_ within the GEDCOM file export dialog to _yes_.
 loose these data when editing your family tree with other programs than HuMo-gen-Server.
 If you import a GEDCOM file with category tags to a new installation of HuMo-gen-
 Server you have to set up the category names afterwords in the admin panel!
+
+## Minor fixes and changes
+
+### Solved layout problems in chart view (ancestor, descendant and hourglass)
+If your family tree contains people with several first names and portrait 
+pictures the text will very likely exhaust the dimensions of the chart view 
+boxes with its fixed size. In HGS this problem was solved by shorten the list of
+first names to only a single one. This name is picked from the _RUFN Tag (if 
+present) or the NICK (if present) or at last the first one of the first names.
+This is the new default view, but there is also a new checkbox where you can 
+switch the view to the complete list of first names. 
+
+### Add print view to ancestor chart
+The print function in descendant and hourglass charts is now available
+in ancestor charts too.
+
+### Improved security with group "guests"
+For the security of the server the group with the ID 3 (called "guests" 
+on default, but can be renamed) plays a major role. This group controls the
+access of users to the server that ar NOT logged in. Therefore the options
+"admin role" and "editor role" has been blocked.
+
+### Personal media directory
+If you create a sub-directory within the media directory named similar to the 
+login name of a user, this folder becomes the default upload folder in the file
+upload section for this single user. But directory can still be changed.
