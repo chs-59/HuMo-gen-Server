@@ -207,7 +207,7 @@ class FamilyModel
         $data['header_active'][] = $name == 'Descendant report' ? 'active' : '';
         $data['header_text'][] = __('Descendant report');
 
-        if (isset($_GET['dnachart'])) $name='DNA charts';
+        if (isset($_GET['dnachart']) && $_GET['dnachart'] != 'none') $name='DNA charts';
 
         if ($humo_option["url_rewrite"] == 'j') {
             $link = 'descendant_chart/' . $tree_id . '/' . $family_id . '?main_person=' . $main_person;
