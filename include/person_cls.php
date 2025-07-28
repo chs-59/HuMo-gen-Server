@@ -551,6 +551,7 @@ class person_cls
                 $name_array["firstname"] = $privacy_name;
                 $name_array["name"] = $privacy_name;
                 $name_array["short_name"] = $privacy_name;
+                $name_array["short_firstname"] = $privacy_name;
                 $name_array["standard_name"] = $privacy_name;
                 $name_array["index_name"] = $privacy_name;
                 $name_array["index_name_extended"] = $privacy_name;
