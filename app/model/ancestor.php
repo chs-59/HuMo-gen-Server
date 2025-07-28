@@ -39,11 +39,24 @@ class AncestorModel extends FamilyModel
         return $main_person;
     }
 
+    public function getFirstnames()
+    {
+        $firstnames = '';
+        if (isset($_GET["firstnames"])) {
+            $firstnames = $_GET["firstnames"];
+        }
+        if (isset($_POST["firstnames"])) {
+            $firstnames = $_POST["firstnames"];
+        }
+        return $firstnames;
+    }
+
     // The following is used for ancestor chart, ancestor sheet and ancestor sheet PDF (ASPDF)
     public function get_ancestors($db_functions, $pers_gedcomnumber)
     {
         // person 01
         $personDb = $db_functions->get_person($pers_gedcomnumber);
+        $data["firstnames"] = $this->getFirstnames();
         $data["gedcomnumber"][1] = $personDb->pers_gedcomnumber;
         $pers_famc[1] = $personDb->pers_famc;
         $data["sexe"][1] = $personDb->pers_sexe;
@@ -113,6 +126,7 @@ class AncestorModel extends FamilyModel
         $data['header_active'] = array();
         $data['header_link'] = array();
         $data['header_text'] = array();
+        $data["firstnames"] = $this->getFirstnames();
 
         $vars['id'] = $main_person;
         $link = $link_cls->get_link($uri_path, 'ancestor_report', $tree_id, true, $vars);
@@ -151,7 +165,7 @@ class AncestorModel extends FamilyModel
         // *** Tab menu ***
         $text = '
         <h1>' . __('Ancestors') . '</h1>
-        <ul class="nav nav-tabs d-print-none">
+        <ul class="nav nav-tabs d-print-none" id="nav-tab">
             <li class="nav-item me-1">
                 <a class="nav-link genealogy_nav-link ' . $data['header_active'][0] . '" href="' . $data['header_link'][0] . '">' . $data['header_text'][0] . '</a>
             </li>
@@ -168,6 +182,33 @@ class AncestorModel extends FamilyModel
         <!-- Align content to the left -->
         <!-- <div style="float: left; background-color:white; height:500px; padding:10px;"> -->
         <div style="float: left; background-color:white; padding:10px;">';
+        if ($name != 'Ancestor chart') {
+            return $text;
+        }
+        $text .= '        <div class="p-2 me-sm-2 genealogy_search" id="menubox">
+            <!-- <div class="p-2 me-sm-2 genealogy_search d-print-none"> -->
+
+            <div class="row">
+
+                <div class="col-md-auto">
+                    <input type="button" id="imgbutton" value="';
+        $text .= __('Print');
+        $text .= '" onClick="showimg();" class="btn btn-sm btn-secondary">
+                </div>
+
+                <div class="col-md-auto">
+                    <input type="checkbox" id="fnames" name="firstname" onchange="window.location=this.value" value="';
+        $text .= $data['header_link'][1] . '&firstnames=';
+        if ($data["firstnames"] == 'a') { $text .= 's" checked>'; }
+        else { $text .= 'a">'; }
+        $text .= '            <label for="fnames"> ';
+        $text .= __('all first names'); 
+        $text .= '</label>
+                </div>
+
+            </div>
+        </div>
+  ';
 
         return $text;
     }
