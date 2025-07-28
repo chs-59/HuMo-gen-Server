@@ -713,7 +713,7 @@ class Mainindex_cls
                         //integrate it to language. When family picture is displayed and no privacy filter man's and woman's names are displayed
                         if (!$privacy) {
                             $qry2 = "SELECT * FROM humo_families
-                        WHERE fam_gedcomnumber='" . $picqryDb->event_connect_id . "'";
+                        WHERE fam_tree_id='" . $tree_id . "' AND fam_gedcomnumber='" . $picqryDb->event_connect_id . "'";
                             $picqry2 = $dbh->query($qry2);
                             $picqryDb2 = $picqry2->fetch(PDO::FETCH_OBJ);
                             $man_name_id = $picqryDb2->fam_man;
@@ -724,7 +724,7 @@ class Mainindex_cls
                             $man_name_and_surname = ($personmnDb2->pers_firstname) . ' ' . ($personmnDb2->pers_lastname);
                             $woman_name_and_surname = ($personmnDb3->pers_firstname) . ' ' . ($personmnDb3->pers_lastname);
 
-                            $link_text = $man_name_and_surname . ' - ' . $woman_name_and_surname . ' family';
+                            $link_text = $man_name_and_surname . ' - ' . $woman_name_and_surname . ' - ' . __('family');
                         } else {
                             $link_text = __('Go to person&apos;s page');
                         }

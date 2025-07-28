@@ -493,27 +493,38 @@ class person_cls
 
             // *** Privacy filter: show only first character of firstname. Like: D. Duck ***
             $pers_firstname = $personDb->pers_firstname;
-
+            // use single firstname in charts
+            $pers_singlefirstname = '';
+            if ($nickname) { $pers_singlefirstname = $nickname; }
+            else { $pers_singlefirstname = explode(' ', $pers_firstname)[0]; }
+            
             if ($pers_firstname != 'N.N.' && $privacy && $user['group_filter_name'] == 'i') {
                 $names = explode(' ', $personDb->pers_firstname);
                 $pers_firstname = '';
                 foreach ($names as $character) {
                     if (substr($character, 0, 1) !== '(' && substr($character, 0, 1) !== '[') {
                         $pers_firstname .= ucfirst(substr($character, 0, 1)) . '.';
+                        $pers_singlefirstname = $pers_firstname;
                     }
                 }
             } else {
                 $rufname_qry = $db_functions->get_events_connect('person', $personDb->pers_gedcomnumber, 'name');
+                $rufn_cnt = 1;
                 foreach ($rufname_qry as $rufnameDb) {
                     if ($rufnameDb->event_gedcom == "_RUFN") {
-                        //$pers_firstname = str_ireplace($rufnameDb->event_event,'<u>'.$rufnameDb->event_event.'</u>',$pers_firstname);
+                        $pers_firstname = str_ireplace($rufnameDb->event_event,'<u>'.$rufnameDb->event_event.'</u>',$pers_firstname);
+                        // only pick first rufname and overwrite shortfirstname
+                        if ($rufn_cnt == 1) { $pers_singlefirstname = $rufnameDb->event_event; } 
+                        $rufn_cnt++;
                         //$pers_firstname .= '&quot;'.$rufnameDb->event_event.'&quot;';
 
+                        /*
                         if ($pers_firstname) {
                             $pers_firstname .= ' ';
                         }
                         $pers_firstname .= '<u>' . $rufnameDb->event_event . '</u>'; // *** Show Rufname underlined... ***
 
+                        */
                         if ($show_name_texts == true && $rufnameDb->event_text) {
                             if ($pers_firstname) {
                                 $pers_firstname .= ' ';
@@ -539,6 +550,7 @@ class person_cls
                 $name_array["show_name"] = false;
                 $name_array["firstname"] = $privacy_name;
                 $name_array["name"] = $privacy_name;
+                $name_array["short_name"] = $privacy_name;
                 $name_array["short_firstname"] = $privacy_name;
                 $name_array["standard_name"] = $privacy_name;
                 $name_array["index_name"] = $privacy_name;
@@ -554,44 +566,55 @@ class person_cls
                 // *** Firstname, patronym, prefix and lastname ***
                 if ($humo_option['name_order'] != "chinese") {
                     $name_array["name"] = $pers_firstname;
+                    $name_array["short_name"] = $pers_singlefirstname;
 
                     if ($personDb->pers_patronym) {
                         if ($name_array["name"]) {
                             $name_array["name"] .= ' ';
+                            $name_array["short_name"] .= ' ';
                         }
                         $name_array["name"] .= $personDb->pers_patronym;
+                        $name_array["short_name"] .= $personDb->pers_patronym;
                     }
 
                     if ($personDb->pers_lastname) {
                         if ($name_array["name"]) {
                             $name_array["name"] .= ' ';
+                            $name_array["short_name"] .= ' ';
                         }
                         $name_array["name"] .= str_replace("_", " ", $personDb->pers_prefix);
                         $name_array["name"] .= $personDb->pers_lastname;
+                        $name_array["short_name"] .= str_replace("_", " ", $personDb->pers_prefix);
+                        $name_array["short_name"] .= $personDb->pers_lastname;
                     }
                 } else {
                     // *** For Chinese no commas or spaces, example: Janssen Jan ***
                     $name_array["name"] = str_replace("_", " ", $personDb->pers_prefix);
                     $name_array["name"] .= $personDb->pers_lastname;
+                    $name_array["short_name"] = str_replace("_", " ", $personDb->pers_prefix);
+                    $name_array["short_name"] .= $personDb->pers_lastname;
 
                     if ($pers_firstname) {
                         if ($name_array["name"]) {
                             $name_array["name"] .= ' ';
+                            $name_array["short_name"] .= ' ';
                         }
                         $name_array["name"] .= $pers_firstname;
+                        $name_array["short_name"] .= $pers_singlefirstname;
                     }
                     if ($personDb->pers_patronym) {
                         if ($name_array["name"]) {
                             $name_array["name"] .= ' ';
+                            $name_array["short_name"] .= ' ';
                         }
                         $name_array["name"] .= $personDb->pers_patronym;
+                        $name_array["short_name"] .= $personDb->pers_patronym;
                     }
                 }
 
                 // *** Short firstname, prefix and lastname ***
                 if ($humo_option['name_order'] != "chinese") {
                     $name_array["short_firstname"] = substr($personDb->pers_firstname, 0, 1);
-
                     if ($personDb->pers_lastname) {
                         if ($name_array["short_firstname"]) $name_array["short_firstname"] .= ' ';
                         $name_array["short_firstname"] .= str_replace("_", " ", $personDb->pers_prefix);
@@ -914,6 +937,7 @@ class person_cls
             $name_array["show_name"] = true;
             $name_array["firstname"] = __('N.N.');
             $name_array["name"] = '';
+            $name_array["short_name"] = '';
             $name_array["short_firstname"] = __('N.N.');
             $name_array["standard_name"] = __('N.N.');
             $name_array["index_name"] = __('N.N.');

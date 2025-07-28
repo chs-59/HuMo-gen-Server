@@ -13,6 +13,8 @@
 if (!isset($hourglass)) {
     // *** Check if person gedcomnumber is valid ***
     $db_functions->check_person($data["main_person"]);
+    echo '<script src="assets/html2canvas/html2canvas.min.js"></script>';
+    echo '<div id="png">';
 
     echo $data["ancestor_header"];
 }
@@ -22,7 +24,7 @@ if (!isset($hourglass)) {
     //If we ever make the anc chart have optionally more generations, the width and length will have to be generated as in report_descendant
     //$divlen = 1000;
 
-    $top = 50;
+    $top = 100;
 
     $column1_left = 10;
     $column1_top = $top + 520;
@@ -43,6 +45,8 @@ if (!isset($hourglass)) {
     $column6_top = $top - 20;
 ?>
 
+<!-- // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
     <div class="container-xl" style="height: 1000px; width:1000px;">
         <!-- First column name -->
         <!-- No _ character allowed in name of CSS class because of javascript -->
@@ -123,9 +127,51 @@ if (!isset($hourglass)) {
             </div>
         <?php } ?>
     </div>
+    </div> <!-- png -->
 
 <?php
 }
+// +++++++++++++++++++++++++++++++++++++++
+    if (!isset($hourglass)) {
+        echo "<script>
+        function showimg() {
+            //document.getElementById('helppopup').style.visibility = 'hidden';
+            document.getElementById('menubox').style.visibility = 'hidden';
+            document.getElementById('imgbutton').style.visibility = 'hidden';
+            document.getElementById('nav-tab').style.visibility = 'hidden';
+            document.getElementById('png').style.width = '1000px';
+            document.getElementById('png').style.height= '1200px';
+
+            // *** Change ancestorName class, DO NOT USE A _ CHARACTER IN CLASS NAME ***
+            const el = document.querySelectorAll('.ancestorName');
+            el.forEach((elItem) => {
+                //elItem.style.setProperty('border-radius', 'none', 'important');
+                elItem.style.setProperty('box-shadow', 'none', 'important');
+            });
+
+            html2canvas(document.querySelector('#png')).then(canvas => {
+                var img = canvas.toDataURL();
+
+                // *** Show image at the same page ***
+                //document.body.appendChild(canvas);
+
+                //document.getElementById('helppopup').style.visibility = 'visible';
+                document.getElementById('menubox').style.visibility = 'visible';
+                document.getElementById('nav-tab').style.visibility = 'visible';
+                document.getElementById('imgbutton').style.visibility = 'visible';
+                document.getElementById('png').style.width = 'auto';
+                document.getElementById('png').style.height= 'auto';
+
+                var newWin = window.open();
+                newWin.document.open();
+                newWin.document.write('<!DOCTYPE html><head></head><body>" . __('Right click on the image below and save it as a .png file to your computer.<br>You can then print it over multiple pages with dedicated third-party programs, such as the free: ') . "<a href=\"http://posterazor.sourceforge.net/index.php?page=download&lang=english\" target=\"_blank\">\"PosteRazor\"</a><br>" . __('If you have a plotter you can use its software to print the image on one large sheet.') . "<br><br><img src=\"' + img + '\"></body></html>');
+                newWin.document.close();
+            });
+        }
+        </script>";
+
+//++++++++++++++++++++++++++++++++++++++++
+        }
 
 // *** Function to show data ***
 // box_appearance (large, medium, small, and some other boxes...)
@@ -149,7 +195,8 @@ function ancestor_chart_person($id, $box_appearance)
         $person_cls = new person_cls($personDb);
         $pers_privacy = $person_cls->privacy;
         $name = $person_cls->person_name($personDb);
-        $name2 = $name["name"];
+        $name2 = (($data["firstnames"] == 'a') ?  $name["standard_name"] : $name["short_name"]);
+        //$name["short_name"];
         $name2 = $dirmark2 . $name2 . $name["colour_mark"] . $dirmark2;
 
         // *** Replace pop-up icon by a text box ***

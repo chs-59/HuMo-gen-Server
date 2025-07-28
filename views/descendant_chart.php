@@ -75,7 +75,7 @@ if ($hourglass === false) {
             endPos = ui.value;
             if (startPos != endPos) {
                 window.location.href = "' . $path2 . 'main_person=' . $data["main_person"] .
-        '&chosensize="+((endPos+1)*5)+"&chosengen=' . $data["chosengen"] .
+        '&chosensize="+((endPos+1)*5)+"&chosengen=' . $data["chosengen"] . '&firstnames=' . $data["firstnames"] .
         '&direction=' . $data["direction"] . '&dnachart=' . $data["dna"] . $dna_params . '";
                 }
             startPos = endPos;
@@ -171,7 +171,7 @@ if ($hourglass === false) {
                                     $selected = "";
                                 }
                             ?>
-                                <option value="<?= $path; ?>main_person=<?= $data["main_person"]; ?>&amp;direction=<?= $data["direction"]; ?>&amp;dnachart=ydna&amp;chosensize=<?= $data["size"]; ?>&amp;chosengen=<?= $data["chosengen"]; ?>" <?= $selected; ?>>
+                                <option value="<?= $path; ?>main_person=<?= $data["main_person"]; ?>&amp;direction=<?= $data["direction"]; ?>&amp;dnachart=ydna&amp;chosensize=<?= $data["size"]; ?>&amp;chosengen=<?= $data["chosengen"]; ?>&amp;firstnames=<?= $data["firstnames"]; ?>" <?= $selected; ?>>
                                     <?= __('Y-DNA Carriers only'); ?>
                                 </option>
 
@@ -182,7 +182,7 @@ if ($hourglass === false) {
                                 }
                                 echo '<option value="' . $path . 'main_person=' .
                                     $data["main_person"] . '&amp;direction=' . $data["direction"] . '&amp;dnachart=' . "ydnamark" . '&amp;chosensize=' .
-                                    $data["size"] . '&amp;chosengen=' . $data["chosengen"] . '" ' . $selected . '>' . __('Y-DNA Mark carriers') . '</option>';
+                                    $data["size"] . '&amp;chosengen=' . $data["chosengen"]. '&firstnames=' . $data["firstnames"] . '" ' . $selected . '>' . __('Y-DNA Mark carriers') . '</option>';
                             }
 
                             if ($data["base_person_sexe"] == "F" or ($data["base_person_sexe"] == "M" and isset($data["base_person_famc"]) and $data["base_person_famc"] != "")) {
@@ -193,7 +193,7 @@ if ($hourglass === false) {
                                 }
                                 echo '<option value="' . $path . 'main_person=' .
                                     $data["main_person"] . '&amp;direction=' . $data["direction"] . '&amp;dnachart=' . "mtdna" . '&amp;chosensize=' .
-                                    $data["size"] . '&amp;chosengen=' . $data["chosengen"] . '" ' . $selected . '>' . __('mtDNA Carriers only') . '</option>';
+                                    $data["size"] . '&amp;chosengen=' . $data["chosengen"]. '&firstnames=' . $data["firstnames"] . '" ' . $selected . '>' . __('mtDNA Carriers only') . '</option>';
 
                                 if ($data["base_person_sexe"]  == "F") {
                                     $selected = "selected";
@@ -208,7 +208,7 @@ if ($hourglass === false) {
                                 }
                                 echo '<option value="' . $path . 'main_person=' .
                                     $data["main_person"] . '&amp;direction=' . $data["direction"] . '&amp;dnachart=' . "mtdnamark" . '&amp;chosensize=' .
-                                    $data["size"] . '&amp;chosengen=' . $data["chosengen"] . '" ' . $selected . '>' . __('mtDNA Mark carriers') . '</option>';
+                                    $data["size"] . '&amp;chosengen=' . $data["chosengen"]. '&firstnames=' . $data["firstnames"] . '" ' . $selected . '>' . __('mtDNA Mark carriers') . '</option>';
                             }
                             ?>
                         </select>
@@ -224,7 +224,7 @@ if ($hourglass === false) {
                         <?php
                         for ($i = 2; $i <= 15; $i++) {
                             echo '<option value="' . $path . 'main_person=' . $data["main_person"] . '&amp;direction=' . $data["direction"] . '&amp;dnachart=' . $data["dna"] .
-                                '&amp;chosensize=' . $data["size"] . '&amp;chosengen=' . $i . '" ';
+                                '&amp;chosensize=' . $data["size"] . '&amp;chosengen=' . $i . '&firstnames=' . $data["firstnames"] . '" ';
                             if ($i == $data["chosengen"]) {
                                 echo "selected=\"selected\" ";
                             }
@@ -238,6 +238,16 @@ if ($hourglass === false) {
                         echo ">" . "All" . "</option>";
                         ?>
                     </select>
+                </div>
+                <div class="col-md-auto">
+                    <?php 
+                    echo '<input type="checkbox" id="fnames" name="firstname" onchange="window.location=this.value" value="' . 
+                            $path . 'main_person=' . $data["main_person"] . '&amp;direction=' . $data["direction"] . '&amp;dnachart=' . $data["dna"] .
+                                '&amp;chosensize=' . $data["size"] . '&amp;chosengen=' . $data["chosengen"] . '&amp;firstnames=';
+                    if ($data["firstnames"] == 'a') { echo 's" checked>'; }
+                    else { echo 'a">'; }
+                    ?>
+                    <label for="fnames"> <?= __('all first names'); ?></label>
                 </div>
 
                 <div class="col-md-auto">

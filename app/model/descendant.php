@@ -39,6 +39,18 @@ class DescendantModel extends FamilyModel
         }
         return $chosengen;
     }
+    
+    public function getFirstnames()
+    {
+        $firstnames = '';
+        if (isset($_GET["firstnames"])) {
+            $firstnames = $_GET["firstnames"];
+        }
+        if (isset($_POST["firstnames"])) {
+            $firstnames = $_POST["firstnames"];
+        }
+        return $firstnames;
+    }
 
     public function getChosengenanc()
     {
@@ -178,10 +190,11 @@ class DescendantModel extends FamilyModel
 
     public function getBasePerson($db_functions, $main_person)
     {
+        global $data;
         @$dnaDb = $db_functions->get_person($main_person);
         $dnapers_cls = new person_cls;
         $dnaname = $dnapers_cls->person_name($dnaDb);
-        $base_person["name"] =  $dnaname["standard_name"];    // need these 4 in report_descendant
+        $base_person["name"] =  (($data["firstnames"] == 'a') ?  $dnaname["standard_name"] : $dnaname["short_name"]);    // need these 4 in report_descendant
         $base_person["sexe"] = $dnaDb->pers_sexe;
         $base_person["famc"] = $dnaDb->pers_famc;
         $base_person["gednr"] = $dnaDb->pers_gedcomnumber;
@@ -205,7 +218,8 @@ class DescendantModel extends FamilyModel
 
         $data["text_presentation"] = $this->getTextPresentation();
         $data["picture_presentation"] = $this->getPicturePresentation();
-
+        $data["firstnames"] = $this->getFirstnames();
+                
         // *** Check if family gedcomnumber is valid ***
         $db_functions->check_family($data["family_id"]);
 
@@ -377,7 +391,7 @@ class DescendantModel extends FamilyModel
                                 //*** Show data of parent1 ***
                                 if ($descendant_loop == 0) {
                                     $name = $parent1_cls->person_name($parent1Db);
-                                    $genarray[$arraynr]["nam"] = $name["standard_name"];
+                                    $genarray[$arraynr]["nam"] = (($data["firstnames"] == 'a') ?  $name["standard_name"] : $name["short_name"]);
                                     if (isset($name["colour_mark"])) {
                                         $genarray[$arraynr]["nam"] .= $name["colour_mark"];
                                     }
@@ -440,7 +454,7 @@ class DescendantModel extends FamilyModel
                         // *************************************************************
                         if ($parent2Db) {
                             $name = $parent2_cls->person_name($parent2Db);
-                            $genarray[$arraynr]["sps"] = $name["standard_name"];
+                            $genarray[$arraynr]["sps"] = (($data["firstnames"] == 'a') ?  $name["standard_name"] : $name["short_name"]);
                             $genarray[$arraynr]["spgednr"] = $parent2Db->pers_gedcomnumber;
                         } else {
                             $genarray[$arraynr]["sps"] = __('Unknown');
@@ -515,7 +529,12 @@ class DescendantModel extends FamilyModel
                                 $genarray[$place]["nrc"] = 0;
                                 $genarray[$place]["2nd"] = 0;
                                 $name = $child_cls->person_name($childDb);
-                                $genarray[$place]["nam"] = $name["standard_name"] . $name["colour_mark"];
+                                if ($data["firstnames"] == 'a') {
+                                    $genarray[$place]["nam"] = $name["standard_name"] . $name["colour_mark"];
+                                }
+                                else {
+                                    $genarray[$place]["nam"] = $name["short_name"] . $name["colour_mark"];
+                                }
                                 $genarray[$place]["init"] = $name["initials"];
                                 $genarray[$place]["short"] = $name["short_firstname"];
                                 $genarray[$place]["gednr"] = $childDb->pers_gedcomnumber;
@@ -629,7 +648,7 @@ class DescendantModel extends FamilyModel
 
         if ($direction == 0) { // if vertical
             if ($size == 50) {   // full size box with name and details
-                $this->hsize = 150;
+                $this->hsize = 170;
                 $this->vsize = 75;
                 $this->vdist = 80;
             } elseif ($size == 45) { // smaller box with name + popup
@@ -719,7 +738,7 @@ class DescendantModel extends FamilyModel
 
         else {  // horizontal
             if ($size == 50) {   // full size box with name and details
-                $this->hsize = 150;
+                $this->hsize = 170;
                 if ($this->hourglass === true) {
                     $this->hsize = 170;
                 }

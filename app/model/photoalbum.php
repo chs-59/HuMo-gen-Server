@@ -160,7 +160,7 @@ class PhotoalbumModel
                 
             // family
             } elseif ($picqryDb->event_connect_kind === 'family') {
-                $qry2 = "SELECT * FROM humo_families WHERE fam_gedcomnumber='" . $picqryDb->event_connect_id . "'";
+                $qry2 = "SELECT * FROM humo_families WHERE fam_tree_id='" . safe_text_db($tree_id) . "' AND fam_gedcomnumber='" . $picqryDb->event_connect_id . "'";
                 $family_qry = $dbh->query($qry2);
                 $family_qryDb2 = $family_qry->fetch(PDO::FETCH_OBJ);
                 @$personmnDb2 = $db_functions->get_person($family_qryDb2->fam_man);

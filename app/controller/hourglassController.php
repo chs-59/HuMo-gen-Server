@@ -54,6 +54,7 @@ class HourglassController
             "descendant_report" => $descendant_report,
             "descendant_header" => $descendant_header,
             "direction" => $direction,
+            "firstnames" => $descendantModel->getFirstnames(),
 
             "dna" => $dna,
             "chosengen" => $chosengen,

@@ -801,7 +801,7 @@ $menu_top = getActiveTopMenu($page);
                     <?= $mainindex->owner(); ?>
 
                     <!-- Show HuMo-genealogy link -->
-                    <?php printf(__('This website is created using %s, a freeware genealogical  program'), '<a href="https://humo-gen.com">HuMo-genealogy</a>'); ?>.<br>
+                    <?php printf(__('This website is created using %s, a freeware genealogical  program'), '<a href="https://github.com/chs-59/HuMo-gen-Server">HuMo-gen-Server</a>'); ?>.<br>
 
                     <!-- Show European cookie information -->
                     <?php
