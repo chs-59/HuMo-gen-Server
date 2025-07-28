@@ -444,6 +444,7 @@ class person_cls
 
             // *** Show nicknames (shown as "Nickname") ***
             $nickname = $this->get_nickname($db_functions, $personDb->pers_gedcomnumber);
+            $rufname = '';
 
             // *** Aldfaer: nobility (predikaat) by name ***
             $nobility = $this->get_nobility($db_functions, $personDb->pers_gedcomnumber, $show_name_texts);
@@ -514,7 +515,10 @@ class person_cls
                     if ($rufnameDb->event_gedcom == "_RUFN") {
                         $pers_firstname = str_ireplace($rufnameDb->event_event,'<u>'.$rufnameDb->event_event.'</u>',$pers_firstname);
                         // only pick first rufname and overwrite shortfirstname
-                        if ($rufn_cnt == 1) { $pers_singlefirstname = $rufnameDb->event_event; } 
+                        if ($rufn_cnt == 1) { 
+                            $pers_singlefirstname = $rufnameDb->event_event; 
+                            $rufname = $rufnameDb->event_event;
+                        } 
                         $rufn_cnt++;
                         //$pers_firstname .= '&quot;'.$rufnameDb->event_event.'&quot;';
 
@@ -834,7 +838,7 @@ class person_cls
                 // *** If a special name is found in the results (event table), show it **
                 if (isset($personDb->event_event) and $personDb->event_event and $personDb->event_kind == 'name') {
                     // *** Only shown special name if the name isn't shown as nickname: "Huub" ***
-                    if ($personDb->event_event != $nickname)
+                    if ($personDb->event_event != $nickname && $personDb->event_event != $rufname)
                         $name_array["index_name_extended"] .= ' (' . $personDb->event_event . ')';
                 }
 
