@@ -98,7 +98,8 @@ $path_tmp .= "main_person=" . $data["main_person"] . '&amp;screen_mode=HOUR';
             // min:0 (for extra first step - now 10 steps: 0-9), then twice value +1 so on display first step is shown as 1, not 0
             // *** Don't use &amp; in link in javascript ***
             $path_tmp = str_replace('&amp;', '&', $path_tmp);
-
+            $path_cmpl = $path_tmp . '&chosensize="+((endPos+1)*5)+"&chosengen=' . $data["chosengen"] . '&chosengenanc=' . $data["chosengenanc"] . '&direction=' . $data["direction"] . '&firstnames=' . $data["firstnames"];
+            
             echo '<script>
             $(function() {
                 $( "#slider" ).slider({
@@ -117,7 +118,7 @@ $path_tmp .= "main_person=" . $data["main_person"] . '&amp;screen_mode=HOUR';
                 $("#slider").on("slidestop", function(event, ui) {
                     endPos = ui.value;
                     if (startPos != endPos) {
-                        window.location.href = "' . $path_tmp . '&chosensize="+((endPos+1)*5)+"&chosengen=' . $data["chosengen"] . '&chosengenanc=' . $data["chosengenanc"] . '&direction=' . $data["direction"] . '";
+                        window.location.href = "' . $path_cmpl . '";
                     }
                     startPos = endPos;
                 });
@@ -133,6 +134,16 @@ $path_tmp .= "main_person=" . $data["main_person"] . '&amp;screen_mode=HOUR';
         <div class="col-md-auto">
             <?= __('Hourglass chart') . __(' of ') . '<b>' . $genarray[0]["nam"] . '</b>'; ?>
         </div>
+        <div class="col-md-auto">
+            <?php 
+            echo '<input type="checkbox" id="fnames" name="firstname" onchange="window.location=this.value" value="' . 
+            $path_tmp . '&amp;direction=' . $data["direction"] . '&amp;chosensize=' . $data["size"] . '&amp;chosengen=' . $data["chosengen"] . 
+            '&amp;chosengenanc=' . $data["chosengenanc"] . '&amp;firstnames=';
+            if ($data["firstnames"] == 'a') { echo 's" checked>'; }
+            else { echo 'a">'; }
+            ?>
+            <label for="fnames"> <?= __('all first names'); ?></label>
+        </div>
     </div>
 
     <div class="row justify-content-md-center">
@@ -144,7 +155,7 @@ $path_tmp .= "main_person=" . $data["main_person"] . '&amp;screen_mode=HOUR';
                 <?php
                 for ($i = 2; $i <= 12; $i++) {
                     echo '<option value="' . $path_tmp . '&amp;direction=' . $data["direction"] . '&amp;chosensize=' .
-                        $data["size"] . '&amp;chosengen=' . $data["chosengen"] . '&amp;chosengenanc=' . $i . '"';
+                        $data["size"] . '&amp;firstnames=' . $data["firstnames"] . '&amp;chosengen=' . $data["chosengen"] . '&amp;chosengenanc=' . $i . '"';
                     if ($i == $data["chosengenanc"]) {
                         echo "selected=\"selected\" ";
                     }
