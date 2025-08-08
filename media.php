@@ -9,6 +9,9 @@ if (in_array($url, array('logo.png', 'logo.jpg', 'favicon.ico'))) {
 // session expired / no filename
 if (!$_SESSION['tree_id'] || empty($url)) { print_mediafile(__DIR__ . '/images/missing-image.jpg'); }
 
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+
 include_once(__DIR__ . "/include/db_login.php"); //Inloggen database.
 include_once(__DIR__ . '/include/show_tree_text.php');
 include_once(__DIR__ . "/include/db_functions_cls.php");
@@ -30,6 +33,7 @@ else {                  $tmpuserq = "SELECT * FROM humo_users WHERE user_id='" .
 $usersql = $dbh->query($tmpuserq);
 $userDb = $usersql->fetch(PDO::FETCH_OBJ);
 if (empty($user_group_id)){ $user_group_id = $userDb->user_group_id; }
+
 $groupsql = $dbh->query("SELECT * FROM humo_groups WHERE group_id='" . $user_group_id . "'");
 $groupDb = $groupsql->fetch(PDO::FETCH_OBJ);
 $datasql = $dbh->query("SELECT * FROM humo_trees WHERE tree_id='" . $tree_id . "'");
@@ -45,13 +49,32 @@ if ( ( isset($_SESSION['group_id_admin']) && $groupDb->group_admin === 'j' )
     || $userDb->user_edit_trees == $tree_id ) {
     print_mediafile(__DIR__ . '/' . $tree_pict_path . $url);  
 }
+// some group and user settings for privacy  and exeptions
+$user['user_access_ids'] = $userDb->user_access_ids; 
+$user['group_privacy'] = $groupDb->group_privacy; 
+$user['group_alive'] = $groupDb->group_alive; 
+$user['group_alive_date'] = $groupDb->group_alive_date; 
+$user['group_alive_date_act'] = $groupDb->group_alive_date_act; 
+$user['group_filter_death'] = $groupDb->group_filter_death; 
+$user['group_filter_death_act'] = $groupDb->group_filter_death_act; 
+$user['group_death_date'] = $groupDb->group_death_date; 
+$user['group_filter_pers_show'] = $groupDb->group_filter_pers_show; 
+$user['group_filter_pers_show_act'] = $groupDb->group_filter_pers_show_act; 
+$user['group_filter_pers_hide'] = $groupDb->group_filter_pers_hide; 
+$user['group_filter_pers_hide_act'] = $groupDb->group_filter_pers_hide_act; 
+$user['group_pers_hide_totally'] = $groupDb->group_pers_hide_totally; 
+$user['group_pers_hide_totally_act'] = $groupDb->group_pers_hide_totally_act; 
+$db_functions->set_accessids($user);
+
 // access to media files blocked
 if ($groupDb->group_pictures != 'j')  { 
     print_mediafile(__DIR__ . '/images/missing-image.jpg'); 
 }
 
+$picture_dbname = $url; // lookup picture in db. Url modified for thumbs
 $picture_dbname = preg_replace( '/thumb_(.+\.\w{3})\.jpg/', '$1', $picture_dbname ); //delete thumb extensions for lookup (new style)
 $picture_dbname = str_replace('thumb_', '', $picture_dbname ); //delete thumb extension for lookup (old style)
+
 $qry = "SELECT * FROM humo_events WHERE event_tree_id='" . $tree_id . "' "
         . "AND (event_connect_kind='person' OR event_connect_kind='family' OR event_connect_kind='source') "
         . "AND event_connect_id NOT LIKE '' AND event_event='" . $picture_dbname . "'";
@@ -63,9 +86,9 @@ while ($media_qryDb = $media_qry->fetch(PDO::FETCH_OBJ)) {
         $media_filename = __DIR__ . '/' . $tree_pict_path . $url;
         // person
         if ($media_qryDb && $media_qryDb->event_connect_kind === 'person') {
-            $person_cls = new person_cls;
             $personDb = $db_functions->get_person( $media_qryDb->event_connect_id );
-            $privacy = $person_cls->set_privacy($personDb);
+            $personcls = new person_cls($personDb);
+            $privacy = $personcls->set_privacy($personDb);
             if ($personDb && !$privacy) { print_mediafile($media_filename); }
         // family
         } elseif ($media_qryDb && $media_qryDb->event_connect_kind === 'family') {
