@@ -398,6 +398,7 @@ if (file_exists('../media/favicon.ico')) {
     <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <link href="admin.css" rel="stylesheet" type="text/css">
+    <link href="../assets/jqueryui/jquery-ui.min.css" rel="stylesheet">
 
     <script src="../assets/jquery/jquery.min.js"></script>
     <script src="../assets/jqueryui/jquery-ui.min.js"></script>
@@ -413,6 +414,7 @@ if (file_exists('../media/favicon.ico')) {
     <!-- Pop-up menu -->
     <link rel="stylesheet" type="text/css" href="../include/popup_menu/popup_menu.css">
     <script src="../include/popup_menu/popup_menu.js"></script>
+    <script src="include/autocomplete.js"></script>
 </head>
 
 <?php

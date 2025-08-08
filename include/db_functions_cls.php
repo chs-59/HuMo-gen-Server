@@ -55,6 +55,9 @@ class db_functions
     public $tree_id = 0;
     //public string $tree_prefix = '';
     public $tree_prefix = '';
+    // public array containing pers_ids that can be accessed
+    // by current user skipping the privacy check 
+    public $access_ids = array();
     private $dbh;
 
     public function __construct($dbh)
@@ -801,4 +804,161 @@ class db_functions
         $new_gedcomnumber++;
         return $new_gedcomnumber;
     }
+    public function set_accessids($user) {
+        $my_accessids = array();
+        if (array_key_exists('user_access_ids', $user) && $user['user_access_ids'] != '') {
+            $accessids = json_decode($user['user_access_ids'], true);
+            if (isset($accessids[$this->tree_id])){
+                $my_accessids = explode(';', $accessids[$this->tree_id]['acids'], -1);
+                $my_accessgen = $accessids[$this->tree_id]['gen'];
+            }
+            else {
+                return;
+            }
+        }
+        //$test_accessids = array ('I22', 'I3');
+        foreach ($my_accessids as $persid) {
+            $tmp_fams = $this->get_person($persid, 'famc-fams');
+            $fam_array = explode(";", $tmp_fams->pers_fams);
+            foreach ($fam_array as $famid) {
+                $this->collect_accessids($famid, $persid, 0, $my_accessgen);
+            }
+        }
+    }
+    private function collect_accessids ($family_id, $main_person, $generation_number, $max_generations)
+    {
+        global $famsids;
+    
+        $tree_id = $this->tree_id;
+        $family_nr = 1; //*** Process multiple families ***
+        if ($max_generations < $generation_number) {
+            return;
+        }
+        $generation_number++;
+        // *** Count marriages of man ***
+        // *** If needed show woman as main_person ***
+        if ($family_id == '') { // single person
+            $this->access_ids[] = $main_person;
+            return;
+        }
+
+        $family = $this->dbh->query("SELECT fam_man, fam_woman FROM humo_families WHERE fam_tree_id='" . $tree_id . "' AND fam_gedcomnumber='" . $family_id . "'");
+        try {
+            $familyDb = $family->fetch(PDO::FETCH_OBJ);
+        } catch (PDOException $e) {
+            echo __('No valid family number.');
+        }
+
+        $parent1 = '';
+        $parent2 = '';
+        $swap_parent1_parent2 = false;
+
+        // *** Standard main_person is the man ***
+        if ($familyDb->fam_man) {
+            $parent1 = $familyDb->fam_man;
+        }
+        // *** If woman is selected, woman will be main_person ***
+        if ($familyDb->fam_woman == $main_person) {
+            $parent1 = $familyDb->fam_woman;
+            $swap_parent1_parent2 = true;
+        }
+
+        // *** Check family with parent1: N.N. ***
+        if ($parent1) {
+            // *** Save man's families in array ***
+            //check query
+            $personDb = $this->get_person($parent1);
+
+            $marriage_array = explode(";", $personDb->pers_fams);
+            $nr_families = substr_count($personDb->pers_fams, ";");
+        } else {
+            $marriage_array[0] = $family_id;
+            $nr_families = "0";
+        }
+
+        // *** Loop multiple marriages of main_person ***
+        for ($parent1_marr = 0; $parent1_marr <= $nr_families; $parent1_marr++) {
+            $id = $marriage_array[$parent1_marr];
+            $familyDb = $this->get_family($id);
+
+            // *************************************************************
+            // *** Parent1 (normally the father)                         ***
+            // *************************************************************
+            if ($familyDb->fam_kind != 'PRO-GEN') {  //onecht kind, vrouw zonder man
+                if ($family_nr == 1) {
+                    // *** Show data of man ***
+
+                    if ($swap_parent1_parent2 == true) {
+                        // store I and Fs
+                        $this->access_ids[] = $familyDb->fam_woman;
+                        $families = explode(';', $personDb->pers_fams);
+                        foreach ($families as $value) {
+                            $famsids[] = $value;
+                        }
+                    } else {
+                        // store I and Fs
+                        $this->access_ids[] = $familyDb->fam_man;
+                        $families = explode(';', $personDb->pers_fams);
+                        foreach ($families as $value) {
+                            $famsids[] = $value;
+                        }
+                    }
+                }
+                $family_nr++;
+            } // *** end check of PRO-GEN ***
+
+            // *************************************************************
+            // *** Parent2 (normally the mother)                         ***
+            // *************************************************************
+            
+            // descendant spouse
+            if ($swap_parent1_parent2 == true) {
+                $this->access_ids[] = $familyDb->fam_man;
+                $desc_sp = $familyDb->fam_man;
+            } else {
+                $persids[] = $familyDb->fam_woman;
+                $desc_sp = $familyDb->fam_woman;
+            }
+            // parents of spouse
+            $spqry = $this->dbh->query("SELECT pers_famc FROM humo_persons WHERE pers_tree_id='" . $tree_id . "' AND pers_gedcomnumber = '" . $desc_sp . "'");
+            $spqryDb = $spqry->fetch(PDO::FETCH_OBJ);
+            if (isset($spqryDb->pers_famc) && $spqryDb->pers_famc) {
+                $famqryDb = $this->get_family($spqryDb->pers_famc);
+                if ($famqryDb->fam_man) {
+                    $this->access_ids[] = $famqryDb->fam_man;
+                }
+                if ($famqryDb->fam_woman) {
+                    $this->access_ids[] = $famqryDb->fam_woman;
+                }
+                $famsids[] = $spqryDb->pers_famc;
+            }
+            
+            // *************************************************************
+            // *** Children                                              ***
+            // *************************************************************
+            if ($familyDb->fam_children) {
+                $child_array = explode(";", $familyDb->fam_children);
+                foreach ($child_array as $i => $value) {
+                    $child = $this->dbh->query("SELECT * FROM humo_persons WHERE pers_tree_id='" . $tree_id . "' AND pers_gedcomnumber='" . $child_array[$i] . "'");
+                    @$childDb = $child->fetch(PDO::FETCH_OBJ);
+                    //@$childDb = $db_functions->get_person($child_array[$i]);
+                    if ($child->rowCount() > 0) {
+                        // *** Build descendant_report ***
+                        if ($childDb->pers_fams) {
+                            // *** 1st family of child ***
+                            $child_family = explode(";", $childDb->pers_fams);
+                            $child1stfam = $child_family[0];
+                            $this->collect_accessids($child1stfam, $childDb->pers_gedcomnumber, $generation_number, $max_generations);  // recursive
+                        } else {  // Child without own family
+                            if ($max_generations >= $generation_number) {
+                                // $childgn = $generation_number + 1; 
+                                $this->access_ids[] = $childDb->pers_gedcomnumber;
+                            }
+                        }
+                    }
+                }
+            }
+        } // Show  multiple marriages
+    } // End of descendant function
+
 }

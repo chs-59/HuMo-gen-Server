@@ -1076,9 +1076,9 @@ class PDF extends tFPDF
         //Text color in gray
         $this->SetTextColor(128);
         //Page number
-        //$this->Cell(0,10,'PDF Created with HuMo-genealogy    Page '.$this->PageNo(),0,0,'C');
+        //$this->Cell(0,10,'PDF Created with HuMo-gen-Server    Page '.$this->PageNo(),0,0,'C');
 
-        $text = sprintf(__('PDF Created with %s on'), 'HuMo-genealogy') . ' ';
+        $text = sprintf(__('PDF Created with %s on'), 'HuMo-gen-Server') . ' ';
         $date_part1 = language_date(date("j M Y")); // *** Translate first part of date (05 JUL 2022) using HuMo-genealogy language_date script ***
         $this->Cell(0, 10, $text . $date_part1 . ' ' . date("g:i a") . '. ' . __('Page') . ' ' . $this->PageNo(), 0, 0, 'C');
     }

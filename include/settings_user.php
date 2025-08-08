@@ -194,6 +194,10 @@ if (isset($accountDb->user_hide_trees) && $accountDb->user_hide_trees) {
         }
     }
 }
+// skip privacy check for these ids
+if (isset($accountDb->user_access_ids) ) {
+    $user['user_access_ids'] = $accountDb->user_access_ids;
+}
 
 // *** Show or hide photo categories, saved as ; separated id numbers ***
 $user['group_hide_photocat'] = isset($groupDb->group_hide_photocat) ? $groupDb->group_hide_photocat : '';
