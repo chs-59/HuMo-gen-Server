@@ -640,6 +640,7 @@ if (isset($_POST['install_tables2'])) {
             user_ip_address varchar(45) CHARACTER SET utf8 DEFAULT '',
             user_register_date varchar(20) CHARACTER SET utf8,
             user_last_visit varchar(25) CHARACTER SET utf8,
+            user_access_ids text CHARACTER SET utf8 NOT NULL DEFAULT '',
             PRIMARY KEY  (`user_id`)
             ) DEFAULT CHARSET=utf8");
 

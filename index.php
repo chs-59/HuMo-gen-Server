@@ -360,6 +360,9 @@ $tree_prefix_quoted = safe_text_db($_SESSION['tree_prefix']);
 // TODO check variable. Just use $tree_id?
 $db_functions->set_tree_id($_SESSION['tree_id']);
 
+// set access_ids for current user to skip privacy check
+$db_functions->set_accessids($user);
+
 // *** If an HuMo-gen upgrade is done, automatically update language files ***
 if ($humo_option['death_char'] == "y") {   // user wants infinity instead of cross -> check if the language files comply
     $str = file_get_contents("languages/en/en.po");

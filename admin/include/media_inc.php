@@ -48,10 +48,19 @@ function create_thumbnail_IM($folder, $file, $theight = 120)
     $add_arrow = false;
     $success = false;
     $pict_path_original = $folder . $file;
+    
+    // lookup if $file contains a path
+    $fileparts = pathinfo($file);
     $pict_path_thumb = $folder . 'thumb_' . $file . '.jpg';
+    $markerpath = $folder . '.' . $file . '.no_thumb';
+    if ($fileparts['dirname'] != '.') { 
+        $markerpath = $folder . $fileparts['dirname'] . '/.' . $fileparts['basename'] . '.no_thumb'; 
+        $pict_path_thumb = $folder . $fileparts['dirname'] . '/thumb_' . $fileparts['basename'] . '.jpg';
+    }
+
     $imtype = strtoupper(pathinfo($file, PATHINFO_EXTENSION));
     if (Imagick::queryformats($imtype . '*')) {
-        $fhandle = fopen($folder . '.' . $file . '.no_thumb', "w"); // create no_thumb to mark corrupt files
+        $fhandle = fopen($markerpath, "w"); // create no_thumb to mark corrupt files
         fclose($fhandle);
         if ($imtype == 'PDF' && $is_ghostscript) {
             $im = new \Imagick($pict_path_original . '[0]'); //first page of PDF (default: last page)
@@ -81,7 +90,7 @@ function create_thumbnail_IM($folder, $file, $theight = 120)
             $im2->destroy();
         }
         $success = ($im->writeImage($pict_path_thumb));
-        unlink($folder . '.' . $file . '.no_thumb');  // delete no_thumb
+        unlink($markerpath);  // delete no_thumb
         $im->clear();
         $im->destroy();
     }
@@ -341,7 +350,6 @@ function thumbnail_exists($folder, $file) // returns [folder, filename] or ''
 function create_thumbnail_GD($folder, $file, $theight = 120)
 {
     $pict_path_original = $folder . $file;
-    $pict_path_thumb = $folder . 'thumb_' . $file . '.jpg';
     $gd_info = gd_info();
     list($is_gdjpg, $is_gdgif, $is_gdpng) = array($gd_info['JPEG Support'], $gd_info['GIF Read Support'], $gd_info['PNG Support']);
     $gdmime = get_GDmime(); // a.array
@@ -352,9 +360,19 @@ function create_thumbnail_GD($folder, $file, $theight = 120)
         return ($success);
     }
     $twidth = floor($width * ($theight / $height));
+    
+    // lookup if $file contains a path
+    $fileparts = pathinfo($file);
+    $pict_path_thumb = $folder . 'thumb_' . $file . '.jpg';
+    $markerpath = $folder . '.' . $file . '.no_thumb';
+    if ($fileparts['dirname'] != '.') { 
+        $markerpath = $folder . $fileparts['dirname'] . '/.' . $fileparts['basename'] . '.no_thumb'; 
+        $pict_path_thumb = $folder . $fileparts['dirname'] . '/thumb_' . $fileparts['basename'] . '.jpg';
+    }
 
     if ($imtype == 'JPG' && $is_gdjpg) {
-        $fhandle = fopen($folder . '.' . $file . '.no_thumb', "w"); // create no_thumb to mark corrupt files
+        // create no_thumb to mark corrupt files
+        $fhandle = fopen($markerpath, "w"); 
         fclose($fhandle);
         $create_thumb = imagecreatetruecolor($twidth, $theight);
         $source = imagecreatefromjpeg($pict_path_original);
@@ -362,9 +380,9 @@ function create_thumbnail_GD($folder, $file, $theight = 120)
         $success = imagejpeg($create_thumb, $pict_path_thumb);
         imagedestroy($create_thumb);
         imagedestroy($source);
-        unlink($folder . '.' . $file . '.no_thumb');  // delete no_thumb   
+        unlink($markerpath);  // delete no_thumb   
     } elseif ($imtype == 'PNG' && $is_gdpng) {
-        $fhandle = fopen($folder . '.' . $file . '.no_thumb', "w"); // create no_thumb to mark corrupt files
+        $fhandle = fopen($markerpath, "w"); // create no_thumb to mark corrupt files
         fclose($fhandle);
         $create_thumb = imagecreatetruecolor($twidth, $theight);
         $source = imagecreatefrompng($pict_path_original);
@@ -372,9 +390,9 @@ function create_thumbnail_GD($folder, $file, $theight = 120)
         $success = imagejpeg($create_thumb, $pict_path_thumb);
         imagedestroy($create_thumb);
         imagedestroy($source);
-        unlink($folder . '.' . $file . '.no_thumb');  // delete no_thumb   
+        unlink($markerpath);  // delete no_thumb   
     } elseif ($imtype == 'GIF' && $is_gdgif) {
-        $fhandle = fopen($folder . '.' . $file . '.no_thumb', "w"); // create no_thumb to mark corrupt files
+        $fhandle = fopen($markerpath, "w"); // create no_thumb to mark corrupt files
         fclose($fhandle);
         $create_thumb = imagecreatetruecolor($twidth, $theight);
         $source = imagecreatefromgif($pict_path_original);
@@ -382,7 +400,7 @@ function create_thumbnail_GD($folder, $file, $theight = 120)
         $success = imagejpeg($create_thumb, $pict_path_thumb);
         imagedestroy($create_thumb);
         imagedestroy($source);
-        unlink($folder . '.' . $file . '.no_thumb');  // delete no_thumb   
+        unlink($markerpath);  // delete no_thumb   
     }
     return ($success);
 }

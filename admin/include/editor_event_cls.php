@@ -1453,8 +1453,7 @@ class editor_event_cls
                                 <label for="event_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
                                 <div class="col-md-7">
                                     <div class="input-group">
-                                        <input type="text" name="event_place<?= $data_listDb->event_id; ?>" value="<?= $data_listDb->event_place; ?>" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                                        <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=<?= $form; ?>&amp;place_item=event_place&amp;event_id=<?= $data_listDb->event_id; ?>","","<?= $field_popup; ?>")'><img src="../images/search.png" alt="<?= __('Search'); ?>"></a><br>
+                                        <input type="text" name="event_place<?= $data_listDb->event_id; ?>" value="<?= $data_listDb->event_place; ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                                     </div>
                                 </div>
                             </div>

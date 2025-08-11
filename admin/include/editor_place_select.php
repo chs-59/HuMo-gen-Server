@@ -1,4 +1,8 @@
 <?php
+// This script is deprecated and not longer in use
+// Place select switched from popup to autocomplete
+// 2025-08-11 chs
+
 // *** Safety line ***
 if (!defined('ADMIN_PAGE')) {
     exit;

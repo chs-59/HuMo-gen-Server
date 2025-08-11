@@ -677,8 +677,7 @@
                         <label for="pers_birth_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
                         <div class="col-md-7">
                             <div class="input-group">
-                                <input type="text" name="pers_birth_place" value="<?= htmlspecialchars($pers_birth_place); ?>" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                                <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=1&amp;place_item=pers_birth_place","","<?= $field_popup; ?>")'><img src="../images/search.png" alt="<?= __('Search'); ?>"></a><br>
+                                <input type="text" name="pers_birth_place" value="<?= htmlspecialchars($pers_birth_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                             </div>
                         </div>
                     </div>
@@ -776,8 +775,7 @@
                         <label for="birth_decl_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
                         <div class="col-md-7">
                             <div class="input-group">
-                                <input type="text" name="birth_decl_place" value="<?= htmlspecialchars($birth_decl_place); ?>" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                                <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=1&amp;place_item=birth_decl_place","","<?= $field_popup; ?>")'>
+                                <input type="text" name="birth_decl_place" value="<?= htmlspecialchars($birth_decl_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                                     <img src="../images/search.png" alt="<?= __('Search'); ?>">
                                 </a><br>
                             </div>
@@ -902,7 +900,6 @@
                         }
 
                         echo '<i>' . __('To display this, the option "Show events" has to be checked in "Users -> Groups"') . '</i>';
-                        // echo '<a href="#" onClick=\'window.open("index.php?page=editor_place_select&amp;form=1&amp;place_item=even_brit_place","","'.$field_popup.'")\'><img src="../images/search.png" alt="'.__('Search').'"></a>';
                         ?>
                     </span>
                 </td>
@@ -1041,8 +1038,7 @@
                         <label for="pers_bapt_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
                         <div class="col-md-7">
                             <div class="input-group">
-                                <input type="text" name="pers_bapt_place" value="<?= htmlspecialchars($pers_bapt_place); ?>" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                                <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=1&amp;place_item=pers_bapt_place","","<?= $field_popup; ?>")'><img src="../images/search.png" alt="<?= __('Search'); ?>"></a><br>
+                                <input type="text" name="pers_bapt_place" value="<?= htmlspecialchars($pers_bapt_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                             </div>
                         </div>
                     </div>
@@ -1176,8 +1172,7 @@
                         <label for="pers_death_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
                         <div class="col-md-7">
                             <div class="input-group">
-                                <input type="text" name="pers_death_place" value="<?= htmlspecialchars($pers_death_place); ?>" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                                <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=1&amp;place_item=pers_death_place","","<?= $field_popup; ?>")'><img src="../images/search.png" alt="<?= __('Search'); ?>"></a><br>
+                                <input type="text" name="pers_death_place" value="<?= htmlspecialchars($pers_death_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                             </div>
                         </div>
                     </div>
@@ -1326,8 +1321,7 @@
                         <label for="death_decl_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
                         <div class="col-md-7">
                             <div class="input-group">
-                                <input type="text" name="death_decl_place" value="<?= htmlspecialchars($death_decl_place); ?>" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                                <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=1&amp;place_item=death_decl_place","","<?= $field_popup; ?>")'><img src="../images/search.png" alt="<?= __('Search'); ?>"></a><br>
+                                <input type="text" name="death_decl_place" value="<?= htmlspecialchars($death_decl_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                             </div>
                         </div>
                     </div>
@@ -1403,8 +1397,7 @@
                         <label for="pers_buried_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
                         <div class="col-md-7">
                             <div class="input-group">
-                                <input type="text" name="pers_buried_place" value="<?= htmlspecialchars($pers_buried_place); ?>" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                                <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=1&amp;place_item=pers_buried_place","","<?= $field_popup; ?>")'><img src="../images/search.png" alt="<?= __('Search'); ?>"></a><br>
+                                <input type="text" name="pers_buried_place" value="<?= htmlspecialchars($pers_buried_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                             </div>
                         </div>
                     </div>

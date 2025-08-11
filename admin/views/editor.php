@@ -1255,8 +1255,7 @@ if ($check_person) {
             <label for="pers_birth_place" class="col-sm-3 col-form-label"><?= __('Place'); ?></label>
             <div class="col-md-7">
                 <div class="input-group">
-                    <input type="text" name="pers_birth_place" value="" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                    <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=<?= $form; ?>&amp;place_item=pers_birth_place","","<?= $field_popup; ?>")'><img src="../images/search.png" alt="<?= __('Search'); ?>"></a>
+                    <input type="text" name="pers_birth_place" value="" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                 </div>
             </div>
         </div>
@@ -1289,8 +1288,7 @@ if ($check_person) {
             <label for="pers_bapt_place" class="col-sm-3 col-form-label"><?= __('Place'); ?></label>
             <div class="col-md-7">
                 <div class="input-group">
-                    <input type="text" name="pers_bapt_place" value="" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                    <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=<?= $form; ?>&amp;place_item=pers_bapt_place","","<?= $field_popup; ?>")'><img src="../images/search.png" alt="<?= __('Search'); ?>"></a>
+                    <input type="text" name="pers_bapt_place" value="" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                 </div>
             </div>
         </div>
@@ -1309,8 +1307,7 @@ if ($check_person) {
             <label for="pers_bapt_place" class="col-sm-3 col-form-label"><?= __('Place'); ?></label>
             <div class="col-md-7">
                 <div class="input-group">
-                    <input type="text" name="pers_death_place" value="" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                    <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=<?= $form; ?>&amp;place_item=pers_death_place","","<?= $field_popup; ?>")'><img src="../images/search.png" alt="<?= __('Search'); ?>"></a>
+                    <input type="text" name="pers_death_place" value="" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                 </div>
             </div>
         </div>
@@ -1329,8 +1326,7 @@ if ($check_person) {
             <label for="pers_buried_place" class="col-sm-3 col-form-label"><?= __('Place'); ?></label>
             <div class="col-md-7">
                 <div class="input-group">
-                    <input type="text" name="pers_buried_place" value="" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                    <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=<?= $form; ?>&amp;place_item=pers_buried_place","","<?= $field_popup; ?>")'><img src="../images/search.png" alt="<?= __('Search'); ?>"></a>
+                    <input type="text" name="pers_buried_place" value="" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                 </div>
             </div>
         </div>
@@ -1601,8 +1597,7 @@ if ($check_person) {
                                 <label for="address_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
                                 <div class="col-md-7">
                                     <div class="input-group">
-                                        <input type="text" name="address_place_<?= $address3Db->address_id; ?>" value="<?= $address3Db->address_place; ?>" size="<?= $field_place; ?>" class="form-control form-control-sm">
-                                        <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=<?= $form; ?>&amp;place_item=address_place&amp;address_id=<?= $address3Db->address_id; ?>","","<?= $field_popup; ?>")'><img src=" ../images/search.png" alt="<?= __('Search'); ?>"></a>
+                                        <input type="text" name="address_place_<?= $address3Db->address_id; ?>" value="<?= $address3Db->address_place; ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
                                     </div>
                                 </div>
                             </div>

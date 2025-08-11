@@ -23,8 +23,12 @@ class person_cls
     // ***************************************************
     public function set_privacy($personDb)
     {
-        global $user, $dataDb;
+        global $user, $dataDb, $db_functions;
         $privacy_person = false;  // *** Standard: show all persons ***
+        if (isset($personDb->pers_gedcomnumber) && in_array($personDb->pers_gedcomnumber, $db_functions->access_ids)) {
+            // user has clearance for this gedcomnumber
+            return $privacy_person;
+        }
         if ($user['group_privacy'] == 'n') {
             $privacy_person = true;  // *** Standard: filter privacy data of person ***
             // *** $personDb is empty by N.N. person ***
