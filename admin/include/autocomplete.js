@@ -19,7 +19,7 @@
       })
       .autocomplete({
         source: function( request, response ) {
-          $.getJSON( "include/json_search.php", {
+          $.getJSON( "include/json_search_pers.php", {
             term: extractLast( request.term ) + ':::' + $(this.element.get(0)).attr('data-tree')
           }, response );
         },
@@ -47,3 +47,16 @@
         }
       });
   } );
+  
+// jQuery autocompleate search for places admin/include/editor_user_settings
+  $( function() {
+    $( ".search-place" )
+      .autocomplete({
+        source: function( request, response ) {
+          $.getJSON( "include/json_search_place.php", {
+            term: request.term 
+          }, response );
+        },
+      });
+  } );
+   
