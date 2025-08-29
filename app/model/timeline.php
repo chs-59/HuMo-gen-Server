@@ -244,7 +244,7 @@ class TimelineModel
 
                         // *** Check if child must be hidden ***
                         if (
-                            $user["group_pers_hide_totally_act"] == 'j' && isset($chldDb->pers_own_code) && strpos(' ' . $chldDb->pers_own_code, $user["group_pers_hide_totally"]) > 0
+                            $user["group_pers_hide_totally_act"] == 'j' && isset($chldDb->pers_own_code) && (strpos('test ' . $chldDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)
                         ) {
                             continue;
                         }

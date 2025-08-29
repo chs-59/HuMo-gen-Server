@@ -180,6 +180,39 @@ loose these data when editing your family tree with other programs than HuMo-gen
 If you import a GEDCOM file with category tags to a new installation of HuMo-gen-
 Server you have to set up the category names afterwords in the admin panel!
 
+## Major Upgrades on privacy
+
+### Using Stealth Mmode to remove persons completely from output
+In HGO the privacy feature is an anonymizing tool. That's why the chart boxes,
+list entries and relations to a person that match the privacy settings are still
+present in the charts and lists while the name, pictures and living dates are
+hidden by different filter settings. In HGS you can enhance the privacy settings
+with a chooseable  new __Stealth Mode__ in _group settings_ to remove the persons
+and their relations from all output. In descendant charts for example the branch
+ends before the box of a "privacy" marked person appears. After all there should
+be no hint that a "privacy" person is in the database. 
+
+ATTENTION: The stealth mode was not tested with the google maps feature of the 
+software. It might display persons with anonymized names instead of removing the
+persons completely. OpenStreetMap works as expected.
+
+### Give single users view access to defined branches
+
+![Privacy exeptions](images/docu/skip_privacy_settings.png)
+
+Sometimes you want to skip the general privacy settings for some branches e.g. 
+to let single users see their close relatives but not the far ones. There is 
+a new user setting to do so. Hit the magnifying glass icon in _user settings_ 
+opening the _extra settings_ Here you'll find some more lines (one for each 
+tree) where you can add Gedcom numbers to make an exception for privacy rules 
+for the listed persons (separated by a ";"). Choose a number of descendant 
+generations that will be affected by these exceptions (maximum 4).     
+
+## Switched search for places from popup window to autocomplete (jQuery)
+To look for places that are allready in database you just start typing to get 
+a list of hits in the database right in place. The magnifying glass icon 
+to open a popup window for the search was removed.   
+
 ## Minor fixes and changes
 
 ### Solved layout problems in chart view (ancestor, descendant and hourglass)

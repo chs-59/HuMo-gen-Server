@@ -188,6 +188,7 @@ class MapsModel
     // *** Sept. 2024: at this moment only used for OpenStreetMap ***
     public function get_locations($dbh, $tree_id, $maps)
     {
+        global $user;
         $maps['location'][] = '';
         $maps['latitude'][] = '';
         $maps['longitude'][] = '';
@@ -261,6 +262,10 @@ class MapsModel
             // *** Use person class ***
             // TODO: this slows down page for large family trees. Use Javascript to show persons?
             $person_cls = new person_cls($personDb);
+            // skip for stealth mode
+            if ($user['group_stealth'] === 'y' && $person_cls->set_privacy($personDb)) {
+                continue;
+            }
             $name = $person_cls->person_name($personDb);
 
             $key = array_search($place, $maps['location']);

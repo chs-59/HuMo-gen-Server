@@ -1,40 +1,16 @@
 <!-- TODO check all links in this script -->
-<br>
-<div style="text-align:center">
-    <!-- Find first character of last name -->
-    <?php
-    foreach ($data["alphabet_array"] as $alphabet) {
-        $vars['last_name'] = $alphabet;
-        $link = $link_cls->get_link($uri_path, 'list_names', $tree_id, false, $vars);
-
-        echo ' <a href="' . $link . '">' . $alphabet . '</a>';
-    }
-
-    $vars['last_name'] = 'all';
-    $link = $link_cls->get_link($uri_path, 'list_names', $tree_id, false, $vars);
-    echo ' <a href="' . $link . '">' . __('All names') . "</a>\n";
-    ?>
-</div><br>
 
 <?php
 // *** Search variables in: http://localhost/humo-gen/list/humo1_/M/ ***
-if (!isset($last_name)) {
-    $last_name = 'a'; // *** Default first_character ***
-}
-if (isset($_GET['last_name']) && $_GET['last_name'] && is_string($_GET['last_name'])) {
-    $last_name = safe_text_db($_GET['last_name']);
-}
 
 // *** MAIN SETTINGS ***
 $maxcols = $data["max_cols"];
+$last_name = $data["last_name"];
 
 $maxnames = $data["max_names"];
 $nr_persons = $data["max_names"];
+$item = $data["item"];
 
-$item = 0;
-if (isset($_GET['item'])) {
-    $item = $_GET['item'];
-}
 
 $start = 0;
 if (isset($_GET["start"])) {
@@ -91,95 +67,20 @@ function tablerow($nr, $lastcol = false)
 <?php
 }
 
-// *** Get names from database ***
 $number_high = 0;
 
-// Mons, van or: van Mons
-if ($user['group_kindindex'] == "j") {
-    // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
-    $personqry = "SELECT pers_prefix, pers_lastname, count(pers_lastname) as count_last_names
-        FROM humo_persons
-        WHERE pers_tree_id='" . $tree_id . "' AND CONCAT(pers_prefix,pers_lastname) LIKE '" . $last_name . "%'
-        GROUP BY pers_prefix, pers_lastname ORDER BY CONCAT(pers_prefix, pers_lastname)";
+// *** Get names from database ***
+// all database functions moved to app/model/list_names.php 
+// and app/controller/list_namesController.php
+$freq_last_names = $data['freq_last_names'];
+$freq_count_last_names = $data['freq_count_last_names'];
+$freq_pers_prefix = $data['freq_pers_prefix'];
 
-    // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
-    $count_qry = "SELECT pers_lastname, pers_prefix
-        FROM humo_persons
-        WHERE pers_tree_id='" . $tree_id . "' AND CONCAT(pers_prefix,pers_lastname) LIKE '" . $last_name . "%'
-        GROUP BY pers_prefix, pers_lastname";
-
-    if ($last_name == 'all') {
-        // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
-        $personqry = "SELECT pers_prefix, pers_lastname, count(pers_lastname) as count_last_names
-            FROM humo_persons WHERE pers_tree_id='" . $tree_id . "'
-            GROUP BY pers_prefix, pers_lastname ORDER BY CONCAT(pers_prefix, pers_lastname)";
-
-        // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
-        $count_qry = "SELECT pers_prefix, pers_lastname
-            FROM humo_persons WHERE pers_tree_id='" . $tree_id . "'
-            GROUP BY pers_prefix, pers_lastname";
-    }
-} else {
-    // *** Select alphabet first_character ***
-    // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
-    $personqry = "SELECT pers_lastname, pers_prefix, count(pers_lastname) as count_last_names
-        FROM humo_persons
-        WHERE pers_tree_id='" . $tree_id . "' AND pers_lastname LIKE '" . $last_name . "%'
-        GROUP BY pers_lastname, pers_prefix";
-
-    // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
-    $count_qry = "SELECT pers_lastname, pers_prefix
-        FROM humo_persons
-        WHERE pers_tree_id='" . $tree_id . "' AND pers_lastname LIKE '" . $last_name . "%'
-        GROUP BY pers_lastname, pers_prefix";
-
-    if ($last_name == 'all') {
-        // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
-        $personqry = "SELECT pers_lastname, pers_prefix, count(pers_lastname) as count_last_names
-            FROM humo_persons WHERE pers_tree_id='" . $tree_id . "'
-            GROUP BY pers_lastname, pers_prefix";
-
-        // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
-        $count_qry = "SELECT pers_lastname, pers_prefix
-            FROM humo_persons WHERE pers_tree_id='" . $tree_id . "'
-            GROUP BY pers_lastname, pers_prefix";
-    }
-}
-
-// *** Add limit to query (results per page) ***
-if ($maxnames != '999') {
-    $personqry .= " LIMIT " . $item . "," . $maxnames;
-}
-$person = $dbh->query($personqry);
-while (@$personDb = $person->fetch(PDO::FETCH_OBJ)) {
-    if ($personDb->pers_lastname == '') {
-        $personDb->pers_lastname = '...';
-    }
-    $freq_last_names[] = $personDb->pers_lastname;
-    $freq_pers_prefix[] = $personDb->pers_prefix;
-    $freq_count_last_names[] = $personDb->count_last_names;
-    if ($personDb->count_last_names > $number_high) {
-        $number_high = $personDb->count_last_names;
-    }
-}
 if (isset($freq_last_names)) {
     $row = ceil(count($freq_last_names) / $maxcols);
 }
 
-// *** Total number of persons for multiple pages ***
-//if ($count_qry){
-// *** Use MySQL COUNT command to calculate nr. of persons in simple queries (faster than php num_rows and in simple queries faster than SQL_CAL_FOUND_ROWS) ***
-//@$resultDb = $result->fetch(PDO::FETCH_OBJ);
-//$count_persons=@$resultDb->teller;
-$result = $dbh->query($count_qry);
-$count_persons = $result->rowCount();
-//}
-//else{
-//      // *** USE SQL_CALC_FOUND_ROWS for complex queries (faster than mysql count) ***
-//      $result = $dbh->query("SELECT FOUND_ROWS() AS 'found_rows'");
-//      $rows = $result->fetch();
-//      $count_persons = $rows['found_rows'];
-//}
+$count_persons = $data['count_persons'];
 
 // *** If number of displayed surnames is "ALL" change value into number of surnames ***
 if ($nr_persons == 'ALL') {
@@ -192,6 +93,24 @@ if ($humo_option["url_rewrite"] == "j") {
     $url = 'index.php?page=list_names&amp;tree_id=' . $tree_id . '&amp;last_name=' . $last_name;
 }
 ?>
+<br>
+<div style="text-align:center">
+    <!-- Find first character of last name -->
+    <?php
+    foreach ($data["alphabet_array"] as $alphabet) {
+        // test if this first char is in database
+        if (empty($_SESSION['list_names_cache'][$tree_id][$alphabet])){            continue; }
+        $vars['last_name'] = $alphabet;
+        $link = $link_cls->get_link($uri_path, 'list_names', $tree_id, false, $vars);
+
+        echo ' <a href="' . $link . '">' . $alphabet . '</a>';
+    }
+
+    $vars['last_name'] = 'all';
+    $link = $link_cls->get_link($uri_path, 'list_names', $tree_id, false, $vars);
+    echo ' <a href="' . $link . '">' . __('All names') . "</a>\n";
+    ?>
+</div><br>
 
 <!-- <h1 class="standard_header"><?= __('Frequency of Surnames'); ?></h1> -->
 
@@ -229,7 +148,9 @@ if ($humo_option["url_rewrite"] == "j") {
 
 $show_line_pages = false;
 // *** Check for search results ***
-if (@$person->rowCount() > 0) {
+//if (@$person->rowCount() > 0) {
+
+if ($count_persons > 0) {
     if ($humo_option["url_rewrite"] == "j") {
         $uri_path_string = $uri_path . 'list_names/' . $tree_id . '/' . $last_name . '?';
     } else {
@@ -336,3 +257,12 @@ if ($show_line_pages) {
         }
     }
 </script><br><br>
+<?php
+function check_list_privacy($gcom_pers){
+    global $db_functions;
+    $my_persDb = $db_functions->get_person($gcom_pers);
+    $pers_cls = new person_cls($my_persDb);
+    $my_privacy = $pers_cls->set_privacy($my_persDb);
+    return $my_privacy;
+}
+?>

@@ -159,7 +159,7 @@ class person_cls
         }
 
         // *** Completely filter a person, if option "completely filter a person" is activated ***
-        if ($personDb && ($user["group_pers_hide_totally_act"] == 'j' && strpos(' ' . $personDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)) {
+        if ($personDb && ($user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $personDb->pers_own_code, $user["group_pers_hide_totally"]) > 0))) {
             $privacy_person = true;
         }
 
@@ -550,7 +550,7 @@ class person_cls
 
             // *** Completely filter person ***
             if (
-                $user["group_pers_hide_totally_act"] == 'j' && strpos(' ' . $personDb->pers_own_code, $user["group_pers_hide_totally"]) > 0
+                $user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $personDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)
             ) {
                 $privacy_name = __('Name filtered');
             }
@@ -1211,7 +1211,7 @@ class person_cls
     //*** Show spouse/ partner by child ***
     function get_child_partner($db_functions, $personDb, $person_kind)
     {
-        global $bot_visit, $dirmark1;
+        global $bot_visit, $dirmark1, $user;
         $child_marriage = '';
         if (!$bot_visit && $person_kind == 'child' && $personDb->pers_fams) {
             $marriage_array = explode(";", $personDb->pers_fams);
@@ -1280,6 +1280,11 @@ class person_cls
                     $partnerDb = $db_functions->get_person($partner_id);
                     $partner_cls = new person_cls;
                     $name = $partner_cls->person_name($partnerDb);
+                    
+                    // stealth mode: skip person with privacy
+                    if ($user['group_stealth'] === 'y' && $this->set_privacy($partnerDb)) {
+                        continue; 
+                    }
 
                     // *** Person url example (optional: "main_person=I23"): http://localhost/humo-genealogy/family/2/F10?main_person=I23/ ***
                     $url = $this->person_url2($partnerDb->pers_tree_id, $partnerDb->pers_famc, $partnerDb->pers_fams, $partnerDb->pers_gedcomnumber);

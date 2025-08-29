@@ -54,6 +54,8 @@ class AncestorModel extends FamilyModel
     // The following is used for ancestor chart, ancestor sheet and ancestor sheet PDF (ASPDF)
     public function get_ancestors($db_functions, $pers_gedcomnumber)
     {
+        global $user;
+        
         // person 01
         $personDb = $db_functions->get_person($pers_gedcomnumber);
         $data["firstnames"] = $this->getFirstnames();
@@ -81,8 +83,13 @@ class AncestorModel extends FamilyModel
             $data["gedcomnumber"][$counter] = '';
             $pers_famc[$counter] = '';
             $data["sexe"][$counter] = '';
-            if ($parent_array[$counter]) {
+            if (!empty($parent_array[$counter])) {
                 $personDb = $db_functions->get_person($parent_array[$counter]);
+ 
+                // stealth mode check and skip
+                $pers_cls = new person_cls($personDb);
+                if ($user['group_stealth'] === 'y' && $pers_cls->set_privacy($personDb)) {continue;}
+                
                 $data["gedcomnumber"][$counter] = $personDb->pers_gedcomnumber;
                 $pers_famc[$counter] = $personDb->pers_famc;
                 $data["sexe"][$counter] = $personDb->pers_sexe;

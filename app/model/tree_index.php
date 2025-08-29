@@ -306,7 +306,8 @@ class Mainindex_cls
     public function last_names($columns, $rows)
     {
         global $dbh, $dataDb, $tree_id, $language, $user, $humo_option, $uri_path, $maxcols, $text;
-
+        global $freq_last_names, $freq_count_last_names, $freq_pers_prefix;
+        require_once  __DIR__ . "/list_names.php";
         // MAIN SETTINGS
         $maxcols = 2; // number of name&nr colums in table. For example 3 means 3x name col + nr col
         if ($columns) {
@@ -317,10 +318,29 @@ class Mainindex_cls
         if ($rows) {
             $maxnames = $rows * $maxcols;
         }
-
+        $freq_last_names = array();
+        $freq_count_last_names = array();
+        $freq_pers_prefix = array();
+        
+        $list_namesModel = new list_namesModel();
+        $result = $list_namesModel->getAllNames($dbh, 'all', 0, 99999); 
+        $freq_last_names2 = $result['freq_last_names'];
+        $freq_count_last_names2 = $result['freq_count_last_names'];
+        $freq_pers_prefix2 = $result['freq_pers_prefix'];
+        natsort($freq_count_last_names2);
+        $cnt = 1;
+        foreach (array_reverse($freq_count_last_names2, true) as $key => $value) {
+            if ($cnt > $maxnames) {
+                break;
+            } 
+            $freq_last_names[] = $freq_last_names2[$key];
+            $freq_count_last_names[] = $value;
+            $freq_pers_prefix[] = $freq_pers_prefix2[$key];
+            $cnt++;
+        }
         $text = '';
 
-        if (!function_exists('tablerow')) {
+//        if (!function_exists('tablerow')) {
             function tablerow($nr, $lastcol = false)
             {
                 // displays one set of name & nr column items in the row
@@ -368,14 +388,14 @@ class Mainindex_cls
                 }
                 $text .= '</td>';
             }
-        }
+//        }
 
-        if (!function_exists('last_names')) {
+//        if (!function_exists('last_names')) {
             function last_names($max)
             {
                 global $dbh, $dataDb, $tree_id, $language, $user, $humo_option, $uri_path, $freq_last_names, $freq_pers_prefix, $freq_count_last_names, $maxcols, $text;
 
-                // *** Read cache (only used in large family trees) ***
+/*                // *** Read cache (only used in large family trees) ***
                 $cache = '';
                 $cache_count = 0;
                 $cache_exists = false;
@@ -402,8 +422,8 @@ class Mainindex_cls
                         }
                     }
                 }
-
-                if ($cache_check == false) {
+*/
+/*                if ($cache_check == false) {
                     // TEST LINE
                     //echo 'NO CACHE';
                     /*
@@ -414,7 +434,7 @@ class Mainindex_cls
                         GROUP BY long_name ORDER BY count_last_names DESC LIMIT 0,".$max;
                     */
                     // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
-                    $personqry = "SELECT pers_lastname, pers_prefix, count(pers_lastname) as count_last_names
+/*                    $personqry = "SELECT pers_lastname, pers_prefix, count(pers_lastname) as count_last_names
                         FROM humo_persons
                         WHERE pers_tree_id='" . $tree_id . "' AND pers_lastname NOT LIKE ''
                         GROUP BY pers_lastname, pers_prefix ORDER BY count_last_names DESC LIMIT 0," . $max;
@@ -453,7 +473,7 @@ class Mainindex_cls
                         }
                     }
                 } // *** End of cache ***
-
+*/
                 $row = 0;
                 if ($freq_last_names) {
                     $row = round(count($freq_last_names) / $maxcols);
@@ -475,7 +495,7 @@ class Mainindex_cls
                 }
                 return null;
             }
-        }
+//        }
 
         // *** nametbl = used for javascript to show graphical lightgray bar to show number of persons ***
         $text .= '<table class="table table-sm nametbl">';
@@ -491,7 +511,6 @@ class Mainindex_cls
         $text .= '</thead>';
 
         $baseperc = last_names($maxnames);   // displays the table and sets the $baseperc (= the name with highest frequency that will be 100%)
-
         $path = $humo_option["url_rewrite"] == "j" ? 'statistics' : 'index.php?page=statistics';
         $text .= '<tr><td colspan="' . ($maxcols * 2) . '" class="table-active"><a href="' . $path . '">' . __('More statistics') . '</a></td></tr>';
         $text .= '</table>';
@@ -916,7 +935,7 @@ class Mainindex_cls
 
     public function today_in_history($view = 'with_table')
     {
-        global $dbh, $dataDb;
+        global $dbh, $dataDb, $user;
         // *** Backwards compatible, value is empty ***
         if ($view == '') {
             $view = 'with_table';
@@ -1017,8 +1036,8 @@ class Mainindex_cls
                     $text .= '</tr>';
                 }
             }
-
-            if ($count_privacy !== 0) {
+            // no privacy hints in stealth mode
+            if ($count_privacy !== 0 && $user['group_stealth'] != 'y') {
                 $text .= '<tr><td colspan="3">' . $count_privacy . __(' persons are not shown due to privacy settings') . '</td></tr>';
             }
             $text .= '</table>';

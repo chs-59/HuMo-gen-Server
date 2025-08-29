@@ -14,7 +14,6 @@ $select_trees = $list["select_trees"];
 $selection = $list["selection"];
 $start = $list["start"];
 
-
 $list_var = $link_cls->get_link($uri_path, 'list', $tree_id, false);
 $list_var2 = $link_cls->get_link($uri_path, 'list', $tree_id, true);
 
@@ -492,9 +491,9 @@ if ($list["index_list"] == 'standard' || $list["index_list"] == 'search' || $lis
 }
 
 $uri_path_string = $link_cls->get_link($uri_path, 'list', $tree_id, true);
-
 // *** Check for search results ***
-if ($list["person_result"]->rowCount() > 0) {
+if ($list["count_persons"] > 0) {
+//if ($list["person_result"]->rowCount() > 0) {
     // "<="
     $data["previous_link"] = '';
     $data["previous_status"] = '';
@@ -591,7 +590,8 @@ if ($list["person_result"]->rowCount() > 0) {
     }
 
     // *** No results ***
-    if ($list["person_result"]->rowCount() == 0) {
+    if ($list["count_persons"] == 0) {
+//    if ($list["person_result"]->rowCount() == 0) {
         echo '<br><div class="center">' . __('No names found.') . '</div>';
     }
     ?>
@@ -755,8 +755,8 @@ function name_qry($search_name, $search_part)
         echo '<script>document.getElementById("found_div").innerHTML = "' . __('Loading...') . '";</script>';
     }
     */
-
-    while (@$personDb = $list["person_result"]->fetch(PDO::FETCH_OBJ)) {
+//    while (@$personDb = $list["person_result"]->fetch(PDO::FETCH_OBJ)) {
+    foreach ($list["person_result"] as $personDb) {
         //while (@$person1Db = $list["person_result"]->fetch(PDO::FETCH_OBJ)) {
 
         // *** Preparation for second query. Needed to solve GROUP BY problems ***
@@ -843,7 +843,7 @@ function name_qry($search_name, $search_part)
                 $privcount++;
             } else {
                 // *** Extra privacy filter check for total_filter ***
-                if ($user["group_pers_hide_totally_act"] == 'j' and strpos(' ' . $personDb->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+                if ($user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $personDb->pers_own_code, $user["group_pers_hide_totally"]) > 0) ) {
                     $privcount++;
                 } else {
                     show_person($personDb);
@@ -1084,6 +1084,11 @@ function show_person($personDb)
                         $partnerDb = $db_functions->get_person($partner_id);
                         $partner_cls = new person_cls;
                         $name = $partner_cls->person_name($partnerDb);
+                        if ($user['group_stealth'] === 'y' && $partner_cls->set_privacy($partnerDb))   
+                        {     
+                            continue;
+                        }
+
                     } else {
                         $name["standard_name"] = __('N.N.');
                     }

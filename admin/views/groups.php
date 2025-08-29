@@ -28,6 +28,10 @@ if (!isset($field['group_show_age_living_person'])) {
     $sql = "ALTER TABLE humo_groups ADD group_show_age_living_person VARCHAR(1) CHARACTER SET utf8 NOT NULL DEFAULT 'y' AFTER group_maps_presentation;";
     $result = $dbh->query($sql);
 }
+if (!isset($field['group_stealth'])) {
+    $sql = "ALTER TABLE humo_groups ADD group_stealth VARCHAR(1) CHARACTER SET utf8 NOT NULL DEFAULT 'n' AFTER group_texts_fam;";
+    $result = $dbh->query($sql);
+}
 ?>
 
 <h1 class="center"><?= __('User groups'); ?></h1>
@@ -453,6 +457,13 @@ If possible, try to filter with that'); ?></i>
             </td>
             <!-- BE AWARE: REVERSED CHECK OF VARIABLE! -->
             <td><input type="checkbox" name="group_privacy" <?= $groupDb->group_privacy == 'n' ? 'checked' : ''; ?>></td>
+        </tr>
+
+        <tr>
+            <td><?= __('Activate stealth mode'); ?><br>
+                <i><?= __('Persons matching privacy settigs will be completely hidden as if they are not in database'); ?></i>
+            </td>
+            <td><input type="checkbox" name="group_stealth" <?= $groupDb->group_stealth != 'n' ? 'checked' : ''; ?>></td>
         </tr>
 
         <tr>

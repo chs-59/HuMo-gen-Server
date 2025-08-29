@@ -133,6 +133,8 @@ $user['group_texts_pers'] = $groupDb->group_texts_pers; // Show birth, bapt, dea
 $user['group_texts_fam'] = $groupDb->group_texts_fam; // Show marr. (licence) texts
 
 //Privacy filter
+$user['group_stealth'] = $groupDb->group_stealth; // Stealth mode.
+
 $user['group_alive'] = $groupDb->group_alive; // Person filter.
 
 $user['group_alive_date_act'] = $groupDb->group_alive_date_act; // Privacy filter activated

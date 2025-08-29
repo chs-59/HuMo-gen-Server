@@ -27,7 +27,7 @@ function source_display_pdf($sourcenum)
     $sourceDb = $db_functions->get_source($sourcenum);
 
     // *** Check if visitor tries to see restricted sources ***
-    if ($user['group_show_restricted_source'] == 'n' && $sourceDb->source_status == 'restricted') {
+    if ($user['group_show_restricted_source'] == 'n' && isset($sourceDb->source_status) && $sourceDb->source_status == 'restricted') {
         exit(__('No valid source number.'));
     }
 

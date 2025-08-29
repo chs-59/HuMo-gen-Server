@@ -28,7 +28,7 @@ class GroupsModel
             group_family_presentation='compact', group_maps_presentation='hide',
             group_menu_cms='y', group_menu_persons='j', group_menu_names='j', group_menu_login='j', group_menu_change_password='y',
             group_showstatistics='j', group_relcalc='j', group_googlemaps='j', group_contact='j', group_latestchanges='j',
-            group_text_pers='j', group_texts_pers='j', group_texts_fam='j', group_alive='n', group_alive_date_act='j',
+            group_text_pers='j', group_texts_pers='j', group_texts_fam='j', group_stealth='n', group_alive='n', group_alive_date_act='j',
             group_alive_date='1920', group_death_date_act='j', group_death_date='1980',
             group_filter_death='n', group_filter_total='n', group_filter_name='j',
             group_filter_fam='j', group_filter_pers_show_act='j', group_filter_pers_show='*', group_filter_pers_hide_act='n',
@@ -200,6 +200,11 @@ class GroupsModel
             if (isset($_POST["group_privacy"])) {
                 $group_privacy = 'n';
             }
+            // *** BE AWARE: REVERSED CHECK OF VARIABLE! ***
+            $group_stealth = 'n';
+            if (isset($_POST["group_stealth"])) {
+                 $group_stealth= 'y';
+            }
             $group_alive = 'n';
             if (isset($_POST["group_alive"])) {
                 $group_alive = 'j';
@@ -284,6 +289,7 @@ class GroupsModel
             group_text_pers='" . $group_text_pers . "',
             group_texts_pers='" . $group_texts_pers . "',
             group_texts_fam='" . $group_texts_fam . "',
+            group_stealth='" . $group_stealth . "',
             group_alive='" . $group_alive . "',
             group_alive_date_act='" . $group_alive_date_act . "',
             group_alive_date='" . $_POST["group_alive_date"] . "',

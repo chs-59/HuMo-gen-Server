@@ -71,6 +71,8 @@ function witness($gedcomnr, $event_kind, $event_connect_kind = 'person')
                 // *** Connected witness ***
                 $witness_nameDb = $db_functions->get_person($witnessDb->event_connect_id2);
                 $name = $witness_cls->person_name($witness_nameDb);
+//untested:
+//if ($user['group_stealth'] === 'y' && $witness_cls->set_privacy($witness_nameDb)) { continue; }
 
                 // *** Person url example (optional: "main_person=I23"): http://localhost/humo-genealogy/family/2/F10?main_person=I23/ ***
                 $url = $witness_cls->person_url2($witness_nameDb->pers_tree_id, $witness_nameDb->pers_famc, $witness_nameDb->pers_fams, $witness_nameDb->pers_gedcomnumber);
@@ -141,7 +143,7 @@ function witness($gedcomnr, $event_kind, $event_connect_kind = 'person')
 // ********************************************************************************
 function witness_by_events($gedcomnr)
 {
-    global $dbh, $db_functions, $tree_id, $screen_mode;
+    global $dbh, $db_functions, $tree_id, $screen_mode, $user;
     global $link_cls, $uri_path;
 
     $counter = 0;
@@ -170,6 +172,16 @@ function witness_by_events($gedcomnr)
 
         $witness_line = '';
         while ($witnessDb = $source_prep->fetch(PDO::FETCH_OBJ)) {
+
+            //stealth mode: skip person with privacy
+            if ($user['group_stealth'] === 'y'){
+                $my_witDb = $db_functions->get_person($witnessDb->event_connect_id);
+                $my_wit_cls = new person_cls($my_witDb);
+                if ($my_wit_cls->set_privacy($my_witDb)) {
+                    continue;
+                }
+            }
+
             if ($counter == 0) {
                 if ($screen_mode == "PDF") {
                     $text = "\n" . __('This person was witness at:') . "\n";

@@ -109,7 +109,8 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
 {
     global $dbh, $db_functions, $tree_prefix_quoted, $pdf, $pdf_font, $show_details, $show_date, $dates_behind_names, $nr_generations;
     global $language, $dirmark1, $dirmark1, $screen_mode, $user;
-
+    $db_functions->set_accessids($user);
+    
     $family_nr = 1; //*** Process multiple families ***
 
     $show_privacy_text = false;
@@ -123,7 +124,6 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
     // *** YB: if needed show woman as main_person ***
     @$familyDb = $db_functions->get_family($outline_family_id, 'man-woman');
     $parent1 = '';
-    $parent2 = '';
     $swap_parent1_parent2 = false;
 
     // *** Standard main_person is the father ***
@@ -162,6 +162,13 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
 
         $marriage_cls = new marriage_cls($familyDb, $privacy_man, $privacy_woman);
         $family_privacy = $marriage_cls->privacy;
+        
+        // stealth mode: skip branch for privacy
+        $p2_transparent = false;
+        if ($user['group_stealth'] == 'y') {
+            if (check_fam_privacy($person_manDb->pers_gedcomnumber)){ continue; }
+            $p2_transparent = check_fam_privacy($person_womanDb->pers_gedcomnumber);
+        }
 
         // *************************************************************
         // *** Parent1 (normally the father)                         ***
@@ -181,6 +188,7 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
                 $pdf->Write(8, $generation_number . '  ');
 
                 if ($swap_parent1_parent2 == true) {
+if ($p2_transparent) {    continue; }   // woman is main person                     
                     $pdf->SetFont($pdf_font, 'B', 12);
                     $pdf->Write(8, pdf_convert($woman_cls->name_extended("outline")));
                     $pdf->SetFont($pdf_font, '', 12);
@@ -218,13 +226,17 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
         // *** Totally hide parent2 if setting is active ***
         $show_parent2 = true;
         if ($swap_parent1_parent2) {
-            if ($user["group_pers_hide_totally_act"] == 'j' and strpos(' ' . $person_manDb->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+            if ($user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $person_manDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)) {
                 $show_privacy_text = true;
                 $family_privacy = true;
                 $show_parent2 = false;
             }
+        } elseif ($p2_transparent) {
+            $show_privacy_text = true;
+            $family_privacy = true;
+            $show_parent2 = false;
         } else {
-            if ($user["group_pers_hide_totally_act"] == 'j' and strpos(' ' . $person_womanDb->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+            if ($user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $person_womanDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)) {
                 $show_privacy_text = true;
                 $family_privacy = true;
                 $show_parent2 = false;
@@ -232,8 +244,10 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
         }
 
         $pdf->SetLeftMargin($generation_number * 10);
+if (!$p2_transparent) {
         $pdf->Write(8, "\n");
         $pdf->Write(8, 'x  ');
+}
 
         if ($show_parent2 && $swap_parent1_parent2) {
             $pdf->SetFont($pdf_font, 'BI', 12);
@@ -260,7 +274,7 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
                 $pdf_text = language_date($person_womanDb->pers_birth_date) . ' - ' . language_date($person_womanDb->pers_death_date);
                 $pdf->Write(8, ' (' . pdf_convert($pdf_text) . ')');
             }
-        } elseif ($screen_mode != "PDF") {
+        } elseif ($screen_mode != "PDF" && !$p2_transparent) {
             // *** No permission to show parent2 ***
             //echo __('*** Privacy filter is active, one or more items are filtered. Please login to see all items ***') . '<br>';
         }
@@ -270,12 +284,23 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
         // *************************************************************
         if ($familyDb->fam_children) {
             $childnr = 1;
-            $child_array = explode(";", $familyDb->fam_children);
+            $child_array = array();
+
+            // stealth mode: rebuild child_array
+            $child_array_tmp = explode(";", $familyDb->fam_children);
+            while ($child_tmp = array_shift($child_array_tmp)) {
+                if ($user['group_stealth'] == 'y' && check_fam_privacy($child_tmp)) {
+                    continue; 
+                }
+                $child_array[] = $child_tmp;
+            }
+
+
             foreach ($child_array as $i => $value) {
                 @$childDb = $db_functions->get_person($child_array[$i]);
 
                 // *** Totally hide children if setting is active ***
-                if ($user["group_pers_hide_totally_act"] == 'j' && strpos(' ' . $childDb->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+                if ($user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $childDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)) {
                     if ($screen_mode != "PDF" && !$show_privacy_text) {
                         //echo __('*** Privacy filter is active, one or more items are filtered. Please login to see all items ***') . '<br>';
                         //$show_privacy_text = true;
@@ -324,3 +349,12 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
 outline($data["family_id"], $data["main_person"], $generation_number, $nr_generations);
 
 $pdf->Output($title . ".pdf", "I");
+
+// check function for stealth mode
+function check_fam_privacy($gcom_pers){
+    global $db_functions;
+    $my_persDb = $db_functions->get_person($gcom_pers);
+    $pers_cls = new person_cls($my_persDb);
+    $my_privacy = $pers_cls->set_privacy($my_persDb);
+    return $my_privacy;
+}

@@ -147,7 +147,9 @@ $months = array('jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', '
         </div>
 
 
-        <?php if ($privcount) { ?>
+        <?php 
+            // no privacy hints in stealth mode
+            if ($privcount && $user['group_stealth'] != 'y') { ?>
             <br><?= $privcount . __(' persons are not shown due to privacy settings'); ?><br>
         <?php
         }

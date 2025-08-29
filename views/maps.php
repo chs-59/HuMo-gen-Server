@@ -1,6 +1,10 @@
 <script src="googlemaps/namesearch.js"></script>
-
 <?php
+// not available in stealth mode yet
+if ($user['group_stealth'] === 'y') {
+//    exit;
+}
+
 $link = $link_cls->get_link($uri_path, 'maps', $tree_id);
 $link2 = $link_cls->get_link($uri_path, 'maps', $tree_id, true);
 
@@ -178,7 +182,19 @@ $count = 0;
 
             <form method="POST" action="<?= $link; ?>">
                 <?php
-                $fam_search = "SELECT CONCAT(pers_lastname,'_',LOWER(SUBSTRING_INDEX(pers_prefix,'_',1))) as totalname
+if($user['group_stealth'] ==="y") {
+    require_once  __DIR__ . "/../app/model/list_names.php";
+        $list_namesModel = new list_namesModel();
+        $result = $list_namesModel->getAllNames($dbh, 'all', 0, 99999); 
+        $freq_last_names = $result['freq_last_names'];
+}
+
+
+
+
+
+
+                $fam_search = "SELECT pers_lastname, CONCAT(pers_lastname,'_',LOWER(SUBSTRING_INDEX(pers_prefix,'_',1))) as totalname
                     FROM humo_persons WHERE pers_tree_id='" . $tree_id . "'
                     AND (pers_birth_place != '' OR (pers_birth_place='' AND pers_bapt_place != '')) AND pers_lastname != '' GROUP BY totalname ORDER BY totalname";
                 $fam_search_result = $dbh->query($fam_search);
@@ -194,6 +210,7 @@ $count = 0;
                                 <b><?= __('Mark checkbox next to name(s)'); ?></b><br>
                                 <?php
                                 while ($fam_searchDb = $fam_search_result->fetch(PDO::FETCH_OBJ)) {
+if ($user['group_stealth'] ==="y" && !in_array($fam_searchDb->pers_lastname, $freq_last_names)) {    continue; }
                                     $pos = strpos($fam_searchDb->totalname, '_');
                                     $pref = substr($fam_searchDb->totalname, $pos + 1);
                                     if ($pref !== '') {

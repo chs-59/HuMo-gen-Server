@@ -6,6 +6,31 @@ $maxcols = 3; // number of name&nr colums in table. For example 3 means 3x name 
 if (isset($_POST['maxcols'])) {
     $maxcols = $_POST['maxcols'];
 }
+$maxnames = 51;
+if (isset($_POST['freqsurnames'])) {
+    $maxnames = $_POST['freqsurnames'];
+}
+require_once  __DIR__ . "/../app/model/list_names.php";
+$freq_last_names = array();
+ $freq_count_last_names = array();
+ $freq_pers_prefix = array();
+
+ $list_namesModel = new list_namesModel();
+ $result = $list_namesModel->getAllNames($dbh, 'all', 0, 99999); 
+ $freq_last_names2 = $result['freq_last_names'];
+ $freq_count_last_names2 = $result['freq_count_last_names'];
+ $freq_pers_prefix2 = $result['freq_pers_prefix'];
+ natsort($freq_count_last_names2);
+ $cnt = 1;
+ foreach (array_reverse($freq_count_last_names2, true) as $key => $value) {
+     if ($cnt > $maxnames) {
+         break;
+     } 
+     $freq_last_names[] = $freq_last_names2[$key];
+     $freq_count_last_names[] = $value;
+     $freq_pers_prefix[] = $freq_pers_prefix2[$key];
+     $cnt++;
+ }
 
 function tablerow($nr, $lastcol = false)
 {
@@ -58,7 +83,7 @@ function tablerow($nr, $lastcol = false)
 function last_names($max)
 {
     global $dbh, $tree_id, $language, $user, $humo_option, $uri_path, $freq_last_names, $freq_pers_prefix, $freq_count_last_names, $maxcols;
-    // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
+/*    // *** Renewed query because of ONLY_FULL_GROUP_BY setting in MySQL 5.7 (otherwise query will stop) ***
     $personqry = "SELECT pers_lastname, pers_prefix, count(pers_lastname) as count_last_names FROM humo_persons
         WHERE pers_tree_id='" . $tree_id . "' AND pers_lastname NOT LIKE ''
         GROUP BY pers_prefix,pers_lastname ORDER BY count_last_names DESC LIMIT 0," . $max;
@@ -71,6 +96,7 @@ function last_names($max)
         $freq_pers_prefix[] = $personDb->pers_prefix;
         $freq_count_last_names[] = $personDb->count_last_names;
     }
+*/
     $row = round(count($freq_last_names) / $maxcols);
 
     for ($i = 0; $i < $row; $i++) {
@@ -89,10 +115,7 @@ function last_names($max)
 
 //echo '<h1 class="standard_header">'.__('Frequency of Surnames').'</h1>';
 
-$maxnames = 51;
-if (isset($_POST['freqsurnames'])) {
-    $maxnames = $_POST['freqsurnames'];
-}
+
 ?>
 
 <form method="POST" action="<?= $path2; ?>menu_tab=stats_surnames&amp;tree_id=<?= $tree_id; ?>" style="display:inline;" id="frqnames">

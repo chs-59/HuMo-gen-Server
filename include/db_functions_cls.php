@@ -961,4 +961,4 @@ class db_functions
         } // Show  multiple marriages
     } // End of descendant function
 
-}
+        }

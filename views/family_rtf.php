@@ -154,6 +154,10 @@ else {
         if (!isset($descendant_family_id2[1])) {
             break;
         }
+        // stealth mode: cut off branch here if privacy
+        if ($user['group_stealth'] == 'y' && check_fam_privacy($descendant_main_person2[0])) {
+            continue;
+        }
 
         // TEST code (only works with family, will give error in descendant report and DNA reports:
         // if (!isset($descendant_family_id2[0])){ break; }
@@ -171,6 +175,7 @@ else {
             $rtf_text = __('generation ') . $data["number_roman"][$descendant_loop + 1];
             $sect->writeText($rtf_text, $arial14, $parHead);
         }
+        $famsheet_status = false;
 
         // *** Nr of families in one generation ***
         $nr_families = count($descendant_family_id);
@@ -224,6 +229,12 @@ else {
                     $parent1 = $familyDb->fam_man;
                     $parent2 = $familyDb->fam_woman;
                 }
+                // stealth mode check and skip marriage
+                $p2_transparent = false;
+                if ($user['group_stealth'] == 'y') {
+                    if (check_fam_privacy($parent1)){ continue; }
+                    $p2_transparent = check_fam_privacy($parent2);
+                }
                 @$parent1Db = $db_functions->get_person($parent1);
                 // *** Proces parent1 using a class ***
                 $parent1_cls = new person_cls($parent1Db);
@@ -247,7 +258,7 @@ else {
                     //$sect->writeText($rtf_text, $arial12, new PHPRtfLite_ParFormat());
                 }
 
-                $sect->addEmptyParagraph($fontSmall, $parBlack);
+/*                $sect->addEmptyParagraph($fontSmall, $parBlack);
 
                 $treetext = show_tree_text($dataDb->tree_id, $selected_language);
                 $rtf_text = $treetext['family_top'];
@@ -256,12 +267,13 @@ else {
                 } else {
                     $sect->writeText(__('Family group sheet'), $arial14, $parHead);
                 }
-
+*/
                 // *************************************************************
                 // *** Parent1 (normally the father)                         ***
                 // *************************************************************
                 if ($familyDb->fam_kind != 'PRO-GEN') {  //onecht kind, woman without man
                     if ($family_nr == 1) {
+$famsheet_status = check_famsheet($famsheet_status, $sect);
                         //*** Show data of parent1 ***
                         $rtf_text = ' <b>' . $data["number_roman"][$descendant_loop + 1] . '-' . $data["number_generation"][$descendant_loop2 + 1] . '</b> ';
                         //$sect->writeText($rtf_text, $arial12, new PHPRtfLite_ParFormat());
@@ -282,7 +294,8 @@ else {
                             show_rtf_media('person', $parent1Db->pers_gedcomnumber);
                         }
                         //$family_nr++;
-                    } else {
+                    } elseif (!$p2_transparent) {
+$famsheet_status = check_famsheet($famsheet_status, $sect);
                         // *** Show standard marriage text and name in 2nd, 3rd, etc. marriage ***
                         $rtf_text = strip_tags($marriage_cls->marriage_data($familyDb, $family_nr, 'shorter'), "<b><i>");
                         $sect->writeText($rtf_text, $arial12, new PHPRtfLite_ParFormat());
@@ -308,17 +321,19 @@ else {
 
                     // *** Check if marriage data must be hidden (also hidden if privacy filter is active) ***
                     if (
-                        $user["group_pers_hide_totally_act"] == 'j' && isset($parent1Db->pers_own_code) && strpos(' ' . $parent1Db->pers_own_code, $user["group_pers_hide_totally"]) > 0
+                        $user["group_pers_hide_totally_act"] == 'j' && isset($parent1Db->pers_own_code) && (strpos('test ' . $parent1Db->pers_own_code, $user["group_pers_hide_totally"]) > 0)
                     ) {
                         $family_privacy = true;
                     }
                     if (
-                        $user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && strpos(' ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0
+                        $user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && (strpos('test ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0)
                     ) {
                         $family_privacy = true;
                     }
 
-                    if ($family_privacy) {
+if ($p2_transparent) {
+    //nothing
+}                    elseif ($family_privacy) {
                         // *** Show standard marriage data ***
                         $rtf_text = strip_tags($marriage_cls->marriage_data($familyDb, '', 'short'), "<b><i>");
                         $sect->writeText($rtf_text, $arial12, new PHPRtfLite_ParFormat());
@@ -338,6 +353,7 @@ else {
 
                 // *** Start new line ***
                 $sect->writeText('', $arial12, new PHPRtfLite_ParFormat());
+if (!$p2_transparent) {
 
                 $rtf_text = strip_tags($parent2_cls->name_extended("parent2"), "<b><i>");
                 //$sect->writeText($rtf_text, $arial12, new PHPRtfLite_ParFormat());
@@ -350,7 +366,7 @@ else {
                     show_rtf_media('person', $parent2Db->pers_gedcomnumber);
                 }
 
-
+}
                 // *************************************************************
                 // *** Marriagetext                                          ***
                 // *************************************************************
@@ -368,6 +384,7 @@ else {
                         //$sect->writeText($rtf_text, $arial12, new PHPRtfLite_ParFormat());
                         $sect->writeText($rtf_text, $arial12, null);
                     }
+$famsheet_status = check_famsheet($famsheet_status, $sect);
                 }
 
                 // *** Show addresses by family ***
@@ -394,17 +411,27 @@ else {
 
                 if ($familyDb->fam_children) {
                     $childnr = 1;
-                    $child_array = explode(";", $familyDb->fam_children);
-
-                    // *** Show "Child(ren):" ***
-                    if (count($child_array) == '1') {
-                        $rtf_text = '<b>' . __('Child') . ':</b>';
-                        $sect->writeText($rtf_text, $arial12, new PHPRtfLite_ParFormat());
-                    } else {
-                        $rtf_text = '<b>' . __('Children') . ':</b>';
-                        $sect->writeText($rtf_text, $arial12, new PHPRtfLite_ParFormat());
+                    $child_array = array();
+                    $child_array_tmp = explode(";", $familyDb->fam_children);
+                    // stealth mode: rebuild child_array
+                    while ($child_tmp = array_shift($child_array_tmp)) {
+                        if ($user['group_stealth'] == 'y' && check_fam_privacy($child_tmp)) {
+                            continue; 
+                        }
+                        $child_array[] = $child_tmp;
                     }
+                    if (count($child_array) >0) { 
+                        $famsheet_status = check_famsheet($famsheet_status, $sect);
 
+                        // *** Show "Child(ren):" ***
+                        if (count($child_array) == '1') {
+                            $rtf_text = '<b>' . __('Child') . ':</b>';
+                            $sect->writeText($rtf_text, $arial12, new PHPRtfLite_ParFormat());
+                        } else {
+                            $rtf_text = '<b>' . __('Children') . ':</b>';
+                            $sect->writeText($rtf_text, $arial12, new PHPRtfLite_ParFormat());
+                        }
+                    }
                     $show_privacy_text = false;
                     foreach ($child_array as $i => $value) {
                         @$childDb = $db_functions->get_person($child_array[$i]);
@@ -413,7 +440,7 @@ else {
 
                         // For now don't use this code in DNA and other graphical charts. Because they will be corrupted.
                         // *** Person must be totally hidden ***
-                        if ($user["group_pers_hide_totally_act"] == 'j' && strpos(' ' . $childDb->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+                        if ($user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $childDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)) {
                             $show_privacy_text = true;
                             continue;
                         }
@@ -460,6 +487,7 @@ else {
                     }
                 }
             } // Show multiple marriages
+            $famsheet_status = false;
 
         } // Multiple families in 1 generation
 
@@ -554,4 +582,28 @@ function show_rtf_media($media_kind, $gedcomnumber)
             }
         }
     }
+}
+
+// check function for stealth mode
+function check_fam_privacy($gcom_pers){
+    global $db_functions;
+    $my_persDb = $db_functions->get_person($gcom_pers);
+    $pers_cls = new person_cls($my_persDb);
+    $my_privacy = $pers_cls->set_privacy($my_persDb);
+    return $my_privacy;
+}
+// prevent empty sheet label in stealth mode
+function check_famsheet ($status,$sect){
+    global $fontSmall, $parBlack, $dataDb, $selected_language, $treetext;
+    global $rtf_text, $arial14, $parHead; 
+    if ($status) {return true;}
+    $sect->addEmptyParagraph($fontSmall, $parBlack);
+    $treetext = show_tree_text($dataDb->tree_id, $selected_language);
+    $rtf_text = $treetext['family_top'];
+    if ($rtf_text != '') {
+        $sect->writeText($rtf_text, $arial14, $parHead);
+    } else {
+        $sect->writeText(__('Family group sheet'), $arial14, $parHead);
+    }
+    return true;
 }
