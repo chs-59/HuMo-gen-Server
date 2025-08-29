@@ -12,6 +12,7 @@ $screen_mode = '';
 // *** "Last visited" id is used for contact form ***
 $last_visited = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 $_SESSION['save_last_visitid'] = $last_visited;
+        $db_functions->set_accessids($user);
 
 // *** Show person/ family topline: family top text, pop-up settings, PDF export, favourite ***
 function topline($data)
@@ -279,7 +280,10 @@ else {
         if (!isset($descendant_family_id2[1])) {
             break;
         }
-
+        // stealth mode: cut off branch here
+        if ($user['group_stealth'] == 'y' && check_fam_privacy($descendant_main_person2[0])) {
+            continue;
+        }
         // TEST code (only works with family, will give error in descendant report and DNA reports:
         // if (!isset($descendant_family_id2[0])){ break; }
 
@@ -338,6 +342,8 @@ else {
                 $count_marr = "0";
             }
 
+//flag to skip unneeded tables
+$is_table = false;
             // *** Loop multiple marriages of main_person ***
             for ($parent1_marr = 0; $parent1_marr <= $count_marr; $parent1_marr++) {
                 $id = $marriage_array[$parent1_marr];
@@ -409,7 +415,14 @@ else {
                     $parent1 = $familyDb->fam_man;
                     $parent2 = $familyDb->fam_woman;
                 }
-                @$parent1Db = $db_functions->get_person($parent1);
+                // stealth mode check
+                $p2_transparent = false;
+                if ($user['group_stealth'] == 'y') {
+                    if (check_fam_privacy($parent1)){ continue; }
+                    $p2_transparent = check_fam_privacy($parent2);
+                }
+
+                 @$parent1Db = $db_functions->get_person($parent1);
                 // *** Proces parent1 using a class ***
                 $parent1_cls = new person_cls($parent1Db);
 
@@ -440,21 +453,13 @@ else {
                             <?php printf(__('TIP: use %s for other (ancestor and descendant) reports.'), '<img src="images/reports.gif">'); ?>
                         </b><br><br>
                     </div>
-                <?php } ?>
-
-                <table class="humo standard">
-                <!-- <table class="table"> -->
-                    <?php
-                    // *** Show family top line (family top text, settings, favourite) ***
-                    topline($data);
-
-                    echo '<tr><td colspan="4">';
-
+                <?php } 
                     // *************************************************************
                     // *** Parent1 (normally the father)                         ***
                     // *************************************************************
                     if ($familyDb->fam_kind != 'PRO-GEN') {  //onecht kind, woman without man
                         if ($family_nr == 1) {
+                        $is_table = check_table($is_table, $data);
                     ?>
                             <!-- Show data of parent1 -->
                             <div class="parent1">
@@ -478,9 +483,11 @@ else {
                                 ?>
                             </div>
                         <?php
-                        } else {
+                        } elseif (!$p2_transparent) { //stealth mode change: form else to elseif
                             // *** Show standard marriage text and name in 2nd, 3rd, etc. marriage (relation) ***
-                        ?>
+                            $is_table = check_table($is_table, $data);
+
+                    ?>
                             <div class="py-3">
                                 <?= $marriage_cls->marriage_data($familyDb, $family_nr, 'shorter'); ?>
                             </div>
@@ -497,50 +504,52 @@ else {
                     if ($familyDb->fam_kind != 'PRO-GEN') {  // onecht kind, wife without man
                         // *** Check if marriage data must be hidden (also hidden if privacy filter is active) ***
                         if (
-                            $user["group_pers_hide_totally_act"] == 'j' && isset($parent1Db->pers_own_code) && strpos(' ' . $parent1Db->pers_own_code, $user["group_pers_hide_totally"]) > 0
+                            $user["group_pers_hide_totally_act"] == 'j' && isset($parent1Db->pers_own_code) && (strpos('test ' . $parent1Db->pers_own_code, $user["group_pers_hide_totally"]) > 0)
                         ) {
                             $family_privacy = true;
                         }
                         if (
-                            $user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && strpos(' ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0
+                            $user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && (strpos('test ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0)
                         ) {
                             $family_privacy = true;
                         }
-                        ?>
-
-                        <br>
-                        <div class="marriage">
-                            <?php
                             // *** $family_privacy='1' = filter ***
-                            if ($family_privacy) {
+if ($p2_transparent) {
+    //nothing
+}
+                            elseif ($family_privacy) {
+                                echo "\n<br>\n";
+                                echo '<div class="marriage">' . "\n";
                                 // *** Show standard marriage data ***
                                 echo $marriage_cls->marriage_data($familyDb, '', 'short');
+                                echo "\n</div><br>\n";
+                               
                             } else {
+                                echo "\n<br>\n";
+                                echo '<div class="marriage">' . "\n";
                                 echo $marriage_cls->marriage_data();
+                                echo "\n</div><br>\n";
                             }
-                            ?>
-                        </div><br>
-                    <?php
                     }
 
                     // *************************************************************
                     // *** Parent2 (normally the mother)                         ***
                     // *************************************************************
-                    ?>
-                    <div class="parent2">
-                        <?php
-                        // *** Person must be totally hidden ***
-                        if ($user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && strpos(' ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
-                            echo __('*** Privacy filter is active, one or more items are filtered. Please login to see all items ***') . '<br>';
+
+if ($p2_transparent) {
+    //nothing
+}
+                    // *** Person must be totally hidden ***
+                        elseif ($user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && strpos(' ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+                            echo '<div class="parent2">' . __('*** Privacy filter is active, one or more items are filtered. Please login to see all items ***') . '<br></div>';
                         } else {
+                            echo '<div class="parent2">';
                             $show_name_texts = true;
                             echo $parent2_cls->name_extended("parent2", $show_name_texts);
                             echo $parent2_cls->person_data("parent2", $id);
+                            echo '</div>';
                         }
-                        ?>
-                    </div>
 
-                    <?php
                     // *************************************************************
                     // *** Marriagetext                                          ***
                     // *************************************************************
@@ -550,11 +559,12 @@ else {
                         // No marriage data
                     } elseif ($user["group_texts_fam"] == 'j' && process_text($familyDb->fam_text)) {
                         echo '<br>' . process_text($familyDb->fam_text, 'family');
-                        // *** BK: source by family text ***
+                       // *** BK: source by family text ***
                         $source_array = show_sources2("family", "fam_text_source", $familyDb->fam_gedcomnumber);
                         if ($source_array) {
                             echo $source_array['text'];
                         }
+$is_table = check_table($is_table, $data);
                     }
 
                     // *** Show addresses by family ***
@@ -578,9 +588,18 @@ else {
 
                     if ($familyDb->fam_children) {
                         $childnr = 1;
-                        $child_array = explode(";", $familyDb->fam_children);
+                        $child_array = array();
+                        $child_array_tmp = explode(";", $familyDb->fam_children);
                         $show_privacy_text = false;
-
+                        // stealth mode check: rebuild child_array
+                        while ($child_tmp = array_shift($child_array_tmp)) {
+                            if ($user['group_stealth'] == 'y' && check_fam_privacy($child_tmp)) {
+                                continue; 
+                            }
+                            $child_array[] = $child_tmp;
+                        }
+                        if (count($child_array) >0) {
+                        $is_table = check_table($is_table, $data);
                         // TODO improve layout in RTF export
                     ?>
                         <div class="py-3">
@@ -590,14 +609,16 @@ else {
                         </div>
 
                         <?php
+}
                         foreach ($child_array as $i => $value) {
                             @$childDb = $db_functions->get_person($child_array[$i]);
+                      
                             // *** Use person class ***
                             $child_cls = new person_cls($childDb);
 
                             // For now don't use this code in DNA and other graphical charts. Because they will be corrupted.
                             // *** Person must be totally hidden ***
-                            if ($user["group_pers_hide_totally_act"] == 'j' && strpos(' ' . $childDb->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+                            if ($user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $childDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)) {
                                 if (!$show_privacy_text) {
                                     echo __('*** Privacy filter is active, one or more items are filtered. Please login to see all items ***') . '<br>';
                                 }
@@ -652,6 +673,11 @@ else {
                     // *********************************************************************************************
                     $famc_adoptive_qry_prep = $db_functions->get_events_kind($familyDb->fam_gedcomnumber, 'adoption');
                     foreach ($famc_adoptive_qry_prep as $famc_adoptiveDb) {
+
+                        // stealth mode: skip persons with privacy
+                        if ($user['group_stealth'] == 'y' && check_fam_privacy($famc_adoptiveDb->event_connect_id)) { continue; }
+                        $is_table = check_table($is_table, $data);
+    
                         @$childDb = $db_functions->get_person($famc_adoptiveDb->event_connect_id);
                         // *** Use person class ***
                         $child_cls = new person_cls($childDb);
@@ -671,6 +697,9 @@ else {
                     // *************************************************************
                     $famc_adoptive_by_person_qry_prep = $db_functions->get_events_kind($familyDb->fam_man, 'adoption_by_person');
                     foreach ($famc_adoptive_by_person_qry_prep as $famc_adoptiveDb) {
+                        // stealth mode: skip person with privacy
+                        if ($user['group_stealth'] == 'y' && check_fam_privacy($famc_adoptiveDb->event_connect_id)) { continue; }
+                        $is_table = check_table($is_table, $data);
                         @$childDb = $db_functions->get_person($famc_adoptiveDb->event_connect_id);
                         // *** Use person class ***
                         $child_cls = new person_cls($childDb);
@@ -700,6 +729,11 @@ else {
                     // *************************************************************
                     $famc_adoptive_by_person_qry_prep = $db_functions->get_events_kind($familyDb->fam_woman, 'adoption_by_person');
                     foreach ($famc_adoptive_by_person_qry_prep as $famc_adoptiveDb) {
+
+                        // stealth mode: skip person with privacy
+                        if ($user['group_stealth'] == 'y' && check_fam_privacy($famc_adoptiveDb->event_connect_id)) { continue; }
+                        $is_table = check_table($is_table, $data);
+
                         @$childDb = $db_functions->get_person($famc_adoptiveDb->event_connect_id);
                         // *** Use person class ***
                         $child_cls = new person_cls($childDb);
@@ -723,10 +757,14 @@ else {
                                 </div>
                             </td>
                         </tr>
-                    <?php } ?>
-                </table><br>
+                    <?php } 
+                if ($is_table) { 
+                    echo '</table><br>'; 
+                    $is_table = false;
+                }                   
+                    
 
-                <?php
+
                 // *** Show Google or OpenStreetMap map ***
                 if ($user["group_googlemaps"] == 'j' && $data["descendant_report"] == false && $data["maps_presentation"] == 'show') {
                     unset($location_array);
@@ -1345,3 +1383,24 @@ if ($data["descendant_report"] == false) {
 
 <br>
 <br>
+<?php
+
+// check function for stealth mode
+function check_fam_privacy($gcom_pers){
+    global $db_functions;
+    $my_persDb = $db_functions->get_person($gcom_pers);
+    $pers_cls = new person_cls($my_persDb);
+    $my_privacy = $pers_cls->set_privacy($my_persDb);
+    return $my_privacy;
+}
+// prevent empty table in stealth mode
+function check_table ($status, $data){
+    if ($status) {return true;}
+    echo '<table class="humo standard">';
+    echo '<!-- <table class="table"> -->';
+    // *** Show family top line (family top text, settings, favourite) ***
+    topline($data);
+    echo '<tr><td colspan="4">';
+    return true;
+}
+?>

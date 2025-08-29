@@ -1,5 +1,4 @@
 <?php
-
 /**
  * First test scipt made by: Klaas de Winkel
  * Graphical script made by: Theo Huitema
@@ -18,7 +17,6 @@ if (!isset($hourglass)) {
 
     echo $data["ancestor_header"];
 }
-
 if (!isset($hourglass)) {
     //Width of the chart. For 6 generations 1000px is right.
     //If we ever make the anc chart have optionally more generations, the width and length will have to be generated as in report_descendant
@@ -321,8 +319,8 @@ function ancestor_chart_person($id, $box_appearance)
             }
         }
 
-        if ($box_appearance == 'ancestor_sheet_marr' || $box_appearance == 'ancestor_header') { // cause in that case there is no link
-            $text .= $replacement_text;
+        if ($box_appearance == 'ancestor_sheet_marr' || $box_appearance == 'ancestor_header'|| $pers_privacy) { // cause in that case there is no link
+            $text .= '<div  style="font-size:10px;">' . $replacement_text . '</div>';
         } else {
             $text .= $person_cls->person_popup_menu($personDb, true, $replacement_text, $extra_popup_text);
 

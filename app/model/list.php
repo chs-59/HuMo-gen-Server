@@ -1327,6 +1327,8 @@ class ListModel
         // *** DEBUG/ TEST: SHOW QUERY ***
         //echo $query.'<br>';
 
+        $person_result_trans = array();
+        $count_persons = 0;
         //*** Show number of persons and pages *****************************************
         $item = 0;
         if (isset($_GET['item']) && is_numeric($_GET['item'])) {
@@ -1339,9 +1341,22 @@ class ListModel
         $nr_persons = $humo_option['show_persons'];
 
         if (!$selection['spouse_firstname'] && !$selection['spouse_lastname'] && $selection['parent_status'] != "motheronly" && $selection['parent_status'] != "fatheronly") {
-            $person_result = $dbh->query($query . " LIMIT " . $item . "," . $nr_persons);
+           $tmp_result = $dbh->query($query);
 
-            if ($count_qry) {
+           // stealth mode: skip person with privacy
+           $icounter = 0;
+            while ($my_person = $tmp_result->fetch(PDO::FETCH_OBJ)){
+                if ($user['group_stealth'] === 'y' && $this->check_list_privacy($my_person->pers_gedcomnumber)) { continue; }
+                if ($icounter >= $item && $icounter < ($item + $nr_persons)){
+                    $person_result_trans[] = $my_person;
+                }
+                $icounter++;
+            }
+            $count_persons = $icounter;
+
+//            $person_result = $dbh->query($query . " LIMIT " . $item . "," . $nr_persons);
+
+/*            if ($count_qry) {
                 // *** Use MySQL COUNT command to calculate nr. of persons in simple queries (faster than php num_rows and in simple queries faster than SQL_CAL_FOUND_ROWS) ***
                 $result = $dbh->query($count_qry);
                 @$resultDb = $result->fetch(PDO::FETCH_OBJ);
@@ -1352,16 +1367,31 @@ class ListModel
                 $rows = $result->fetch();
                 $count_persons = $rows['found_rows'];
             }
+*/
         } else {
-            $person_result = $dbh->query($query);
+            // stealth mode: skip person with privacy
+            $tmp_result = $dbh->query($query);
+            while ($my_person = $tmp_result->fetch(PDO::FETCH_OBJ)){
+                if ($user['group_stealth'] === 'y' && $this->check_list_privacy($my_person->pers_gedcomnumber)) { continue; }
+                $person_result_trans[] = $my_person;
+                $icounter++;
+            }
+
             $count_persons = 0; // Isn't used if search is done for spouse or for people with only known mother or only known father...
         }
-
-        $data["person_result"] = $person_result;
+        $data["person_result"] = $person_result_trans;
         $data["start"] = $start;
         $data["nr_persons"] = $nr_persons;
         $data["count_persons"] = $count_persons;
+//        $data["count_persons"] = count($person_result_trans);
         $data["item"] = $item;
         return $data;
+    }
+    private function check_list_privacy($gcom_pers){
+        global $db_functions;
+        $my_persDb = $db_functions->get_person($gcom_pers);
+        $pers_cls = new person_cls($my_persDb);
+        $my_privacy = $pers_cls->set_privacy($my_persDb);
+        return $my_privacy;
     }
 }

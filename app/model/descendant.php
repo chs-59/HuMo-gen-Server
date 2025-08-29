@@ -432,12 +432,12 @@ class DescendantModel extends FamilyModel
                         if ($familyDb->fam_kind != 'PRO-GEN') {  // onecht kind, wife without man
                             // *** Check if marriage data must be hidden (also hidden if privacy filter is active) ***
                             if (
-                                $user["group_pers_hide_totally_act"] == 'j' && isset($parent1Db->pers_own_code) && strpos(' ' . $parent1Db->pers_own_code, $user["group_pers_hide_totally"]) > 0
+                                $user["group_pers_hide_totally_act"] == 'j' && isset($parent1Db->pers_own_code) && (strpos('test ' . $parent1Db->pers_own_code, $user["group_pers_hide_totally"]) > 0)
                             ) {
                                 $family_privacy = true;
                             }
                             if (
-                                $user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && strpos(' ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0
+                                $user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && (strpos('test ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0)
                             ) {
                                 $family_privacy = true;
                             }
@@ -447,7 +447,7 @@ class DescendantModel extends FamilyModel
                             } else {
                                 $genarray[$arraynr]["htx"] = $marriage_cls->marriage_data();
                             }
-                        }
+                            }
 
                         // *************************************************************
                         // *** Parent2 (normally the mother)                         ***
@@ -594,8 +594,11 @@ class DescendantModel extends FamilyModel
         if (isset($_SESSION['save_source_presentation']) && $_SESSION['save_source_presentation'] == 'footnote') {
             echo show_sources_footnotes();
         }
-
+        if ($user['group_stealth'] == 'y') {
+            return $this->check_transparency($genarray);
+        }
         return $genarray;
+        
     }
 
 
@@ -825,7 +828,6 @@ class DescendantModel extends FamilyModel
                 } else {
                     $genarray[$i]["posy"] = $genarray[$i - 1]["posy"] + ($this->vsize + $vinbetween);
                 }
-
                 $z = $i;
                 if ($genarray[$z]["gen"] != 0 && $genarray[$z]["chd"] == $genarray[$par]["nrc"]) {
                     while ($genarray[$z]["2nd"] == 1) {
@@ -972,5 +974,72 @@ class DescendantModel extends FamilyModel
             }
         }  // end if horizontal
         return $genarray;
+    }
+    private function check_transparency ($genarray) {
+        $delete_nodes = array();
+        $current_par = -1;
+        $shrink_chd = 0;
+        for ($idx=0;$idx <= (count($genarray) -1); $idx++){
+            //reset child counter if new par appear
+            if ($genarray[$idx]['par'] > $current_par){
+                $shrink_chd = 0;
+                $current_par = $genarray[$idx]['par'];
+            }
+            // this idx is child of deleted node and will also be deleted 
+            if (in_array($genarray[$idx]['par'], $delete_nodes) ){
+                $delete_nodes[] = $idx;
+                continue;
+            }
+            // this idx has no privacy protection
+            if ($this->check_privacy($genarray[$idx]['gednr']) == false) { 
+                // check privacy of spouse
+                if (isset($genarray[$idx]['spgednr']) && $this->check_privacy($genarray[$idx]['spgednr']) == true){
+                    $genarray[$idx]['spgednr'] = '';
+                    $genarray[$idx]['htx'] = '';
+                    $genarray[$idx]['huw'] = '';
+                    $genarray[$idx]['sps'] = '';
+                    $genarray[$idx]['fams'] = '';
+                    $genarray[$idx]['spfams'] = '';
+                }
+                // modify chd if shrink_chd > 0;
+                $genarray[$idx]['chd'] -= $shrink_chd;
+                continue;
+            }
+            //this idx has privacy protection
+            $delete_nodes[] = $idx;
+            //increment shrink_chd for next siblings
+            $shrink_chd++;
+               
+            //decrement nrc of fathers/mothers (nr. of children)
+            if ($current_par >= 0) {
+                $genarray[ $current_par ]['nrc']--;
+            }
+        }
+        // remove nodes from genarray
+        //mapping 'par' pointer to new genarray index
+        $mapcounter = 0;
+        $map_par = array();
+        // the new return array:
+        $trans_genarray = array();
+        for ($ix=0;$ix < (count($genarray)); $ix++){
+            
+            if (!in_array($ix, $delete_nodes)){
+                $trans_genarray[] = $genarray[$ix];
+                // adjust 'par' parameter 
+               $map_par[$ix] = $mapcounter;
+               if (isset( $map_par[ $genarray[$ix]['par'] ])) {
+                    $trans_genarray[$mapcounter]['par'] = $map_par[ $genarray[$ix]['par'] ];
+                }
+                $mapcounter++;
+            }
+        }
+        return $trans_genarray;
+    }
+    private function check_privacy($gcom_pers){
+        global $db_functions;
+        $my_persDb = $db_functions->get_person($gcom_pers);
+        $pers_cls = new person_cls($my_persDb);
+        $my_privacy = $pers_cls->set_privacy($my_persDb);
+        return $my_privacy;
     }
 }

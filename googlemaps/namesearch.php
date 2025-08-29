@@ -164,6 +164,10 @@ function mapbirthplace($place)
             while (@$maplistDb = $maplist->fetch(PDO::FETCH_OBJ)) {
                 $man_cls = new person_cls($maplistDb);
                 $privacy_man = $man_cls->privacy;
+                
+if ($user['group_stealth'] === "y" && $privacy_man ) { 
+    continue;
+}               
                 $name = $man_cls->person_name($maplistDb);
                 if ($name["show_name"] == true) {
                     $pers_family = '';

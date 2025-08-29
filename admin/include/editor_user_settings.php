@@ -105,7 +105,7 @@ if (is_numeric($user)) {
     }
     ?>
 
-<h2 align="center">    <?= __('for '); ?><b><?= $userDb->user_name; ?></b></h2>
+<h2 align="center">    <?= __('for '); ?><b> <?= $userDb->user_name; ?></b></h2>
 <h3 align="left"><?= __('Hide or show family trees'); ?></h3>
 
 

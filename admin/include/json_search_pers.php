@@ -23,8 +23,8 @@ $editor_cls = new editor_cls;
 
 // *** Read settings from database ***
 $humo_option = array();
-@$result = $dbh->query("SELECT * FROM humo_settings");
-while (@$row = $result->fetch(PDO::FETCH_NUM)) {
+@$result_setting = $dbh->query("SELECT * FROM humo_settings");
+while (@$row = $result_setting->fetch(PDO::FETCH_NUM)) {
     $humo_option[$row[1]] = $row[2];
 }
 if(!isset($humo_option["date_display"])) {
@@ -39,7 +39,7 @@ else {
 }
 $searcharr = explode(':::', $searchstring);
 $searchstring = $searcharr[0];
-if (isset($seacharray[1]) && $searcharr[1] != '') {
+if (isset($searcharr[1]) && $searcharr[1] != '') {
     $tree_id = $searcharr[1];
 }
 //

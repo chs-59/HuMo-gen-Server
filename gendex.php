@@ -39,7 +39,7 @@ foreach ($datasql as $dataDb) {
 
             // *** Completely filter person ***
             if (
-                $user["group_pers_hide_totally_act"] == 'j' && strpos(' ' . $personDb->pers_own_code, $user["group_pers_hide_totally"]) > 0
+                $user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $personDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)
             ) {
                 // *** Don't show person ***
             } else {

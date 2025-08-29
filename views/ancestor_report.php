@@ -178,6 +178,9 @@ $listed_array = array();
                 $man_cls = new person_cls($person_manDb);
                 $privacy_man = $man_cls->privacy;
 
+                // Stealth mode: cut of branch here
+                if ($user['group_stealth'] === 'y' && $privacy_man) {continue;}
+
                 if (strtolower($person_manDb->pers_sexe) === 'm' && $ancestor_number[$i] > 1) {
                     @$familyDb = $db_functions->get_family($marriage_gedcomnumber[$i]);
 
@@ -211,36 +214,40 @@ $listed_array = array();
                 </tr>
 
                 <!-- Show own marriage (new line, after man) -->
-                <?php if (strtolower($person_manDb->pers_sexe) === 'm' && $ancestor_number[$i] > 1) { ?>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td>
-                            <span class="marriage">
-                                <?php
-                                if ($family_privacy) {
-                                    echo __(' to: ');
+                <?php if (strtolower($person_manDb->pers_sexe) === 'm' && $ancestor_number[$i] > 1) { 
 
-                                    // If privacy filter is activated, show divorce
-                                    if ($familyDb->fam_div_date || $familyDb->fam_div_place) {
-                                        echo ' <span class="divorse">(' . trim(__('divorced ')) . ')</span>';
+                    // Stealth mode: no relation info if family_privacy
+                    if (!($user['group_stealth'] === 'y' && $family_privacy)) {
+                ?>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>
+                                <span class="marriage">
+                                    <?php
+                                    if ($family_privacy) {
+                                        echo __(' to: ');
+
+                                        // If privacy filter is activated, show divorce
+                                        if ($familyDb->fam_div_date || $familyDb->fam_div_place) {
+                                            echo ' <span class="divorse">(' . trim(__('divorced ')) . ')</span>';
+                                        }
+                                        // Show end of relation here?
+                                        //if ($familyDb->fam_relation_end_date){
+                                        //  echo ' <span class="divorse">('.trim(__('divorced ')).')</span>';
+                                        //}
+                                    } else {
+                                        // To calculate age by marriage.
+                                        $parent1Db = $person_manDb;
+                                        $parent2Db = $person_womanDb;
+                                        echo $marriage_cls->marriage_data();
                                     }
-                                    // Show end of relation here?
-                                    //if ($familyDb->fam_relation_end_date){
-                                    //  echo ' <span class="divorse">('.trim(__('divorced ')).')</span>';
-                                    //}
-                                } else {
-                                    // To calculate age by marriage.
-                                    $parent1Db = $person_manDb;
-                                    $parent2Db = $person_womanDb;
-                                    echo $marriage_cls->marriage_data();
-                                }
-                                ?>
-                            </span>
-                        </td>
-                    </tr>
+                                    ?>
+                                </span>
+                            </td>
+                        </tr>
                 <?php
+                    }
                 }
-
                 // ==	Check for parents
                 if ($person_manDb->pers_famc && $listednr == '') {
                     @$family_parentsDb = $db_functions->get_family($person_manDb->pers_famc);

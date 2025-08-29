@@ -241,7 +241,7 @@ $selected_place = "";
     ?>
 </table><br>
 
-<?php if ($privcount) { ?>
+<?php if ($privcount && $user['group_stealth'] != 'y') { ?>
     <?= $privcount . __(' persons are not shown due to privacy settings'); ?><br>
 <?php } ?>
 

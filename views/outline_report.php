@@ -153,7 +153,6 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
     // *** YB: if needed show woman as main_person ***
     @$familyDb = $db_functions->get_family($outline_family_id, 'man-woman');
     $parent1 = '';
-    $parent2 = '';
     $swap_parent1_parent2 = false;
 
     // *** Standard main_person is the father ***
@@ -192,7 +191,14 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
 
         $marriage_cls = new marriage_cls($familyDb, $privacy_man, $privacy_woman);
         $family_privacy = $marriage_cls->privacy;
-
+        
+        // stealth mode: skip family for privacy
+        $p2_transparent = false;
+        if ($user['group_stealth'] == 'y') {
+            if (check_fam_privacy($person_manDb->pers_gedcomnumber)){ continue; }
+            $p2_transparent = check_fam_privacy($person_womanDb->pers_gedcomnumber);
+        }
+        
         // *************************************************************
         // *** Parent1 (normally the father)                         ***
         // *************************************************************
@@ -210,7 +216,9 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
                 <div class="<?= $indent; ?>">
                     <span style="font-weight:bold;font-size:120%"><?= $generation_number; ?> </span>
                     <?php
-                    if ($swap_parent1_parent2 == true) {
+                    if ($swap_parent1_parent2 == true) {   // woman is main person  
+                        // stealth mode check
+                        if ($p2_transparent) {    continue; }                   
                         echo $woman_cls->name_extended("outline");
                         if ($show_details && !$privacy_woman) {
                             echo $woman_cls->person_data("outline", $familyDb->fam_gedcomnumber);
@@ -252,13 +260,18 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
         // *** Totally hide parent2 if setting is active ***
         $show_parent2 = true;
         if ($swap_parent1_parent2) {
-            if ($user["group_pers_hide_totally_act"] == 'j' and strpos(' ' . $person_manDb->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+            if ($user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $person_manDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)) {
                 $show_privacy_text = true;
                 $family_privacy = true;
                 $show_parent2 = false;
             }
+        // stealth mode part    
+        } elseif ($p2_transparent) {
+            $show_privacy_text = true;
+            $family_privacy = true;
+            $show_parent2 = false;
         } else {
-            if ($user["group_pers_hide_totally_act"] == 'j' and strpos(' ' . $person_womanDb->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+            if ($user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $person_womanDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)) {
                 $show_privacy_text = true;
                 $family_privacy = true;
                 $show_parent2 = false;
@@ -278,7 +291,7 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
 
         echo '<div class="' . $indent . '" style="font-style:italic">';
         if (!$show_details) {
-            echo ' x ' . $dirmark1;
+             if (!$p2_transparent) { echo ' x ' . $dirmark1; }
         } else {
             echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
             if ($parent1_marr == 0) {
@@ -323,7 +336,7 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
                 }
                 echo ' &nbsp; (' . @language_date($person_womanDb->pers_birth_date) . ' - ' . @language_date($person_womanDb->pers_death_date) . ')';
             }
-        } elseif ($screen_mode != "PDF") {
+        } elseif ($screen_mode != "PDF" && !$p2_transparent) {
             // *** No permission to show parent2 ***
             echo __('*** Privacy filter is active, one or more items are filtered. Please login to see all items ***') . '<br>';
         }
@@ -334,12 +347,22 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
         // *************************************************************
         if ($familyDb->fam_children) {
             $childnr = 1;
-            $child_array = explode(";", $familyDb->fam_children);
+            $child_array = array();
+            $child_array_tmp = explode(";", $familyDb->fam_children);
+            
+            // stealth mode: rebuild child_array
+            while ($child_tmp = array_shift($child_array_tmp)) {
+                if ($user['group_stealth'] == 'y' && check_fam_privacy($child_tmp)) {
+                    continue; 
+                }
+                $child_array[] = $child_tmp;
+            }
+
             foreach ($child_array as $i => $value) {
                 @$childDb = $db_functions->get_person($child_array[$i]);
 
                 // *** Totally hide children if setting is active ***
-                if ($user["group_pers_hide_totally_act"] == 'j' && strpos(' ' . $childDb->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+                if ($user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $childDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)) {
                     if ($screen_mode != "PDF" && !$show_privacy_text) {
                         echo __('*** Privacy filter is active, one or more items are filtered. Please login to see all items ***') . '<br>';
                         $show_privacy_text = true;
@@ -388,4 +411,14 @@ function outline($outline_family_id, $outline_main_person, $generation_number, $
 
 // ******* Start function here - recursive if started ******
 ?>
-<?php outline($data["family_id"], $data["main_person"], $generation_number, $nr_generations); ?>
+<?php outline($data["family_id"], $data["main_person"], $generation_number, $nr_generations); 
+
+// check function for stealth mode
+function check_fam_privacy($gcom_pers){
+    global $db_functions;
+    $my_persDb = $db_functions->get_person($gcom_pers);
+    $pers_cls = new person_cls($my_persDb);
+    $my_privacy = $pers_cls->set_privacy($my_persDb);
+    return $my_privacy;
+}
+?>

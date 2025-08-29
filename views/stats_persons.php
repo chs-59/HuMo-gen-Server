@@ -170,6 +170,10 @@ $persqr = $dbh->query("SELECT pers_sexe, pers_gedcomnumber, pers_birth_date, per
     FROM humo_persons WHERE pers_tree_id='" . $tree_id . "'");
 while ($persstatDb = $persqr->fetch(PDO::FETCH_OBJ)) {
     if ($persstatDb->pers_sexe == "M") {
+        if ($user['group_stealth'] === 'y' && check_list_privacy($persstatDb->pers_gedcomnumber)) {
+            continue;
+        }
+            
         $countman++;
 
         $manbirdate = convert_date_number($persstatDb->pers_birth_date);
@@ -224,6 +228,9 @@ while ($persstatDb = $persqr->fetch(PDO::FETCH_OBJ)) {
             }
         }
     } elseif ($persstatDb->pers_sexe == "F") {
+        if ($user['group_stealth'] === 'y' && check_list_privacy($persstatDb->pers_gedcomnumber)) {
+            continue;
+        }
         $countwoman++;
 
         $womanbirdate = convert_date_number($persstatDb->pers_birth_date);
@@ -563,3 +570,12 @@ if ($both) {
     </tr>
 </table>
 <!-- </div> -->
+<?php
+function check_list_privacy($gcom_pers){
+    global $db_functions;
+    $my_persDb = $db_functions->get_person($gcom_pers);
+    $pers_cls = new person_cls($my_persDb);
+    $my_privacy = $pers_cls->set_privacy($my_persDb);
+    return $my_privacy;
+}
+?>

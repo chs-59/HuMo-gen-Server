@@ -16,7 +16,6 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the             *
  * GNU General Public License for more details.                              *
  ****************************************************************************/
-
 // *** Tab menu: ancestors ***
 echo $data['ancestor_header'];
 
@@ -47,7 +46,7 @@ for ($i = 0; $i < $maxperson; $i++) {
 
 function fillarray($nr, $famid)
 {
-    global $dbh, $db_functions, $maxperson, $data, $indexnr;
+    global $dbh, $db_functions, $maxperson, $data, $indexnr, $user;
     if ($nr >= $maxperson) {
         return;
     }
@@ -56,6 +55,8 @@ function fillarray($nr, $famid)
 
         $man_cls = new person_cls($personmnDb);
         $man_privacy = $man_cls->privacy;
+        // stealth mode: cut off branch for privacy
+        if ($user['group_stealth'] === 'y' && $man_privacy) {return;}
 
         $name = $man_cls->person_name($personmnDb);
         //$data["fanchart_item"][$nr][0]=$name["standard_name"];
@@ -298,6 +299,7 @@ function print_fan_chart($data, $fanw = 840, $fandeg = 270)
             $birthyr = $data["fanchart_item"][$sosa][1];
             $deathyr = $data["fanchart_item"][$sosa][4];
             $fontpx = $data["fontsize"];
+            $pid = preg_replace("~<.*?>~", "", $pid);    //remove html tags        
             if ($sosa >= 16 && $fandeg == 180) {
                 $fontpx = $data["fontsize"] - 1;
             }
@@ -484,6 +486,9 @@ function print_fan_chart($data, $fanw = 840, $fandeg = 270)
                         $spousename = "\n(" . __($spouse_lan) . ": " . $spname["standard_name"] . ")";
                     }
                 }
+                $spousename = preg_replace("~<.*?>~", "", $spousename);    //remove html tags        
+                $spousename = preg_replace("~\"~", '\"', $spousename);    //replace double quotes        
+                $pid = preg_replace("~\"~", "'", $pid);    //replace double quotes        
 
                 $imagemap .= " alt=\"" . $pid . "\" title=\"" . $pid . $spousename . "\">";
             }
@@ -499,7 +504,7 @@ function print_fan_chart($data, $fanw = 840, $fandeg = 270)
 
     echo $imagemap;
 
-    $image_title = preg_replace("~<.*>~", "", $name) . "   - " . __('RELOAD FANCHART WITH \'VIEW\' BUTTON ON THE LEFT');
+    $image_title = preg_replace("~<.*?>~", "", $name) . " - " . __('RELOAD FANCHART WITH \'VIEW\' BUTTON ON THE LEFT');
     echo "<p align=\"center\" >";
 
     ob_start();

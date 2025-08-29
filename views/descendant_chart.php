@@ -370,7 +370,7 @@ for ($w = 0; $w < count($genarray); $w++) {
                                 $replacement_text .= '<br>' . __('[]') . $dirmark1 . ' ' . date_place($man->pers_buried_date, '');
                             }
 
-                            if ($genarray[$w]["non"] == 0) { // otherwise for an unmarried child it would give the parents' marriage!
+                            if ($genarray[$w]["non"] == 0 && $genarray[$w]["fams"] != '') { // otherwise for an unmarried child it would give the parents' marriage!
                                 $ownfam = $db_functions->get_family($genarray[$w]["fams"]);
                                 //if ($ownfam->fam_marr_date OR $ownfam->fam_marr_place){
                                 // *** Don't check for date. Otherwise living together persons are missing ***

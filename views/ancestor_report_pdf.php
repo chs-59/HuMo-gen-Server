@@ -197,6 +197,9 @@ while (isset($ancestor_array2[0])) {
             $man_cls = new person_cls($person_manDb);
             $privacy_man = $man_cls->privacy;
 
+            // Stealth mode: cut of branch here
+            if ($user['group_stealth'] === 'y' && $privacy_man) {continue;}
+
             if (strtolower($person_manDb->pers_sexe) === 'm' && $ancestor_number[$i] > 1) {
                 @$familyDb = $db_functions->get_family($marriage_gedcomnumber[$i]);
 
@@ -277,7 +280,11 @@ while (isset($ancestor_array2[0])) {
 
             // Show own marriage (new line, after man)
             if (strtolower($person_manDb->pers_sexe) === 'm' && $ancestor_number[$i] > 1) {
-                if ($family_privacy) {
+
+                // Stealth mode: no relation info if family_privacy
+                if ($user['group_stealth'] === 'y' && $family_privacy) {
+                    
+                } elseif ($family_privacy) {
                     $pdf->SetX(37);
                     $pdf->Write(6, __(' to: ') . "\n");
 

@@ -47,7 +47,7 @@ function show_sources2($connect_kind, $connect_sub_kind, $connect_connect_id)
 
             // *** PDF export. Jan. 2021: all sources are exported (used to be: only shared sources) ***
             //if ($screen_mode=='PDF' AND $connectDb->connect_source_id AND $source_status=='publish'){
-            if ($screen_mode == 'PDF' && $source_status === 'publish') {
+            if ($screen_mode == 'PDF' && $source_status === 'publish' && isset($sourceDb)) {
                 // *** Show sources as footnotes ***
                 if (!isset($source_footnotes)) {
                     $source_footnotes[] = $sourceDb->source_id;

@@ -31,7 +31,7 @@ $data["number_roman"] = $get_family->getNumberRoman();
 $data["number_generation"] = $get_family->getNumberGeneration();
 
 $db_functions->set_tree_id($tree_id);
-
+$db_functions->set_accessids($user);
 $family_nr = 1;  // *** process multiple families ***
 
 // *** Check if family gedcomnumber is valid ***
@@ -132,6 +132,7 @@ if (!$data["family_id"]) {
 else {
     $pdf->SetFont($pdf_font, 'B', 15);
     $pdf->Ln(4);
+    
     $name = $pers_cls->person_name($persDb);
     if (!$data["descendant_report"] == false) {
         $pdf->MultiCell(0, 10, __('Descendant report') . __(' of ') . str_replace("&quot;", '"', $name["standard_name"]), 0, 'C');
@@ -150,6 +151,10 @@ else {
         $descendant_main_person2[] = 0;
         if (!isset($descendant_family_id2[1])) {
             break;
+        }
+        // stealth mode: cut off branch if privacy
+        if ($user['group_stealth'] == 'y' && check_fam_privacy($descendant_main_person2[0])) {
+            continue;
         }
 
         // TEST code (only works with family, will give error in descendant report and DNA reports:
@@ -179,7 +184,7 @@ else {
             // *** Added mar. 2021 ***
             unset($templ_name);
         }
-
+        $famsheet_status = false;
         // *** Nr of families in one generation ***
         $nr_families = count($descendant_family_id);
         for ($descendant_loop2 = 0; $descendant_loop2 < $nr_families; $descendant_loop2++) {
@@ -232,6 +237,14 @@ else {
                     $parent1 = $familyDb->fam_man;
                     $parent2 = $familyDb->fam_woman;
                 }
+
+                // check stealth mode an skip marriage with privacy
+                $p2_transparent = false;
+                if ($user['group_stealth'] == 'y') {
+                    if (check_fam_privacy($parent1)){ continue; }
+                    $p2_transparent = check_fam_privacy($parent2);
+                }
+
                 @$parent1Db = $db_functions->get_person($parent1);
                 // *** Proces parent1 using a class ***
                 $parent1_cls = new person_cls($parent1Db);
@@ -260,36 +273,14 @@ else {
                     $parlink[$id] = $pdf->Addlink();
                     $pdf->SetLink($parlink[$id], -1);   // link to this family from parents
                 }
-
-                // Show "Family Page", user's choice or default
-                $pdf->SetLeftMargin(10);
-                $pdf->Cell(0, 2, " ", 0, 1);
-                if ($pdf->GetY() > 260 && $descendant_loop2 != 0) {
-                    // move to next page so family sheet banner won't be last on page
-                    // but if we are in first family in generation, the gen banner
-                    // is already checked so no need here
-                    $pdf->AddPage();
-                    $pdf->SetY(20);
-                }
-                $pdf->SetFont($pdf_font, 'BI', 12);
-                $pdf->SetFillColor(186, 244, 193);
-
-                $treetext = show_tree_text($tree_id, $selected_language);
-                $family_top = $treetext['family_top'];
-                if ($family_top != '') {
-                    $pdf->SetLeftMargin(10);
-                    $pdf->Cell(0, 6, pdf_convert($family_top), 0, 1, 'L', true);
-                } else {
-                    $pdf->SetLeftMargin(10);
-                    $pdf->Cell(0, 6, pdf_convert(__('Family group sheet')), 0, 1, 'L', true);
-                }
-                $pdf->SetFont($pdf_font, '', 12);
+//$famsheet_status = check_famsheet($famsheet_status, $pdf);
 
                 // *************************************************************
                 // *** Parent1 (normally the father)                         ***
                 // *************************************************************
                 if ($familyDb->fam_kind != 'PRO-GEN') {  //onecht kind, woman without man
                     if ($family_nr == 1) {
+$famsheet_status = check_famsheet($famsheet_status, $pdf);
                         //*** Show data of parent1 ***
                         if ($data["descendant_report"] == true) {
                             $pdf->Write(8, $data["number_roman"][$descendant_loop + 1] . '-' . $data["number_generation"][$descendant_loop2 + 1] . " ");
@@ -318,7 +309,8 @@ else {
                         }
                         $pdf->SetLeftMargin($indent - 5);
                         //$family_nr++;
-                    } else {
+                    } elseif (!$p2_transparent) {
+$famsheet_status = check_famsheet($famsheet_status, $pdf);
                         // *** Show standard marriage text and name in 2nd, 3rd, etc. marriage ***
                         $pdf->SetLeftMargin($indent);
                         $pdf_marriage = $marriage_cls->marriage_data($familyDb, $family_nr, 'shorter');
@@ -350,17 +342,20 @@ else {
 
                     // *** Check if marriage data must be hidden (also hidden if privacy filter is active) ***
                     if (
-                        $user["group_pers_hide_totally_act"] == 'j' && isset($parent1Db->pers_own_code) && strpos(' ' . $parent1Db->pers_own_code, $user["group_pers_hide_totally"]) > 0
+                        $user["group_pers_hide_totally_act"] == 'j' && isset($parent1Db->pers_own_code) && (strpos('test ' . $parent1Db->pers_own_code, $user["group_pers_hide_totally"]) > 0)
                     ) {
                         $family_privacy = true;
                     }
                     if (
-                        $user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && strpos(' ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0
+                        $user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && (strpos('test ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0)
                     ) {
                         $family_privacy = true;
                     }
+if ($p2_transparent) {
+    //nothing
+}
 
-                    if ($family_privacy) {
+                    elseif ($family_privacy) {
                         $pdf_marriage = $marriage_cls->marriage_data($familyDb, '', 'short');
                         $pdf->SetLeftMargin($indent);
                         if ($pdf_marriage) {
@@ -382,7 +377,8 @@ else {
                 unset($templ_name);
                 // PDF rendering of name + details
                 $pdf->Write(8, " "); // IMPORTANT - otherwise at bottom of page man/woman.gif image will print, but name may move to following page!
-                $pdfdetails = $parent2_cls->name_extended("parent2");
+if (!$p2_transparent) {
+               $pdfdetails = $parent2_cls->name_extended("parent2");
                 if ($pdfdetails) {
                     //$pdf->write_name($pdfdetails,$pdf->GetX()+5,"long");
                     $pdf->write_name($templ_name, $pdf->GetX() + 5, "long");
@@ -397,7 +393,7 @@ else {
                 if ($pdfdetails) {
                     $pdf->pdfdisplay($pdfdetails, "parent2");
                 }
-
+}
 
                 // *************************************************************
                 // *** Marriagetext                                          ***
@@ -419,6 +415,7 @@ else {
                         $templ_relation["fam_text_source"] = $source_array['text'];
                         $temp = "fam_text_source";
                     }
+$famsheet_status = check_famsheet($famsheet_status, $pdf);
                 }
 
                 // *** Show addresses by family ***
@@ -442,7 +439,8 @@ else {
 
                 if ($familyDb->fam_children) {
                     $childnr = 1;
-                    $child_array = explode(";", $familyDb->fam_children);
+                    $child_array = array();
+                    $child_array_tmp = explode(";", $familyDb->fam_children);
 
                     unset($templ_person);
                     unset($templ_name);
@@ -450,21 +448,28 @@ else {
                     $pdf->SetLeftMargin(10);
                     $pdf->SetDrawColor(200);  // grey line
                     $pdf->Cell(0, 2, " ", 'B', 1);
-
+                    
+                    // stealth mode: rebuild child array
                     $show_privacy_text = false;
-
-                    // TODO show text in PDF export
-                    // *** Show "Child(ren):" ***
-                    /*
-                    echo '<div class="py-3"><b>';
-                    if (count($child_array) == '1') {
-                        echo __('Child') . ':';
-                    } else {
-                        echo __('Children') . ':';
+                    while ($child_tmp = array_shift($child_array_tmp)) {
+                        if ($user['group_stealth'] == 'y' && check_fam_privacy($child_tmp)) {
+                            continue; 
+                        }
+                        $child_array[] = $child_tmp;
                     }
-                    echo '</b></div>';
-                    */
+                    if (count($child_array) >0) { 
+                        $famsheet_status = check_famsheet($famsheet_status, $pdf);
+                        $cld_label = '';
+                        $pdf->SetFont($pdf_font, 'BI', 12);
+                        $pdf->SetFillColor(239, 244, 217);
 
+                        if (count($child_array) == '1') {
+                            $cld_label = __('Child') . ':';
+                        } else {
+                            $cld_label = __('Children') . ':';
+                        }
+                    $pdf->Cell(0, 6, pdf_convert($cld_label), 0, 1, 'L', true);
+                    }
                     foreach ($child_array as $i => $value) {
                         @$childDb = $db_functions->get_person($child_array[$i]);
                         // *** Use person class ***
@@ -472,7 +477,7 @@ else {
 
                         // For now don't use this code in DNA and other graphical charts. Because they will be corrupted.
                         // *** Person must be totally hidden ***
-                        if ($user["group_pers_hide_totally_act"] == 'j' && strpos(' ' . $childDb->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+                        if ($user["group_pers_hide_totally_act"] == 'j' && (strpos('test ' . $childDb->pers_own_code, $user["group_pers_hide_totally"]) > 0)) {
                             $show_privacy_text = true;
                             continue;
                         }
@@ -547,7 +552,7 @@ else {
                     $pdf->SetFont($pdf_font, '', 12);
                 }
             } // Show multiple marriages
-
+            $famsheet_status = false;
         } // Multiple families in 1 generation
 
     } // nr. of generations
@@ -599,3 +604,39 @@ if (!empty($pdf_source) and ($data["source_presentation"] == 'footnote' or $user
 }
 
 $pdf->Output($title . ".pdf", "I");
+
+function check_fam_privacy($gcom_pers){
+    global $db_functions;
+    $my_persDb = $db_functions->get_person($gcom_pers);
+    $pers_cls = new person_cls($my_persDb);
+    $my_privacy = $pers_cls->set_privacy($my_persDb);
+    return $my_privacy;
+}
+function check_famsheet ($status,$pdf){
+    if ($status) {return true;}
+    global $tree_id, $selected_language,$treetext,$pdf_font,$descendant_loop2;
+    // Show "Family Page", user's choice or default
+    $pdf->SetLeftMargin(10);
+    $pdf->Cell(0, 2, " ", 0, 1);
+    if ($pdf->GetY() > 260 && $descendant_loop2 != 0) {
+        // move to next page so family sheet banner won't be last on page
+        // but if we are in first family in generation, the gen banner
+        // is already checked so no need here
+        $pdf->AddPage();
+        $pdf->SetY(20);
+    }
+    $pdf->SetFont($pdf_font, 'BI', 12);
+    $pdf->SetFillColor(186, 244, 193);
+
+    $treetext = show_tree_text($tree_id, $selected_language);
+    $family_top = $treetext['family_top'];
+    if ($family_top != '') {
+        $pdf->SetLeftMargin(10);
+        $pdf->Cell(0, 6, pdf_convert($family_top), 0, 1, 'L', true);
+    } else {
+        $pdf->SetLeftMargin(10);
+        $pdf->Cell(0, 6, pdf_convert(__('Family group sheet')), 0, 1, 'L', true);
+    }
+    $pdf->SetFont($pdf_font, '', 12);
+    return true;
+}
