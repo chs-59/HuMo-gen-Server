@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-genealogy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-30 18:24+0200\n"
-"PO-Revision-Date: 2025-08-30 18:24+0200\n"
+"POT-Creation-Date: 2025-09-01 21:27+0200\n"
+"PO-Revision-Date: 2025-09-01 21:27+0200\n"
 "Last-Translator: Yossi Beck <yosbeck@gmail.com>, 2015\n"
 "Language-Team: Russian (http://www.transifex.com/humo-gen/humo-gen/language/"
 "ru/)\n"
@@ -518,7 +518,7 @@ msgstr "Номер GEDCOM (ID)"
 #: admin/views/editor_person.php:779 admin/views/editor_relation.php:116
 #: admin/views/editor_relation.php:291 admin/views/editor_relation.php:310
 #: admin/views/editor_relation.php:1220 admin/views/gedcom_export.php:164
-#: admin/views/language_editor.php:250 admin/views/maps_locations.php:753
+#: admin/views/language_editor.php:250 admin/views/maps_locations.php:781
 #: admin/views/settings_homepage.php:88 admin/views/settings_homepage.php:204
 #: admin/views/tree_merge.php:556 admin/views/tree_merge.php:574
 #: admin/views/tree_merge.php:646 admin/views/users.php:120
@@ -5081,31 +5081,37 @@ msgstr "Список неиндексируемых локаций обновл�
 msgid "Location already exists. Updated latitude/longitude"
 msgstr ""
 
-#: admin/views/maps_locations.php:759
+#: admin/views/maps_locations.php:754
 msgid "Latitude"
 msgstr "Широта"
 
-#: admin/views/maps_locations.php:768
+#: admin/views/maps_locations.php:763
 msgid "Longitude"
 msgstr "Долгота"
 
-#: admin/views/maps_locations.php:775
+#: admin/views/maps_locations.php:770
 #, fuzzy
 #| msgid "(You can also drag the marker!)"
 msgid "You can also drag the marker."
 msgstr "(Чтобы изменить координаты можно перетащить маркер на карте!)"
 
-#: admin/views/maps_locations.php:777
+#: admin/views/maps_locations.php:772
 msgid "Change this location"
 msgstr "Изменить это место"
 
-#: admin/views/maps_locations.php:778
+#: admin/views/maps_locations.php:773
 msgid "Add this location"
 msgstr "Добавить это место"
 
-#: admin/views/maps_locations.php:779
+#: admin/views/maps_locations.php:774
 msgid "Delete this location"
 msgstr "Удалить место"
+
+#: admin/views/maps_locations.php:869
+#, fuzzy
+#| msgid "Person not found"
+msgid "Place not found."
+msgstr "Персона не найдена"
 
 #: admin/views/maps_settings.php:29
 msgid ""

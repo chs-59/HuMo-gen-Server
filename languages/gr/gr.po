@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-genealogy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-30 18:24+0200\n"
-"PO-Revision-Date: 2025-08-30 18:24+0200\n"
+"POT-Creation-Date: 2025-09-01 21:27+0200\n"
+"PO-Revision-Date: 2025-09-01 21:27+0200\n"
 "Last-Translator: dimi fas, 2024\n"
 "Language-Team: Greek (http://app.transifex.com/humo-gen/humo-gen/language/"
 "el/)\n"
@@ -519,7 +519,7 @@ msgstr "Αριθμός GEDCOM (ID)"
 #: admin/views/editor_person.php:779 admin/views/editor_relation.php:116
 #: admin/views/editor_relation.php:291 admin/views/editor_relation.php:310
 #: admin/views/editor_relation.php:1220 admin/views/gedcom_export.php:164
-#: admin/views/language_editor.php:250 admin/views/maps_locations.php:753
+#: admin/views/language_editor.php:250 admin/views/maps_locations.php:781
 #: admin/views/settings_homepage.php:88 admin/views/settings_homepage.php:204
 #: admin/views/tree_merge.php:556 admin/views/tree_merge.php:574
 #: admin/views/tree_merge.php:646 admin/views/users.php:120
@@ -5084,31 +5084,37 @@ msgstr "Η λίστα των τοποθεσιών χωρίς δυνατότητ�
 msgid "Location already exists. Updated latitude/longitude"
 msgstr ""
 
-#: admin/views/maps_locations.php:759
+#: admin/views/maps_locations.php:754
 msgid "Latitude"
 msgstr "Latitude"
 
-#: admin/views/maps_locations.php:768
+#: admin/views/maps_locations.php:763
 msgid "Longitude"
 msgstr "Longitude"
 
-#: admin/views/maps_locations.php:775
+#: admin/views/maps_locations.php:770
 #, fuzzy
 #| msgid "(You can also drag the marker!)"
 msgid "You can also drag the marker."
 msgstr "(You can also drag the marker!)"
 
-#: admin/views/maps_locations.php:777
+#: admin/views/maps_locations.php:772
 msgid "Change this location"
 msgstr "Change this location"
 
-#: admin/views/maps_locations.php:778
+#: admin/views/maps_locations.php:773
 msgid "Add this location"
 msgstr "Προσθέστε αυτήν την τοποθεσία"
 
-#: admin/views/maps_locations.php:779
+#: admin/views/maps_locations.php:774
 msgid "Delete this location"
 msgstr "Delete this location"
+
+#: admin/views/maps_locations.php:869
+#, fuzzy
+#| msgid "Person not found"
+msgid "Place not found."
+msgstr "Το άτομο δεν βρέθηκε"
 
 #: admin/views/maps_settings.php:29
 msgid ""

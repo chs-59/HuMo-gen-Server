@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-gen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-30 18:24+0200\n"
-"PO-Revision-Date: 2025-08-30 18:24+0200\n"
+"POT-Creation-Date: 2025-09-01 21:26+0200\n"
+"PO-Revision-Date: 2025-09-01 21:26+0200\n"
 "Last-Translator: Huub Mons\n"
 "Language-Team: Danish (http://www.transifex.com/humo-gen/humo-gen/language/"
 "da/)\n"
@@ -519,7 +519,7 @@ msgstr "gedcom no. (\"I43\")"
 #: admin/views/editor_person.php:779 admin/views/editor_relation.php:116
 #: admin/views/editor_relation.php:291 admin/views/editor_relation.php:310
 #: admin/views/editor_relation.php:1220 admin/views/gedcom_export.php:164
-#: admin/views/language_editor.php:250 admin/views/maps_locations.php:753
+#: admin/views/language_editor.php:250 admin/views/maps_locations.php:781
 #: admin/views/settings_homepage.php:88 admin/views/settings_homepage.php:204
 #: admin/views/tree_merge.php:556 admin/views/tree_merge.php:574
 #: admin/views/tree_merge.php:646 admin/views/users.php:120
@@ -5207,31 +5207,37 @@ msgstr "Tilføjede steder:"
 msgid "Location already exists. Updated latitude/longitude"
 msgstr ""
 
-#: admin/views/maps_locations.php:759
+#: admin/views/maps_locations.php:754
 msgid "Latitude"
 msgstr "Breddegrad"
 
-#: admin/views/maps_locations.php:768
+#: admin/views/maps_locations.php:763
 msgid "Longitude"
 msgstr "Længdegrad"
 
-#: admin/views/maps_locations.php:775
+#: admin/views/maps_locations.php:770
 #, fuzzy
 #| msgid "(You can also drag the marker!)"
 msgid "You can also drag the marker."
 msgstr "(Du kan også trække markøren!)"
 
-#: admin/views/maps_locations.php:777
+#: admin/views/maps_locations.php:772
 msgid "Change this location"
 msgstr "Ændre dette sted"
 
-#: admin/views/maps_locations.php:778
+#: admin/views/maps_locations.php:773
 msgid "Add this location"
 msgstr "Tilføj dette sted"
 
-#: admin/views/maps_locations.php:779
+#: admin/views/maps_locations.php:774
 msgid "Delete this location"
 msgstr "Slet dette sted"
+
+#: admin/views/maps_locations.php:869
+#, fuzzy
+#| msgid "Person not found"
+msgid "Place not found."
+msgstr "Personen er ikke fundet"
 
 #: admin/views/maps_settings.php:29
 #, fuzzy
