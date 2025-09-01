@@ -739,20 +739,15 @@ if (isset($_POST['check_new'])) {
                         $search_lat =  $_POST['location_lat'];
                         $search_lng =  $_POST['location_lng'];
                     }
+                    // remove brackets from the search
+                    $search_name = preg_replace('/\((.+)?\)/', '$1', $search_name)             
+                    
+                    
                     ?>
-
 
                     <form method="POST" name="delform" action="index.php?page=maps&amp;menu=locations">
                         <input type="hidden" name="location_id" value="<?= $location_id; ?>">
                         <input type="hidden" name="location_location" value="<?= $location_location; ?>">
-                        <div class="row mb-2">
-                            <div class="col-md-6">
-                                <input type="text" name="add_name" id="address" value="<?= $search_name; ?>" size="36" class="form-control form-control-sm">
-                            </div>
-                            <div class="col-md-auto">
-                                <input type="button" name="loc_search" value="<?= __('Search'); ?>" onclick="codeAddress();" class="btn btn-sm btn-secondary">
-                            </div>
-                        </div>
 
                         <div class="row mb-2">
                             <div class="col-md-5">
@@ -777,6 +772,17 @@ if (isset($_POST['check_new'])) {
                         <input type="submit" name="loc_change" value="<?= __('Change this location'); ?>" class="btn btn-sm btn-secondary">&nbsp;
                         <input type="submit" name="loc_add" value="<?= __('Add this location'); ?>" class="btn btn-sm btn-secondary">
                         <input type="submit" name="loc_delete" value="<?= __('Delete this location'); ?>" class="btn btn-sm btn-danger">
+                        <br><br>
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <input type="text" name="add_name" id="address" value="<?= $search_name; ?>" size="36" class="form-control form-control-sm">
+                            </div>
+                            <div class="col-md-auto">
+                                <input type="button" name="loc_search" value="<?= __('Search'); ?>" onclick="codeAddress();" class="btn btn-sm btn-secondary">
+                            </div>
+                        </div>
+                        <div id="result_places" class="row mb-2">
+                        </div>
 
                     </form>
 
@@ -790,25 +796,95 @@ if (isset($_POST['check_new'])) {
 
                     <!-- OpenStreetMap -->
                     <?php if ($maps['use_world_map'] == 'OpenStreetMap') { ?>
-                        <link rel="stylesheet" href="../assets/leaflet/leaflet.css">
+                   <link rel="stylesheet" href="../assets/leaflet/leaflet.css">
                         <script src="../assets/leaflet/leaflet.js"></script>
-
-                        <div id="map" style="height: 300px;"></div>
+  
+                        <div id="map" style="height: 500px;"></div>
 
                     <?php
+                        if (empty($location_lat)) {
+                            $location_lat = 0;
+                            $location_lng = 0;
+                        }
                         // *** Map using fitbound (all markers visible) ***
                         echo '<script>
                             var map = L.map("map").setView([' . $location_lat . ', ' . $location_lng . '], 15);
-                            var markers = [';
-
-                        echo '];
-                            var group = L.featureGroup(markers).addTo(map);
-                            setTimeout(function () {
-                                map.fitBounds(group.getBounds());
-                            }, 1000);
+                            var myIcon = L.icon({
+                                iconUrl: "../assets/leaflet/images/marker-icon.png",
+                                iconRetinaUrl: "../assets/leaflet/images/marker-icon-2x.png",
+                                iconSize: [25, 41],
+                                iconAnchor: [9, 21],
+                                popupAnchor: [0, -14]
+                            });  
                             L.tileLayer(\'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\', {
                                 attribution: \'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors\'
                             }).addTo(map);
+                            var current_marker = L.marker([' . $location_lat . ', ' . $location_lng . '], {draggable:true, icon: myIcon}).addTo(map);
+                               
+                            function setDraggable () {
+                                current_marker.on(\'dragend\', function(e) {
+                                    var lat = e.target.getLatLng().lat;
+                                    var lng = e.target.getLatLng().lng;
+                                    //console.log("Marker drag ended at:", lat, lng);
+                                    map.panTo([lat, lng], 15);
+                                    document.getElementById("latbox").innerHtml = lat;
+                                    document.getElementById("lngbox").innerHtml = lng;
+                                    document.getElementById("latbox").value = lat;
+                                    document.getElementById("lngbox").value = lng;
+                                });
+                            }
+                            setDraggable();
+                            function codeAddress() {
+                                var address = document.getElementById(\'address\').value;
+                                var encaddr = encodeURI(address);
+                                var nom_req = new XMLHttpRequest();
+                                var url = "https://nominatim.openstreetmap.org/search?q=" + encaddr + "&format=json&addressdetails=1&limit=14";
+
+                                nom_req.onreadystatechange = function() {
+                                    if (this.readyState == 4 && this.status == 200) {
+                                        var results = JSON.parse(this.responseText);
+                                        myDisplayResult(results);
+                                    }
+                                };
+                                nom_req.open("GET", url, true);
+                                nom_req.send();
+
+                                function myDisplayResult(res) {
+                                    if (typeof (res[0]) !== "undefined") {
+                                        setLanLng(res[0].lat, res[0].lon);
+
+                                        //console.log("Found name:", res[0].display_name);
+
+                                        var  my_list = "<ul>\n";
+                                        for (var i = 0; i < res.length; i++) {
+                                            my_list += \'<li><span class="hideshowlink" id="place_\' + i + \'" data-lat="\' + res[i].lat + \'" data-lng="\' + res[i].lon + \'">\' + res[i].display_name + "</span></li>\n";
+                                        }
+                                        document.getElementById("result_places").innerHTML = my_list + "</ul>";
+                                        for (var i = 0; i < res.length; i++) {
+                                            let my_id = "place_" + i;
+                                            document.getElementById( my_id ).addEventListener ("click", get_places);
+                                        }
+                                    } else {
+                                        document.getElementById("result_places").innerHTML = "<b>'; 
+                        echo __('Place not found.');
+                        echo '</b>";
+                                    }
+                                }
+                                function setLanLng(lat, lng){
+                                    map.removeLayer(current_marker);
+                                    document.getElementById("latbox").innerHtml = lat;
+                                    document.getElementById("lngbox").innerHtml = lng;
+                                    document.getElementById("latbox").value = lat;
+                                    document.getElementById("lngbox").value = lng;
+                                    map.setView([lat, lng], 15);
+                                    current_marker = L.marker([lat, lng], {draggable: true, icon: myIcon}).addTo(map);
+                                    setDraggable();
+                                }
+                                function get_places(e) { // callback
+                                    //console.log("Got LatLng:", this.dataset.lat, this.dataset.lng);
+                                    setLanLng(this.dataset.lat, this.dataset.lng);
+                                }
+                            }
                         </script>';
                     } ?>
 

@@ -461,7 +461,8 @@ If possible, try to filter with that'); ?></i>
 
         <tr>
             <td><?= __('Activate stealth mode'); ?><br>
-                <i><?= __('Persons matching privacy settigs will be completely hidden as if they are not in database'); ?></i>
+                <i><?= __('Persons matching privacy settigs will be completely hidden as if they are not in database'); ?></i><br>
+                (May not work with Google Maps -> switch to OpenStreetMap)<!-- comment -->
             </td>
             <td><input type="checkbox" name="group_stealth" <?= $groupDb->group_stealth != 'n' ? 'checked' : ''; ?>></td>
         </tr>

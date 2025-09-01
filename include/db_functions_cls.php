@@ -819,6 +819,10 @@ class db_functions
         //$test_accessids = array ('I22', 'I3');
         foreach ($my_accessids as $persid) {
             $tmp_fams = $this->get_person($persid, 'famc-fams');
+            // if person was deleted
+            if (empty($tmp_fams)) { 
+                continue; 
+            }
             $fam_array = explode(";", $tmp_fams->pers_fams);
             foreach ($fam_array as $famid) {
                 $this->collect_accessids($famid, $persid, 0, $my_accessgen);

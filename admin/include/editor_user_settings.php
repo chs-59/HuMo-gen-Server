@@ -56,13 +56,15 @@ if (isset($_POST['user_change']) && isset($_POST["id"]) && is_numeric($_POST["id
                     }
                 }
             }
-            if (is_numeric($_POST["$p_gen"])) {
-                $acids[$data3Db->tree_id] = ['acids' => implode(';', $my_acids_checked) . ';', 
-                                             'gen'   => $_POST["$p_gen"] ];
-            }
-            else {
-               $acids[$data3Db->tree_id] = ['acids' => implode(';', $my_acids_checked) . ';', 
-                                             'gen'   => 0 ];
+            if (count($my_acids_checked) > 0) {
+                if (is_numeric($_POST["$p_gen"])) {
+                    $acids[$data3Db->tree_id] = ['acids' => implode(';', $my_acids_checked) . ';', 
+                                                 'gen'   => $_POST["$p_gen"] ];
+                }
+                else {
+                   $acids[$data3Db->tree_id] = ['acids' => implode(';', $my_acids_checked) . ';', 
+                                                 'gen'   => 0 ];
+                }
             }
         }
     }

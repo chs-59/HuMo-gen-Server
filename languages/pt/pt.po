@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-gen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-11 16:07+0200\n"
-"PO-Revision-Date: 2025-08-11 16:07+0200\n"
+"POT-Creation-Date: 2025-09-01 21:27+0200\n"
+"PO-Revision-Date: 2025-09-01 21:27+0200\n"
 "Last-Translator: António Duarte <123quetreta@openmailbox.org>\n"
 "Language-Team: Portuguese (http://www.transifex.com/humo-gen/humo-gen/"
 "language/pt/)\n"
@@ -224,54 +224,54 @@ msgstr "Dezembro"
 #: admin/views/statistics_old.php:89 admin/views/statistics_old.php:100
 #: include/person_cls.php:946 include/person_cls.php:949
 #: include/person_cls.php:950 include/person_cls.php:951
-#: include/person_cls.php:952 include/person_cls.php:1287
-#: include/person_cls.php:1344 include/person_cls.php:1345
-#: include/person_cls.php:1532 include/person_cls.php:1533
-#: include/person_cls.php:1563 include/person_cls.php:1564
-#: include/person_cls.php:1602 include/person_cls.php:1604
-#: include/person_cls.php:1623 include/person_cls.php:1624
-#: include/person_cls.php:1693 include/person_cls.php:1712
-#: include/person_cls.php:2829 include/person_cls.php:2848
-#: include/person_cls.php:2864 include/witness.php:233 include/witness.php:239
+#: include/person_cls.php:952 include/person_cls.php:1292
+#: include/person_cls.php:1349 include/person_cls.php:1350
+#: include/person_cls.php:1537 include/person_cls.php:1538
+#: include/person_cls.php:1568 include/person_cls.php:1569
+#: include/person_cls.php:1607 include/person_cls.php:1609
+#: include/person_cls.php:1628 include/person_cls.php:1629
+#: include/person_cls.php:1698 include/person_cls.php:1717
+#: include/person_cls.php:2834 include/person_cls.php:2853
+#: include/person_cls.php:2869 include/witness.php:245 include/witness.php:251
 #: views/ancestor_sheet_pdf.php:102 views/ancestor_sheet_pdf.php:205
-#: views/descendant_chart.php:464 views/list.php:1088
+#: views/descendant_chart.php:464 views/list.php:1093
 #: views/list_places_families.php:381
 msgid "N.N."
 msgstr "N.N."
 
 # Birth
 #: admin/include/editor_cls.php:310 include/person_cls.php:1158
-#: views/ancestor_chart.php:223 views/ancestor_sheet.php:79
+#: views/ancestor_chart.php:221 views/ancestor_sheet.php:79
 #: views/ancestor_sheet.php:295 views/ancestor_sheet_pdf.php:118
 #: views/ancestor_sheet_pdf.php:373 views/descendant_chart.php:354
-#: views/list.php:34 views/list.php:933 views/list.php:1119 views/list.php:1134
+#: views/list.php:33 views/list.php:933 views/list.php:1124 views/list.php:1139
 #: views/relations.php:162 views/relations.php:276
 msgid "*"
 msgstr "*"
 
 # Baptise
 #: admin/include/editor_cls.php:313 include/person_cls.php:1161
-#: views/ancestor_chart.php:228 views/ancestor_sheet.php:84
-#: views/descendant_chart.php:359 views/list.php:44 views/list.php:941
-#: views/list.php:1116 views/list.php:1131 views/relations.php:159
+#: views/ancestor_chart.php:226 views/ancestor_sheet.php:84
+#: views/descendant_chart.php:359 views/list.php:43 views/list.php:941
+#: views/list.php:1121 views/list.php:1136 views/relations.php:159
 #: views/relations.php:273
 msgid "~"
 msgstr "~"
 
 # Death sign
 #: admin/include/editor_cls.php:319 include/person_cls.php:1166
-#: views/ancestor_chart.php:234 views/ancestor_sheet.php:90
+#: views/ancestor_chart.php:232 views/ancestor_sheet.php:90
 #: views/ancestor_sheet.php:295 views/ancestor_sheet_pdf.php:81
-#: views/descendant_chart.php:365 views/list.php:60 views/list.php:967
-#: views/list.php:1149 views/list.php:1164
+#: views/descendant_chart.php:365 views/list.php:59 views/list.php:967
+#: views/list.php:1154 views/list.php:1169
 msgid "&#134;"
 msgstr "&#134;"
 
 # Buried
 #: admin/include/editor_cls.php:325 include/person_cls.php:1169
-#: views/ancestor_chart.php:239 views/ancestor_sheet.php:95
-#: views/descendant_chart.php:370 views/list.php:68 views/list.php:975
-#: views/list.php:1146 views/list.php:1161
+#: views/ancestor_chart.php:237 views/ancestor_sheet.php:95
+#: views/descendant_chart.php:370 views/list.php:67 views/list.php:975
+#: views/list.php:1151 views/list.php:1166
 msgid "[]"
 msgstr "[]"
 
@@ -286,7 +286,7 @@ msgstr "Inagens/Media"
 #: admin/include/editor_event_cls.php:1207
 #: admin/include/editor_event_cls.php:1541
 #: admin/include/editor_event_cls.php:1544 admin/views/editor.php:1171
-#: admin/views/tree_merge.php:1453 views/list.php:320 views/list.php:327
+#: admin/views/tree_merge.php:1453 views/list.php:319 views/list.php:326
 msgid "Profession"
 msgstr "Profissão"
 
@@ -297,7 +297,7 @@ msgstr "Profissão"
 #: admin/include/editor_event_cls.php:339
 #: admin/include/editor_event_cls.php:1264 admin/include/editor_sources.php:205
 #: admin/include/editor_sources.php:213 admin/views/tree_merge.php:1456
-#: app/model/tree_index.php:1006
+#: app/model/tree_index.php:1025
 msgid "Event"
 msgstr "Evento"
 
@@ -334,7 +334,7 @@ msgstr ""
 #: admin/views/editor_person.php:1026 admin/views/editor_person.php:1309
 #: admin/views/editor_person.php:1386 admin/views/editor_relation.php:517
 #: admin/views/editor_relation.php:729 include/witness.php:42
-#: include/witness.php:66 views/list.php:392 views/list.php:399
+#: include/witness.php:66 views/list.php:391 views/list.php:398
 msgid "witness"
 msgstr "testemunha"
 
@@ -346,11 +346,11 @@ msgstr "testemunha"
 #: admin/include/editor_relation_select.php:46 admin/views/editor.php:148
 #: admin/views/editor_person.php:393 admin/views/gedcom_export.php:330
 #: app/model/mailform.php:83 app/model/register.php:95
-#: app/model/tree_index.php:584 app/model/tree_index.php:1006
+#: app/model/tree_index.php:603 app/model/tree_index.php:1025
 #: app/model/user_settings.php:79 views/anniversary.php:96
-#: views/family.php:1244 views/family.php:1312 views/layout.php:350
-#: views/list.php:147 views/list.php:639 views/list_names.php:296
-#: views/list_names.php:299 views/mailform.php:48 views/mailform.php:50
+#: views/family.php:1282 views/family.php:1350 views/layout.php:350
+#: views/list.php:146 views/list.php:639 views/list_names.php:217
+#: views/list_names.php:220 views/mailform.php:48 views/mailform.php:50
 #: views/register.php:58 views/relations.php:94 views/relations.php:96
 #: views/relations.php:210
 msgid "Name"
@@ -396,7 +396,7 @@ msgstr "Título de Nobreza"
 
 #: admin/include/editor_event_cls.php:50 admin/include/editor_event_cls.php:282
 #: admin/include/editor_event_cls.php:323 admin/views/edit_repository.php:207
-#: include/marriage_cls.php:688 include/person_cls.php:2893
+#: include/marriage_cls.php:688 include/person_cls.php:2898
 msgid "URL/ Internet link"
 msgstr "Link de URL/ Internet"
 
@@ -429,7 +429,7 @@ msgstr "ID"
 # Language indicator, used for birthday RSS
 #: admin/include/editor_event_cls.php:273
 #: admin/include/editor_event_cls.php:316
-#: admin/include/editor_event_cls.php:1281 views/list.php:76 views/list.php:77
+#: admin/include/editor_event_cls.php:1281 views/list.php:75 views/list.php:76
 #: views/list.php:991
 msgid "Events"
 msgstr "Eventos"
@@ -469,7 +469,7 @@ msgstr "Licença de casamento"
 #: admin/include/editor_event_cls.php:1239
 #: admin/include/editor_event_cls.php:1728
 #: admin/include/editor_event_cls.php:1730 admin/views/editor.php:1126
-#: include/person_cls.php:1888
+#: include/person_cls.php:1893
 msgid "Nickname"
 msgstr "Alcunha"
 
@@ -519,14 +519,14 @@ msgstr "nº gedcom (\"I43\")"
 #: admin/views/editor_person.php:779 admin/views/editor_relation.php:116
 #: admin/views/editor_relation.php:291 admin/views/editor_relation.php:310
 #: admin/views/editor_relation.php:1220 admin/views/gedcom_export.php:164
-#: admin/views/language_editor.php:250 admin/views/maps_locations.php:753
+#: admin/views/language_editor.php:250 admin/views/maps_locations.php:781
 #: admin/views/settings_homepage.php:88 admin/views/settings_homepage.php:204
 #: admin/views/tree_merge.php:556 admin/views/tree_merge.php:574
 #: admin/views/tree_merge.php:646 admin/views/users.php:120
 #: app/model/tree_index.php:48 app/model/tree_index.php:155
-#: app/model/tree_index.php:630 views/addresses.php:31
-#: views/latest_changes.php:23 views/layout.php:351 views/list.php:100
-#: views/list.php:163 views/list.php:454 views/list_places_families.php:95
+#: app/model/tree_index.php:649 views/addresses.php:31
+#: views/latest_changes.php:23 views/layout.php:351 views/list.php:99
+#: views/list.php:162 views/list.php:453 views/list_places_families.php:95
 #: views/photoalbum.php:173 views/relations.php:97 views/relations.php:105
 #: views/relations.php:208 views/relations.php:211 views/relations.php:219
 #: views/sources.php:26
@@ -543,7 +543,7 @@ msgstr "Pesquisa"
 #: admin/views/editor_relation.php:1045 admin/views/index_admin.php:618
 #: include/calculate_age_cls.php:371 include/calculate_age_cls.php:393
 #: include/calculate_age_cls.php:497 include/calculate_age_cls.php:519
-#: views/fanchart.php:657
+#: views/fanchart.php:662
 msgid "or"
 msgstr "ou"
 
@@ -578,9 +578,9 @@ msgstr "Outro nome"
 #: include/calculate_age_cls.php:324 include/calculate_age_cls.php:332
 #: include/language_date.php:102 include/language_date.php:106
 #: include/language_date.php:110 include/language_date.php:125
-#: include/person_cls.php:1540 include/person_cls.php:1541
-#: include/person_cls.php:1609 include/person_cls.php:1610
-#: include/person_cls.php:1696 include/person_cls.php:1697
+#: include/person_cls.php:1545 include/person_cls.php:1546
+#: include/person_cls.php:1614 include/person_cls.php:1615
+#: include/person_cls.php:1701 include/person_cls.php:1702
 #: views/relations.php:584
 msgid "and"
 msgstr "e"
@@ -662,7 +662,7 @@ msgid "Descendants"
 msgstr "Descendentes"
 
 #: admin/include/editor_event_cls.php:1191 admin/include/editor_inc.php:534
-#: admin/views/gedcom_export.php:274 app/model/ancestor.php:167
+#: admin/views/gedcom_export.php:274 app/model/ancestor.php:174
 #: include/person_cls.php:1069 include/person_cls.php:1070
 #: views/hourglass.php:151
 msgid "Ancestors"
@@ -700,7 +700,7 @@ msgid "Will"
 msgstr ""
 
 #: admin/include/editor_event_cls.php:1346 views/anniversary.php:62
-#: views/anniversary.php:217
+#: views/anniversary.php:219
 msgid "Religious"
 msgstr ""
 
@@ -759,8 +759,8 @@ msgstr "por ex. Lorde de Amesterdão"
 #: admin/views/editor_relation.php:357 admin/views/editor_relation.php:433
 #: admin/views/editor_relation.php:522 admin/views/editor_relation.php:659
 #: admin/views/editor_relation.php:734 admin/views/editor_relation.php:831
-#: app/model/tree_index.php:1006 include/show_source_pdf.php:49
-#: views/list.php:237 views/list.php:257 views/list.php:702 views/list.php:728
+#: app/model/tree_index.php:1025 include/show_source_pdf.php:49
+#: views/list.php:236 views/list.php:256 views/list.php:702 views/list.php:728
 #: views/source.php:37 views/source.php:115 views/sources.php:69
 msgid "Date"
 msgstr "Data"
@@ -780,8 +780,8 @@ msgstr "Data"
 #: admin/views/editor_relation.php:440 admin/views/editor_relation.php:529
 #: admin/views/editor_relation.php:666 admin/views/editor_relation.php:741
 #: admin/views/editor_relation.php:838 include/show_source_pdf.php:84
-#: views/address.php:25 views/list.php:250 views/list.php:270
-#: views/list.php:361 views/list.php:368 views/list.php:715 views/list.php:741
+#: views/address.php:25 views/list.php:249 views/list.php:269
+#: views/list.php:360 views/list.php:367 views/list.php:715 views/list.php:741
 #: views/source.php:50 views/source.php:119 views/sources.php:86
 msgid "Place"
 msgstr "Local"
@@ -799,12 +799,12 @@ msgstr "Local"
 #: admin/views/editor_relation.php:456 admin/views/editor_relation.php:605
 #: admin/views/editor_relation.php:682 admin/views/editor_relation.php:757
 #: admin/views/editor_relation.php:870 admin/views/editor_relation.php:910
-#: admin/views/groups.php:500 admin/views/groups.php:508
-#: admin/views/groups.php:516 admin/views/settings_homepage.php:94
+#: admin/views/groups.php:512 admin/views/groups.php:520
+#: admin/views/groups.php:528 admin/views/settings_homepage.php:94
 #: admin/views/settings_homepage.php:134 admin/views/settings_homepage.php:210
 #: include/process_text.php:120 include/process_text.php:122
-#: views/addresses.php:44 views/family.php:1330 views/list.php:307
-#: views/list.php:314
+#: views/addresses.php:44 views/family.php:1368 views/list.php:306
+#: views/list.php:313
 msgid "Text"
 msgstr "Texto"
 
@@ -868,8 +868,8 @@ msgstr ""
 msgid "Directory"
 msgstr "Diretoria criada."
 
-#: admin/include/editor_event_cls.php:1745 include/person_cls.php:1872
-#: include/person_cls.php:1878
+#: admin/include/editor_event_cls.php:1745 include/person_cls.php:1877
+#: include/person_cls.php:1883
 msgid "Also known as"
 msgstr "Também conhecido por"
 
@@ -956,7 +956,7 @@ msgid "Also remove colour marks of"
 msgstr "Remover também as máscaras de cor de"
 
 #: admin/include/editor_inc.php:537 admin/include/editor_inc.php:1092
-#: admin/include/editor_user_settings.php:137 admin/models/editor.php:1393
+#: admin/include/editor_user_settings.php:139 admin/models/editor.php:1393
 #: admin/models/editor.php:1958 admin/views/cms_pages.php:37
 #: admin/views/cms_pages.php:60 admin/views/edit_address.php:35
 #: admin/views/edit_repository.php:31 admin/views/edit_source.php:119
@@ -964,8 +964,8 @@ msgstr "Remover também as máscaras de cor de"
 #: admin/views/editor_relation.php:246 admin/views/gedcom.php:88
 #: admin/views/gedcom_export.php:462 admin/views/gedcom_export.php:478
 #: admin/views/gedcom_export.php:494 admin/views/gedcom_export.php:511
-#: admin/views/gedcom_export.php:556 admin/views/groups.php:50
-#: admin/views/groups.php:535 admin/views/install.php:324
+#: admin/views/gedcom_export.php:556 admin/views/groups.php:54
+#: admin/views/groups.php:547 admin/views/install.php:324
 #: admin/views/maps_locations.php:98 admin/views/maps_locations.php:120
 #: admin/views/maps_locations.php:199 admin/views/notes.php:91
 #: admin/views/settings.php:147 admin/views/settings.php:162
@@ -984,7 +984,7 @@ msgid "Yes"
 msgstr "Sim"
 
 #: admin/include/editor_inc.php:538 admin/include/editor_inc.php:1093
-#: admin/include/editor_user_settings.php:138 admin/models/editor.php:1394
+#: admin/include/editor_user_settings.php:140 admin/models/editor.php:1394
 #: admin/models/editor.php:1959 admin/views/cms_pages.php:38
 #: admin/views/cms_pages.php:61 admin/views/edit_address.php:36
 #: admin/views/edit_repository.php:32 admin/views/edit_source.php:120
@@ -992,8 +992,8 @@ msgstr "Sim"
 #: admin/views/editor_relation.php:247 admin/views/gedcom.php:89
 #: admin/views/gedcom_export.php:463 admin/views/gedcom_export.php:479
 #: admin/views/gedcom_export.php:495 admin/views/gedcom_export.php:512
-#: admin/views/gedcom_export.php:555 admin/views/groups.php:51
-#: admin/views/groups.php:536 admin/views/install.php:325
+#: admin/views/gedcom_export.php:555 admin/views/groups.php:55
+#: admin/views/groups.php:548 admin/views/install.php:325
 #: admin/views/maps_locations.php:99 admin/views/maps_locations.php:121
 #: admin/views/maps_locations.php:200 admin/views/notes.php:92
 #: admin/views/settings.php:148 admin/views/settings.php:163
@@ -1066,41 +1066,41 @@ msgstr "Sexo"
 
 #: admin/include/editor_sources.php:77 admin/include/editor_sources.php:83
 #: admin/views/editor.php:1246 admin/views/editor_person.php:650
-#: app/model/tree_index.php:961 app/model/tree_index.php:963
-#: googlemaps/namesearch.php:185 include/person_cls.php:2045
-#: include/person_cls.php:2046 include/person_cls.php:2048
-#: include/person_cls.php:2049 views/ancestor_sheet.php:295
+#: app/model/tree_index.php:980 app/model/tree_index.php:982
+#: googlemaps/namesearch.php:189 include/person_cls.php:2050
+#: include/person_cls.php:2051 include/person_cls.php:2053
+#: include/person_cls.php:2054 views/ancestor_sheet.php:295
 #: views/ancestor_sheet_pdf.php:373 views/anniversary.php:95
-#: views/descendant_chart.php:456 views/family.php:1143 views/list.php:235
-#: views/list.php:243 views/list.php:640 views/maps.php:445 views/maps.php:576
+#: views/descendant_chart.php:456 views/family.php:1181 views/list.php:234
+#: views/list.php:242 views/list.php:640 views/maps.php:462 views/maps.php:593
 msgid "born"
 msgstr "nascimento "
 
 #: admin/include/editor_sources.php:89 admin/views/editor.php:1279
 #: admin/views/editor_person.php:1012 app/model/timeline.php:83
-#: app/model/tree_index.php:970 app/model/tree_index.php:972
-#: googlemaps/namesearch.php:188 include/person_cls.php:2213
-#: include/person_cls.php:2214 include/person_cls.php:2216
-#: include/person_cls.php:2217 views/family.php:1145 views/list.php:235
-#: views/list.php:243 views/list.php:640 views/maps.php:448 views/maps.php:579
+#: app/model/tree_index.php:989 app/model/tree_index.php:991
+#: googlemaps/namesearch.php:192 include/person_cls.php:2218
+#: include/person_cls.php:2219 include/person_cls.php:2221
+#: include/person_cls.php:2222 views/family.php:1183 views/list.php:234
+#: views/list.php:242 views/list.php:640 views/maps.php:465 views/maps.php:596
 msgid "baptised"
 msgstr " Batismo"
 
 #: admin/include/editor_sources.php:95 admin/include/editor_sources.php:101
 #: admin/views/editor.php:1298 admin/views/editor_person.php:1101
-#: app/model/tree_index.php:979 app/model/tree_index.php:981
-#: googlemaps/namesearch.php:194 include/person_cls.php:2366
-#: include/person_cls.php:2367 include/person_cls.php:2369
-#: include/person_cls.php:2370 views/ancestor_sheet.php:295
-#: views/ancestor_sheet_pdf.php:373 views/anniversary.php:97 views/list.php:255
-#: views/list.php:263 views/list.php:641 views/maps.php:451 views/maps.php:582
+#: app/model/tree_index.php:998 app/model/tree_index.php:1000
+#: googlemaps/namesearch.php:198 include/person_cls.php:2371
+#: include/person_cls.php:2372 include/person_cls.php:2374
+#: include/person_cls.php:2375 views/ancestor_sheet.php:295
+#: views/ancestor_sheet_pdf.php:373 views/anniversary.php:97 views/list.php:254
+#: views/list.php:262 views/list.php:641 views/maps.php:468 views/maps.php:599
 msgid "died"
 msgstr "Óbito "
 
 #: admin/include/editor_sources.php:107 admin/views/editor.php:1317
 #: admin/views/editor_person.php:1409 app/model/timeline.php:109
-#: googlemaps/namesearch.php:197 include/person_cls.php:2545 views/list.php:255
-#: views/list.php:263 views/list.php:641 views/maps.php:454 views/maps.php:585
+#: googlemaps/namesearch.php:201 include/person_cls.php:2550 views/list.php:254
+#: views/list.php:262 views/list.php:641 views/maps.php:471 views/maps.php:602
 msgid "buried"
 msgstr "sepultura"
 
@@ -1182,10 +1182,10 @@ msgid "Drag to change order"
 msgstr "Arraste para alterar a ordem"
 
 #: admin/include/editor_sources.php:362 admin/views/edit_source.php:328
-#: admin/views/settings_homepage.php:242 include/person_cls.php:1964
-#: include/person_cls.php:1965 include/person_cls.php:1967
-#: include/person_cls.php:1968 include/show_source_pdf.php:90
-#: views/list.php:333 views/list.php:340 views/source.php:53
+#: admin/views/settings_homepage.php:242 include/person_cls.php:1969
+#: include/person_cls.php:1970 include/person_cls.php:1972
+#: include/person_cls.php:1973 include/show_source_pdf.php:90
+#: views/list.php:332 views/list.php:339 views/source.php:53
 msgid "Own code"
 msgstr "Código próprio"
 
@@ -1248,7 +1248,7 @@ msgid "Search existing source"
 msgstr "Parâmetros do motor de pesquisa"
 
 #: admin/include/editor_sources.php:461 admin/views/edit_source.php:134
-#: views/list.php:219 views/list.php:226
+#: views/list.php:218 views/list.php:225
 msgid "gedcomnumber (ID)"
 msgstr ""
 
@@ -1294,42 +1294,42 @@ msgstr "Ou adicionar novo filho:"
 msgid "Add source"
 msgstr "Adicionar fonte"
 
-#: admin/include/editor_user_settings.php:74 admin/views/users.php:54
+#: admin/include/editor_user_settings.php:76 admin/views/users.php:54
 msgid "Extra settings"
 msgstr "Parâmetros extra"
 
-#: admin/include/editor_user_settings.php:108
+#: admin/include/editor_user_settings.php:110
 msgid "for "
 msgstr ""
 
-#: admin/include/editor_user_settings.php:109
+#: admin/include/editor_user_settings.php:111
 #, fuzzy
 #| msgid "Hide or show family trees per user."
 msgid "Hide or show family trees"
 msgstr "Esconder ou mostrar as árvores de família por utilizadfor."
 
-#: admin/include/editor_user_settings.php:118
-#: admin/include/editor_user_settings.php:153 admin/views/groups.php:620
+#: admin/include/editor_user_settings.php:120
+#: admin/include/editor_user_settings.php:155 admin/views/groups.php:632
 #: admin/views/maps_locations.php:188 admin/views/notes.php:22
 #: admin/views/trees.php:38 views/help.php:68 views/help.php:72
 #: views/help.php:76 views/help.php:81 views/layout.php:283
-#: views/layout.php:506 views/list.php:152 views/list.php:443
+#: views/layout.php:506 views/list.php:151 views/list.php:442
 #: views/list.php:643 views/statistics.php:21
 msgid "Family tree"
 msgstr "Árvore de Família"
 
-#: admin/include/editor_user_settings.php:119 admin/views/groups.php:621
+#: admin/include/editor_user_settings.php:121 admin/views/groups.php:633
 msgid "Show tree?"
 msgstr "Mostrar a árvore?"
 
-#: admin/include/editor_user_settings.php:120
-#: admin/include/editor_user_settings.php:155 admin/views/cms_pages.php:374
+#: admin/include/editor_user_settings.php:122
+#: admin/include/editor_user_settings.php:157 admin/views/cms_pages.php:374
 #: admin/views/extensions.php:95 admin/views/extensions.php:117
-#: admin/views/groups.php:104 admin/views/groups.php:140
-#: admin/views/groups.php:228 admin/views/groups.php:359
-#: admin/views/groups.php:394 admin/views/groups.php:441
-#: admin/views/groups.php:571 admin/views/groups.php:622
-#: admin/views/groups.php:700 admin/views/log.php:98
+#: admin/views/groups.php:108 admin/views/groups.php:144
+#: admin/views/groups.php:232 admin/views/groups.php:363
+#: admin/views/groups.php:398 admin/views/groups.php:445
+#: admin/views/groups.php:583 admin/views/groups.php:634
+#: admin/views/groups.php:712 admin/views/log.php:98
 #: admin/views/maps_settings.php:41 admin/views/settings.php:33
 #: admin/views/settings.php:178 admin/views/settings.php:240
 #: admin/views/settings.php:361 admin/views/settings.php:502
@@ -1343,39 +1343,39 @@ msgstr "Mostrar a árvore?"
 msgid "Change"
 msgstr "Alterar"
 
-#: admin/include/editor_user_settings.php:120 admin/views/groups.php:622
+#: admin/include/editor_user_settings.php:122 admin/views/groups.php:634
 msgid "Edit tree?"
 msgstr "Editar a árvore?"
 
-#: admin/include/editor_user_settings.php:136
+#: admin/include/editor_user_settings.php:138
 msgid "Use user-group setting"
 msgstr ""
 
-#: admin/include/editor_user_settings.php:148
+#: admin/include/editor_user_settings.php:150
 msgid "Skip privacy check for persons and descendants"
 msgstr ""
 
-#: admin/include/editor_user_settings.php:154
+#: admin/include/editor_user_settings.php:156
 msgid "Type name to search for GEDCOM numbers"
 msgstr ""
 
-#: admin/include/editor_user_settings.php:155 views/fanchart.php:584
+#: admin/include/editor_user_settings.php:157 views/fanchart.php:589
 msgid "Generations"
 msgstr "Gerações"
 
-#: admin/include/editor_user_settings.php:175
+#: admin/include/editor_user_settings.php:177
 #, fuzzy
 #| msgid "gedcom no. (\"I43\")"
 msgid "GEDCOM numbers (IDs)"
 msgstr "nº gedcom (\"I43\")"
 
-#: admin/include/editor_user_settings.php:180
+#: admin/include/editor_user_settings.php:182
 #, fuzzy
 #| msgid "Choose person:"
 msgid "Only these persons"
 msgstr "Escolha a pessoa:"
 
-#: admin/include/gedcom_export.php:2079 include/db_functions_cls.php:849
+#: admin/include/gedcom_export.php:2079 include/db_functions_cls.php:853
 msgid "No valid family number."
 msgstr "Número de família inválido."
 
@@ -1424,7 +1424,7 @@ msgstr "A verificação online da versão não está disponível."
 msgid "Debug information:"
 msgstr "Informação sobre os cookies"
 
-#: admin/include/select_tree.php:18 views/layout.php:285 views/maps.php:40
+#: admin/include/select_tree.php:18 views/layout.php:285 views/maps.php:44
 msgid "Select a family tree:"
 msgstr "Escolha uma árvore de família:"
 
@@ -1555,7 +1555,7 @@ msgstr ""
 #: admin/views/maps.php:35 admin/views/maps_settings.php:24
 #: admin/views/menu.php:66 admin/views/settings_admin.php:8
 #: admin/views/settings_admin.php:39 admin/views/thumbs.php:196
-#: admin/views/tree_merge.php:1039 views/family.php:53 views/family.php:1319
+#: admin/views/tree_merge.php:1039 views/family.php:54 views/family.php:1357
 msgid "Settings"
 msgstr "Parâmetros"
 
@@ -1612,7 +1612,7 @@ msgstr "Mapas do Google"
 msgid "Family trees"
 msgstr "Árvores de Família"
 
-#: admin/index.php:607 admin/views/groups.php:234 admin/views/menu.php:82
+#: admin/index.php:607 admin/views/groups.php:238 admin/views/menu.php:82
 #: admin/views/tree_data.php:26
 msgid "Pictures/ create thumbnails"
 msgstr "Imagens/ criação de thumbnails"
@@ -1662,7 +1662,7 @@ msgid "Calculated birth date"
 msgstr "Data de nascimento calculada"
 
 #: admin/index.php:627 admin/views/editor.php:1136
-#: admin/views/editor_person.php:565 admin/views/groups.php:440
+#: admin/views/editor_person.php:565 admin/views/groups.php:444
 msgid "Privacy filter"
 msgstr "Filtro de Privacidade"
 
@@ -1687,10 +1687,10 @@ msgid "Persons and families"
 msgstr "Locais (por famílias)"
 
 #: admin/index.php:639 admin/views/edit_source.php:103
-#: admin/views/groups.php:358 admin/views/menu.php:100
+#: admin/views/groups.php:362 admin/views/menu.php:100
 #: admin/views/tree_merge.php:1592 app/controller/sourcesController.php:29
-#: include/show_sources.php:346 views/ancestor_report_pdf.php:375
-#: views/family.php:72 views/family_pdf.php:562 views/help.php:86
+#: include/show_sources.php:346 views/ancestor_report_pdf.php:382
+#: views/family.php:73 views/family_pdf.php:567 views/help.php:86
 #: views/layout.php:540 views/sources.php:16
 msgid "Sources"
 msgstr "Fontes"
@@ -1715,7 +1715,7 @@ msgstr "Renomear Locais"
 msgid "Users"
 msgstr "Utilizadores"
 
-#: admin/index.php:649 admin/views/groups.php:33 admin/views/menu.php:114
+#: admin/index.php:649 admin/views/groups.php:37 admin/views/menu.php:114
 #: admin/views/thumbs.php:121
 msgid "User groups"
 msgstr "Grupo de utilizadores"
@@ -2313,7 +2313,7 @@ msgstr ""
 msgid "Choose family tree"
 msgstr "Escolha a família"
 
-#: admin/views/cal_date.php:162 views/fanchart.php:604
+#: admin/views/cal_date.php:162 views/fanchart.php:609
 msgid "No dates"
 msgstr "Sem datas"
 
@@ -2342,7 +2342,7 @@ msgstr ""
 msgid "Pages"
 msgstr "Páginas"
 
-#: admin/views/cms_pages.php:16 admin/views/groups.php:139
+#: admin/views/cms_pages.php:16 admin/views/groups.php:143
 msgid "Menu"
 msgstr "Menú"
 
@@ -2520,8 +2520,8 @@ msgid "Street"
 msgstr "Rua"
 
 #: admin/views/edit_address.php:161 admin/views/edit_repository.php:147
-#: admin/views/editor.php:1634 views/address.php:20 views/list.php:374
-#: views/list.php:381 views/source.php:110
+#: admin/views/editor.php:1634 views/address.php:20 views/list.php:373
+#: views/list.php:380 views/source.php:110
 msgid "Zip code"
 msgstr "CP ou CEP"
 
@@ -2531,7 +2531,7 @@ msgid "Phone"
 msgstr "Telefone"
 
 #: admin/views/edit_address.php:208 admin/views/editor.php:1058
-#: views/maps.php:208 views/maps.php:366 views/maps.php:377
+#: views/maps.php:225 views/maps.php:383 views/maps.php:394
 msgid "Close"
 msgstr "Fechar"
 
@@ -2706,7 +2706,7 @@ msgstr ""
 #: admin/views/editor.php:147 admin/views/editor.php:430
 #: admin/views/tree_check_changes.php:49
 #: admin/views/tree_check_consistency.php:286 admin/views/tree_merge.php:563
-#: admin/views/tree_merge.php:634 views/family.php:1307 views/relations.php:92
+#: admin/views/tree_merge.php:634 views/family.php:1345 views/relations.php:92
 #: views/relations.php:206
 msgid "Person"
 msgstr "Pessoa"
@@ -2773,13 +2773,13 @@ msgstr "Matrimónio: "
 #: include/marriage_cls.php:787 include/marriage_cls.php:791
 #: include/marriage_cls.php:799 include/marriage_cls.php:803
 #: include/marriage_cls.php:816 include/marriage_cls.php:820
-#: views/ancestor_report.php:221 views/ancestor_report_pdf.php:282
+#: views/ancestor_report.php:228 views/ancestor_report_pdf.php:289
 #: views/ancestor_report_rtf.php:271 views/descendant_chart.php:395
 msgid " to: "
 msgstr " com: "
 
 #: admin/views/editor.php:635 admin/views/tree_merge.php:1249
-#: views/family.php:588 views/family_rtf.php:404
+#: views/family.php:607 views/family_pdf.php:469 views/family_rtf.php:431
 msgid "Children"
 msgstr "Filhos"
 
@@ -2802,8 +2802,8 @@ msgstr ""
 msgid "Add person"
 msgstr "Adicionar pessoa"
 
-#: admin/views/editor.php:741 views/layout.php:819 views/list.php:479
-#: views/maps.php:31 views/relations.php:354 views/timeline.php:178
+#: admin/views/editor.php:741 views/layout.php:819 views/list.php:478
+#: views/maps.php:35 views/relations.php:354 views/timeline.php:178
 msgid "Help"
 msgstr "Ajuda"
 
@@ -2841,7 +2841,7 @@ msgstr "= ckique para abrir ítens do editor extendido."
 msgid "firstname"
 msgstr "Nome Próprio e Intermédios"
 
-#: admin/views/editor.php:1082 views/list.php:199
+#: admin/views/editor.php:1082 views/list.php:198
 msgid "prefix"
 msgstr "prefixo"
 
@@ -3057,9 +3057,9 @@ msgid "year"
 msgstr "ano"
 
 #: admin/views/editor_person.php:350 admin/views/editor_relation.php:266
-#: admin/views/gedcom_export.php:234 views/list.php:301 views/list.php:352
-#: views/list_names.php:211 views/stats_firstnames.php:94
-#: views/stats_surnames.php:116
+#: admin/views/gedcom_export.php:234 views/list.php:300 views/list.php:351
+#: views/list_names.php:130 views/stats_firstnames.php:94
+#: views/stats_surnames.php:139
 msgid "All"
 msgstr "Tudo"
 
@@ -3068,21 +3068,21 @@ msgid "For example: Joseph ben Hirsch Zvi"
 msgstr ""
 
 #: admin/views/editor_person.php:656 admin/views/editor_person.php:1108
-#: include/person_cls.php:1999 include/person_cls.php:2001
-#: include/person_cls.php:2005 include/person_cls.php:2264
+#: include/person_cls.php:2004 include/person_cls.php:2006
+#: include/person_cls.php:2010 include/person_cls.php:2269
 msgid "at"
 msgstr "em"
 
 #: admin/views/editor_person.php:656 admin/views/editor_person.php:1108
-#: include/person_cls.php:1999 include/person_cls.php:2001
-#: include/person_cls.php:2005 include/person_cls.php:2264
+#: include/person_cls.php:2004 include/person_cls.php:2006
+#: include/person_cls.php:2010 include/person_cls.php:2269
 msgid "hour"
 msgstr "hora"
 
 #: admin/views/editor_person.php:748 admin/views/tree_merge.php:1461
-#: include/person_cls.php:2112 include/person_cls.php:2113
-#: include/person_cls.php:2115 include/person_cls.php:2116
-#: include/witness.php:187
+#: include/person_cls.php:2117 include/person_cls.php:2118
+#: include/person_cls.php:2120 include/person_cls.php:2121
+#: include/witness.php:199
 msgid "birth declaration"
 msgstr "Certidão de nascimento"
 
@@ -3105,74 +3105,74 @@ msgid "Bar Mitzvah"
 msgstr "Bar Mitzvah"
 
 #: admin/views/editor_person.php:1017 admin/views/editor_person.php:1047
-#: admin/views/tree_merge.php:1206 include/person_cls.php:2160
-#: include/person_cls.php:2162 include/person_cls.php:2678
+#: admin/views/tree_merge.php:1206 include/person_cls.php:2165
+#: include/person_cls.php:2167 include/person_cls.php:2683
 msgid "religion"
 msgstr "Religião"
 
 #: admin/views/editor_person.php:1117 admin/views/editor_person.php:1120
 #: admin/views/editor_person.php:1123 admin/views/editor_person.php:1132
 #: admin/views/editor_person.php:1135 admin/views/editor_person.php:1152
-#: admin/views/tree_merge.php:1201 include/person_cls.php:2291
-#: include/person_cls.php:2294 include/person_cls.php:2297
-#: include/person_cls.php:2306 include/person_cls.php:2309
-#: include/person_cls.php:2332 include/person_cls.php:2334
-#: include/person_cls.php:2342
+#: admin/views/tree_merge.php:1201 include/person_cls.php:2296
+#: include/person_cls.php:2299 include/person_cls.php:2302
+#: include/person_cls.php:2311 include/person_cls.php:2314
+#: include/person_cls.php:2337 include/person_cls.php:2339
+#: include/person_cls.php:2347
 msgid "cause of death"
 msgstr ""
 
 #: admin/views/editor_person.php:1117 admin/views/editor_person.php:1221
-#: include/person_cls.php:2291 include/person_cls.php:2342
+#: include/person_cls.php:2296 include/person_cls.php:2347
 msgid "murdered"
 msgstr "homicídio"
 
 #: admin/views/editor_person.php:1120 admin/views/editor_person.php:1222
-#: include/person_cls.php:2294
+#: include/person_cls.php:2299
 msgid "drowned"
 msgstr "afogamento"
 
 #: admin/views/editor_person.php:1123 admin/views/editor_person.php:1223
-#: include/person_cls.php:2297
+#: include/person_cls.php:2302
 msgid "perished"
 msgstr "acidente"
 
 #: admin/views/editor_person.php:1126 admin/views/editor_person.php:1224
-#: include/person_cls.php:2300
+#: include/person_cls.php:2305
 msgid "killed in action"
 msgstr "morte em ação"
 
 #: admin/views/editor_person.php:1129 admin/views/editor_person.php:1225
-#: include/person_cls.php:2303
+#: include/person_cls.php:2308
 msgid "being missed"
 msgstr "desaparecimento"
 
 #: admin/views/editor_person.php:1132 admin/views/editor_person.php:1226
-#: include/person_cls.php:2306
+#: include/person_cls.php:2311
 msgid "committed suicide"
 msgstr "suicídio"
 
 #: admin/views/editor_person.php:1135 admin/views/editor_person.php:1227
-#: include/person_cls.php:2309
+#: include/person_cls.php:2314
 msgid "executed"
 msgstr "execução"
 
 #: admin/views/editor_person.php:1138 admin/views/editor_person.php:1228
-#: include/person_cls.php:2312
+#: include/person_cls.php:2317
 msgid "died young"
 msgstr "morte prematura"
 
 #: admin/views/editor_person.php:1141 admin/views/editor_person.php:1229
-#: include/person_cls.php:2315
+#: include/person_cls.php:2320
 msgid "died unmarried"
 msgstr "faleceu sem contraír matrimónio"
 
 #: admin/views/editor_person.php:1144 admin/views/editor_person.php:1230
-#: include/person_cls.php:2318
+#: include/person_cls.php:2323
 msgid "registration"
 msgstr "Registo"
 
 #: admin/views/editor_person.php:1147 admin/views/editor_person.php:1231
-#: include/person_cls.php:2321
+#: include/person_cls.php:2326
 msgid "declared death"
 msgstr "Morte declarada"
 
@@ -3197,9 +3197,9 @@ msgid "cause"
 msgstr "Causa"
 
 #: admin/views/editor_person.php:1294 admin/views/tree_merge.php:1468
-#: include/person_cls.php:2434 include/person_cls.php:2435
-#: include/person_cls.php:2437 include/person_cls.php:2438
-#: include/witness.php:201
+#: include/person_cls.php:2439 include/person_cls.php:2440
+#: include/person_cls.php:2442 include/person_cls.php:2443
+#: include/witness.php:213
 msgid "death declaration"
 msgstr "Certidão de óbito"
 
@@ -3208,21 +3208,21 @@ msgid "method of burial"
 msgstr ""
 
 #: admin/views/editor_person.php:1410 admin/views/tree_merge.php:1202
-#: include/person_cls.php:2537
+#: include/person_cls.php:2542
 msgid "cremation"
 msgstr "Cremação"
 
-#: admin/views/editor_person.php:1411 include/person_cls.php:2539
+#: admin/views/editor_person.php:1411 include/person_cls.php:2544
 #, fuzzy
 #| msgid "estimated"
 msgid "resomated"
 msgstr "estimado"
 
-#: admin/views/editor_person.php:1412 include/person_cls.php:2541
+#: admin/views/editor_person.php:1412 include/person_cls.php:2546
 msgid "sailor's grave"
 msgstr ""
 
-#: admin/views/editor_person.php:1413 include/person_cls.php:2543
+#: admin/views/editor_person.php:1413 include/person_cls.php:2548
 msgid "donated to science"
 msgstr ""
 
@@ -3268,12 +3268,12 @@ msgid "There are %d unprocessed GEDCOM tags."
 msgstr "Existem %d tags gedcom não processadas."
 
 #: admin/views/editor_person.php:1621 admin/views/notes.php:69
-#: views/family.php:1171
+#: views/family.php:1209
 msgid "User notes"
 msgstr "Notas do Utilizador"
 
 #: admin/views/editor_person.php:1623 admin/views/editor_person.php:1625
-#: views/family.php:1176 views/family.php:1178
+#: views/family.php:1214 views/family.php:1216
 #, php-format
 msgid "There are %d user added notes."
 msgstr "Existem %d notas adicionadas pelo Utilizador."
@@ -3728,7 +3728,7 @@ msgstr ""
 "Os dados do gedcom serão adicionados aos dados já existentes nesta árvore!"
 
 #: admin/views/gedcom.php:787 admin/views/maps_locations.php:635
-#: views/maps.php:517 views/maps.php:651
+#: views/maps.php:534 views/maps.php:668
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -4093,19 +4093,19 @@ msgstr "Exportação de Gedcom"
 msgid "Start export"
 msgstr "Começar a exportação"
 
-#: admin/views/groups.php:44
+#: admin/views/groups.php:48
 msgid "It's not possible to delete this group: there is/ are"
 msgstr "Não é possível apagar este grupo: há"
 
-#: admin/views/groups.php:44
+#: admin/views/groups.php:48
 msgid "user(s) connected to this group!"
 msgstr "utilizador(es) ligado(s) a este grupo!"
 
-#: admin/views/groups.php:46
+#: admin/views/groups.php:50
 msgid "Are you sure you want to remove the group:"
 msgstr "Confirma a eliminação deste grupo:"
 
-#: admin/views/groups.php:59
+#: admin/views/groups.php:63
 #, fuzzy, php-format
 #| msgid ""
 #| "You can have multiple users in HuMo-gen. Every user can be connected to 1 "
@@ -4131,55 +4131,55 @@ msgstr ""
 "Grupo \"Admin\" = administrador do website.<br>\n"
 "Grupo \"Membros\" = membros da família ou genealogistas."
 
-#: admin/views/groups.php:69
+#: admin/views/groups.php:73
 msgid "Choose a user group: "
 msgstr "Escolha um grupo de utilizadores: "
 
-#: admin/views/groups.php:81
+#: admin/views/groups.php:85
 msgid "ADD GROUP"
 msgstr "ADICIONAR GRUPO"
 
-#: admin/views/groups.php:97
+#: admin/views/groups.php:101
 msgid "Group"
 msgstr "Grupo"
 
-#: admin/views/groups.php:100
+#: admin/views/groups.php:104
 msgid "REMOVE GROUP"
 msgstr "APAGAR GRUPO"
 
-#: admin/views/groups.php:109
+#: admin/views/groups.php:113
 msgid "Group name"
 msgstr "Nome do grupo"
 
-#: admin/views/groups.php:114 admin/views/install.php:263
+#: admin/views/groups.php:118 admin/views/install.php:263
 msgid "Administrator"
 msgstr "Administrador"
 
-#: admin/views/groups.php:134
+#: admin/views/groups.php:138
 msgid "Save statistics data"
 msgstr "Gravar dados estatísticos"
 
-#: admin/views/groups.php:144
+#: admin/views/groups.php:148
 msgid "Birthday RSS in main menu"
 msgstr "RSS dos aniversários no menú principal"
 
-#: admin/views/groups.php:149
+#: admin/views/groups.php:153
 msgid "INFORMATION menu: show \"CMS\" pages"
 msgstr ""
 
-#: admin/views/groups.php:154
+#: admin/views/groups.php:158
 msgid "FAMILY TREE menu: show \"Persons\" submenu"
 msgstr "Menú da ÁRVORE FAMILIAR: mostrar o submenú \"Pessoas\""
 
-#: admin/views/groups.php:159
+#: admin/views/groups.php:163
 msgid "FAMILY TREE menu: show \"Names\" submenu"
 msgstr "Menú da ÁRVORE FAMILIAR: mostrar o submenú \"Nomes\""
 
-#: admin/views/groups.php:164
+#: admin/views/groups.php:168
 msgid "FAMILY TREE menu: show \"Places\" submenu"
 msgstr "Menú da ÁRVORE FAMILIAR: mostrar o submenú \"Locais\""
 
-#: admin/views/groups.php:169
+#: admin/views/groups.php:173
 msgid ""
 "FAMILY TREE menu: show \"Addresses\" submenu (only shown if there really are "
 "addresses)"
@@ -4187,26 +4187,26 @@ msgstr ""
 "Menú da ÁRVORE FAMILIAR: mostrar o submenú \"Endereços\" (apenas no caso de "
 "existirem realmente endereços)"
 
-#: admin/views/groups.php:174
+#: admin/views/groups.php:178
 msgid "FAMILY TREE menu: show \"Photobook\" submenu"
 msgstr "Menú da ÁRVORE FAMILIAR: mostrar o submenú \"Livro de Fotografias\""
 
-#: admin/views/groups.php:179
+#: admin/views/groups.php:183
 msgid "TOOLS menu: show \"Anniversary\" (birthday list) submenu"
 msgstr ""
 "Menú das Ferrramentas: mostrar submenú de \"Aniversários\" (lista das datas "
 "de nascimento)"
 
-#: admin/views/groups.php:184
+#: admin/views/groups.php:188
 msgid "TOOLS menu: show \"Statistics\" submenu"
 msgstr "Menú das Ferrramentas: mostrar submenú de \"Estatísticas\""
 
-#: admin/views/groups.php:189
+#: admin/views/groups.php:193
 msgid "TOOLS menu: show \"Relationship Calculator\" submenu"
 msgstr ""
 "Menú das Ferrramentas: mostrar submenú de \"Calculadora de Relacionamentos\""
 
-#: admin/views/groups.php:194
+#: admin/views/groups.php:198
 msgid ""
 "TOOLS menu: show \"Google maps\" submenu (only shown if geolocation database "
 "was created)"
@@ -4214,7 +4214,7 @@ msgstr ""
 "Menú das Ferrramentas: mostrar submenú de \"Mapas do Google\" (apenas no "
 "caso da base de dados de geolocalização ter sido criada)"
 
-#: admin/views/groups.php:199
+#: admin/views/groups.php:203
 msgid ""
 "TOOLS menu: show \"Contact\" submenu (only shown if tree owner and email "
 "were entered)"
@@ -4222,182 +4222,182 @@ msgstr ""
 "Menú das Ferrramentas: mostrar submenú de \"Contacto\" (surge apenas no caso "
 "do dono da árvore e seu e-mail tiverem sido introduzidos)"
 
-#: admin/views/groups.php:204
+#: admin/views/groups.php:208
 msgid "TOOLS menu: show \"Latest changes\" submenu"
 msgstr "Menú das Ferrramentas: mostrar submenú de \"Últimas Alterações\""
 
-#: admin/views/groups.php:209
+#: admin/views/groups.php:213
 msgid "Show \"Login\" link (can be changed in group \"guest\" only)"
 msgstr ""
 
-#: admin/views/groups.php:222
+#: admin/views/groups.php:226
 msgid "Is allowed to change password"
 msgstr ""
 
-#: admin/views/groups.php:227 admin/views/tree_merge.php:871
+#: admin/views/groups.php:231 admin/views/tree_merge.php:871
 msgid "General"
 msgstr "Geral"
 
-#: admin/views/groups.php:232 views/family.php:104
+#: admin/views/groups.php:236 views/family.php:105
 msgid "Show pictures"
 msgstr "Mostrar imagens"
 
-#: admin/views/groups.php:233
+#: admin/views/groups.php:237
 msgid ""
 "(option can only be disabled if option \"Show photobook in submenu\" is "
 "disabled)"
 msgstr ""
 
-#: admin/views/groups.php:240
+#: admin/views/groups.php:244
 msgid "Show Gedcom number (from gedcom file)"
 msgstr "Mostrar o número Gedcom (a partir do arquivo gedcom)"
 
-#: admin/views/groups.php:245
+#: admin/views/groups.php:249
 #, fuzzy
 #| msgid "Show residence"
 msgid "Show residence and address"
 msgstr "Mostrar a residência"
 
-#: admin/views/groups.php:250
+#: admin/views/groups.php:254
 msgid "Show places with bapt., birth, death and cemetery."
 msgstr "Mostrar locais de baptismo, óbito e cemitério."
 
-#: admin/views/groups.php:255
+#: admin/views/groups.php:259
 msgid "Show religion (with bapt. and wedding)"
 msgstr "Mostrar a religião (com baptismo e casamento)"
 
-#: admin/views/groups.php:260
+#: admin/views/groups.php:264
 msgid "Show date and place (i.e. with birth, bapt., death, cemetery.)"
 msgstr "Mostrar data e local (i.e. com nascimento, bapt., óbito e cemitério.)"
 
-#: admin/views/groups.php:270
+#: admin/views/groups.php:274
 msgid "Show name in indexes"
 msgstr "Mostrar nomes nos índices"
 
-#: admin/views/groups.php:280
+#: admin/views/groups.php:284
 msgid "Show events"
 msgstr "Mostrar eventos"
 
-#: admin/views/groups.php:285
+#: admin/views/groups.php:289
 msgid "Show own code"
 msgstr "Mostrar código próprio "
 
-#: admin/views/groups.php:291
+#: admin/views/groups.php:295
 msgid "Default presentation of family page"
 msgstr "Apresentação por omissão da página de família"
 
-#: admin/views/groups.php:294 views/family.php:63
+#: admin/views/groups.php:298 views/family.php:64
 msgid "Compact view"
 msgstr "Vista compacta"
 
-#: admin/views/groups.php:295 admin/views/groups.php:296 views/family.php:64
-#: views/family.php:65 views/list.php:579 views/list_places_families.php:180
+#: admin/views/groups.php:299 admin/views/groups.php:300 views/family.php:65
+#: views/family.php:66 views/list.php:578 views/list_places_families.php:180
 msgid "Expanded view"
 msgstr "Vista estendida"
 
-#: admin/views/groups.php:303
+#: admin/views/groups.php:307
 msgid "Default presentation of Google maps in family page"
 msgstr "Apresentação por omissão dos mapas do Google na página de família"
 
-#: admin/views/groups.php:306
+#: admin/views/groups.php:310
 msgid "Show Google maps"
 msgstr "Mostrar Mapas do Google"
 
-#: admin/views/groups.php:307
+#: admin/views/groups.php:311
 msgid "Hide Google maps"
 msgstr "Ocultar Mapas do Google"
 
-#: admin/views/groups.php:314
+#: admin/views/groups.php:318
 #, fuzzy
 #| msgid "Longest living person"
 msgid "Show age of living person"
 msgstr "Pessoa de vida mais longa"
 
-#: admin/views/groups.php:320
+#: admin/views/groups.php:324
 msgid "Show \"PDF Report\" button in family screen and reports"
 msgstr "Mostrar o botão \"Relatório em PDF\" no écrã e relatórios de família"
 
-#: admin/views/groups.php:326
+#: admin/views/groups.php:330
 msgid "Show \"RTF Report\" button in family screen and reports"
 msgstr "Mostrar o botão \"Relatório RTF\" no écrã e relatórios da família"
 
-#: admin/views/groups.php:332
+#: admin/views/groups.php:336
 msgid "Generate citations (can be used as source)."
 msgstr "Gerar citações (podem ser usadas como fontes)."
 
-#: admin/views/groups.php:337
+#: admin/views/groups.php:341
 msgid "User is allowed to add notes/ remarks by a person in the family tree"
 msgstr ""
 "O utilizador tem permissão para adicionar notas / comentários de uma pessoa "
 "na árvore de família"
 
-#: admin/views/groups.php:337
+#: admin/views/groups.php:341
 msgid "Disabled in group \"Guest\""
 msgstr "Desativado no grupo \"Visitantes\""
 
-#: admin/views/groups.php:349
+#: admin/views/groups.php:353
 msgid "User can see notes/ remarks added by other users in the family tree"
 msgstr ""
 "O Utilizador pode ver notas/comentários criados por outros utilizadores na "
 "árvore de família."
 
-#: admin/views/groups.php:364
+#: admin/views/groups.php:368
 msgid "Don't show sources"
 msgstr "Não exibir as fontes"
 
-#: admin/views/groups.php:365
+#: admin/views/groups.php:369
 msgid "Only show source titles"
 msgstr "Exibir apenas os títulos das fontes"
 
-#: admin/views/groups.php:366
+#: admin/views/groups.php:370
 msgid "Show sources and menu sources"
 msgstr "Exibir as fontes e fontes no menú"
 
-#: admin/views/groups.php:377
+#: admin/views/groups.php:381
 msgid "Default presentation of source"
 msgstr "Apresentação por omissão da fonte"
 
-#: admin/views/groups.php:380 views/family.php:73
+#: admin/views/groups.php:384 views/family.php:74
 #, fuzzy
 #| msgid "Show source title"
 msgid "Show source"
 msgstr "Mostrar o título da fonte"
 
-#: admin/views/groups.php:381 views/family.php:74
+#: admin/views/groups.php:385 views/family.php:75
 #, fuzzy
 #| msgid "Show source title as footnote"
 msgid "Show source as footnote"
 msgstr "Mostrar o título da fonte em nota de rodapé"
 
-#: admin/views/groups.php:382 views/family.php:75
+#: admin/views/groups.php:386 views/family.php:76
 msgid "Hide sources"
 msgstr "Ocultar as fontes"
 
-#: admin/views/groups.php:388
+#: admin/views/groups.php:392
 msgid "Show restricted source"
 msgstr "Exibir fontes restritas"
 
-#: admin/views/groups.php:393 views/family.php:111
+#: admin/views/groups.php:397 views/family.php:112
 msgid "Texts"
 msgstr "Textos"
 
-#: admin/views/groups.php:399
+#: admin/views/groups.php:403
 msgid "Default presentation of text"
 msgstr "Apresentação de textol por omissão"
 
-#: admin/views/groups.php:402 views/family.php:112
+#: admin/views/groups.php:406 views/family.php:113
 msgid "Show texts"
 msgstr "Exibir os textos"
 
-#: admin/views/groups.php:403 views/family.php:113
+#: admin/views/groups.php:407 views/family.php:114
 msgid "Show texts in popup screen"
 msgstr "Mostrar os textos num écrã \"pop-up\""
 
-#: admin/views/groups.php:404 views/family.php:114
+#: admin/views/groups.php:408 views/family.php:115
 msgid "Hide texts"
 msgstr "Esconder os textos"
 
-#: admin/views/groups.php:410
+#: admin/views/groups.php:414
 msgid ""
 "Show hidden text/ own remarks (text between # characters in text fields, "
 "example: #check birthday#)"
@@ -4405,23 +4405,23 @@ msgstr ""
 "Mostra texto oculto (texto entre os caracteres # em campos de texto, por "
 "exemplo: #conferir o aniversário#)"
 
-#: admin/views/groups.php:424
+#: admin/views/groups.php:428
 msgid "Show text with person"
 msgstr "Mostrar o texto com a pessoa"
 
-#: admin/views/groups.php:430
+#: admin/views/groups.php:434
 msgid "Show text with bapt., birth, death, cemetery"
 msgstr "Mostrar texto com baptismo, nascimento, óbito, cemitério"
 
-#: admin/views/groups.php:435
+#: admin/views/groups.php:439
 msgid "Show text with pre-nuptial etc."
 msgstr "Mostrar texto com acordo pré-nupcial, etc."
 
-#: admin/views/groups.php:445 admin/views/groups.php:450
+#: admin/views/groups.php:449 admin/views/groups.php:454
 msgid "Activate privacy filter"
 msgstr "Ativar o filtro de privacidade"
 
-#: admin/views/groups.php:451
+#: admin/views/groups.php:455
 msgid ""
 "TIP: the best privacy filter is your genealogy program<br>\n"
 "If possible, try to filter with that"
@@ -4429,11 +4429,21 @@ msgstr ""
 "DICA: o melhor filtro de privacidade é o seu programa de geneologia<br>\n"
 "Se possível, tente filtrar com ele"
 
-#: admin/views/groups.php:459
+#: admin/views/groups.php:463
+msgid "Activate stealth mode"
+msgstr ""
+
+#: admin/views/groups.php:464
+msgid ""
+"Persons matching privacy settigs will be completely hidden as if they are "
+"not in database"
+msgstr ""
+
+#: admin/views/groups.php:471
 msgid "Privacy filter settings"
 msgstr "Parâmetros do filtro de privacidade"
 
-#: admin/views/groups.php:465
+#: admin/views/groups.php:477
 #, fuzzy, php-format
 #| msgid ""
 #| "HuMo-gen (alive or deceased), Aldfaer (death sign), Haza-data (filter "
@@ -4445,52 +4455,52 @@ msgstr ""
 "HuMo-gen (vivos ou defuntos), Aldfaer (sinal de óbito), Haza-data (filtro de "
 "pessoas vivas)"
 
-#: admin/views/groups.php:471
+#: admin/views/groups.php:483
 msgid "Privacy filter, filter persons born in or after this year"
 msgstr ""
 "Filtro de privacidade, filtro de pessoas vivas no ano presente ou nos anos "
 "subsequentes"
 
-#: admin/views/groups.php:474 admin/views/groups.php:482 views/timeline.php:230
+#: admin/views/groups.php:486 admin/views/groups.php:494 views/timeline.php:230
 msgid "Year"
 msgstr "Ano"
 
-#: admin/views/groups.php:479
+#: admin/views/groups.php:491
 msgid "Privacy filter, filter persons deceased in or after this year"
 msgstr ""
 "Filtro de privacidade, filtra pessoas falecidas neste ano ou em anos "
 "subsequentes"
 
-#: admin/views/groups.php:487
+#: admin/views/groups.php:499
 msgid "Also filter data of deceased persons (for filter 2)"
 msgstr "Filtra também dados de pessoas falecidas (ou filtro 2)"
 
-#: admin/views/groups.php:492
+#: admin/views/groups.php:504
 msgid "Privacy filter exceptions"
 msgstr "Excepções do filtro de privacidade"
 
-#: admin/views/groups.php:497
+#: admin/views/groups.php:509
 msgid "DO show privacy data of persons (with the following text in own code)"
 msgstr ""
 "MOSTRAR os dados de privacidade das pessoas (com o texto que se segue em "
 "código próprio)"
 
-#: admin/views/groups.php:505
+#: admin/views/groups.php:517
 msgid "HIDE privacy data of persons (with the following text in own code)"
 msgstr ""
 "OCULTAR os dados de privacidade das pessoas (com o texto que se segue em "
 "código próprio)"
 
-#: admin/views/groups.php:513
+#: admin/views/groups.php:525
 msgid "TOTALLY filter persons (with the following text in own code)"
 msgstr ""
 "Filtrar COMPLETAMENTE as pessoas (com o texto que se segue em código próprio)"
 
-#: admin/views/groups.php:521
+#: admin/views/groups.php:533
 msgid "Extra privacy filter option"
 msgstr "Opção de filtro de extra-privacidade"
 
-#: admin/views/groups.php:526
+#: admin/views/groups.php:538
 msgid ""
 "Show persons with no date information<br>\n"
 "<i>with these persons the privacy filter cannot calculate if they are alive</"
@@ -4500,15 +4510,15 @@ msgstr ""
 "<i>com estas pessoas o filtro de privacidade não consegue calcular se estão "
 "ou não vivas</i>"
 
-#: admin/views/groups.php:532
+#: admin/views/groups.php:544
 msgid "With privacy show names"
 msgstr "Mostrar nomes com os dados de privacidade"
 
-#: admin/views/groups.php:537
+#: admin/views/groups.php:549
 msgid "Show initials: D. E. Duck"
 msgstr "Mostrar as iniciais: por ex. L. M. Ferreira"
 
-#: admin/views/groups.php:543
+#: admin/views/groups.php:555
 msgid ""
 "Genealogical copy protection<br>\n"
 "<i>family browsing disabled, no family trees</i>"
@@ -4516,43 +4526,43 @@ msgstr ""
 "Proteção anti-cópia dos dados genealógicos<br>\n"
 "<i>listagem de famílias desactivada, sem árvores de família</i>"
 
-#: admin/views/groups.php:570
+#: admin/views/groups.php:582
 msgid "Save all changes"
 msgstr "Gravar todas as alterações"
 
-#: admin/views/groups.php:613
+#: admin/views/groups.php:625
 msgid "Hide or show family trees per user group."
 msgstr "Mostrar ou ocultar as árvores de família por grupo de utilizadores."
 
-#: admin/views/groups.php:614 admin/views/index_admin.php:621
+#: admin/views/groups.php:626 admin/views/index_admin.php:621
 #: admin/views/menu.php:96 include/person_cls.php:1126
 #: include/person_cls.php:1127
 msgid "Editor"
 msgstr "Editor"
 
-#: admin/views/groups.php:614
+#: admin/views/groups.php:626
 msgid "If an .htpasswd file is used: add username in .htpasswd file."
 msgstr ""
 "No caso de usar um ficheiro .htpasswd: adicione o nome de utilizador no "
 "arquivo .htpasswd file."
 
-#: admin/views/groups.php:615
+#: admin/views/groups.php:627
 msgid "These settings can also be set per user!"
 msgstr "Estes parâmetros também podem ser especificados pelo utilizador!"
 
-#: admin/views/groups.php:695
+#: admin/views/groups.php:707
 msgid "Hide or show photo categories per user group."
 msgstr "Mostrar ou esconder as categorias de fotos por grupo de utilizadores."
 
-#: admin/views/groups.php:699 admin/views/thumbs.php:422
+#: admin/views/groups.php:711 admin/views/thumbs.php:422
 msgid "Category name"
 msgstr "Nome da categoria"
 
-#: admin/views/groups.php:700
+#: admin/views/groups.php:712
 msgid "Show category?"
 msgstr "Mostrar a categoria?"
 
-#: admin/views/groups.php:728
+#: admin/views/groups.php:740
 msgid "No photo categories available."
 msgstr "Não existem categorias de fotos disponíveis."
 
@@ -5162,8 +5172,8 @@ msgstr ""
 "A verificar quantos novos locais têm de ser indexados e quanto tempo pode "
 "demorar a indexação (aproximadamente)."
 
-#: admin/views/maps_locations.php:148 app/model/tree_index.php:618
-#: views/list.php:155 views/list.php:446
+#: admin/views/maps_locations.php:148 app/model/tree_index.php:637
+#: views/list.php:154 views/list.php:445
 msgid "All family trees"
 msgstr "Árvores de todas as famílias"
 
@@ -5296,31 +5306,37 @@ msgstr "A lista de locais não indexáveis foi actualizada!"
 msgid "Location already exists. Updated latitude/longitude"
 msgstr ""
 
-#: admin/views/maps_locations.php:759
+#: admin/views/maps_locations.php:754
 msgid "Latitude"
 msgstr "Latitude"
 
-#: admin/views/maps_locations.php:768
+#: admin/views/maps_locations.php:763
 msgid "Longitude"
 msgstr "Longitude"
 
-#: admin/views/maps_locations.php:775
+#: admin/views/maps_locations.php:770
 #, fuzzy
 #| msgid "(You can also drag the marker!)"
 msgid "You can also drag the marker."
 msgstr "(Você pode também arrastar o marcador!)"
 
-#: admin/views/maps_locations.php:777
+#: admin/views/maps_locations.php:772
 msgid "Change this location"
 msgstr "Alterar este local"
 
-#: admin/views/maps_locations.php:778
+#: admin/views/maps_locations.php:773
 msgid "Add this location"
 msgstr "Adicionar este local"
 
-#: admin/views/maps_locations.php:779
+#: admin/views/maps_locations.php:774
 msgid "Delete this location"
 msgstr "Apagar este local"
+
+#: admin/views/maps_locations.php:869
+#, fuzzy
+#| msgid "Person not found"
+msgid "Place not found."
+msgstr "Pessoa não encontrada"
 
 #: admin/views/maps_settings.php:29
 #, fuzzy
@@ -5808,7 +5824,7 @@ msgstr ""
 "Nº mínimo de caracteres nas caixas de pesquisa (valor padrão = 3. Para "
 "Chinês definir 1)."
 
-#: admin/views/settings.php:533 views/fanchart.php:602
+#: admin/views/settings.php:533 views/fanchart.php:607
 msgid "Date display"
 msgstr "Exibição da data"
 
@@ -5988,7 +6004,7 @@ msgstr ""
 
 #: admin/views/settings_homepage.php:19 admin/views/statistics_general.php:79
 #: admin/views/tree_check_changes.php:258
-#: admin/views/tree_check_integrity.php:29 views/stats_persons.php:353
+#: admin/views/tree_check_integrity.php:29 views/stats_persons.php:360
 #: views/stats_tree.php:44
 msgid "Item"
 msgstr "Item"
@@ -6019,8 +6035,8 @@ msgid "Select family tree"
 msgstr "Selecione a árvore de família"
 
 #: admin/views/settings_homepage.php:87 admin/views/settings_homepage.php:203
-#: app/model/tree_index.php:233 app/model/tree_index.php:612 views/list.php:154
-#: views/list.php:445
+#: app/model/tree_index.php:233 app/model/tree_index.php:631 views/list.php:153
+#: views/list.php:444
 msgid "Selected family tree"
 msgstr "Árvore da família selecionada"
 
@@ -6085,7 +6101,7 @@ msgstr ""
 msgid "Show text from CMS system."
 msgstr ""
 
-#: admin/views/settings_homepage.php:162 views/fanchart.php:634
+#: admin/views/settings_homepage.php:162 views/fanchart.php:639
 msgid "View"
 msgstr "Visualização"
 
@@ -6340,7 +6356,7 @@ msgid "Country of origin"
 msgstr "País de origem"
 
 #: admin/views/statistics_general.php:160 admin/views/thumbs.php:82
-#: app/model/descendant.php:460 views/list.php:355
+#: app/model/descendant.php:460 views/list.php:354
 msgid "Unknown"
 msgstr "Desconhecido"
 
@@ -6349,7 +6365,7 @@ msgid "Most visited families:"
 msgstr "Famílias mais visitadas:"
 
 #: admin/views/statistics_general.php:207
-#: admin/views/statistics_general.php:237 app/model/tree_index.php:727
+#: admin/views/statistics_general.php:237 app/model/tree_index.php:746
 msgid "family"
 msgstr "família"
 
@@ -7074,26 +7090,26 @@ msgstr "Não foram encontrados nomes."
 #: admin/views/tree_check_consistency.php:992
 #: admin/views/tree_check_consistency.php:997
 #: admin/views/tree_check_consistency.php:1004
-#: admin/views/tree_check_consistency.php:1013 views/family.php:752
-#: views/family.php:776 views/family.php:910 views/family.php:915
+#: admin/views/tree_check_consistency.php:1013 views/family.php:790
+#: views/family.php:814 views/family.php:948 views/family.php:953
 msgid "BORN_SHORT"
 msgstr "Nasceu em "
 
 #: admin/views/tree_check_consistency.php:960
-#: admin/views/tree_check_consistency.php:972 views/family.php:755
-#: views/family.php:779
+#: admin/views/tree_check_consistency.php:972 views/family.php:793
+#: views/family.php:817
 msgid "BAPTISED_SHORT"
 msgstr "bapt."
 
 #: admin/views/tree_check_consistency.php:963
-#: admin/views/tree_check_consistency.php:975 views/family.php:803
-#: views/family.php:833 views/family.php:932 views/family.php:937
+#: admin/views/tree_check_consistency.php:975 views/family.php:841
+#: views/family.php:871 views/family.php:970 views/family.php:975
 msgid "DIED_SHORT"
 msgstr "Morreu em "
 
 #: admin/views/tree_check_consistency.php:966
-#: admin/views/tree_check_consistency.php:978 views/family.php:806
-#: views/family.php:836
+#: admin/views/tree_check_consistency.php:978 views/family.php:844
+#: views/family.php:874
 msgid "BURIED_SHORT"
 msgstr "enterr."
 
@@ -7268,7 +7284,7 @@ msgstr "Editor de fontes"
 msgid "Repository editor"
 msgstr "Editor de repositórios"
 
-#: admin/views/tree_data.php:9 admin/views/users.php:51 views/family.php:1318
+#: admin/views/tree_data.php:9 admin/views/users.php:51 views/family.php:1356
 #: views/mailform.php:55 views/mailform.php:57 views/register.php:65
 #: views/user_settings.php:30 views/user_settings.php:32
 msgid "E-mail address"
@@ -7335,7 +7351,7 @@ msgstr "Pular para o próximo"
 msgid "Skip to nr: "
 msgstr "Pular para o nº: "
 
-#: admin/views/tree_merge.php:88 views/maps.php:515 views/maps.php:649
+#: admin/views/tree_merge.php:88 views/maps.php:532 views/maps.php:666
 msgid "Go!"
 msgstr "Prosseguir!"
 
@@ -7490,15 +7506,15 @@ msgstr ""
 "a lista de todas as pessoas na base de dados. (Este processo pode demorar "
 "alguns segundos)</b>"
 
-#: admin/views/tree_merge.php:553 views/list.php:178 views/list.php:185
-#: views/list.php:411 views/stats_firstnames.php:112
+#: admin/views/tree_merge.php:553 views/list.php:177 views/list.php:184
+#: views/list.php:410 views/stats_firstnames.php:112
 #: views/stats_firstnames.php:114 views/stats_firstnames.php:116
 #: views/stats_firstnames.php:118
 msgid "First name"
 msgstr "Nome próprio"
 
-#: admin/views/tree_merge.php:554 views/list.php:197 views/list.php:207
-#: views/list.php:211 views/list.php:423
+#: admin/views/tree_merge.php:554 views/list.php:196 views/list.php:206
+#: views/list.php:210 views/list.php:422
 msgid "Last name"
 msgstr "Sobrenome"
 
@@ -7816,8 +7832,8 @@ msgstr "Nº. "
 #: views/ancestor_report_pdf.php:82 views/ancestor_report_rtf.php:62
 #: views/ancestor_sheet.php:250 views/ancestor_sheet_pdf.php:295
 #: views/ancestor_sheet_pdf.php:316 views/descendant_chart.php:122
-#: views/family_pdf.php:66 views/family_pdf.php:68 views/family_pdf.php:137
-#: views/family_pdf.php:139 views/family_pdf.php:325 views/family_rtf.php:98
+#: views/family_pdf.php:66 views/family_pdf.php:68 views/family_pdf.php:138
+#: views/family_pdf.php:140 views/family_pdf.php:317 views/family_rtf.php:98
 #: views/family_rtf.php:100 views/hourglass.php:135
 #: views/outline_report_pdf.php:76 views/outline_report_pdf.php:94
 #: views/relations.php:605 views/relations.php:630 views/relations.php:1293
@@ -7972,11 +7988,11 @@ msgstr "(sem dados)"
 msgid "Picture"
 msgstr "Imagem"
 
-#: admin/views/tree_merge.php:1464 include/witness.php:194
+#: admin/views/tree_merge.php:1464 include/witness.php:206
 msgid "baptism witness"
 msgstr "Testemunha de batismo"
 
-#: admin/views/tree_merge.php:1471 include/witness.php:208
+#: admin/views/tree_merge.php:1471 include/witness.php:220
 msgid "burial witness"
 msgstr "Testemunha do funeral"
 
@@ -8127,13 +8143,13 @@ msgid "Unblock IP address"
 msgstr "Desbloquear o endereço IP"
 
 #: app/controller/ancestor_chartController.php:25
-#: app/controller/ancestor_sheetController.php:28 app/model/ancestor.php:155
+#: app/controller/ancestor_sheetController.php:28 app/model/ancestor.php:162
 #: views/ancestor_sheet.php:250 views/ancestor_sheet_pdf.php:295
 #: views/ancestor_sheet_pdf.php:316 views/help.php:34
 msgid "Ancestor sheet"
 msgstr "Folha dos Antepassados"
 
-#: app/controller/ancestor_reportController.php:35 app/model/ancestor.php:136
+#: app/controller/ancestor_reportController.php:35 app/model/ancestor.php:143
 #: include/person_cls.php:1069 include/person_cls.php:1070
 #: views/ancestor_report_pdf.php:67 views/ancestor_report_pdf.php:82
 #: views/ancestor_report_rtf.php:62 views/help.php:22
@@ -8151,27 +8167,27 @@ msgstr "Não tem autorização para aceder a esta página."
 msgid "Address by person"
 msgstr "Endereço por pessoa"
 
-#: app/model/ancestor.php:146
+#: app/model/ancestor.php:153
 msgid "Ancestor chart"
 msgstr "Mapa dos Antepassados"
 
-#: app/model/ancestor.php:162 views/help.php:38
+#: app/model/ancestor.php:169 views/help.php:38
 msgid "Fanchart"
 msgstr "Fanchart"
 
-#: app/model/ancestor.php:195 views/descendant_chart.php:157
+#: app/model/ancestor.php:202 views/descendant_chart.php:157
 #: views/hourglass.php:93
 msgid "Print"
 msgstr ""
 
-#: app/model/ancestor.php:205 views/descendant_chart.php:250
+#: app/model/ancestor.php:212 views/descendant_chart.php:250
 #: views/hourglass.php:145
 #, fuzzy
 #| msgid "first name"
 msgid "all first names"
 msgstr "Nome próprio"
 
-#: app/model/family.php:208 views/family_pdf.php:66 views/family_pdf.php:137
+#: app/model/family.php:208 views/family_pdf.php:66 views/family_pdf.php:138
 #: views/family_rtf.php:98 views/help.php:26
 msgid "Descendant report"
 msgstr "Relatório dos descendentes"
@@ -8201,7 +8217,7 @@ msgid "%s Mail form."
 msgstr "Formulário de correio"
 
 #: app/model/mailform.php:79 app/model/register.php:92
-#: app/model/user_settings.php:76 views/family.php:1241
+#: app/model/user_settings.php:76 views/family.php:1279
 #, fuzzy, php-format
 #| msgid "Message sent through HuMo-gen from the website."
 msgid "Message sent through %s from the website."
@@ -8215,7 +8231,7 @@ msgstr "Última família visitada:"
 msgid "Receive newsletter"
 msgstr "Receber o boletim de notícias (newsletter)"
 
-#: app/model/maps.php:275
+#: app/model/maps.php:280
 msgid "Results are limited."
 msgstr ""
 
@@ -8354,56 +8370,56 @@ msgstr "Última actualização:"
 msgid "Owner family tree:"
 msgstr "Detentor da árvore de família:"
 
-#: app/model/tree_index.php:487 app/model/tree_index.php:489
-#: views/stats_surnames.php:140 views/stats_surnames.php:143
+#: app/model/tree_index.php:507 app/model/tree_index.php:509
+#: views/stats_surnames.php:163 views/stats_surnames.php:166
 msgid "Surname"
 msgstr "Apelido"
 
-#: app/model/tree_index.php:487 app/model/tree_index.php:489
-#: views/list_names.php:297 views/list_names.php:300
+#: app/model/tree_index.php:507 app/model/tree_index.php:509
+#: views/list_names.php:218 views/list_names.php:221
 #: views/stats_firstnames.php:113 views/stats_firstnames.php:115
 #: views/stats_firstnames.php:117 views/stats_firstnames.php:119
-#: views/stats_surnames.php:140 views/stats_surnames.php:144
+#: views/stats_surnames.php:163 views/stats_surnames.php:167
 msgid "Total"
 msgstr "Total"
 
-#: app/model/tree_index.php:496
+#: app/model/tree_index.php:515
 msgid "More statistics"
 msgstr "Mais estatísticas"
 
-#: app/model/tree_index.php:568 views/list.php:125
+#: app/model/tree_index.php:587 views/list.php:124
 msgid "Enter name or part of name"
 msgstr "Introduza o nome ou parte do nome"
 
-#: app/model/tree_index.php:570 views/list.php:128
+#: app/model/tree_index.php:589 views/list.php:127
 msgid "Enter private name"
 msgstr "Introduza o nome próprio"
 
-#: app/model/tree_index.php:584
+#: app/model/tree_index.php:603
 msgid "Minimum: 3 characters."
 msgstr "No mínimo: 3 caracteres."
 
-#: app/model/tree_index.php:624 views/list.php:156 views/list.php:447
+#: app/model/tree_index.php:643 views/list.php:155 views/list.php:446
 msgid "All but selected tree"
 msgstr "Todas as árvores menos a selecionada"
 
-#: app/model/tree_index.php:633 views/layout.php:365 views/layout.php:369
-#: views/list.php:166 views/list.php:283
+#: app/model/tree_index.php:652 views/layout.php:365 views/layout.php:369
+#: views/list.php:165 views/list.php:282
 msgid "Advanced search"
 msgstr "Pesquisa avançada"
 
-#: app/model/tree_index.php:703 app/model/tree_index.php:729
+#: app/model/tree_index.php:722 app/model/tree_index.php:748
 #, fuzzy
 #| msgid "Photo's per page"
 msgid "Go to person&apos;s page"
 msgstr "Fotos por página"
 
-#: app/model/tree_index.php:911
+#: app/model/tree_index.php:930
 msgid "Patronyms"
 msgstr "Patrónimos"
 
-#: app/model/tree_index.php:1022 app/model/tree_index.php:1049
-#: views/anniversary.php:151 views/anniversary.php:312 views/list.php:859
+#: app/model/tree_index.php:1041 app/model/tree_index.php:1068
+#: views/anniversary.php:153 views/anniversary.php:314 views/list.php:859
 #: views/list_places_families.php:245
 msgid " persons are not shown due to privacy settings"
 msgstr " as pessoas não são exibidas devido aos parâmetros de privacidade"
@@ -8468,10 +8484,10 @@ msgstr "com cerca de"
 #: include/calculate_age_cls.php:497 include/calculate_age_cls.php:501
 #: include/calculate_age_cls.php:508 include/calculate_age_cls.php:513
 #: include/calculate_age_cls.php:519 include/calculate_age_cls.php:523
-#: views/stats_persons.php:503 views/stats_persons.php:511
-#: views/stats_persons.php:528 views/stats_persons.php:534
-#: views/stats_persons.php:547 views/stats_persons.php:553
-#: views/stats_persons.php:559 views/stats_persons.php:561
+#: views/stats_persons.php:510 views/stats_persons.php:518
+#: views/stats_persons.php:535 views/stats_persons.php:541
+#: views/stats_persons.php:554 views/stats_persons.php:560
+#: views/stats_persons.php:566 views/stats_persons.php:568
 msgid "years"
 msgstr "anos"
 
@@ -8825,26 +8841,26 @@ msgstr "divórcio"
 msgid "Married/ Related"
 msgstr "Casamento/ Relacionamento"
 
-#: include/marriage_cls.php:771 include/person_cls.php:1298 views/list.php:1097
+#: include/marriage_cls.php:771 include/person_cls.php:1303 views/list.php:1102
 #: views/list_places_families.php:395
 msgid "1st"
 msgstr "1º"
 
-#: include/marriage_cls.php:774 include/person_cls.php:1300 views/list.php:1099
+#: include/marriage_cls.php:774 include/person_cls.php:1305 views/list.php:1104
 #: views/list_places_families.php:397 views/relations.php:1631
 #: views/relations.php:2082 views/relations.php:2285 views/relations.php:2441
 #: views/relations.php:2893
 msgid "2nd"
 msgstr "2º"
 
-#: include/marriage_cls.php:777 include/person_cls.php:1302 views/list.php:1101
+#: include/marriage_cls.php:777 include/person_cls.php:1307 views/list.php:1106
 #: views/list_places_families.php:399 views/relations.php:1634
 #: views/relations.php:2085 views/relations.php:2288 views/relations.php:2444
 #: views/relations.php:2896
 msgid "3rd"
 msgstr "3º"
 
-#: include/marriage_cls.php:780 include/person_cls.php:1304 views/list.php:1103
+#: include/marriage_cls.php:780 include/person_cls.php:1309 views/list.php:1108
 #: views/list_places_families.php:401 views/relations.php:1307
 #: views/relations.php:1638 views/relations.php:2089 views/relations.php:2661
 #: views/relations.php:2765 views/relations.php:2900 views/relations.php:3645
@@ -8878,8 +8894,8 @@ msgid "Name filtered"
 msgstr "Nome filtrado"
 
 #: include/person_cls.php:1043 include/person_cls.php:1044
-#: views/family_pdf.php:68 views/family_pdf.php:103 views/family_pdf.php:139
-#: views/family_pdf.php:284 views/family_rtf.php:100 views/family_rtf.php:257
+#: views/family_pdf.php:68 views/family_pdf.php:103 views/family_pdf.php:140
+#: views/family_pdf.php:638 views/family_rtf.php:100 views/family_rtf.php:606
 msgid "Family group sheet"
 msgstr "Folha do grupo de famílias"
 
@@ -8902,11 +8918,11 @@ msgstr "Mapa de ampulheta"
 msgid "Admin"
 msgstr "Admin"
 
-#: include/person_cls.php:1178 include/person_cls.php:1847
-#: include/person_cls.php:1849 views/ancestor_sheet_pdf.php:111
+#: include/person_cls.php:1178 include/person_cls.php:1852
+#: include/person_cls.php:1854 views/ancestor_sheet_pdf.php:111
 #: views/ancestor_sheet_pdf.php:130 views/ancestor_sheet_pdf.php:131
-#: views/ancestor_sheet_pdf.php:255 views/list.php:1122 views/list.php:1137
-#: views/list.php:1152 views/list.php:1167 views/list_places_families.php:425
+#: views/ancestor_sheet_pdf.php:255 views/list.php:1127 views/list.php:1142
+#: views/list.php:1157 views/list.php:1172 views/list_places_families.php:425
 #: views/list_places_families.php:442 views/list_places_families.php:459
 #: views/list_places_families.php:476 views/stats_persons.php:105
 #: views/stats_persons.php:107 views/timeline.php:13
@@ -8937,64 +8953,64 @@ msgstr "divorciado(a) de"
 msgid "marriage (divorced) with"
 msgstr "matrimónio (divorciado) com"
 
-#: include/person_cls.php:1488
+#: include/person_cls.php:1493
 msgid "son of"
 msgstr "filho de"
 
-#: include/person_cls.php:1491
+#: include/person_cls.php:1496
 msgid "daughter of"
 msgstr "filha de"
 
-#: include/person_cls.php:1494
+#: include/person_cls.php:1499
 msgid "child of"
 msgstr "filho(a) de"
 
-#: include/person_cls.php:1584 include/person_cls.php:1585
+#: include/person_cls.php:1589 include/person_cls.php:1590
 msgid "adoption parents"
 msgstr "Pais adoptivos"
 
-#: include/person_cls.php:1659 include/person_cls.php:1660
+#: include/person_cls.php:1664 include/person_cls.php:1665
 msgid "stepparent"
 msgstr "Padrasto"
 
-#: include/person_cls.php:1662 include/person_cls.php:1663
+#: include/person_cls.php:1667 include/person_cls.php:1668
 msgid "legal parent"
 msgstr "Progenitor legal"
 
-#: include/person_cls.php:1665 include/person_cls.php:1666
+#: include/person_cls.php:1670 include/person_cls.php:1671
 msgid "foster parent"
 msgstr "Pai de acolhimento"
 
-#: include/person_cls.php:1669 include/person_cls.php:1670
+#: include/person_cls.php:1674 include/person_cls.php:1675
 #, fuzzy
 #| msgid "adoptive parent"
 msgid "adoptive parents"
 msgstr "Pai adoptivo"
 
-#: include/person_cls.php:1672 include/person_cls.php:1673
+#: include/person_cls.php:1677 include/person_cls.php:1678
 msgid "adoptive parent"
 msgstr "Pai adoptivo"
 
-#: include/person_cls.php:2572
+#: include/person_cls.php:2577
 msgid "ash dispersion"
 msgstr "dispersão das cinzas"
 
-#: include/person_cls.php:2594
+#: include/person_cls.php:2599
 msgid "occupation"
 msgstr "profissão"
 
-#: include/person_cls.php:2596
+#: include/person_cls.php:2601
 msgid "occupations"
 msgstr "profissões"
 
-#: include/person_cls.php:2678
+#: include/person_cls.php:2683
 #, fuzzy
 #| msgid "religion"
 msgid "religions"
 msgstr "Religião"
 
 #: include/show_addresses.php:23 include/show_addresses.php:25
-#: views/list.php:53
+#: views/list.php:52
 msgid "residence"
 msgstr "residência"
 
@@ -9067,15 +9083,15 @@ msgstr ""
 msgid "PDF Created with %s on"
 msgstr "Gerado pelo HuMo-gen em "
 
-#: include/witness.php:175 include/witness.php:178
+#: include/witness.php:187 include/witness.php:190
 msgid "This person was witness at:"
 msgstr "Esta pessoa foi testemunha em:"
 
-#: include/witness.php:215
+#: include/witness.php:227
 msgid "marriage witness"
 msgstr "Testemunha do casamento"
 
-#: include/witness.php:222
+#: include/witness.php:234
 msgid "marriage witness (religious)"
 msgstr "testemunha de casamento (religioso)"
 
@@ -9083,7 +9099,7 @@ msgstr "testemunha de casamento (religioso)"
 msgid "City"
 msgstr "Cidade"
 
-#: views/ancestor_chart.php:167 views/descendant_chart.php:599
+#: views/ancestor_chart.php:165 views/descendant_chart.php:599
 #: views/hourglass.php:363
 msgid ""
 "Right click on the image below and save it as a .png file to your computer."
@@ -9094,7 +9110,7 @@ msgstr ""
 "computador no formato .png.<br>Você pode então imprimi-la em múltiplas "
 "páginas com programas dedicados de terceiros, como os gratuitos: "
 
-#: views/ancestor_chart.php:167 views/descendant_chart.php:599
+#: views/ancestor_chart.php:165 views/descendant_chart.php:599
 #: views/hourglass.php:363
 msgid ""
 "If you have a plotter you can use its software to print the image on one "
@@ -9103,17 +9119,17 @@ msgstr ""
 "Se tiver um plotter pode recorrer ao seu software para imprimir a imagem "
 "numa ´folha grande."
 
-#: views/ancestor_chart.php:214 views/ancestor_chart.php:216
+#: views/ancestor_chart.php:212 views/ancestor_chart.php:214
 #: views/ancestor_sheet.php:70 views/ancestor_sheet.php:72
 #: views/anniversary.php:131 views/anniversary.php:136
-#: views/anniversary.php:291 views/descendant_chart.php:349
+#: views/anniversary.php:293 views/descendant_chart.php:349
 #: views/descendant_chart.php:453
 msgid " PRIVACY FILTER"
 msgstr "FILTRO de PRIVACIDADE"
 
 # Married
-#: views/ancestor_chart.php:254 views/ancestor_chart.php:270
-#: views/ancestor_chart.php:271 views/ancestor_chart.php:304
+#: views/ancestor_chart.php:252 views/ancestor_chart.php:268
+#: views/ancestor_chart.php:269 views/ancestor_chart.php:302
 #: views/ancestor_sheet.php:110 views/ancestor_sheet.php:126
 #: views/ancestor_sheet.php:127 views/ancestor_sheet.php:160
 #: views/ancestor_sheet.php:295 views/ancestor_sheet_pdf.php:257
@@ -9373,40 +9389,40 @@ msgstr "48-avós"
 
 #: views/ancestor_report.php:103 views/ancestor_report_pdf.php:170
 #: views/ancestor_report_pdf.php:172 views/ancestor_report_rtf.php:156
-#: views/family.php:301 views/family_pdf.php:176 views/family_rtf.php:171
+#: views/family.php:305 views/family_pdf.php:181 views/family_rtf.php:175
 msgid "generation "
 msgstr "geração"
 
 #: views/ancestor_report.php:128 views/ancestor_sheet.php:259
-#: views/family.php:132
+#: views/family.php:133
 msgid "PDF"
 msgstr "PDF"
 
-#: views/ancestor_report.php:146 views/family.php:153
+#: views/ancestor_report.php:146 views/family.php:154
 msgid "RTF"
 msgstr "RTF"
 
-#: views/ancestor_report.php:206 views/ancestor_report_pdf.php:255
+#: views/ancestor_report.php:209 views/ancestor_report_pdf.php:258
 #: views/ancestor_report_rtf.php:222
 #, fuzzy
 #| msgid "Allready listed above as number "
 msgid "Already listed above as number "
 msgstr "Já listado acima como número"
 
-#: views/ancestor_report.php:225 views/ancestor_report_pdf.php:286
+#: views/ancestor_report.php:232 views/ancestor_report_pdf.php:293
 #: views/ancestor_report_rtf.php:276
 msgid "divorced "
 msgstr "divorciado(a) "
 
-#: views/ancestor_report_pdf.php:392
+#: views/ancestor_report_pdf.php:399
 msgid "Title:"
 msgstr "Título:"
 
-#: views/ancestor_report_rtf.php:370 views/family_rtf.php:488
+#: views/ancestor_report_rtf.php:370 views/family_rtf.php:516
 msgid "Download RTF report."
 msgstr "Download do o relatório RTF"
 
-#: views/ancestor_report_rtf.php:371 views/family_rtf.php:489
+#: views/ancestor_report_rtf.php:371 views/family_rtf.php:517
 msgid ""
 "TIP: Don't use Wordpad to open this file (the lay-out will be wrong!). It's "
 "better to use a text processor like Word or OpenOffice Writer."
@@ -9415,7 +9431,7 @@ msgstr ""
 "incorrecto!). É melhor usar um processador de texto como o Word ou o "
 "OpenOffice Writer."
 
-#: views/ancestor_report_rtf.php:376 views/family_rtf.php:496
+#: views/ancestor_report_rtf.php:376 views/family_rtf.php:524
 msgid "Back"
 msgstr "Voltar"
 
@@ -9423,7 +9439,7 @@ msgstr "Voltar"
 msgid "Legend"
 msgstr "Legenda"
 
-#: views/ancestor_sheet.php:295 views/family.php:877 views/family.php:882
+#: views/ancestor_sheet.php:295 views/family.php:915 views/family.php:920
 msgid "married"
 msgstr "casado(a)"
 
@@ -9441,27 +9457,27 @@ msgstr ""
 msgid "Wedding anniversaries"
 msgstr ""
 
-#: views/anniversary.php:57 views/anniversary.php:187
+#: views/anniversary.php:57 views/anniversary.php:189
 msgid "Civil"
 msgstr ""
 
-#: views/anniversary.php:94 views/anniversary.php:229
+#: views/anniversary.php:94 views/anniversary.php:231
 msgid "Day"
 msgstr "Dia"
 
-#: views/anniversary.php:230
+#: views/anniversary.php:232
 msgid "Wedding year"
 msgstr ""
 
-#: views/anniversary.php:231
+#: views/anniversary.php:233
 msgid "Civil/ Religious"
 msgstr ""
 
-#: views/anniversary.php:232
+#: views/anniversary.php:234
 msgid "Spouses"
 msgstr ""
 
-#: views/anniversary.php:305
+#: views/anniversary.php:307
 msgid "No results found for this month"
 msgstr ""
 
@@ -9582,52 +9598,52 @@ msgstr "&amp;"
 msgid "died "
 msgstr "faleceu"
 
-#: views/family.php:57
+#: views/family.php:58
 msgid "Settings family screen"
 msgstr "Tela dos parâmetros de família"
 
-#: views/family.php:62 views/family.php:475 views/family.php:1111
-#: views/family.php:1116
+#: views/family.php:63 views/family.php:480 views/family.php:1149
+#: views/family.php:1154
 msgid "Family Page"
 msgstr "Página da Família"
 
-#: views/family.php:91
+#: views/family.php:92
 #, fuzzy
 #| msgid "Family Page"
 msgid "Family map"
 msgstr "Página da Família"
 
-#: views/family.php:92
+#: views/family.php:93
 #, fuzzy
 #| msgid "Show Google maps"
 msgid "Show family map"
 msgstr "Mostrar Mapas do Google"
 
-#: views/family.php:93
+#: views/family.php:94
 #, fuzzy
 #| msgid "Hide Google maps"
 msgid "Hide family map"
 msgstr "Ocultar Mapas do Google"
 
-#: views/family.php:103
+#: views/family.php:104
 msgid "Pictures"
 msgstr "Imagens"
 
-#: views/family.php:105
+#: views/family.php:106
 msgid "Hide pictures"
 msgstr "Esconder as imagens"
 
-#: views/family.php:193 views/family.php:196
+#: views/family.php:194 views/family.php:197
 msgid "Add to favourite list"
 msgstr "Adicionar à lista de favoritos"
 
-#: views/family.php:236 views/family.php:440
+#: views/family.php:237 views/family.php:453
 #, php-format
 msgid "TIP: use %s for other (ancestor and descendant) reports."
 msgstr "DICA: utilize %s para outros relatórios (ancestrais e descendentes)."
 
-#: views/family.php:534 views/family.php:602 views/outline_report.php:328
-#: views/outline_report.php:344 views/timeline.php:216
+#: views/family.php:544 views/family.php:623 views/outline_report.php:341
+#: views/outline_report.php:367 views/timeline.php:216
 msgid ""
 "*** Privacy filter is active, one or more items are filtered. Please login "
 "to see all items ***"
@@ -9635,129 +9651,129 @@ msgstr ""
 "*** O filtro de privacidade está ativo, um ou mais itens estão filtrados. "
 "Por favor proceda ao login para ver todos os itens. ***"
 
-#: views/family.php:588 views/family_rtf.php:401
+#: views/family.php:607 views/family_pdf.php:467 views/family_rtf.php:428
 msgid "Child"
 msgstr "Filho"
 
-#: views/family.php:638 views/family_pdf.php:520 views/family_rtf.php:448
+#: views/family.php:659 views/family_pdf.php:525 views/family_rtf.php:475
 msgid "follows"
 msgstr "segue"
 
-#: views/family.php:662 views/family.php:689 views/family.php:718
+#: views/family.php:688 views/family.php:718 views/family.php:752
 msgid "Adopted child:"
 msgstr "Filho adoptivo:"
 
-#: views/family.php:683 views/family.php:712
+#: views/family.php:712 views/family.php:746
 msgid "Stepchild"
 msgstr "Enteado"
 
-#: views/family.php:685 views/family.php:714
+#: views/family.php:714 views/family.php:748
 msgid "Legal child"
 msgstr "Filho legítimo"
 
-#: views/family.php:687 views/family.php:716
+#: views/family.php:716 views/family.php:750
 msgid "Foster child"
 msgstr "Filho ilegítimo"
 
-#: views/family.php:1080
+#: views/family.php:1118
 msgid "Family events"
 msgstr "Eventos familiares"
 
-#: views/family.php:1111
+#: views/family.php:1149
 msgid "Citation for:"
 msgstr "Citação para:"
 
-#: views/family.php:1133
+#: views/family.php:1171
 msgid "accessed"
 msgstr "acessado"
 
-#: views/family.php:1236 views/family.php:1243
+#: views/family.php:1274 views/family.php:1281
 msgid "New user note"
 msgstr "Nota aos novos Utilizadores"
 
-#: views/family.php:1251
+#: views/family.php:1289
 msgid "User note by family"
 msgstr "Nota do Utilizador por famílias"
 
-#: views/family.php:1271
+#: views/family.php:1309
 msgid "Your information is saved and will be reviewed by the webmaster."
 msgstr "A sua informação foi salva e será avaliada pelo webmaster."
 
-#: views/family.php:1302
+#: views/family.php:1340
 msgid "Add information or remarks"
 msgstr "Adicionar informações ou comentários"
 
-#: views/family.php:1319
+#: views/family.php:1357
 msgid "Your e-mail address is missing. Please add you're mail address here: "
 msgstr ""
 "O seu endereço de e-mail address está em falta.  Por favor indique o seu e-"
 "mail abaixo: "
 
-#: views/family.php:1336 views/mailform.php:99 views/register.php:105
+#: views/family.php:1374 views/mailform.php:99 views/register.php:105
 #: views/reset_password.php:90
 msgid "Send"
 msgstr "Enviar"
 
-#: views/fanchart.php:502
+#: views/fanchart.php:507
 msgid "RELOAD FANCHART WITH 'VIEW' BUTTON ON THE LEFT"
 msgstr "Recarregue FANCHART com o botão \"VIEW\" da esquerda"
 
-#: views/fanchart.php:575
+#: views/fanchart.php:580
 msgid "Fan style"
 msgstr "Estilo de Fan"
 
-#: views/fanchart.php:577
+#: views/fanchart.php:582
 msgid "half"
 msgstr "metade"
 
-#: views/fanchart.php:579
+#: views/fanchart.php:584
 msgid "full"
 msgstr "total"
 
-#: views/fanchart.php:593
+#: views/fanchart.php:598
 msgid "Font size"
 msgstr "Tamanho da fonte"
 
-#: views/fanchart.php:605
+#: views/fanchart.php:610
 msgid "Years only"
 msgstr "Apenas os anos"
 
-#: views/fanchart.php:606
+#: views/fanchart.php:611
 msgid "Full dates"
 msgstr "Datas completas"
 
-#: views/fanchart.php:611
+#: views/fanchart.php:616
 msgid "Fan width:"
 msgstr "Comprimento da fan:"
 
-#: views/fanchart.php:613
+#: views/fanchart.php:618
 msgid ""
 "\"auto\" for automatic resizing for best display, or value between 50-300"
 msgstr ""
 "\"auto\" para redimensionamento automático da melhor tela, ou um valor entre "
 "50-300"
 
-#: views/fanchart.php:617
+#: views/fanchart.php:622
 msgid "Background"
 msgstr "Background"
 
-#: views/fanchart.php:619
+#: views/fanchart.php:624
 msgid "transparent"
 msgstr "transparente"
 
-#: views/fanchart.php:620
+#: views/fanchart.php:625
 msgid "white"
 msgstr "branco"
 
-#: views/fanchart.php:655
+#: views/fanchart.php:660
 msgid "No Chinese ttf font file found"
 msgstr "Não se descobriu nenhum arquivo de fonte ttf em Chinês."
 
-#: views/fanchart.php:656
+#: views/fanchart.php:661
 msgid "Download link"
 msgstr "Link para download:"
 
-#: views/fanchart.php:658
+#: views/fanchart.php:663
 msgid "Unzip and place in \"include/fanchart/chinese/\" folder"
 msgstr ""
 "Descomprima p arquivo (\"unzip\") e coloque-o na pasta \"include/fanchart/"
@@ -10073,11 +10089,11 @@ msgstr ""
 msgid "Recently changed persons and new persons"
 msgstr ""
 
-#: views/layout.php:350 views/list.php:147
+#: views/layout.php:350 views/list.php:146
 msgid "Minimum:"
 msgstr "Mínimo:"
 
-#: views/layout.php:350 views/list.php:147
+#: views/layout.php:350 views/list.php:146
 msgid "characters"
 msgstr "caracteres"
 
@@ -10115,53 +10131,53 @@ msgstr ""
 msgid "European law: %s cookie information"
 msgstr "Legislação europeia: %s HuMo-gen - informação sobre os cookies"
 
-#: views/list.php:35
+#: views/list.php:34
 msgid "birth pl."
 msgstr "Local de nasc."
 
-#: views/list.php:45
+#: views/list.php:44
 msgid "bapt pl."
 msgstr "Local de bapt."
 
 # Residence
-#: views/list.php:52 views/list.php:959
+#: views/list.php:51 views/list.php:959
 msgid "^"
 msgstr "^"
 
-#: views/list.php:61
+#: views/list.php:60
 msgid "death pl."
 msgstr "Local de falecim."
 
-#: views/list.php:69
+#: views/list.php:68
 msgid "bur pl."
 msgstr "Local de enterro"
 
-#: views/list.php:85 views/list_places_families.php:79
+#: views/list.php:84 views/list_places_families.php:79
 msgid "Find place"
 msgstr "Encontrar local"
 
-#: views/list.php:90 views/list.php:181 views/list.php:203 views/list.php:223
-#: views/list.php:246 views/list.php:266 views/list.php:310 views/list.php:323
-#: views/list.php:336 views/list.php:364 views/list.php:377 views/list.php:395
-#: views/list.php:407 views/list.php:419 views/list_places_families.php:85
+#: views/list.php:89 views/list.php:180 views/list.php:202 views/list.php:222
+#: views/list.php:245 views/list.php:265 views/list.php:309 views/list.php:322
+#: views/list.php:335 views/list.php:363 views/list.php:376 views/list.php:394
+#: views/list.php:406 views/list.php:418 views/list_places_families.php:85
 msgid "Contains"
 msgstr "Contém"
 
-#: views/list.php:91 views/list.php:182 views/list.php:204 views/list.php:222
-#: views/list.php:247 views/list.php:267 views/list.php:311 views/list.php:324
-#: views/list.php:337 views/list.php:365 views/list.php:378 views/list.php:396
-#: views/list.php:408 views/list.php:420 views/list_places_families.php:86
+#: views/list.php:90 views/list.php:181 views/list.php:203 views/list.php:221
+#: views/list.php:246 views/list.php:266 views/list.php:310 views/list.php:323
+#: views/list.php:336 views/list.php:364 views/list.php:377 views/list.php:395
+#: views/list.php:407 views/list.php:419 views/list_places_families.php:86
 msgid "Equals"
 msgstr "Iguala"
 
-#: views/list.php:92 views/list.php:183 views/list.php:205 views/list.php:224
-#: views/list.php:248 views/list.php:268 views/list.php:312 views/list.php:325
-#: views/list.php:338 views/list.php:366 views/list.php:379 views/list.php:397
-#: views/list.php:409 views/list.php:421 views/list_places_families.php:87
+#: views/list.php:91 views/list.php:182 views/list.php:204 views/list.php:223
+#: views/list.php:247 views/list.php:267 views/list.php:311 views/list.php:324
+#: views/list.php:337 views/list.php:365 views/list.php:378 views/list.php:396
+#: views/list.php:408 views/list.php:420 views/list_places_families.php:87
 msgid "Starts with"
 msgstr "Começa com"
 
-#: views/list.php:126
+#: views/list.php:125
 msgid ""
 "\"John Jones\", \"Jones John\", \"John of Jones\", \"of Jones, John\", "
 "\"Jones, John of\", \"Jones of, John\""
@@ -10169,75 +10185,75 @@ msgstr ""
 "\"João Almeida\", \"Almeida João\", \"João de Almeida\", \"de Almeida, "
 "João\", \"Almeida, João de\", \"Almeida de, João\""
 
-#: views/list.php:238 views/list.php:258
+#: views/list.php:237 views/list.php:257
 #, fuzzy
 #| msgid "Date - time"
 msgid "Date untill"
 msgstr "Data - tempo"
 
-#: views/list.php:296
+#: views/list.php:295
 msgid "Research status:"
 msgstr ""
 
-#: views/list.php:298
+#: views/list.php:297
 msgid "parents unknown"
 msgstr ""
 
-#: views/list.php:299
+#: views/list.php:298
 msgid "father unknown"
 msgstr ""
 
-#: views/list.php:300
+#: views/list.php:299
 msgid "mother unknown"
 msgstr ""
 
-#: views/list.php:350
+#: views/list.php:349
 msgid "Choose sex:"
 msgstr "Escolha o sexo:"
 
-#: views/list.php:353 views/stats_firstnames.php:105
-#: views/stats_persons.php:354
+#: views/list.php:352 views/stats_firstnames.php:105
+#: views/stats_persons.php:361
 msgid "Male"
 msgstr "Sexo Masculino"
 
-#: views/list.php:354 views/stats_firstnames.php:106
-#: views/stats_persons.php:355
+#: views/list.php:353 views/stats_firstnames.php:106
+#: views/stats_persons.php:362
 msgid "Female"
 msgstr "Sexo Feminino"
 
-#: views/list.php:404
+#: views/list.php:403
 msgid "Partner firstname"
 msgstr "Nome próprio do companheiro(a)"
 
-#: views/list.php:416
+#: views/list.php:415
 msgid "Partner lastname"
 msgstr "Último nome do companheiro(a)"
 
-#: views/list.php:457
+#: views/list.php:456
 msgid "Clear fields"
 msgstr "Limpar os campos"
 
-#: views/list.php:470
+#: views/list.php:469
 msgid "Wildcards:"
 msgstr ""
 
-#: views/list.php:471
+#: views/list.php:470
 #, fuzzy
 #| msgid "characters"
 msgid "_ = 1 character"
 msgstr "caracteres"
 
-#: views/list.php:472
+#: views/list.php:471
 #, fuzzy
 #| msgid "characters"
 msgid "% = >1 character"
 msgstr "caracteres"
 
-#: views/list.php:474
+#: views/list.php:473
 msgid "Tip"
 msgstr "Dica"
 
-#: views/list.php:475
+#: views/list.php:474
 msgid ""
 "With Advanced Search you can easily create lists like: all persons with "
 "surname <b>Schaap</b> who were born <b>between 1820 and 1840</b> in "
@@ -10245,15 +10261,15 @@ msgid ""
 "<b>died in 1901</b> in <b>Amstelveen.</b>"
 msgstr ""
 
-#: views/list.php:484
+#: views/list.php:483
 msgid "Standard search"
 msgstr "Pesquisa normal"
 
-#: views/list.php:544
+#: views/list.php:543
 msgid " persons found."
 msgstr " pessoas encontradas."
 
-#: views/list.php:576 views/list_places_families.php:177
+#: views/list.php:575 views/list_places_families.php:177
 msgid "Concise view"
 msgstr "Vista concisa"
 
@@ -10270,19 +10286,19 @@ msgstr "Ordenar por:"
 msgid ") ("
 msgstr ") ("
 
-#: views/list_names.php:15
+#: views/list_names.php:111
 msgid "All names"
 msgstr "Todos os nomes"
 
-#: views/list_names.php:196 views/statistics.php:27
+#: views/list_names.php:115 views/statistics.php:27
 msgid "Frequency of Surnames"
 msgstr "Frequência dos Apelidos"
 
-#: views/list_names.php:204 views/stats_surnames.php:103
+#: views/list_names.php:123 views/stats_surnames.php:126
 msgid "Number of displayed surnames"
 msgstr "Número de apelidos exibidos"
 
-#: views/list_names.php:217 views/stats_surnames.php:121
+#: views/list_names.php:136 views/stats_surnames.php:144
 msgid "Number of columns"
 msgstr "Número de colunas"
 
@@ -10344,131 +10360,131 @@ msgstr "Mensagem: "
 msgid "Please answer the block-spam-question:"
 msgstr "Por favor responda à pergunta anti-spam:"
 
-#: views/maps.php:22
+#: views/maps.php:26
 msgid "Display birth or death locations across different time periods"
 msgstr ""
 "Mostrar os locais de nascimento ou óbito ao longo de diferentes períodos de "
 "tempo"
 
-#: views/maps.php:27
+#: views/maps.php:31
 msgid ""
 "Click markers to show information about the location and see a list off all "
 "persons connected to the location."
 msgstr ""
 
-#: views/maps.php:79
+#: views/maps.php:83
 msgid "Display:"
 msgstr "Exibir:"
 
-#: views/maps.php:84
+#: views/maps.php:88
 msgid "Birth locations"
 msgstr "Locais de nascimento"
 
-#: views/maps.php:85
+#: views/maps.php:89
 msgid "Death locations"
 msgstr "Locais de óbito"
 
-#: views/maps.php:94 views/maps.php:325
+#: views/maps.php:98 views/maps.php:342
 msgid "Find location on the map"
 msgstr "Encontrar o local no mapa"
 
-#: views/maps.php:152
+#: views/maps.php:156
 msgid "Display births until: "
 msgstr "Mostrar nascimentos até: "
 
-#: views/maps.php:154
+#: views/maps.php:158
 msgid "Display deaths until: "
 msgstr "Mostrar falecimentos até: "
 
-#: views/maps.php:176 views/maps.php:190
+#: views/maps.php:180 views/maps.php:206
 msgid "Filter by specific family name(s)"
 msgstr "Filtrar por nome(s) de família específico(s)"
 
-#: views/maps.php:194
+#: views/maps.php:210
 msgid "Mark checkbox next to name(s)"
 msgstr "Marcar a caixa de verificação junto ao(s) nome(s)"
 
-#: views/maps.php:209
+#: views/maps.php:226
 msgid "Choose"
 msgstr "Escolher"
 
-#: views/maps.php:223
+#: views/maps.php:240
 msgid "Filter by descendants"
 msgstr ""
 
-#: views/maps.php:295
+#: views/maps.php:312
 msgid "Filter by ancestors"
 msgstr ""
 
-#: views/maps.php:355
+#: views/maps.php:372
 msgid "Mapping with specific name(s): "
 msgstr "Mapeamento com nome(s)  específico(s): "
 
-#: views/maps.php:356
+#: views/maps.php:373
 msgid "Switch name filter off"
 msgstr "Desligar o filtro de nomes"
 
-#: views/maps.php:364
+#: views/maps.php:381
 msgid "Filter by descendants of: "
 msgstr "Filtrar pelos descendentes de: "
 
-#: views/maps.php:364
+#: views/maps.php:381
 msgid "Switch descendant filter off"
 msgstr "Desligar o filtro de descendentes"
 
-#: views/maps.php:366
+#: views/maps.php:383
 msgid "No known birth places amongst descendants"
 msgstr "Não existem locais de nascimento para os descendentes"
 
-#: views/maps.php:375
+#: views/maps.php:392
 msgid "Filter by ancestors of: "
 msgstr ""
 
-#: views/maps.php:375
+#: views/maps.php:392
 msgid "Switch ancestor filter off"
 msgstr ""
 
-#: views/maps.php:377
+#: views/maps.php:394
 msgid "No known birth places amongst ancestors"
 msgstr ""
 
-#: views/maps.php:414
+#: views/maps.php:431
 msgid "Filter by descendants of a person"
 msgstr "Filtrar pelos descendentes de uma pessoa"
 
-#: views/maps.php:415 views/maps.php:547
+#: views/maps.php:432 views/maps.php:564
 msgid "Pick a name or enter ID:"
 msgstr "Escolha um nome ou tecle a ID:"
 
-#: views/maps.php:418 views/maps.php:550
+#: views/maps.php:435 views/maps.php:567
 msgid "Pick a name from the pulldown list"
 msgstr "Escolha um nome da lista"
 
-#: views/maps.php:546
+#: views/maps.php:563
 msgid "Filter by ancestors of a person"
 msgstr ""
 
-#: views/maps.php:893
+#: views/maps.php:910
 msgid "today "
 msgstr "hoje "
 
-#: views/maps.php:979
+#: views/maps.php:996
 msgid "Location: "
 msgstr "Local: "
 
-#: views/maps.php:981
+#: views/maps.php:998
 msgid "For a list of persons born here until "
 msgstr "Para a lista de pessoas nascidas até "
 
-#: views/maps.php:983
+#: views/maps.php:1000
 msgid "For a list of all people that died here until "
 msgstr "Para a lista de pessoas que faleram aqui até "
 
-#: views/maps.php:985
+#: views/maps.php:1002
 msgid " click here"
 msgstr " clique aqui"
 
-#: views/maps.php:986
+#: views/maps.php:1003
 msgid "Read about this location in "
 msgstr "Ler sobre este local em"
 
@@ -11007,47 +11023,47 @@ msgstr "Frequência dos Nomes Próprios"
 msgid "Number of displayed first names"
 msgstr "Número de nomes próprios exibidos"
 
-#: views/stats_persons.php:360 views/stats_tree.php:82
+#: views/stats_persons.php:367 views/stats_tree.php:82
 msgid "No. of persons"
 msgstr "Nº de pessoas"
 
-#: views/stats_persons.php:373
+#: views/stats_persons.php:380
 msgid "Oldest birth date"
 msgstr "Nascimento mais antigo"
 
-#: views/stats_persons.php:394
+#: views/stats_persons.php:401
 msgid "Youngest birth date"
 msgstr "Nascimento mais recente"
 
-#: views/stats_persons.php:415
+#: views/stats_persons.php:422
 msgid "Oldest baptism date"
 msgstr "Data de baptismo mais antiga:"
 
-#: views/stats_persons.php:436
+#: views/stats_persons.php:443
 msgid "Youngest baptism date"
 msgstr "Data de baptismo mais recente"
 
-#: views/stats_persons.php:457
+#: views/stats_persons.php:464
 msgid "Oldest death date"
 msgstr "Óbito mais antigo"
 
-#: views/stats_persons.php:478
+#: views/stats_persons.php:485
 msgid "Youngest death date"
 msgstr "Óbito mais recente"
 
-#: views/stats_persons.php:498
+#: views/stats_persons.php:505
 msgid "Longest living person"
 msgstr "Pessoa de vida mais longa"
 
-#: views/stats_persons.php:521
+#: views/stats_persons.php:528
 msgid "Average age"
 msgstr "Média  etária"
 
-#: views/stats_persons.php:540
+#: views/stats_persons.php:547
 msgid "Average age married persons"
 msgstr "Média etária das pessoas casadas"
 
-#: views/stats_persons.php:558
+#: views/stats_persons.php:565
 msgid "Lifespan range of married individuals"
 msgstr "Tempo de vida dos indivíduos casados"
 
