@@ -739,8 +739,6 @@ if (isset($_POST['check_new'])) {
                         $search_lat =  $_POST['location_lat'];
                         $search_lng =  $_POST['location_lng'];
                     }
-                    // remove brackets from the search
-                    $search_name = preg_replace('/\((.+)?\)/', '$1', $search_name)             
                     
                     
                     ?>
@@ -838,7 +836,7 @@ if (isset($_POST['check_new'])) {
                                 var address = document.getElementById(\'address\').value;
                                 var encaddr = encodeURI(address);
                                 var nom_req = new XMLHttpRequest();
-                                var url = "https://nominatim.openstreetmap.org/search?q=" + encaddr + "&format=json&addressdetails=1&limit=14";
+                                var url = "https://nominatim.openstreetmap.org/search?q=" + encaddr + "&format=json&addressdetails=1&limit=40";
 
                                 nom_req.onreadystatechange = function() {
                                     if (this.readyState == 4 && this.status == 200) {
