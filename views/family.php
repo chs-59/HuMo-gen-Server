@@ -342,8 +342,8 @@ else {
                 $count_marr = "0";
             }
 
-//flag to skip unneeded tables
-$is_table = false;
+            //flag to skip unneeded tables
+            $is_table = false;
             // *** Loop multiple marriages of main_person ***
             for ($parent1_marr = 0; $parent1_marr <= $count_marr; $parent1_marr++) {
                 $id = $marriage_array[$parent1_marr];
@@ -387,18 +387,19 @@ $is_table = false;
                         if (!isset($record->stat_country_ip_address)) {
                             if (strlen($visitor_ip) > 6) {
                                 $sql = "INSERT INTO humo_stat_country
-                                    SET stat_country_ip_address = :stat_country_ip_address,
-                                    stat_country_code =:stat_country_code";
+                                    SET stat_country_ip_address = :stat_country_ip_address"; //,
+                                // 2025-09-02: Disable geoplugin, no free use, need api key
+                                //    stat_country_code =:stat_country_code";
 
                                 // *** Get country code ***
-                                include_once(__DIR__ . '/../include/geoplugin/geoplugin.class.php');
-                                $geoplugin = new geoPlugin();
-                                $geoplugin->locate();
+                                //include_once(__DIR__ . '/../include/geoplugin/geoplugin.class.php');
+                                //$geoplugin = new geoPlugin();
+                                //$geoplugin->locate();
 
                                 try {
                                     $qry = $dbh->prepare($sql);
                                     $qry->bindValue(':stat_country_ip_address', $visitor_ip, PDO::PARAM_STR);
-                                    $qry->bindValue(':stat_country_code', $geoplugin->countryCode, PDO::PARAM_STR);
+                                //    $qry->bindValue(':stat_country_code', $geoplugin->countryCode, PDO::PARAM_STR);
                                     $qry->execute();
                                 } catch (PDOException $e) {
                                     //echo $e->getMessage() . '<br>';
@@ -514,9 +515,9 @@ $is_table = false;
                             $family_privacy = true;
                         }
                             // *** $family_privacy='1' = filter ***
-if ($p2_transparent) {
-    //nothing
-}
+                        if ($p2_transparent) {
+                            //Stealth mode: do nothing
+                        }
                             elseif ($family_privacy) {
                                 echo "\n<br>\n";
                                 echo '<div class="marriage">' . "\n";
@@ -536,9 +537,9 @@ if ($p2_transparent) {
                     // *** Parent2 (normally the mother)                         ***
                     // *************************************************************
 
-if ($p2_transparent) {
-    //nothing
-}
+                    if ($p2_transparent) {
+                        //Stealth mode: do nothing
+                    }
                     // *** Person must be totally hidden ***
                         elseif ($user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && strpos(' ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
                             echo '<div class="parent2">' . __('*** Privacy filter is active, one or more items are filtered. Please login to see all items ***') . '<br></div>';
@@ -564,7 +565,7 @@ if ($p2_transparent) {
                         if ($source_array) {
                             echo $source_array['text'];
                         }
-$is_table = check_table($is_table, $data);
+                    $is_table = check_table($is_table, $data);
                     }
 
                     // *** Show addresses by family ***
@@ -599,7 +600,7 @@ $is_table = check_table($is_table, $data);
                             $child_array[] = $child_tmp;
                         }
                         if (count($child_array) >0) {
-                        $is_table = check_table($is_table, $data);
+                            $is_table = check_table($is_table, $data);
                         // TODO improve layout in RTF export
                     ?>
                         <div class="py-3">
@@ -609,7 +610,7 @@ $is_table = check_table($is_table, $data);
                         </div>
 
                         <?php
-}
+                        }
                         foreach ($child_array as $i => $value) {
                             @$childDb = $db_functions->get_person($child_array[$i]);
                       
