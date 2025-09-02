@@ -43,6 +43,12 @@ program specific tag)
 - Player **plyr.io reintegrated to lightroom gallery** for mp4 and webm. (HGO: 
 Player not used, playback depends on browser capabilities)
 - Player plyr.io **completely localized** (no links to CDN)
+- Privacy protection can be set to **Stealth Mode** to remove protected persons 
+completely from all output in front end. (HGO: only anonymization possible)
+- Specified branches of the tree can be defined to be viewed without privacy 
+protection. This front end feature is set up by user.
+- Enhanced **search for geodata** with OpenStreetMap in back end. (HMO: feature
+is broken and a lot of JS-code missing)
 
 ## Removed or cleanup
 - Global option to _enable automatic thumbnail generation_ removed. Reason: Thumbnail
@@ -53,6 +59,7 @@ settings moved to tree pictures settings.
 picture galleries
 - Fixed inconsistencies produced by category suffix
 - Fixed bug when renaming files in sub-folder
+- Disabled GeoPlugin (no free use any more, need API-Key)
 
 ## HOWTO (in progress) 
 This HOWTO will only cover the differences to HGO. For all other topics
