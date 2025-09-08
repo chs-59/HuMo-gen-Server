@@ -113,7 +113,7 @@ if ($menu_tab != 'children') {
             <div class="col-md-6">
                 <div class="input-group">
                     <input type="text" name="relation_add2" value="" size="17" placeholder="<?= __('GEDCOM number (ID)'); ?>" required class="form-control form-control-sm">
-                    <a href="#" onClick='window.open("index.php?page=editor_person_select&person=0&person_item=relation_add2&tree_id=<?= $tree_id; ?>","","<?= $field_popup; ?>")'><img src=" ../images/search.png" alt="<?= __('Search'); ?>"></a>
+                    <a href="#" onClick='window.open("index.php?page=editor_person_select&form=2&person_item=relation_add2&tree_id=<?= $tree_id; ?>","","<?= $field_popup; ?>")'><img src=" ../images/search.png" alt="<?= __('Search'); ?>"></a>
                 </div>
             </div>
             <div class="col-md-1">
@@ -365,7 +365,15 @@ if ($menu_tab == 'marriage' && $person->pers_fams) {
                             <div class="col-md-7">
                                 <div class="input-group">
                                     <input type="text" name="fam_relation_place" value="<?= htmlspecialchars($fam_relation_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
+                                    <input type="hidden" name="fam_relation_place_geo" value="">
+                                    <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=2&amp;place_item=fam_relation_place","","<?= $field_popup; ?>")'><img src="../images/search_osm.png" title="<?= __('Search with OpenStreetMap'); ?>"></a><br>
                                 </div>
+                            <div class="input-group">
+                                <span id="fam_relation_place_disp" style="display:none">
+                                    <img src="../images/okay.png"> 
+                                    <?= __('Geolocation data added. Press "Save" to write to database'); ?>
+                                </span>
+                            </div>
                             </div>
                         </div>
 
@@ -441,6 +449,14 @@ if ($menu_tab == 'marriage' && $person->pers_fams) {
                             <div class="col-md-7">
                                 <div class="input-group">
                                     <input type="text" name="fam_marr_notice_place" value="<?= htmlspecialchars($fam_marr_notice_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
+                                    <input type="hidden" name="fam_marr_notice_place_geo" value="">
+                                    <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=2&amp;place_item=fam_marr_notice_place","","<?= $field_popup; ?>")'><img src="../images/search_osm.png" title="<?= __('Search with OpenStreetMap'); ?>"></a><br>
+                                </div>
+                                <div class="input-group">
+                                    <span id="fam_marr_notice_place_disp" style="display:none">
+                                        <img src="../images/okay.png"> 
+                                        <?= __('Geolocation data added. Press "Save" to write to database'); ?>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -530,6 +546,14 @@ if ($menu_tab == 'marriage' && $person->pers_fams) {
                             <div class="col-md-7">
                                 <div class="input-group">
                                     <input type="text" name="fam_marr_place" value="<?= htmlspecialchars($fam_marr_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
+                                    <input type="hidden" name="fam_marr_place_geo" value="">
+                                    <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=2&amp;place_item=fam_marr_place","","<?= $field_popup; ?>")'><img src="../images/search_osm.png" title="<?= __('Search with OpenStreetMap'); ?>"></a><br>
+                                </div>
+                                <div class="input-group">
+                                    <span id="fam_marr_place_disp" style="display:none">
+                                        <img src="../images/okay.png"> 
+                                        <?= __('Geolocation data added. Press "Save" to write to database'); ?>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -667,6 +691,14 @@ if ($menu_tab == 'marriage' && $person->pers_fams) {
                             <div class="col-md-7">
                                 <div class="input-group">
                                     <input type="text" name="fam_marr_church_notice_place" value="<?= htmlspecialchars($fam_marr_church_notice_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
+                                    <input type="hidden" name="fam_marr_church_notice_place_geo" value="">
+                                    <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=2&amp;place_item=fam_marr_church_notice_place","","<?= $field_popup; ?>")'><img src="../images/search_osm.png" title="<?= __('Search with OpenStreetMap'); ?>"></a><br>
+                                </div>
+                                <div class="input-group">
+                                    <span id="fam_marr_church_notice_place_disp" style="display:none">
+                                        <img src="../images/okay.png"> 
+                                        <?= __('Geolocation data added. Press "Save" to write to database'); ?>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -742,6 +774,14 @@ if ($menu_tab == 'marriage' && $person->pers_fams) {
                             <div class="col-md-7">
                                 <div class="input-group">
                                     <input type="text" name="fam_marr_church_place" value="<?= htmlspecialchars($fam_marr_church_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
+                                    <input type="hidden" name="fam_marr_church_place_geo" value="">
+                                    <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=2&amp;place_item=fam_marr_church_place","","<?= $field_popup; ?>")'><img src="../images/search_osm.png" title="<?= __('Search with OpenStreetMap'); ?>"></a><br>
+                                </div>
+                                <div class="input-group">
+                                    <span id="fam_marr_church_place_disp" style="display:none">
+                                        <img src="../images/okay.png"> 
+                                        <?= __('Geolocation data added. Press "Save" to write to database'); ?>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -839,8 +879,16 @@ if ($menu_tab == 'marriage' && $person->pers_fams) {
                             <div class="col-md-7">
                                 <div class="input-group">
                                     <input type="text" name="fam_div_place" value="<?= htmlspecialchars($fam_div_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
+                                    <input type="hidden" name="fam_div_place_geo" value="">
+                                    <a href="#" onClick='window.open("index.php?page=editor_place_select&amp;form=2&amp;place_item=fam_div_place","","<?= $field_popup; ?>")'><img src="../images/search_osm.png" title="<?= __('Search with OpenStreetMap'); ?>"></a><br>
                                 </div>
-                            </div>
+                                 <div class="input-group">
+                                    <span id="fam_div_place_disp" style="display:none">
+                                        <img src="../images/okay.png"> 
+                                        <?= __('Geolocation data added. Press "Save" to write to database'); ?>
+                                    </span>
+                                </div>
+                           </div>
                         </div>
 
                         <?php

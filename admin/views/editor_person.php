@@ -675,12 +675,8 @@
 
                     <div class="row mb-2">
                         <label for="pers_birth_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
-                        <div class="col-md-7">
-                            <div class="input-group">
-                                <input type="text" name="pers_birth_place" value="<?= htmlspecialchars($pers_birth_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
-                            </div>
-                        </div>
-                    </div>
+                        <?= print_place_input('pers_birth_place', $pers_birth_place, 1); ?>
+                   </div>
 
                     <div class="row mb-2">
                         <label for="pers_birth_time" class="col-md-3 col-form-label"><?= ucfirst(__('birth time')); ?></label>
@@ -773,14 +769,8 @@
 
                     <div class="row mb-2">
                         <label for="birth_decl_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
-                        <div class="col-md-7">
-                            <div class="input-group">
-                                <input type="text" name="birth_decl_place" value="<?= htmlspecialchars($birth_decl_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
-                                    <img src="../images/search.png" alt="<?= __('Search'); ?>">
-                                </a><br>
-                            </div>
-                        </div>
-                    </div>
+                        <?= print_place_input('birth_decl_place', $birth_decl_place, 1); ?>
+                   </div>
 
                     <?php
                     // *** Check if there are multiple lines in text ***
@@ -1036,11 +1026,7 @@
 
                     <div class="row mb-2">
                         <label for="pers_bapt_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
-                        <div class="col-md-7">
-                            <div class="input-group">
-                                <input type="text" name="pers_bapt_place" value="<?= htmlspecialchars($pers_bapt_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
-                            </div>
-                        </div>
+                        <?= print_place_input('pers_bapt_place', $pers_bapt_place, 1); ?>
                     </div>
 
                     <div class="row mb-2">
@@ -1170,11 +1156,7 @@
 
                     <div class="row mb-2">
                         <label for="pers_death_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
-                        <div class="col-md-7">
-                            <div class="input-group">
-                                <input type="text" name="pers_death_place" value="<?= htmlspecialchars($pers_death_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
-                            </div>
-                        </div>
+                        <?= print_place_input('pers_death_place', $pers_death_place, 1); ?>
                     </div>
 
                     <!-- Age by death -->
@@ -1319,11 +1301,7 @@
 
                     <div class="row mb-2">
                         <label for="death_decl_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
-                        <div class="col-md-7">
-                            <div class="input-group">
-                                <input type="text" name="death_decl_place" value="<?= htmlspecialchars($death_decl_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
-                            </div>
-                        </div>
+                        <?= print_place_input('death_decl_place', $death_decl_place, 1); ?>
                     </div>
 
                     <?php
@@ -1395,11 +1373,7 @@
 
                     <div class="row mb-2">
                         <label for="pers_buried_place" class="col-md-3 col-form-label"><?= __('Place'); ?></label>
-                        <div class="col-md-7">
-                            <div class="input-group">
-                                <input type="text" name="pers_buried_place" value="<?= htmlspecialchars($pers_buried_place); ?>" size="<?= $field_place; ?>" class="search-place form-control form-control-sm">
-                            </div>
-                        </div>
+                        <?= print_place_input('pers_buried_place', $pers_buried_place, 1); ?>
                     </div>
 
                     <div class="row mb-2">
@@ -1705,3 +1679,27 @@ It\'s also possible to add your own icons by a person! Add the icon in the image
     </table><br>
     <!-- End of person form -->
 </form>
+  <?php
+function print_place_input($input_name, $input_value, $form) {
+      global $field_place, $field_popup;
+      $my_html = '
+<div class="col-md-7">
+    <div class="input-group">
+        <input type="text" name="' . $input_name . '" value="' . htmlspecialchars($input_value) . '" size="' . $field_place . '" class="search-place form-control form-control-sm">
+        <input type="hidden" name="' . $input_name . '_geo" value="">
+        <button type="button" onClick=\'window.open("index.php?page=editor_place_select&amp;form=' . $form . '&amp;place_item=' . $input_name . '&place="+encodeURI(document.form' . $form . '.' . $input_name . '.value),"","' . $field_popup . '"); return false;\'>
+            <img src="../images/search_osm.png" title="' . __('Search with OpenStreetMap') . '">
+        </button><br>
+    </div>
+    <div class="input-group">
+        <span id="' . $input_name . '_disp" style="display:none">
+            <img src="../images/okay.png"> '; 
+            $my_html .= __('Geolocation data added. Press "Save" to write to database');
+$my_html .= '
+        </span>
+    </div>
+</div>';
+return $my_html;
+}
+      
+ 
