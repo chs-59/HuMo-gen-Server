@@ -423,20 +423,7 @@ if (isset($_POST['check_new'])) {
         unset($_SESSION['add_locations']);
         ?>
     <?php } ?>
-
-    <?php
-    /* Sept. 2024: no longer needed.
-    <form action="index.php?page=maps&amp;menu=locations" method="post">
-        <div class="row mb-2">
-            <div class="col-md-12">
-                <?= __('Refresh the location list to display a proper functional "Find a location on the map" list.'); ?><br>
-                <input type="checkbox" name="purge" class="form-check-input"> <?= __('Also delete all locations that have become obsolete (not connected to any persons anymore).'); ?>
-                <input type="submit" value="<?= __('Refresh'); ?>" name="refresh" class="btn btn-sm btn-secondary">
-            </div>
-        </div>
-    </form>
-    */
-    ?>
+  
 
     <div class="row mb-2">
         <div class="col-md-12">
@@ -687,9 +674,14 @@ if (isset($_POST['check_new'])) {
                                             $_POST['loc_find'] = $loc_listDb->location_id;
                                             $find_default = false;
                                         }
+                                        $mark_zero = '';
+                                        if (empty($loc_listDb->location_lat)) {
+                                            $mark_zero = '(' . __('Data missing!') . ')';
+                                        }
+                                        
                                     ?>
                                         <option value="<?= $loc_listDb->location_id; ?>" <?= $selected; ?>>
-                                            <?= $loc_listDb->location_location; ?>
+                                        <?= $loc_listDb->location_location; ?> <?= $mark_zero; ?>
                                         </option>
                                     <?php } ?>
                                 </select>

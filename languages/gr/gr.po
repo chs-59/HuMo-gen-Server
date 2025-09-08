@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-genealogy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-01 21:27+0200\n"
-"PO-Revision-Date: 2025-09-01 21:27+0200\n"
+"POT-Creation-Date: 2025-09-08 15:37+0200\n"
+"PO-Revision-Date: 2025-09-08 15:37+0200\n"
 "Last-Translator: dimi fas, 2024\n"
 "Language-Team: Greek (http://app.transifex.com/humo-gen/humo-gen/language/"
 "el/)\n"
@@ -306,19 +306,19 @@ msgid "Event"
 msgstr "Εκδήλωση"
 
 #: admin/include/editor_event_cls.php:24 admin/include/editor_event_cls.php:988
-#: admin/views/editor_person.php:1026 admin/views/editor_person.php:1386
-#: admin/views/editor_relation.php:729 include/witness.php:62
+#: admin/views/editor_person.php:1016 admin/views/editor_person.php:1364
+#: admin/views/editor_relation.php:761 include/witness.php:62
 msgid "clergy"
 msgstr ""
 
 #: admin/include/editor_event_cls.php:26 admin/include/editor_event_cls.php:992
-#: admin/views/editor_person.php:763 admin/views/editor_person.php:1309
-#: admin/views/editor_relation.php:517 include/witness.php:45
+#: admin/views/editor_person.php:759 admin/views/editor_person.php:1291
+#: admin/views/editor_relation.php:533 include/witness.php:45
 msgid "officiator"
 msgstr ""
 
 #: admin/include/editor_event_cls.php:28 admin/include/editor_event_cls.php:996
-#: admin/views/editor_person.php:1026 include/witness.php:59
+#: admin/views/editor_person.php:1016 include/witness.php:59
 msgid "godfather"
 msgstr "νονός"
 
@@ -332,10 +332,10 @@ msgstr "Information"
 msgid "funeral leader"
 msgstr ""
 
-#: admin/include/editor_event_cls.php:34 admin/views/editor_person.php:763
-#: admin/views/editor_person.php:1026 admin/views/editor_person.php:1309
-#: admin/views/editor_person.php:1386 admin/views/editor_relation.php:517
-#: admin/views/editor_relation.php:729 include/witness.php:42
+#: admin/include/editor_event_cls.php:34 admin/views/editor_person.php:759
+#: admin/views/editor_person.php:1016 admin/views/editor_person.php:1291
+#: admin/views/editor_person.php:1364 admin/views/editor_relation.php:533
+#: admin/views/editor_relation.php:761 include/witness.php:42
 #: include/witness.php:66 views/list.php:391 views/list.php:398
 msgid "witness"
 msgstr "μάρτυρας"
@@ -344,13 +344,12 @@ msgstr "μάρτυρας"
 #: admin/include/editor_event_cls.php:1742
 #: admin/include/editor_media_select.php:82
 #: admin/include/editor_person_select.php:115
-#: admin/include/editor_place_select.php:81
 #: admin/include/editor_relation_select.php:46 admin/views/editor.php:148
 #: admin/views/editor_person.php:393 admin/views/gedcom_export.php:330
 #: app/model/mailform.php:83 app/model/register.php:95
 #: app/model/tree_index.php:603 app/model/tree_index.php:1025
 #: app/model/user_settings.php:79 views/anniversary.php:96
-#: views/family.php:1282 views/family.php:1350 views/layout.php:350
+#: views/family.php:1283 views/family.php:1351 views/layout.php:350
 #: views/list.php:146 views/list.php:639 views/list_names.php:217
 #: views/list_names.php:220 views/mailform.php:48 views/mailform.php:50
 #: views/register.php:58 views/relations.php:94 views/relations.php:96
@@ -409,8 +408,8 @@ msgstr "Έγχρωμο σημάδι ανά άτομο"
 #: admin/include/editor_event_cls.php:56 admin/include/editor_event_cls.php:460
 #: admin/include/editor_event_cls.php:1227
 #: admin/include/editor_event_cls.php:1574
-#: admin/include/editor_event_cls.php:1577 admin/views/editor_relation.php:787
-#: admin/views/editor_relation.php:790
+#: admin/include/editor_event_cls.php:1577 admin/views/editor_relation.php:827
+#: admin/views/editor_relation.php:830
 msgid "Religion"
 msgstr "Θρήσκευμα"
 
@@ -488,7 +487,7 @@ msgstr "Παρατσούκλι"
 #: admin/views/editor.php:1413 admin/views/editor.php:1415
 #: admin/views/editor.php:1755 admin/views/editor.php:1818
 #: admin/views/editor.php:1907 admin/views/editor_person.php:372
-#: admin/views/editor_person.php:1699 admin/views/log.php:112
+#: admin/views/editor_person.php:1673 admin/views/log.php:112
 #: admin/views/settings_homepage.php:219 admin/views/settings_homepage.php:300
 #: admin/views/users.php:180
 msgid "Add"
@@ -501,7 +500,7 @@ msgstr ""
 #: admin/include/editor_event_cls.php:945
 #: admin/include/editor_event_cls.php:1094 admin/views/editor.php:306
 #: admin/views/editor_person.php:307 admin/views/editor_relation.php:115
-#: admin/views/editor_relation.php:1219
+#: admin/views/editor_relation.php:1267
 msgid "GEDCOM number (ID)"
 msgstr "Αριθμός GEDCOM (ID)"
 
@@ -510,26 +509,25 @@ msgstr "Αριθμός GEDCOM (ID)"
 #: admin/include/editor_event_cls.php:1095
 #: admin/include/editor_media_select.php:83
 #: admin/include/editor_person_select.php:127
-#: admin/include/editor_place_select.php:82
+#: admin/include/editor_place_select.php:136
 #: admin/include/editor_relation_select.php:54
 #: admin/include/editor_sources.php:467 admin/views/edit_source.php:140
 #: admin/views/editor.php:149 admin/views/editor.php:307
 #: admin/views/editor.php:747 admin/views/editor_person.php:139
 #: admin/views/editor_person.php:220 admin/views/editor_person.php:308
-#: admin/views/editor_person.php:779 admin/views/editor_relation.php:116
-#: admin/views/editor_relation.php:291 admin/views/editor_relation.php:310
-#: admin/views/editor_relation.php:1220 admin/views/gedcom_export.php:164
-#: admin/views/language_editor.php:250 admin/views/maps_locations.php:781
-#: admin/views/settings_homepage.php:88 admin/views/settings_homepage.php:204
-#: admin/views/tree_merge.php:556 admin/views/tree_merge.php:574
-#: admin/views/tree_merge.php:646 admin/views/users.php:120
-#: app/model/tree_index.php:48 app/model/tree_index.php:155
-#: app/model/tree_index.php:649 views/addresses.php:31
-#: views/latest_changes.php:23 views/layout.php:351 views/list.php:99
-#: views/list.php:162 views/list.php:453 views/list_places_families.php:95
-#: views/photoalbum.php:173 views/relations.php:97 views/relations.php:105
-#: views/relations.php:208 views/relations.php:211 views/relations.php:219
-#: views/sources.php:26
+#: admin/views/editor_relation.php:116 admin/views/editor_relation.php:291
+#: admin/views/editor_relation.php:310 admin/views/editor_relation.php:1268
+#: admin/views/gedcom_export.php:164 admin/views/language_editor.php:250
+#: admin/views/maps_locations.php:771 admin/views/settings_homepage.php:88
+#: admin/views/settings_homepage.php:204 admin/views/tree_merge.php:556
+#: admin/views/tree_merge.php:574 admin/views/tree_merge.php:646
+#: admin/views/users.php:120 app/model/tree_index.php:48
+#: app/model/tree_index.php:155 app/model/tree_index.php:649
+#: views/addresses.php:31 views/latest_changes.php:23 views/layout.php:351
+#: views/list.php:99 views/list.php:162 views/list.php:453
+#: views/list_places_families.php:95 views/photoalbum.php:173
+#: views/relations.php:97 views/relations.php:105 views/relations.php:208
+#: views/relations.php:211 views/relations.php:219 views/sources.php:26
 msgid "Search"
 msgstr "Αναζήτηση"
 
@@ -539,8 +537,8 @@ msgstr "Αναζήτηση"
 #: admin/views/edit_address.php:87 admin/views/edit_address.php:278
 #: admin/views/edit_repository.php:70 admin/views/edit_repository.php:229
 #: admin/views/edit_source.php:192 admin/views/edit_source.php:403
-#: admin/views/editor_person.php:1233 admin/views/editor_person.php:1695
-#: admin/views/editor_relation.php:1045 admin/views/index_admin.php:618
+#: admin/views/editor_person.php:1215 admin/views/editor_person.php:1669
+#: admin/views/editor_relation.php:1093 admin/views/index_admin.php:618
 #: include/calculate_age_cls.php:371 include/calculate_age_cls.php:393
 #: include/calculate_age_cls.php:497 include/calculate_age_cls.php:519
 #: views/fanchart.php:662
@@ -685,7 +683,7 @@ msgstr "Τακτοποίηση"
 msgid "Characteristics"
 msgstr "Χαρακτηριστικά"
 
-#: admin/include/editor_event_cls.php:1332 admin/views/editor_person.php:1374
+#: admin/include/editor_event_cls.php:1332 admin/views/editor_person.php:1352
 msgid "Buried"
 msgstr "Θαμμένος"
 
@@ -746,13 +744,13 @@ msgstr "π.χ. Lord of Amsterdam"
 #: admin/views/edit_source.php:287 admin/views/editor.php:1249
 #: admin/views/editor.php:1282 admin/views/editor.php:1301
 #: admin/views/editor.php:1320 admin/views/editor.php:1657
-#: admin/views/editor_person.php:670 admin/views/editor_person.php:767
-#: admin/views/editor_person.php:861 admin/views/editor_person.php:955
-#: admin/views/editor_person.php:1031 admin/views/editor_person.php:1165
-#: admin/views/editor_person.php:1313 admin/views/editor_person.php:1390
-#: admin/views/editor_relation.php:357 admin/views/editor_relation.php:433
-#: admin/views/editor_relation.php:522 admin/views/editor_relation.php:659
-#: admin/views/editor_relation.php:734 admin/views/editor_relation.php:831
+#: admin/views/editor_person.php:670 admin/views/editor_person.php:763
+#: admin/views/editor_person.php:851 admin/views/editor_person.php:945
+#: admin/views/editor_person.php:1021 admin/views/editor_person.php:1151
+#: admin/views/editor_person.php:1295 admin/views/editor_person.php:1368
+#: admin/views/editor_relation.php:357 admin/views/editor_relation.php:441
+#: admin/views/editor_relation.php:538 admin/views/editor_relation.php:683
+#: admin/views/editor_relation.php:766 admin/views/editor_relation.php:871
 #: app/model/tree_index.php:1025 include/show_source_pdf.php:49
 #: views/list.php:236 views/list.php:256 views/list.php:702 views/list.php:728
 #: views/source.php:37 views/source.php:115 views/sources.php:69
@@ -767,13 +765,13 @@ msgstr "Ημερομηνία"
 #: admin/views/editor.php:1255 admin/views/editor.php:1288
 #: admin/views/editor.php:1307 admin/views/editor.php:1326
 #: admin/views/editor.php:1597 admin/views/editor_person.php:677
-#: admin/views/editor_person.php:775 admin/views/editor_person.php:868
-#: admin/views/editor_person.php:962 admin/views/editor_person.php:1038
-#: admin/views/editor_person.php:1172 admin/views/editor_person.php:1321
-#: admin/views/editor_person.php:1397 admin/views/editor_relation.php:364
-#: admin/views/editor_relation.php:440 admin/views/editor_relation.php:529
-#: admin/views/editor_relation.php:666 admin/views/editor_relation.php:741
-#: admin/views/editor_relation.php:838 include/show_source_pdf.php:84
+#: admin/views/editor_person.php:771 admin/views/editor_person.php:858
+#: admin/views/editor_person.php:952 admin/views/editor_person.php:1028
+#: admin/views/editor_person.php:1158 admin/views/editor_person.php:1303
+#: admin/views/editor_person.php:1375 admin/views/editor_relation.php:364
+#: admin/views/editor_relation.php:448 admin/views/editor_relation.php:545
+#: admin/views/editor_relation.php:690 admin/views/editor_relation.php:773
+#: admin/views/editor_relation.php:878 include/show_source_pdf.php:84
 #: views/address.php:25 views/list.php:249 views/list.php:269
 #: views/list.php:360 views/list.php:367 views/list.php:715 views/list.php:741
 #: views/source.php:50 views/source.php:119 views/sources.php:86
@@ -785,19 +783,19 @@ msgstr "Θέση"
 #: admin/include/editor_event_cls.php:1598 admin/include/editor_sources.php:369
 #: admin/views/edit_address.php:253 admin/views/edit_repository.php:187
 #: admin/views/edit_source.php:376 admin/views/editor.php:1650
-#: admin/views/editor_person.php:445 admin/views/editor_person.php:703
-#: admin/views/editor_person.php:793 admin/views/editor_person.php:883
-#: admin/views/editor_person.php:977 admin/views/editor_person.php:1062
-#: admin/views/editor_person.php:1248 admin/views/editor_person.php:1337
-#: admin/views/editor_person.php:1427 admin/views/editor_relation.php:388
-#: admin/views/editor_relation.php:456 admin/views/editor_relation.php:605
-#: admin/views/editor_relation.php:682 admin/views/editor_relation.php:757
-#: admin/views/editor_relation.php:870 admin/views/editor_relation.php:910
+#: admin/views/editor_person.php:445 admin/views/editor_person.php:699
+#: admin/views/editor_person.php:783 admin/views/editor_person.php:873
+#: admin/views/editor_person.php:967 admin/views/editor_person.php:1048
+#: admin/views/editor_person.php:1230 admin/views/editor_person.php:1315
+#: admin/views/editor_person.php:1401 admin/views/editor_relation.php:396
+#: admin/views/editor_relation.php:472 admin/views/editor_relation.php:629
+#: admin/views/editor_relation.php:714 admin/views/editor_relation.php:797
+#: admin/views/editor_relation.php:918 admin/views/editor_relation.php:958
 #: admin/views/groups.php:512 admin/views/groups.php:520
 #: admin/views/groups.php:528 admin/views/settings_homepage.php:94
 #: admin/views/settings_homepage.php:134 admin/views/settings_homepage.php:210
 #: include/process_text.php:120 include/process_text.php:122
-#: views/addresses.php:44 views/family.php:1368 views/list.php:306
+#: views/addresses.php:44 views/family.php:1369 views/list.php:306
 #: views/list.php:313
 msgid "Text"
 msgstr "Κείμενο"
@@ -828,16 +826,16 @@ msgstr "Επιλέξτε τοποθεσία"
 #: admin/views/edit_address.php:185 admin/views/edit_address.php:190
 #: admin/views/edit_address.php:198 admin/views/editor.php:1031
 #: admin/views/editor.php:1039 admin/views/editor.php:1695
-#: admin/views/editor_person.php:509 admin/views/editor_person.php:711
-#: admin/views/editor_person.php:801 admin/views/editor_person.php:891
-#: admin/views/editor_person.php:985 admin/views/editor_person.php:1070
-#: admin/views/editor_person.php:1256 admin/views/editor_person.php:1345
-#: admin/views/editor_person.php:1435 admin/views/editor_person.php:1465
-#: admin/views/editor_person.php:1490 admin/views/editor_relation.php:396
-#: admin/views/editor_relation.php:464 admin/views/editor_relation.php:613
-#: admin/views/editor_relation.php:690 admin/views/editor_relation.php:765
-#: admin/views/editor_relation.php:878 admin/views/editor_relation.php:918
-#: admin/views/editor_relation.php:941 app/controller/sourceController.php:22
+#: admin/views/editor_person.php:509 admin/views/editor_person.php:707
+#: admin/views/editor_person.php:791 admin/views/editor_person.php:881
+#: admin/views/editor_person.php:975 admin/views/editor_person.php:1056
+#: admin/views/editor_person.php:1238 admin/views/editor_person.php:1323
+#: admin/views/editor_person.php:1409 admin/views/editor_person.php:1439
+#: admin/views/editor_person.php:1464 admin/views/editor_relation.php:404
+#: admin/views/editor_relation.php:480 admin/views/editor_relation.php:637
+#: admin/views/editor_relation.php:722 admin/views/editor_relation.php:805
+#: admin/views/editor_relation.php:926 admin/views/editor_relation.php:966
+#: admin/views/editor_relation.php:989 app/controller/sourceController.php:22
 #: views/address.php:49 views/source.php:15
 msgid "Source"
 msgstr "Πηγή"
@@ -951,7 +949,7 @@ msgstr "Αφαιρέστε επίσης τα χρωματικά σημάδια �
 
 #: admin/include/editor_inc.php:537 admin/include/editor_inc.php:1092
 #: admin/include/editor_user_settings.php:139 admin/models/editor.php:1393
-#: admin/models/editor.php:1958 admin/views/cms_pages.php:37
+#: admin/models/editor.php:1989 admin/views/cms_pages.php:37
 #: admin/views/cms_pages.php:60 admin/views/edit_address.php:35
 #: admin/views/edit_repository.php:31 admin/views/edit_source.php:119
 #: admin/views/editor.php:339 admin/views/editor.php:356
@@ -979,7 +977,7 @@ msgstr "Ναι"
 
 #: admin/include/editor_inc.php:538 admin/include/editor_inc.php:1093
 #: admin/include/editor_user_settings.php:140 admin/models/editor.php:1394
-#: admin/models/editor.php:1959 admin/views/cms_pages.php:38
+#: admin/models/editor.php:1990 admin/views/cms_pages.php:38
 #: admin/views/cms_pages.php:61 admin/views/edit_address.php:36
 #: admin/views/edit_repository.php:32 admin/views/edit_source.php:120
 #: admin/views/editor.php:340 admin/views/editor.php:357
@@ -1027,9 +1025,68 @@ msgstr "ή ταυτότητα:"
 msgid "Parents"
 msgstr "Γονείς"
 
-#: admin/include/editor_place_select.php:11
-msgid "Select place"
-msgstr "Επιλέξτε μέρος"
+#: admin/include/editor_place_select.php:13
+#, fuzzy
+#| msgid "Select media"
+msgid "Select geodata"
+msgstr "Επιλέξτε μέσα"
+
+#: admin/include/editor_place_select.php:68
+msgid "No location specified for search!"
+msgstr ""
+
+#: admin/include/editor_place_select.php:69
+msgid "Close window"
+msgstr ""
+
+#: admin/include/editor_place_select.php:85
+#, fuzzy
+#| msgid "Search using period"
+msgid "Search geodata of"
+msgstr "Αναζήτηση με χρήση περιόδου"
+
+#: admin/include/editor_place_select.php:94
+msgid ""
+"Location found in the database. Geodata available. Start a new search to "
+"correct the data. Click \"Cancel\" to keep the entries."
+msgstr ""
+
+#: admin/include/editor_place_select.php:102 admin/views/maps_locations.php:744
+msgid "Latitude"
+msgstr "Latitude"
+
+#: admin/include/editor_place_select.php:111 admin/views/maps_locations.php:753
+msgid "Longitude"
+msgstr "Longitude"
+
+#: admin/include/editor_place_select.php:118 admin/views/maps_locations.php:760
+#, fuzzy
+#| msgid "(You can also drag the marker!)"
+msgid "You can also drag the marker."
+msgstr "(You can also drag the marker!)"
+
+#: admin/include/editor_place_select.php:120
+#, fuzzy
+#| msgid "Select media"
+msgid "Update geodata"
+msgstr "Επιλέξτε μέσα"
+
+#: admin/include/editor_place_select.php:122
+#, fuzzy
+#| msgid "Select media"
+msgid "Import geodata"
+msgstr "Επιλέξτε μέσα"
+
+#: admin/include/editor_place_select.php:126 admin/views/gedcom.php:787
+#: admin/views/maps_locations.php:622 views/maps.php:534 views/maps.php:668
+msgid "Cancel"
+msgstr "Cancel"
+
+#: admin/include/editor_place_select.php:216 admin/views/maps_locations.php:859
+#, fuzzy
+#| msgid "Person not found"
+msgid "Place not found."
+msgstr "Το άτομο δεν βρέθηκε"
 
 #: admin/include/editor_relation_select.php:14
 msgid "Select adoption parents"
@@ -1061,23 +1118,23 @@ msgstr "Φύλο"
 #: include/person_cls.php:2051 include/person_cls.php:2053
 #: include/person_cls.php:2054 views/ancestor_sheet.php:295
 #: views/ancestor_sheet_pdf.php:373 views/anniversary.php:95
-#: views/descendant_chart.php:456 views/family.php:1181 views/list.php:234
+#: views/descendant_chart.php:456 views/family.php:1182 views/list.php:234
 #: views/list.php:242 views/list.php:640 views/maps.php:462 views/maps.php:593
 msgid "born"
 msgstr "γεννήθηκε"
 
 #: admin/include/editor_sources.php:89 admin/views/editor.php:1279
-#: admin/views/editor_person.php:1012 app/model/timeline.php:83
+#: admin/views/editor_person.php:1002 app/model/timeline.php:83
 #: app/model/tree_index.php:989 app/model/tree_index.php:991
 #: googlemaps/namesearch.php:192 include/person_cls.php:2218
 #: include/person_cls.php:2219 include/person_cls.php:2221
-#: include/person_cls.php:2222 views/family.php:1183 views/list.php:234
+#: include/person_cls.php:2222 views/family.php:1184 views/list.php:234
 #: views/list.php:242 views/list.php:640 views/maps.php:465 views/maps.php:596
 msgid "baptised"
 msgstr "βαφτίστηκε"
 
 #: admin/include/editor_sources.php:95 admin/include/editor_sources.php:101
-#: admin/views/editor.php:1298 admin/views/editor_person.php:1101
+#: admin/views/editor.php:1298 admin/views/editor_person.php:1087
 #: app/model/tree_index.php:998 app/model/tree_index.php:1000
 #: googlemaps/namesearch.php:198 include/person_cls.php:2371
 #: include/person_cls.php:2372 include/person_cls.php:2374
@@ -1088,7 +1145,7 @@ msgid "died"
 msgstr "πέθανε"
 
 #: admin/include/editor_sources.php:107 admin/views/editor.php:1317
-#: admin/views/editor_person.php:1409 app/model/timeline.php:109
+#: admin/views/editor_person.php:1383 app/model/timeline.php:109
 #: googlemaps/namesearch.php:201 include/person_cls.php:2550 views/list.php:254
 #: views/list.php:262 views/list.php:641 views/maps.php:471 views/maps.php:602
 msgid "buried"
@@ -1116,30 +1173,30 @@ msgid "Address"
 msgstr "Διεύθυνση"
 
 #: admin/include/editor_sources.php:131 admin/views/editor_relation.php:337
-#: admin/views/editor_relation.php:577 include/marriage_cls.php:66
+#: admin/views/editor_relation.php:601 include/marriage_cls.php:66
 #: include/marriage_cls.php:167 include/marriage_cls.php:169
 #: include/marriage_cls.php:171 include/person_cls.php:1241
 msgid "Living together"
 msgstr "Ζούνε μαζί"
 
-#: admin/include/editor_sources.php:137 admin/views/editor_relation.php:419
+#: admin/include/editor_sources.php:137 admin/views/editor_relation.php:427
 msgid "Notice of Marriage"
 msgstr "Ανακοίνωση γάμου"
 
-#: admin/include/editor_sources.php:143 admin/views/editor_relation.php:488
+#: admin/include/editor_sources.php:143 admin/views/editor_relation.php:504
 #: views/list_places_families.php:55
 msgid "Marriage"
 msgstr "Γάμος"
 
-#: admin/include/editor_sources.php:149 admin/views/editor_relation.php:642
+#: admin/include/editor_sources.php:149 admin/views/editor_relation.php:666
 msgid "Religious Notice of Marriage"
 msgstr "Θρησκευτική ανακοίνωση γάμου"
 
-#: admin/include/editor_sources.php:155 admin/views/editor_relation.php:715
+#: admin/include/editor_sources.php:155 admin/views/editor_relation.php:747
 msgid "Religious Marriage"
 msgstr "Θρησκευτικός γάμος"
 
-#: admin/include/editor_sources.php:161 admin/views/editor_relation.php:809
+#: admin/include/editor_sources.php:161 admin/views/editor_relation.php:849
 msgid "Divorce"
 msgstr "Διαζύγιο"
 
@@ -1153,19 +1210,19 @@ msgstr "σχέση"
 #: admin/views/edit_rename_place.php:82 admin/views/edit_repository.php:225
 #: admin/views/edit_repository.php:228 admin/views/edit_source.php:400
 #: admin/views/edit_source.php:402 admin/views/editor_person.php:356
-#: admin/views/editor_person.php:1694 admin/views/editor_relation.php:271
-#: admin/views/editor_relation.php:1043 admin/views/index_admin.php:139
+#: admin/views/editor_person.php:1668 admin/views/editor_relation.php:271
+#: admin/views/editor_relation.php:1091 admin/views/index_admin.php:139
 #: admin/views/language_editor.php:264 admin/views/maps_worldmap.php:103
 #: admin/views/maps_worldmap.php:138 admin/views/prefix_editor.php:27
 #: admin/views/tree_merge.php:948
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: admin/include/editor_sources.php:266 admin/views/editor_relation.php:1172
+#: admin/include/editor_sources.php:266 admin/views/editor_relation.php:1220
 msgid "Drag to change order (saves automatically)"
 msgstr "Σύρετε για να αλλάξετε σειρά (αποθηκεύεται αυτόματα)"
 
-#: admin/include/editor_sources.php:266 admin/views/editor_relation.php:1172
+#: admin/include/editor_sources.php:266 admin/views/editor_relation.php:1220
 msgid "Drag to change order"
 msgstr "Σύρετε για να αλλάξετε σειρά"
 
@@ -1516,7 +1573,7 @@ msgstr "Εμφάνιση/απόκρυψη θεμάτων"
 #: admin/views/maps.php:35 admin/views/maps_settings.php:24
 #: admin/views/menu.php:66 admin/views/settings_admin.php:8
 #: admin/views/settings_admin.php:39 admin/views/thumbs.php:196
-#: admin/views/tree_merge.php:1039 views/family.php:54 views/family.php:1357
+#: admin/views/tree_merge.php:1039 views/family.php:54 views/family.php:1358
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
@@ -1723,7 +1780,7 @@ msgstr ""
 "Το παιδί έχει ήδη συνδεδεμένους γονείς! Είστε βέβαιοι ότι θέλετε να "
 "συνδέσετε αυτό το παιδί;"
 
-#: admin/models/editor.php:1954 admin/views/notes.php:86
+#: admin/models/editor.php:1985 admin/views/notes.php:86
 msgid "Are you sure you want to remove this note?"
 msgstr "Είστε βέβαιοι ότι θέλετε να καταργήσετε αυτήν τη σημείωση;"
 
@@ -2600,20 +2657,20 @@ msgid "Latest changes"
 msgstr "Τελευταίες αλλαγές"
 
 #: admin/views/editor.php:110 admin/views/editor.php:1848
-#: admin/views/editor_person.php:1641 admin/views/editor_person.php:1660
-#: admin/views/editor_relation.php:1015 admin/views/notes.php:234
+#: admin/views/editor_person.php:1615 admin/views/editor_person.php:1634
+#: admin/views/editor_relation.php:1063 admin/views/notes.php:234
 msgid "Added by"
 msgstr "Προστέθηκε από"
 
 #: admin/views/editor.php:118 admin/views/editor.php:1860
-#: admin/views/editor_person.php:1677 admin/views/editor_relation.php:1032
+#: admin/views/editor_person.php:1651 admin/views/editor_relation.php:1080
 msgid "Changed by"
 msgstr "Τροποποιήθηκε από"
 
 #: admin/views/editor.php:147 admin/views/editor.php:430
 #: admin/views/tree_check_changes.php:49
 #: admin/views/tree_check_consistency.php:286 admin/views/tree_merge.php:563
-#: admin/views/tree_merge.php:634 views/family.php:1345 views/relations.php:92
+#: admin/views/tree_merge.php:634 views/family.php:1346 views/relations.php:92
 #: views/relations.php:206
 msgid "Person"
 msgstr "Άτομο"
@@ -2665,11 +2722,11 @@ msgid "Browse"
 msgstr "Ξεφυλλίσε"
 
 #: admin/views/editor.php:617 admin/views/editor_relation.php:278
-#: admin/views/editor_relation.php:489 include/marriage_cls.php:811
+#: admin/views/editor_relation.php:505 include/marriage_cls.php:811
 msgid "marriage/ relation"
 msgstr "γάμος/ σχέση"
 
-#: admin/views/editor.php:619 admin/views/editor_relation.php:576
+#: admin/views/editor.php:619 admin/views/editor_relation.php:600
 #: include/marriage_cls.php:374 include/marriage_cls.php:380
 #: include/marriage_cls.php:389 include/marriage_cls.php:390
 msgid "Married"
@@ -2688,7 +2745,7 @@ msgid " to: "
 msgstr " με: "
 
 #: admin/views/editor.php:635 admin/views/tree_merge.php:1249
-#: views/family.php:607 views/family_pdf.php:469 views/family_rtf.php:431
+#: views/family.php:608 views/family_pdf.php:469 views/family_rtf.php:431
 msgid "Children"
 msgstr "Παιδιά"
 
@@ -2790,16 +2847,16 @@ msgid "Add relation"
 msgstr "Προσθήκη σχέσης"
 
 #: admin/views/editor.php:1231 admin/views/editor.php:1345
-#: admin/views/editor_relation.php:1188 admin/views/editor_relation.php:1190
+#: admin/views/editor_relation.php:1236 admin/views/editor_relation.php:1238
 msgid "Add child"
 msgstr "Προσθήκη παιδιού"
 
-#: admin/views/editor.php:1265 admin/views/editor_person.php:686
+#: admin/views/editor.php:1265 admin/views/editor_person.php:682
 #: admin/views/tree_merge.php:1195
 msgid "birth time"
 msgstr "ώρα γέννησης"
 
-#: admin/views/editor.php:1270 admin/views/editor_person.php:691
+#: admin/views/editor.php:1270 admin/views/editor_person.php:687
 #: include/person_cls.php:492
 msgid "stillborn child"
 msgstr "θνησιγενές παιδί"
@@ -2955,30 +3012,30 @@ msgstr "Ολα"
 msgid "For example: Joseph ben Hirsch Zvi"
 msgstr "Για παράδειγμα: Joseph ben Hirsch Zvi"
 
-#: admin/views/editor_person.php:656 admin/views/editor_person.php:1108
+#: admin/views/editor_person.php:656 admin/views/editor_person.php:1094
 #: include/person_cls.php:2004 include/person_cls.php:2006
 #: include/person_cls.php:2010 include/person_cls.php:2269
 msgid "at"
 msgstr "στο "
 
-#: admin/views/editor_person.php:656 admin/views/editor_person.php:1108
+#: admin/views/editor_person.php:656 admin/views/editor_person.php:1094
 #: include/person_cls.php:2004 include/person_cls.php:2006
 #: include/person_cls.php:2010 include/person_cls.php:2269
 msgid "hour"
 msgstr "ώρα"
 
-#: admin/views/editor_person.php:748 admin/views/tree_merge.php:1461
+#: admin/views/editor_person.php:744 admin/views/tree_merge.php:1461
 #: include/person_cls.php:2117 include/person_cls.php:2118
 #: include/person_cls.php:2120 include/person_cls.php:2121
 #: include/witness.php:199
 msgid "birth declaration"
 msgstr "δήλωση γέννησης"
 
-#: admin/views/editor_person.php:847 include/language_event.php:16
+#: admin/views/editor_person.php:837 include/language_event.php:16
 msgid "Brit Mila"
 msgstr "Brit Mila"
 
-#: admin/views/editor_person.php:902 admin/views/editor_person.php:996
+#: admin/views/editor_person.php:892 admin/views/editor_person.php:986
 msgid ""
 "To display this, the option \"Show events\" has to be checked in \"Users -> "
 "Groups\""
@@ -2986,23 +3043,23 @@ msgstr ""
 "Για να εμφανιστεί αυτό, η επιλογή \"Εμφάνιση συμβάντων\" πρέπει να επιλεγεί "
 "στο \"Χρήστες -> Ομάδες\""
 
-#: admin/views/editor_person.php:937 include/language_event.php:14
+#: admin/views/editor_person.php:927 include/language_event.php:14
 msgid "Bat Mitzvah"
 msgstr "Μπατ Μιτζβά"
 
-#: admin/views/editor_person.php:939 include/language_event.php:13
+#: admin/views/editor_person.php:929 include/language_event.php:13
 msgid "Bar Mitzvah"
 msgstr "Μπαρ Μιτζβά"
 
-#: admin/views/editor_person.php:1017 admin/views/editor_person.php:1047
+#: admin/views/editor_person.php:1007 admin/views/editor_person.php:1033
 #: admin/views/tree_merge.php:1206 include/person_cls.php:2165
 #: include/person_cls.php:2167 include/person_cls.php:2683
 msgid "religion"
 msgstr "θρησκεία"
 
-#: admin/views/editor_person.php:1117 admin/views/editor_person.php:1120
-#: admin/views/editor_person.php:1123 admin/views/editor_person.php:1132
-#: admin/views/editor_person.php:1135 admin/views/editor_person.php:1152
+#: admin/views/editor_person.php:1103 admin/views/editor_person.php:1106
+#: admin/views/editor_person.php:1109 admin/views/editor_person.php:1118
+#: admin/views/editor_person.php:1121 admin/views/editor_person.php:1138
 #: admin/views/tree_merge.php:1201 include/person_cls.php:2296
 #: include/person_cls.php:2299 include/person_cls.php:2302
 #: include/person_cls.php:2311 include/person_cls.php:2314
@@ -3011,66 +3068,66 @@ msgstr "θρησκεία"
 msgid "cause of death"
 msgstr "αιτία θανάτου"
 
-#: admin/views/editor_person.php:1117 admin/views/editor_person.php:1221
+#: admin/views/editor_person.php:1103 admin/views/editor_person.php:1203
 #: include/person_cls.php:2296 include/person_cls.php:2347
 msgid "murdered"
 msgstr "δολοφονημένος"
 
-#: admin/views/editor_person.php:1120 admin/views/editor_person.php:1222
+#: admin/views/editor_person.php:1106 admin/views/editor_person.php:1204
 #: include/person_cls.php:2299
 msgid "drowned"
 msgstr "πνίγηκε"
 
-#: admin/views/editor_person.php:1123 admin/views/editor_person.php:1223
+#: admin/views/editor_person.php:1109 admin/views/editor_person.php:1205
 #: include/person_cls.php:2302
 msgid "perished"
 msgstr "χάθηκε"
 
-#: admin/views/editor_person.php:1126 admin/views/editor_person.php:1224
+#: admin/views/editor_person.php:1112 admin/views/editor_person.php:1206
 #: include/person_cls.php:2305
 msgid "killed in action"
 msgstr "σκοτώθηκε σε δράση"
 
-#: admin/views/editor_person.php:1129 admin/views/editor_person.php:1225
+#: admin/views/editor_person.php:1115 admin/views/editor_person.php:1207
 #: include/person_cls.php:2308
 msgid "being missed"
 msgstr "που λείπει"
 
-#: admin/views/editor_person.php:1132 admin/views/editor_person.php:1226
+#: admin/views/editor_person.php:1118 admin/views/editor_person.php:1208
 #: include/person_cls.php:2311
 msgid "committed suicide"
 msgstr "committed suicide"
 
-#: admin/views/editor_person.php:1135 admin/views/editor_person.php:1227
+#: admin/views/editor_person.php:1121 admin/views/editor_person.php:1209
 #: include/person_cls.php:2314
 msgid "executed"
 msgstr "executed"
 
-#: admin/views/editor_person.php:1138 admin/views/editor_person.php:1228
+#: admin/views/editor_person.php:1124 admin/views/editor_person.php:1210
 #: include/person_cls.php:2317
 msgid "died young"
 msgstr "died young"
 
-#: admin/views/editor_person.php:1141 admin/views/editor_person.php:1229
+#: admin/views/editor_person.php:1127 admin/views/editor_person.php:1211
 #: include/person_cls.php:2320
 msgid "died unmarried"
 msgstr "πέθανε άγαμος"
 
-#: admin/views/editor_person.php:1144 admin/views/editor_person.php:1230
+#: admin/views/editor_person.php:1130 admin/views/editor_person.php:1212
 #: include/person_cls.php:2323
 msgid "registration"
 msgstr "εγγραφή"
 
-#: admin/views/editor_person.php:1147 admin/views/editor_person.php:1231
+#: admin/views/editor_person.php:1133 admin/views/editor_person.php:1213
 #: include/person_cls.php:2326
 msgid "declared death"
 msgstr "declared death"
 
-#: admin/views/editor_person.php:1182
+#: admin/views/editor_person.php:1164
 msgid "Age"
 msgstr "Age"
 
-#: admin/views/editor_person.php:1191
+#: admin/views/editor_person.php:1173
 msgid ""
 "If death year and age are used, then birth year is calculated automatically "
 "(when empty)."
@@ -3078,58 +3135,58 @@ msgstr ""
 "Εάν χρησιμοποιούνται έτος και ηλικία θανάτου, τότε το έτος γέννησης "
 "υπολογίζεται αυτόματα (όταν είναι κενό)."
 
-#: admin/views/editor_person.php:1199 admin/views/tree_merge.php:1200
+#: admin/views/editor_person.php:1181 admin/views/tree_merge.php:1200
 msgid "death time"
 msgstr "ώρα θανάτου"
 
-#: admin/views/editor_person.php:1216
+#: admin/views/editor_person.php:1198
 msgid "cause"
 msgstr "cause"
 
-#: admin/views/editor_person.php:1294 admin/views/tree_merge.php:1468
+#: admin/views/editor_person.php:1276 admin/views/tree_merge.php:1468
 #: include/person_cls.php:2439 include/person_cls.php:2440
 #: include/person_cls.php:2442 include/person_cls.php:2443
 #: include/witness.php:213
 msgid "death declaration"
 msgstr "δήλωση θανάτου"
 
-#: admin/views/editor_person.php:1406
+#: admin/views/editor_person.php:1380
 msgid "method of burial"
 msgstr "method of burial"
 
-#: admin/views/editor_person.php:1410 admin/views/tree_merge.php:1202
+#: admin/views/editor_person.php:1384 admin/views/tree_merge.php:1202
 #: include/person_cls.php:2542
 msgid "cremation"
 msgstr "αποτέφρωση"
 
-#: admin/views/editor_person.php:1411 include/person_cls.php:2544
+#: admin/views/editor_person.php:1385 include/person_cls.php:2544
 msgid "resomated"
 msgstr "resomated"
 
-#: admin/views/editor_person.php:1412 include/person_cls.php:2546
+#: admin/views/editor_person.php:1386 include/person_cls.php:2546
 msgid "sailor's grave"
 msgstr "sailor's grave"
 
-#: admin/views/editor_person.php:1413 include/person_cls.php:2548
+#: admin/views/editor_person.php:1387 include/person_cls.php:2548
 msgid "donated to science"
 msgstr "donated to science"
 
-#: admin/views/editor_person.php:1459
+#: admin/views/editor_person.php:1433
 msgid "Text for person"
 msgstr "Κείμενο για το άτομο"
 
-#: admin/views/editor_person.php:1486 include/show_sources.php:67
+#: admin/views/editor_person.php:1460 include/show_sources.php:67
 #: include/show_sources.php:175 include/show_sources.php:252
 msgid "Source for person"
 msgstr "Πηγή για το άτομο"
 
-#: admin/views/editor_person.php:1510 admin/views/editor_person.php:1513
+#: admin/views/editor_person.php:1484 admin/views/editor_person.php:1487
 #: admin/views/tree_merge.php:1207 include/show_sources.php:302
 #: include/show_sources.php:391
 msgid "own code"
 msgstr "κωδικός"
 
-#: admin/views/editor_person.php:1524
+#: admin/views/editor_person.php:1498
 msgid ""
 "Use own code for your own remarks.<br>\n"
 "It's possible to use own code for special privacy options, see Admin > Users "
@@ -3144,30 +3201,46 @@ msgstr ""
 "Προσθέστε το εικονίδιο στο φάκελο εικόνων π.χ. \"person.gif\" και προσθέστε "
 "\"person\" στο πεδίο του δικού σας κώδικα."
 
-#: admin/views/editor_person.php:1587 admin/views/editor_relation.php:980
+#: admin/views/editor_person.php:1561 admin/views/editor_relation.php:1028
 msgid "GEDCOM tags"
 msgstr "GEDCOM tags"
 
-#: admin/views/editor_person.php:1592 admin/views/editor_person.php:1594
-#: admin/views/editor_relation.php:985 admin/views/editor_relation.php:987
+#: admin/views/editor_person.php:1566 admin/views/editor_person.php:1568
+#: admin/views/editor_relation.php:1033 admin/views/editor_relation.php:1035
 #, php-format
 msgid "There are %d unprocessed GEDCOM tags."
 msgstr "Υπάρχουν %d μη επεξεργασμένες ετικέτες GEDCOM."
 
-#: admin/views/editor_person.php:1621 admin/views/notes.php:69
-#: views/family.php:1209
+#: admin/views/editor_person.php:1595 admin/views/notes.php:69
+#: views/family.php:1210
 msgid "User notes"
 msgstr "Σημειώσεις χρήστη"
 
-#: admin/views/editor_person.php:1623 admin/views/editor_person.php:1625
-#: views/family.php:1214 views/family.php:1216
+#: admin/views/editor_person.php:1597 admin/views/editor_person.php:1599
+#: views/family.php:1215 views/family.php:1217
 #, php-format
 msgid "There are %d user added notes."
 msgstr "Προστέθηκαν %d σημειώσεις χρήστη."
 
-#: admin/views/editor_person.php:1696
+#: admin/views/editor_person.php:1670
 msgid "Delete person"
 msgstr "Διαγραφή ατόμου"
+
+#: admin/views/editor_person.php:1691 admin/views/editor_relation.php:369
+#: admin/views/editor_relation.php:453 admin/views/editor_relation.php:550
+#: admin/views/editor_relation.php:695 admin/views/editor_relation.php:778
+#: admin/views/editor_relation.php:883
+#, fuzzy
+#| msgid "Use OpenStreetMap"
+msgid "Search with OpenStreetMap"
+msgstr "Χρησιμοποιήστε το OpenStreetMap"
+
+#: admin/views/editor_person.php:1697 admin/views/editor_relation.php:374
+#: admin/views/editor_relation.php:458 admin/views/editor_relation.php:555
+#: admin/views/editor_relation.php:700 admin/views/editor_relation.php:783
+#: admin/views/editor_relation.php:888
+msgid "Geolocation data added. Press \"Save\" to write to database"
+msgstr ""
 
 #: admin/views/editor_relation.php:94
 msgid "Add new relation to this person"
@@ -3202,20 +3275,20 @@ msgstr "Επιλέξτε άτομο 2"
 msgid "End living together"
 msgstr "End living together"
 
-#: admin/views/editor_relation.php:374
+#: admin/views/editor_relation.php:382
 msgid "End date"
 msgstr "Ημερομηνία λήξης"
 
-#: admin/views/editor_relation.php:496 admin/views/editor_relation.php:568
-#: admin/views/editor_relation.php:570 admin/views/editor_relation.php:575
+#: admin/views/editor_relation.php:512 admin/views/editor_relation.php:592
+#: admin/views/editor_relation.php:594 admin/views/editor_relation.php:599
 msgid "Marriage/ Related"
 msgstr "Γάμος/ Σχέση"
 
-#: admin/views/editor_relation.php:539
+#: admin/views/editor_relation.php:563
 msgid "Age person 1"
 msgstr "Ηλικία ατόμου 1"
 
-#: admin/views/editor_relation.php:550
+#: admin/views/editor_relation.php:574
 msgid ""
 "If birth year of man or woman is empty it will be calculated automatically "
 "using age by marriage."
@@ -3223,98 +3296,98 @@ msgstr ""
 "Εάν το έτος γέννησης του άνδρα ή της γυναίκας είναι κενό, θα υπολογιστεί "
 "αυτόματα χρησιμοποιώντας την ηλικία κατά γάμο."
 
-#: admin/views/editor_relation.php:559
+#: admin/views/editor_relation.php:583
 msgid "Age person 2"
 msgstr "Ηλικία ατόμου 2"
 
-#: admin/views/editor_relation.php:578 include/marriage_cls.php:69
+#: admin/views/editor_relation.php:602 include/marriage_cls.php:69
 #: include/person_cls.php:1244
 msgid "Living apart together"
 msgstr "Living apart together"
 
-#: admin/views/editor_relation.php:579 include/marriage_cls.php:73
+#: admin/views/editor_relation.php:603 include/marriage_cls.php:73
 #: include/person_cls.php:1247
 msgid "Intentionally unmarried mother"
 msgstr "Σκόπιμα ανύπαντρη μητέρα"
 
-#: admin/views/editor_relation.php:580 include/marriage_cls.php:79
+#: admin/views/editor_relation.php:604 include/marriage_cls.php:79
 #: include/person_cls.php:1250
 msgid "Homosexual"
 msgstr "Homosexual"
 
-#: admin/views/editor_relation.php:581
+#: admin/views/editor_relation.php:605
 msgid "Non_marital"
 msgstr "Μη συζυγική"
 
-#: admin/views/editor_relation.php:582 include/marriage_cls.php:88
+#: admin/views/editor_relation.php:606 include/marriage_cls.php:88
 #: include/marriage_cls.php:95 include/person_cls.php:1256
 #: include/person_cls.php:1259
 msgid "Extramarital"
 msgstr "Extramarital"
 
-#: admin/views/editor_relation.php:583 include/marriage_cls.php:102
+#: admin/views/editor_relation.php:607 include/marriage_cls.php:102
 #: include/person_cls.php:1262
 msgid "Partner"
 msgstr "Partner"
 
-#: admin/views/editor_relation.php:584 include/marriage_cls.php:106
+#: admin/views/editor_relation.php:608 include/marriage_cls.php:106
 msgid "Registered partnership"
 msgstr "Εγγεγραμμένη συνεργασία"
 
-#: admin/views/editor_relation.php:585 include/marriage_cls.php:110
+#: admin/views/editor_relation.php:609 include/marriage_cls.php:110
 #: include/person_cls.php:1268
 msgid "Unknown relation"
 msgstr "Άγνωστη σχέση"
 
-#: admin/views/editor_relation.php:591 admin/views/editor_relation.php:853
+#: admin/views/editor_relation.php:615 admin/views/editor_relation.php:901
 msgid "Registrar"
 msgstr "Ληξίαρχος"
 
-#: admin/views/editor_relation.php:901
+#: admin/views/editor_relation.php:949
 msgid "Divorce (use this checkbox for a divorce without further data)."
 msgstr ""
 "Διαζύγιο (χρησιμοποιήστε αυτό το πλαίσιο ελέγχου για διαζύγιο χωρίς "
 "περαιτέρω δεδομένα)."
 
-#: admin/views/editor_relation.php:907
+#: admin/views/editor_relation.php:955
 msgid "Text by relation"
 msgstr "Κείμενο ανά σχέση"
 
-#: admin/views/editor_relation.php:937
+#: admin/views/editor_relation.php:985
 msgid "Source by relation"
 msgstr "Πηγή ανά σχέση"
 
-#: admin/views/editor_relation.php:1049
+#: admin/views/editor_relation.php:1097
 msgid "Delete relation"
 msgstr "Διαγραφή σχέσης"
 
-#: admin/views/editor_relation.php:1151
+#: admin/views/editor_relation.php:1199
 msgid "Use this icon to order children (drag and drop)"
 msgstr ""
 "Χρησιμοποιήστε αυτό το εικονίδιο για να ταξινομήσετε παιδιά (με μεταφορά και "
 "απόθεση)"
 
-#: admin/views/editor_relation.php:1152
+#: admin/views/editor_relation.php:1200
 msgid "Or automatically order children:"
 msgstr "Ή αυτόματη ταξινόμηση των παιδιών:"
 
-#: admin/views/editor_relation.php:1152
+#: admin/views/editor_relation.php:1200
 msgid "Automatic order children"
 msgstr "Αυτόματη ταξινόμηση των παιδιών:"
 
-#: admin/views/editor_relation.php:1154
+#: admin/views/editor_relation.php:1202
 msgid "Children are re-ordered."
 msgstr "Τα παιδιά ταξινομήθηκαν εκ νέου"
 
-#: admin/views/editor_relation.php:1176
+#: admin/views/editor_relation.php:1224
 msgid "Disconnect child"
 msgstr "Αποσυνδέστε το παιδί"
 
-#: admin/views/editor_relation.php:1212
+#: admin/views/editor_relation.php:1260
 msgid "Or add existing person as a child:"
 msgstr "Ή προσθέστε υπάρχον άτομο ως παιδί:"
 
-#: admin/views/editor_relation.php:1224
+#: admin/views/editor_relation.php:1272
 msgid "Select child"
 msgstr "Επέλεξε παιδί"
 
@@ -3578,11 +3651,6 @@ msgid ""
 "The data in this GEDCOM will be appended to the existing data in this tree!"
 msgstr ""
 "The data in this GEDCOM will be appended to the existing data in this tree!"
-
-#: admin/views/gedcom.php:787 admin/views/maps_locations.php:635
-#: views/maps.php:534 views/maps.php:668
-msgid "Cancel"
-msgstr "Cancel"
 
 #: admin/views/gedcom.php:897
 msgid ""
@@ -4458,7 +4526,7 @@ msgstr "ΝΑΙ, εγκαταστήστε επίσης τη βάση δεδομέ
 msgid "NO"
 msgstr "NO"
 
-#: admin/views/index_admin.php:134 admin/views/maps_locations.php:633
+#: admin/views/index_admin.php:134 admin/views/maps_locations.php:620
 msgid "YES"
 msgstr "YES"
 
@@ -4906,7 +4974,7 @@ msgstr "Σύνδεση"
 msgid "World map administration"
 msgstr "Διαχείριση παγκόσμιου χάρτη"
 
-#: admin/views/maps.php:32 admin/views/maps_locations.php:463
+#: admin/views/maps.php:32 admin/views/maps_locations.php:450
 msgid "Edit geolocation database"
 msgstr "Επεξεργασία βάσης δεδομένων γεωγραφικής θέσης"
 
@@ -5062,59 +5130,45 @@ msgstr ""
 "οι τοποθεσίες αναγνωρίστηκαν με γεωκωδικοποίηση και έχουν αποθηκευτεί στη "
 "βάση δεδομένων."
 
-#: admin/views/maps_locations.php:452
+#: admin/views/maps_locations.php:439
 #, fuzzy
 #| msgid "Delete geolocation database"
 msgid "Delete entire geolocation database"
 msgstr "Διαγραφή βάσης δεδομένων γεωγραφικής θέσης"
 
-#: admin/views/maps_locations.php:453
+#: admin/views/maps_locations.php:440
 #, fuzzy, php-format
 #| msgid "Added location:"
 msgid "%d locations."
 msgstr "Προστέθηκε τοποθεσία:"
 
-#: admin/views/maps_locations.php:454
+#: admin/views/maps_locations.php:441
 #, fuzzy, php-format
 #| msgid "List of non-indexable locations was refreshed!"
 msgid "%d non-indexable locations."
 msgstr "Η λίστα των τοποθεσιών χωρίς δυνατότητα ευρετηρίου ανανεώθηκε!"
 
-#: admin/views/maps_locations.php:656
+#: admin/views/maps_locations.php:643
 msgid "Location already exists. Updated latitude/longitude"
 msgstr ""
 
-#: admin/views/maps_locations.php:754
-msgid "Latitude"
-msgstr "Latitude"
-
-#: admin/views/maps_locations.php:763
-msgid "Longitude"
-msgstr "Longitude"
-
-#: admin/views/maps_locations.php:770
+#: admin/views/maps_locations.php:679
 #, fuzzy
-#| msgid "(You can also drag the marker!)"
-msgid "You can also drag the marker."
-msgstr "(You can also drag the marker!)"
+#| msgid "Database setting"
+msgid "Data missing!"
+msgstr "Ρύθμιση βάσης δεδομένων"
 
-#: admin/views/maps_locations.php:772
+#: admin/views/maps_locations.php:762
 msgid "Change this location"
 msgstr "Change this location"
 
-#: admin/views/maps_locations.php:773
+#: admin/views/maps_locations.php:763
 msgid "Add this location"
 msgstr "Προσθέστε αυτήν την τοποθεσία"
 
-#: admin/views/maps_locations.php:774
+#: admin/views/maps_locations.php:764
 msgid "Delete this location"
 msgstr "Delete this location"
-
-#: admin/views/maps_locations.php:869
-#, fuzzy
-#| msgid "Person not found"
-msgid "Place not found."
-msgstr "Το άτομο δεν βρέθηκε"
 
 #: admin/views/maps_settings.php:29
 msgid ""
@@ -6837,29 +6891,29 @@ msgstr "Δεν βρέθηκαν ονόματα."
 #: admin/views/tree_check_consistency.php:992
 #: admin/views/tree_check_consistency.php:997
 #: admin/views/tree_check_consistency.php:1004
-#: admin/views/tree_check_consistency.php:1013 views/family.php:790
-#: views/family.php:814 views/family.php:948 views/family.php:953
+#: admin/views/tree_check_consistency.php:1013 views/family.php:791
+#: views/family.php:815 views/family.php:949 views/family.php:954
 msgid "BORN_SHORT"
 msgstr "born"
 
 # Enter a short text for baptise, like: bapt.
 #: admin/views/tree_check_consistency.php:960
-#: admin/views/tree_check_consistency.php:972 views/family.php:793
-#: views/family.php:817
+#: admin/views/tree_check_consistency.php:972 views/family.php:794
+#: views/family.php:818
 msgid "BAPTISED_SHORT"
 msgstr "βαπτίστηκε"
 
 # Enter a short text for died here. There is no short text for died in
 # english.
 #: admin/views/tree_check_consistency.php:963
-#: admin/views/tree_check_consistency.php:975 views/family.php:841
-#: views/family.php:871 views/family.php:970 views/family.php:975
+#: admin/views/tree_check_consistency.php:975 views/family.php:842
+#: views/family.php:872 views/family.php:971 views/family.php:976
 msgid "DIED_SHORT"
 msgstr "died"
 
 #: admin/views/tree_check_consistency.php:966
-#: admin/views/tree_check_consistency.php:978 views/family.php:844
-#: views/family.php:874
+#: admin/views/tree_check_consistency.php:978 views/family.php:845
+#: views/family.php:875
 msgid "BURIED_SHORT"
 msgstr "θαμένος"
 
@@ -7034,7 +7088,7 @@ msgstr "Επεξεργαστής πηγής"
 msgid "Repository editor"
 msgstr "Επεξεργαστής αποθετηρίου"
 
-#: admin/views/tree_data.php:9 admin/views/users.php:51 views/family.php:1356
+#: admin/views/tree_data.php:9 admin/views/users.php:51 views/family.php:1357
 #: views/mailform.php:55 views/mailform.php:57 views/register.php:65
 #: views/user_settings.php:30 views/user_settings.php:32
 msgid "E-mail address"
@@ -7959,7 +8013,7 @@ msgid "%s Mail form."
 msgstr "%s Φόρμα αλληλογραφίας."
 
 #: app/model/mailform.php:79 app/model/register.php:92
-#: app/model/user_settings.php:76 views/family.php:1279
+#: app/model/user_settings.php:76 views/family.php:1280
 #, php-format
 msgid "Message sent through %s from the website."
 msgstr "Το μήνυμα στάλθηκε μέσω %s από τον ιστότοπο."
@@ -9163,7 +9217,7 @@ msgstr "Back"
 msgid "Legend"
 msgstr "Κατάσταση"
 
-#: views/ancestor_sheet.php:295 views/family.php:915 views/family.php:920
+#: views/ancestor_sheet.php:295 views/family.php:916 views/family.php:921
 msgid "married"
 msgstr "παντρεμένος/η"
 
@@ -9308,8 +9362,8 @@ msgstr "died "
 msgid "Settings family screen"
 msgstr "Ρυθμίσεις οικογενειακή οθόνη"
 
-#: views/family.php:63 views/family.php:480 views/family.php:1149
-#: views/family.php:1154
+#: views/family.php:63 views/family.php:481 views/family.php:1150
+#: views/family.php:1155
 msgid "Family Page"
 msgstr "Οικογενειακή Σελίδα"
 
@@ -9337,14 +9391,14 @@ msgstr "Απόκρυψη εικόνων"
 msgid "Add to favourite list"
 msgstr "Προσθήκη στη λίστα αγαπημένων"
 
-#: views/family.php:237 views/family.php:453
+#: views/family.php:237 views/family.php:454
 #, php-format
 msgid "TIP: use %s for other (ancestor and descendant) reports."
 msgstr ""
 "ΣΥΜΒΟΥΛΗ: τοποθετήστε το δείκτη του ποντικιού πάνω από το %s για αναφορές "
 "και γραφήματα (προγόνων και απόγονων)."
 
-#: views/family.php:544 views/family.php:623 views/outline_report.php:341
+#: views/family.php:545 views/family.php:624 views/outline_report.php:341
 #: views/outline_report.php:367 views/timeline.php:216
 msgid ""
 "*** Privacy filter is active, one or more items are filtered. Please login "
@@ -9353,65 +9407,65 @@ msgstr ""
 "*** Το φίλτρο απορρήτου είναι ενεργό, ένα ή περισσότερα στοιχεία "
 "φιλτράρονται. Παρακαλώ συνδεθείτε για να δείτε όλα τα στοιχεία ***"
 
-#: views/family.php:607 views/family_pdf.php:467 views/family_rtf.php:428
+#: views/family.php:608 views/family_pdf.php:467 views/family_rtf.php:428
 msgid "Child"
 msgstr "Παιδί"
 
-#: views/family.php:659 views/family_pdf.php:525 views/family_rtf.php:475
+#: views/family.php:660 views/family_pdf.php:525 views/family_rtf.php:475
 msgid "follows"
 msgstr "ακολουθεί"
 
-#: views/family.php:688 views/family.php:718 views/family.php:752
+#: views/family.php:689 views/family.php:719 views/family.php:753
 msgid "Adopted child:"
 msgstr "Adopted child:"
 
-#: views/family.php:712 views/family.php:746
+#: views/family.php:713 views/family.php:747
 msgid "Stepchild"
 msgstr "Θετό τέκνο"
 
-#: views/family.php:714 views/family.php:748
+#: views/family.php:715 views/family.php:749
 msgid "Legal child"
 msgstr "Legal child"
 
-#: views/family.php:716 views/family.php:750
+#: views/family.php:717 views/family.php:751
 msgid "Foster child"
 msgstr "Foster child"
 
-#: views/family.php:1118
+#: views/family.php:1119
 msgid "Family events"
 msgstr "Family events"
 
-#: views/family.php:1149
+#: views/family.php:1150
 msgid "Citation for:"
 msgstr "Παράθεση για:"
 
-#: views/family.php:1171
+#: views/family.php:1172
 msgid "accessed"
 msgstr "πρόσβαση"
 
-#: views/family.php:1274 views/family.php:1281
+#: views/family.php:1275 views/family.php:1282
 msgid "New user note"
 msgstr "Σημείωση νέου χρήστη"
 
-#: views/family.php:1289
+#: views/family.php:1290
 msgid "User note by family"
 msgstr "Σημείωση χρήστη ανά οικογένεια"
 
-#: views/family.php:1309
+#: views/family.php:1310
 msgid "Your information is saved and will be reviewed by the webmaster."
 msgstr "Οι πληροφορίες σας αποθηκεύονται και θα ελεγχθούν από τον webmaster."
 
-#: views/family.php:1340
+#: views/family.php:1341
 msgid "Add information or remarks"
 msgstr "Προσθέστε πληροφορίες ή παρατηρήσεις"
 
-#: views/family.php:1357
+#: views/family.php:1358
 msgid "Your e-mail address is missing. Please add you're mail address here: "
 msgstr ""
 "Η διεύθυνση ηλεκτρονικού ταχυδρομείου σας λείπει. Προσθέστε τη διεύθυνση "
 "email σας εδώ:"
 
-#: views/family.php:1374 views/mailform.php:99 views/register.php:105
+#: views/family.php:1375 views/mailform.php:99 views/register.php:105
 #: views/reset_password.php:90
 msgid "Send"
 msgstr "Send"
@@ -11038,6 +11092,9 @@ msgstr "Επιλέξτε ένα θέμα"
 #: views/user_settings.php:125 views/user_settings.php:128
 msgid "Standard-colours"
 msgstr "Standard-colours"
+
+#~ msgid "Select place"
+#~ msgstr "Επιλέξτε μέρος"
 
 #~ msgid ""
 #~ "These are settings PER USER, it's also possible to set these setting PER "

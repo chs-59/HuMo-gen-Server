@@ -79,6 +79,7 @@ class RenamePlaceModel
         $place_qry .= " UNION (SELECT fam_relation_place as place_edit FROM humo_families WHERE fam_tree_id='" . $tree_id . "' GROUP BY fam_relation_place)
             UNION (SELECT fam_marr_notice_place as place_edit FROM humo_families WHERE fam_tree_id='" . $tree_id . "' GROUP BY fam_marr_notice_place)
             UNION (SELECT fam_marr_place as place_edit FROM humo_families WHERE fam_tree_id='" . $tree_id . "' GROUP BY fam_marr_place)
+            UNION (SELECT fam_marr_church_place as place_edit FROM humo_families WHERE fam_tree_id='" . $tree_id . "' GROUP BY fam_marr_church_place)
             UNION (SELECT fam_marr_church_notice_place as place_edit FROM humo_families WHERE fam_tree_id='" . $tree_id . "' GROUP BY fam_marr_church_notice_place)
             UNION (SELECT fam_div_place as place_edit FROM humo_families WHERE fam_tree_id='" . $tree_id . "' GROUP BY fam_div_place)";
         $place_qry .= "UNION (SELECT address_place as place_edit FROM humo_addresses WHERE address_tree_id='" . $tree_id . "' GROUP BY address_place)

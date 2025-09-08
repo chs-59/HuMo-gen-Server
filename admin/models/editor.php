@@ -1778,6 +1778,37 @@ class EditorModel
 
             $this->family_tree_update();
         }
+
+        // ** Look out for geodata and safe it to location database 250906
+        $places_array = array(
+        "pers_birth_place", "pers_bapt_place", "pers_death_place", "pers_buried_place",
+        "fam_relation_place", "fam_marr_notice_place", "fam_marr_place", "fam_marr_church_notice_place", "fam_marr_church_place", "fam_div_place",
+        "address_place", "event_place", "birth_decl_place", "death_decl_place");
+        foreach ($places_array as $my_place) {
+            if (!isset($_POST[ $my_place]) || empty($_POST[$my_place])){ continue; }
+            if (!isset($_POST[ $my_place . '_geo']) || empty($_POST[$my_place . '_geo'])){ continue; }
+            list($my_lat, $my_lng) = explode(';', $_POST[$my_place . '_geo']);
+            if (!($my_lng > 0)) { continue; }
+            // check if place is already in database and get id
+            $testplace = $this->dbh->query("SELECT * FROM humo_location WHERE location_location = '" . $this->editor_cls->text_process($_POST[$my_place]) . "'");
+            $my_id = -1;
+            if ($testplaceDB = $testplace->fetch(PDO::FETCH_OBJ)) {
+                $my_id = $testplaceDB->location_id;
+                $this->dbh->query("UPDATE humo_location SET
+                                location_location ='" . $this->editor_cls->text_process($_POST[$my_place]) . "',
+                                location_lat = " . floatval($my_lat) . ",
+                                location_lng = " . floatval($my_lng) . "
+                                WHERE location_id = '" . $my_id . "'");
+                echo 'changed entry database<br>';                
+            }
+            else {
+                $this->dbh->query("INSERT INTO humo_location (location_location, location_lat, location_lng) VALUES('" . 
+                                $this->editor_cls->text_process($_POST[$my_place]) . "','" . 
+                                floatval($my_lat) . "','" . floatval($my_lng) . "') ");
+                echo 'new entry database<br>';                
+            }    
+        }
+
         return $confirm;
     }
 
