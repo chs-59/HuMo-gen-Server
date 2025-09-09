@@ -1680,6 +1680,7 @@ It\'s also possible to add your own icons by a person! Add the icon in the image
     <!-- End of person form -->
 </form>
   <?php
+// same fuction in admin/views/edit_relations
 function print_place_input($input_name, $input_value, $form) {
       global $field_place, $field_popup;
       $my_html = '
