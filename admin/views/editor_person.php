@@ -1686,7 +1686,7 @@ function print_place_input($input_name, $input_value, $form) {
       $my_html = '
 <div class="col-md-7">
     <div class="input-group">
-        <input type="text" name="' . $input_name . '" value="' . htmlspecialchars($input_value) . '" size="' . $field_place . '" class="search-place form-control form-control-sm">
+        <input type="text" name="' . $input_name . '" value="' . htmlspecialchars($input_value) . '" size="' . $field_place . '" class="search-place form-control form-control-sm" placeholder="' . __('Type location to start search in the database') . '">
         <input type="hidden" name="' . $input_name . '_geo" value="">
         <button type="button" onClick=\'window.open("index.php?page=editor_place_select&amp;form=' . $form . '&amp;place_item=' . $input_name . '&place="+encodeURI(document.form' . $form . '.' . $input_name . '.value),"","' . $field_popup . '"); return false;\'>
             <img src="../images/search_osm.png" title="' . __('Search with OpenStreetMap') . '">
