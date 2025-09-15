@@ -1788,7 +1788,7 @@ class EditorModel
             if (!isset($_POST[ $my_place]) || empty($_POST[$my_place])){ continue; }
             if (!isset($_POST[ $my_place . '_geo']) || empty($_POST[$my_place . '_geo'])){ continue; }
             list($my_lat, $my_lng) = explode(';', $_POST[$my_place . '_geo']);
-            if (!($my_lng > 0)) { continue; }
+            if (empty($my_lng)) { continue; }
             // check if place is already in database and get id
             $testplace = $this->dbh->query("SELECT * FROM humo_location WHERE location_location = '" . $this->editor_cls->text_process($_POST[$my_place]) . "'");
             $my_id = -1;
