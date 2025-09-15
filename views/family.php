@@ -983,7 +983,7 @@ else {
 
 
                     // *** OpenStreetMap ***
-                    if (isset($humo_option["use_world_map"]) && $humo_option["use_world_map"] == 'OpenStreetMap' && count($location_array) > 0) {
+                    if (isset($humo_option["use_world_map"]) && $humo_option["use_world_map"] == 'OpenStreetMap' && count($location_array) > 1) {
                         $map = 'map' . $family_nr;
                         $markers = 'markers' . $family_nr;
                         $group = 'group' . $family_nr;
