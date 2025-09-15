@@ -151,6 +151,7 @@ global $dutchtext, $reltext_nor, $doublespouse, $reltext_nor2;
                 ?>
                             <select size="1" name="person1" class="form-select form-select-sm">
                                 <?php
+                                $cnt = 0;
                                 while ($searchDb = $search_result->fetch(PDO::FETCH_OBJ)) {
                                     $name = $pers_cls->person_name($searchDb);
                                     if ($name["show_name"]) {
@@ -164,6 +165,7 @@ global $dutchtext, $reltext_nor, $doublespouse, $reltext_nor2;
                                         $search1_cls = new person_cls($searchDb);
                                         if ($search1_cls->privacy) {
                                             $birth = '';
+                                             if ($user['group_stealth'] === 'y') { continue;}
                                         }
 
                                         $selected = '';
@@ -177,11 +179,15 @@ global $dutchtext, $reltext_nor, $doublespouse, $reltext_nor2;
                                             <?= $name["index_name"] . $birth; ?> [<?= $searchDb->pers_gedcomnumber; ?>]
                                         </option>
                                 <?php
-                                    }
+                                     $cnt++;
+                                   }
                                 }
                                 // *** Simple test only, if number of results = limit then show message ***
                                 if ($number_results == $limit) {
                                     echo '<option value="">' . __('Results are limited, use search to find more persons.') . '</option>';
+                                }
+                                if ($cnt == 0) {
+                                    echo '<option>' . __('Person not found') . '</option>';
                                 }
                                 ?>
                             </select>
@@ -265,6 +271,7 @@ global $dutchtext, $reltext_nor, $doublespouse, $reltext_nor2;
                 ?>
                             <select size="1" name="person2" class="form-select form-select-sm">
                                 <?php
+                                $cnt = 0;
                                 while ($searchDb2 = $search_result2->fetch(PDO::FETCH_OBJ)) {
                                     $name = $pers_cls->person_name($searchDb2);
                                     if ($name["show_name"]) {
@@ -278,6 +285,7 @@ global $dutchtext, $reltext_nor, $doublespouse, $reltext_nor2;
                                         $search2_cls = new person_cls($searchDb2);
                                         if ($search2_cls->privacy) {
                                             $birth = '';
+                                             if ($user['group_stealth'] === 'y') { continue;}
                                         }
 
                                         $selected = '';
@@ -291,11 +299,15 @@ global $dutchtext, $reltext_nor, $doublespouse, $reltext_nor2;
                                             <?= $name["index_name"] . $birth; ?> [<?= $searchDb2->pers_gedcomnumber; ?>]
                                         </option>
                                 <?php
+                                        $cnt++;
                                     }
                                 }
                                 // *** Simple test only, if number of results = limit then show message ***
                                 if ($number_results == $limit) {
                                     echo '<option value="">' . __('Results are limited, use search to find more persons.') . '</option>';
+                                }
+                                if ($cnt == 0) {
+                                    echo '<option>' . __('Person not found') . '</option>';
                                 }
                                 ?>
                             </select>
