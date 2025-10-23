@@ -983,7 +983,7 @@ else {
 
 
                     // *** OpenStreetMap ***
-                    if (isset($humo_option["use_world_map"]) && $humo_option["use_world_map"] == 'OpenStreetMap') {
+                    if (isset($humo_option["use_world_map"]) && $humo_option["use_world_map"] == 'OpenStreetMap' && count($location_array) > 1) {
                         $map = 'map' . $family_nr;
                         $markers = 'markers' . $family_nr;
                         $group = 'group' . $family_nr;
@@ -1004,6 +1004,8 @@ else {
 
                         // *** Add all markers from array ***
                         for ($i = 1; $i < count($location_array); $i++) {
+                            // skip unset geodata
+                            if (empty($lat_array[$i])) {                                continue;}
                             if ($i > 1) echo ',';
                             echo 'L.marker([' . $lat_array[$i] . ', ' . $lon_array[$i] . ']) .bindPopup(\'' . $text_array[$i] . '\')';
                             echo "\n";

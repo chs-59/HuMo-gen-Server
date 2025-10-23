@@ -119,7 +119,7 @@ function print_mediafile ($filename) {
     $content_type_header = mime_content_type($filename);
     $filesize = filesize($filename);
     header('Content-Type: ' . $content_type_header);
-    header('Content-Disposition: inline; filename="' . $url . '"');
+    header('Content-Disposition: inline; filename="' . $filename . '"');
     header('Cache-Control: private, max-age=3600');
     header('Content-Length: '. filesize($filename));
     header('Pragma:');

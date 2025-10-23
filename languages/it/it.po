@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-genealogy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-08 15:37+0200\n"
-"PO-Revision-Date: 2025-09-08 15:37+0200\n"
+"POT-Creation-Date: 2025-09-09 18:09+0200\n"
+"PO-Revision-Date: 2025-09-09 18:09+0200\n"
 "Last-Translator: Gianni Salza <salzagi@gmail.com>, 2019\n"
 "Language-Team: Italian (http://app.transifex.com/humo-gen/humo-gen/language/"
 "it/)\n"
@@ -300,13 +300,13 @@ msgstr "Evento"
 
 #: admin/include/editor_event_cls.php:24 admin/include/editor_event_cls.php:988
 #: admin/views/editor_person.php:1016 admin/views/editor_person.php:1364
-#: admin/views/editor_relation.php:761 include/witness.php:62
+#: admin/views/editor_relation.php:713 include/witness.php:62
 msgid "clergy"
 msgstr "clero"
 
 #: admin/include/editor_event_cls.php:26 admin/include/editor_event_cls.php:992
 #: admin/views/editor_person.php:759 admin/views/editor_person.php:1291
-#: admin/views/editor_relation.php:533 include/witness.php:45
+#: admin/views/editor_relation.php:509 include/witness.php:45
 msgid "officiator"
 msgstr "officiante"
 
@@ -325,8 +325,8 @@ msgstr "direttore di pompe funebri"
 
 #: admin/include/editor_event_cls.php:34 admin/views/editor_person.php:759
 #: admin/views/editor_person.php:1016 admin/views/editor_person.php:1291
-#: admin/views/editor_person.php:1364 admin/views/editor_relation.php:533
-#: admin/views/editor_relation.php:761 include/witness.php:42
+#: admin/views/editor_person.php:1364 admin/views/editor_relation.php:509
+#: admin/views/editor_relation.php:713 include/witness.php:42
 #: include/witness.php:66 views/list.php:391 views/list.php:398
 msgid "witness"
 msgstr "testimone"
@@ -398,8 +398,8 @@ msgstr "Colore per contrassegnare la persona"
 #: admin/include/editor_event_cls.php:56 admin/include/editor_event_cls.php:460
 #: admin/include/editor_event_cls.php:1227
 #: admin/include/editor_event_cls.php:1574
-#: admin/include/editor_event_cls.php:1577 admin/views/editor_relation.php:827
-#: admin/views/editor_relation.php:830
+#: admin/include/editor_event_cls.php:1577 admin/views/editor_relation.php:767
+#: admin/views/editor_relation.php:770
 msgid "Religion"
 msgstr "Religione"
 
@@ -481,7 +481,7 @@ msgstr "Scegli il numero GEDCOM o inserisci il nome della persona:"
 
 #: admin/include/editor_event_cls.php:945 admin/include/editor_event_cls.php:1094
 #: admin/views/editor.php:306 admin/views/editor_person.php:307
-#: admin/views/editor_relation.php:115 admin/views/editor_relation.php:1267
+#: admin/views/editor_relation.php:115 admin/views/editor_relation.php:1195
 msgid "GEDCOM number (ID)"
 msgstr "Numero GEDCOM (ID)"
 
@@ -496,7 +496,7 @@ msgstr "Numero GEDCOM (ID)"
 #: admin/views/editor.php:747 admin/views/editor_person.php:139
 #: admin/views/editor_person.php:220 admin/views/editor_person.php:308
 #: admin/views/editor_relation.php:116 admin/views/editor_relation.php:291
-#: admin/views/editor_relation.php:310 admin/views/editor_relation.php:1268
+#: admin/views/editor_relation.php:310 admin/views/editor_relation.php:1196
 #: admin/views/gedcom_export.php:164 admin/views/language_editor.php:250
 #: admin/views/maps_locations.php:771 admin/views/settings_homepage.php:88
 #: admin/views/settings_homepage.php:204 admin/views/tree_merge.php:556
@@ -517,7 +517,7 @@ msgstr "Cerca"
 #: admin/views/edit_repository.php:70 admin/views/edit_repository.php:229
 #: admin/views/edit_source.php:192 admin/views/edit_source.php:403
 #: admin/views/editor_person.php:1215 admin/views/editor_person.php:1669
-#: admin/views/editor_relation.php:1093 admin/views/index_admin.php:618
+#: admin/views/editor_relation.php:1021 admin/views/index_admin.php:618
 #: include/calculate_age_cls.php:371 include/calculate_age_cls.php:393
 #: include/calculate_age_cls.php:497 include/calculate_age_cls.php:519
 #: views/fanchart.php:662
@@ -720,9 +720,9 @@ msgstr "ad esempio Conte di Cuccagna"
 #: admin/views/editor_person.php:851 admin/views/editor_person.php:945
 #: admin/views/editor_person.php:1021 admin/views/editor_person.php:1151
 #: admin/views/editor_person.php:1295 admin/views/editor_person.php:1368
-#: admin/views/editor_relation.php:357 admin/views/editor_relation.php:441
-#: admin/views/editor_relation.php:538 admin/views/editor_relation.php:683
-#: admin/views/editor_relation.php:766 admin/views/editor_relation.php:871
+#: admin/views/editor_relation.php:357 admin/views/editor_relation.php:429
+#: admin/views/editor_relation.php:514 admin/views/editor_relation.php:647
+#: admin/views/editor_relation.php:718 admin/views/editor_relation.php:811
 #: app/model/tree_index.php:1025 include/show_source_pdf.php:49
 #: views/list.php:236 views/list.php:256 views/list.php:702 views/list.php:728
 #: views/source.php:37 views/source.php:115 views/sources.php:69
@@ -741,9 +741,9 @@ msgstr "Data"
 #: admin/views/editor_person.php:952 admin/views/editor_person.php:1028
 #: admin/views/editor_person.php:1158 admin/views/editor_person.php:1303
 #: admin/views/editor_person.php:1375 admin/views/editor_relation.php:364
-#: admin/views/editor_relation.php:448 admin/views/editor_relation.php:545
-#: admin/views/editor_relation.php:690 admin/views/editor_relation.php:773
-#: admin/views/editor_relation.php:878 include/show_source_pdf.php:84
+#: admin/views/editor_relation.php:436 admin/views/editor_relation.php:521
+#: admin/views/editor_relation.php:654 admin/views/editor_relation.php:725
+#: admin/views/editor_relation.php:818 include/show_source_pdf.php:84
 #: views/address.php:25 views/list.php:249 views/list.php:269 views/list.php:360
 #: views/list.php:367 views/list.php:715 views/list.php:741 views/source.php:50
 #: views/source.php:119 views/sources.php:86
@@ -759,10 +759,10 @@ msgstr "Luogo"
 #: admin/views/editor_person.php:783 admin/views/editor_person.php:873
 #: admin/views/editor_person.php:967 admin/views/editor_person.php:1048
 #: admin/views/editor_person.php:1230 admin/views/editor_person.php:1315
-#: admin/views/editor_person.php:1401 admin/views/editor_relation.php:396
-#: admin/views/editor_relation.php:472 admin/views/editor_relation.php:629
-#: admin/views/editor_relation.php:714 admin/views/editor_relation.php:797
-#: admin/views/editor_relation.php:918 admin/views/editor_relation.php:958
+#: admin/views/editor_person.php:1401 admin/views/editor_relation.php:384
+#: admin/views/editor_relation.php:448 admin/views/editor_relation.php:593
+#: admin/views/editor_relation.php:666 admin/views/editor_relation.php:737
+#: admin/views/editor_relation.php:846 admin/views/editor_relation.php:886
 #: admin/views/groups.php:512 admin/views/groups.php:520
 #: admin/views/groups.php:528 admin/views/settings_homepage.php:94
 #: admin/views/settings_homepage.php:134 admin/views/settings_homepage.php:210
@@ -803,11 +803,11 @@ msgstr "Seleziona il paese"
 #: admin/views/editor_person.php:975 admin/views/editor_person.php:1056
 #: admin/views/editor_person.php:1238 admin/views/editor_person.php:1323
 #: admin/views/editor_person.php:1409 admin/views/editor_person.php:1439
-#: admin/views/editor_person.php:1464 admin/views/editor_relation.php:404
-#: admin/views/editor_relation.php:480 admin/views/editor_relation.php:637
-#: admin/views/editor_relation.php:722 admin/views/editor_relation.php:805
-#: admin/views/editor_relation.php:926 admin/views/editor_relation.php:966
-#: admin/views/editor_relation.php:989 app/controller/sourceController.php:22
+#: admin/views/editor_person.php:1464 admin/views/editor_relation.php:392
+#: admin/views/editor_relation.php:456 admin/views/editor_relation.php:601
+#: admin/views/editor_relation.php:674 admin/views/editor_relation.php:745
+#: admin/views/editor_relation.php:854 admin/views/editor_relation.php:894
+#: admin/views/editor_relation.php:917 app/controller/sourceController.php:22
 #: views/address.php:49 views/source.php:15
 msgid "Source"
 msgstr "Provenienza"
@@ -1141,30 +1141,30 @@ msgid "Address"
 msgstr "Indirizzo"
 
 #: admin/include/editor_sources.php:131 admin/views/editor_relation.php:337
-#: admin/views/editor_relation.php:601 include/marriage_cls.php:66
+#: admin/views/editor_relation.php:565 include/marriage_cls.php:66
 #: include/marriage_cls.php:167 include/marriage_cls.php:169
 #: include/marriage_cls.php:171 include/person_cls.php:1241
 msgid "Living together"
 msgstr "Coabitazione"
 
-#: admin/include/editor_sources.php:137 admin/views/editor_relation.php:427
+#: admin/include/editor_sources.php:137 admin/views/editor_relation.php:415
 msgid "Notice of Marriage"
 msgstr "Annuncio di Matrimonio"
 
-#: admin/include/editor_sources.php:143 admin/views/editor_relation.php:504
+#: admin/include/editor_sources.php:143 admin/views/editor_relation.php:480
 #: views/list_places_families.php:55
 msgid "Marriage"
 msgstr "Matrimonio"
 
-#: admin/include/editor_sources.php:149 admin/views/editor_relation.php:666
+#: admin/include/editor_sources.php:149 admin/views/editor_relation.php:630
 msgid "Religious Notice of Marriage"
 msgstr "Pubblicazione religiosa di matrimonio"
 
-#: admin/include/editor_sources.php:155 admin/views/editor_relation.php:747
+#: admin/include/editor_sources.php:155 admin/views/editor_relation.php:699
 msgid "Religious Marriage"
 msgstr "Matrimonio religioso"
 
-#: admin/include/editor_sources.php:161 admin/views/editor_relation.php:849
+#: admin/include/editor_sources.php:161 admin/views/editor_relation.php:789
 msgid "Divorce"
 msgstr "Divorzio"
 
@@ -1179,18 +1179,18 @@ msgstr "relazione"
 #: admin/views/edit_repository.php:228 admin/views/edit_source.php:400
 #: admin/views/edit_source.php:402 admin/views/editor_person.php:356
 #: admin/views/editor_person.php:1668 admin/views/editor_relation.php:271
-#: admin/views/editor_relation.php:1091 admin/views/index_admin.php:139
+#: admin/views/editor_relation.php:1019 admin/views/index_admin.php:139
 #: admin/views/language_editor.php:264 admin/views/maps_worldmap.php:103
 #: admin/views/maps_worldmap.php:138 admin/views/prefix_editor.php:27
 #: admin/views/tree_merge.php:948
 msgid "Save"
 msgstr "Salva"
 
-#: admin/include/editor_sources.php:266 admin/views/editor_relation.php:1220
+#: admin/include/editor_sources.php:266 admin/views/editor_relation.php:1148
 msgid "Drag to change order (saves automatically)"
 msgstr "Trascina per cambiare ordine (salva automaticamente)"
 
-#: admin/include/editor_sources.php:266 admin/views/editor_relation.php:1220
+#: admin/include/editor_sources.php:266 admin/views/editor_relation.php:1148
 msgid "Drag to change order"
 msgstr "Trascina per cambiare ordine"
 
@@ -2606,12 +2606,12 @@ msgstr "Ultime modifiche"
 
 #: admin/views/editor.php:110 admin/views/editor.php:1848
 #: admin/views/editor_person.php:1615 admin/views/editor_person.php:1634
-#: admin/views/editor_relation.php:1063 admin/views/notes.php:234
+#: admin/views/editor_relation.php:991 admin/views/notes.php:234
 msgid "Added by"
 msgstr "Aggiunto da"
 
 #: admin/views/editor.php:118 admin/views/editor.php:1860
-#: admin/views/editor_person.php:1651 admin/views/editor_relation.php:1080
+#: admin/views/editor_person.php:1651 admin/views/editor_relation.php:1008
 msgid "Changed by"
 msgstr "Modificato da"
 
@@ -2666,11 +2666,11 @@ msgid "Browse"
 msgstr "Vedi"
 
 #: admin/views/editor.php:617 admin/views/editor_relation.php:278
-#: admin/views/editor_relation.php:505 include/marriage_cls.php:811
+#: admin/views/editor_relation.php:481 include/marriage_cls.php:811
 msgid "marriage/ relation"
 msgstr "matrimonio"
 
-#: admin/views/editor.php:619 admin/views/editor_relation.php:600
+#: admin/views/editor.php:619 admin/views/editor_relation.php:564
 #: include/marriage_cls.php:374 include/marriage_cls.php:380
 #: include/marriage_cls.php:389 include/marriage_cls.php:390
 msgid "Married"
@@ -2788,7 +2788,7 @@ msgid "Add relation"
 msgstr "Aggiungi una relazione"
 
 #: admin/views/editor.php:1231 admin/views/editor.php:1345
-#: admin/views/editor_relation.php:1236 admin/views/editor_relation.php:1238
+#: admin/views/editor_relation.php:1164 admin/views/editor_relation.php:1166
 msgid "Add child"
 msgstr "Aggiungi un figlio"
 
@@ -3142,12 +3142,12 @@ msgstr ""
 "l'icona nella cartella delle immagini, ad es. \"persona1.gif\" e aggiungi "
 "\"persona1\" nel campo codice personale."
 
-#: admin/views/editor_person.php:1561 admin/views/editor_relation.php:1028
+#: admin/views/editor_person.php:1561 admin/views/editor_relation.php:956
 msgid "GEDCOM tags"
 msgstr "Tags GEDCOM"
 
 #: admin/views/editor_person.php:1566 admin/views/editor_person.php:1568
-#: admin/views/editor_relation.php:1033 admin/views/editor_relation.php:1035
+#: admin/views/editor_relation.php:961 admin/views/editor_relation.php:963
 #, php-format
 msgid "There are %d unprocessed GEDCOM tags."
 msgstr "Ci sono %d tag GEDCOM non elaborati."
@@ -3167,19 +3167,13 @@ msgstr "Ci sono  %d note aggiunte dall'utente."
 msgid "Delete person"
 msgstr "Cancella la persona"
 
-#: admin/views/editor_person.php:1691 admin/views/editor_relation.php:369
-#: admin/views/editor_relation.php:453 admin/views/editor_relation.php:550
-#: admin/views/editor_relation.php:695 admin/views/editor_relation.php:778
-#: admin/views/editor_relation.php:883
+#: admin/views/editor_person.php:1692 admin/views/editor_relation.php:1241
 #, fuzzy
 #| msgid "Use OpenStreetMap"
 msgid "Search with OpenStreetMap"
 msgstr "Usa OpenStreetMap"
 
-#: admin/views/editor_person.php:1697 admin/views/editor_relation.php:374
-#: admin/views/editor_relation.php:458 admin/views/editor_relation.php:555
-#: admin/views/editor_relation.php:700 admin/views/editor_relation.php:783
-#: admin/views/editor_relation.php:888
+#: admin/views/editor_person.php:1698 admin/views/editor_relation.php:1247
 msgid "Geolocation data added. Press \"Save\" to write to database"
 msgstr ""
 
@@ -3216,20 +3210,20 @@ msgstr "Seleziona la persona 2"
 msgid "End living together"
 msgstr "Fine convivenza"
 
-#: admin/views/editor_relation.php:382
+#: admin/views/editor_relation.php:370
 msgid "End date"
 msgstr "Data di fine"
 
-#: admin/views/editor_relation.php:512 admin/views/editor_relation.php:592
-#: admin/views/editor_relation.php:594 admin/views/editor_relation.php:599
+#: admin/views/editor_relation.php:488 admin/views/editor_relation.php:556
+#: admin/views/editor_relation.php:558 admin/views/editor_relation.php:563
 msgid "Marriage/ Related"
 msgstr "Coniugi"
 
-#: admin/views/editor_relation.php:563
+#: admin/views/editor_relation.php:527
 msgid "Age person 1"
 msgstr "Età della Persona 1"
 
-#: admin/views/editor_relation.php:574
+#: admin/views/editor_relation.php:538
 msgid ""
 "If birth year of man or woman is empty it will be calculated automatically "
 "using age by marriage."
@@ -3237,98 +3231,104 @@ msgstr ""
 "Se l'anno di nascita dell'uomo o della donna è vuoto, verrà calcolato "
 "automaticamente utilizzando l'età per matrimonio."
 
-#: admin/views/editor_relation.php:583
+#: admin/views/editor_relation.php:547
 msgid "Age person 2"
 msgstr "Età della Persona 2"
 
-#: admin/views/editor_relation.php:602 include/marriage_cls.php:69
+#: admin/views/editor_relation.php:566 include/marriage_cls.php:69
 #: include/person_cls.php:1244
 msgid "Living apart together"
 msgstr "Vivono separati nella stessa casa"
 
-#: admin/views/editor_relation.php:603 include/marriage_cls.php:73
+#: admin/views/editor_relation.php:567 include/marriage_cls.php:73
 #: include/person_cls.php:1247
 msgid "Intentionally unmarried mother"
 msgstr "Madre intenzionalmente nubile"
 
-#: admin/views/editor_relation.php:604 include/marriage_cls.php:79
+#: admin/views/editor_relation.php:568 include/marriage_cls.php:79
 #: include/person_cls.php:1250
 msgid "Homosexual"
 msgstr "Omosessuale"
 
-#: admin/views/editor_relation.php:605
+#: admin/views/editor_relation.php:569
 msgid "Non_marital"
 msgstr "Relazione_non_coniugale"
 
-#: admin/views/editor_relation.php:606 include/marriage_cls.php:88
+#: admin/views/editor_relation.php:570 include/marriage_cls.php:88
 #: include/marriage_cls.php:95 include/person_cls.php:1256
 #: include/person_cls.php:1259
 msgid "Extramarital"
 msgstr "Extraconiugale"
 
-#: admin/views/editor_relation.php:607 include/marriage_cls.php:102
+#: admin/views/editor_relation.php:571 include/marriage_cls.php:102
 #: include/person_cls.php:1262
 msgid "Partner"
 msgstr "Compagno"
 
-#: admin/views/editor_relation.php:608 include/marriage_cls.php:106
+#: admin/views/editor_relation.php:572 include/marriage_cls.php:106
 msgid "Registered partnership"
 msgstr "Associazione registrata"
 
-#: admin/views/editor_relation.php:609 include/marriage_cls.php:110
+#: admin/views/editor_relation.php:573 include/marriage_cls.php:110
 #: include/person_cls.php:1268
 msgid "Unknown relation"
 msgstr "Relazione sconosciuta"
 
-#: admin/views/editor_relation.php:615 admin/views/editor_relation.php:901
+#: admin/views/editor_relation.php:579 admin/views/editor_relation.php:829
 msgid "Registrar"
 msgstr "Registrare"
 
-#: admin/views/editor_relation.php:949
+#: admin/views/editor_relation.php:877
 msgid "Divorce (use this checkbox for a divorce without further data)."
 msgstr ""
 "Divorzio (utilizzare questa casella di controllo per il divorzio senza "
 "ulteriori dati)."
 
-#: admin/views/editor_relation.php:955
+#: admin/views/editor_relation.php:883
 msgid "Text by relation"
 msgstr "Testo per questa relazione"
 
-#: admin/views/editor_relation.php:985
+#: admin/views/editor_relation.php:913
 msgid "Source by relation"
 msgstr "Fonte per la relazione"
 
-#: admin/views/editor_relation.php:1097
+#: admin/views/editor_relation.php:1025
 msgid "Delete relation"
 msgstr "Cancella la relazione"
 
-#: admin/views/editor_relation.php:1199
+#: admin/views/editor_relation.php:1127
 msgid "Use this icon to order children (drag and drop)"
 msgstr "Usa questa icona per mettere in ordine i figli (trascina e rilascia)"
 
-#: admin/views/editor_relation.php:1200
+#: admin/views/editor_relation.php:1128
 msgid "Or automatically order children:"
 msgstr "Oppure ordina automaticamente i figli:"
 
-#: admin/views/editor_relation.php:1200
+#: admin/views/editor_relation.php:1128
 msgid "Automatic order children"
 msgstr "Ordina automaticamente i figli"
 
-#: admin/views/editor_relation.php:1202
+#: admin/views/editor_relation.php:1130
 msgid "Children are re-ordered."
 msgstr "I figli sono stati riordinati."
 
-#: admin/views/editor_relation.php:1224
+#: admin/views/editor_relation.php:1152
 msgid "Disconnect child"
 msgstr "Scollegare Figlio"
 
-#: admin/views/editor_relation.php:1260
+#: admin/views/editor_relation.php:1188
 msgid "Or add existing person as a child:"
 msgstr "Oppure aggiungi una persona esistente come Figlio:"
 
-#: admin/views/editor_relation.php:1272
+#: admin/views/editor_relation.php:1200
 msgid "Select child"
 msgstr "Selezionare figlio"
+
+#: admin/views/editor_relation.php:1238
+#, fuzzy
+#| msgid "No new locations were found to add to the database"
+msgid "Type location to start search in the database"
+msgstr "Non sono state trovate nuove posizioni da aggiungere al database"
 
 #: admin/views/gedcom.php:39
 msgid "STEP 1) Select GEDCOM file:"
