@@ -66,6 +66,11 @@ if (isset($tree_id) && isset($_POST['submit_button'])) {
         $gedcom_cats = $_POST['gedcom_cats'];
     }
     
+    $gedcom_media = '';
+    if (isset($_POST['gedcom_media'])) {
+        $gedcom_media = $_POST['gedcom_media'];
+    }
+    
     $gedcom_sources = '';
     if (isset($_POST['gedcom_sources'])) {
         $gedcom_sources = $_POST['gedcom_sources'];
@@ -74,7 +79,9 @@ if (isset($tree_id) && isset($_POST['submit_button'])) {
 
     // *** GEDCOM header ***
     $buffer = '';
-
+    
+    $media_collection = array();
+    
     if ($gedcom_version == '551') {
         // *** GEDCOM 5.5.1 ***
         //if ($gedcom_char_set=='UTF-8') $buffer.= "\xEF\xBB\xBF"; // *** Add BOM header to UTF-8 file ***
@@ -629,6 +636,7 @@ if (isset($tree_id) && isset($_POST['submit_button'])) {
                 $buffer .= "1 OBJE\r\n";
                 $buffer .= "2 FORM jpg\r\n";
                 $buffer .= '2 FILE ' . $sourceDb->event_event . "\r\n";
+                $media_collection[] = $sourceDb->event_event;
                 if ($sourceDb->event_date) $buffer .= '2 DATE ' . process_date($gedcom_version, $sourceDb->event_date) . "\r\n";
 
                 if ($gedcom_texts == 'yes' && $sourceDb->event_text) {
@@ -1251,6 +1259,7 @@ if (isset($tree_id) && isset($_POST['submit_button'])) {
                 $buffer .= "1 OBJE\r\n";
                 $buffer .= "2 FORM jpg\r\n";
                 $buffer .= '2 FILE ' . $sourceDb->event_event . "\r\n";
+                $media_collection[] =  $sourceDb->event_event;                
                 if ($sourceDb->event_date) {
                     $buffer .= '2 DATE ' . process_date($gedcom_version, $sourceDb->event_date) . "\r\n";
                 }
@@ -1535,6 +1544,7 @@ if (isset($tree_id) && isset($_POST['submit_button'])) {
                     $buffer .= "1 OBJE\r\n";
                     $buffer .= "2 FORM jpg\r\n";
                     $buffer .= '2 FILE ' . $sourceDb->event_event . "\r\n";
+                    $media_collection[] =  $sourceDb->event_event;                  
                     if ($sourceDb->event_date) {
                         $buffer .= '2 DATE ' . process_date($gedcom_version, $sourceDb->event_date) . "\r\n";
                     }
@@ -1764,6 +1774,26 @@ if (isset($tree_id) && isset($_POST['submit_button'])) {
 <?php
     fwrite($fh, '0 TRLR');
     fclose($fh);
+    if ($gedcom_media == 'yes') {
+        //var_dump($media_collection); 
+        $mediazip = new ZipArchive();
+        $datasql = $dbh->query("SELECT tree_pict_path FROM humo_trees WHERE tree_id='" . $tree_id . "'");
+        $dataDb = $datasql->fetch(PDO::FETCH_OBJ);
+        $tree_pict_path = $dataDb->tree_pict_path;
+        if (substr($tree_pict_path, 0, 1) === '|'                   // chopstick code
+            || preg_match('/^media\//', $tree_pict_path)) {     // tree is subfolder of media
+            $tree_pict_path = 'media/'; 
+        }
+        $tree_pict_path = '../' . $tree_pict_path; //path from admin dir
+        if ($mediazip->open($export['path'] . $export['file_name'] . '.media.zip', ZipArchive::CREATE) === TRUE) {
+            foreach ($media_collection as $media_file) {
+                if (file_exists($tree_pict_path . $media_file)){
+                    $mediazip->addFile($tree_pict_path . $media_file, $media_file);
+                }
+            }
+         $mediazip->close();   
+        }
+    }
 }
 
 function decode($buffer)
