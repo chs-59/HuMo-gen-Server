@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-genealogy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-09 18:09+0200\n"
-"PO-Revision-Date: 2025-09-09 18:09+0200\n"
+"POT-Creation-Date: 2025-11-05 15:37+0100\n"
+"PO-Revision-Date: 2025-11-05 15:37+0100\n"
 "Last-Translator: Alexandru L, 2022-2024\n"
 "Language-Team: Romanian (http://app.transifex.com/humo-gen/humo-gen/language/"
 "ro/)\n"
@@ -244,7 +244,7 @@ msgstr "N.N."
 #: views/ancestor_sheet.php:295 views/ancestor_sheet_pdf.php:118
 #: views/ancestor_sheet_pdf.php:373 views/descendant_chart.php:354
 #: views/list.php:33 views/list.php:933 views/list.php:1124 views/list.php:1139
-#: views/relations.php:162 views/relations.php:276
+#: views/relations.php:163 views/relations.php:283
 msgid "*"
 msgstr "*"
 
@@ -252,8 +252,8 @@ msgstr "*"
 #: admin/include/editor_cls.php:313 include/person_cls.php:1161
 #: views/ancestor_chart.php:226 views/ancestor_sheet.php:84
 #: views/descendant_chart.php:359 views/list.php:43 views/list.php:941
-#: views/list.php:1121 views/list.php:1136 views/relations.php:159
-#: views/relations.php:273
+#: views/list.php:1121 views/list.php:1136 views/relations.php:160
+#: views/relations.php:280
 msgid "~"
 msgstr "~"
 
@@ -338,15 +338,15 @@ msgstr "martor"
 #: admin/include/editor_media_select.php:82
 #: admin/include/editor_person_select.php:115
 #: admin/include/editor_relation_select.php:46 admin/views/editor.php:148
-#: admin/views/editor_person.php:393 admin/views/gedcom_export.php:330
+#: admin/views/editor_person.php:393 admin/views/gedcom_export.php:339
 #: app/model/mailform.php:83 app/model/register.php:95
 #: app/model/tree_index.php:603 app/model/tree_index.php:1025
 #: app/model/user_settings.php:79 views/anniversary.php:96
-#: views/family.php:1283 views/family.php:1351 views/layout.php:350
+#: views/family.php:1286 views/family.php:1354 views/layout.php:350
 #: views/list.php:146 views/list.php:639 views/list_names.php:217
 #: views/list_names.php:220 views/mailform.php:48 views/mailform.php:50
 #: views/register.php:58 views/relations.php:94 views/relations.php:96
-#: views/relations.php:210
+#: views/relations.php:216
 msgid "Name"
 msgstr "Nume"
 
@@ -510,7 +510,7 @@ msgstr "Număr GEDCOM (ID)"
 #: admin/views/editor_person.php:220 admin/views/editor_person.php:308
 #: admin/views/editor_relation.php:116 admin/views/editor_relation.php:291
 #: admin/views/editor_relation.php:310 admin/views/editor_relation.php:1196
-#: admin/views/gedcom_export.php:164 admin/views/language_editor.php:250
+#: admin/views/gedcom_export.php:173 admin/views/language_editor.php:250
 #: admin/views/maps_locations.php:771 admin/views/settings_homepage.php:88
 #: admin/views/settings_homepage.php:204 admin/views/tree_merge.php:556
 #: admin/views/tree_merge.php:574 admin/views/tree_merge.php:646
@@ -519,8 +519,8 @@ msgstr "Număr GEDCOM (ID)"
 #: views/addresses.php:31 views/latest_changes.php:23 views/layout.php:351
 #: views/list.php:99 views/list.php:162 views/list.php:453
 #: views/list_places_families.php:95 views/photoalbum.php:173
-#: views/relations.php:97 views/relations.php:105 views/relations.php:208
-#: views/relations.php:211 views/relations.php:219 views/sources.php:26
+#: views/relations.php:97 views/relations.php:105 views/relations.php:214
+#: views/relations.php:217 views/relations.php:225 views/sources.php:26
 msgid "Search"
 msgstr "Căutare"
 
@@ -566,7 +566,7 @@ msgstr "Altă funcție"
 #: include/person_cls.php:1545 include/person_cls.php:1546
 #: include/person_cls.php:1614 include/person_cls.php:1615
 #: include/person_cls.php:1701 include/person_cls.php:1702
-#: views/relations.php:584
+#: views/relations.php:596
 msgid "and"
 msgstr "și"
 
@@ -640,14 +640,14 @@ msgid "Also change"
 msgstr "Modificați și"
 
 #: admin/include/editor_event_cls.php:1190 admin/include/editor_inc.php:533
-#: admin/views/gedcom_export.php:256 app/model/family.php:240
+#: admin/views/gedcom_export.php:265 app/model/family.php:240
 #: include/person_cls.php:1060 include/person_cls.php:1061
 #: views/hourglass.php:171
 msgid "Descendants"
 msgstr "Urmași"
 
 #: admin/include/editor_event_cls.php:1191 admin/include/editor_inc.php:534
-#: admin/views/gedcom_export.php:274 app/model/ancestor.php:174
+#: admin/views/gedcom_export.php:283 app/model/ancestor.php:174
 #: include/person_cls.php:1069 include/person_cls.php:1070
 #: views/hourglass.php:151
 msgid "Ancestors"
@@ -782,7 +782,7 @@ msgstr "Locul"
 #: admin/views/groups.php:528 admin/views/settings_homepage.php:94
 #: admin/views/settings_homepage.php:134 admin/views/settings_homepage.php:210
 #: include/process_text.php:120 include/process_text.php:122
-#: views/addresses.php:44 views/family.php:1369 views/list.php:306
+#: views/addresses.php:44 views/family.php:1372 views/list.php:306
 #: views/list.php:313
 msgid "Text"
 msgstr "Text"
@@ -935,60 +935,60 @@ msgid "Also remove colour marks of"
 msgstr "Îndepărtați, de asemenea, semnele de culoare ale"
 
 #: admin/include/editor_inc.php:537 admin/include/editor_inc.php:1092
-#: admin/include/editor_user_settings.php:139 admin/models/editor.php:1393
-#: admin/models/editor.php:1989 admin/views/cms_pages.php:37
+#: admin/include/editor_user_settings.php:139 admin/models/editor.php:1389
+#: admin/models/editor.php:1985 admin/views/cms_pages.php:37
 #: admin/views/cms_pages.php:60 admin/views/edit_address.php:35
 #: admin/views/edit_repository.php:31 admin/views/edit_source.php:119
 #: admin/views/editor.php:339 admin/views/editor.php:356
 #: admin/views/editor_relation.php:246 admin/views/gedcom.php:88
-#: admin/views/gedcom_export.php:462 admin/views/gedcom_export.php:478
-#: admin/views/gedcom_export.php:494 admin/views/gedcom_export.php:511
-#: admin/views/gedcom_export.php:556 admin/views/groups.php:54
-#: admin/views/groups.php:547 admin/views/install.php:324
-#: admin/views/maps_locations.php:98 admin/views/maps_locations.php:120
-#: admin/views/maps_locations.php:199 admin/views/notes.php:91
-#: admin/views/settings.php:147 admin/views/settings.php:162
-#: admin/views/settings.php:188 admin/views/settings.php:211
-#: admin/views/settings.php:226 admin/views/settings.php:268
-#: admin/views/settings.php:280 admin/views/settings.php:295
-#: admin/views/settings.php:332 admin/views/settings.php:804
-#: admin/views/settings_homepage.php:345 admin/views/thumbs.php:162
-#: admin/views/thumbs.php:172 admin/views/thumbs.php:181
-#: admin/views/thumbs.php:191 admin/views/thumbs.php:211
-#: admin/views/thumbs.php:552 admin/views/tree_merge.php:892
-#: admin/views/tree_merge.php:905 admin/views/tree_merge.php:918
-#: admin/views/tree_merge.php:935 admin/views/trees.php:29
-#: admin/views/users.php:19 views/mailform.php:79
+#: admin/views/gedcom_export.php:471 admin/views/gedcom_export.php:487
+#: admin/views/gedcom_export.php:504 admin/views/gedcom_export.php:519
+#: admin/views/gedcom_export.php:536 admin/views/gedcom_export.php:581
+#: admin/views/groups.php:54 admin/views/groups.php:547
+#: admin/views/install.php:324 admin/views/maps_locations.php:98
+#: admin/views/maps_locations.php:120 admin/views/maps_locations.php:199
+#: admin/views/notes.php:91 admin/views/settings.php:147
+#: admin/views/settings.php:162 admin/views/settings.php:188
+#: admin/views/settings.php:211 admin/views/settings.php:226
+#: admin/views/settings.php:268 admin/views/settings.php:280
+#: admin/views/settings.php:295 admin/views/settings.php:332
+#: admin/views/settings.php:804 admin/views/settings_homepage.php:345
+#: admin/views/thumbs.php:162 admin/views/thumbs.php:172
+#: admin/views/thumbs.php:181 admin/views/thumbs.php:191
+#: admin/views/thumbs.php:211 admin/views/thumbs.php:552
+#: admin/views/tree_merge.php:892 admin/views/tree_merge.php:905
+#: admin/views/tree_merge.php:918 admin/views/tree_merge.php:935
+#: admin/views/trees.php:29 admin/views/users.php:19 views/mailform.php:79
 msgid "Yes"
 msgstr "Da"
 
 #: admin/include/editor_inc.php:538 admin/include/editor_inc.php:1093
-#: admin/include/editor_user_settings.php:140 admin/models/editor.php:1394
-#: admin/models/editor.php:1990 admin/views/cms_pages.php:38
+#: admin/include/editor_user_settings.php:140 admin/models/editor.php:1390
+#: admin/models/editor.php:1986 admin/views/cms_pages.php:38
 #: admin/views/cms_pages.php:61 admin/views/edit_address.php:36
 #: admin/views/edit_repository.php:32 admin/views/edit_source.php:120
 #: admin/views/editor.php:340 admin/views/editor.php:357
 #: admin/views/editor_relation.php:247 admin/views/gedcom.php:89
-#: admin/views/gedcom_export.php:463 admin/views/gedcom_export.php:479
-#: admin/views/gedcom_export.php:495 admin/views/gedcom_export.php:512
-#: admin/views/gedcom_export.php:555 admin/views/groups.php:55
-#: admin/views/groups.php:548 admin/views/install.php:325
-#: admin/views/maps_locations.php:99 admin/views/maps_locations.php:121
-#: admin/views/maps_locations.php:200 admin/views/notes.php:92
-#: admin/views/settings.php:148 admin/views/settings.php:163
-#: admin/views/settings.php:189 admin/views/settings.php:212
-#: admin/views/settings.php:227 admin/views/settings.php:269
-#: admin/views/settings.php:281 admin/views/settings.php:296
-#: admin/views/settings.php:333 admin/views/settings.php:805
-#: admin/views/settings_homepage.php:346 admin/views/thumbs.php:92
-#: admin/views/thumbs.php:95 admin/views/thumbs.php:102
-#: admin/views/thumbs.php:162 admin/views/thumbs.php:172
-#: admin/views/thumbs.php:181 admin/views/thumbs.php:191
-#: admin/views/thumbs.php:210 admin/views/thumbs.php:229
-#: admin/views/thumbs.php:553 admin/views/tree_merge.php:893
-#: admin/views/tree_merge.php:906 admin/views/tree_merge.php:919
-#: admin/views/tree_merge.php:936 admin/views/trees.php:30
-#: admin/views/users.php:20 views/mailform.php:80
+#: admin/views/gedcom_export.php:472 admin/views/gedcom_export.php:488
+#: admin/views/gedcom_export.php:503 admin/views/gedcom_export.php:520
+#: admin/views/gedcom_export.php:537 admin/views/gedcom_export.php:580
+#: admin/views/groups.php:55 admin/views/groups.php:548
+#: admin/views/install.php:325 admin/views/maps_locations.php:99
+#: admin/views/maps_locations.php:121 admin/views/maps_locations.php:200
+#: admin/views/notes.php:92 admin/views/settings.php:148
+#: admin/views/settings.php:163 admin/views/settings.php:189
+#: admin/views/settings.php:212 admin/views/settings.php:227
+#: admin/views/settings.php:269 admin/views/settings.php:281
+#: admin/views/settings.php:296 admin/views/settings.php:333
+#: admin/views/settings.php:805 admin/views/settings_homepage.php:346
+#: admin/views/thumbs.php:92 admin/views/thumbs.php:95
+#: admin/views/thumbs.php:102 admin/views/thumbs.php:162
+#: admin/views/thumbs.php:172 admin/views/thumbs.php:181
+#: admin/views/thumbs.php:191 admin/views/thumbs.php:210
+#: admin/views/thumbs.php:229 admin/views/thumbs.php:553
+#: admin/views/tree_merge.php:893 admin/views/tree_merge.php:906
+#: admin/views/tree_merge.php:919 admin/views/tree_merge.php:936
+#: admin/views/trees.php:30 admin/views/users.php:20 views/mailform.php:80
 msgid "No"
 msgstr "Nu"
 
@@ -1002,7 +1002,7 @@ msgstr "Selectați persoana"
 
 #: admin/include/editor_person_select.php:119
 #: admin/include/editor_relation_select.php:52 admin/views/editor.php:305
-#: admin/views/gedcom_export.php:162
+#: admin/views/gedcom_export.php:171
 msgid "or ID:"
 msgstr "sau ID:"
 
@@ -1102,7 +1102,7 @@ msgstr "Sex"
 #: include/person_cls.php:2051 include/person_cls.php:2053
 #: include/person_cls.php:2054 views/ancestor_sheet.php:295
 #: views/ancestor_sheet_pdf.php:373 views/anniversary.php:95
-#: views/descendant_chart.php:456 views/family.php:1182 views/list.php:234
+#: views/descendant_chart.php:456 views/family.php:1185 views/list.php:234
 #: views/list.php:242 views/list.php:640 views/maps.php:462 views/maps.php:593
 msgid "born"
 msgstr "născut(ă)"
@@ -1112,7 +1112,7 @@ msgstr "născut(ă)"
 #: app/model/tree_index.php:989 app/model/tree_index.php:991
 #: googlemaps/namesearch.php:192 include/person_cls.php:2218
 #: include/person_cls.php:2219 include/person_cls.php:2221
-#: include/person_cls.php:2222 views/family.php:1184 views/list.php:234
+#: include/person_cls.php:2222 views/family.php:1187 views/list.php:234
 #: views/list.php:242 views/list.php:640 views/maps.php:465 views/maps.php:596
 msgid "baptised"
 msgstr "botezat(ă)"
@@ -1148,7 +1148,7 @@ msgstr "persoana"
 
 #: admin/include/editor_sources.php:125 admin/include/editor_sources.php:179
 #: admin/include/editor_sources.php:185 admin/views/edit_repository.php:137
-#: admin/views/editor.php:1723 admin/views/gedcom_export.php:337
+#: admin/views/editor.php:1723 admin/views/gedcom_export.php:346
 #: admin/views/tree_merge.php:1447 app/controller/addressController.php:31
 #: app/controller/addressesController.php:34
 #: app/controller/cms_pagesController.php:29 views/address.php:12
@@ -1388,7 +1388,7 @@ msgstr "Număr GEDCOM (ID)"
 msgid "Only these persons"
 msgstr "Alegeți persoana"
 
-#: admin/include/gedcom_export.php:2079 include/db_functions_cls.php:853
+#: admin/include/gedcom_export.php:2109 include/db_functions_cls.php:853
 msgid "No valid family number."
 msgstr "Nu există un număr de familie valid."
 
@@ -1553,11 +1553,11 @@ msgstr "Afișează/ascunde limbi"
 msgid "Show/ hide theme's"
 msgstr "Afișează/ascunde temele"
 
-#: admin/index.php:581 admin/views/gedcom_export.php:361
+#: admin/index.php:581 admin/views/gedcom_export.php:370
 #: admin/views/maps.php:35 admin/views/maps_settings.php:24
 #: admin/views/menu.php:66 admin/views/settings_admin.php:8
 #: admin/views/settings_admin.php:39 admin/views/thumbs.php:196
-#: admin/views/tree_merge.php:1039 views/family.php:54 views/family.php:1358
+#: admin/views/tree_merge.php:1039 views/family.php:54 views/family.php:1361
 msgid "Settings"
 msgstr "Setări"
 
@@ -1699,7 +1699,7 @@ msgid "Repositories"
 msgstr "Depozite"
 
 #: admin/index.php:641 admin/views/edit_address.php:25
-#: admin/views/gedcom_export.php:520 admin/views/menu.php:102
+#: admin/views/gedcom_export.php:545 admin/views/menu.php:102
 msgid "Shared addresses"
 msgstr "Adrese partajate"
 
@@ -1742,27 +1742,27 @@ msgstr "Persoană deconectată de părinți."
 msgid "Person is removed"
 msgstr "Persoana este ștearsă"
 
-#: admin/models/editor.php:1107
+#: admin/models/editor.php:1103
 msgid "Marriage is removed!"
 msgstr "Căsătoria este eliminată!"
 
-#: admin/models/editor.php:1367
+#: admin/models/editor.php:1363
 msgid "Parents are selected!"
 msgstr "Sunt selectați părinții!"
 
-#: admin/models/editor.php:1371
+#: admin/models/editor.php:1367
 msgid "Manual selected family isn't an existing family in the family tree!"
 msgstr ""
 "Familia selectată manual nu este o familie existentă în arborele genealogic!"
 
-#: admin/models/editor.php:1387
+#: admin/models/editor.php:1383
 msgid ""
 "Child already has parents connected! Are you sure you want to connect this "
 "child?"
 msgstr ""
 "Copilul are deja părinții conectați! Sigur doriți să conectați acest copil?"
 
-#: admin/models/editor.php:1985 admin/views/notes.php:86
+#: admin/models/editor.php:1981 admin/views/notes.php:86
 msgid "Are you sure you want to remove this note?"
 msgstr "Sunteți sigur că doriți să eliminați această notă?"
 
@@ -2527,7 +2527,7 @@ msgstr "Adăugați depozit"
 msgid "No valid repository number."
 msgstr "Nu există un număr de depozit valid."
 
-#: admin/views/edit_repository.php:197 admin/views/gedcom_export.php:351
+#: admin/views/edit_repository.php:197 admin/views/gedcom_export.php:360
 #: app/model/mailform.php:84 app/model/register.php:96
 #: app/model/user_settings.php:80
 msgid "E-mail"
@@ -2644,8 +2644,8 @@ msgstr "Modificat de"
 #: admin/views/editor.php:147 admin/views/editor.php:430
 #: admin/views/tree_check_changes.php:49
 #: admin/views/tree_check_consistency.php:286 admin/views/tree_merge.php:563
-#: admin/views/tree_merge.php:634 views/family.php:1346 views/relations.php:92
-#: views/relations.php:206
+#: admin/views/tree_merge.php:634 views/family.php:1349 views/relations.php:92
+#: views/relations.php:212
 msgid "Person"
 msgstr "Persoana"
 
@@ -2657,7 +2657,7 @@ msgstr "Rezultate"
 
 #: admin/views/editor.php:319 admin/views/tree_merge.php:611
 #: admin/views/tree_merge.php:681 views/relations.php:190
-#: views/relations.php:304
+#: views/relations.php:196 views/relations.php:310 views/relations.php:316
 msgid "Person not found"
 msgstr "Persoana nu a fost găsită"
 
@@ -2717,7 +2717,7 @@ msgid " to: "
 msgstr " cu: "
 
 #: admin/views/editor.php:635 admin/views/tree_merge.php:1249
-#: views/family.php:608 views/family_pdf.php:469 views/family_rtf.php:431
+#: views/family.php:609 views/family_pdf.php:469 views/family_rtf.php:431
 msgid "Children"
 msgstr "Copii"
 
@@ -2739,7 +2739,7 @@ msgid "Add person"
 msgstr "Adăugare persoană"
 
 #: admin/views/editor.php:741 views/layout.php:819 views/list.php:478
-#: views/maps.php:35 views/relations.php:354 views/timeline.php:178
+#: views/maps.php:35 views/relations.php:366 views/timeline.php:178
 msgid "Help"
 msgstr "Ajutor"
 
@@ -2891,7 +2891,7 @@ msgstr "Prioritate"
 msgid "Low"
 msgstr "Redusă"
 
-#: admin/views/editor.php:1871 admin/views/gedcom_export.php:431
+#: admin/views/editor.php:1871 admin/views/gedcom_export.php:440
 msgid "Normal"
 msgstr "Normal"
 
@@ -2973,7 +2973,7 @@ msgid "year"
 msgstr "an"
 
 #: admin/views/editor_person.php:350 admin/views/editor_relation.php:266
-#: admin/views/gedcom_export.php:234 views/list.php:300 views/list.php:351
+#: admin/views/gedcom_export.php:243 views/list.php:300 views/list.php:351
 #: views/list_names.php:130 views/stats_firstnames.php:94
 #: views/stats_surnames.php:139
 msgid "All"
@@ -3183,12 +3183,12 @@ msgid "There are %d unprocessed GEDCOM tags."
 msgstr "Există %d etichete GEDCOM neprelucrate."
 
 #: admin/views/editor_person.php:1595 admin/views/notes.php:69
-#: views/family.php:1210
+#: views/family.php:1213
 msgid "User notes"
 msgstr "Notele utilizatorului"
 
 #: admin/views/editor_person.php:1597 admin/views/editor_person.php:1599
-#: views/family.php:1215 views/family.php:1217
+#: views/family.php:1218 views/family.php:1220
 #, php-format
 msgid "There are %d user added notes."
 msgstr "Există %d note adăugate de utilizator."
@@ -3196,6 +3196,12 @@ msgstr "Există %d note adăugate de utilizator."
 #: admin/views/editor_person.php:1670
 msgid "Delete person"
 msgstr "Eliminare persoană"
+
+#: admin/views/editor_person.php:1689 admin/views/editor_relation.php:1238
+#, fuzzy
+#| msgid "No new locations were found to add to the database"
+msgid "Type location to start search in the database"
+msgstr "Nu au fost găsite locații noi de adăugat la baza de date"
 
 #: admin/views/editor_person.php:1692 admin/views/editor_relation.php:1241
 #, fuzzy
@@ -3355,12 +3361,6 @@ msgstr "Sau adăugați o persoană existentă ca și copil:"
 #: admin/views/editor_relation.php:1200
 msgid "Select child"
 msgstr "Selectați copilul"
-
-#: admin/views/editor_relation.php:1238
-#, fuzzy
-#| msgid "No new locations were found to add to the database"
-msgid "Type location to start search in the database"
-msgstr "Nu au fost găsite locații noi de adăugat la baza de date"
 
 #: admin/views/gedcom.php:39
 msgid "STEP 1) Select GEDCOM file:"
@@ -3789,119 +3789,129 @@ msgid "Download GEDCOM file"
 msgstr "Descărcați fișierul GEDCOM"
 
 #: admin/views/gedcom_export.php:90
+#, fuzzy
+#| msgid "Download backup file"
+msgid "Download connected media files"
+msgstr "Descărcați fișierul de rezervă"
+
+#: admin/views/gedcom_export.php:99
 msgid "Select family tree to export and click \"Start export\""
 msgstr ""
 "Selectați arborele genealogic de exportat și faceți clic pe „Pornire export”"
 
-#: admin/views/gedcom_export.php:94
+#: admin/views/gedcom_export.php:103
 msgid "Choose family tree to export"
 msgstr "Alegeți arborele genealogic pentru export"
 
-#: admin/views/gedcom_export.php:117
+#: admin/views/gedcom_export.php:126
 msgid "Whole tree or part"
 msgstr "Arbore complet sau parțial"
 
-#: admin/views/gedcom_export.php:119
+#: admin/views/gedcom_export.php:128
 msgid "Whole tree"
 msgstr "Complet"
 
-#: admin/views/gedcom_export.php:120
+#: admin/views/gedcom_export.php:129
 msgid "Partial tree"
 msgstr "Parțial"
 
-#: admin/views/gedcom_export.php:152
+#: admin/views/gedcom_export.php:161
 msgid "Choose person"
 msgstr "Alegeți persoana"
 
-#: admin/views/gedcom_export.php:231
+#: admin/views/gedcom_export.php:240
 msgid "Number of generations to export"
 msgstr "Numărul generațiilor pentru export"
 
-#: admin/views/gedcom_export.php:250
+#: admin/views/gedcom_export.php:259
 msgid "Choose type of export"
 msgstr "Alegeți tipul de export"
 
-#: admin/views/gedcom_export.php:262
+#: admin/views/gedcom_export.php:271
 msgid "Include spouses of descendants"
 msgstr "Includeți soții/soțiile urmașilor"
 
-#: admin/views/gedcom_export.php:268
+#: admin/views/gedcom_export.php:277
 msgid "Include parents of spouses"
 msgstr "Includeți părinții soților/soțiilor"
 
-#: admin/views/gedcom_export.php:280
+#: admin/views/gedcom_export.php:289
 msgid "Include spouse(s) of base person"
 msgstr "Includeți soțul (soții) persoanei de bază"
 
-#: admin/views/gedcom_export.php:286
+#: admin/views/gedcom_export.php:295
 msgid "Include sibblings of ancestors and base person"
 msgstr "Includeți frații/surorile strămoșilor și persoana de bază"
 
-#: admin/views/gedcom_export.php:326
+#: admin/views/gedcom_export.php:335
 msgid "GEDCOM submitter"
 msgstr "Emitent GEDCOM"
 
-#: admin/views/gedcom_export.php:344
+#: admin/views/gedcom_export.php:353
 msgid "Country"
 msgstr "Țara"
 
-#: admin/views/gedcom_export.php:365
+#: admin/views/gedcom_export.php:374
 msgid "GEDCOM version"
 msgstr "versiune GEDCOM"
 
-#: admin/views/gedcom_export.php:375
+#: admin/views/gedcom_export.php:384
 msgid "GEDCOM 7.0"
 msgstr "GEDCOM 7.0"
 
-#: admin/views/gedcom_export.php:376
+#: admin/views/gedcom_export.php:385
 msgid "GEDCOM 5.5.1"
 msgstr "GEDCOM 5.5.1"
 
-#: admin/views/gedcom_export.php:382
+#: admin/views/gedcom_export.php:391
 msgid "Character set"
 msgstr "Set de caractere"
 
-#: admin/views/gedcom_export.php:396
+#: admin/views/gedcom_export.php:405
 msgid "UTF-8 (recommended character set)"
 msgstr "UTF-8 (set de caractere recomandat)"
 
-#: admin/views/gedcom_export.php:416
+#: admin/views/gedcom_export.php:425
 msgid "GEDCOM 7.0 always uses the UTF-8 character set."
 msgstr "GEDCOM 7.0 folosește întotdeauna setul de caractere UTF-8."
 
-#: admin/views/gedcom_export.php:421
+#: admin/views/gedcom_export.php:430
 msgid "Export type"
 msgstr "Tipul de export"
 
-#: admin/views/gedcom_export.php:437
+#: admin/views/gedcom_export.php:446
 msgid "Minimal"
 msgstr "Minimal"
 
-#: admin/views/gedcom_export.php:453
+#: admin/views/gedcom_export.php:462
 msgid "Export texts"
 msgstr "Exportați textele"
 
-#: admin/views/gedcom_export.php:469
+#: admin/views/gedcom_export.php:478
 msgid "Export categories (No GEDCOM Standard!)"
 msgstr ""
 
-#: admin/views/gedcom_export.php:485
+#: admin/views/gedcom_export.php:494
+msgid "Export media files to ZIP"
+msgstr ""
+
+#: admin/views/gedcom_export.php:510
 msgid "Export sources"
 msgstr "Exportați sursele"
 
-#: admin/views/gedcom_export.php:508
+#: admin/views/gedcom_export.php:533
 msgid "Export longitude & latitude by places"
 msgstr "Exportați latitudinea și longitudinea locațiilor"
 
-#: admin/views/gedcom_export.php:532
+#: admin/views/gedcom_export.php:557
 msgid "Export shared addresses"
 msgstr "Exportați adresele partajate"
 
-#: admin/views/gedcom_export.php:533
+#: admin/views/gedcom_export.php:558
 msgid "Convert all shared addresses as single addresses"
 msgstr "Convertiți toate adresele partajate ca adrese unice"
 
-#: admin/views/gedcom_export.php:536
+#: admin/views/gedcom_export.php:561
 msgid ""
 "\"Shared addresses\" is <b>only compatible</b> with HuMo-genealogy and "
 "Haza-21 programs.<br>\n"
@@ -3914,19 +3924,19 @@ msgstr ""
 "Alte programe: convertiți adresele partajate. Opțiunea „adresă partajată” va "
 "fi pierdută."
 
-#: admin/views/gedcom_export.php:539
+#: admin/views/gedcom_export.php:564
 msgid "There are no shared addresses, standard GEDCOM export is used."
 msgstr "Nu există adrese partajate, se utilizează exportul GEDCOM standard."
 
-#: admin/views/gedcom_export.php:546
+#: admin/views/gedcom_export.php:571
 msgid "Show export status"
 msgstr "Afișează starea exportului"
 
-#: admin/views/gedcom_export.php:562
+#: admin/views/gedcom_export.php:587
 msgid "GEDCOM export"
 msgstr "Export GEDCOM"
 
-#: admin/views/gedcom_export.php:564
+#: admin/views/gedcom_export.php:589
 msgid "Start export"
 msgstr "Pornire export"
 
@@ -6664,7 +6674,7 @@ msgstr "căsătorie"
 #: admin/views/tree_check_consistency.php:570
 #: admin/views/tree_check_consistency.php:588
 #: admin/views/tree_check_consistency.php:712
-#: admin/views/tree_check_consistency.php:726 views/relations.php:1227
+#: admin/views/tree_check_consistency.php:726 views/relations.php:1239
 msgid "mother"
 msgstr "mama"
 
@@ -6673,9 +6683,9 @@ msgstr "mama"
 #: admin/views/tree_check_consistency.php:579
 #: admin/views/tree_check_consistency.php:597
 #: admin/views/tree_check_consistency.php:718
-#: admin/views/tree_check_consistency.php:732 views/relations.php:1227
-#: views/relations.php:1261 views/relations.php:1313 views/relations.php:1386
-#: views/relations.php:1405
+#: admin/views/tree_check_consistency.php:732 views/relations.php:1239
+#: views/relations.php:1273 views/relations.php:1325 views/relations.php:1398
+#: views/relations.php:1417
 msgid "father"
 msgstr "tata"
 
@@ -6723,29 +6733,29 @@ msgstr "Nu există probleme de neconcordanță!"
 #: admin/views/tree_check_consistency.php:992
 #: admin/views/tree_check_consistency.php:997
 #: admin/views/tree_check_consistency.php:1004
-#: admin/views/tree_check_consistency.php:1013 views/family.php:791
-#: views/family.php:815 views/family.php:949 views/family.php:954
+#: admin/views/tree_check_consistency.php:1013 views/family.php:792
+#: views/family.php:816 views/family.php:950 views/family.php:955
 msgid "BORN_SHORT"
 msgstr "născ."
 
 # Enter a short text for baptise, like: bapt.
 #: admin/views/tree_check_consistency.php:960
-#: admin/views/tree_check_consistency.php:972 views/family.php:794
-#: views/family.php:818
+#: admin/views/tree_check_consistency.php:972 views/family.php:795
+#: views/family.php:819
 msgid "BAPTISED_SHORT"
 msgstr "bot."
 
 # Enter a short text for died here. There is no short text for died in
 # english.
 #: admin/views/tree_check_consistency.php:963
-#: admin/views/tree_check_consistency.php:975 views/family.php:842
-#: views/family.php:872 views/family.php:971 views/family.php:976
+#: admin/views/tree_check_consistency.php:975 views/family.php:843
+#: views/family.php:873 views/family.php:972 views/family.php:977
 msgid "DIED_SHORT"
 msgstr "dec."
 
 #: admin/views/tree_check_consistency.php:966
-#: admin/views/tree_check_consistency.php:978 views/family.php:845
-#: views/family.php:875
+#: admin/views/tree_check_consistency.php:978 views/family.php:846
+#: views/family.php:876
 msgid "BURIED_SHORT"
 msgstr "Îngrop."
 
@@ -6920,7 +6930,7 @@ msgstr "Editor sursă"
 msgid "Repository editor"
 msgstr "Editor depozit"
 
-#: admin/views/tree_data.php:9 admin/views/users.php:51 views/family.php:1357
+#: admin/views/tree_data.php:9 admin/views/users.php:51 views/family.php:1360
 #: views/mailform.php:55 views/mailform.php:57 views/register.php:65
 #: views/user_settings.php:30 views/user_settings.php:32
 msgid "E-mail address"
@@ -7150,7 +7160,7 @@ msgid "GEDCOM no. (\"I43\")"
 msgstr "nr. GEDCOM (\"I43\")"
 
 #: admin/views/tree_merge.php:557 views/relations.php:110
-#: views/relations.php:224
+#: views/relations.php:230
 msgid "Pick a name from search results"
 msgstr "Alegeți un nume din rezultatele căutării"
 
@@ -7158,7 +7168,7 @@ msgstr "Alegeți un nume din rezultatele căutării"
 msgid "Show details"
 msgstr "Arată detaliile"
 
-#: admin/views/tree_merge.php:624 views/relations.php:325
+#: admin/views/tree_merge.php:624 views/relations.php:337
 msgid "Switch persons"
 msgstr "Inversați persoanele"
 
@@ -7458,65 +7468,65 @@ msgstr "Nr. "
 #: views/family_pdf.php:140 views/family_pdf.php:317 views/family_rtf.php:98
 #: views/family_rtf.php:100 views/hourglass.php:135
 #: views/outline_report_pdf.php:76 views/outline_report_pdf.php:94
-#: views/relations.php:605 views/relations.php:630 views/relations.php:1293
-#: views/relations.php:1304 views/relations.php:1396 views/relations.php:1399
-#: views/relations.php:1401 views/relations.php:1414 views/relations.php:1421
-#: views/relations.php:1425 views/relations.php:1429 views/relations.php:1433
-#: views/relations.php:1436 views/relations.php:1439 views/relations.php:1442
-#: views/relations.php:1446 views/relations.php:1561 views/relations.php:1564
-#: views/relations.php:1567 views/relations.php:1571 views/relations.php:1605
-#: views/relations.php:1608 views/relations.php:1611 views/relations.php:1614
-#: views/relations.php:1617 views/relations.php:1621 views/relations.php:1625
-#: views/relations.php:1628 views/relations.php:1631 views/relations.php:1634
-#: views/relations.php:1638 views/relations.php:1782 views/relations.php:1843
-#: views/relations.php:1846 views/relations.php:1848 views/relations.php:1860
-#: views/relations.php:1866 views/relations.php:1870 views/relations.php:1874
-#: views/relations.php:1879 views/relations.php:1882 views/relations.php:1885
-#: views/relations.php:1888 views/relations.php:1892 views/relations.php:1916
-#: views/relations.php:1918 views/relations.php:1923 views/relations.php:1926
-#: views/relations.php:1929 views/relations.php:1932 views/relations.php:1936
-#: views/relations.php:2010 views/relations.php:2013 views/relations.php:2016
-#: views/relations.php:2020 views/relations.php:2059 views/relations.php:2062
-#: views/relations.php:2065 views/relations.php:2068 views/relations.php:2072
-#: views/relations.php:2076 views/relations.php:2079 views/relations.php:2082
-#: views/relations.php:2085 views/relations.php:2089 views/relations.php:2183
-#: views/relations.php:2186 views/relations.php:2194 views/relations.php:2197
-#: views/relations.php:2202 views/relations.php:2205 views/relations.php:2209
-#: views/relations.php:2219 views/relations.php:2222 views/relations.php:2225
-#: views/relations.php:2228 views/relations.php:2231 views/relations.php:2234
-#: views/relations.php:2238 views/relations.php:2248 views/relations.php:2251
-#: views/relations.php:2254 views/relations.php:2257 views/relations.php:2260
-#: views/relations.php:2263 views/relations.php:2266 views/relations.php:2270
-#: views/relations.php:2276 views/relations.php:2279 views/relations.php:2282
-#: views/relations.php:2285 views/relations.php:2288 views/relations.php:2292
-#: views/relations.php:2341 views/relations.php:2344 views/relations.php:2355
-#: views/relations.php:2411 views/relations.php:2414 views/relations.php:2417
-#: views/relations.php:2420 views/relations.php:2423 views/relations.php:2427
-#: views/relations.php:2432 views/relations.php:2435 views/relations.php:2438
-#: views/relations.php:2441 views/relations.php:2444 views/relations.php:2448
-#: views/relations.php:2658 views/relations.php:2741 views/relations.php:2744
-#: views/relations.php:2751 views/relations.php:2754 views/relations.php:2758
-#: views/relations.php:2761 views/relations.php:2765 views/relations.php:2769
-#: views/relations.php:2772 views/relations.php:2775 views/relations.php:2779
-#: views/relations.php:2786 views/relations.php:2789 views/relations.php:2813
-#: views/relations.php:2861 views/relations.php:2864 views/relations.php:2867
-#: views/relations.php:2870 views/relations.php:2873 views/relations.php:2876
-#: views/relations.php:2880 views/relations.php:2884 views/relations.php:2887
-#: views/relations.php:2890 views/relations.php:2893 views/relations.php:2896
-#: views/relations.php:2900 views/relations.php:2926 views/relations.php:2929
-#: views/relations.php:2949 views/relations.php:2967 views/relations.php:3158
-#: views/relations.php:3178 views/relations.php:3187 views/relations.php:3191
-#: views/relations.php:3194 views/relations.php:3197 views/relations.php:3200
-#: views/relations.php:3204 views/relations.php:3207 views/relations.php:3228
-#: views/relations.php:3230 views/relations.php:3338 views/relations.php:3342
-#: views/relations.php:3344 views/relations.php:3347 views/relations.php:3351
-#: views/relations.php:3391 views/relations.php:3394 views/relations.php:3398
-#: views/relations.php:3493 views/relations.php:3497 views/relations.php:3499
-#: views/relations.php:3503 views/relations.php:3505 views/relations.php:3508
-#: views/relations.php:3519 views/relations.php:3522 views/relations.php:3525
-#: views/relations.php:3528 views/relations.php:3531 views/relations.php:3534
-#: views/relations.php:3538 views/relations.php:3541 views/relations.php:3617
-#: views/relations.php:3654 views/relations.php:3656
+#: views/relations.php:617 views/relations.php:642 views/relations.php:1305
+#: views/relations.php:1316 views/relations.php:1408 views/relations.php:1411
+#: views/relations.php:1413 views/relations.php:1426 views/relations.php:1433
+#: views/relations.php:1437 views/relations.php:1441 views/relations.php:1445
+#: views/relations.php:1448 views/relations.php:1451 views/relations.php:1454
+#: views/relations.php:1458 views/relations.php:1573 views/relations.php:1576
+#: views/relations.php:1579 views/relations.php:1583 views/relations.php:1617
+#: views/relations.php:1620 views/relations.php:1623 views/relations.php:1626
+#: views/relations.php:1629 views/relations.php:1633 views/relations.php:1637
+#: views/relations.php:1640 views/relations.php:1643 views/relations.php:1646
+#: views/relations.php:1650 views/relations.php:1794 views/relations.php:1855
+#: views/relations.php:1858 views/relations.php:1860 views/relations.php:1872
+#: views/relations.php:1878 views/relations.php:1882 views/relations.php:1886
+#: views/relations.php:1891 views/relations.php:1894 views/relations.php:1897
+#: views/relations.php:1900 views/relations.php:1904 views/relations.php:1928
+#: views/relations.php:1930 views/relations.php:1935 views/relations.php:1938
+#: views/relations.php:1941 views/relations.php:1944 views/relations.php:1948
+#: views/relations.php:2022 views/relations.php:2025 views/relations.php:2028
+#: views/relations.php:2032 views/relations.php:2071 views/relations.php:2074
+#: views/relations.php:2077 views/relations.php:2080 views/relations.php:2084
+#: views/relations.php:2088 views/relations.php:2091 views/relations.php:2094
+#: views/relations.php:2097 views/relations.php:2101 views/relations.php:2195
+#: views/relations.php:2198 views/relations.php:2206 views/relations.php:2209
+#: views/relations.php:2214 views/relations.php:2217 views/relations.php:2221
+#: views/relations.php:2231 views/relations.php:2234 views/relations.php:2237
+#: views/relations.php:2240 views/relations.php:2243 views/relations.php:2246
+#: views/relations.php:2250 views/relations.php:2260 views/relations.php:2263
+#: views/relations.php:2266 views/relations.php:2269 views/relations.php:2272
+#: views/relations.php:2275 views/relations.php:2278 views/relations.php:2282
+#: views/relations.php:2288 views/relations.php:2291 views/relations.php:2294
+#: views/relations.php:2297 views/relations.php:2300 views/relations.php:2304
+#: views/relations.php:2353 views/relations.php:2356 views/relations.php:2367
+#: views/relations.php:2423 views/relations.php:2426 views/relations.php:2429
+#: views/relations.php:2432 views/relations.php:2435 views/relations.php:2439
+#: views/relations.php:2444 views/relations.php:2447 views/relations.php:2450
+#: views/relations.php:2453 views/relations.php:2456 views/relations.php:2460
+#: views/relations.php:2670 views/relations.php:2753 views/relations.php:2756
+#: views/relations.php:2763 views/relations.php:2766 views/relations.php:2770
+#: views/relations.php:2773 views/relations.php:2777 views/relations.php:2781
+#: views/relations.php:2784 views/relations.php:2787 views/relations.php:2791
+#: views/relations.php:2798 views/relations.php:2801 views/relations.php:2825
+#: views/relations.php:2873 views/relations.php:2876 views/relations.php:2879
+#: views/relations.php:2882 views/relations.php:2885 views/relations.php:2888
+#: views/relations.php:2892 views/relations.php:2896 views/relations.php:2899
+#: views/relations.php:2902 views/relations.php:2905 views/relations.php:2908
+#: views/relations.php:2912 views/relations.php:2938 views/relations.php:2941
+#: views/relations.php:2961 views/relations.php:2979 views/relations.php:3170
+#: views/relations.php:3190 views/relations.php:3199 views/relations.php:3203
+#: views/relations.php:3206 views/relations.php:3209 views/relations.php:3212
+#: views/relations.php:3216 views/relations.php:3219 views/relations.php:3240
+#: views/relations.php:3242 views/relations.php:3350 views/relations.php:3354
+#: views/relations.php:3356 views/relations.php:3359 views/relations.php:3363
+#: views/relations.php:3403 views/relations.php:3406 views/relations.php:3410
+#: views/relations.php:3505 views/relations.php:3509 views/relations.php:3511
+#: views/relations.php:3515 views/relations.php:3517 views/relations.php:3520
+#: views/relations.php:3531 views/relations.php:3534 views/relations.php:3537
+#: views/relations.php:3540 views/relations.php:3543 views/relations.php:3546
+#: views/relations.php:3550 views/relations.php:3553 views/relations.php:3629
+#: views/relations.php:3666 views/relations.php:3668
 msgid " of "
 msgstr " lui "
 
@@ -7835,7 +7845,7 @@ msgid "%s Mail form."
 msgstr "Formular de e-mail %s."
 
 #: app/model/mailform.php:79 app/model/register.php:92
-#: app/model/user_settings.php:76 views/family.php:1280
+#: app/model/user_settings.php:76 views/family.php:1283
 #, php-format
 msgid "Message sent through %s from the website."
 msgstr "Mesaj trimis prin %s de pe site-ul web."
@@ -7944,14 +7954,14 @@ msgstr "parteneriat"
 msgid "with "
 msgstr "cu "
 
-#: app/model/timeline.php:253 views/relations.php:1704 views/relations.php:1737
-#: views/relations.php:1790 views/relations.php:1833 views/relations.php:1851
-#: views/relations.php:3181 views/relations.php:3513
+#: app/model/timeline.php:253 views/relations.php:1716 views/relations.php:1749
+#: views/relations.php:1802 views/relations.php:1845 views/relations.php:1863
+#: views/relations.php:3193 views/relations.php:3525
 msgid "son"
 msgstr "fiul"
 
-#: app/model/timeline.php:255 views/relations.php:1704 views/relations.php:3184
-#: views/relations.php:3516
+#: app/model/timeline.php:255 views/relations.php:1716 views/relations.php:3196
+#: views/relations.php:3528
 msgid "daughter"
 msgstr "fiică"
 
@@ -7967,7 +7977,7 @@ msgstr "nepot (de bunic)"
 msgid "granddaughter"
 msgstr "nepoată (de bunic)"
 
-#: app/model/timeline.php:377 views/relations.php:1870 views/relations.php:1874
+#: app/model/timeline.php:377 views/relations.php:1882 views/relations.php:1886
 msgid "grandchild"
 msgstr "nepot (bunic)"
 
@@ -8461,24 +8471,24 @@ msgid "1st"
 msgstr "prima"
 
 #: include/marriage_cls.php:774 include/person_cls.php:1305 views/list.php:1104
-#: views/list_places_families.php:397 views/relations.php:1631
-#: views/relations.php:2082 views/relations.php:2285 views/relations.php:2441
-#: views/relations.php:2893
+#: views/list_places_families.php:397 views/relations.php:1643
+#: views/relations.php:2094 views/relations.php:2297 views/relations.php:2453
+#: views/relations.php:2905
 msgid "2nd"
 msgstr "a doua"
 
 #: include/marriage_cls.php:777 include/person_cls.php:1307 views/list.php:1106
-#: views/list_places_families.php:399 views/relations.php:1634
-#: views/relations.php:2085 views/relations.php:2288 views/relations.php:2444
-#: views/relations.php:2896
+#: views/list_places_families.php:399 views/relations.php:1646
+#: views/relations.php:2097 views/relations.php:2300 views/relations.php:2456
+#: views/relations.php:2908
 msgid "3rd"
 msgstr "a treia"
 
 #: include/marriage_cls.php:780 include/person_cls.php:1309 views/list.php:1108
-#: views/list_places_families.php:401 views/relations.php:1307
-#: views/relations.php:1638 views/relations.php:2089 views/relations.php:2661
-#: views/relations.php:2765 views/relations.php:2900 views/relations.php:3645
-#: views/relations.php:3648
+#: views/list_places_families.php:401 views/relations.php:1319
+#: views/relations.php:1650 views/relations.php:2101 views/relations.php:2673
+#: views/relations.php:2777 views/relations.php:2912 views/relations.php:3657
+#: views/relations.php:3660
 msgid "th"
 msgstr "-a"
 
@@ -9038,7 +9048,7 @@ msgstr "Înapoi"
 msgid "Legend"
 msgstr "Legendă"
 
-#: views/ancestor_sheet.php:295 views/family.php:916 views/family.php:921
+#: views/ancestor_sheet.php:295 views/family.php:917 views/family.php:922
 msgid "married"
 msgstr "căsătorit(ă)"
 
@@ -9179,8 +9189,8 @@ msgstr "decedat(ă) "
 msgid "Settings family screen"
 msgstr "Setări ecranul de familie"
 
-#: views/family.php:63 views/family.php:481 views/family.php:1150
-#: views/family.php:1155
+#: views/family.php:63 views/family.php:481 views/family.php:1153
+#: views/family.php:1158
 msgid "Family Page"
 msgstr "Pagina de familie"
 
@@ -9215,7 +9225,7 @@ msgstr ""
 "SFAT: plasați cursorul peste %s pentru rapoarte și diagrame despre strămoși "
 "și urmași."
 
-#: views/family.php:545 views/family.php:624 views/outline_report.php:341
+#: views/family.php:546 views/family.php:625 views/outline_report.php:341
 #: views/outline_report.php:367 views/timeline.php:216
 msgid ""
 "*** Privacy filter is active, one or more items are filtered. Please login "
@@ -9225,65 +9235,65 @@ msgstr ""
 "sunt filtrate. Va rugam sa vă autentificați pentru a vedea toate elementele "
 "***"
 
-#: views/family.php:608 views/family_pdf.php:467 views/family_rtf.php:428
+#: views/family.php:609 views/family_pdf.php:467 views/family_rtf.php:428
 msgid "Child"
 msgstr "Copil"
 
-#: views/family.php:660 views/family_pdf.php:525 views/family_rtf.php:475
+#: views/family.php:661 views/family_pdf.php:525 views/family_rtf.php:475
 msgid "follows"
 msgstr "urmează"
 
-#: views/family.php:689 views/family.php:719 views/family.php:753
+#: views/family.php:690 views/family.php:720 views/family.php:754
 msgid "Adopted child:"
 msgstr "Copil adoptat:"
 
-#: views/family.php:713 views/family.php:747
+#: views/family.php:714 views/family.php:748
 msgid "Stepchild"
 msgstr "Copil vitreg"
 
-#: views/family.php:715 views/family.php:749
+#: views/family.php:716 views/family.php:750
 msgid "Legal child"
 msgstr "Copil legal"
 
-#: views/family.php:717 views/family.php:751
+#: views/family.php:718 views/family.php:752
 msgid "Foster child"
 msgstr "Copil adoptiv"
 
-#: views/family.php:1119
+#: views/family.php:1122
 msgid "Family events"
 msgstr "Evenimente de familie"
 
-#: views/family.php:1150
+#: views/family.php:1153
 msgid "Citation for:"
 msgstr "Citare pentru:"
 
-#: views/family.php:1172
+#: views/family.php:1175
 msgid "accessed"
 msgstr "accesat"
 
-#: views/family.php:1275 views/family.php:1282
+#: views/family.php:1278 views/family.php:1285
 msgid "New user note"
 msgstr "Notă nouă de utilizator"
 
-#: views/family.php:1290
+#: views/family.php:1293
 msgid "User note by family"
 msgstr "Notă utilizator referitoare la familie"
 
-#: views/family.php:1310
+#: views/family.php:1313
 msgid "Your information is saved and will be reviewed by the webmaster."
 msgstr "Informațiile dvs. sunt salvate și vor fi examinate de webmaster."
 
-#: views/family.php:1341
+#: views/family.php:1344
 msgid "Add information or remarks"
 msgstr "Adăugare informații sau observații"
 
-#: views/family.php:1358
+#: views/family.php:1361
 msgid "Your e-mail address is missing. Please add you're mail address here: "
 msgstr ""
 "Adresa dvs. de e-mail address lipsește. Vă rog adăugați adresa de e-mail "
 "aici: "
 
-#: views/family.php:1375 views/mailform.php:99 views/register.php:105
+#: views/family.php:1378 views/mailform.php:99 views/register.php:105
 #: views/reset_password.php:90
 msgid "Send"
 msgstr "Trimite"
@@ -10245,17 +10255,17 @@ msgstr "Minimum 6 caractere"
 msgid "Repeat password"
 msgstr "Repetă parola"
 
-#: views/relations.php:102 views/relations.php:216
+#: views/relations.php:102 views/relations.php:222
 msgid "or: ID"
 msgstr "sau: ID"
 
-#: views/relations.php:184 views/relations.php:298
+#: views/relations.php:187 views/relations.php:307
 msgid "Results are limited, use search to find more persons."
 msgstr ""
 "Rezultatele sunt limitate, utilizați căutarea pentru a găsi mai multe "
 "persoane."
 
-#: views/relations.php:340
+#: views/relations.php:352
 msgid ""
 "This calculator will find the following relationships:<br>\n"
 "<ul><li>Any blood relationship between X and Y (\"X is great-grandfather of "
@@ -10299,11 +10309,11 @@ msgstr ""
 "veți obține o listă a tuturor persoanelor din baza de date. (Poate dura "
 "câteva secunde)</b></li></ul>"
 
-#: views/relations.php:359
+#: views/relations.php:371
 msgid "Calculate relationships"
 msgstr "Calcularea relațiilor"
 
-#: views/relations.php:424
+#: views/relations.php:436
 msgid ""
 "You have to search and than choose Person 1 and Person 2 from the search "
 "result pulldown"
@@ -10311,52 +10321,52 @@ msgstr ""
 "Trebuie să căutați și apoi să alegeți Persoana 1 și Persoana 2 din lista "
 "derulantă a rezultatului"
 
-#: views/relations.php:437
+#: views/relations.php:449
 msgid "is"
 msgstr "este"
 
-#: views/relations.php:478
+#: views/relations.php:490
 msgid "BLOOD RELATIONSHIP: "
 msgstr "RELAȚIA DE SÂNGE: "
 
-#: views/relations.php:569 views/relations.php:767
+#: views/relations.php:581 views/relations.php:779
 msgid "MARITAL RELATIONSHIP: "
 msgstr "RELAȚIA CIVILĂ: "
 
-#: views/relations.php:572
+#: views/relations.php:584
 msgid "Use Extended Calculator"
 msgstr "Utilizați calculatorul extins"
 
-#: views/relations.php:588
+#: views/relations.php:600
 msgid "are both husbands of"
 msgstr "sunt ambii soți ai"
 
-#: views/relations.php:590
+#: views/relations.php:602
 msgid "are both wifes of"
 msgstr "sunt ambele soții ale"
 
-#: views/relations.php:605 views/relations.php:606 views/relations.php:630
-#: views/relations.php:631 views/relations.php:699
+#: views/relations.php:617 views/relations.php:618 views/relations.php:642
+#: views/relations.php:643 views/relations.php:711
 msgid "partner"
 msgstr "partener"
 
-#: views/relations.php:610 views/relations.php:643
+#: views/relations.php:622 views/relations.php:655
 msgid "husband of"
 msgstr "soțul lui"
 
-#: views/relations.php:618 views/relations.php:634
+#: views/relations.php:630 views/relations.php:646
 msgid "wife of"
 msgstr "soția lui"
 
-#: views/relations.php:764
+#: views/relations.php:776
 msgid "No blood relation or direct marital relation found"
 msgstr "Nu a fost găsită nicio relație de sânge sau relație conjugală directă"
 
-#: views/relations.php:768
+#: views/relations.php:780
 msgid "No direct marital relation found"
 msgstr "Nu a fost găsită nicio relație conjugală directă"
 
-#: views/relations.php:773
+#: views/relations.php:785
 msgid ""
 "You may wish to try finding a connection with the <span style='font-weight:"
 "bold'>Extended Marital Calculator</span> below.<br>\n"
@@ -10380,160 +10390,160 @@ msgstr ""
 "Într-un arbore de 75.000 de persoane, la persoanele cele mai îndepărtate "
 "căutarea poate dura până la 8 secunde."
 
-#: views/relations.php:778
+#: views/relations.php:790
 msgid "Perform extended marital calculation"
 msgstr "Efectuați un calcul marital extins"
 
-#: views/relations.php:916
+#: views/relations.php:928
 msgid " identical to "
 msgstr " identic cu "
 
-#: views/relations.php:941 views/relations.php:2793 views/relations.php:2827
+#: views/relations.php:953 views/relations.php:2805 views/relations.php:2839
 msgid "brother of "
 msgstr "fratele lui "
 
-#: views/relations.php:978 views/relations.php:1092
+#: views/relations.php:990 views/relations.php:1104
 msgid "sister-in-law of "
 msgstr "cumnata lui "
 
-#: views/relations.php:1003 views/relations.php:1069
+#: views/relations.php:1015 views/relations.php:1081
 msgid "brother-in-law of "
 msgstr "cumnatul lui "
 
-#: views/relations.php:1048 views/relations.php:2795 views/relations.php:2829
+#: views/relations.php:1060 views/relations.php:2807 views/relations.php:2841
 msgid "sister of "
 msgstr "sora lui "
 
-#: views/relations.php:1261
+#: views/relations.php:1273
 msgid "father-in-law"
 msgstr "socru"
 
-#: views/relations.php:1261
+#: views/relations.php:1273
 msgid "mother-in-law"
 msgstr "soacra"
 
-#: views/relations.php:1307 views/relations.php:1407 views/relations.php:1410
-#: views/relations.php:1436 views/relations.php:1628 views/relations.php:1631
-#: views/relations.php:1634 views/relations.php:1638 views/relations.php:1882
-#: views/relations.php:2079 views/relations.php:2082 views/relations.php:2085
-#: views/relations.php:2089 views/relations.php:2228 views/relations.php:2438
-#: views/relations.php:2441 views/relations.php:2444 views/relations.php:2448
-#: views/relations.php:2661 views/relations.php:2890 views/relations.php:2893
-#: views/relations.php:2896 views/relations.php:2900 views/relations.php:3194
-#: views/relations.php:3216
+#: views/relations.php:1319 views/relations.php:1419 views/relations.php:1422
+#: views/relations.php:1448 views/relations.php:1640 views/relations.php:1643
+#: views/relations.php:1646 views/relations.php:1650 views/relations.php:1894
+#: views/relations.php:2091 views/relations.php:2094 views/relations.php:2097
+#: views/relations.php:2101 views/relations.php:2240 views/relations.php:2450
+#: views/relations.php:2453 views/relations.php:2456 views/relations.php:2460
+#: views/relations.php:2673 views/relations.php:2902 views/relations.php:2905
+#: views/relations.php:2908 views/relations.php:2912 views/relations.php:3206
+#: views/relations.php:3228
 msgid "great-grand"
 msgstr "stră-stră"
 
-#: views/relations.php:1406 views/relations.php:1409 views/relations.php:1425
-#: views/relations.php:1429 views/relations.php:1433 views/relations.php:1625
-#: views/relations.php:2076 views/relations.php:2205 views/relations.php:2209
-#: views/relations.php:2435 views/relations.php:2761 views/relations.php:2765
-#: views/relations.php:2887 views/relations.php:3213
+#: views/relations.php:1418 views/relations.php:1421 views/relations.php:1437
+#: views/relations.php:1441 views/relations.php:1445 views/relations.php:1637
+#: views/relations.php:2088 views/relations.php:2217 views/relations.php:2221
+#: views/relations.php:2447 views/relations.php:2773 views/relations.php:2777
+#: views/relations.php:2899 views/relations.php:3225
 msgid "grand"
 msgstr "grand"
 
-#: views/relations.php:1737
+#: views/relations.php:1749
 msgid "daughter-in-law"
 msgstr "noră"
 
-#: views/relations.php:1737
+#: views/relations.php:1749
 msgid "son-in-law"
 msgstr "ginere"
 
-#: views/relations.php:2171 views/relations.php:2191 views/relations.php:2200
-#: views/relations.php:2212 views/relations.php:2241 views/relations.php:2273
-#: views/relations.php:2404 views/relations.php:2430 views/relations.php:2952
+#: views/relations.php:2183 views/relations.php:2203 views/relations.php:2212
+#: views/relations.php:2224 views/relations.php:2253 views/relations.php:2285
+#: views/relations.php:2416 views/relations.php:2442 views/relations.php:2964
 msgid "nephew"
 msgstr "nepot (unchi)"
 
-#: views/relations.php:2175 views/relations.php:2191 views/relations.php:2200
-#: views/relations.php:2212 views/relations.php:2241 views/relations.php:2273
-#: views/relations.php:2407 views/relations.php:2430 views/relations.php:2956
+#: views/relations.php:2187 views/relations.php:2203 views/relations.php:2212
+#: views/relations.php:2224 views/relations.php:2253 views/relations.php:2285
+#: views/relations.php:2419 views/relations.php:2442 views/relations.php:2968
 msgid "niece"
 msgstr "nepoată"
 
-#: views/relations.php:2279 views/relations.php:3166 views/relations.php:3635
-#: views/relations.php:3648
+#: views/relations.php:2291 views/relations.php:3178 views/relations.php:3647
+#: views/relations.php:3660
 msgid "2nd [COUSIN]"
 msgstr "de-al doilea"
 
-#: views/relations.php:2282 views/relations.php:2285 views/relations.php:2288
-#: views/relations.php:2292 views/relations.php:3168 views/relations.php:3638
+#: views/relations.php:2294 views/relations.php:2297 views/relations.php:2300
+#: views/relations.php:2304 views/relations.php:3180 views/relations.php:3650
 msgid "3rd [COUSIN]"
 msgstr "de-al treilea"
 
-#: views/relations.php:2292 views/relations.php:2448
+#: views/relations.php:2304 views/relations.php:2460
 msgid "th "
 msgstr "lea "
 
-#: views/relations.php:2461 views/relations.php:2729 views/relations.php:2792
-#: views/relations.php:2826 views/relations.php:2933 views/relations.php:3017
+#: views/relations.php:2473 views/relations.php:2741 views/relations.php:2804
+#: views/relations.php:2838 views/relations.php:2945 views/relations.php:3029
 msgid "uncle"
 msgstr "unchi"
 
-#: views/relations.php:2580 views/relations.php:2733 views/relations.php:2937
-#: views/relations.php:3021
+#: views/relations.php:2592 views/relations.php:2745 views/relations.php:2949
+#: views/relations.php:3033
 msgid "aunt"
 msgstr "mătușă"
 
 # Only translate: cousin
-#: views/relations.php:2917 views/relations.php:2977 views/relations.php:3571
-#: views/relations.php:3641
+#: views/relations.php:2929 views/relations.php:2989 views/relations.php:3583
+#: views/relations.php:3653
 msgid "cousin.male"
 msgstr "văr"
 
-#: views/relations.php:2919 views/relations.php:2979 views/relations.php:2983
-#: views/relations.php:3164 views/relations.php:3632
+#: views/relations.php:2931 views/relations.php:2991 views/relations.php:2995
+#: views/relations.php:3176 views/relations.php:3644
 msgid "1st [COUSIN]"
 msgstr "primul"
 
 # Only translate: cousin
-#: views/relations.php:2921 views/relations.php:2981 views/relations.php:3574
-#: views/relations.php:3641
+#: views/relations.php:2933 views/relations.php:2993 views/relations.php:3586
+#: views/relations.php:3653
 msgid "cousin.female"
 msgstr "verișoară"
 
 # Enter the text for cousin male here. There is no seperate text for male/
 # female cousin in english.
-#: views/relations.php:3141 views/relations.php:3493
+#: views/relations.php:3153 views/relations.php:3505
 msgid "COUSIN_MALE"
 msgstr "văr"
 
 # Enter the text for cousin male here. There is no seperate text for male/
 # female cousin in english.
-#: views/relations.php:3143
+#: views/relations.php:3155
 msgid "COUSIN_FEMALE"
 msgstr "verișoară"
 
-#: views/relations.php:3149 views/relations.php:3623
+#: views/relations.php:3161 views/relations.php:3635
 msgid "once removed"
 msgstr "de la văr/verișoară"
 
-#: views/relations.php:3151 views/relations.php:3627
+#: views/relations.php:3163 views/relations.php:3639
 msgid "times removed"
 msgstr "de-al văr/verișoară"
 
-#: views/relations.php:3170
+#: views/relations.php:3182
 msgid "4th [COUSIN]"
 msgstr "de-al patrulea"
 
-#: views/relations.php:3625
+#: views/relations.php:3637
 msgid "twice removed"
 msgstr "nepot de-al doilea"
 
-#: views/relations.php:4073
+#: views/relations.php:4085
 msgid "These persons are not related in any way."
 msgstr "Aceste persoane nu sunt înrudite în niciun fel."
 
-#: views/relations.php:4075
+#: views/relations.php:4087
 msgid "No further paths found."
 msgstr "Nu s-au găsit alte căi."
 
-#: views/relations.php:4209
+#: views/relations.php:4221
 msgid "Try to find another path"
 msgstr "Încercați să găsiți o altă cale"
 
-#: views/relations.php:4210
+#: views/relations.php:4222
 msgid ""
 "(With each consecutive search the path may get longer and computing time may "
 "increase!)"

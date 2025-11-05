@@ -189,7 +189,7 @@ Server you have to set up the category names afterwords in the admin panel!
 
 ## Major Upgrades on privacy
 
-### Using Stealth Mmode to remove persons completely from output
+### Using Stealth Mode to remove persons completely from output
 In HGO the privacy feature is an anonymizing tool. That's why the chart boxes,
 list entries and relations to a person that match the privacy settings are still
 present in the charts and lists while the name, pictures and living dates are
@@ -220,6 +220,24 @@ To look for places that are allready in database you just start typing to get
 a list of hits in the database right in place. The magnifying glass icon 
 to open a popup window for the search was removed.   
 
+## New integrated search for geodata 
+
+![Search for geodata](images/docu/HuMo-gen_Server_Geodata.png)
+
+Geodata for a location can now be directly determined and saved with each 
+location entry in a data sheet. To achieve this, the input field for location 
+entries receives a new magnifying glass icon, which opens a popup page for 
+OpenStreetMap. If the search returns multiple results, you can select from a
+list of hits. Additionally, the search phrase can be adjusted if the correct 
+location is not found. The marker on the map can also be moved using the mouse.
+Afterward, the geodata is transferred to the form and saved in the database.
+
+This feature does not need any registration to OpenStreetMap.
+
+## Media files can be zipped and exported
+The dialog for GEDCOM export now offers the option to download the linked 
+media files as a ZIP archive.
+
 ## Minor fixes and changes
 
 ### Solved layout problems in chart view (ancestor, descendant and hourglass)
@@ -245,3 +263,11 @@ access of users to the server that ar NOT logged in. Therefore the options
 If you create a sub-directory within the media directory named similar to the 
 login name of a user, this folder becomes the default upload folder in the file
 upload section for this single user. But directory can still be changed.
+
+### Fixed OpenStreetMap editor
+The OpenStreetMap view in the geodata editor has been fixed. However, automatic 
+location assignment of places remains faulty, as it always selects the first 
+match, even when another entry would be correct. In the list of localized 
+places, those that were not found are now marked. They have coordinates "0,0"
+as an entry. For automatic location assignment you have to get an API key from 
+Google or OSM. The Google functions were not tested.

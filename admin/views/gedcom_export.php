@@ -495,13 +495,13 @@ if (isset($tree_id) and isset($_POST['submit_button'])) {
                 <div class="col-md-4">
                     <?php
                     $selected = '';
-                    if (isset($_POST['gedcom_media']) and $_POST['gedcom_media'] == 'no') {
+                    if (isset($_POST['gedcom_media']) and $_POST['gedcom_media'] == 'yes') {
                         $selected = ' selected';
                     }
                     ?>
                     <select size="1" name="gedcom_media" class="form-select form-select-sm">
-                        <option value="yes"><?= __('Yes'); ?></option>
-                        <option value="no" <?= $selected; ?>><?= __('No'); ?></option>
+                        <option value="no"><?= __('No'); ?></option>
+                        <option value="yes" <?= $selected; ?>><?= __('Yes'); ?></option>
                     </select>
                 </div>
             </div>
