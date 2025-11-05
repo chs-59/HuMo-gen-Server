@@ -80,6 +80,15 @@ if (isset($tree_id) and isset($_POST['submit_button'])) {
         <input type="hidden" name="file_name_short" value="<?= $export['file_name']; ?>">
         <input type="submit" name="something" value="<?= __('Download GEDCOM file'); ?>" class="btn btn-sm btn-success">
     </form><br>
+<?php }
+    if (isset($_POST['gedcom_media']) and $_POST['gedcom_media'] == 'yes') {
+?>
+    <form method="POST" action="include/gedcom_download.php" target="_blank">
+        <input type="hidden" name="page" value="<?= $page; ?>">
+        <input type="hidden" name="file_name" value="<?= $export['path'] . $export['file_name'] . '.media.zip'; ?>">
+        <input type="hidden" name="file_name_short" value="<?= $export['file_name'] . '.media.zip'; ?>">
+        <input type="submit" name="something" value="<?= __('Download connected media files'); ?>" class="btn btn-sm btn-success">
+    </form><br>
 <?php } ?>
 
 <form method="POST" id="gedcom_export" action="index.php">
@@ -477,6 +486,22 @@ if (isset($tree_id) and isset($_POST['submit_button'])) {
                     <select size="1" name="gedcom_cats" class="form-select form-select-sm">
                         <option value="yes"><?= __('Yes'); ?></option>
                         <option value="no" <?= $selected; ?>><?= __('No'); ?></option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-2">
+                <div class="col-md-4"><?= __('Export media files to ZIP'); ?></div>
+                <div class="col-md-4">
+                    <?php
+                    $selected = '';
+                    if (isset($_POST['gedcom_media']) and $_POST['gedcom_media'] == 'yes') {
+                        $selected = ' selected';
+                    }
+                    ?>
+                    <select size="1" name="gedcom_media" class="form-select form-select-sm">
+                        <option value="no"><?= __('No'); ?></option>
+                        <option value="yes" <?= $selected; ?>><?= __('Yes'); ?></option>
                     </select>
                 </div>
             </div>

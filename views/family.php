@@ -516,21 +516,22 @@ else {
                         }
                             // *** $family_privacy='1' = filter ***
                         if ($p2_transparent) {
-                            //Stealth mode: do nothing
+                            // $family_nr--;
+                            //Stealth mode: print nothing, dont count
                         }
-                            elseif ($family_privacy) {
-                                echo "\n<br>\n";
-                                echo '<div class="marriage">' . "\n";
-                                // *** Show standard marriage data ***
-                                echo $marriage_cls->marriage_data($familyDb, '', 'short');
-                                echo "\n</div><br>\n";
-                               
-                            } else {
-                                echo "\n<br>\n";
-                                echo '<div class="marriage">' . "\n";
-                                echo $marriage_cls->marriage_data();
-                                echo "\n</div><br>\n";
-                            }
+                        elseif ($family_privacy) {
+                            echo "\n<br>\n";
+                            echo '<div class="marriage">' . "\n";
+                            // *** Show standard marriage data ***
+                            echo $marriage_cls->marriage_data($familyDb, '', 'short');
+                            echo "\n</div><br>\n";
+
+                        } else {
+                            echo "\n<br>\n";
+                            echo '<div class="marriage">' . "\n";
+                            echo $marriage_cls->marriage_data();
+                            echo "\n</div><br>\n";
+                        }
                     }
 
                     // *************************************************************
@@ -538,18 +539,18 @@ else {
                     // *************************************************************
 
                     if ($p2_transparent) {
-                        //Stealth mode: do nothing
+                        //Stealth mode: print nothing
                     }
                     // *** Person must be totally hidden ***
-                        elseif ($user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && strpos(' ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
-                            echo '<div class="parent2">' . __('*** Privacy filter is active, one or more items are filtered. Please login to see all items ***') . '<br></div>';
-                        } else {
-                            echo '<div class="parent2">';
-                            $show_name_texts = true;
-                            echo $parent2_cls->name_extended("parent2", $show_name_texts);
-                            echo $parent2_cls->person_data("parent2", $id);
-                            echo '</div>';
-                        }
+                    elseif ($user["group_pers_hide_totally_act"] == 'j' && isset($parent2Db->pers_own_code) && strpos(' ' . $parent2Db->pers_own_code, $user["group_pers_hide_totally"]) > 0) {
+                        echo '<div class="parent2">' . __('*** Privacy filter is active, one or more items are filtered. Please login to see all items ***') . '<br></div>';
+                    } else {
+                        echo '<div class="parent2">';
+                        $show_name_texts = true;
+                        echo $parent2_cls->name_extended("parent2", $show_name_texts);
+                        echo $parent2_cls->person_data("parent2", $id);
+                        echo '</div>';
+                    }
 
                     // *************************************************************
                     // *** Marriagetext                                          ***
@@ -763,8 +764,8 @@ else {
                     echo '</table><br>'; 
                     $is_table = false;
                 }                   
-                    
-
+                // no Map without marriage data 
+                else {                    continue;}     
 
                 // *** Show Google or OpenStreetMap map ***
                 if ($user["group_googlemaps"] == 'j' && $data["descendant_report"] == false && $data["maps_presentation"] == 'show') {
