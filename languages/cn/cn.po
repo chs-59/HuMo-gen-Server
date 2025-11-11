@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-gen\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-05 15:36+0100\n"
-"PO-Revision-Date: 2025-11-05 15:36+0100\n"
+"POT-Creation-Date: 2025-11-11 09:36+0100\n"
+"PO-Revision-Date: 2025-11-11 09:36+0100\n"
 "Last-Translator: Christian Seel\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/humo-gen/"
 "language/zh_CN/)\n"
@@ -1196,7 +1196,7 @@ msgstr "联姻/ 连亲"
 #: admin/include/editor_sources.php:246 admin/views/cms_pages.php:226
 #: admin/views/cms_pages.php:254 admin/views/cms_pages.php:281
 #: admin/views/edit_address.php:274 admin/views/edit_address.php:277
-#: admin/views/edit_rename_place.php:82 admin/views/edit_repository.php:225
+#: admin/views/edit_rename_place.php:105 admin/views/edit_repository.php:225
 #: admin/views/edit_repository.php:228 admin/views/edit_source.php:400
 #: admin/views/edit_source.php:402 admin/views/editor_person.php:356
 #: admin/views/editor_person.php:1668 admin/views/editor_relation.php:271
@@ -1289,7 +1289,7 @@ msgid "Results are limited, use search to find more sources."
 msgstr ""
 
 #: admin/include/editor_sources.php:498 admin/views/cal_date.php:36
-#: admin/views/edit_rename_place.php:53 admin/views/editor_person.php:309
+#: admin/views/edit_rename_place.php:67 admin/views/editor_person.php:309
 #: admin/views/notes.php:78 admin/views/notes.php:208
 #: admin/views/statistics_date.php:49 admin/views/statistics_visitors.php:59
 #: admin/views/tree_check_changes.php:250
@@ -1712,7 +1712,7 @@ msgstr ""
 msgid "Shared addresses"
 msgstr ""
 
-#: admin/index.php:642 admin/views/edit_rename_place.php:13
+#: admin/index.php:642 admin/views/edit_rename_place.php:20
 #: admin/views/menu.php:103
 msgid "Rename places"
 msgstr ""
@@ -2455,17 +2455,31 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: admin/views/edit_rename_place.php:23 views/help.php:76 views/list.php:637
+#: admin/views/edit_rename_place.php:30 views/help.php:76 views/list.php:637
 #: views/list_places_families.php:211
 msgid "Places"
 msgstr "地点"
 
-#: admin/views/edit_rename_place.php:29
+#: admin/views/edit_rename_place.php:36
 msgid "Select location"
 msgstr ""
 
-#: admin/views/edit_rename_place.php:70
+#: admin/views/edit_rename_place.php:62
+msgid "(+) = Geo data set"
+msgstr ""
+
+#: admin/views/edit_rename_place.php:84
 msgid "Change location"
+msgstr ""
+
+#: admin/views/edit_rename_place.php:92 admin/views/editor_person.php:1692
+#: admin/views/editor_relation.php:1241
+msgid "Search with OpenStreetMap"
+msgstr ""
+
+#: admin/views/edit_rename_place.php:95 admin/views/editor_person.php:1698
+#: admin/views/editor_relation.php:1247
+msgid "Geolocation data added. Press \"Save\" to write to database"
 msgstr ""
 
 #: admin/views/edit_repository.php:23
@@ -3157,14 +3171,6 @@ msgstr "删除档案"
 
 #: admin/views/editor_person.php:1689 admin/views/editor_relation.php:1238
 msgid "Type location to start search in the database"
-msgstr ""
-
-#: admin/views/editor_person.php:1692 admin/views/editor_relation.php:1241
-msgid "Search with OpenStreetMap"
-msgstr ""
-
-#: admin/views/editor_person.php:1698 admin/views/editor_relation.php:1247
-msgid "Geolocation data added. Press \"Save\" to write to database"
 msgstr ""
 
 #: admin/views/editor_relation.php:94
