@@ -65,6 +65,24 @@ class RenamePlaceModel
             WHERE location_location = '" . safe_text_db($_POST['place_old']) . "'";
             $dbh->query($sql);
 
+            if (isset($_POST[ 'place_new_geo']) && !empty($_POST['place_new_geo'])){ 
+                list($my_lat, $my_lng) = explode(';', $_POST['place_new_geo']);
+                $testplace = $dbh->query("SELECT * FROM humo_location WHERE location_location = '" . safe_text_db($_POST['place_new']) . "'");
+                $my_id = -1;
+                // update existing
+                if ($testplaceDB = $testplace->fetch(PDO::FETCH_OBJ)) {
+                    $my_id = $testplaceDB->location_id;
+                    $sql = "UPDATE humo_location SET 
+                           location_lat = " . floatval($my_lat) . ",
+                           location_lng = " . floatval($my_lng) . "
+                           WHERE location_id = '" . $my_id . "'";
+                    $dbh->query($sql);
+                } else { // new entry
+                    $dbh->query("INSERT INTO humo_location (location_location, location_lat, location_lng) VALUES('" . 
+                                safe_text_db($_POST['place_new']) . "','" . 
+                                floatval($my_lat) . "','" . floatval($my_lng) . "') ");
+                } 
+            }
             // *** Show changed place again ***
             $_POST["place_select"] = $_POST['place_new'];
         }

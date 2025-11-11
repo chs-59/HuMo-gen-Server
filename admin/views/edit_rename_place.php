@@ -8,6 +8,13 @@
 if (!defined('ADMIN_PAGE')) {
     exit;
 }
+$loc_list = $dbh->query("SELECT * FROM humo_location ORDER BY location_location");
+$known_locations = array();
+
+while ($loc_listDb = $loc_list->fetch(PDO::FETCH_OBJ)){
+//    $known_locations[] = $loc_listDb->location_location;
+    $known_locations[ $loc_listDb->location_location ] = [ 'lat' => $loc_listDb->location_lat, 'lng' => $loc_listDb->location_lng ];
+}
 ?>
 
 <h1 class="center"><?= __('Rename places'); ?></h1>
@@ -35,17 +42,24 @@ if (!defined('ADMIN_PAGE')) {
                 <select size="1" name="place_select" class="form-select form-select-sm" onChange="this.form.submit();">
                     <?php
                     while ($person = $place['result']->fetch(PDO::FETCH_OBJ)) {
+                        $has_location = '(-)';
                         if ($person->place_edit != '') {
+                            if (!empty($known_locations[$person->place_edit])) {
+                               $has_location = '(+)'; echo('huhu ');
+                            }
                     ?>
                             <option value="<?= $person->place_edit; ?>" <?= $place['select'] == $person->place_edit ? ' selected' : ''; ?>>
-                                <?= $person->place_edit; ?>
+                                <?= $has_location; ?> <?= $person->place_edit; ?> 
                             </option>
                     <?php
                         }
                     }
                     ?>
                 </select>
-            </form>
+            </form> 
+        </div>
+        <div class="col-auto">
+            <?= __('(+) = Geo data set'); ?>
         </div>
 
         <!--
@@ -58,7 +72,7 @@ if (!defined('ADMIN_PAGE')) {
 
 <!-- Change selected place -->
 <?php if ($place['select']) { ?>
-    <form method="POST" action="index.php" class="mt-4">
+    <form method="POST" action="index.php" class="mt-4" name="form1" id="form1">
         <input type="hidden" name="page" value="<?= $page; ?>">
         <input type="hidden" name="place_old" value="<?= $place['select']; ?>">
 
@@ -73,7 +87,16 @@ if (!defined('ADMIN_PAGE')) {
 
             <div class="col-3">
                 <input type="text" name="place_new" value="<?= $place['select']; ?>" size="60" class="form-control form-control-sm">
+                <input type="hidden" name="place_new_geo" value="">
+                <button type="button" onClick='window.open("index.php?page=editor_place_select&form=1&place_item=place_new&place="+encodeURI(document.form1.place_new.value),"","width=800,height=500,top=100,left=50,scrollbars=yes"); return false;'>
+                    <img src="../images/search_osm.png" title="<?= __('Search with OpenStreetMap') ?>">
+                </button><br>
+                <span id="place_new_disp" style="display:none">
+                    <img src="../images/okay.png"> <?=  __('Geolocation data added. Press "Save" to write to database'); ?>
+                </span>
+
             </div>
+            
         </div>
 
         <div class="row">
