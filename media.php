@@ -92,7 +92,7 @@ while ($media_qryDb = $media_qry->fetch(PDO::FETCH_OBJ)) {
             if ($personDb && !$privacy) { print_mediafile($media_filename); }
         // family
         } elseif ($media_qryDb && $media_qryDb->event_connect_kind === 'family') {
-            $qry2 = "SELECT * FROM humo_families WHERE fam_gedcomnumber='" . $media_qryDb->event_connect_id . "'";
+            $qry2 = "SELECT * FROM humo_families WHERE fam_tree_id='" . $tree_id . "' AND fam_gedcomnumber='" . $media_qryDb->event_connect_id . "'";
             $family_qry = $dbh->query($qry2);
             $family_qryDb2 = $family_qry->fetch(PDO::FETCH_OBJ);
             @$personmnDb2 = $db_functions->get_person($family_qryDb2->fam_man);
@@ -100,7 +100,7 @@ while ($media_qryDb = $media_qry->fetch(PDO::FETCH_OBJ)) {
             @$personmnDb3 = $db_functions->get_person($family_qryDb2->fam_woman);
             $woman_cls = new person_cls($personmnDb3);
             // *** Only use this picture if both man and woman have disabled privacy options ***
-            if ($man_cls2->privacy == '' && $woman_cls->privacy == '') { print_mediafile($media_filename);} 
+            if ($man_cls2->privacy === false && $woman_cls->privacy === false ) { print_mediafile($media_filename);} 
         // source
         } elseif ($media_qryDb && $media_qryDb->event_connect_kind === 'source') {
             $sourceDb = $db_functions->get_source($media_qryDb->event_connect_id);
