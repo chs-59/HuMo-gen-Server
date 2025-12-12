@@ -38,7 +38,7 @@ if (!defined('ADMIN_PAGE')) {
                 <?php while ($logbookDb = $logbook->fetch(PDO::FETCH_OBJ)) { ?>
                     <tr>
                         <td class="text-nowrap"><?= $logbookDb->log_date; ?></td>
-                        <td><?= $logbookDb->log_username; ?></td>
+                        <td><?= htmlentities($logbookDb->log_username); ?></td>
                         <td><?= $logbookDb->log_user_admin; ?></td>
                         <td><?= $logbookDb->log_ip_address; ?></td>
                         <td><?= $logbookDb->log_status; ?></td>
