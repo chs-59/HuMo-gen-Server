@@ -32,20 +32,26 @@ class UsersModel
                 }
             }
         }
-
         if (isset($_POST['add_user']) && is_numeric($_POST["add_group_id"])) {
-            $user_prep = $dbh->prepare("INSERT INTO humo_users SET
+            if ( empty($_POST["add_username"]) 
+                  || preg_match('/[^A-Za-z0-9.#\/-_@]/', $_POST["add_username"])
+                  || mb_strlen($_POST["add_password"]) < 12 ) {
+                $alert = __('Error: missing or invalid username or password too short (12+).') . '<br>';
+            }
+            else {
+                $user_prep = $dbh->prepare("INSERT INTO humo_users SET
                 user_name=:add_username, user_mail=:add_usermail,
                 user_password_salted=:add_password_salted, user_group_id=:add_group_id");
-            $user_prep->bindValue(':add_username', $_POST["add_username"], PDO::PARAM_STR);
-            $user_prep->bindValue(':add_usermail', $_POST["add_usermail"]);
-            $hashToStoreInDb = password_hash($_POST["add_password"], PASSWORD_DEFAULT);
-            $user_prep->bindValue(':add_password_salted', $hashToStoreInDb);
-            $user_prep->bindValue(':add_group_id', $_POST["add_group_id"], PDO::PARAM_INT);
-            try {
-                $user_prep->execute();
-            } catch (PDOException $e) {
-                $alert =  __('Error: user name probably allready exist.') . '<br>';
+                $user_prep->bindValue(':add_username', $_POST["add_username"], PDO::PARAM_STR);
+                $user_prep->bindValue(':add_usermail', $_POST["add_usermail"]);
+                $hashToStoreInDb = password_hash($_POST["add_password"], PASSWORD_DEFAULT);
+                $user_prep->bindValue(':add_password_salted', $hashToStoreInDb);
+                $user_prep->bindValue(':add_group_id', $_POST["add_group_id"], PDO::PARAM_INT);
+                try {
+                    $user_prep->execute();
+                } catch (PDOException $e) {
+                    $alert =  __('Error: user name probably allready exist.') . '<br>';
+                }
             }
         }
 
