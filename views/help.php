@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-        <!-- *** HuMo-genealogy info *** -->
-        <h1>HuMo-genealogy</h1>
+        <!-- *** HuMo-gen-Server info *** -->
+        <h1>HuMo-gen-Server</h1>
         <div class="help_box">
             <p class="help_text">
-                <?php printf(__('%s info'), 'HuMo-genealogy'); ?><br>
+                <?php printf(__('%s info'), 'HuMo-gen-Server'); ?><br>
                 <span class="help_explanation">
-                    <?php printf(__('%s is a free, open-source and multilingual server-side program that makes it very easy to publish your genealogical data on the internet as a dynamic and searchable family tree website.'), 'HuMo-genealogy'); ?><br>
-                    <a href="https://humo-gen.com" target="_blank">HuMo-genealogy website</a><br>
+                    <?php printf(__('%s is a free, open-source and multilingual server-side program that makes it very easy to publish your genealogical data on the internet as a dynamic and searchable family tree website.'), 'HuMo-gen-Server'); ?><br>
+                    <a href="https://github.com/chs-59/HuMo-gen-Server" target="_blank">HuMo-gen-Server Home</a><br>
                 </span>
         </div>
 
@@ -49,7 +49,7 @@
         <div class="help_box">
             <p class="help_text"><?= __('“Search” field and button'); ?><br>
                 <span class="help_explanation">
-                    <?php printf(__('This box appears on all pages of %s and allows you the convenience to search for any persons from the database from any page. Typing in a name and clicking search will display a list of people from the database bearing a name matching the search term.'), 'HuMo-genealogy'); ?>
+                    <?php printf(__('This box appears on all pages of %s and allows you the convenience to search for any persons from the database from any page. Typing in a name and clicking search will display a list of people from the database bearing a name matching the search term.'), 'HuMo-gen-Server'); ?>
                 </span><br><br>
 
                 <?= __('The orange RSS-icon') . ' ' . __('(only displayed if activated by the site owner and enabled in webbrowser)'); ?><br>
@@ -137,7 +137,7 @@
         <div class="help_box">
             <p class="help_text"><?= __('”Select a theme” dropdown'); ?><br>
                 <span class="help_explanation">
-                    <?php printf(__('By default, %s is provided with several color schemes, and so long as the site administrator has not disabled them, they will appear in this dropdown list. You can select a theme to your preference, that will change elements such as page color, background images, etc. These themes will only affect your experience on %s and will make no changes to your internet browser or computer.'), 'HuMo-genealogy', 'HuMo-genealogy'); ?>
+                    <?php printf(__('By default, %s is provided with several color schemes, and so long as the site administrator has not disabled them, they will appear in this dropdown list. You can select a theme to your preference, that will change elements such as page color, background images, etc. These themes will only affect your experience on %s and will make no changes to your internet browser or computer.'), 'HuMo-genServer', 'HuMo-gen-Server'); ?>
                 </span><br><br>
         </div>
         </p>
