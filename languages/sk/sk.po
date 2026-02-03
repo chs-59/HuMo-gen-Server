@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-genealogy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-11 09:36+0100\n"
-"PO-Revision-Date: 2025-11-11 09:36+0100\n"
+"POT-Creation-Date: 2026-02-03 15:17+0100\n"
+"PO-Revision-Date: 2026-02-03 15:18+0100\n"
 "Last-Translator: Dusan Bajus\n"
 "Language-Team: Slovak (http://www.transifex.com/humo-gen/humo-gen/language/"
 "sk/)\n"
@@ -341,7 +341,7 @@ msgstr "svedok"
 #: admin/include/editor_media_select.php:82
 #: admin/include/editor_person_select.php:115
 #: admin/include/editor_relation_select.php:46 admin/views/editor.php:148
-#: admin/views/editor_person.php:393 admin/views/gedcom_export.php:339
+#: admin/views/editor_person.php:393 admin/views/gedcom_export.php:343
 #: app/model/mailform.php:83 app/model/register.php:95
 #: app/model/tree_index.php:603 app/model/tree_index.php:1025
 #: app/model/user_settings.php:79 views/anniversary.php:96
@@ -412,7 +412,7 @@ msgstr "Vierovyznanie"
 #: admin/include/editor_event_cls.php:89 admin/include/editor_sources.php:113
 #: admin/include/editor_sources.php:167 admin/include/editor_sources.php:464
 #: admin/views/edit_source.php:137 admin/views/editor.php:1535
-#: admin/views/editor.php:1911 admin/views/gedcom.php:1470
+#: admin/views/editor.php:1911 admin/views/gedcom.php:1471
 #: admin/views/notes.php:243
 msgid "text"
 msgstr "text"
@@ -513,7 +513,7 @@ msgstr "GEDCOM číslo: (ID)"
 #: admin/views/editor_person.php:220 admin/views/editor_person.php:308
 #: admin/views/editor_relation.php:116 admin/views/editor_relation.php:291
 #: admin/views/editor_relation.php:310 admin/views/editor_relation.php:1196
-#: admin/views/gedcom_export.php:173 admin/views/language_editor.php:250
+#: admin/views/gedcom_export.php:177 admin/views/language_editor.php:250
 #: admin/views/maps_locations.php:771 admin/views/settings_homepage.php:88
 #: admin/views/settings_homepage.php:204 admin/views/tree_merge.php:556
 #: admin/views/tree_merge.php:574 admin/views/tree_merge.php:646
@@ -649,14 +649,14 @@ msgid "Also change"
 msgstr "Tiež zmeň"
 
 #: admin/include/editor_event_cls.php:1190 admin/include/editor_inc.php:533
-#: admin/views/gedcom_export.php:265 app/model/family.php:240
+#: admin/views/gedcom_export.php:269 app/model/family.php:240
 #: include/person_cls.php:1060 include/person_cls.php:1061
 #: views/hourglass.php:171
 msgid "Descendants"
 msgstr "Potomkovia"
 
 #: admin/include/editor_event_cls.php:1191 admin/include/editor_inc.php:534
-#: admin/views/gedcom_export.php:283 app/model/ancestor.php:174
+#: admin/views/gedcom_export.php:287 app/model/ancestor.php:174
 #: include/person_cls.php:1069 include/person_cls.php:1070
 #: views/hourglass.php:151
 msgid "Ancestors"
@@ -847,7 +847,7 @@ msgid "Upload new image"
 msgstr ""
 
 #: admin/include/editor_event_cls.php:1624 admin/update/install_update.php:547
-#: admin/views/backup.php:110 admin/views/gedcom.php:67
+#: admin/views/backup.php:139 admin/views/gedcom.php:67
 #: admin/views/settings.php:99 admin/views/settings.php:652
 msgid "Upload"
 msgstr "Nahrávanie"
@@ -951,59 +951,61 @@ msgstr "Vymazať tiež farebnú značku"
 
 #: admin/include/editor_inc.php:537 admin/include/editor_inc.php:1092
 #: admin/include/editor_user_settings.php:139 admin/models/editor.php:1389
-#: admin/models/editor.php:1985 admin/views/cms_pages.php:37
-#: admin/views/cms_pages.php:60 admin/views/edit_address.php:35
-#: admin/views/edit_repository.php:31 admin/views/edit_source.php:119
-#: admin/views/editor.php:339 admin/views/editor.php:356
-#: admin/views/editor_relation.php:246 admin/views/gedcom.php:88
-#: admin/views/gedcom_export.php:471 admin/views/gedcom_export.php:487
-#: admin/views/gedcom_export.php:504 admin/views/gedcom_export.php:519
-#: admin/views/gedcom_export.php:536 admin/views/gedcom_export.php:581
-#: admin/views/groups.php:54 admin/views/groups.php:547
-#: admin/views/install.php:324 admin/views/maps_locations.php:98
-#: admin/views/maps_locations.php:120 admin/views/maps_locations.php:199
-#: admin/views/notes.php:91 admin/views/settings.php:147
-#: admin/views/settings.php:162 admin/views/settings.php:188
-#: admin/views/settings.php:211 admin/views/settings.php:226
-#: admin/views/settings.php:268 admin/views/settings.php:280
-#: admin/views/settings.php:295 admin/views/settings.php:332
-#: admin/views/settings.php:804 admin/views/settings_homepage.php:345
-#: admin/views/thumbs.php:162 admin/views/thumbs.php:172
-#: admin/views/thumbs.php:181 admin/views/thumbs.php:191
-#: admin/views/thumbs.php:211 admin/views/thumbs.php:552
-#: admin/views/tree_merge.php:892 admin/views/tree_merge.php:905
-#: admin/views/tree_merge.php:918 admin/views/tree_merge.php:935
-#: admin/views/trees.php:29 admin/views/users.php:19 views/mailform.php:79
+#: admin/models/editor.php:1985 admin/views/backup.php:104
+#: admin/views/cms_pages.php:37 admin/views/cms_pages.php:60
+#: admin/views/edit_address.php:35 admin/views/edit_repository.php:31
+#: admin/views/edit_source.php:119 admin/views/editor.php:339
+#: admin/views/editor.php:356 admin/views/editor_relation.php:246
+#: admin/views/gedcom.php:88 admin/views/gedcom_export.php:475
+#: admin/views/gedcom_export.php:491 admin/views/gedcom_export.php:508
+#: admin/views/gedcom_export.php:523 admin/views/gedcom_export.php:540
+#: admin/views/gedcom_export.php:585 admin/views/groups.php:54
+#: admin/views/groups.php:547 admin/views/install.php:324
+#: admin/views/maps_locations.php:98 admin/views/maps_locations.php:120
+#: admin/views/maps_locations.php:199 admin/views/notes.php:91
+#: admin/views/settings.php:147 admin/views/settings.php:162
+#: admin/views/settings.php:188 admin/views/settings.php:211
+#: admin/views/settings.php:226 admin/views/settings.php:268
+#: admin/views/settings.php:280 admin/views/settings.php:295
+#: admin/views/settings.php:332 admin/views/settings.php:804
+#: admin/views/settings_homepage.php:345 admin/views/thumbs.php:162
+#: admin/views/thumbs.php:172 admin/views/thumbs.php:181
+#: admin/views/thumbs.php:191 admin/views/thumbs.php:211
+#: admin/views/thumbs.php:552 admin/views/tree_merge.php:892
+#: admin/views/tree_merge.php:905 admin/views/tree_merge.php:918
+#: admin/views/tree_merge.php:935 admin/views/trees.php:29
+#: admin/views/users.php:19 views/mailform.php:79
 msgid "Yes"
 msgstr "Áno"
 
 #: admin/include/editor_inc.php:538 admin/include/editor_inc.php:1093
 #: admin/include/editor_user_settings.php:140 admin/models/editor.php:1390
-#: admin/models/editor.php:1986 admin/views/cms_pages.php:38
-#: admin/views/cms_pages.php:61 admin/views/edit_address.php:36
-#: admin/views/edit_repository.php:32 admin/views/edit_source.php:120
-#: admin/views/editor.php:340 admin/views/editor.php:357
-#: admin/views/editor_relation.php:247 admin/views/gedcom.php:89
-#: admin/views/gedcom_export.php:472 admin/views/gedcom_export.php:488
-#: admin/views/gedcom_export.php:503 admin/views/gedcom_export.php:520
-#: admin/views/gedcom_export.php:537 admin/views/gedcom_export.php:580
-#: admin/views/groups.php:55 admin/views/groups.php:548
-#: admin/views/install.php:325 admin/views/maps_locations.php:99
-#: admin/views/maps_locations.php:121 admin/views/maps_locations.php:200
-#: admin/views/notes.php:92 admin/views/settings.php:148
-#: admin/views/settings.php:163 admin/views/settings.php:189
-#: admin/views/settings.php:212 admin/views/settings.php:227
-#: admin/views/settings.php:269 admin/views/settings.php:281
-#: admin/views/settings.php:296 admin/views/settings.php:333
-#: admin/views/settings.php:805 admin/views/settings_homepage.php:346
-#: admin/views/thumbs.php:92 admin/views/thumbs.php:95
-#: admin/views/thumbs.php:102 admin/views/thumbs.php:162
-#: admin/views/thumbs.php:172 admin/views/thumbs.php:181
-#: admin/views/thumbs.php:191 admin/views/thumbs.php:210
-#: admin/views/thumbs.php:229 admin/views/thumbs.php:553
-#: admin/views/tree_merge.php:893 admin/views/tree_merge.php:906
-#: admin/views/tree_merge.php:919 admin/views/tree_merge.php:936
-#: admin/views/trees.php:30 admin/views/users.php:20 views/mailform.php:80
+#: admin/models/editor.php:1986 admin/views/backup.php:105
+#: admin/views/cms_pages.php:38 admin/views/cms_pages.php:61
+#: admin/views/edit_address.php:36 admin/views/edit_repository.php:32
+#: admin/views/edit_source.php:120 admin/views/editor.php:340
+#: admin/views/editor.php:357 admin/views/editor_relation.php:247
+#: admin/views/gedcom.php:89 admin/views/gedcom_export.php:476
+#: admin/views/gedcom_export.php:492 admin/views/gedcom_export.php:507
+#: admin/views/gedcom_export.php:524 admin/views/gedcom_export.php:541
+#: admin/views/gedcom_export.php:584 admin/views/groups.php:55
+#: admin/views/groups.php:548 admin/views/install.php:325
+#: admin/views/maps_locations.php:99 admin/views/maps_locations.php:121
+#: admin/views/maps_locations.php:200 admin/views/notes.php:92
+#: admin/views/settings.php:148 admin/views/settings.php:163
+#: admin/views/settings.php:189 admin/views/settings.php:212
+#: admin/views/settings.php:227 admin/views/settings.php:269
+#: admin/views/settings.php:281 admin/views/settings.php:296
+#: admin/views/settings.php:333 admin/views/settings.php:805
+#: admin/views/settings_homepage.php:346 admin/views/thumbs.php:92
+#: admin/views/thumbs.php:95 admin/views/thumbs.php:102
+#: admin/views/thumbs.php:162 admin/views/thumbs.php:172
+#: admin/views/thumbs.php:181 admin/views/thumbs.php:191
+#: admin/views/thumbs.php:210 admin/views/thumbs.php:229
+#: admin/views/thumbs.php:553 admin/views/tree_merge.php:893
+#: admin/views/tree_merge.php:906 admin/views/tree_merge.php:919
+#: admin/views/tree_merge.php:936 admin/views/trees.php:30
+#: admin/views/users.php:20 views/mailform.php:80
 msgid "No"
 msgstr "Nie"
 
@@ -1019,7 +1021,7 @@ msgstr "Vyber osobu"
 
 #: admin/include/editor_person_select.php:119
 #: admin/include/editor_relation_select.php:52 admin/views/editor.php:305
-#: admin/views/gedcom_export.php:171
+#: admin/views/gedcom_export.php:175
 msgid "or ID:"
 msgstr "alebo ID:"
 
@@ -1081,7 +1083,7 @@ msgstr "Vybraté: "
 msgid "Import geodata"
 msgstr "Vybraté: "
 
-#: admin/include/editor_place_select.php:126 admin/views/gedcom.php:787
+#: admin/include/editor_place_select.php:126 admin/views/gedcom.php:788
 #: admin/views/maps_locations.php:622 views/maps.php:534 views/maps.php:668
 msgid "Cancel"
 msgstr "Zruš"
@@ -1168,7 +1170,7 @@ msgstr "osoba"
 
 #: admin/include/editor_sources.php:125 admin/include/editor_sources.php:179
 #: admin/include/editor_sources.php:185 admin/views/edit_repository.php:137
-#: admin/views/editor.php:1723 admin/views/gedcom_export.php:346
+#: admin/views/editor.php:1723 admin/views/gedcom_export.php:350
 #: admin/views/tree_merge.php:1447 app/controller/addressController.php:31
 #: app/controller/addressesController.php:34
 #: app/controller/cms_pagesController.php:29 views/address.php:12
@@ -1578,7 +1580,7 @@ msgstr "Ukáž/skry jazyky"
 msgid "Show/ hide theme's"
 msgstr "Ukáž/skry témy"
 
-#: admin/index.php:581 admin/views/gedcom_export.php:370
+#: admin/index.php:581 admin/views/gedcom_export.php:374
 #: admin/views/maps.php:35 admin/views/maps_settings.php:24
 #: admin/views/menu.php:66 admin/views/settings_admin.php:8
 #: admin/views/settings_admin.php:39 admin/views/thumbs.php:196
@@ -1644,7 +1646,7 @@ msgstr "Rodokmene"
 msgid "Pictures/ create thumbnails"
 msgstr "Obrázky/ vytvor náhľady"
 
-#: admin/index.php:609 admin/views/gedcom.php:249 admin/views/thumbs.php:18
+#: admin/index.php:609 admin/views/gedcom.php:250 admin/views/thumbs.php:18
 msgid "Picture settings"
 msgstr "Nastavenie obrázkov"
 
@@ -1728,7 +1730,7 @@ msgid "Repositories"
 msgstr "Úložiská"
 
 #: admin/index.php:641 admin/views/edit_address.php:25
-#: admin/views/gedcom_export.php:545 admin/views/menu.php:102
+#: admin/views/gedcom_export.php:549 admin/views/menu.php:102
 msgid "Shared addresses"
 msgstr "Zdieľané adresy"
 
@@ -1864,11 +1866,17 @@ msgstr "Zmenená lokalita:"
 msgid "NO NAME"
 msgstr "BEZ MENA"
 
-#: admin/models/users.php:30 admin/models/users.php:48
+#: admin/models/users.php:30 admin/models/users.php:53
 #, fuzzy
 #| msgid "ERROR: username already exists"
 msgid "Error: user name probably allready exist."
 msgstr "CHYBA: užívateľské meno už existuje"
+
+#: admin/models/users.php:39
+#, fuzzy
+#| msgid "No valid username or password."
+msgid "Error: missing or invalid username or password too short (12+)."
+msgstr "Neplatné meno, alebo heslo."
 
 #: admin/update/install_update.php:11
 #, php-format
@@ -2168,12 +2176,12 @@ msgid ""
 "Invalid backup file: has to be file with extension \".sql\" or \".sql.zip\""
 msgstr "Neplatný záložný súbor"
 
-#: admin/views/backup.php:43 admin/views/backup.php:57
-#: admin/views/backup.php:60
+#: admin/views/backup.php:51 admin/views/backup.php:65
+#: admin/views/backup.php:68
 msgid "Create backup file"
 msgstr "Vytvoriť zálohový súbor"
 
-#: admin/views/backup.php:51
+#: admin/views/backup.php:59
 #, php-format
 msgid ""
 "If you use %s to edit in the family tree, then create multiple backups. "
@@ -2192,21 +2200,39 @@ msgstr ""
 "rodokmeňa! Bude však obsahovať všetky základné genealogické údaje.<br>\n"
 "3) Použite stránku pre zálohovanie %s."
 
-#: admin/views/backup.php:80
+#: admin/views/backup.php:88
 msgid "Download backup file"
 msgstr "Stiahnuť záložný súbor"
 
-#: admin/views/backup.php:81
+#: admin/views/backup.php:89
 msgid ""
 "We recommend downloading the most recent backup file in case the data on "
 "your server (including the backup file) might get deleted or corrupted."
 msgstr ""
 
-#: admin/views/backup.php:91 admin/views/backup.php:130
+#: admin/views/backup.php:98 admin/views/backup.php:112
+#, fuzzy
+#| msgid "Create backup file"
+msgid "Delete backup files"
+msgstr "Vytvoriť zálohový súbor"
+
+#: admin/views/backup.php:99
+msgid ""
+"Don't leave backup files on a public server - they are readable to world! "
+"Delete them after download!"
+msgstr ""
+
+#: admin/views/backup.php:101
+#, fuzzy
+#| msgid "Are you sure to remove this mariage?"
+msgid "Are you sure to remove database backups?"
+msgstr "Naozaj chceš vymazať tento sobáš?"
+
+#: admin/views/backup.php:120 admin/views/backup.php:159
 msgid "Restore database from backup file"
 msgstr "Obnoviť databázu zo zálohy"
 
-#: admin/views/backup.php:96
+#: admin/views/backup.php:125
 #, fuzzy, php-format
 #| msgid ""
 #| "Here you can restore your entire database from the last backup made with "
@@ -2220,47 +2246,47 @@ msgstr ""
 "%s (ak je k dispozícii) alebo zo záložného súboru .sql alebo .sql.zip vo "
 "vašom počítači."
 
-#: admin/views/backup.php:102
+#: admin/views/backup.php:131
 #, fuzzy
 #| msgid "a) [Optional, but highly recommended] Do a database backup first"
 msgid "Optional: upload a database backup file"
 msgstr "a)  [Voliteľné, ale veľmi doporučené] Najprv zálohujte databázu"
 
-#: admin/views/backup.php:123
+#: admin/views/backup.php:152
 msgid "Starting to restore database. This may take some time. Please wait..."
 msgstr "Databáza sa obnovuje. Prosím čakaj."
 
-#: admin/views/backup.php:139
+#: admin/views/backup.php:168
 msgid "Most recent backup!"
 msgstr ""
 
-#: admin/views/backup.php:145
+#: admin/views/backup.php:174
 msgid "Restore database"
 msgstr "Obnoviť databázu"
 
-#: admin/views/backup.php:150 admin/views/index_admin.php:378
+#: admin/views/backup.php:179 admin/views/index_admin.php:378
 msgid "No backup file found!"
 msgstr "Žiadne záložný súbor nájdený!"
 
-#: admin/views/backup.php:198
+#: admin/views/backup.php:227
 msgid "Creating backup file. This may take some time. Please wait..."
 msgstr "Vytváram záložný súbor. Prosím, čakajte."
 
-#: admin/views/backup.php:226
+#: admin/views/backup.php:255
 msgid "Skipped backup of table:"
 msgstr ""
 
-#: admin/views/backup.php:310
+#: admin/views/backup.php:339
 msgid ""
 "A backup file was saved to the server. We strongly suggest you download a "
 "copy to your computer in case you might need it later."
 msgstr "Záložný súbor bol nahratý na server."
 
-#: admin/views/backup.php:349
+#: admin/views/backup.php:378
 msgid "Processed lines..."
 msgstr "Spracované riadky..."
 
-#: admin/views/backup.php:412
+#: admin/views/backup.php:441
 msgid "Database has been restored successfully!"
 msgstr "Databáza bola obnovená!"
 
@@ -2560,7 +2586,7 @@ msgstr "Pridať sklad"
 msgid "No valid repository number."
 msgstr "Neplatné číslo úložiska."
 
-#: admin/views/edit_repository.php:197 admin/views/gedcom_export.php:360
+#: admin/views/edit_repository.php:197 admin/views/gedcom_export.php:364
 #: app/model/mailform.php:84 app/model/register.php:96
 #: app/model/user_settings.php:80
 msgid "E-mail"
@@ -2927,7 +2953,7 @@ msgstr ""
 msgid "Low"
 msgstr "Log"
 
-#: admin/views/editor.php:1871 admin/views/gedcom_export.php:440
+#: admin/views/editor.php:1871 admin/views/gedcom_export.php:444
 msgid "Normal"
 msgstr ""
 
@@ -3015,7 +3041,7 @@ msgid "year"
 msgstr "rok"
 
 #: admin/views/editor_person.php:350 admin/views/editor_relation.php:266
-#: admin/views/gedcom_export.php:243 views/list.php:300 views/list.php:351
+#: admin/views/gedcom_export.php:247 views/list.php:300 views/list.php:351
 #: views/list_names.php:130 views/stats_firstnames.php:94
 #: views/stats_surnames.php:139
 msgid "All"
@@ -3425,67 +3451,66 @@ msgstr ""
 msgid "Are you sure to remove GEDCOM files?"
 msgstr "Naozaj chcete odstrániť GEDCOM súbory?"
 
-#: admin/views/gedcom.php:120
+#: admin/views/gedcom.php:121
 msgid "GEDCOM file is REMOVED."
 msgstr "GEDCOM súbor bol vymazaný."
 
-#: admin/views/gedcom.php:126
-msgid "If needed remove GEDCOM files (except test GEDCOM file):"
+#: admin/views/gedcom.php:127 admin/views/gedcom_export.php:94
+msgid "Remove unprotected GEDCOM files from server (recommended!)"
 msgstr ""
-"V prípade potreby odstráňte súbory GEDCOM (okrem testovacieho súboru GEDCOM):"
 
-#: admin/views/gedcom.php:135
+#: admin/views/gedcom.php:136
 msgid "Remove all GEDCOM files"
 msgstr "Odstrániť všetky súbory GEDCOM"
 
-#: admin/views/gedcom.php:137
+#: admin/views/gedcom.php:138
 #, php-format
 msgid "Remove GEDCOM files older than %d month(s)"
 msgstr "Odstrániť súbory gedcom staršie ako %d mesiac(e)"
 
-#: admin/views/gedcom.php:140
+#: admin/views/gedcom.php:141
 #, php-format
 msgid "Remove GEDCOM files older than %d year(s)"
 msgstr "Odstrániť súbory gedcom staršie ako %d rok(y)"
 
-#: admin/views/gedcom.php:143 admin/views/log.php:64 admin/views/log.php:99
+#: admin/views/gedcom.php:144 admin/views/log.php:64 admin/views/log.php:99
 #: admin/views/notes.php:204 admin/views/tree_admin.php:10
 msgid "Remove"
 msgstr "Vymazať"
 
-#: admin/views/gedcom.php:179
+#: admin/views/gedcom.php:180
 msgid "Select GEDCOM file and settings"
 msgstr "Vyberte súbor a nastavenia GEDCOM"
 
-#: admin/views/gedcom.php:183
+#: admin/views/gedcom.php:184
 msgid "Select GEDCOM file"
 msgstr "Vyber súbor GEDCOM"
 
-#: admin/views/gedcom.php:198
+#: admin/views/gedcom.php:199
 msgid "GEDCOM settings"
 msgstr "Nastavenia GEDCOM"
 
-#: admin/views/gedcom.php:207
+#: admin/views/gedcom.php:208
 msgid "Add a general source connected to all persons in this GEDCOM file."
 msgstr ""
 "Pridajte všeobecný zdroj pripojený ku všetkým osobám v tomto súbore GEDCOM."
 
-#: admin/views/gedcom.php:214
+#: admin/views/gedcom.php:215
 msgid ""
 "Reassign new ID numbers for persons, fams etc. (don't use IDs from GEDCOM)"
 msgstr ""
 "Zmeňte pridelenie nových ID čísel osobám, rodinám atď. (nepoužívajte ID z "
 "GEDCOM)"
 
-#: admin/views/gedcom.php:221
+#: admin/views/gedcom.php:222
 msgid "Order children by date (only needed if children are in wrong order)"
 msgstr "Zoraď deti podľa dátumov"
 
-#: admin/views/gedcom.php:228
+#: admin/views/gedcom.php:229
 msgid "Order families by date (only needed if families are in wrong order)"
 msgstr "Zoraď rodiny podľa dátumu (len ak sú rodiny zle zoradené)"
 
-#: admin/views/gedcom.php:235
+#: admin/views/gedcom.php:236
 msgid ""
 "Add new locations to geo-location database (for Google Maps locations). This "
 "will slow down reading of GEDCOM file!"
@@ -3493,7 +3518,7 @@ msgstr ""
 "Pridajte nové miesta do databázy geolokácií (pre miesta v Mapách Google). "
 "Toto spomalí čítanie súboru GEDCOM!"
 
-#: admin/views/gedcom.php:242
+#: admin/views/gedcom.php:243
 msgid ""
 "Don't remove picture links from database (only needed for Geneanet GEDCOM "
 "file)."
@@ -3501,59 +3526,59 @@ msgstr ""
 "Nevymazuj odkazy na obrázky z databázy (sú potrebné len pre Geneanet GEDCOM "
 "file)"
 
-#: admin/views/gedcom.php:243
+#: admin/views/gedcom.php:244
 msgid ""
 "In Geneanet add HuMo-genealogy picture id in the source by a person. Using "
 "this example: #media1254,media13454#"
 msgstr ""
 
-#: admin/views/gedcom.php:253
+#: admin/views/gedcom.php:254
 msgid "Only process picture file name. For example: picture.jpg [DEFAULT]"
 msgstr "Spracovať iba názov obrázku. Napr.: obrazok.jpg [Prednastavené]"
 
-#: admin/views/gedcom.php:256
+#: admin/views/gedcom.php:257
 msgid "Process full picture path. For example: picture_path&#92;picture.jpg"
 msgstr "Spracovať celú cestu k obrázku. Napr.: ...obr_priecinok/../obrazok,jpg"
 
-#: admin/views/gedcom.php:271
+#: admin/views/gedcom.php:272
 msgid "GEDCOM process settings"
 msgstr "Nastavenie spracovania GEDCOM"
 
-#: admin/views/gedcom.php:280
+#: admin/views/gedcom.php:281
 msgid "Show non-processed items when processing GEDCOM (can be a long list!"
 msgstr ""
 "Zobraziť nespracované položky pri spracovaní GEDCOM (môže to byť dlhý zoznam!"
 
-#: admin/views/gedcom.php:287
+#: admin/views/gedcom.php:288
 msgid ""
 "Show all numbers when processing GEDCOM (useful when a time-out occurs!)"
 msgstr ""
 "Zobraziť všetky čísla pri spracovaní GEDCOM (užitočné, keď nestačí časový "
 "limit!)"
 
-#: admin/views/gedcom.php:294
+#: admin/views/gedcom.php:295
 msgid "Debug mode"
 msgstr "Ladiaci mód"
 
-#: admin/views/gedcom.php:299
+#: admin/views/gedcom.php:300
 msgid "Batch processing"
 msgstr "Dávkové spracovanie"
 
-#: admin/views/gedcom.php:302
+#: admin/views/gedcom.php:303
 msgid "1 record (slow processing, but needs less server-memory)"
 msgstr "1 záznam (pomalé spracovanie, ale vyžaduje menej pamäte servera)"
 
-#: admin/views/gedcom.php:303 admin/views/gedcom.php:304
-#: admin/views/gedcom.php:305 admin/views/gedcom.php:306
-#: admin/views/gedcom.php:307 admin/views/gedcom.php:308
+#: admin/views/gedcom.php:304 admin/views/gedcom.php:305
+#: admin/views/gedcom.php:306 admin/views/gedcom.php:307
+#: admin/views/gedcom.php:308 admin/views/gedcom.php:309
 msgid "records per batch"
 msgstr "záznamov na dávku"
 
-#: admin/views/gedcom.php:309
+#: admin/views/gedcom.php:310
 msgid "ALL records (fast processing, but needs server-memory)"
 msgstr "VŠETKY záznamy (rýchle spracovanie, ale vyžaduje viac pamäte servera)"
 
-#: admin/views/gedcom.php:324
+#: admin/views/gedcom.php:325
 msgid ""
 "Time-out detected! Controlled time-out setting is adjusted. Retry reading of "
 "GEDCOM with new setting."
@@ -3561,7 +3586,7 @@ msgstr ""
 "Uplynul časový limit! Riadené nastavenie časového limitu je upravené. Skúste "
 "znova načítať GEDCOM s novým nastavením."
 
-#: admin/views/gedcom.php:333
+#: admin/views/gedcom.php:334
 msgid ""
 "seconds. Controlled time-out, the GEDCOM script will restart and continue."
 "<br>Use this if the server has a time-out setting (set less seconds then "
@@ -3572,50 +3597,50 @@ msgstr ""
 "menej sekúnd, ako je časový limit servera).<br>0 = deaktivácia riadeného "
 "časového limitu."
 
-#: admin/views/gedcom.php:334
+#: admin/views/gedcom.php:335
 #, php-format
 msgid "Your server time-out setting is: %s seconds."
 msgstr "Nastavenie prekročenia časového limitu tvojho servera je: %s sekúnd."
 
-#: admin/views/gedcom.php:359
+#: admin/views/gedcom.php:360
 #, php-format
 msgid "Yes, replace existing family tree: <b>\"%1$s\"</b> with %2$s persons!"
 msgstr "Áno, nahradiť existujúci rodokmeň: <b>\"%1$s\"</b> osobami %2$s!"
 
-#: admin/views/gedcom.php:365
+#: admin/views/gedcom.php:366
 msgid "Add this GEDCOM file to the existing tree"
 msgstr "Pridať tento GEDCOM súbor k existujúceho rodokmneňa"
 
-#: admin/views/gedcom.php:368 admin/views/gedcom.php:371
-#: admin/views/gedcom.php:465 admin/views/gedcom.php:778
-#: admin/views/gedcom.php:1396 admin/views/gedcom.php:1519
-#: admin/views/gedcom.php:1541
+#: admin/views/gedcom.php:369 admin/views/gedcom.php:372
+#: admin/views/gedcom.php:466 admin/views/gedcom.php:779
+#: admin/views/gedcom.php:1397 admin/views/gedcom.php:1520
+#: admin/views/gedcom.php:1542
 msgid "Step"
 msgstr "Krok"
 
-#: admin/views/gedcom.php:436
+#: admin/views/gedcom.php:437
 msgid "STEP 2) Remove old family tree:"
 msgstr "KROK 2) Vymaž starý rodokmeň:"
 
-#: admin/views/gedcom.php:463 admin/views/gedcom.php:922
-#: admin/views/gedcom.php:1541
+#: admin/views/gedcom.php:464 admin/views/gedcom.php:923
+#: admin/views/gedcom.php:1542
 msgid "ONLY use in case of a time-out, to continue click:"
 msgstr "IBA v prípade chyby TIME-OUT, klikni:"
 
-#: admin/views/gedcom.php:471 admin/views/gedcom.php:496
-#: admin/views/gedcom.php:519 admin/views/gedcom.php:545
-#: admin/views/gedcom.php:557 admin/views/gedcom.php:569
-#: admin/views/gedcom.php:595 admin/views/gedcom.php:619
-#: admin/views/gedcom.php:645 admin/views/gedcom.php:670
+#: admin/views/gedcom.php:472 admin/views/gedcom.php:497
+#: admin/views/gedcom.php:520 admin/views/gedcom.php:546
+#: admin/views/gedcom.php:558 admin/views/gedcom.php:570
+#: admin/views/gedcom.php:596 admin/views/gedcom.php:620
+#: admin/views/gedcom.php:646 admin/views/gedcom.php:671
 #, php-format
 msgid "Remove old family tree items from %s table..."
 msgstr "Vymaž starý rodokmeň z %s Tabuľky.."
 
-#: admin/views/gedcom.php:488 admin/views/gedcom.php:511
-#: admin/views/gedcom.php:536 admin/views/gedcom.php:550
-#: admin/views/gedcom.php:562 admin/views/gedcom.php:586
-#: admin/views/gedcom.php:612 admin/views/gedcom.php:636
-#: admin/views/gedcom.php:662 admin/views/gedcom.php:698
+#: admin/views/gedcom.php:489 admin/views/gedcom.php:512
+#: admin/views/gedcom.php:537 admin/views/gedcom.php:551
+#: admin/views/gedcom.php:563 admin/views/gedcom.php:587
+#: admin/views/gedcom.php:613 admin/views/gedcom.php:637
+#: admin/views/gedcom.php:663 admin/views/gedcom.php:699
 #: admin/views/index_admin.php:272 admin/views/index_admin.php:279
 #: admin/views/index_admin.php:286 admin/views/index_admin.php:293
 #: admin/views/index_admin.php:300 admin/views/index_admin.php:307
@@ -3624,16 +3649,16 @@ msgstr "Vymaž starý rodokmeň z %s Tabuľky.."
 msgid "Optimize table..."
 msgstr "Optimalizuj tabuľku .."
 
-#: admin/views/gedcom.php:707
+#: admin/views/gedcom.php:708
 msgid "No error messages above? In that case the tables have been created!"
 msgstr "Žiadna chyba? Potom Tabuľka bola vytvorená!"
 
-#: admin/views/gedcom.php:711
+#: admin/views/gedcom.php:712
 msgid ""
 "The data in this GEDCOM will be appended to the existing data in this tree!"
 msgstr "Údaje z GEDCOM budú pripojené k existujúcim údajom tohto rodokmeňa!"
 
-#: admin/views/gedcom.php:897
+#: admin/views/gedcom.php:898
 msgid ""
 "<b>STEP 3) Processing GEDCOM file:</b>\n"
 "<p>The following lines have to be processed without error messages...<br>\n"
@@ -3643,120 +3668,120 @@ msgstr ""
 "<p>Nasledujúce riadky boli bez chyby...<br>\n"
 "<b>Spracovanie trvá určitú dobu!</b>"
 
-#: admin/views/gedcom.php:922
+#: admin/views/gedcom.php:923
 msgid "Restart"
 msgstr "Reštart"
 
-#: admin/views/gedcom.php:923
+#: admin/views/gedcom.php:924
 msgid "Restarts reading of GEDCOM using a controlled time-out."
 msgstr "Reštartuje sa čítanie GEDCOM pomocou riadeného časového limitu."
 
-#: admin/views/gedcom.php:999 admin/views/gedcom.php:1336
-#: admin/views/gedcom.php:1497 admin/views/gedcom.php:1603
-#: admin/views/gedcom.php:1792 admin/views/gedcom.php:2021
-#: admin/views/gedcom.php:2056
+#: admin/views/gedcom.php:1000 admin/views/gedcom.php:1337
+#: admin/views/gedcom.php:1498 admin/views/gedcom.php:1604
+#: admin/views/gedcom.php:1793 admin/views/gedcom.php:2022
+#: admin/views/gedcom.php:2057
 msgid "lines processed"
 msgstr "riadkov spracovaných"
 
-#: admin/views/gedcom.php:1291
+#: admin/views/gedcom.php:1292
 msgid "GEDCOM file"
 msgstr "GEDCOM súbor"
 
-#: admin/views/gedcom.php:1293
+#: admin/views/gedcom.php:1294
 #, php-format
 msgid "this is an <b>%s</b> file"
 msgstr "to je <b>%s</b> súbor"
 
-#: admin/views/gedcom.php:1396
+#: admin/views/gedcom.php:1397
 msgid "Controlled time-out to continue reading of GEDCOM file, click:"
 msgstr ""
 "Kontrolovaný časový limit pre pokračovanie v čítaní súboru GEDCOM, kliknite "
 "na:"
 
-#: admin/views/gedcom.php:1397
+#: admin/views/gedcom.php:1398
 #, php-format
 msgid ""
 "Or wait %s seconds for automatic continuation. Some browsers will give a "
 "reload message..."
 msgstr "Alebo počkaj % sekúnd pre automatické pokračovanie."
 
-#: admin/views/gedcom.php:1421 admin/views/gedcom.php:1433
+#: admin/views/gedcom.php:1422 admin/views/gedcom.php:1434
 msgid "Persons added by GEDCOM import."
 msgstr "Osoby pridané z Gedcom."
 
-#: admin/views/gedcom.php:1453
+#: admin/views/gedcom.php:1454
 #, php-format
 msgid "Reading in the file took: %d seconds"
 msgstr "Načítanie bude trvať: %d sekúnd"
 
-#: admin/views/gedcom.php:1462
+#: admin/views/gedcom.php:1463
 msgid "Non-processed items"
 msgstr "Nespracované položky"
 
-#: admin/views/gedcom.php:1466 admin/views/gedcom.php:1467
-#: admin/views/gedcom.php:1468 admin/views/gedcom.php:1469
+#: admin/views/gedcom.php:1467 admin/views/gedcom.php:1468
+#: admin/views/gedcom.php:1469 admin/views/gedcom.php:1470
 msgid "Level"
 msgstr "Úroveň"
 
-#: admin/views/gedcom.php:1487
+#: admin/views/gedcom.php:1488
 msgid "All items have been processed!"
 msgstr "Všetky položky boli spracované!"
 
-#: admin/views/gedcom.php:1531
+#: admin/views/gedcom.php:1532
 msgid "STEP 4) Final database processing:"
 msgstr "KROK 4) Finálne spracovanie databázy:"
 
-#: admin/views/gedcom.php:1572
+#: admin/views/gedcom.php:1573
 msgid "Processing of referenced texts into standard texts..."
 msgstr "Spracovanie referenčných textov do štandardných textov ..."
 
-#: admin/views/gedcom.php:1792 admin/views/index_admin.php:604
+#: admin/views/gedcom.php:1793 admin/views/index_admin.php:604
 #: admin/views/statistics_old.php:66 admin/views/tree_admin.php:82
 #: app/model/tree_index.php:283
 msgid "persons"
 msgstr "osoby"
 
-#: admin/views/gedcom.php:2021 admin/views/index_admin.php:604
+#: admin/views/gedcom.php:2022 admin/views/index_admin.php:604
 #: admin/views/statistics_old.php:66 admin/views/tree_admin.php:82
 #: app/model/tree_index.php:283
 msgid "families"
 msgstr "rodiny"
 
-#: admin/views/gedcom.php:2079
+#: admin/views/gedcom.php:2080
 msgid "Processing texts IN names..."
 msgstr "Spracovanie textov V menách ..."
 
-#: admin/views/gedcom.php:2107
+#: admin/views/gedcom.php:2108
 msgid "Updating location database..."
 msgstr "Obnovenie umiestnenia databázy..."
 
-#: admin/views/gedcom.php:2176
+#: admin/views/gedcom.php:2177
 msgid "Order children..."
 msgstr "Zoradenie detí..."
 
-#: admin/views/gedcom.php:2238
+#: admin/views/gedcom.php:2239
 msgid "Order families..."
 msgstr "Zoraďenie rodiny..."
 
-#: admin/views/gedcom.php:2367
+#: admin/views/gedcom.php:2368
 msgid "Counting persons and families and enter into database..."
 msgstr "Počítanie osôb a rodín a presun do databázy..."
 
-#: admin/views/gedcom.php:2388
+#: admin/views/gedcom.php:2389
 #, php-format
 msgid "Processing took: %d seconds"
 msgstr "Bude to trvať %d sekúnd"
 
-#: admin/views/gedcom.php:2389
+#: admin/views/gedcom.php:2390
 msgid "No error messages? In this case the database is ready for use!"
 msgstr "Žiadna chyba? Potom je databáza pripravená!"
 
-#: admin/views/gedcom.php:2391
+#: admin/views/gedcom.php:2392
 #, php-format
 msgid "Ready! Now click %s to watch the family tree"
 msgstr "Pripravený! Teraz klikni %s pre zobrazenie rodokmeňa"
 
-#: admin/views/gedcom.php:2392
+#: admin/views/gedcom.php:2393
 msgid ""
 "TIP: Use <a href=\"index.php?page=cal_date\">\"Calculated birth dates\"</a> "
 "for a better privacy filter."
@@ -3798,153 +3823,153 @@ msgstr "GEDCOM súbor bol vygenerovaný"
 msgid "Download GEDCOM file"
 msgstr "Stiahnuť GEDCOM súbor"
 
-#: admin/views/gedcom_export.php:90
+#: admin/views/gedcom_export.php:86
 #, fuzzy
 #| msgid "Download backup file"
 msgid "Download connected media files"
 msgstr "Stiahnuť záložný súbor"
 
-#: admin/views/gedcom_export.php:99
+#: admin/views/gedcom_export.php:103
 msgid "Select family tree to export and click \"Start export\""
 msgstr "Vyber rodokmeň pre export a klikni \"Start export\""
 
-#: admin/views/gedcom_export.php:103
+#: admin/views/gedcom_export.php:107
 msgid "Choose family tree to export"
 msgstr "Vyber rodokmeň pre export"
 
-#: admin/views/gedcom_export.php:126
+#: admin/views/gedcom_export.php:130
 #, fuzzy
 #| msgid "Whole tree or part:"
 msgid "Whole tree or part"
 msgstr "Celý rodokmeň alebo časť:"
 
-#: admin/views/gedcom_export.php:128
+#: admin/views/gedcom_export.php:132
 #, fuzzy
 #| msgid "Whole tree:"
 msgid "Whole tree"
 msgstr "Celý rodokmeň:"
 
-#: admin/views/gedcom_export.php:129
+#: admin/views/gedcom_export.php:133
 #, fuzzy
 #| msgid "Partial tree:"
 msgid "Partial tree"
 msgstr "Časť rodokmeňa:"
 
-#: admin/views/gedcom_export.php:161
+#: admin/views/gedcom_export.php:165
 #, fuzzy
 #| msgid "Choose person:"
 msgid "Choose person"
 msgstr "Výber osoby:"
 
-#: admin/views/gedcom_export.php:240
+#: admin/views/gedcom_export.php:244
 #, fuzzy
 #| msgid "Number of generations to export:"
 msgid "Number of generations to export"
 msgstr "Počet generácii na export:"
 
-#: admin/views/gedcom_export.php:259
+#: admin/views/gedcom_export.php:263
 #, fuzzy
 #| msgid "Choose type of export:"
 msgid "Choose type of export"
 msgstr "Vyber typ exportu:"
 
-#: admin/views/gedcom_export.php:271
+#: admin/views/gedcom_export.php:275
 msgid "Include spouses of descendants"
 msgstr "Vrátane partnerov a potomkov"
 
-#: admin/views/gedcom_export.php:277
+#: admin/views/gedcom_export.php:281
 msgid "Include parents of spouses"
 msgstr "Vrátane rodičov a partnerov"
 
-#: admin/views/gedcom_export.php:289
+#: admin/views/gedcom_export.php:293
 msgid "Include spouse(s) of base person"
 msgstr "Vrátane partnerov hlavnej osoby"
 
-#: admin/views/gedcom_export.php:295
+#: admin/views/gedcom_export.php:299
 msgid "Include sibblings of ancestors and base person"
 msgstr "Vrátane súrodencov predkov a hlavnú osobu"
 
-#: admin/views/gedcom_export.php:335
+#: admin/views/gedcom_export.php:339
 msgid "GEDCOM submitter"
 msgstr ""
 
-#: admin/views/gedcom_export.php:353
+#: admin/views/gedcom_export.php:357
 msgid "Country"
 msgstr ""
 
-#: admin/views/gedcom_export.php:374
+#: admin/views/gedcom_export.php:378
 #, fuzzy
 #| msgid "GEDCOM settings"
 msgid "GEDCOM version"
 msgstr "Nastavenia GEDCOM"
 
-#: admin/views/gedcom_export.php:384
+#: admin/views/gedcom_export.php:388
 #, fuzzy
 #| msgid "GEDCOM tags"
 msgid "GEDCOM 7.0"
 msgstr "GEDCOM značky"
 
-#: admin/views/gedcom_export.php:385
+#: admin/views/gedcom_export.php:389
 #, fuzzy
 #| msgid "GEDCOM tags"
 msgid "GEDCOM 5.5.1"
 msgstr "GEDCOM značky"
 
-#: admin/views/gedcom_export.php:391
+#: admin/views/gedcom_export.php:395
 msgid "Character set"
 msgstr "Nastavenie znakov"
 
-#: admin/views/gedcom_export.php:405
+#: admin/views/gedcom_export.php:409
 msgid "UTF-8 (recommended character set)"
 msgstr "UTF-8 (doporučené znaky)"
 
-#: admin/views/gedcom_export.php:425
+#: admin/views/gedcom_export.php:429
 msgid "GEDCOM 7.0 always uses the UTF-8 character set."
 msgstr ""
 
-#: admin/views/gedcom_export.php:430
+#: admin/views/gedcom_export.php:434
 #, fuzzy
 #| msgid "Export texts"
 msgid "Export type"
 msgstr "Export textov"
 
-#: admin/views/gedcom_export.php:446
+#: admin/views/gedcom_export.php:450
 #, fuzzy
 #| msgid "Minimum:"
 msgid "Minimal"
 msgstr "Minimum:"
 
-#: admin/views/gedcom_export.php:462
+#: admin/views/gedcom_export.php:466
 msgid "Export texts"
 msgstr "Export textov"
 
-#: admin/views/gedcom_export.php:478
+#: admin/views/gedcom_export.php:482
 msgid "Export categories (No GEDCOM Standard!)"
 msgstr ""
 
-#: admin/views/gedcom_export.php:494
+#: admin/views/gedcom_export.php:498
 msgid "Export media files to ZIP"
 msgstr ""
 
-#: admin/views/gedcom_export.php:510
+#: admin/views/gedcom_export.php:514
 msgid "Export sources"
 msgstr "Export zdrojov"
 
-#: admin/views/gedcom_export.php:533
+#: admin/views/gedcom_export.php:537
 msgid "Export longitude & latitude by places"
 msgstr "Export zem. súradníc podľa miesta"
 
-#: admin/views/gedcom_export.php:557
+#: admin/views/gedcom_export.php:561
 #, fuzzy
 #| msgid "Shared addresses"
 msgid "Export shared addresses"
 msgstr "Zdieľané adresy"
 
-#: admin/views/gedcom_export.php:558
+#: admin/views/gedcom_export.php:562
 msgid "Convert all shared addresses as single addresses"
 msgstr ""
 
-#: admin/views/gedcom_export.php:561
+#: admin/views/gedcom_export.php:565
 msgid ""
 "\"Shared addresses\" is <b>only compatible</b> with HuMo-genealogy and "
 "Haza-21 programs.<br>\n"
@@ -3952,19 +3977,19 @@ msgid ""
 "be lost."
 msgstr ""
 
-#: admin/views/gedcom_export.php:564
+#: admin/views/gedcom_export.php:568
 msgid "There are no shared addresses, standard GEDCOM export is used."
 msgstr ""
 
-#: admin/views/gedcom_export.php:571
+#: admin/views/gedcom_export.php:575
 msgid "Show export status"
 msgstr "Ukáž stav exportu"
 
-#: admin/views/gedcom_export.php:587
+#: admin/views/gedcom_export.php:591
 msgid "GEDCOM export"
 msgstr "Export GEDCOM"
 
-#: admin/views/gedcom_export.php:589
+#: admin/views/gedcom_export.php:593
 msgid "Start export"
 msgstr "Štart export"
 
@@ -11042,6 +11067,11 @@ msgstr "Vyber tému"
 #: views/user_settings.php:125 views/user_settings.php:128
 msgid "Standard-colours"
 msgstr "Štandarné farby"
+
+#~ msgid "If needed remove GEDCOM files (except test GEDCOM file):"
+#~ msgstr ""
+#~ "V prípade potreby odstráňte súbory GEDCOM (okrem testovacieho súboru "
+#~ "GEDCOM):"
 
 #~ msgid "Select place"
 #~ msgstr "Vyber miesto"

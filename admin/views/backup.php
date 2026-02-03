@@ -10,7 +10,7 @@ if (!defined('ADMIN_PAGE')) {
 
 // *** Move and remove files from previous backup procedure ***
 if (file_exists('humo_backup.sql.zip')) {
-    $new_file_name = 'backup_files/' . date("Y_m_d_H_i", filemtime('humo_backup.sql.zip')) . '_humo-genealogy_backup.sql.zip';
+    $new_file_name = 'backup_files/' . date("Y_m_d_H_i", filemtime('humo_backup.sql.zip')) . '_humo-gen-server_backup.sql.zip';
     rename('humo_backup.sql.zip', $new_file_name);
 
     if (file_exists('downloadbk.php')) {
@@ -23,7 +23,7 @@ if (file_exists('backup_tmp/readme.txt')) {
 }
 
 echo '<h1 class="center">';
-printf(__('%s backup'), 'HuMo-genealogy');
+printf(__('%s backup'), 'HuMo-gen-Server');
 echo '</h1>';
 
 // *** Upload backup file ***
@@ -38,7 +38,15 @@ if (isset($_POST['upload_the_file'])) {
         echo '<span style="color:red;font-weight:bold">' . __('Invalid backup file: has to be file with extension ".sql" or ".sql.zip"') . '</span><br>';
     }
 }
-?>
+// *** Delete backups ***
+if (isset($_POST['delete_backup_confirm'])) {
+    $dh  = opendir('backup_files/');
+    while (false !== ($filename = readdir($dh))) {
+        if (strtolower(substr($filename, -4)) === ".sql" || strtolower(substr($filename, -8)) === ".sql.zip") {
+        unlink( 'backup_files/' . $filename );
+        }
+    }
+}?>
 
 <h2><?= __('Create backup file'); ?></h2>
 <table class="table">
@@ -58,7 +66,7 @@ if (isset($_POST['upload_the_file'])) {
 
                 <form action="index.php?page=backup" method="post">
                     &nbsp;&nbsp;<input type="submit" value="<?= __('Create backup file'); ?>" name="create_backup" class="btn btn-sm btn-success">
-                </form>
+                </form><br>
             <?php
             }
 
@@ -84,7 +92,28 @@ if (isset($_POST['upload_the_file'])) {
                 echo '<a href="backup_files/' . $backup_files[0] . '">' . $backup_files[0] . '</a><br>';
             }
             ?>
-        </td>
+            <br><!-- comment -->
+            
+            <!-- Delete backup files menue -->
+            <h3><?= __('Delete backup files'); ?></h3>
+            <?= __("Don't leave backup files on a public server - they are readable to world! Delete them after download!"); ?><br><br>
+            <?php if (isset($_POST['delete_backup'])) { ?>
+                <?= __('Are you sure to remove database backups?'); ?>
+                <form name="delete_backup" action="index.php" method="post">
+                    <input type="hidden" name="page" value="backup">
+                    <input type="submit" name="delete_backup_confirm" value="<?= __('Yes'); ?>" style="color : red; font-weight: bold;">
+                    <input type="submit" name="submit" value="<?= __('No'); ?>" style="color : blue; font-weight: bold;">
+                </form>
+            <?php
+                }  elseif ($backup_count > 0) { ?>
+                    <form name="remove_gedcomfiles" action="index.php" method="post">
+                    <input type="hidden" name="page" value="backup">
+                    &nbsp;&nbsp;
+                    <input type="submit" value="<?= __('Delete backup files'); ?>" name="delete_backup" class="btn btn-sm btn-warning">
+                </form><br>
+                <?php } ?>
+
+         </td>
     </tr>
 </table>
 
@@ -93,7 +122,7 @@ if (isset($_POST['upload_the_file'])) {
     <tr>
         <td>
             <?php
-            printf(__('Here you can restore your entire database from a backup made with %s (if available) or from a .sql or .sql.zip backup file on your computer.'), 'HuMo-genealogy');
+            printf(__('Here you can restore your entire database from a backup made with %s (if available) or from a .sql or .sql.zip backup file on your computer.'), 'HuMo-gen-Server');
             echo '<br>';
 
             // *** Upload backup file ***

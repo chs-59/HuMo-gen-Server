@@ -93,7 +93,8 @@ if (!defined('ADMIN_PAGE')) {
                     // *** Remove old GEDCOM files ***
                     $dh  = opendir($trees['gedcom_directory']);
                     while (false !== ($filename = readdir($dh))) {
-                        if (strtolower(substr($filename, -3)) === "ged") {
+                        if (strtolower(substr($filename, -3)) === "ged" ||    // gedcom files
+                            strtolower(substr($filename, -3)) === "zip"   ) { // media files
                             if ($_POST['remove_gedcom_files2'] == 'gedcom_files_all') {
                                 $filenames[] = $trees['gedcom_directory'] . '/' . $filename;
                             } elseif ($_POST['remove_gedcom_files2'] == 'gedcom_files_1_month') {
@@ -123,7 +124,7 @@ if (!defined('ADMIN_PAGE')) {
                     }
                 } else {
                 ?>
-                    <?= __('If needed remove GEDCOM files (except test GEDCOM file):'); ?>
+                    <?= __('Remove unprotected GEDCOM files from server (recommended!)'); ?>:
                     <form name="remove_gedcomfiles" action="index.php" method="post">
                         <input type="hidden" name="page" value="tree">
                         <input type="hidden" name="menu_admin" value="tree_gedcom">
@@ -153,7 +154,7 @@ if (!defined('ADMIN_PAGE')) {
 
     <?php
     $_SESSION['debug_person'] = 1;
-
+    $filenames = array();
     $dh  = opendir($trees['gedcom_directory']);
     while (false !== ($filename = readdir($dh))) {
         if (strtolower(substr($filename, -3)) === "ged") {

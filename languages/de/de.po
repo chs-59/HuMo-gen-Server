@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HuMo-genealogy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-11 09:36+0100\n"
-"PO-Revision-Date: 2025-11-11 09:37+0100\n"
+"POT-Creation-Date: 2026-02-03 15:17+0100\n"
+"PO-Revision-Date: 2026-02-03 15:17+0100\n"
 "Last-Translator: Christian Seel\n"
 "Language-Team: German (http://app.transifex.com/humo-gen/humo-gen/language/"
 "de/)\n"
@@ -344,7 +344,7 @@ msgstr "Zeuge"
 #: admin/include/editor_media_select.php:82
 #: admin/include/editor_person_select.php:115
 #: admin/include/editor_relation_select.php:46 admin/views/editor.php:148
-#: admin/views/editor_person.php:393 admin/views/gedcom_export.php:339
+#: admin/views/editor_person.php:393 admin/views/gedcom_export.php:343
 #: app/model/mailform.php:83 app/model/register.php:95
 #: app/model/tree_index.php:603 app/model/tree_index.php:1025
 #: app/model/user_settings.php:79 views/anniversary.php:96
@@ -415,7 +415,7 @@ msgstr "Religion"
 #: admin/include/editor_event_cls.php:89 admin/include/editor_sources.php:113
 #: admin/include/editor_sources.php:167 admin/include/editor_sources.php:464
 #: admin/views/edit_source.php:137 admin/views/editor.php:1535
-#: admin/views/editor.php:1911 admin/views/gedcom.php:1470
+#: admin/views/editor.php:1911 admin/views/gedcom.php:1471
 #: admin/views/notes.php:243
 msgid "text"
 msgstr "Textstelle"
@@ -516,7 +516,7 @@ msgstr "GEDCOM Nummer (ID)"
 #: admin/views/editor_person.php:220 admin/views/editor_person.php:308
 #: admin/views/editor_relation.php:116 admin/views/editor_relation.php:291
 #: admin/views/editor_relation.php:310 admin/views/editor_relation.php:1196
-#: admin/views/gedcom_export.php:173 admin/views/language_editor.php:250
+#: admin/views/gedcom_export.php:177 admin/views/language_editor.php:250
 #: admin/views/maps_locations.php:771 admin/views/settings_homepage.php:88
 #: admin/views/settings_homepage.php:204 admin/views/tree_merge.php:556
 #: admin/views/tree_merge.php:574 admin/views/tree_merge.php:646
@@ -646,14 +646,14 @@ msgid "Also change"
 msgstr "Sichere auch"
 
 #: admin/include/editor_event_cls.php:1190 admin/include/editor_inc.php:533
-#: admin/views/gedcom_export.php:265 app/model/family.php:240
+#: admin/views/gedcom_export.php:269 app/model/family.php:240
 #: include/person_cls.php:1060 include/person_cls.php:1061
 #: views/hourglass.php:171
 msgid "Descendants"
 msgstr "Nachfahren"
 
 #: admin/include/editor_event_cls.php:1191 admin/include/editor_inc.php:534
-#: admin/views/gedcom_export.php:283 app/model/ancestor.php:174
+#: admin/views/gedcom_export.php:287 app/model/ancestor.php:174
 #: include/person_cls.php:1069 include/person_cls.php:1070
 #: views/hourglass.php:151
 msgid "Ancestors"
@@ -834,7 +834,7 @@ msgid "Upload new image"
 msgstr "Neues Bild hochladen"
 
 #: admin/include/editor_event_cls.php:1624 admin/update/install_update.php:547
-#: admin/views/backup.php:110 admin/views/gedcom.php:67
+#: admin/views/backup.php:139 admin/views/gedcom.php:67
 #: admin/views/settings.php:99 admin/views/settings.php:652
 msgid "Upload"
 msgstr "Hochladen"
@@ -936,59 +936,61 @@ msgstr "Entferne auch Farbmarkierungen von"
 
 #: admin/include/editor_inc.php:537 admin/include/editor_inc.php:1092
 #: admin/include/editor_user_settings.php:139 admin/models/editor.php:1389
-#: admin/models/editor.php:1985 admin/views/cms_pages.php:37
-#: admin/views/cms_pages.php:60 admin/views/edit_address.php:35
-#: admin/views/edit_repository.php:31 admin/views/edit_source.php:119
-#: admin/views/editor.php:339 admin/views/editor.php:356
-#: admin/views/editor_relation.php:246 admin/views/gedcom.php:88
-#: admin/views/gedcom_export.php:471 admin/views/gedcom_export.php:487
-#: admin/views/gedcom_export.php:504 admin/views/gedcom_export.php:519
-#: admin/views/gedcom_export.php:536 admin/views/gedcom_export.php:581
-#: admin/views/groups.php:54 admin/views/groups.php:547
-#: admin/views/install.php:324 admin/views/maps_locations.php:98
-#: admin/views/maps_locations.php:120 admin/views/maps_locations.php:199
-#: admin/views/notes.php:91 admin/views/settings.php:147
-#: admin/views/settings.php:162 admin/views/settings.php:188
-#: admin/views/settings.php:211 admin/views/settings.php:226
-#: admin/views/settings.php:268 admin/views/settings.php:280
-#: admin/views/settings.php:295 admin/views/settings.php:332
-#: admin/views/settings.php:804 admin/views/settings_homepage.php:345
-#: admin/views/thumbs.php:162 admin/views/thumbs.php:172
-#: admin/views/thumbs.php:181 admin/views/thumbs.php:191
-#: admin/views/thumbs.php:211 admin/views/thumbs.php:552
-#: admin/views/tree_merge.php:892 admin/views/tree_merge.php:905
-#: admin/views/tree_merge.php:918 admin/views/tree_merge.php:935
-#: admin/views/trees.php:29 admin/views/users.php:19 views/mailform.php:79
+#: admin/models/editor.php:1985 admin/views/backup.php:104
+#: admin/views/cms_pages.php:37 admin/views/cms_pages.php:60
+#: admin/views/edit_address.php:35 admin/views/edit_repository.php:31
+#: admin/views/edit_source.php:119 admin/views/editor.php:339
+#: admin/views/editor.php:356 admin/views/editor_relation.php:246
+#: admin/views/gedcom.php:88 admin/views/gedcom_export.php:475
+#: admin/views/gedcom_export.php:491 admin/views/gedcom_export.php:508
+#: admin/views/gedcom_export.php:523 admin/views/gedcom_export.php:540
+#: admin/views/gedcom_export.php:585 admin/views/groups.php:54
+#: admin/views/groups.php:547 admin/views/install.php:324
+#: admin/views/maps_locations.php:98 admin/views/maps_locations.php:120
+#: admin/views/maps_locations.php:199 admin/views/notes.php:91
+#: admin/views/settings.php:147 admin/views/settings.php:162
+#: admin/views/settings.php:188 admin/views/settings.php:211
+#: admin/views/settings.php:226 admin/views/settings.php:268
+#: admin/views/settings.php:280 admin/views/settings.php:295
+#: admin/views/settings.php:332 admin/views/settings.php:804
+#: admin/views/settings_homepage.php:345 admin/views/thumbs.php:162
+#: admin/views/thumbs.php:172 admin/views/thumbs.php:181
+#: admin/views/thumbs.php:191 admin/views/thumbs.php:211
+#: admin/views/thumbs.php:552 admin/views/tree_merge.php:892
+#: admin/views/tree_merge.php:905 admin/views/tree_merge.php:918
+#: admin/views/tree_merge.php:935 admin/views/trees.php:29
+#: admin/views/users.php:19 views/mailform.php:79
 msgid "Yes"
 msgstr "Ja"
 
 #: admin/include/editor_inc.php:538 admin/include/editor_inc.php:1093
 #: admin/include/editor_user_settings.php:140 admin/models/editor.php:1390
-#: admin/models/editor.php:1986 admin/views/cms_pages.php:38
-#: admin/views/cms_pages.php:61 admin/views/edit_address.php:36
-#: admin/views/edit_repository.php:32 admin/views/edit_source.php:120
-#: admin/views/editor.php:340 admin/views/editor.php:357
-#: admin/views/editor_relation.php:247 admin/views/gedcom.php:89
-#: admin/views/gedcom_export.php:472 admin/views/gedcom_export.php:488
-#: admin/views/gedcom_export.php:503 admin/views/gedcom_export.php:520
-#: admin/views/gedcom_export.php:537 admin/views/gedcom_export.php:580
-#: admin/views/groups.php:55 admin/views/groups.php:548
-#: admin/views/install.php:325 admin/views/maps_locations.php:99
-#: admin/views/maps_locations.php:121 admin/views/maps_locations.php:200
-#: admin/views/notes.php:92 admin/views/settings.php:148
-#: admin/views/settings.php:163 admin/views/settings.php:189
-#: admin/views/settings.php:212 admin/views/settings.php:227
-#: admin/views/settings.php:269 admin/views/settings.php:281
-#: admin/views/settings.php:296 admin/views/settings.php:333
-#: admin/views/settings.php:805 admin/views/settings_homepage.php:346
-#: admin/views/thumbs.php:92 admin/views/thumbs.php:95
-#: admin/views/thumbs.php:102 admin/views/thumbs.php:162
-#: admin/views/thumbs.php:172 admin/views/thumbs.php:181
-#: admin/views/thumbs.php:191 admin/views/thumbs.php:210
-#: admin/views/thumbs.php:229 admin/views/thumbs.php:553
-#: admin/views/tree_merge.php:893 admin/views/tree_merge.php:906
-#: admin/views/tree_merge.php:919 admin/views/tree_merge.php:936
-#: admin/views/trees.php:30 admin/views/users.php:20 views/mailform.php:80
+#: admin/models/editor.php:1986 admin/views/backup.php:105
+#: admin/views/cms_pages.php:38 admin/views/cms_pages.php:61
+#: admin/views/edit_address.php:36 admin/views/edit_repository.php:32
+#: admin/views/edit_source.php:120 admin/views/editor.php:340
+#: admin/views/editor.php:357 admin/views/editor_relation.php:247
+#: admin/views/gedcom.php:89 admin/views/gedcom_export.php:476
+#: admin/views/gedcom_export.php:492 admin/views/gedcom_export.php:507
+#: admin/views/gedcom_export.php:524 admin/views/gedcom_export.php:541
+#: admin/views/gedcom_export.php:584 admin/views/groups.php:55
+#: admin/views/groups.php:548 admin/views/install.php:325
+#: admin/views/maps_locations.php:99 admin/views/maps_locations.php:121
+#: admin/views/maps_locations.php:200 admin/views/notes.php:92
+#: admin/views/settings.php:148 admin/views/settings.php:163
+#: admin/views/settings.php:189 admin/views/settings.php:212
+#: admin/views/settings.php:227 admin/views/settings.php:269
+#: admin/views/settings.php:281 admin/views/settings.php:296
+#: admin/views/settings.php:333 admin/views/settings.php:805
+#: admin/views/settings_homepage.php:346 admin/views/thumbs.php:92
+#: admin/views/thumbs.php:95 admin/views/thumbs.php:102
+#: admin/views/thumbs.php:162 admin/views/thumbs.php:172
+#: admin/views/thumbs.php:181 admin/views/thumbs.php:191
+#: admin/views/thumbs.php:210 admin/views/thumbs.php:229
+#: admin/views/thumbs.php:553 admin/views/tree_merge.php:893
+#: admin/views/tree_merge.php:906 admin/views/tree_merge.php:919
+#: admin/views/tree_merge.php:936 admin/views/trees.php:30
+#: admin/views/users.php:20 views/mailform.php:80
 msgid "No"
 msgstr "Nein"
 
@@ -1002,7 +1004,7 @@ msgstr "Person auswählen"
 
 #: admin/include/editor_person_select.php:119
 #: admin/include/editor_relation_select.php:52 admin/views/editor.php:305
-#: admin/views/gedcom_export.php:171
+#: admin/views/gedcom_export.php:175
 msgid "or ID:"
 msgstr "oder ID:"
 
@@ -1056,7 +1058,7 @@ msgstr "Geodaten aktualisieren"
 msgid "Import geodata"
 msgstr "Geodaten übernehmen"
 
-#: admin/include/editor_place_select.php:126 admin/views/gedcom.php:787
+#: admin/include/editor_place_select.php:126 admin/views/gedcom.php:788
 #: admin/views/maps_locations.php:622 views/maps.php:534 views/maps.php:668
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -1141,7 +1143,7 @@ msgstr "Person"
 
 #: admin/include/editor_sources.php:125 admin/include/editor_sources.php:179
 #: admin/include/editor_sources.php:185 admin/views/edit_repository.php:137
-#: admin/views/editor.php:1723 admin/views/gedcom_export.php:346
+#: admin/views/editor.php:1723 admin/views/gedcom_export.php:350
 #: admin/views/tree_merge.php:1447 app/controller/addressController.php:31
 #: app/controller/addressesController.php:34
 #: app/controller/cms_pagesController.php:29 views/address.php:12
@@ -1540,7 +1542,7 @@ msgstr "Sprachen anzeigen/verbergen"
 msgid "Show/ hide theme's"
 msgstr "Themen anzeigen/verbergen"
 
-#: admin/index.php:581 admin/views/gedcom_export.php:370
+#: admin/index.php:581 admin/views/gedcom_export.php:374
 #: admin/views/maps.php:35 admin/views/maps_settings.php:24
 #: admin/views/menu.php:66 admin/views/settings_admin.php:8
 #: admin/views/settings_admin.php:39 admin/views/thumbs.php:196
@@ -1604,7 +1606,7 @@ msgstr "Stammbäume"
 msgid "Pictures/ create thumbnails"
 msgstr "Bilder / Vorschaubilder erstellen"
 
-#: admin/index.php:609 admin/views/gedcom.php:249 admin/views/thumbs.php:18
+#: admin/index.php:609 admin/views/gedcom.php:250 admin/views/thumbs.php:18
 msgid "Picture settings"
 msgstr "Bildeinstellungen"
 
@@ -1686,7 +1688,7 @@ msgid "Repositories"
 msgstr "Archive"
 
 #: admin/index.php:641 admin/views/edit_address.php:25
-#: admin/views/gedcom_export.php:545 admin/views/menu.php:102
+#: admin/views/gedcom_export.php:549 admin/views/menu.php:102
 msgid "Shared addresses"
 msgstr "Gemeinsame Adressen"
 
@@ -1827,9 +1829,13 @@ msgstr "Logo geändert."
 msgid "NO NAME"
 msgstr "KEIN NAME"
 
-#: admin/models/users.php:30 admin/models/users.php:48
+#: admin/models/users.php:30 admin/models/users.php:53
 msgid "Error: user name probably allready exist."
 msgstr "Fehler: Benutzername existiert wahrscheinlich bereits."
+
+#: admin/models/users.php:39
+msgid "Error: missing or invalid username or password too short (12+)."
+msgstr "Fehlender/ungültiger Benutzername oder Passwort zu kurz (12+)."
 
 #: admin/update/install_update.php:11
 #, php-format
@@ -2127,12 +2133,12 @@ msgstr ""
 "Ungültige Sicherungsdatei: muss eine Datei mit der Endung \".sql\" oder \"."
 "sql.zip\" sein"
 
-#: admin/views/backup.php:43 admin/views/backup.php:57
-#: admin/views/backup.php:60
+#: admin/views/backup.php:51 admin/views/backup.php:65
+#: admin/views/backup.php:68
 msgid "Create backup file"
 msgstr "Sicherungsdatei erstellen"
 
-#: admin/views/backup.php:51
+#: admin/views/backup.php:59
 #, php-format
 msgid ""
 "If you use %s to edit in the family tree, then create multiple backups. "
@@ -2153,11 +2159,11 @@ msgstr ""
 "genealogischen Daten.<br>\n"
 "3) Benutzen Sie die %s Datensicherungsseite."
 
-#: admin/views/backup.php:80
+#: admin/views/backup.php:88
 msgid "Download backup file"
 msgstr "Sicherungsdatei herunterladen"
 
-#: admin/views/backup.php:81
+#: admin/views/backup.php:89
 msgid ""
 "We recommend downloading the most recent backup file in case the data on "
 "your server (including the backup file) might get deleted or corrupted."
@@ -2166,11 +2172,27 @@ msgstr ""
 "Daten auf Ihrem Server (einschließlich der Sicherungsdatei) gelöscht oder "
 "beschädigt werden."
 
-#: admin/views/backup.php:91 admin/views/backup.php:130
+#: admin/views/backup.php:98 admin/views/backup.php:112
+msgid "Delete backup files"
+msgstr "Sicherungsdateien löschen?"
+
+#: admin/views/backup.php:99
+msgid ""
+"Don't leave backup files on a public server - they are readable to world! "
+"Delete them after download!"
+msgstr ""
+"Lassen Sie keine Sicherungsdateien auf einem öffentlichen Server, sie können "
+"von allen gelesen werden! Löschen Sie sie nach dem Download!"
+
+#: admin/views/backup.php:101
+msgid "Are you sure to remove database backups?"
+msgstr "Datenbank-Backups wirklich löschen?"
+
+#: admin/views/backup.php:120 admin/views/backup.php:159
 msgid "Restore database from backup file"
 msgstr "Datenbank aus Sicherungsdatei wiederherstellen"
 
-#: admin/views/backup.php:96
+#: admin/views/backup.php:125
 #, php-format
 msgid ""
 "Here you can restore your entire database from a backup made with %s (if "
@@ -2180,38 +2202,38 @@ msgstr ""
 "(falls verfügbar) oder aus einer .sql- oder .sql.zip-Sicherungsdatei auf "
 "Ihrem Computer wiederherstellen."
 
-#: admin/views/backup.php:102
+#: admin/views/backup.php:131
 msgid "Optional: upload a database backup file"
 msgstr "Optional: Hochladen einer Sicherungsdatei der Datenbank"
 
-#: admin/views/backup.php:123
+#: admin/views/backup.php:152
 msgid "Starting to restore database. This may take some time. Please wait..."
 msgstr ""
 "Starte Wiederherstellung der Datenbank. Das kann einige Zeit dauern. Bitte "
 "warten..."
 
-#: admin/views/backup.php:139
+#: admin/views/backup.php:168
 msgid "Most recent backup!"
 msgstr "Neueste Sicherung!"
 
-#: admin/views/backup.php:145
+#: admin/views/backup.php:174
 msgid "Restore database"
 msgstr "Datenbank wiederherstellen"
 
-#: admin/views/backup.php:150 admin/views/index_admin.php:378
+#: admin/views/backup.php:179 admin/views/index_admin.php:378
 msgid "No backup file found!"
 msgstr "Keine Sicherungsdatei gefunden!"
 
-#: admin/views/backup.php:198
+#: admin/views/backup.php:227
 msgid "Creating backup file. This may take some time. Please wait..."
 msgstr ""
 "Erstelle Sicherungsdatei. Dies kann einige Zeit dauern. Bitte warten..."
 
-#: admin/views/backup.php:226
+#: admin/views/backup.php:255
 msgid "Skipped backup of table:"
 msgstr "Sicherung von Tabelle überprungen:"
 
-#: admin/views/backup.php:310
+#: admin/views/backup.php:339
 msgid ""
 "A backup file was saved to the server. We strongly suggest you download a "
 "copy to your computer in case you might need it later."
@@ -2220,11 +2242,11 @@ msgstr ""
 "diese Datei auf Ihren Computer herunterzuladen, falls Sie diese später "
 "benötigen."
 
-#: admin/views/backup.php:349
+#: admin/views/backup.php:378
 msgid "Processed lines..."
 msgstr "Verarbeitete Zeilen..."
 
-#: admin/views/backup.php:412
+#: admin/views/backup.php:441
 msgid "Database has been restored successfully!"
 msgstr "Datenbank wurde erfolgreich wiederhergestellt!"
 
@@ -2525,7 +2547,7 @@ msgstr "Füge Archiv hinzu"
 msgid "No valid repository number."
 msgstr "Keine gültige Archivnummer."
 
-#: admin/views/edit_repository.php:197 admin/views/gedcom_export.php:360
+#: admin/views/edit_repository.php:197 admin/views/gedcom_export.php:364
 #: app/model/mailform.php:84 app/model/register.php:96
 #: app/model/user_settings.php:80
 msgid "E-mail"
@@ -2888,7 +2910,7 @@ msgstr "Priorität"
 msgid "Low"
 msgstr "Niedrig"
 
-#: admin/views/editor.php:1871 admin/views/gedcom_export.php:440
+#: admin/views/editor.php:1871 admin/views/gedcom_export.php:444
 msgid "Normal"
 msgstr "Normal"
 
@@ -2970,7 +2992,7 @@ msgid "year"
 msgstr "Jahr"
 
 #: admin/views/editor_person.php:350 admin/views/editor_relation.php:266
-#: admin/views/gedcom_export.php:243 views/list.php:300 views/list.php:351
+#: admin/views/gedcom_export.php:247 views/list.php:300 views/list.php:351
 #: views/list_names.php:130 views/stats_firstnames.php:94
 #: views/stats_surnames.php:139
 msgid "All"
@@ -3378,70 +3400,70 @@ msgstr ""
 msgid "Are you sure to remove GEDCOM files?"
 msgstr "Wollen Sie die GEDCOM-Dateien wirklich löschen?"
 
-#: admin/views/gedcom.php:120
+#: admin/views/gedcom.php:121
 msgid "GEDCOM file is REMOVED."
 msgstr "GEDCOM-Datei wurde GELÖSCHT."
 
-#: admin/views/gedcom.php:126
-msgid "If needed remove GEDCOM files (except test GEDCOM file):"
-msgstr "Löschen Sie die GEDCOM-Dateien wenn notwendig (außer Testdateien):"
+#: admin/views/gedcom.php:127 admin/views/gedcom_export.php:94
+msgid "Remove unprotected GEDCOM files from server (recommended!)"
+msgstr "Ungeschützte GEDCOM Dateien vom Server löschen (empfohlen!)"
 
-#: admin/views/gedcom.php:135
+#: admin/views/gedcom.php:136
 msgid "Remove all GEDCOM files"
 msgstr "Alle GEDCOM-Dateien löschen"
 
-#: admin/views/gedcom.php:137
+#: admin/views/gedcom.php:138
 #, php-format
 msgid "Remove GEDCOM files older than %d month(s)"
 msgstr "GEDCOM-Dateien die älter als %d Monat(e) sind löschen"
 
-#: admin/views/gedcom.php:140
+#: admin/views/gedcom.php:141
 #, php-format
 msgid "Remove GEDCOM files older than %d year(s)"
 msgstr "GEDCOM-Dateien die älter als %d Jahr(e) sind löschen"
 
-#: admin/views/gedcom.php:143 admin/views/log.php:64 admin/views/log.php:99
+#: admin/views/gedcom.php:144 admin/views/log.php:64 admin/views/log.php:99
 #: admin/views/notes.php:204 admin/views/tree_admin.php:10
 msgid "Remove"
 msgstr "Entfernen"
 
-#: admin/views/gedcom.php:179
+#: admin/views/gedcom.php:180
 msgid "Select GEDCOM file and settings"
 msgstr "GEDCOM-Datei und -einstellungen wählen"
 
-#: admin/views/gedcom.php:183
+#: admin/views/gedcom.php:184
 msgid "Select GEDCOM file"
 msgstr "GEDCOM-Datei wählen"
 
-#: admin/views/gedcom.php:198
+#: admin/views/gedcom.php:199
 msgid "GEDCOM settings"
 msgstr "GEDCOM-Einstellungen"
 
-#: admin/views/gedcom.php:207
+#: admin/views/gedcom.php:208
 msgid "Add a general source connected to all persons in this GEDCOM file."
 msgstr ""
 "Eine allgemeine Quelle für alle Personen dieser GEDCOM-Datei hinzufügen."
 
-#: admin/views/gedcom.php:214
+#: admin/views/gedcom.php:215
 msgid ""
 "Reassign new ID numbers for persons, fams etc. (don't use IDs from GEDCOM)"
 msgstr ""
 "Neue ID-Nummern für Personen, Familien usw. vergeben (nicht mit IDs aus "
 "GEDCOM arbeiten)."
 
-#: admin/views/gedcom.php:221
+#: admin/views/gedcom.php:222
 msgid "Order children by date (only needed if children are in wrong order)"
 msgstr ""
 "Kinder nach Datum sortieren (nur erforderlich, wenn Kinder in der falschen "
 "Reihenfolge)."
 
-#: admin/views/gedcom.php:228
+#: admin/views/gedcom.php:229
 msgid "Order families by date (only needed if families are in wrong order)"
 msgstr ""
 "Familien nach Datum sortieren (nur notwendig wenn Familien in der falschen "
 "Reihenfolge sind)"
 
-#: admin/views/gedcom.php:235
+#: admin/views/gedcom.php:236
 msgid ""
 "Add new locations to geo-location database (for Google Maps locations). This "
 "will slow down reading of GEDCOM file!"
@@ -3449,7 +3471,7 @@ msgstr ""
 "Neue Orte zur Kartierungsdatenbank hinzufügen (für Google Maps-Orte). Dies "
 "wird das Einlesen der GEDCOM-Datei verlangsamen!"
 
-#: admin/views/gedcom.php:242
+#: admin/views/gedcom.php:243
 msgid ""
 "Don't remove picture links from database (only needed for Geneanet GEDCOM "
 "file)."
@@ -3457,7 +3479,7 @@ msgstr ""
 "Entfernen Sie keine Bilderlinks aus der Datenbank (sie werden nur für die "
 "Geneanet GEDCOM-Datei benötigt)."
 
-#: admin/views/gedcom.php:243
+#: admin/views/gedcom.php:244
 msgid ""
 "In Geneanet add HuMo-genealogy picture id in the source by a person. Using "
 "this example: #media1254,media13454#"
@@ -3465,60 +3487,60 @@ msgstr ""
 "Fügen Sie die HuMo-genealogy Bild-ID in Geneanet in der Quelle je Person "
 "hinzu. Benutzen Sie dieses Beispiel: #media1254,media13454#"
 
-#: admin/views/gedcom.php:253
+#: admin/views/gedcom.php:254
 msgid "Only process picture file name. For example: picture.jpg [DEFAULT]"
 msgstr ""
 "Nur den Bilderdateinamen verarbeiten.\n"
 "Beispiel: picture.jpg\n"
 "[VOREINSTELLUNG]"
 
-#: admin/views/gedcom.php:256
+#: admin/views/gedcom.php:257
 msgid "Process full picture path. For example: picture_path&#92;picture.jpg"
 msgstr ""
 "Den vollständigen Bilderdateipfad verarbeiten.\n"
 "Beispiel: bilder_dateipfad&#92;picture.jpg"
 
-#: admin/views/gedcom.php:271
+#: admin/views/gedcom.php:272
 msgid "GEDCOM process settings"
 msgstr "GEDCOM Verabeitungseinstellungen"
 
-#: admin/views/gedcom.php:280
+#: admin/views/gedcom.php:281
 msgid "Show non-processed items when processing GEDCOM (can be a long list!"
 msgstr ""
 "Zeige nicht verarbeitete Elemente bei der Verarbeitung von GEDCOM an (kann "
 "eine lange Liste sein!)"
 
-#: admin/views/gedcom.php:287
+#: admin/views/gedcom.php:288
 msgid ""
 "Show all numbers when processing GEDCOM (useful when a time-out occurs!)"
 msgstr ""
 "Zeige alle Nummern bei der Verarbeitung von GEDCOM an (hilfreich bei einem "
 "time-out!!)"
 
-#: admin/views/gedcom.php:294
+#: admin/views/gedcom.php:295
 msgid "Debug mode"
 msgstr "Debugmodus"
 
-#: admin/views/gedcom.php:299
+#: admin/views/gedcom.php:300
 msgid "Batch processing"
 msgstr "Stapelverarbeitung"
 
-#: admin/views/gedcom.php:302
+#: admin/views/gedcom.php:303
 msgid "1 record (slow processing, but needs less server-memory)"
 msgstr ""
 "1 Datensatz (langsame Verarbeitung, verbraucht weniger Server-Leistung)"
 
-#: admin/views/gedcom.php:303 admin/views/gedcom.php:304
-#: admin/views/gedcom.php:305 admin/views/gedcom.php:306
-#: admin/views/gedcom.php:307 admin/views/gedcom.php:308
+#: admin/views/gedcom.php:304 admin/views/gedcom.php:305
+#: admin/views/gedcom.php:306 admin/views/gedcom.php:307
+#: admin/views/gedcom.php:308 admin/views/gedcom.php:309
 msgid "records per batch"
 msgstr "Datensätze pro Durchlauf"
 
-#: admin/views/gedcom.php:309
+#: admin/views/gedcom.php:310
 msgid "ALL records (fast processing, but needs server-memory)"
 msgstr "ALLE Datensätze (schnelle Verarbeitung, benötigt mehr Server-Leistung)"
 
-#: admin/views/gedcom.php:324
+#: admin/views/gedcom.php:325
 msgid ""
 "Time-out detected! Controlled time-out setting is adjusted. Retry reading of "
 "GEDCOM with new setting."
@@ -3526,7 +3548,7 @@ msgstr ""
 "Time-out festgestellt! Kontrollierte Time-out Einstellung wurde angepasst. "
 "Versuchen Sie die GEDCOM-Datei mit den neuen Einstellungen zu lesen."
 
-#: admin/views/gedcom.php:333
+#: admin/views/gedcom.php:334
 msgid ""
 "seconds. Controlled time-out, the GEDCOM script will restart and continue."
 "<br>Use this if the server has a time-out setting (set less seconds then "
@@ -3537,50 +3559,50 @@ msgstr ""
 "time-out-Einstellung hat (wählen Sie weniger Sekunden als das Server-time-"
 "out).<br>0=Kontrolliertes time-out ausschalten."
 
-#: admin/views/gedcom.php:334
+#: admin/views/gedcom.php:335
 #, php-format
 msgid "Your server time-out setting is: %s seconds."
 msgstr "Ihre Server-time-out Einstellung ist: %s Sekunden."
 
-#: admin/views/gedcom.php:359
+#: admin/views/gedcom.php:360
 #, php-format
 msgid "Yes, replace existing family tree: <b>\"%1$s\"</b> with %2$s persons!"
 msgstr "Ja, bestehenden Stammbaum: <b> \"%1$s„ </b>mit %2$s Personen ersetzen!"
 
-#: admin/views/gedcom.php:365
+#: admin/views/gedcom.php:366
 msgid "Add this GEDCOM file to the existing tree"
 msgstr "Diesen Stammbaum zum vorhandenen Stammbaum hinzufügen"
 
-#: admin/views/gedcom.php:368 admin/views/gedcom.php:371
-#: admin/views/gedcom.php:465 admin/views/gedcom.php:778
-#: admin/views/gedcom.php:1396 admin/views/gedcom.php:1519
-#: admin/views/gedcom.php:1541
+#: admin/views/gedcom.php:369 admin/views/gedcom.php:372
+#: admin/views/gedcom.php:466 admin/views/gedcom.php:779
+#: admin/views/gedcom.php:1397 admin/views/gedcom.php:1520
+#: admin/views/gedcom.php:1542
 msgid "Step"
 msgstr "Schritt"
 
-#: admin/views/gedcom.php:436
+#: admin/views/gedcom.php:437
 msgid "STEP 2) Remove old family tree:"
 msgstr "Schritt 2) Alten Stammbaum löschen:"
 
-#: admin/views/gedcom.php:463 admin/views/gedcom.php:922
-#: admin/views/gedcom.php:1541
+#: admin/views/gedcom.php:464 admin/views/gedcom.php:923
+#: admin/views/gedcom.php:1542
 msgid "ONLY use in case of a time-out, to continue click:"
 msgstr "NUR im Falle eines Time-outs verwenden, klicken Sie zum Fortfahren:"
 
-#: admin/views/gedcom.php:471 admin/views/gedcom.php:496
-#: admin/views/gedcom.php:519 admin/views/gedcom.php:545
-#: admin/views/gedcom.php:557 admin/views/gedcom.php:569
-#: admin/views/gedcom.php:595 admin/views/gedcom.php:619
-#: admin/views/gedcom.php:645 admin/views/gedcom.php:670
+#: admin/views/gedcom.php:472 admin/views/gedcom.php:497
+#: admin/views/gedcom.php:520 admin/views/gedcom.php:546
+#: admin/views/gedcom.php:558 admin/views/gedcom.php:570
+#: admin/views/gedcom.php:596 admin/views/gedcom.php:620
+#: admin/views/gedcom.php:646 admin/views/gedcom.php:671
 #, php-format
 msgid "Remove old family tree items from %s table..."
 msgstr "Lösche alte Stammbaumeinträge aus der Tabelle %s ..."
 
-#: admin/views/gedcom.php:488 admin/views/gedcom.php:511
-#: admin/views/gedcom.php:536 admin/views/gedcom.php:550
-#: admin/views/gedcom.php:562 admin/views/gedcom.php:586
-#: admin/views/gedcom.php:612 admin/views/gedcom.php:636
-#: admin/views/gedcom.php:662 admin/views/gedcom.php:698
+#: admin/views/gedcom.php:489 admin/views/gedcom.php:512
+#: admin/views/gedcom.php:537 admin/views/gedcom.php:551
+#: admin/views/gedcom.php:563 admin/views/gedcom.php:587
+#: admin/views/gedcom.php:613 admin/views/gedcom.php:637
+#: admin/views/gedcom.php:663 admin/views/gedcom.php:699
 #: admin/views/index_admin.php:272 admin/views/index_admin.php:279
 #: admin/views/index_admin.php:286 admin/views/index_admin.php:293
 #: admin/views/index_admin.php:300 admin/views/index_admin.php:307
@@ -3589,18 +3611,18 @@ msgstr "Lösche alte Stammbaumeinträge aus der Tabelle %s ..."
 msgid "Optimize table..."
 msgstr "Optimiere Tabelle..."
 
-#: admin/views/gedcom.php:707
+#: admin/views/gedcom.php:708
 msgid "No error messages above? In that case the tables have been created!"
 msgstr "Keine Fehlermeldung? Dann wurden die Tabellen erfolgreich erstellt!"
 
-#: admin/views/gedcom.php:711
+#: admin/views/gedcom.php:712
 msgid ""
 "The data in this GEDCOM will be appended to the existing data in this tree!"
 msgstr ""
 "Die Daten dieser GEDCOM-Datei werden zu den existierenden Daten dieses "
 "Stammbaums hinzugefügt!"
 
-#: admin/views/gedcom.php:897
+#: admin/views/gedcom.php:898
 msgid ""
 "<b>STEP 3) Processing GEDCOM file:</b>\n"
 "<p>The following lines have to be processed without error messages...<br>\n"
@@ -3610,37 +3632,37 @@ msgstr ""
 "<p>Folgende Zeilen müssen ohne Fehlermeldung verarbeitet werden...<br>\n"
 "<b>Die Verarbeitung kann einige Zeit in Anspruch nehmen!</b>"
 
-#: admin/views/gedcom.php:922
+#: admin/views/gedcom.php:923
 msgid "Restart"
 msgstr "Neu starten"
 
-#: admin/views/gedcom.php:923
+#: admin/views/gedcom.php:924
 msgid "Restarts reading of GEDCOM using a controlled time-out."
 msgstr ""
 "Startet das erneute Einlesen der GEDCOM-Datei mit kontrolliertem Time-out."
 
-#: admin/views/gedcom.php:999 admin/views/gedcom.php:1336
-#: admin/views/gedcom.php:1497 admin/views/gedcom.php:1603
-#: admin/views/gedcom.php:1792 admin/views/gedcom.php:2021
-#: admin/views/gedcom.php:2056
+#: admin/views/gedcom.php:1000 admin/views/gedcom.php:1337
+#: admin/views/gedcom.php:1498 admin/views/gedcom.php:1604
+#: admin/views/gedcom.php:1793 admin/views/gedcom.php:2022
+#: admin/views/gedcom.php:2057
 msgid "lines processed"
 msgstr "verarbeitete Zeilen"
 
-#: admin/views/gedcom.php:1291
+#: admin/views/gedcom.php:1292
 msgid "GEDCOM file"
 msgstr "GEDCOM-Datei"
 
-#: admin/views/gedcom.php:1293
+#: admin/views/gedcom.php:1294
 #, php-format
 msgid "this is an <b>%s</b> file"
 msgstr "das ist eine <b>%s</b>-Datei"
 
-#: admin/views/gedcom.php:1396
+#: admin/views/gedcom.php:1397
 msgid "Controlled time-out to continue reading of GEDCOM file, click:"
 msgstr ""
 "Kontrollierter Time-out, um das Lesen der GEDCOM-Datei fortzusetzen klicke:"
 
-#: admin/views/gedcom.php:1397
+#: admin/views/gedcom.php:1398
 #, php-format
 msgid ""
 "Or wait %s seconds for automatic continuation. Some browsers will give a "
@@ -3649,83 +3671,83 @@ msgstr ""
 "Oder warten Sie %s Sekunden auf die automatische Weiterleitung. Einige "
 "Browser geben eine Meldung aus ..."
 
-#: admin/views/gedcom.php:1421 admin/views/gedcom.php:1433
+#: admin/views/gedcom.php:1422 admin/views/gedcom.php:1434
 msgid "Persons added by GEDCOM import."
 msgstr "Personen wurden durch Import aus einer GEDCOM-Datei hinzugefügt."
 
-#: admin/views/gedcom.php:1453
+#: admin/views/gedcom.php:1454
 #, php-format
 msgid "Reading in the file took: %d seconds"
 msgstr "Verarbeitung der Datei benötigte: %d Sekunden"
 
-#: admin/views/gedcom.php:1462
+#: admin/views/gedcom.php:1463
 msgid "Non-processed items"
 msgstr "Nicht verarbeitete Angaben"
 
-#: admin/views/gedcom.php:1466 admin/views/gedcom.php:1467
-#: admin/views/gedcom.php:1468 admin/views/gedcom.php:1469
+#: admin/views/gedcom.php:1467 admin/views/gedcom.php:1468
+#: admin/views/gedcom.php:1469 admin/views/gedcom.php:1470
 msgid "Level"
 msgstr "Ebene"
 
-#: admin/views/gedcom.php:1487
+#: admin/views/gedcom.php:1488
 msgid "All items have been processed!"
 msgstr "Alle Angaben wurden verarbeitet!"
 
-#: admin/views/gedcom.php:1531
+#: admin/views/gedcom.php:1532
 msgid "STEP 4) Final database processing:"
 msgstr "Schritt 4) Datenbankverarbeitung abschließen:"
 
-#: admin/views/gedcom.php:1572
+#: admin/views/gedcom.php:1573
 msgid "Processing of referenced texts into standard texts..."
 msgstr "Referenztexte in Standardtexte umwandeln..."
 
-#: admin/views/gedcom.php:1792 admin/views/index_admin.php:604
+#: admin/views/gedcom.php:1793 admin/views/index_admin.php:604
 #: admin/views/statistics_old.php:66 admin/views/tree_admin.php:82
 #: app/model/tree_index.php:283
 msgid "persons"
 msgstr "Personen"
 
-#: admin/views/gedcom.php:2021 admin/views/index_admin.php:604
+#: admin/views/gedcom.php:2022 admin/views/index_admin.php:604
 #: admin/views/statistics_old.php:66 admin/views/tree_admin.php:82
 #: app/model/tree_index.php:283
 msgid "families"
 msgstr "Familien"
 
-#: admin/views/gedcom.php:2079
+#: admin/views/gedcom.php:2080
 msgid "Processing texts IN names..."
 msgstr "Texte IN Namen verarbeiten..."
 
-#: admin/views/gedcom.php:2107
+#: admin/views/gedcom.php:2108
 msgid "Updating location database..."
 msgstr "Ortsdatenbank aktualisieren"
 
-#: admin/views/gedcom.php:2176
+#: admin/views/gedcom.php:2177
 msgid "Order children..."
 msgstr "Sortiere Kinder..."
 
-#: admin/views/gedcom.php:2238
+#: admin/views/gedcom.php:2239
 msgid "Order families..."
 msgstr "Familien sortieren..."
 
-#: admin/views/gedcom.php:2367
+#: admin/views/gedcom.php:2368
 msgid "Counting persons and families and enter into database..."
 msgstr "Ermittle Personen und Familien und trage Daten in Datenbank ein..."
 
-#: admin/views/gedcom.php:2388
+#: admin/views/gedcom.php:2389
 #, php-format
 msgid "Processing took: %d seconds"
 msgstr "Verarbeitung benötigte: %d Sekunden"
 
-#: admin/views/gedcom.php:2389
+#: admin/views/gedcom.php:2390
 msgid "No error messages? In this case the database is ready for use!"
 msgstr "Keine Fehlermeldungen? Dann ist die Datenbank bereit zur Benutzung!"
 
-#: admin/views/gedcom.php:2391
+#: admin/views/gedcom.php:2392
 #, php-format
 msgid "Ready! Now click %s to watch the family tree"
 msgstr "Fertig! Klicken Sie nun auf %s, um Ihren Stammbaum anzusehen"
 
-#: admin/views/gedcom.php:2392
+#: admin/views/gedcom.php:2393
 msgid ""
 "TIP: Use <a href=\"index.php?page=cal_date\">\"Calculated birth dates\"</a> "
 "for a better privacy filter."
@@ -3767,127 +3789,127 @@ msgstr "GEDCOM-Datei wurde erstellt"
 msgid "Download GEDCOM file"
 msgstr "GEDCOM-Datei herunterladen"
 
-#: admin/views/gedcom_export.php:90
+#: admin/views/gedcom_export.php:86
 msgid "Download connected media files"
 msgstr "Verknüpfte Medien-Dateien herunterladen"
 
-#: admin/views/gedcom_export.php:99
+#: admin/views/gedcom_export.php:103
 msgid "Select family tree to export and click \"Start export\""
 msgstr "Stammbaum zum Export auswählen und auf \"Export starten\" klicken"
 
-#: admin/views/gedcom_export.php:103
+#: admin/views/gedcom_export.php:107
 msgid "Choose family tree to export"
 msgstr "Stammbaum für Export wählen"
 
-#: admin/views/gedcom_export.php:126
+#: admin/views/gedcom_export.php:130
 msgid "Whole tree or part"
 msgstr "Ganzer Stammbaum oder Ausschnitt"
 
-#: admin/views/gedcom_export.php:128
+#: admin/views/gedcom_export.php:132
 msgid "Whole tree"
 msgstr "Ganzer Stammbaum"
 
-#: admin/views/gedcom_export.php:129
+#: admin/views/gedcom_export.php:133
 msgid "Partial tree"
 msgstr "Ausschnitt des Stammbaums"
 
-#: admin/views/gedcom_export.php:161
+#: admin/views/gedcom_export.php:165
 msgid "Choose person"
 msgstr "Person wählen"
 
-#: admin/views/gedcom_export.php:240
+#: admin/views/gedcom_export.php:244
 msgid "Number of generations to export"
 msgstr "Anzahl der Generationen für den Export"
 
-#: admin/views/gedcom_export.php:259
+#: admin/views/gedcom_export.php:263
 msgid "Choose type of export"
 msgstr "Export-Typ wählen"
 
-#: admin/views/gedcom_export.php:271
+#: admin/views/gedcom_export.php:275
 msgid "Include spouses of descendants"
 msgstr "Ehepartner der Nachkommen einschließen"
 
-#: admin/views/gedcom_export.php:277
+#: admin/views/gedcom_export.php:281
 msgid "Include parents of spouses"
 msgstr "Eltern der Ehepartner einschließen"
 
-#: admin/views/gedcom_export.php:289
+#: admin/views/gedcom_export.php:293
 msgid "Include spouse(s) of base person"
 msgstr "Ehepartner der Ausgangsperson einschließen"
 
-#: admin/views/gedcom_export.php:295
+#: admin/views/gedcom_export.php:299
 msgid "Include sibblings of ancestors and base person"
 msgstr "Nachkommen der Vorfahren und der Ausgangsperson einschließen"
 
-#: admin/views/gedcom_export.php:335
+#: admin/views/gedcom_export.php:339
 msgid "GEDCOM submitter"
 msgstr "GEDCOM Antragsteller"
 
-#: admin/views/gedcom_export.php:353
+#: admin/views/gedcom_export.php:357
 msgid "Country"
 msgstr "Land"
 
-#: admin/views/gedcom_export.php:374
+#: admin/views/gedcom_export.php:378
 msgid "GEDCOM version"
 msgstr "GEDCOM Version"
 
-#: admin/views/gedcom_export.php:384
+#: admin/views/gedcom_export.php:388
 msgid "GEDCOM 7.0"
 msgstr "GEDCOM 7.0"
 
-#: admin/views/gedcom_export.php:385
+#: admin/views/gedcom_export.php:389
 msgid "GEDCOM 5.5.1"
 msgstr "GEDCOM 5.5.1"
 
-#: admin/views/gedcom_export.php:391
+#: admin/views/gedcom_export.php:395
 msgid "Character set"
 msgstr "Zeichensatz"
 
-#: admin/views/gedcom_export.php:405
+#: admin/views/gedcom_export.php:409
 msgid "UTF-8 (recommended character set)"
 msgstr "UTF-8 (empfohlener Zeichensatz)"
 
-#: admin/views/gedcom_export.php:425
+#: admin/views/gedcom_export.php:429
 msgid "GEDCOM 7.0 always uses the UTF-8 character set."
 msgstr "GEDCOM 7.0 verwendet immer den UTF-8 Zeichensatz."
 
-#: admin/views/gedcom_export.php:430
+#: admin/views/gedcom_export.php:434
 msgid "Export type"
 msgstr "Exportiere Type"
 
-#: admin/views/gedcom_export.php:446
+#: admin/views/gedcom_export.php:450
 msgid "Minimal"
 msgstr "Minimum"
 
-#: admin/views/gedcom_export.php:462
+#: admin/views/gedcom_export.php:466
 msgid "Export texts"
 msgstr "Exportiere Texte"
 
-#: admin/views/gedcom_export.php:478
+#: admin/views/gedcom_export.php:482
 msgid "Export categories (No GEDCOM Standard!)"
 msgstr "Foto-Kategorien exportieren (Kein GEDCOM-Standard!)"
 
-#: admin/views/gedcom_export.php:494
+#: admin/views/gedcom_export.php:498
 msgid "Export media files to ZIP"
 msgstr "Medien-Dateien exportieren (ZIP)"
 
-#: admin/views/gedcom_export.php:510
+#: admin/views/gedcom_export.php:514
 msgid "Export sources"
 msgstr "Exportiere Quellen"
 
-#: admin/views/gedcom_export.php:533
+#: admin/views/gedcom_export.php:537
 msgid "Export longitude & latitude by places"
 msgstr "Längen- und Breitengrad der Orte exportieren"
 
-#: admin/views/gedcom_export.php:557
+#: admin/views/gedcom_export.php:561
 msgid "Export shared addresses"
 msgstr "Geteilte Adressen exportieren"
 
-#: admin/views/gedcom_export.php:558
+#: admin/views/gedcom_export.php:562
 msgid "Convert all shared addresses as single addresses"
 msgstr "Alle geteilten Adressen in individuelle Adressen konvertieren"
 
-#: admin/views/gedcom_export.php:561
+#: admin/views/gedcom_export.php:565
 msgid ""
 "\"Shared addresses\" is <b>only compatible</b> with HuMo-genealogy and "
 "Haza-21 programs.<br>\n"
@@ -3899,21 +3921,21 @@ msgstr ""
 "Für andere Programme: konvertieren Sie geteilte Adressen. Die option "
 "„geteilte Adressen“ ist dann nicht mehr vorhanden."
 
-#: admin/views/gedcom_export.php:564
+#: admin/views/gedcom_export.php:568
 msgid "There are no shared addresses, standard GEDCOM export is used."
 msgstr ""
 "Es existieren keine geteilten Adressen, Standard GEDCOM Export wird "
 "verwendet."
 
-#: admin/views/gedcom_export.php:571
+#: admin/views/gedcom_export.php:575
 msgid "Show export status"
 msgstr "Zeige Status des Exports"
 
-#: admin/views/gedcom_export.php:587
+#: admin/views/gedcom_export.php:591
 msgid "GEDCOM export"
 msgstr "GEDCOM Export"
 
-#: admin/views/gedcom_export.php:589
+#: admin/views/gedcom_export.php:593
 msgid "Start export"
 msgstr "Export starten"
 
@@ -10864,6 +10886,9 @@ msgstr "Vorlage auswählen"
 #: views/user_settings.php:125 views/user_settings.php:128
 msgid "Standard-colours"
 msgstr "Standardfarben"
+
+#~ msgid "If needed remove GEDCOM files (except test GEDCOM file):"
+#~ msgstr "Löschen Sie die GEDCOM-Dateien wenn notwendig (außer Testdateien):"
 
 #~ msgid "Select place"
 #~ msgstr "Ort auswählen"

@@ -80,14 +80,18 @@ if (isset($tree_id) and isset($_POST['submit_button'])) {
         <input type="hidden" name="file_name_short" value="<?= $export['file_name']; ?>">
         <input type="submit" name="something" value="<?= __('Download GEDCOM file'); ?>" class="btn btn-sm btn-success">
     </form><br>
-<?php }
+<?php 
     if (isset($_POST['gedcom_media']) and $_POST['gedcom_media'] == 'yes') {
 ?>
-    <form method="POST" action="include/gedcom_download.php" target="_blank">
-        <input type="hidden" name="page" value="<?= $page; ?>">
-        <input type="hidden" name="file_name" value="<?= $export['path'] . $export['file_name'] . '.media.zip'; ?>">
-        <input type="hidden" name="file_name_short" value="<?= $export['file_name'] . '.media.zip'; ?>">
-        <input type="submit" name="something" value="<?= __('Download connected media files'); ?>" class="btn btn-sm btn-success">
+    <b><?= __('Download connected media files'); ?>:</b><br>
+    <a href="./<?= $export['path'] . $export['file_name'] . '.media.zip'; ?>"><?= $export['file_name'] . '.media.zip'; ?></a><br><br>
+<?php } ?>
+    <form name="remove_gedcomfiles" action="index.php" method="post">
+       <input type="hidden" name="page" value="tree">
+       <input type="hidden" name="menu_admin" value="tree_gedcom">
+       <input type="hidden" name="tree_id" value="<?= $trees['tree_id']; ?>">
+       <input type="hidden" name="remove_gedcom_files" value="gedcom_files_all">
+        <input type="submit" name="submit" value="<?= __('Remove unprotected GEDCOM files from server (recommended!)'); ?>" class="btn btn-sm btn-warning">
     </form><br>
 <?php } ?>
 
