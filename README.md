@@ -51,6 +51,10 @@ protection. This front end feature is set up by user.
 is broken and a lot of JS-code missing)
 - Export option for media files (zipped) included in GEDCOM-Export (HWO: no  
 media file export)
+- Database and gedcom backups can now easily be deleted from server after use. 
+This is highly recommended because they are readable to world!
+- Enhanced security when new user account is created: restricted characters for 
+naming and password length (12+)
 
 ## Removed or cleanup
 - Global option to _enable automatic thumbnail generation_ removed. Reason: Thumbnail
@@ -63,8 +67,6 @@ picture galleries
 - Fixed bug when renaming files in sub-folder
 - Disabled GeoPlugin (no free use any more, need API-Key)
 - Fixed bug: Disabled creating an unnamed user without password in admin panel
-- Enhanced security when new user account is created: restricted characters for 
-naming and password length (12+)
 
 ## HOWTO (in progress) 
 This HOWTO will only cover the differences to HGO. For all other topics
